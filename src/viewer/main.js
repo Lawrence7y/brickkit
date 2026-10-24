@@ -375,7 +375,7 @@ function select(id, jump = false) {
   if (jump && !o.group.visible) goStep(o.rank, false);
   const p = o.p, st = S.steps[o.rank], status = p.status || 'confirmed', mod = o.module ? S.plan.mods.get(o.module) : null;
   card.innerHTML = `<div class="card-head"><div><div class="card-title">${esc(partLabel(p))}</div><div class="sub">${esc(p.part)} · ${esc(colorOf(p.color).zh)} · ${esc(p.id)}</div></div><button class="icon-btn" id="card-close" aria-label="关闭">${ICON.close}</button></div>
-    <dl><dt>位置</dt><dd>[${p.at.join(', ')}] · 朝向 ${p.rot || 0}°</dd><dt>步骤</dt><dd>第 ${o.rank + 1} 步${st?.title ? ` · ${esc(st.title)}` : ''}</dd>
+    <dl><dt>位置</dt><dd>[${p.at.join(', ')}] · 朝向 ${p.rot || 0}°${p.up && p.up !== '+y' ? ` · 凸点朝 ${esc(p.up)}${p.snot ? ` (+${p.snot}片)` : ''}` : ''}</dd><dt>步骤</dt><dd>第 ${o.rank + 1} 步${st?.title ? ` · ${esc(st.title)}` : ''}</dd>
     ${o.module ? `<dt>模块</dt><dd>${esc(mod?.label || o.module)}</dd>` : ''}
     <dt>状态</dt><dd><span class="tag ${status === 'confirmed' ? 'positive' : status === 'inferred' ? 'attention' : 'risk'}">${STATUS_ZH[status] || status}</span>${p.confidence != null ? ` <span class="sub">置信度 ${Math.round(p.confidence * 100)}%</span>` : ''}</dd>
     ${p.evidence?.length ? `<dt>照片</dt><dd class="ev">${p.evidence.map((e) => `<code>${esc(e)}</code>`).join('')}</dd>` : ''}
@@ -477,7 +477,7 @@ function applyInsets() {   // 步骤条盖住的区域不放模型：把投影�
 function resize() {
   const r = $('#stage').getBoundingClientRect(); if (!r.width || !r.height) return;
   renderer.setSize(r.width, r.height, false); camera.aspect = r.width / r.height; applyInsets(); camera.updateProjectionMatrix();
-  if (S.model && !S.userMoved) setView(...VIEW, 1); S.dirty = true;
+  if (S.model && !S.userMoved && !SHOT) setView(...VIEW, 1); S.dirty = true;
 }
 
 // ------------------------------------------------------------------ 启动

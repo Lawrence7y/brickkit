@@ -551,6 +551,22 @@
    ],
    "checked": true
   },
+  "3941": {
+   "name": "Brick Round 2 x 2",
+   "zh": "圆砖 2×2",
+   "kind": "round",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
   "3958": {
    "name": "Plate 6 x 6",
    "zh": "板 6×6",
@@ -567,6 +583,104 @@
    ],
    "checked": true
   },
+  "4073": {
+   "name": "Plate Round 1 x 1",
+   "zh": "圆板 1×1",
+   "kind": "round",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "11211": {
+   "name": "Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side",
+   "zh": "单面四凸点砖 1×2（高5片）",
+   "kind": "snot",
+   "size": [
+    2,
+    1
+   ],
+   "h": 5,
+   "ldrawOrigin": [
+    0,
+    5,
+    0
+   ],
+   "checked": true
+  },
+  "15068": {
+   "name": "Slope Brick Curved 2 x 2",
+   "zh": "弧面斜砖 2×2",
+   "kind": "cslope",
+   "size": [
+    2,
+    2
+   ],
+   "h": 2,
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
+   "checked": true
+  },
+  "24299": {
+   "name": "Wedge Plate 2 x 2 Left",
+   "zh": "左楔形翼板 2×2",
+   "kind": "wedge",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "side": "L",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "24307": {
+   "name": "Wedge Plate 2 x 2 Right",
+   "zh": "右楔形翼板 2×2",
+   "kind": "wedge",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "side": "R",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "30414": {
+   "name": "Brick 1 x 4 with 4 Studs on 1 Side",
+   "zh": "单面四凸点砖 1×4",
+   "kind": "snot",
+   "size": [
+    4,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
   "41539": {
    "name": "Plate 8 x 8",
    "zh": "板 8×8",
@@ -574,6 +688,88 @@
    "size": [
     8,
     8
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "41769": {
+   "name": "Wedge Plate 4 x 2 Right",
+   "zh": "右楔形翼板 2×4",
+   "kind": "wedge",
+   "size": [
+    2,
+    4
+   ],
+   "h": 1,
+   "side": "R",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "41770": {
+   "name": "Wedge Plate 4 x 2 Left",
+   "zh": "左楔形翼板 2×4",
+   "kind": "wedge",
+   "size": [
+    2,
+    4
+   ],
+   "h": 1,
+   "side": "L",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "47457": {
+   "name": "Slope Brick Curved 2 x 2 x 1",
+   "zh": "弧面斜砖 2×2×1（高3片）",
+   "kind": "cslope",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "48336": {
+   "name": "Plate 1 x 2 with Handle on Side",
+   "zh": "带侧把柄板 1×2",
+   "kind": "barplate",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "60470": {
+   "name": "Plate 1 x 2 with Horizontal Clips",
+   "zh": "带水平夹板 1×2",
+   "kind": "clip",
+   "size": [
+    2,
+    1
    ],
    "h": 1,
    "ldrawOrigin": [
@@ -661,6 +857,22 @@
    ],
    "checked": true
   },
+  "87087": {
+   "name": "Brick 1 x 1 with Stud on 1 Side",
+   "zh": "单面侧凸点砖 1×1",
+   "kind": "snot",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
   "3070b": {
    "name": "Tile 1 x 1",
    "zh": "平板 1×1",
@@ -722,6 +934,23 @@
     0,
     3,
     -0.5
+   ],
+   "checked": true
+  },
+  "3062b": {
+   "name": "Brick Round 1 x 1 Open Stud",
+   "zh": "圆砖 1×1（竖纹柱）",
+   "kind": "round",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "fluted": true,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
    ],
    "checked": true
   }

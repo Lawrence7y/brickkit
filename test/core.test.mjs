@@ -740,3 +740,35 @@ test('示例模型 cottage.brick.json 与 cottage.photos.json 完整校验通过
   assert.equal(p.complete, true);
   assert.equal(p.missing.length, 0);
 });
+
+test('6 向 SNOT 朝向 (up/snot)、扩展零件目录与实物样本 mecha.brick.json 校验', () => {
+  const plate2x6 = cat.parts['3795']; // size: [6, 2], h: 1
+  // +z 竖装 2×6 板（rot: 90 → w=2, d=6）：X 中心 0+1=1，Y 中心 6 + 6/(2*0.4) = 13.5，Z 基底 2 + 1*0.4 = 2.4
+  assert.deepEqual(partCenter({ at: [0, 6, 2], rot: 90, up: '+z', snot: 1 }, plate2x6), [1, 13.5, 2.4]);
+  assert.deepEqual(partCenter({ at: [0, 6, 0], rot: 90, up: '-z', snot: 1 }, plate2x6), [1, 13.5, -0.4]);
+  assert.deepEqual(partCenter({ at: [3, 10, 0], rot: 0, up: '+x', snot: 2 }, cat.parts['3020']), [3.8, 15, 1]);
+  assert.deepEqual(partCenter({ at: [-1, 10, 0], rot: 0, up: '-x', snot: 2 }, cat.parts['3020']), [-1.8, 15, 1]);
+  assert.deepEqual(partCenter({ at: [0, 0, 0], rot: 0, up: '-y', snot: 0 }, cat.parts['3001']), [2, 3, 1]);
+
+  // 扩展零件 localCells 凸点测试
+  assert.equal(localCells(cat.parts['3941']).filter((c) => c.stud).length, 4);
+  assert.equal(localCells(cat.parts['15068']).filter((c) => c.stud).length, 0);
+  assert.equal(localCells(cat.parts['41769']).filter((c) => c.stud).length, 5);
+  assert.equal(localCells(cat.parts['41770']).filter((c) => c.stud).length, 5);
+
+  // 非法 up 与 snot 校验错误码
+  assert.ok(codesOf(validate(baseModel({ parts: [{ id: 'p1', part: '3001', color: 4, at: [0, 0, 0], up: '+w', step: 1 }] }), cat).errors).includes('up'));
+  assert.ok(codesOf(validate(baseModel({ parts: [{ id: 'p1', part: '3001', color: 4, at: [0, 0, 0], up: '+z', snot: 1.5, step: 1 }] }), cat).errors).includes('snot'));
+
+  // 实物样本 mecha.brick.json 与 mecha.photos.json 完整校验通过
+  const mecha = readJSON('examples/mecha.brick.json');
+  const mechaPhotos = readJSON('examples/mecha.photos.json');
+  const mv = validate(mecha, cat, { photos: mechaPhotos });
+  assert.equal(mv.ok, true);
+  assert.equal(mv.errors.length, 0);
+  assert.equal(mv.warnings.length, 0);
+
+  const mp = checkPhotos(mechaPhotos, mecha);
+  assert.equal(mp.complete, true);
+  assert.equal(mp.missing.length, 0);
+});

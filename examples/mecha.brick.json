@@ -1,0 +1,202 @@
+{
+ "format": "brickbuild",
+ "version": "0.2",
+ "meta": {
+  "name": "四翼重装侦察机甲塔",
+  "author": "Lawrence7y",
+  "createdAt": "2026-10-24",
+  "front": "+z",
+  "description": "基于 15 张多角度实物与局部拆解照片重建：中央 2×2 四向 SNOT 核心立柱、正背左右四面装甲与能量炮塔、四片合页可变掠翼、双足快拆起落架与顶部四色透明雷达塔。",
+  "photoSet": "mecha.photos.json"
+ },
+ "modules": [
+  {
+   "id": "legs",
+   "label": "双足起落架底座",
+   "explode": [0, -12, 0],
+   "note": "前后对称双足与侧护甲，通过黑色 2×2 挂板扣在核心柱底部侧凸点上"
+  },
+  {
+   "id": "core",
+   "label": "中央 SNOT 核心骨架",
+   "explode": [0, 0, 0],
+   "note": "由 11211 四凸点侧装砖与合页把柄板组成的 2×2 四向 SNOT 核心立柱"
+  },
+  {
+   "id": "front_armor",
+   "label": "正面装甲与蓝光炮塔",
+   "parent": "core",
+   "explode": [0, 0, 7],
+   "note": "正面 (+z) 白色 2×6 底板、浅蓝灰 2×4 护板与竖纹圆砖蓝光炮塔"
+  },
+  {
+   "id": "back_armor",
+   "label": "背面装甲与红光炮塔",
+   "parent": "core",
+   "explode": [0, 0, -7],
+   "note": "背面 (-z) 黑色 2×6 底板、红棕 2×4 护板与黑色竖纹圆砖红光炮塔"
+  },
+  {
+   "id": "right_armor",
+   "label": "右侧装甲与黄光炮塔",
+   "parent": "core",
+   "explode": [7, 0, 0],
+   "note": "右侧 (+x) 黑色 2×4 板与竖纹圆砖黄光方灯炮塔"
+  },
+  {
+   "id": "left_armor",
+   "label": "左侧装甲与红光炮塔",
+   "parent": "core",
+   "explode": [-7, 0, 0],
+   "note": "左侧 (-x) 深红 2×4 板与黑色竖纹圆砖红光方灯炮塔"
+  },
+  {
+   "id": "wings",
+   "label": "四片合页可变掠翼",
+   "parent": "core",
+   "explode": [0, 9, 0],
+   "note": "前黄后红四片 2×4 楔形翼板，通过 1×2 水平夹板扣在核心把柄上"
+  },
+  {
+   "id": "head",
+   "label": "顶部雷达塔与双斜肩甲",
+   "subassembly": true,
+   "explode": [0, 18, 0],
+   "note": "前绿 45° 斜砖、后黄弧面斜砖、中央深蓝灰 2×2 圆砖与顶面 4 颗透明圆片"
+  }
+ ],
+ "steps": [
+  { "n": 1, "title": "双足底垫板", "note": "铺设前后双足的 1×2 底脚板" },
+  { "n": 2, "title": "双足 1×4 承重横梁", "note": "前足白+黑 1×4 砖，后足深蓝灰+黄 1×4 砖" },
+  { "n": 3, "title": "双足合页连接与足侧 2×2 平板护甲", "note": "安装把柄夹板并在左右两侧扣上沙色与白色 2×2 平板" },
+  { "n": 4, "title": "下部 SNOT 侧凸点立柱与双足挂板", "note": "背靠背立起黑、深灰 11211 侧凸点砖，并用黑色 2×2 板锁紧双足" },
+  { "n": 5, "title": "中段四向 SNOT 核心立柱", "note": "铺设 2×2 承重板，立起左右与前后四向 11211 侧凸点核心砖" },
+  { "n": 6, "title": "上段核心与四翼把柄挂架", "note": "安装上段核心砖与 1×2 带侧把柄板，供四片掠翼夹持" },
+  { "n": 7, "title": "正面与背面 SNOT 装甲板及圆筒炮塔", "note": "在正面(+z)与背面(-z)分别扣上 2×6 板、2×4 板及竖纹圆筒炮塔" },
+  { "n": 8, "title": "左右两侧 SNOT 装甲板与方灯炮塔", "note": "在右侧(+x)扣黑色 2×4 板，左侧(-x)扣深红 2×4 板与侧炮塔" },
+  { "n": 9, "title": "安装四片可变掠翼", "note": "前侧装两片黄色楔形翼，后侧装红色与深红色楔形翼" },
+  { "n": 10, "title": "子组件：顶部肩甲底座与绿/黄斜砖", "note": "在深蓝灰 2×4 底板上安装前侧绿色 45° 斜砖与后侧黄色弧面斜砖" },
+  { "n": 11, "title": "子组件：中央 2×2 圆砖与四色透明雷达片", "note": "安装深蓝灰 2×2 圆砖，顶面按实物方位扣上 1 蓝、2 红、1 黄透明圆片" },
+  { "n": 12, "title": "装上顶部雷达塔与双斜肩甲", "attach": "head", "note": "将拼好的顶部雷达塔子组件整体扣合到核心立柱顶端" }
+ ],
+ "parts": [
+  { "id": "p01", "part": "3023", "color": 15, "at": [-1, 0, 1], "rot": 90, "step": 1, "module": "legs", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a000_e05", "ext_bottom", "dis_legs_pair"] },
+  { "id": "p02", "part": "3023", "color": 15, "at": [2, 0, 1], "rot": 90, "step": 1, "module": "legs", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a000_e05", "ext_bottom", "dis_legs_pair"] },
+  { "id": "p03", "part": "3023", "color": 72, "at": [-1, 0, -1], "rot": 90, "step": 1, "module": "legs", "status": "confirmed", "confidence": 0.94, "evidence": ["ext_a180_e05", "ext_bottom", "dis_legs_pair"] },
+  { "id": "p04", "part": "3023", "color": 72, "at": [2, 0, -1], "rot": 90, "step": 1, "module": "legs", "status": "confirmed", "confidence": 0.94, "evidence": ["ext_a180_e05", "ext_bottom", "dis_legs_pair"] },
+
+  { "id": "p05", "part": "3010", "color": 15, "at": [-1, 1, 1], "rot": 0, "step": 2, "module": "legs", "status": "confirmed", "confidence": 0.98, "evidence": ["ext_a000_e05", "ext_bottom", "dis_legs_pair"] },
+  { "id": "p06", "part": "3010", "color": 0, "at": [-1, 1, 2], "rot": 0, "step": 2, "module": "legs", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a000_e05", "dis_legs_pair"] },
+  { "id": "p07", "part": "3010", "color": 72, "at": [-1, 1, 0], "rot": 0, "step": 2, "module": "legs", "status": "confirmed", "confidence": 0.97, "evidence": ["ext_bottom", "dis_legs_pair"] },
+  { "id": "p08", "part": "3010", "color": 14, "at": [-1, 1, -1], "rot": 0, "step": 2, "module": "legs", "status": "confirmed", "confidence": 0.98, "evidence": ["ext_a180_e05", "ext_bottom", "dis_legs_pair"] },
+
+  { "id": "p09", "part": "48336", "color": 14, "at": [0, 4, 2], "rot": 180, "step": 3, "module": "legs", "status": "confirmed", "confidence": 0.95, "evidence": ["dis_legs_pair"] },
+  { "id": "p10", "part": "60470", "color": 1, "at": [0, 4, 1], "rot": 0, "step": 3, "module": "legs", "mount": "p09", "status": "confirmed", "confidence": 0.95, "evidence": ["dis_legs_pair"] },
+  { "id": "p11", "part": "48336", "color": 4, "at": [0, 4, -1], "rot": 0, "step": 3, "module": "legs", "status": "confirmed", "confidence": 0.95, "evidence": ["dis_legs_pair"] },
+  { "id": "p12", "part": "60470", "color": 14, "at": [0, 4, 0], "rot": 180, "step": 3, "module": "legs", "mount": "p11", "status": "confirmed", "confidence": 0.95, "evidence": ["dis_legs_pair"] },
+  { "id": "p13", "part": "3023", "color": 10, "at": [-1, 4, 1], "rot": 90, "step": 3, "module": "legs", "status": "confirmed", "confidence": 0.94, "evidence": ["ext_a000_e05", "dis_legs_pair"] },
+  { "id": "p14", "part": "3023", "color": 15, "at": [2, 4, 1], "rot": 90, "step": 3, "module": "legs", "status": "confirmed", "confidence": 0.94, "evidence": ["ext_a000_e05", "dis_legs_pair"] },
+  { "id": "p15", "part": "3023", "color": 72, "at": [-1, 4, -1], "rot": 90, "step": 3, "module": "legs", "status": "confirmed", "confidence": 0.92, "evidence": ["ext_a180_e05", "dis_legs_pair"] },
+  { "id": "p16", "part": "3023", "color": 14, "at": [2, 4, -1], "rot": 90, "step": 3, "module": "legs", "status": "confirmed", "confidence": 0.92, "evidence": ["ext_a180_e05", "dis_legs_pair"] },
+  { "id": "p17", "part": "3068b", "color": 19, "at": [3, 0, 1], "rot": 0, "up": "+x", "snot": 0, "step": 3, "module": "legs", "mount": "p05", "status": "confirmed", "confidence": 0.95, "evidence": ["ext_a090_e05", "ext_bottom"] },
+  { "id": "p18", "part": "3068b", "color": 15, "at": [3, 0, -1], "rot": 0, "up": "+x", "snot": 0, "step": 3, "module": "legs", "mount": "p07", "status": "confirmed", "confidence": 0.95, "evidence": ["ext_a090_e05", "ext_bottom"] },
+  { "id": "p19", "part": "3068b", "color": 15, "at": [-1, 0, 1], "rot": 0, "up": "-x", "snot": 0, "step": 3, "module": "legs", "mount": "p05", "status": "confirmed", "confidence": 0.95, "evidence": ["ext_a270_e05", "ext_bottom"] },
+  { "id": "p20", "part": "3068b", "color": 19, "at": [-1, 0, -1], "rot": 0, "up": "-x", "snot": 0, "step": 3, "module": "legs", "mount": "p07", "status": "confirmed", "confidence": 0.95, "evidence": ["ext_a270_e05", "ext_bottom"] },
+
+  { "id": "p21", "part": "11211", "color": 0, "at": [0, 5, 1], "rot": 0, "step": 4, "module": "core", "status": "confirmed", "confidence": 0.98, "evidence": ["dis_core_right", "dis_core_back", "dis_core_bottom"] },
+  { "id": "p22", "part": "11211", "color": 72, "at": [0, 5, 0], "rot": 180, "step": 4, "module": "core", "status": "confirmed", "confidence": 0.98, "evidence": ["dis_core_right", "dis_core_back", "dis_core_bottom"] },
+  { "id": "p23", "part": "3022", "color": 0, "at": [0, 3, 2], "rot": 0, "up": "+z", "snot": 0, "step": 4, "module": "legs", "mount": "p21", "status": "confirmed", "confidence": 0.97, "evidence": ["dis_legs_pair"] },
+  { "id": "p24", "part": "3022", "color": 0, "at": [0, 3, 0], "rot": 0, "up": "-z", "snot": 0, "step": 4, "module": "legs", "mount": "p22", "status": "confirmed", "confidence": 0.97, "evidence": ["dis_legs_pair"] },
+
+  { "id": "p25", "part": "3022", "color": 0, "at": [0, 10, 0], "rot": 0, "step": 5, "module": "core", "status": "confirmed", "confidence": 0.97, "evidence": ["dis_core_right", "dis_core_back", "dis_core_bottom"] },
+  { "id": "p28", "part": "11211", "color": 72, "at": [1, 11, 0], "rot": 270, "step": 5, "module": "core", "status": "confirmed", "confidence": 0.98, "evidence": ["dis_core_right"] },
+  { "id": "p29", "part": "11211", "color": 0, "at": [0, 11, 0], "rot": 90, "step": 5, "module": "core", "status": "inferred", "confidence": 0.9, "evidence": ["dis_core_back"], "note": "与右侧 p28 对称的左侧 SNOT 侧凸点砖" },
+
+  { "id": "p26", "part": "11211", "color": 72, "at": [0, 16, 1], "rot": 0, "step": 6, "module": "core", "status": "confirmed", "confidence": 0.95, "evidence": ["dis_core_right"] },
+  { "id": "p27", "part": "11211", "color": 0, "at": [0, 16, 0], "rot": 180, "step": 6, "module": "core", "status": "confirmed", "confidence": 0.95, "evidence": ["dis_core_back"] },
+  { "id": "p34", "part": "48336", "color": 15, "at": [1, 21, 0], "rot": 270, "step": 6, "module": "core", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a045_e35", "dis_core_right"] },
+  { "id": "p35", "part": "48336", "color": 15, "at": [0, 21, 0], "rot": 90, "step": 6, "module": "core", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a315_e35", "dis_core_back"] },
+
+  { "id": "p40", "part": "3795", "color": 15, "at": [0, 7, 2], "rot": 90, "up": "+z", "snot": 1, "step": 7, "module": "front_armor", "mount": "p26", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a000_e05", "ext_a045_e35", "ext_a315_e35"] },
+  { "id": "p41", "part": "3020", "color": 71, "at": [0, 12, 2], "rot": 90, "up": "+z", "snot": 2, "step": 7, "module": "front_armor", "mount": "p40", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a000_e05", "ext_a045_e35", "ext_a315_e35"] },
+  { "id": "p42", "part": "3062b", "color": 71, "at": [0.5, 15.5, 2], "rot": 0, "up": "+z", "snot": 3, "step": 7, "module": "front_armor", "mount": "p41", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a000_e05", "ext_a045_e35"] },
+  { "id": "p43", "part": "4073", "color": 43, "at": [0.5, 15.5, 2], "rot": 0, "up": "+z", "snot": 6, "step": 7, "module": "front_armor", "mount": "p42", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a000_e05", "ext_a315_e35"] },
+
+  { "id": "p44", "part": "3795", "color": 0, "at": [0, 7, 0], "rot": 90, "up": "-z", "snot": 1, "step": 7, "module": "back_armor", "mount": "p27", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a180_e05", "ext_a135_e35", "ext_a225_e35"] },
+  { "id": "p45", "part": "3023", "color": 4, "at": [0, 7, 0], "rot": 0, "up": "-z", "snot": 2, "step": 7, "module": "back_armor", "mount": "p44", "status": "confirmed", "confidence": 0.97, "evidence": ["ext_a180_e05", "ext_a225_e35"] },
+  { "id": "p46", "part": "3020", "color": 70, "at": [0, 12, 0], "rot": 90, "up": "-z", "snot": 2, "step": 7, "module": "back_armor", "mount": "p44", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a180_e05", "ext_a135_e35"] },
+  { "id": "p47", "part": "3062b", "color": 0, "at": [0.5, 15.5, 0], "rot": 0, "up": "-z", "snot": 3, "step": 7, "module": "back_armor", "mount": "p46", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a180_e05", "ext_a135_e35"] },
+  { "id": "p48", "part": "4073", "color": 36, "at": [0.5, 15.5, 0], "rot": 0, "up": "-z", "snot": 6, "step": 7, "module": "back_armor", "mount": "p47", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a180_e05", "ext_a225_e35"] },
+
+  { "id": "p49", "part": "3020", "color": 0, "at": [2, 11, 0], "rot": 0, "up": "+x", "snot": 1, "step": 8, "module": "right_armor", "mount": "p28", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a090_e05", "ext_a045_e35", "ext_a135_e35"] },
+  { "id": "p50", "part": "87087", "color": 71, "at": [2, 14.5, 0.5], "rot": 0, "up": "+x", "snot": 2, "step": 8, "module": "right_armor", "mount": "p49", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a090_e05", "ext_a045_e35"] },
+  { "id": "p51", "part": "3062b", "color": 71, "at": [2, 14.5, 0.5], "rot": 0, "up": "+x", "snot": 5, "step": 8, "module": "right_armor", "mount": "p50", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a090_e05", "ext_a045_e35"] },
+  { "id": "p52", "part": "3024", "color": 46, "at": [2, 14.5, 0.5], "rot": 0, "up": "+x", "snot": 8, "step": 8, "module": "right_armor", "mount": "p51", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a090_e05", "ext_a135_e35"] },
+
+  { "id": "p53", "part": "3020", "color": 320, "at": [0, 11, 0], "rot": 0, "up": "-x", "snot": 1, "step": 8, "module": "left_armor", "mount": "p29", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a270_e05", "ext_a225_e35", "ext_a315_e35"] },
+  { "id": "p54", "part": "87087", "color": 0, "at": [0, 14.5, 0.5], "rot": 0, "up": "-x", "snot": 2, "step": 8, "module": "left_armor", "mount": "p53", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_a270_e05", "ext_a315_e35"] },
+  { "id": "p55", "part": "3062b", "color": 0, "at": [0, 14.5, 0.5], "rot": 0, "up": "-x", "snot": 5, "step": 8, "module": "left_armor", "mount": "p54", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a270_e05", "ext_a225_e35"] },
+  { "id": "p56", "part": "3024", "color": 36, "at": [0, 14.5, 0.5], "rot": 0, "up": "-x", "snot": 8, "step": 8, "module": "left_armor", "mount": "p55", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a270_e05", "ext_a315_e35"] },
+
+  { "id": "p57", "part": "60470", "color": 0, "at": [2, 13, 1.5], "rot": 90, "up": "+x", "snot": 1, "step": 9, "module": "wings", "mount": "p34", "status": "confirmed", "confidence": 0.97, "evidence": ["ext_a045_e35", "ext_a090_e05"] },
+  { "id": "p58", "part": "41769", "color": 14, "at": [2, 9, 1.5], "rot": 0, "up": "+x", "snot": 2, "step": 9, "module": "wings", "mount": "p57", "status": "confirmed", "confidence": 0.98, "evidence": ["ext_a000_e05", "ext_a045_e35", "ext_a090_e05"] },
+  { "id": "p59", "part": "60470", "color": 70, "at": [0, 13, 1.5], "rot": 270, "up": "-x", "snot": 1, "step": 9, "module": "wings", "mount": "p35", "status": "confirmed", "confidence": 0.97, "evidence": ["ext_a270_e05", "ext_a315_e35"] },
+  { "id": "p60", "part": "41770", "color": 14, "at": [0, 9, 1.5], "rot": 0, "up": "-x", "snot": 2, "step": 9, "module": "wings", "mount": "p59", "status": "confirmed", "confidence": 0.98, "evidence": ["ext_a000_e05", "ext_a270_e05", "ext_a315_e35"] },
+  { "id": "p61", "part": "60470", "color": 4, "at": [2, 13, -1.5], "rot": 270, "up": "+x", "snot": 1, "step": 9, "module": "wings", "mount": "p34", "status": "confirmed", "confidence": 0.97, "evidence": ["ext_a090_e05", "ext_a135_e35"] },
+  { "id": "p62", "part": "41770", "color": 320, "at": [2, 9, -1.5], "rot": 180, "up": "+x", "snot": 2, "step": 9, "module": "wings", "mount": "p61", "status": "confirmed", "confidence": 0.98, "evidence": ["ext_a090_e05", "ext_a135_e35", "ext_a180_e05"] },
+  { "id": "p63", "part": "60470", "color": 4, "at": [0, 13, -1.5], "rot": 90, "up": "-x", "snot": 1, "step": 9, "module": "wings", "mount": "p35", "status": "confirmed", "confidence": 0.97, "evidence": ["ext_a225_e35", "ext_a270_e05"] },
+  { "id": "p64", "part": "41769", "color": 4, "at": [0, 9, -1.5], "rot": 180, "up": "-x", "snot": 2, "step": 9, "module": "wings", "mount": "p63", "status": "confirmed", "confidence": 0.98, "evidence": ["ext_a180_e05", "ext_a225_e35", "ext_a270_e05"] },
+
+  { "id": "p65", "part": "3020", "color": 72, "at": [0, 22, -1], "rot": 90, "step": 10, "module": "head", "status": "confirmed", "confidence": 0.96, "evidence": ["ext_top_e90", "dis_core_right"] },
+  { "id": "p66", "part": "3039", "color": 2, "at": [0, 23, 1], "rot": 0, "step": 10, "module": "head", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a000_e05", "ext_top_e90", "ext_a045_e35"] },
+  { "id": "p67", "part": "15068", "color": 14, "at": [0, 23, -1], "rot": 180, "step": 10, "module": "head", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_a180_e05", "ext_top_e90", "ext_a135_e35"] },
+
+  { "id": "p68", "part": "3941", "color": 72, "at": [0, 26, 0], "rot": 0, "step": 11, "module": "head", "mount": "p66", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_top_e90", "ext_a045_e35", "ext_a135_e35"] },
+  { "id": "p69", "part": "4073", "color": 43, "at": [1, 29, 1], "rot": 0, "step": 11, "module": "head", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_top_e90", "ext_a045_e35"] },
+  { "id": "p70", "part": "4073", "color": 36, "at": [0, 29, 1], "rot": 0, "step": 11, "module": "head", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_top_e90", "ext_a315_e35"] },
+  { "id": "p71", "part": "4073", "color": 36, "at": [1, 29, 0], "rot": 0, "step": 11, "module": "head", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_top_e90", "ext_a135_e35"] },
+  { "id": "p72", "part": "4073", "color": 46, "at": [0, 29, 0], "rot": 0, "step": 11, "module": "head", "status": "confirmed", "confidence": 0.99, "evidence": ["ext_top_e90", "ext_a225_e35"] }
+ ],
+ "mechanisms": [
+  {
+   "id": "wings_front",
+   "label": "前掠双翼（黄）",
+   "type": "hinge",
+   "parts": ["p57", "p58", "p59", "p60"],
+   "pivot": [1, 14, 1.5],
+   "axis": [0, 1, 0],
+   "range": [0, 45],
+   "default": 22,
+   "evidence": ["wing_open_fl", "wing_open_fr", "wing_half_f"]
+  },
+  {
+   "id": "wings_back",
+   "label": "后掠双翼（红/深红）",
+   "type": "hinge",
+   "parts": ["p61", "p62", "p63", "p64"],
+   "pivot": [1, 14, -0.5],
+   "axis": [0, 1, 0],
+   "range": [-45, 0],
+   "default": -22,
+   "evidence": ["wing_open_bl", "wing_open_br", "wing_half_b"]
+  },
+  {
+   "id": "legs_detach",
+   "label": "双足起落架底座（快拆）",
+   "type": "removable",
+   "parts": ["p01", "p02", "p03", "p04", "p05", "p06", "p07", "p08", "p09", "p10", "p11", "p12", "p13", "p14", "p15", "p16", "p17", "p18", "p19", "p20", "p23", "p24"],
+   "offset": [0, -10, 0],
+   "default": 0,
+   "evidence": ["dis_core_back", "dis_core_bottom", "dis_legs_pair"]
+  },
+  {
+   "id": "armor_detach",
+   "label": "正面与右侧装甲（拆开看核心）",
+   "type": "removable",
+   "parts": ["p40", "p41", "p42", "p43", "p49", "p50", "p51", "p52"],
+   "offset": [4, 0, 5],
+   "default": 0,
+   "evidence": ["dis_core_right", "armor_open_back", "armor_mod_view"]
+  }
+ ]
+}

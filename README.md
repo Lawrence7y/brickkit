@@ -2,7 +2,9 @@
 
 **把自己拼的乐高实物模型（多角度照片）整理成可交互的 3D 拼装演示、爆炸图和乐高风格拼装图纸。**
 
-> **在线演示（示例模型「林间小屋」）**：[3D 交互展示](https://lawrence7y.github.io/brickkit/) ｜ [乐高风格拼装图纸（`#view=book`）](https://lawrence7y.github.io/brickkit/#view=book)
+> **在线演示**：
+> - **示例 1 · 林间小屋**：[3D 交互展示](https://lawrence7y.github.io/brickkit/) ｜ [乐高风格拼装图纸（`#view=book`）](https://lawrence7y.github.io/brickkit/#view=book)
+> - **示例 2 · 四翼重装侦察机甲塔（实物照片重建）**：[3D 交互展示](https://lawrence7y.github.io/brickkit/mecha.html) ｜ [乐高风格拼装图纸（`#view=book`）](https://lawrence7y.github.io/brickkit/mecha.html#view=book)
 
 BrickKit 定义了一套数据格式（`brickbuild` 0.2）、照片拍摄规范、校验工具和单文件网页查看器，并提供输出 JSON 的命令行，方便 AI 智能体（Harness）接入：智能体负责“看照片 → 写数据”，BrickKit 负责“校验 → 渲染对比 → 展示 → 出图纸”。
 
@@ -114,9 +116,9 @@ cli/brickkit.mjs        命令行（Harness 入口）
 src/core/core.js        核心：坐标、校验、步骤计划、零件清单、LDraw/MPD 导出、照片检查（纯函数，网页与命令行共用）
 src/viewer/             网页查看器（three.js）：main.js 3D 展示、booklet.js 拼装图纸、geom.js 零件几何
 dist/viewer.html        打包好的单文件查看器
-catalog/                零件目录（44 种常用零件，LDraw 编号与尺寸已核对）、颜色表（32 色）
+catalog/                零件目录（58 种常用零件：基础砖/板/平板/斜面/门窗 + 圆砖/圆板/弧面斜砖/SNOT 侧凸点砖/合页夹板/楔形翼板）、颜色表（32 色）
 schema/                 JSON Schema：brickbuild.schema.json、photoset.schema.json
-examples/               示例“林间小屋”：75 个零件、15 步、6 个模块、门可开、屋顶可取下
+examples/               示例模型：cottage（林间小屋，75 件）与 mecha（四翼重装侦察机甲塔，70 件实物重建样本）
 out/                    示例输出：拼装图纸 PDF、渲染图
 docs/                   数据格式、拍摄规范、截图
 tools/                  截图自检脚本（qa_run.mjs、qa_book.mjs）
@@ -126,6 +128,6 @@ tools/                  截图自检脚本（qa_run.mjs、qa_book.mjs）
 
 ## 现状与限制
 
-- 当前零件目录只覆盖基础零件（砖、板、平板、斜面、门窗）；Technic、弧形件、SNOT 侧装还不支持，`catalog/gen-catalog.mjs` 可以扩充。
+- 当前零件目录覆盖 58 种常用零件（砖、板、平板、斜面、弧面斜砖、圆砖/圆板、SNOT 侧凸点砖、合页夹板/把柄板、楔形翼板、门窗），支持 6 向 SNOT 朝向（`up: "+y"|"-y"|"+z"|"-z"|"+x"|"-x"` 与 `snot` 片偏移）；更复杂的 Technic 齿轮连杆可在 `catalog/gen-catalog.mjs` 中扩充。
 - 坐标是整格 / 整片网格，旋转只支持 90° 倍数。
 - 从照片识别零件本身不在本仓库内，需要智能体或第三方识别服务完成；BrickKit 负责约束、校验和展示，“准确还原”依赖人工确认环节。

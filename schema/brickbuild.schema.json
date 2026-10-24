@@ -134,11 +134,11 @@
      "at": {
       "type": "array",
       "items": {
-       "type": "integer"
+       "type": "number"
       },
       "minItems": 3,
       "maxItems": 3,
-      "description": "旋转后占地的最小角 [x 格, 层(片), z 格]"
+      "description": "旋转后占地的最小角 [x 格, 层(片), z 格]；标准水平件（up='+y'）必须是整数"
      },
      "rot": {
       "enum": [
@@ -148,6 +148,21 @@
        270
       ],
       "description": "俯视逆时针绕 +y 旋转"
+     },
+     "up": {
+      "enum": [
+       "+y",
+       "-y",
+       "+z",
+       "-z",
+       "+x",
+       "-x"
+      ],
+      "description": "凸点朝向（默认 +y 朝上；SNOT 侧装或倒装可设为 +z/-z/+x/-x/-y）"
+     },
+     "snot": {
+      "type": "integer",
+      "description": "沿 up 法向叠放的片数偏移（默认 0）"
      },
      "step": {
       "type": "integer",

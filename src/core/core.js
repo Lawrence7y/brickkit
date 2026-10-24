@@ -5,6 +5,7 @@ export const FORMAT = 'brickbuild';
 export const VERSION = '0.2';
 export const PLATE = 0.4;              // 1 片高度（以“格”为单位：3.2mm / 8mm）
 const ROTS = [0, 90, 180, 270];
+export const UPS = ['+y', '-y', '+z', '-z', '+x', '-x'];
 
 const r6 = (v) => Math.round(v * 1e6) / 1e6 || 0;
 export function rotXZ(x, z, rot) {     // 绕竖直轴 +y 旋转（俯视逆时针）
@@ -15,9 +16,16 @@ export function rotatedSize(def, rot) {
   const [sx, sz] = def.size;
   return rot % 180 === 0 ? [sx, sz] : [sz, sx];
 }
-/** 零件占地中心（格坐标：x、z 为格，y 为片） */
+/** 零件底面中心（格坐标：x、z 为格，y 为片；支持 6 向 SNOT 朝向 up 与法向片偏移 snot） */
 export function partCenter(p, def) {
   const [w, d] = rotatedSize(def, p.rot || 0);
+  const up = p.up || '+y', s = p.snot || 0;
+  if (up === '+y') return [p.at[0] + w / 2, p.at[1] + s, p.at[2] + d / 2];
+  if (up === '-y') return [p.at[0] + w / 2, p.at[1] + def.h - s, p.at[2] + d / 2];
+  if (up === '+z') return [p.at[0] + w / 2, p.at[1] + d / (2 * PLATE), p.at[2] + s * PLATE];
+  if (up === '-z') return [p.at[0] + w / 2, p.at[1] + d / (2 * PLATE), p.at[2] - s * PLATE];
+  if (up === '+x') return [p.at[0] + s * PLATE, p.at[1] + w / (2 * PLATE), p.at[2] + d / 2];
+  if (up === '-x') return [p.at[0] - s * PLATE, p.at[1] + w / (2 * PLATE), p.at[2] + d / 2];
   return [p.at[0] + w / 2, p.at[1], p.at[2] + d / 2];
 }
 /** 本地格子（i 沿本地 x，k 沿本地 z；k=0 为后排） */
@@ -25,8 +33,9 @@ export function localCells(def) {
   const [sx, sz] = def.size, out = [];
   for (let i = 0; i < sx; i++) for (let k = 0; k < sz; k++) {
     let stud = false;
-    if (def.kind === 'brick' || def.kind === 'plate' || def.kind === 'doorframe') stud = true;
+    if (def.kind === 'brick' || def.kind === 'plate' || def.kind === 'doorframe' || def.kind === 'round' || def.kind === 'snot' || def.kind === 'barplate' || def.kind === 'clip') stud = true;
     else if (def.kind === 'slope') stud = k === 0;
+    else if (def.kind === 'wedge') stud = def.side === 'L' ? i > 0 || k === 0 : i < sx - 1 || k === 0;
     out.push({ i, k, lx: i - sx / 2 + 0.5, lz: k - sz / 2 + 0.5, stud });
   }
   return out;
@@ -109,7 +118,10 @@ export function validate(model, cat, opts = {}) {
     const def = cat.parts[p.part];
     if (!def) { E('part-unknown', `${tag}：目录里没有零件 ${p.part}`, [p.id]); continue; }
     if (cat.colors && !cat.colors[String(p.color)]) W('color-unknown', `${tag}：颜色代码 ${p.color} 不在颜色表中`, [p.id]);
-    if (!Array.isArray(p.at) || p.at.length !== 3 || !p.at.every(Number.isInteger)) { E('at', `${tag}：at 必须是 3 个整数 [x, 层, z]`, [p.id]); continue; }
+    const isSnot = p.up !== undefined && p.up !== '+y';
+    if (p.up !== undefined && !UPS.includes(p.up)) { E('up', `${tag}：up 只能是 +y/-y/+z/-z/+x/-x`, [p.id]); continue; }
+    if (p.snot !== undefined && !Number.isInteger(p.snot)) { E('snot', `${tag}：snot 必须是整数（沿 up 方向偏移的片数）`, [p.id]); continue; }
+    if (!Array.isArray(p.at) || p.at.length !== 3 || !p.at.every((v) => isSnot ? typeof v === 'number' && Number.isFinite(v) : Number.isInteger(v))) { E('at', `${tag}：at 必须是 3 个整数 [x, 层, z]`, [p.id]); continue; }
     if (!ROTS.includes(p.rot ?? 0)) { E('rot', `${tag}：rot 只能是 0/90/180/270`, [p.id]); continue; }
     if (!Number.isInteger(p.step) || p.step < 1) { E('step', `${tag}：step 必须是 ≥1 的整数`, [p.id]); continue; }
     if (p.status && !['confirmed', 'inferred', 'uncertain'].includes(p.status)) W('status', `${tag}：status 只能是 confirmed / inferred / uncertain`, [p.id]);
@@ -143,10 +155,10 @@ export function validate(model, cat, opts = {}) {
   }
   for (const st of plan.steps) if (st.mixed) W('sub-mixed', `第 ${st.n} 步同时包含子组件和主体的零件，建议分成两步`, st.parts);
 
-  // 占位冲突
+  // 占位冲突（水平朝向 +y 的标准零件参与网格占位）
   const occ = new Map();
   for (const { p, def } of good) {
-    if (def.occupies === false) continue;
+    if (def.occupies === false || (p.up && p.up !== '+y')) continue;
     for (const f of footprint(p, def)) for (let y = p.at[1]; y < p.at[1] + def.h; y++) {
       const key = `${f.x},${y},${f.z}`, o = occ.get(key);
       if (o && o !== p.id) {
@@ -163,13 +175,13 @@ export function validate(model, cat, opts = {}) {
 
   // 凸点连接图
   const studs = new Map();               // "x,z,layer" -> [partId]
-  for (const { p, def } of good) for (const f of footprint(p, def)) if (f.stud) {
+  for (const { p, def } of good) if (!p.up || p.up === '+y') for (const f of footprint(p, def)) if (f.stud) {
     const k = `${f.x},${f.z},${topLayer(p, def)}`; (studs.get(k) || studs.set(k, []).get(k)).push(p.id);
   }
   const adj = new Map(good.map(({ p }) => [p.id, new Set()]));
   const link = (a, b) => { if (adj.has(a) && adj.has(b)) { adj.get(a).add(b); adj.get(b).add(a); } };
   for (const { p, def } of good) {
-    if (def.kind === 'door') continue;   // 门通过门轴安装，不靠底部凸点
+    if (def.kind === 'door' || (p.up && p.up !== '+y')) continue;   // 门或 SNOT 侧装件通过 mount 连接
     for (const f of footprint(p, def)) for (const id of studs.get(`${f.x},${f.z},${p.at[1]}`) || []) if (id !== p.id) link(p.id, id);
   }
   for (const { p } of good) if (p.mount) {

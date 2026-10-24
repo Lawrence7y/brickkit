@@ -23,6 +23,25 @@ add('3041', 'Slope Brick 45 2 x 4 Double', '双面斜砖 45° 2×4（屋脊）',
 add('60596', 'Door 1 x 4 x 6 Frame', '门框 1×4×6', 'doorframe', [4, 1], 18);
 add('60623', 'Door 1 x 4 x 6 with 4 Panes and Stud Handle', '门 1×4×6（四格窗）', 'door', [4, 1], 18,
   { occupies: false, ldrawOrigin: [-1.6, 18, -0.25], hinge: { pivot: [-1.6, 0, -0.25], axis: [0, 1, 0] }, note: '与门框使用相同的 at/rot；门轴在门框背面左侧' });
+// 圆柱与圆板
+add('3941', 'Brick Round 2 x 2', '圆砖 2×2', 'round', [2, 2], 3);
+add('3062b', 'Brick Round 1 x 1 Open Stud', '圆砖 1×1（竖纹柱）', 'round', [1, 1], 3, { fluted: true });
+add('4073', 'Plate Round 1 x 1', '圆板 1×1', 'round', [1, 1], 1);
+// 弧面斜砖：本地 +z 为弧面下坡方向（正面）
+add('15068', 'Slope Brick Curved 2 x 2', '弧面斜砖 2×2', 'cslope', [2, 2], 2);
+add('47457', 'Slope Brick Curved 2 x 2 x 1', '弧面斜砖 2×2×1（高3片）', 'cslope', [2, 2], 3);
+// SNOT 侧凸点砖：本地 +z 侧面带凸点
+add('87087', 'Brick 1 x 1 with Stud on 1 Side', '单面侧凸点砖 1×1', 'snot', [1, 1], 3);
+add('11211', 'Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side', '单面四凸点砖 1×2（高5片）', 'snot', [2, 1], 5);
+add('30414', 'Brick 1 x 4 with 4 Studs on 1 Side', '单面四凸点砖 1×4', 'snot', [4, 1], 3);
+// 合页夹板与把柄板：夹口/把柄朝向本地 +z
+add('48336', 'Plate 1 x 2 with Handle on Side', '带侧把柄板 1×2', 'barplate', [2, 1], 1);
+add('60470', 'Plate 1 x 2 with Horizontal Clips', '带水平夹板 1×2', 'clip', [2, 1], 1);
+// 楔形翼板：斜切边在本地 -x（Left）或 +x（Right）
+add('41770', 'Wedge Plate 4 x 2 Left', '左楔形翼板 2×4', 'wedge', [2, 4], 1, { side: 'L' });
+add('41769', 'Wedge Plate 4 x 2 Right', '右楔形翼板 2×4', 'wedge', [2, 4], 1, { side: 'R' });
+add('24299', 'Wedge Plate 2 x 2 Left', '左楔形翼板 2×2', 'wedge', [2, 2], 1, { side: 'L' });
+add('24307', 'Wedge Plate 2 x 2 Right', '右楔形翼板 2×2', 'wedge', [2, 2], 1, { side: 'R' });
 for (const v of Object.values(P)) { if (!v.ldrawOrigin) v.ldrawOrigin = [0, v.h, 0]; if (v.checked === undefined) v.checked = true; }
 const out = { format: 'brickbuild-catalog', version: '0.1',
   units: { stud: '1 格 = 8 mm（LDraw 20 LDU）', plate: '1 层 = 3.2 mm（LDraw 8 LDU）' },

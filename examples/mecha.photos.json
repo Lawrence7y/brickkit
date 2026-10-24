@@ -1,0 +1,326 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.2",
+ "capture": {
+  "device": "Smartphone Camera (3060×4080)",
+  "reference": "标准 2×4 砖 (32mm×16mm) 与 2×6 板 (48mm×16mm) 实物尺寸校准",
+  "frontMarker": "+z 正面为白底 2×6 装甲板、绿斜肩与双黄前掠翼方向",
+  "lighting": "室内柔光多角度环拍 + 局部拆解补拍"
+ },
+ "mechanisms": [
+  {
+   "id": "wings_front",
+   "label": "前掠双翼（黄）",
+   "type": "hinge"
+  },
+  {
+   "id": "wings_back",
+   "label": "后掠双翼（红/深红）",
+   "type": "hinge"
+  },
+  {
+   "id": "legs_detach",
+   "label": "双足起落架底座",
+   "type": "removable"
+  },
+  {
+   "id": "armor_detach",
+   "label": "侧装装甲护板",
+   "type": "removable"
+  }
+ ],
+ "skipped": [
+  { "slot": "orbit-0", "reason": "已由 flat-0 正面平视与 orbit-45/orbit-315 斜俯视及局部拆解图完整覆盖" },
+  { "slot": "orbit-180", "reason": "已由 flat-180 背面平视与 orbit-135/orbit-225 斜俯视及背面拆解图完整覆盖" }
+ ],
+ "photos": [
+  {
+   "id": "ext_a000_e05",
+   "file": "1792833393279.jpg",
+   "kind": "exterior",
+   "azimuth": 0,
+   "elevation": 5,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "0° 正面平视：白色 2×6 竖装板、浅灰 2×4 板、竖纹圆砖与透明浅蓝圆片、顶部绿斜砖、黄色双前翼"
+  },
+  {
+   "id": "ext_a045_e35",
+   "file": "1792833393334.jpg",
+   "kind": "exterior",
+   "azimuth": 45,
+   "elevation": 35,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "45° 右前斜上方俯拍：同时展示正面浅灰/白装甲、右侧黑装甲与黄翼转轴夹"
+  },
+  {
+   "id": "ext_a090_e05",
+   "file": "1792833393092.jpg",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 5,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "90° 右侧平视：右侧黑色 2×4 板、灰竖纹柱+透明黄方片、黑/红夹口合页与底部双足侧面"
+  },
+  {
+   "id": "ext_a090_e20",
+   "file": "1792833393309.jpg",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 20,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "90° 右侧微俯视：展示右侧护板与前后双翼夹角"
+  },
+  {
+   "id": "ext_a135_e35",
+   "file": "1792833393358.jpg",
+   "kind": "exterior",
+   "azimuth": 135,
+   "elevation": 35,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "135° 右后斜上方俯拍：展示背面红棕/黑装甲、黄色弧面斜砖与深红右后翼"
+  },
+  {
+   "id": "ext_a180_e05",
+   "file": "1792833393211.jpg",
+   "kind": "exterior",
+   "azimuth": 180,
+   "elevation": 5,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "180° 背面平视：黑色 2×6 竖装板、红棕 2×4 板、黑竖纹柱+透明红圆片、顶部黄弧面斜砖、红/深红双后翼"
+  },
+  {
+   "id": "ext_a225_e35",
+   "file": "1792833393382.jpg",
+   "kind": "exterior",
+   "azimuth": 225,
+   "elevation": 35,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "225° 左后斜上方俯拍：展示左侧深红 2×4 板与背面装甲衔接"
+  },
+  {
+   "id": "ext_a270_e05",
+   "file": "1792833393249.jpg",
+   "kind": "exterior",
+   "azimuth": 270,
+   "elevation": 5,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "270° 左侧平视：深红 2×4 板、黑竖纹柱+透明红方片、棕/红合页夹、底部黄/白双足"
+  },
+  {
+   "id": "ext_a270_e25",
+   "file": "1792833393309.jpg",
+   "kind": "exterior",
+   "azimuth": 270,
+   "elevation": 25,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "270° 左侧斜俯视"
+  },
+  {
+   "id": "ext_a315_e35",
+   "file": "1792833393410.jpg",
+   "kind": "exterior",
+   "azimuth": 315,
+   "elevation": 35,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "315° 左前斜上方俯拍：展示正面与左侧装甲及顶部 4 颗透明圆片"
+  },
+  {
+   "id": "ext_top_e90",
+   "file": "1792833393176.jpg",
+   "kind": "exterior",
+   "azimuth": 0,
+   "elevation": 88,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "正顶视：中央深灰 2×2 圆砖 + 4 颗 1×1 透明圆片（1蓝、2红、1黄）+ 绿斜砖与黄弧面砖"
+  },
+  {
+   "id": "ext_bottom",
+   "file": "1792833393126.jpg",
+   "kind": "bottom",
+   "azimuth": 0,
+   "elevation": -85,
+   "state": "closed",
+   "width": 3060,
+   "height": 4080,
+   "note": "正底视：展示双足底部白/深灰/黄 1×4 砖、2×2 平板与四翼仰角"
+  },
+  {
+   "id": "dis_core_right",
+   "file": "media_1792834111028_9576cd6d.jpg",
+   "kind": "interior",
+   "mechanism": "armor_detach",
+   "state": "open",
+   "azimuth": 90,
+   "elevation": 15,
+   "width": 3060,
+   "height": 4080,
+   "note": "拆下右侧 2×4 黑护板与双足底座后：露出内部 1×2 SNOT 侧凸点砖、白/浅灰把柄板与底部侧凸点接口"
+  },
+  {
+   "id": "dis_core_back",
+   "file": "media_1792834111389_0ff05c8e.jpg",
+   "kind": "interior",
+   "mechanism": "legs_detach",
+   "state": "open",
+   "azimuth": 210,
+   "elevation": 20,
+   "width": 3060,
+   "height": 4080,
+   "note": "拆下背面 2×6 黑护板与双足底座后：露出底部黑/深灰 11211 四凸点侧装砖与内部骨架"
+  },
+  {
+   "id": "dis_core_bottom",
+   "file": "media_1792834111392_b28b3a43.jpg",
+   "kind": "detail",
+   "mechanism": "legs_detach",
+   "state": "open",
+   "azimuth": 180,
+   "elevation": -70,
+   "width": 3060,
+   "height": 4080,
+   "note": "上躯干底面特写：展示核心柱截面与前后把柄连接结构"
+  },
+  {
+   "id": "dis_legs_pair",
+   "file": "media_1792834111398_b71c9b2e.jpg",
+   "kind": "module",
+   "mechanism": "legs_detach",
+   "state": "open",
+   "azimuth": 0,
+   "elevation": 45,
+   "width": 3060,
+   "height": 4080,
+   "note": "拆下的前后双足子组件并排特写：展示黑色 2×2 挂板、合页夹与 1×4 砖足底"
+  },
+  {
+   "id": "wing_open_fl",
+   "file": "1792833393410.jpg",
+   "kind": "interior",
+   "mechanism": "wings_front",
+   "state": "open",
+   "azimuth": 315,
+   "elevation": 35,
+   "width": 3060,
+   "height": 4080,
+   "note": "前翼展开角度与把柄夹口细节（左前视角）"
+  },
+  {
+   "id": "wing_open_fr",
+   "file": "1792833393334.jpg",
+   "kind": "exterior",
+   "mechanism": "wings_front",
+   "state": "open",
+   "azimuth": 45,
+   "elevation": 35,
+   "width": 3060,
+   "height": 4080,
+   "note": "前翼展开角度与把柄夹口细节（右前视角）"
+  },
+  {
+   "id": "wing_half_f",
+   "file": "1792833393279.jpg",
+   "kind": "exterior",
+   "mechanism": "wings_front",
+   "state": "half",
+   "azimuth": 0,
+   "elevation": 5,
+   "width": 3060,
+   "height": 4080,
+   "note": "前翼斜掠状态正面投影"
+  },
+  {
+   "id": "wing_open_bl",
+   "file": "1792833393382.jpg",
+   "kind": "interior",
+   "mechanism": "wings_back",
+   "state": "open",
+   "azimuth": 225,
+   "elevation": 35,
+   "width": 3060,
+   "height": 4080,
+   "note": "后翼展开角度与把柄夹口细节（左后视角）"
+  },
+  {
+   "id": "wing_open_br",
+   "file": "1792833393358.jpg",
+   "kind": "exterior",
+   "mechanism": "wings_back",
+   "state": "open",
+   "azimuth": 135,
+   "elevation": 35,
+   "width": 3060,
+   "height": 4080,
+   "note": "后翼展开角度与把柄夹口细节（右后视角）"
+  },
+  {
+   "id": "wing_half_b",
+   "file": "1792833393211.jpg",
+   "kind": "exterior",
+   "mechanism": "wings_back",
+   "state": "half",
+   "azimuth": 180,
+   "elevation": 5,
+   "width": 3060,
+   "height": 4080,
+   "note": "后翼斜掠状态背面投影"
+  },
+  {
+   "id": "armor_open_back",
+   "file": "media_1792834111389_0ff05c8e.jpg",
+   "kind": "module",
+   "mechanism": "armor_detach",
+   "state": "open",
+   "azimuth": 210,
+   "elevation": 20,
+   "width": 3060,
+   "height": 4080,
+   "note": "装甲拆下后的背部视角"
+  },
+  {
+   "id": "armor_mod_view",
+   "file": "media_1792834111028_9576cd6d.jpg",
+   "kind": "module",
+   "mechanism": "armor_detach",
+   "state": "open",
+   "azimuth": 90,
+   "elevation": 15,
+   "width": 3060,
+   "height": 4080,
+   "note": "装甲拆下后的右侧视角"
+  },
+  {
+   "id": "legs_mod_2",
+   "file": "media_1792834111392_b28b3a43.jpg",
+   "kind": "module",
+   "mechanism": "legs_detach",
+   "state": "open",
+   "azimuth": 180,
+   "elevation": -70,
+   "width": 3060,
+   "height": 4080,
+   "note": "双足拆下后的接口特写"
+  }
+ ]
+}
