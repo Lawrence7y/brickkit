@@ -6,7 +6,7 @@ export const VERSION = '0.2';
 export const PLATE = 0.4;              // 1 片高度（以“格”为单位：3.2mm / 8mm）
 const ROTS = [0, 90, 180, 270];
 
-const r6 = (v) => Math.round(v * 1e6) / 1e6;
+const r6 = (v) => Math.round(v * 1e6) / 1e6 || 0;
 export function rotXZ(x, z, rot) {     // 绕竖直轴 +y 旋转（俯视逆时针）
   const t = (rot * Math.PI) / 180, c = Math.cos(t), s = Math.sin(t);
   return [r6(x * c + z * s), r6(-x * s + z * c)];

@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "description": "乐高实物模型（多角度照片）→ 3D 拼装演示、爆炸图、拼装图纸：数据格式、拍摄规范、校验、查看器与 Harness 命令行",
   "scripts": {
+    "test": "node --test",
     "build": "node build.mjs",
     "demo": "node examples/gen-cottage.mjs",
     "validate": "node cli/brickkit.mjs validate examples/cottage.brick.json --photos examples/cottage.photos.json --pretty",
