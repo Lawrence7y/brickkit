@@ -2,6 +2,8 @@
 
 **把自己拼的乐高实物模型（多角度照片）整理成可交互的 3D 拼装演示、爆炸图和乐高风格拼装图纸。**
 
+> **在线演示（示例模型「林间小屋」）**：[3D 交互展示](https://lawrence7y.github.io/brickkit/) ｜ [乐高风格拼装图纸（`#view=book`）](https://lawrence7y.github.io/brickkit/#view=book)
+
 BrickKit 定义了一套数据格式（`brickbuild` 0.2）、照片拍摄规范、校验工具和单文件网页查看器，并提供输出 JSON 的命令行，方便 AI 智能体（Harness）接入：智能体负责“看照片 → 写数据”，BrickKit 负责“校验 → 渲染对比 → 展示 → 出图纸”。
 
 ![3D 展示](docs/images/3d.png)
