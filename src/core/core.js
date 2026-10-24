@@ -1,9 +1,9 @@
-// brickbuild 核心：坐标换算、占位、连接校验、零件清单、LDraw 导出、照片完整性检查。
+// brickbuild 核心：坐标换算、3D 实体防穿模碰撞检测、凸点/底孔/把柄/夹子真实物理扣合计算、步骤计划、零件清单、LDraw 导出、照片完整性检查。
 // 纯函数，不依赖 DOM / Node，可同时用于网页查看器与命令行（Harness）。
 
 export const FORMAT = 'brickbuild';
 export const VERSION = '0.2';
-export const PLATE = 0.4;              // 1 片高度（以“格”为单位：3.2mm / 8mm）
+export const PLATE = 0.4;              // 1 片高度（以“格”为单位：3.2mm / 8.0mm = 0.4 格，即 5 片 = 2 格）
 const ROTS = [0, 90, 180, 270];
 export const UPS = ['+y', '-y', '+z', '-z', '+x', '-x'];
 
@@ -20,26 +20,58 @@ export function rotatedSize(def, rot) {
 export function partCenter(p, def) {
   const [w, d] = rotatedSize(def, p.rot || 0);
   const up = p.up || '+y', s = p.snot || 0;
-  if (up === '+y') return [p.at[0] + w / 2, p.at[1] + s, p.at[2] + d / 2];
-  if (up === '-y') return [p.at[0] + w / 2, p.at[1] + def.h - s, p.at[2] + d / 2];
-  if (up === '+z') return [p.at[0] + w / 2, p.at[1] + d / (2 * PLATE), p.at[2] + s * PLATE];
-  if (up === '-z') return [p.at[0] + w / 2, p.at[1] + d / (2 * PLATE), p.at[2] - s * PLATE];
-  if (up === '+x') return [p.at[0] + s * PLATE, p.at[1] + w / (2 * PLATE), p.at[2] + d / 2];
-  if (up === '-x') return [p.at[0] - s * PLATE, p.at[1] + w / (2 * PLATE), p.at[2] + d / 2];
-  return [p.at[0] + w / 2, p.at[1], p.at[2] + d / 2];
+  if (up === '+y') return [r6(p.at[0] + w / 2), r6(p.at[1] + s), r6(p.at[2] + d / 2)];
+  if (up === '-y') return [r6(p.at[0] + w / 2), r6(p.at[1] + def.h - s), r6(p.at[2] + d / 2)];
+  if (up === '+z') return [r6(p.at[0] + w / 2), r6(p.at[1] + d / (2 * PLATE)), r6(p.at[2] + s * PLATE)];
+  if (up === '-z') return [r6(p.at[0] + w / 2), r6(p.at[1] + d / (2 * PLATE)), r6(p.at[2] - s * PLATE)];
+  if (up === '+x') return [r6(p.at[0] + s * PLATE), r6(p.at[1] + w / (2 * PLATE)), r6(p.at[2] + d / 2)];
+  if (up === '-x') return [r6(p.at[0] - s * PLATE), r6(p.at[1] + w / (2 * PLATE)), r6(p.at[2] + d / 2)];
+  return [r6(p.at[0] + w / 2), r6(p.at[1]), r6(p.at[2] + d / 2)];
 }
+
+/** 本地向量 (lx, ly_stud, lz) 经 rot 与 up 旋转后的世界偏移向量 (wx_stud, wy_stud, wz_stud) */
+export function rotateLocalVec(lx, ly, lz, rot = 0, up = '+y') {
+  const [x1, z1] = rotXZ(lx, lz, rot), y1 = ly;
+  if (up === '+y') return [x1, y1, z1];
+  if (up === '-y') return [x1, -y1, -z1];
+  if (up === '+z') return [x1, -z1, y1];
+  if (up === '-z') return [x1, z1, -y1];
+  if (up === '+x') return [y1, -x1, z1];
+  if (up === '-x') return [-y1, x1, z1];
+  return [x1, y1, z1];
+}
+
+/** 本地坐标点 (lx, ly_stud, lz) 转换为世界坐标 [wx (格), wy (层/片), wz (格)] */
+export function localToWorld(p, def, lx, ly, lz) {
+  const c = partCenter(p, def);
+  const [wx, wy, wz] = rotateLocalVec(lx, ly, lz, p.rot || 0, p.up || '+y');
+  return [r6(c[0] + wx), r6(c[1] + wy / PLATE), r6(c[2] + wz)];
+}
+
+/** 本地法向量 (nx, ny, nz) 转换到世界朝向字符串 ('+y'|'-y'|'+z'|'-z'|'+x'|'-x') */
+export function localDirToWorld(nx, ny, nz, rot = 0, up = '+y') {
+  const [wx, wy, wz] = rotateLocalVec(nx, ny, nz, rot, up);
+  if (Math.abs(wy) >= 0.9) return wy > 0 ? '+y' : '-y';
+  if (Math.abs(wz) >= 0.9) return wz > 0 ? '+z' : '-z';
+  return wx > 0 ? '+x' : '-x';
+}
+
 /** 本地格子（i 沿本地 x，k 沿本地 z；k=0 为后排） */
 export function localCells(def) {
   const [sx, sz] = def.size, out = [];
   for (let i = 0; i < sx; i++) for (let k = 0; k < sz; k++) {
+    if (def.kind === 'corner' && i === sx - 1 && k === sz - 1) continue;
     let stud = false;
-    if (def.kind === 'brick' || def.kind === 'plate' || def.kind === 'doorframe' || def.kind === 'round' || def.kind === 'snot' || def.kind === 'barplate' || def.kind === 'clip') stud = true;
-    else if (def.kind === 'slope') stud = k === 0;
-    else if (def.kind === 'wedge') stud = def.side === 'L' ? i === 0 || k === 0 : i === 0 || k === sz - 1;
+    if (!def.tile && !def.centerStuds) {
+      if (['brick', 'plate', 'doorframe', 'round', 'snot', 'bracket', 'barplate', 'clip', 'corner', 'islope', 'arch', 'technic'].includes(def.kind)) stud = true;
+      else if (def.kind === 'slope' || (def.kind === 'cslope' && def.backStuds)) stud = k === 0;
+      else if (def.kind === 'wedge') stud = def.side === 'L' ? i === 0 || k === 0 : i === 0 || k === sz - 1;
+    }
     out.push({ i, k, lx: i - sx / 2 + 0.5, lz: k - sz / 2 + 0.5, stud });
   }
   return out;
 }
+
 /** 世界坐标中的占地格子 [{x,z,stud}] */
 export function footprint(p, def) {
   const c = partCenter(p, def);
@@ -49,6 +81,175 @@ export function footprint(p, def) {
   });
 }
 export const topLayer = (p, def) => p.at[1] + def.h;
+
+/**
+ * 计算零件在世界坐标系中的 3D 实体包围盒数组 [{ x0, x1, y0, y1, z0, z1 }]
+ * 其中 x0,x1,z0,z1 单位为格 (stud)，y0,y1 单位为片 (plate)。
+ * 支持全部 6 向 SNOT 朝向 (up) 与多包围盒零件（L型转角、SNOT 支架）。
+ */
+export function partBoxes(p, def) {
+  if (def.occupies === false) return [];
+  const [sx, sz] = def.size, hx = sx / 2, hz = sz / 2, H = def.h * PLATE;
+  const localBoxes = [];
+  if (def.kind === 'corner') {
+    localBoxes.push([-hx, hx, 0, H, -hz, 0], [-hx, 0, 0, H, 0, hz]);
+  } else if (def.kind === 'bracket') {
+    localBoxes.push([-hx, hx, 0, H, -hz, hz]);
+    const y0 = def.dir === 'down' ? (1 - def.vH) * PLATE : 0;
+    const y1 = def.dir === 'down' ? PLATE : def.vH * PLATE;
+    localBoxes.push([-hx, hx, y0, y1, hz, hz + 0.2]);
+  } else if (def.kind === 'snot' && def.recessed) {
+    localBoxes.push([-hx, hx, 0, H, -hz, hz - 0.2]);
+  } else {
+    localBoxes.push([-hx, hx, 0, H, -hz, hz]);
+  }
+  return localBoxes.map(([lx0, lx1, ly0, ly1, lz0, lz1]) => {
+    const a = localToWorld(p, def, lx0, ly0, lz0);
+    const b = localToWorld(p, def, lx1, ly1, lz1);
+    return {
+      x0: Math.min(a[0], b[0]), x1: Math.max(a[0], b[0]),
+      y0: Math.min(a[1], b[1]), y1: Math.max(a[1], b[1]),
+      z0: Math.min(a[2], b[2]), z1: Math.max(a[2], b[2]),
+    };
+  });
+}
+
+/** 判断两个零件的 3D 实体包围盒是否发生穿模重叠（容差：水平 0.04 格，竖直 0.10 片） */
+export function boxesCollide(boxesA, boxesB) {
+  for (const a of boxesA) for (const b of boxesB) {
+    const dx = Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0);
+    const dy = Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0);
+    const dz = Math.min(a.z1, b.z1) - Math.max(a.z0, b.z0);
+    if (dx > 0.04 && dy > 0.10 && dz > 0.04) {
+      return [
+        Math.floor((Math.max(a.x0, b.x0) + Math.min(a.x1, b.x1)) / 2),
+        Math.floor((Math.max(a.y0, b.y0) + Math.min(a.y1, b.y1)) / 2),
+        Math.floor((Math.max(a.z0, b.z0) + Math.min(a.z1, b.z1)) / 2),
+      ];
+    }
+  }
+  return null;
+}
+
+/**
+ * 计算零件在世界空间中的全部连接点：
+ * - studs: 输出连接点 [{ index, kind: 'top'|'side'|'bar', pos: [wx, wy_plates, wz], dir, label }]
+ * - receptors: 输入插孔 [{ index, kind: 'antistud'|'clip', pos: [wx, wy_plates, wz], dir, i, k }]
+ */
+export function partConnectors(p, def) {
+  const [sx, sz] = def.size, hx = sx / 2, hz = sz / 2, H = def.h * PLATE;
+  const rot = p.rot || 0, up = p.up || '+y';
+  const studs = [], receptors = [];
+
+  // 1. 顶面凸点 (Top Studs)
+  const topDir = localDirToWorld(0, 1, 0, rot, up);
+  if (!def.tile) {
+    if (def.centerStuds) {
+      def.centerStuds.forEach(([cx, cz], idx) => {
+        studs.push({ index: studs.length, kind: 'top', pos: localToWorld(p, def, cx, H, cz), dir: topDir, label: `center-${idx}` });
+      });
+    } else if (def.kind === 'cone' || def.kind === 'dish') {
+      studs.push({ index: studs.length, kind: 'top', pos: localToWorld(p, def, 0, H, 0), dir: topDir, label: 'top-0' });
+    } else {
+      for (const c of localCells(def)) if (c.stud) {
+        studs.push({ index: studs.length, kind: 'top', pos: localToWorld(p, def, c.lx, H, c.lz), dir: topDir, label: `top-${c.i},${c.k}` });
+      }
+    }
+  }
+
+  // 2. SNOT 侧面凸点 & 支架侧面凸点
+  if (def.kind === 'snot' || def.kind === 'bracket') {
+    const zMax = def.kind === 'bracket' ? hz + 0.2 : (def.recessed ? hz - 0.2 : hz);
+    const rows = def.sideRows || (def.h >= 5 ? [1.25, 3.75] : [1.75]);
+    const faces = def.sideFaces || ['+z'];
+    for (const face of faces) {
+      if (face === '+z' || face === '-z') {
+        const fz = face === '+z' ? zMax : -hz;
+        const dir = localDirToWorld(0, 0, face === '+z' ? 1 : -1, rot, up);
+        for (const r of rows) for (let i = 0; i < sx; i++) {
+          studs.push({ index: studs.length, kind: 'side', pos: localToWorld(p, def, i - hx + 0.5, r * PLATE, fz), dir, label: `side(${face})-${i}@${r}` });
+        }
+      } else {
+        const fx = face === '+x' ? hx : -hx;
+        const dir = localDirToWorld(face === '+x' ? 1 : -1, 0, 0, rot, up);
+        for (const r of rows) for (let k = 0; k < sz; k++) {
+          studs.push({ index: studs.length, kind: 'side', pos: localToWorld(p, def, fx, r * PLATE, k - hz + 0.5), dir, label: `side(${face})-${k}@${r}` });
+        }
+      }
+    }
+  }
+
+  // 3. 把柄 (Bars)
+  if (def.kind === 'barplate') {
+    const dir = localDirToWorld(0, 0, 1, rot, up);
+    for (let i = 0; i < sx; i++) {
+      studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, hz + 0.22), dir, label: `bar-${i}` });
+    }
+  } else if (def.kind === 'bar') {
+    for (let y = 0.5; y < def.h; y += 1) {
+      studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, 0, y * PLATE, 0), dir: topDir, label: `bar@${y}` });
+    }
+  }
+
+  // 4. 底面反凸点 / 底孔 (Bottom Anti-studs)
+  for (const c of localCells(def)) {
+    if (def.kind === 'islope' && c.k > 0) continue;
+    receptors.push({ index: receptors.length, kind: 'antistud', pos: localToWorld(p, def, c.lx, 0, c.lz), dir: topDir, i: c.i, k: c.k });
+  }
+  if (sx >= 2 && sz >= 2 && def.kind !== 'corner') {
+    receptors.push({ index: receptors.length, kind: 'antistud', pos: localToWorld(p, def, 0, 0, 0), dir: topDir, i: -1, k: -1 });
+  }
+
+  // 5. 夹子 (Clips)
+  if (def.kind === 'clip') {
+    const clipDir = localDirToWorld(0, 0, 1, rot, up);
+    for (const cx of sx >= 2 ? [-0.5, 0.5] : [0]) {
+      receptors.push({ index: receptors.length, kind: 'clip', pos: localToWorld(p, def, cx, H / 2, hz + 0.22), dir: clipDir, i: 0, k: 0 });
+    }
+  }
+
+  return { studs, receptors };
+}
+
+/** 判断两个零件是否存在真实物理连接（凸点扣底孔 / 夹子扣把柄） */
+export function partsConnected(a, defA, b, defB, connA = partConnectors(a, defA), connB = partConnectors(b, defB)) {
+  const close = (p1, p2) => Math.abs(p1[0] - p2[0]) <= 0.08 && Math.abs(p1[1] - p2[1]) <= 0.20 && Math.abs(p1[2] - p2[2]) <= 0.08;
+  for (const s of connA.studs) for (const r of connB.receptors) {
+    if (s.kind === 'bar' && r.kind === 'clip' && close(s.pos, r.pos)) return true;
+    if (s.kind !== 'bar' && r.kind === 'antistud' && s.dir === r.dir && close(s.pos, r.pos)) return true;
+  }
+  for (const s of connB.studs) for (const r of connA.receptors) {
+    if (s.kind === 'bar' && r.kind === 'clip' && close(s.pos, r.pos)) return true;
+    if (s.kind !== 'bar' && r.kind === 'antistud' && s.dir === r.dir && close(s.pos, r.pos)) return true;
+  }
+  return false;
+}
+
+/**
+ * 给定父零件的某个凸点 studIndex，自动计算子零件以 receptorIndex 底孔扣合上去时的精确无穿模坐标 { at, up, rot, snot: 0 }
+ */
+export function snapPart(parentPart, parentDef, studIndex, childPart, childDef, receptorIndex = 0) {
+  const pConn = partConnectors(parentPart, parentDef);
+  const stud = pConn.studs[studIndex];
+  if (!stud) throw new Error(`父零件 ${parentPart.id} 不存在凸点 #${studIndex}`);
+  const up = childPart.up || stud.dir;
+  const rot = childPart.rot || 0;
+  const probe = { id: '_probe', part: childPart.part, at: [0, 0, 0], rot, up, snot: 0 };
+  const cConn = partConnectors(probe, childDef);
+  const rec = cConn.receptors[receptorIndex] || cConn.receptors[0];
+  if (!rec) throw new Error(`子零件 ${childPart.part} 没有可用底孔`);
+  return {
+    ...childPart,
+    up,
+    rot,
+    snot: 0,
+    at: [
+      r6(stud.pos[0] - rec.pos[0]),
+      r6(stud.pos[1] - rec.pos[1]),
+      r6(stud.pos[2] - rec.pos[2]),
+    ],
+  };
+}
 
 
 // ---------------------------------------------------------------- 模块 / 子组件 / 步骤计划
@@ -155,7 +356,7 @@ export function validate(model, cat, opts = {}) {
   }
   for (const st of plan.steps) if (st.mixed) W('sub-mixed', `第 ${st.n} 步同时包含子组件和主体的零件，建议分成两步`, st.parts);
 
-  // 占位冲突（水平朝向 +y 且整数网格对齐的标准零件参与网格占位）
+  // 1) 标准整数网格占位冲突
   const occ = new Map();
   for (const { p, def } of good) {
     if (def.occupies === false || (p.up && p.up !== '+y') || !p.at.every(Number.isInteger)) continue;
@@ -167,22 +368,43 @@ export function validate(model, cat, opts = {}) {
       } else occ.set(key, p.id);
     }
   }
+  // 2) 全方向 3D 实体包围盒防穿模检查（覆盖全部 SNOT 侧装件、非整数偏移件与支架）
+  const boxesMap = new Map(good.map(({ p, def }) => [p.id, partBoxes(p, def)]));
+  for (let i = 0; i < good.length; i++) {
+    for (let j = i + 1; j < good.length; j++) {
+      const a = good[i].p, b = good[j].p;
+      if ( (!a.up || a.up === '+y') && (!b.up || b.up === '+y') && a.at.every(Number.isInteger) && b.at.every(Number.isInteger) && !a.snot && !b.snot ) continue;
+      const hit = boxesCollide(boxesMap.get(a.id), boxesMap.get(b.id));
+      if (hit) E('overlap', `${a.id} 与 ${b.id} 在格子 [${hit[0]}, ${hit[1]}, ${hit[2]}] 重叠（3D 穿模）`, [a.id, b.id]);
+    }
+  }
   // 去重重叠报告
   const seen = new Set();
   for (let i = errors.length - 1; i >= 0; i--) if (errors[i].code === 'overlap') {
     const k = errors[i].parts.slice().sort().join('|'); if (seen.has(k)) errors.splice(i, 1); else seen.add(k);
   }
 
-  // 凸点连接图
+  // 凸点连接图（标准 +y 网格凸点 + 3D 物理连接器匹配 + mount 显式挂载）
   const studs = new Map();               // "x,z,layer" -> [partId]
-  for (const { p, def } of good) if (!p.up || p.up === '+y') for (const f of footprint(p, def)) if (f.stud) {
+  for (const { p, def } of good) if ((!p.up || p.up === '+y') && p.at.every(Number.isInteger) && !p.snot) for (const f of footprint(p, def)) if (f.stud) {
     const k = `${f.x},${f.z},${topLayer(p, def)}`; (studs.get(k) || studs.set(k, []).get(k)).push(p.id);
   }
   const adj = new Map(good.map(({ p }) => [p.id, new Set()]));
   const link = (a, b) => { if (adj.has(a) && adj.has(b)) { adj.get(a).add(b); adj.get(b).add(a); } };
   for (const { p, def } of good) {
-    if (def.kind === 'door' || (p.up && p.up !== '+y')) continue;   // 门或 SNOT 侧装件通过 mount 连接
+    if (def.kind === 'door' || (p.up && p.up !== '+y') || !p.at.every(Number.isInteger) || p.snot) continue;
     for (const f of footprint(p, def)) for (const id of studs.get(`${f.x},${f.z},${p.at[1]}`) || []) if (id !== p.id) link(p.id, id);
+  }
+  // 3D 连接器自动物理匹配（凸点对底孔、把柄对夹子）
+  const connMap = new Map(good.map(({ p, def }) => [p.id, partConnectors(p, def)]));
+  for (let i = 0; i < good.length; i++) {
+    for (let j = i + 1; j < good.length; j++) {
+      const a = good[i], b = good[j];
+      if (adj.get(a.p.id).has(b.p.id)) continue;
+      if (partsConnected(a.p, a.def, b.p, b.def, connMap.get(a.p.id), connMap.get(b.p.id))) {
+        link(a.p.id, b.p.id);
+      }
+    }
   }
   for (const { p } of good) if (p.mount) {
     if (!byId.has(p.mount)) E('mount', `${p.id}：mount 指向不存在的零件 ${p.mount}`, [p.id]); else link(p.id, p.mount);

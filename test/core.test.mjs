@@ -13,6 +13,11 @@ import {
   localCells,
   footprint,
   topLayer,
+  partBoxes,
+  boxesCollide,
+  partConnectors,
+  partsConnected,
+  snapPart,
   partModule,
   moduleMap,
   subOfModule,
@@ -771,4 +776,37 @@ test('6 向 SNOT 朝向 (up/snot)、扩展零件目录与实物样本 mecha.bric
   const mp = checkPhotos(mechaPhotos, mecha);
   assert.equal(mp.complete, true);
   assert.equal(mp.missing.length, 0);
+});
+
+test('152 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide) 与凸点扣合 (snapPart)', () => {
+  // 1. 验证零件库规模 ≥ 150 且包含 12 大核心类别（含 Travis 四面侧凸点砖、正/倒支架、跳线板等）
+  assert.ok(Object.keys(cat.parts).length >= 150);
+  for (const id of ['4733', '11211', '22885', '99780', '99781', '99207', '36840', '15573', '87580', '4589b', '553b', '4740', '32000']) {
+    assert.ok(cat.parts[id], `缺少零件 ${id}`);
+  }
+
+  // 2. 验证 Travis 四面侧凸点砖 (4733) 生成 1 顶面凸点 + 4 侧面凸点 = 5 个输出凸点
+  const travis = { id: 't1', part: '4733', color: 72, at: [0, 0, 0], rot: 0, step: 1 };
+  const tConn = partConnectors(travis, cat.parts['4733']);
+  assert.equal(tConn.studs.length, 5);
+  assert.deepEqual(tConn.studs.map((s) => s.dir).sort(), ['+x', '+y', '+z', '-x', '-z'].sort());
+
+  // 3. 验证 snapPart 自动计算扣合坐标且与父零件 0 穿模、100% 物理连接
+  const snotParent = { id: 'p_core', part: '11211', color: 0, at: [0, 0, 0], rot: 0, step: 1 };
+  const snappedPlate = snapPart(snotParent, cat.parts['11211'], 2, { id: 'p_plate', part: '3795', color: 15, rot: 0, step: 2 }, cat.parts['3795'], 4);
+  assert.equal(snappedPlate.up, '+z');
+  assert.equal(boxesCollide(partBoxes(snotParent, cat.parts['11211']), partBoxes(snappedPlate, cat.parts['3795'])), null);
+  assert.equal(partsConnected(snotParent, cat.parts['11211'], snappedPlate, cat.parts['3795']), true);
+
+  // 4. 验证 3D 穿模拦截：将竖向圆柱 (up: '+y') 强行插进横向侧装板 (up: '+z') 内部时，validate 必须报 overlap 错误
+  const badModel = baseModel({
+    parts: [
+      { id: 'base', part: '11211', color: 0, at: [0, 0, 0], rot: 0, step: 1 },
+      { id: 'plate_z', part: '3020', color: 15, at: [-1, 0, 1], rot: 0, up: '+z', snot: 0, mount: 'base', step: 1 },
+      { id: 'cyl_clip', part: '3062b', color: 72, at: [0.5, 1, 0.8], rot: 0, up: '+y', snot: 0, mount: 'plate_z', step: 1 },
+    ],
+  });
+  const badRes = validate(badModel, cat);
+  assert.equal(badRes.ok, false);
+  assert.ok(badRes.errors.some((e) => e.code === 'overlap' && e.parts.includes('plate_z') && e.parts.includes('cyl_clip')));
 });

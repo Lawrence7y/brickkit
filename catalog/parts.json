@@ -1,12 +1,47 @@
 {
  "format": "brickbuild-catalog",
- "version": "0.1",
+ "version": "0.2",
  "units": {
-  "stud": "1 格 = 8 mm（LDraw 20 LDU）",
-  "plate": "1 层 = 3.2 mm（LDraw 8 LDU）"
+  "stud": "1 格 = 8.0 mm（LDraw 20 LDU）",
+  "plate": "1 层/片 = 3.2 mm（LDraw 8 LDU = 0.4 格）",
+  "brick": "1 砖高 = 3 片 = 9.6 mm（LDraw 24 LDU = 1.2 格；5 片 = 2 格）"
  },
- "note": "size=[沿本地 x 的格数, 沿本地 z 的格数]（与 LDraw 零件的 X/Z 一致）；h=高度（片）；ldrawOrigin=LDraw 原点在本地坐标中的位置（x,z 以格为单位、相对占地中心；y 以片为单位、相对底面）；checked=已用 LDraw 官方库核对尺寸与原点",
+ "note": "size=[沿本地 x 的格数, 沿本地 z 的格数]（与 LDraw 零件的 X/Z 一致）；h=高度（片）；ldrawOrigin=LDraw 原点在本地坐标中的位置；sideFaces/sideRows=SNOT 侧面凸点所在面与层高；dir/vH=支架竖板方向与高度",
  "parts": {
+  "2357": {
+   "name": "Brick 2 x 2 Corner",
+   "zh": "L型转角砖 2×2",
+   "kind": "corner",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "2420": {
+   "name": "Plate 2 x 2 Corner",
+   "zh": "L型转角板 2×2",
+   "kind": "corner",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
   "2431": {
    "name": "Tile 1 x 4",
    "zh": "平板 1×4",
@@ -16,9 +51,61 @@
     1
    ],
    "h": 1,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "2445": {
+   "name": "Plate 2 x 12",
+   "zh": "板 2×12",
+   "kind": "plate",
+   "size": [
+    12,
+    2
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "2453": {
+   "name": "Brick 1 x 1 x 5",
+   "zh": "高柱砖 1×1×5",
+   "kind": "brick",
+   "size": [
+    1,
+    1
+   ],
+   "h": 15,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    15,
+    0
+   ],
+   "checked": true
+  },
+  "2454": {
+   "name": "Brick 1 x 2 x 5",
+   "zh": "高柱砖 1×2×5",
+   "kind": "brick",
+   "size": [
+    2,
+    1
+   ],
+   "h": 15,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    15,
     0
    ],
    "checked": true
@@ -32,6 +119,59 @@
     2
    ],
    "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "2540": {
+   "name": "Plate 1 x 2 with Handle on Side (Free Ends)",
+   "zh": "开放式侧把柄板 1×2",
+   "kind": "barplate",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "2654": {
+   "name": "Plate Round 2 x 2 with Rounded Bottom",
+   "zh": "弧底滑移圆板 2×2",
+   "kind": "round",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "tile": true,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "2877": {
+   "name": "Brick 1 x 2 with Grille",
+   "zh": "横纹格栅砖 1×2",
+   "kind": "brick",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -48,6 +188,7 @@
     2
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -64,6 +205,7 @@
     2
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -80,6 +222,7 @@
     2
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -96,6 +239,7 @@
     1
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -112,6 +256,24 @@
     1
    ],
    "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3006": {
+   "name": "Brick 2 x 10",
+   "zh": "砖 2×10",
+   "kind": "brick",
+   "size": [
+    10,
+    2
+   ],
+   "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -128,6 +290,7 @@
     2
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -144,6 +307,7 @@
     1
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -160,6 +324,7 @@
     1
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -176,6 +341,7 @@
     1
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -192,6 +358,7 @@
     2
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -208,6 +375,7 @@
     2
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -224,6 +392,7 @@
     2
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -240,6 +409,7 @@
     1
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -256,6 +426,41 @@
     1
    ],
    "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3028": {
+   "name": "Plate 6 x 12",
+   "zh": "板 6×12",
+   "kind": "plate",
+   "size": [
+    12,
+    6
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3030": {
+   "name": "Plate 4 x 10",
+   "zh": "板 4×10",
+   "kind": "plate",
+   "size": [
+    10,
+    4
+   ],
+   "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -272,6 +477,7 @@
     4
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -288,6 +494,7 @@
     4
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -304,6 +511,7 @@
     6
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -320,6 +528,7 @@
     2
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -336,6 +545,7 @@
     4
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -352,6 +562,7 @@
     6
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -373,7 +584,8 @@
     3,
     -0.5
    ],
-   "checked": true
+   "checked": true,
+   "category": "slope"
   },
   "3038": {
    "name": "Slope Brick 45 2 x 3",
@@ -389,7 +601,8 @@
     3,
     -0.5
    ],
-   "checked": false
+   "checked": false,
+   "category": "slope"
   },
   "3039": {
    "name": "Slope Brick 45 2 x 2",
@@ -405,7 +618,8 @@
     3,
     -0.5
    ],
-   "checked": true
+   "checked": true,
+   "category": "slope"
   },
   "3041": {
    "name": "Slope Brick 45 2 x 4 Double",
@@ -416,6 +630,7 @@
     2
    ],
    "h": 3,
+   "category": "slope",
    "ldrawOrigin": [
     0,
     3,
@@ -433,6 +648,7 @@
    ],
    "h": 3,
    "checked": false,
+   "category": "slope",
    "ldrawOrigin": [
     0,
     3,
@@ -440,7 +656,7 @@
    ]
   },
   "3065": {
-   "name": "Brick 1 x 2 without Centre Stud",
+   "name": "Brick 1 x 2 without Centre Tube",
    "zh": "砖 1×2（无底管，常用于透明件）",
    "kind": "brick",
    "size": [
@@ -448,6 +664,58 @@
     1
    ],
    "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3297": {
+   "name": "Slope Brick 33 3 x 4",
+   "zh": "斜面砖 33° 3×4",
+   "kind": "slope",
+   "size": [
+    4,
+    3
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": true,
+   "category": "slope"
+  },
+  "3298": {
+   "name": "Slope Brick 33 3 x 2",
+   "zh": "斜面砖 33° 3×2",
+   "kind": "slope",
+   "size": [
+    2,
+    3
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": true,
+   "category": "slope"
+  },
+  "3307": {
+   "name": "Brick Arch 1 x 6",
+   "zh": "长拱门砖 1×6（高3片）",
+   "kind": "arch",
+   "size": [
+    6,
+    1
+   ],
+   "h": 3,
+   "category": "cslope",
    "ldrawOrigin": [
     0,
     3,
@@ -464,6 +732,7 @@
     1
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -480,6 +749,7 @@
     1
    ],
    "h": 3,
+   "category": "brick",
    "ldrawOrigin": [
     0,
     3,
@@ -496,9 +766,78 @@
     1
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "3633": {
+   "name": "Fence 1 x 4 x 1",
+   "zh": "围栏 1×4×1（高3片）",
+   "kind": "panel",
+   "size": [
+    4,
+    1
+   ],
+   "h": 3,
+   "category": "building",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3659": {
+   "name": "Brick Arch 1 x 4",
+   "zh": "拱门砖 1×4（高3片）",
+   "kind": "arch",
+   "size": [
+    4,
+    1
+   ],
+   "h": 3,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3660": {
+   "name": "Slope Brick 45 2 x 2 Inverted",
+   "zh": "倒斜面砖 45° 2×2（底面仅后排有孔，顶面4凸点）",
+   "kind": "islope",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3665": {
+   "name": "Slope Brick 45 2 x 1 Inverted",
+   "zh": "倒斜面砖 45° 2×1（底面仅后排有孔，顶面2凸点）",
+   "kind": "islope",
+   "size": [
+    1,
+    2
+   ],
+   "h": 3,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    3,
     0
    ],
    "checked": true
@@ -512,9 +851,46 @@
     1
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "3700": {
+   "name": "Technic Brick 1 x 2 with Hole",
+   "zh": "科技单孔砖 1×2",
+   "kind": "technic",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "holes": 1,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3701": {
+   "name": "Technic Brick 1 x 4 with 3 Holes",
+   "zh": "科技三孔砖 1×4",
+   "kind": "technic",
+   "size": [
+    4,
+    1
+   ],
+   "h": 3,
+   "holes": 3,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    3,
     0
    ],
    "checked": true
@@ -528,6 +904,7 @@
     1
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -544,9 +921,45 @@
     2
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "3832": {
+   "name": "Plate 2 x 10",
+   "zh": "板 2×10",
+   "kind": "plate",
+   "size": [
+    10,
+    2
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3894": {
+   "name": "Technic Brick 1 x 6 with 5 Holes",
+   "zh": "科技五孔砖 1×6",
+   "kind": "technic",
+   "size": [
+    6,
+    1
+   ],
+   "h": 3,
+   "holes": 5,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    3,
     0
    ],
    "checked": true
@@ -560,6 +973,7 @@
     2
    ],
    "h": 3,
+   "category": "round",
    "ldrawOrigin": [
     0,
     3,
@@ -576,9 +990,68 @@
     6
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "3960": {
+   "name": "Dish 4 x 4 Inverted (Radar)",
+   "zh": "大雷达圆碟 4×4",
+   "kind": "dish",
+   "size": [
+    4,
+    4
+   ],
+   "h": 2,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
+   "checked": true
+  },
+  "4032": {
+   "name": "Plate Round 2 x 2",
+   "zh": "圆板 2×2",
+   "kind": "round",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4070": {
+   "name": "Brick 1 x 1 with Headlight",
+   "zh": "车灯砖 1×1（内缩侧凸点）",
+   "kind": "snot",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "recessed": true,
+   "category": "snot",
+   "ldrawOrigin": [
+    0,
+    3,
     0
    ],
    "checked": true
@@ -592,6 +1065,240 @@
     1
    ],
    "h": 1,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4150": {
+   "name": "Tile Round 2 x 2",
+   "zh": "圆形光面板 2×2",
+   "kind": "round",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "tile": true,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4162": {
+   "name": "Tile 1 x 8",
+   "zh": "平板 1×8",
+   "kind": "tile",
+   "size": [
+    8,
+    1
+   ],
+   "h": 1,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4274": {
+   "name": "Technic Pin 1/2 with Stud",
+   "zh": "带凸点半长蓝销 1×1",
+   "kind": "round",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4286": {
+   "name": "Slope Brick 33 3 x 1",
+   "zh": "斜面砖 33° 3×1",
+   "kind": "slope",
+   "size": [
+    1,
+    3
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": true,
+   "category": "slope"
+  },
+  "4477": {
+   "name": "Plate 1 x 10",
+   "zh": "板 1×10",
+   "kind": "plate",
+   "size": [
+    10,
+    1
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4733": {
+   "name": "Brick 1 x 1 with Studs on 4 Sides (Travis Brick)",
+   "zh": "四面侧凸点核心砖 1×1（机甲核心神件）",
+   "kind": "snot",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "sideFaces": [
+    "+z",
+    "-z",
+    "+x",
+    "-x"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "snot",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "4740": {
+   "name": "Dish 2 x 2 Inverted (Radar)",
+   "zh": "雷达圆碟 2×2",
+   "kind": "dish",
+   "size": [
+    2,
+    2
+   ],
+   "h": 2,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
+   "checked": true
+  },
+  "6091": {
+   "name": "Brick Curved Top 1 x 2 x 1 1/3",
+   "zh": "弧顶砖 1×2（高4片，后排单凸点）",
+   "kind": "cslope",
+   "size": [
+    1,
+    2
+   ],
+   "h": 4,
+   "backStuds": true,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    4,
+    0
+   ],
+   "checked": true
+  },
+  "6111": {
+   "name": "Brick 1 x 10",
+   "zh": "砖 1×10",
+   "kind": "brick",
+   "size": [
+    10,
+    1
+   ],
+   "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "6112": {
+   "name": "Brick 1 x 12",
+   "zh": "砖 1×12",
+   "kind": "brick",
+   "size": [
+    12,
+    1
+   ],
+   "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "6182": {
+   "name": "Brick Arch 1 x 4 x 2",
+   "zh": "高拱门砖 1×4×2（高6片）",
+   "kind": "arch",
+   "size": [
+    4,
+    1
+   ],
+   "h": 6,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    6,
+    0
+   ],
+   "checked": true
+  },
+  "6541": {
+   "name": "Technic Brick 1 x 1 with Hole",
+   "zh": "科技单孔砖 1×1",
+   "kind": "technic",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "holes": 1,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "6636": {
+   "name": "Tile 1 x 6",
+   "zh": "平板 1×6",
+   "kind": "tile",
+   "size": [
+    6,
+    1
+   ],
+   "h": 1,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
@@ -601,13 +1308,21 @@
   },
   "11211": {
    "name": "Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side",
-   "zh": "单面四凸点砖 1×2（高5片）",
+   "zh": "单面四凸点砖 1×2（高5片=2格）",
    "kind": "snot",
    "size": [
     2,
     1
    ],
    "h": 5,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.25,
+    3.75
+   ],
+   "category": "snot",
    "ldrawOrigin": [
     0,
     5,
@@ -615,18 +1330,210 @@
    ],
    "checked": true
   },
+  "11477": {
+   "name": "Slope Curved 2 x 1 No Studs",
+   "zh": "弧面斜坡 1×2（高2片，无凸点）",
+   "kind": "cslope",
+   "size": [
+    1,
+    2
+   ],
+   "h": 2,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
+   "checked": true
+  },
+  "14417": {
+   "name": "Plate 1 x 2 with Towball on Side",
+   "zh": "带侧球头板 1×2",
+   "kind": "barplate",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "14418": {
+   "name": "Plate 1 x 2 with Towball Socket",
+   "zh": "带球窝夹板 1×2",
+   "kind": "clip",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "14716": {
+   "name": "Brick 1 x 1 x 3",
+   "zh": "高砖 1×1×3",
+   "kind": "brick",
+   "size": [
+    1,
+    1
+   ],
+   "h": 9,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    9,
+    0
+   ],
+   "checked": true
+  },
+  "14719": {
+   "name": "Tile 2 x 2 Corner",
+   "zh": "L型转角光面板 2×2",
+   "kind": "corner",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "tile": true,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
   "15068": {
-   "name": "Slope Brick Curved 2 x 2",
-   "zh": "弧面斜砖 2×2",
+   "name": "Slope Curved 2 x 2 No Studs",
+   "zh": "弧面斜坡 2×2（高2片，无凸点）",
    "kind": "cslope",
    "size": [
     2,
     2
    ],
    "h": 2,
+   "category": "cslope",
    "ldrawOrigin": [
     0,
     2,
+    0
+   ],
+   "checked": true
+  },
+  "15573": {
+   "name": "Plate 1 x 2 with 1 Stud (Jumper)",
+   "zh": "单凸点跳线板 1×2（半格偏移神件）",
+   "kind": "jumper",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "centerStuds": [
+    [
+     0,
+     0
+    ]
+   ],
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "15712": {
+   "name": "Plate 1 x 1 with Top Clip",
+   "zh": "顶面带夹板 1×1",
+   "kind": "clip",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "18674": {
+   "name": "Plate Round 2 x 2 with 1 Center Stud",
+   "zh": "中心单凸点圆跳线板 2×2",
+   "kind": "round",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "centerStuds": [
+    [
+     0,
+     0
+    ]
+   ],
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "22385": {
+   "name": "Tile 2 x 3 Pentagonal Shield",
+   "zh": "五边形护盾光面板 2×3",
+   "kind": "tile",
+   "size": [
+    2,
+    3
+   ],
+   "h": 1,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "22885": {
+   "name": "Brick 1 x 2 x 1 2/3 with 8 Studs on 2 Opposite Sides",
+   "zh": "对向八凸点砖 1×2（高5片=2格）",
+   "kind": "snot",
+   "size": [
+    2,
+    1
+   ],
+   "h": 5,
+   "sideFaces": [
+    "+z",
+    "-z"
+   ],
+   "sideRows": [
+    1.25,
+    3.75
+   ],
+   "category": "snot",
+   "ldrawOrigin": [
+    0,
+    5,
     0
    ],
    "checked": true
@@ -641,6 +1548,7 @@
    ],
    "h": 1,
    "side": "L",
+   "category": "wedge",
    "ldrawOrigin": [
     0,
     1,
@@ -658,9 +1566,137 @@
    ],
    "h": 1,
    "side": "R",
+   "category": "wedge",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "26047": {
+   "name": "Plate Round 1 x 1 with Handle",
+   "zh": "带单把柄圆板 1×1",
+   "kind": "barplate",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "26603": {
+   "name": "Tile 2 x 3",
+   "zh": "平板 2×3",
+   "kind": "tile",
+   "size": [
+    3,
+    2
+   ],
+   "h": 1,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "26604": {
+   "name": "Brick 1 x 1 with Studs on 2 Adjacent Sides",
+   "zh": "相邻双面侧凸点砖 1×1",
+   "kind": "snot",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "sideFaces": [
+    "+z",
+    "+x"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "snot",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "30136": {
+   "name": "Brick 1 x 2 Log",
+   "zh": "圆木栅栏纹砖 1×2",
+   "kind": "brick",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "fluted": true,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "30145": {
+   "name": "Brick 2 x 2 x 3",
+   "zh": "高砖 2×2×3",
+   "kind": "brick",
+   "size": [
+    2,
+    2
+   ],
+   "h": 9,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    9,
+    0
+   ],
+   "checked": true
+  },
+  "30237": {
+   "name": "Brick 1 x 2 with Vertical Clip",
+   "zh": "带侧竖夹砖 1×2",
+   "kind": "clip",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "30374": {
+   "name": "Bar 4L (Lightsaber Blade)",
+   "zh": "4格长光剑杆（高12片）",
+   "kind": "bar",
+   "size": [
+    1,
+    1
+   ],
+   "h": 12,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    12,
     0
    ],
    "checked": true
@@ -674,9 +1710,113 @@
     1
    ],
    "h": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "snot",
    "ldrawOrigin": [
     0,
     3,
+    0
+   ],
+   "checked": true
+  },
+  "32000": {
+   "name": "Technic Brick 1 x 2 with 2 Holes",
+   "zh": "科技双孔砖 1×2",
+   "kind": "technic",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "holes": 2,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "34103": {
+   "name": "Plate 1 x 3 with 2 Studs",
+   "zh": "双凸点跳线板 1×3",
+   "kind": "jumper",
+   "size": [
+    3,
+    1
+   ],
+   "h": 1,
+   "centerStuds": [
+    [
+     -0.5,
+     0
+    ],
+    [
+     0.5,
+     0
+    ]
+   ],
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "36840": {
+   "name": "Bracket 1 x 1 - 1 x 1 Inverted (Up)",
+   "zh": "单格倒支架 1×1-1×1（向上翻）",
+   "kind": "bracket",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "dir": "up",
+   "vRows": 1,
+   "vH": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "bracket",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "36841": {
+   "name": "Bracket 1 x 1 - 1 x 1 (Down)",
+   "zh": "单格正支架 1×1-1×1（向下垂）",
+   "kind": "bracket",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "dir": "down",
+   "vRows": 1,
+   "vH": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    -1.25
+   ],
+   "category": "bracket",
+   "ldrawOrigin": [
+    0,
+    1,
     0
    ],
    "checked": true
@@ -690,6 +1830,7 @@
     8
    ],
    "h": 1,
+   "category": "plate",
    "ldrawOrigin": [
     0,
     1,
@@ -707,6 +1848,7 @@
    ],
    "h": 1,
    "side": "R",
+   "category": "wedge",
    "ldrawOrigin": [
     0,
     1,
@@ -724,6 +1866,70 @@
    ],
    "h": 1,
    "side": "L",
+   "category": "wedge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "43722": {
+   "name": "Wedge Plate 3 x 2 Right",
+   "zh": "右楔形翼板 2×3",
+   "kind": "wedge",
+   "size": [
+    2,
+    3
+   ],
+   "h": 1,
+   "side": "R",
+   "category": "wedge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "43723": {
+   "name": "Wedge Plate 3 x 2 Left",
+   "zh": "左楔形翼板 2×3",
+   "kind": "wedge",
+   "size": [
+    2,
+    3
+   ],
+   "h": 1,
+   "side": "L",
+   "category": "wedge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "44728": {
+   "name": "Bracket 1 x 2 - 2 x 2 (Down)",
+   "zh": "正支架 1×2-2×2（向下垂4凸点，深5片）",
+   "kind": "bracket",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "dir": "down",
+   "vRows": 2,
+   "vH": 5,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    -1.25,
+    -3.75
+   ],
+   "category": "bracket",
    "ldrawOrigin": [
     0,
     1,
@@ -732,7 +1938,7 @@
    "checked": true
   },
   "47457": {
-   "name": "Slope Brick Curved 2 x 2 x 1",
+   "name": "Slope Curved 2 x 2 x 1 with 2 Studs",
    "zh": "弧面斜砖 2×2×1（高3片）",
    "kind": "cslope",
    "size": [
@@ -740,6 +1946,32 @@
     2
    ],
    "h": 3,
+   "backStuds": true,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "47905": {
+   "name": "Brick 1 x 1 with Studs on 2 Opposite Sides",
+   "zh": "对向双面侧凸点砖 1×1",
+   "kind": "snot",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "sideFaces": [
+    "+z",
+    "-z"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "snot",
    "ldrawOrigin": [
     0,
     3,
@@ -756,6 +1988,60 @@
     1
    ],
    "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "54200": {
+   "name": "Slope 30 1 x 1 x 2/3 (Cheese Slope)",
+   "zh": "奶酪小斜坡 30° 1×1（高2片，无凸点）",
+   "kind": "cheese",
+   "size": [
+    1,
+    1
+   ],
+   "h": 2,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
+   "checked": true
+  },
+  "54383": {
+   "name": "Wedge Plate 6 x 3 Right",
+   "zh": "右大楔形机翼 3×6",
+   "kind": "wedge",
+   "size": [
+    3,
+    6
+   ],
+   "h": 1,
+   "side": "R",
+   "category": "wedge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "54384": {
+   "name": "Wedge Plate 6 x 3 Left",
+   "zh": "左大楔形机翼 3×6",
+   "kind": "wedge",
+   "size": [
+    3,
+    6
+   ],
+   "h": 1,
+   "side": "L",
+   "category": "wedge",
    "ldrawOrigin": [
     0,
     1,
@@ -765,16 +2051,85 @@
   },
   "60470": {
    "name": "Plate 1 x 2 with Horizontal Clips",
-   "zh": "带水平夹板 1×2",
+   "zh": "带双水平夹板 1×2",
    "kind": "clip",
    "size": [
     2,
     1
    ],
    "h": 1,
+   "category": "hinge",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "60479": {
+   "name": "Plate 1 x 12",
+   "zh": "板 1×12",
+   "kind": "plate",
+   "size": [
+    12,
+    1
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "60481": {
+   "name": "Slope Brick 65 2 x 1 x 2",
+   "zh": "高斜面砖 65° 2×1×2（高6片）",
+   "kind": "slope",
+   "size": [
+    1,
+    2
+   ],
+   "h": 6,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    6,
+    0
+   ],
+   "checked": true
+  },
+  "60592": {
+   "name": "Window 1 x 2 x 2 Frame",
+   "zh": "窗框 1×2×2（高6片）",
+   "kind": "doorframe",
+   "size": [
+    2,
+    1
+   ],
+   "h": 6,
+   "category": "building",
+   "ldrawOrigin": [
+    0,
+    6,
+    0
+   ],
+   "checked": true
+  },
+  "60594": {
+   "name": "Window 1 x 4 x 3 Frame",
+   "zh": "窗框 1×4×3（高9片）",
+   "kind": "doorframe",
+   "size": [
+    4,
+    1
+   ],
+   "h": 9,
+   "category": "building",
+   "ldrawOrigin": [
+    0,
+    9,
     0
    ],
    "checked": true
@@ -788,6 +2143,7 @@
     1
    ],
    "h": 18,
+   "category": "building",
    "ldrawOrigin": [
     0,
     18,
@@ -823,6 +2179,24 @@
     ]
    },
    "note": "与门框使用相同的 at/rot；门轴在门框背面左侧",
+   "category": "building",
+   "checked": true
+  },
+  "61678": {
+   "name": "Slope Curved 4 x 1 No Studs",
+   "zh": "长弧面斜坡 1×4（高2片）",
+   "kind": "cslope",
+   "size": [
+    1,
+    4
+   ],
+   "h": 2,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
    "checked": true
   },
   "63864": {
@@ -834,9 +2208,95 @@
     1
    ],
    "h": 1,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "63868": {
+   "name": "Plate 1 x 2 with Clip on End",
+   "zh": "端头单水平夹板 1×2",
+   "kind": "clip",
+   "size": [
+    1,
+    2
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "69729": {
+   "name": "Tile 2 x 6",
+   "zh": "平板 2×6",
+   "kind": "tile",
+   "size": [
+    6,
+    2
+   ],
+   "h": 1,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "78329": {
+   "name": "Plate 1 x 5",
+   "zh": "板 1×5",
+   "kind": "plate",
+   "size": [
+    5,
+    1
+   ],
+   "h": 1,
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "85861": {
+   "name": "Plate Round 1 x 1 with Open Stud",
+   "zh": "空心圆板 1×1",
+   "kind": "round",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "85984": {
+   "name": "Slope 30 1 x 2 x 2/3",
+   "zh": "小斜坡 30° 1×2（高2片，无凸点）",
+   "kind": "cheese",
+   "size": [
+    2,
+    1
+   ],
+   "h": 2,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    2,
     0
    ],
    "checked": true
@@ -850,9 +2310,27 @@
     2
    ],
    "h": 1,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
+    0
+   ],
+   "checked": true
+  },
+  "87081": {
+   "name": "Brick Round 4 x 4",
+   "zh": "大圆砖 4×4",
+   "kind": "round",
+   "size": [
+    4,
+    4
+   ],
+   "h": 3,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    3,
     0
    ],
    "checked": true
@@ -866,9 +2344,210 @@
     1
    ],
    "h": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "snot",
    "ldrawOrigin": [
     0,
     3,
+    0
+   ],
+   "checked": true
+  },
+  "87580": {
+   "name": "Plate 2 x 2 with 1 Stud (Center Jumper)",
+   "zh": "中心单凸点跳线板 2×2",
+   "kind": "jumper",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "centerStuds": [
+    [
+     0,
+     0
+    ]
+   ],
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "87994": {
+   "name": "Bar 3L",
+   "zh": "3格长光剑杆/连接杆（高9片）",
+   "kind": "bar",
+   "size": [
+    1,
+    1
+   ],
+   "h": 9,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    9,
+    0
+   ],
+   "checked": true
+  },
+  "93273": {
+   "name": "Slope Curved 4 x 1 Double No Studs",
+   "zh": "双头弧面斜坡 1×4（高2片）",
+   "kind": "cslope",
+   "size": [
+    1,
+    4
+   ],
+   "h": 2,
+   "category": "cslope",
+   "ldrawOrigin": [
+    0,
+    2,
+    0
+   ],
+   "checked": true
+  },
+  "98138": {
+   "name": "Tile Round 1 x 1",
+   "zh": "圆形光面板 1×1",
+   "kind": "round",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "tile": true,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "98283": {
+   "name": "Brick 1 x 2 Masonry",
+   "zh": "砖石墙纹砖 1×2",
+   "kind": "brick",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "category": "brick",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "99207": {
+   "name": "Bracket 1 x 2 - 2 x 2 Inverted (Up)",
+   "zh": "倒支架 1×2-2×2（向上翻4凸点，高5片）",
+   "kind": "bracket",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "dir": "up",
+   "vRows": 2,
+   "vH": 5,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.25,
+    3.75
+   ],
+   "category": "bracket",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "99780": {
+   "name": "Bracket 1 x 2 - 1 x 2 Inverted (Up)",
+   "zh": "倒支架 1×2-1×2（向上翻，高3片）",
+   "kind": "bracket",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "dir": "up",
+   "vRows": 1,
+   "vH": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1.75
+   ],
+   "category": "bracket",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "99781": {
+   "name": "Bracket 1 x 2 - 1 x 2 (Down)",
+   "zh": "正支架 1×2-1×2（向下垂，深3片）",
+   "kind": "bracket",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "dir": "down",
+   "vRows": 1,
+   "vH": 3,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    -1.25
+   ],
+   "category": "bracket",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3794b": {
+   "name": "Plate 1 x 2 with 1 Stud without Groove",
+   "zh": "单凸点跳线板 1×2（旧款）",
+   "kind": "jumper",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "centerStuds": [
+    [
+     0,
+     0
+    ]
+   ],
+   "category": "plate",
+   "ldrawOrigin": [
+    0,
+    1,
     0
    ],
    "checked": true
@@ -882,6 +2561,7 @@
     1
    ],
    "h": 1,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
@@ -898,6 +2578,7 @@
     1
    ],
    "h": 1,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
@@ -914,6 +2595,25 @@
     2
    ],
    "h": 1,
+   "category": "tile",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "2412b": {
+   "name": "Tile 1 x 2 Grille",
+   "zh": "散热格栅平板 1×2",
+   "kind": "tile",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "grille": true,
+   "category": "tile",
    "ldrawOrigin": [
     0,
     1,
@@ -935,6 +2635,24 @@
     3,
     -0.5
    ],
+   "checked": true,
+   "category": "slope"
+  },
+  "3678b": {
+   "name": "Slope Brick 65 2 x 2 x 2",
+   "zh": "高斜面砖 65° 2×2×2（高6片）",
+   "kind": "slope",
+   "size": [
+    2,
+    2
+   ],
+   "h": 6,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    6,
+    0
+   ],
    "checked": true
   },
   "3062b": {
@@ -947,9 +2665,112 @@
    ],
    "h": 3,
    "fluted": true,
+   "category": "round",
    "ldrawOrigin": [
     0,
     3,
+    0
+   ],
+   "checked": true
+  },
+  "4589b": {
+   "name": "Cone 1 x 1",
+   "zh": "圆锥 1×1（高3片）",
+   "kind": "cone",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3942c": {
+   "name": "Cone 2 x 2 x 2",
+   "zh": "大圆锥 2×2×2（高6片）",
+   "kind": "cone",
+   "size": [
+    2,
+    2
+   ],
+   "h": 6,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    6,
+    0
+   ],
+   "checked": true
+  },
+  "553b": {
+   "name": "Brick Round 2 x 2 Dome Top",
+   "zh": "半球穹顶 2×2（高3片，无凸点）",
+   "kind": "dome",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "category": "round",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "4085d": {
+   "name": "Plate 1 x 1 with Vertical Clip",
+   "zh": "带竖直夹板 1×1",
+   "kind": "clip",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4865b": {
+   "name": "Panel 1 x 2 x 1",
+   "zh": "U型挡板 1×2×1（高3片）",
+   "kind": "panel",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "category": "building",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "4864b": {
+   "name": "Panel 1 x 2 x 2",
+   "zh": "高挡板 1×2×2（高6片）",
+   "kind": "panel",
+   "size": [
+    2,
+    1
+   ],
+   "h": 6,
+   "category": "building",
+   "ldrawOrigin": [
+    0,
+    6,
     0
    ],
    "checked": true

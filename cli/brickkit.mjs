@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { validate, toLDraw, ldrawExt, checkPhotos, bom, stepPlan, PHOTO_SLOTS } from '../src/core/core.js';
+import { validate, toLDraw, ldrawExt, checkPhotos, bom, stepPlan, PHOTO_SLOTS, partBoxes, partConnectors, snapPart } from '../src/core/core.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
@@ -19,7 +19,10 @@ const HELP = `brickkit <命令> [参数]
   check-photos <photos.json> [--model model.brick.json] [--dir 照片目录]   检查照片是否齐全、分辨率是否达标
   photo-plan [--model model.brick.json]                  列出需要用户拍的照片（必拍机位 + 每个可开合设计）
   plan <model.brick.json>                                步骤计划：每一步的零件、子组件、装配步
-  catalog [关键词]                                       查零件目录（编号、中文名、尺寸）
+  catalog [关键词]                                       查零件目录（编号、中文名、类别、尺寸）
+  studs <model.brick.json> [partId]                      查看零件的 3D 包围盒、全部凸点/把柄坐标与朝向
+  snap <model.brick.json> --parent <id> --stud <n> --part <编号> [--rot 0] [--receptor 0]
+                                                         按凸点扣底孔规律自动计算子零件的无穿模精确坐标
   colors                                                 列出颜色代码
   bom <model.brick.json> [--step n]                      零件清单
   export-ldraw <model.brick.json> [-o out.ldr|out.mpd]   导出 LDraw（有子组件时为 MPD，可用 Studio / LeoCAD / LPub3D 打开）
@@ -66,9 +69,34 @@ async function main() {
     }
     case 'catalog': {
       const q = (args[0] || '').toLowerCase();
-      const list = Object.entries(cat.parts).filter(([id, d]) => !q || id.includes(q) || d.name.toLowerCase().includes(q) || d.zh.includes(q) || d.kind === q)
-        .map(([id, d]) => ({ part: id, zh: d.zh, name: d.name, kind: d.kind, size: d.size, h: d.h }));
+      const list = Object.entries(cat.parts).filter(([id, d]) => !q || id.includes(q) || d.name.toLowerCase().includes(q) || d.zh.includes(q) || d.kind === q || d.category === q)
+        .map(([id, d]) => ({ part: id, zh: d.zh, name: d.name, kind: d.kind, category: d.category, size: d.size, h: d.h, ...(d.sideFaces ? { sideFaces: d.sideFaces } : {}) }));
       out({ ok: true, count: list.length, parts: list }); break;
+    }
+    case 'studs': {
+      const m = readJSON(args[0] || fail('缺少模型文件')), target = args[1];
+      const parts = (m.parts || []).filter((p) => !target || p.id === target);
+      if (!parts.length) fail(target ? `找不到零件 ${target}` : '模型中没有零件');
+      const items = parts.map((p) => {
+        const def = cat.parts[p.part] || fail(`未知零件 ${p.part}`);
+        const conn = partConnectors(p, def);
+        return { id: p.id, part: p.part, zh: def.zh, at: p.at, rot: p.rot || 0, up: p.up || '+y', snot: p.snot || 0, boxes: partBoxes(p, def), studs: conn.studs, receptors: conn.receptors };
+      });
+      out({ ok: true, count: items.length, parts: items }); break;
+    }
+    case 'snap': {
+      const m = readJSON(args[0] || fail('缺少模型文件'));
+      const pid = flag('parent') || fail('缺少 --parent <父零件id>');
+      const sIdx = Number(flag('stud', 0));
+      const cPart = String(flag('part') || fail('缺少 --part <子零件编号>'));
+      const rot = Number(flag('rot', 0));
+      const rIdx = Number(flag('receptor', 0));
+      const upFlag = flag('up');
+      const parent = (m.parts || []).find((p) => p.id === pid) || fail(`找不到父零件 ${pid}`);
+      const pDef = cat.parts[parent.part] || fail(`未知父零件 ${parent.part}`);
+      const cDef = cat.parts[cPart] || fail(`未知子零件 ${cPart}`);
+      const snapped = snapPart(parent, pDef, sIdx, { part: cPart, rot, ...(upFlag ? { up: upFlag } : {}) }, cDef, rIdx);
+      out({ ok: true, parent: pid, studIndex: sIdx, receptorIndex: rIdx, placement: { ...snapped, mount: pid } }); break;
     }
     case 'colors': out({ ok: true, colors: cat.colors }); break;
     case 'bom': {
