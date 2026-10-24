@@ -62,8 +62,8 @@ export function partGeometry(id) {
     }
   } else if (d.kind === 'wedge') {
     const pts = d.side === 'L'
-      ? [[-hx + G, -hz + G], [hx - G, -hz + G], [hx - G, hz - G], [-hx + 1, hz - G], [-hx + G, -hz + 1]]
-      : [[-hx + G, -hz + G], [hx - G, -hz + G], [hx - G, -hz + 1], [hx - 1, hz - G], [-hx + G, hz - G]];
+      ? [[-hx + G, -hz + G], [hx - G, -hz + G], [hx - G, -hz + 1], [0, hz - G], [-hx + G, hz - G]]
+      : [[-hx + G, -hz + G], [0, -hz + G], [hx - G, hz - 1], [hx - G, hz - G], [-hx + G, hz - G]];
     list.push(flatPoly(pts, H - 0.004)); studsOnTop(H - 0.004);
   } else if (d.kind === 'slope') { const lip = 0.2; list.push(prism([[-hz + G, 0], [hz - G, 0], [hz - G, lip], [-hz + 1, H - 0.004], [-hz + G, H - 0.004]], sx)); studsOnTop(H - 0.004); }
   else if (d.kind === 'ridge') { const lip = 0.2; list.push(prism([[-hz + G, 0], [hz - G, 0], [hz - G, lip], [0.06, H - 0.004], [-0.06, H - 0.004], [-hz + G, lip]], sx)); }

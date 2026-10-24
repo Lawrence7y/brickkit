@@ -35,7 +35,7 @@ export function localCells(def) {
     let stud = false;
     if (def.kind === 'brick' || def.kind === 'plate' || def.kind === 'doorframe' || def.kind === 'round' || def.kind === 'snot' || def.kind === 'barplate' || def.kind === 'clip') stud = true;
     else if (def.kind === 'slope') stud = k === 0;
-    else if (def.kind === 'wedge') stud = def.side === 'L' ? i > 0 || k === 0 : i < sx - 1 || k === 0;
+    else if (def.kind === 'wedge') stud = def.side === 'L' ? i === 0 || k === 0 : i === 0 || k === sz - 1;
     out.push({ i, k, lx: i - sx / 2 + 0.5, lz: k - sz / 2 + 0.5, stud });
   }
   return out;
@@ -118,7 +118,7 @@ export function validate(model, cat, opts = {}) {
     const def = cat.parts[p.part];
     if (!def) { E('part-unknown', `${tag}：目录里没有零件 ${p.part}`, [p.id]); continue; }
     if (cat.colors && !cat.colors[String(p.color)]) W('color-unknown', `${tag}：颜色代码 ${p.color} 不在颜色表中`, [p.id]);
-    const isSnot = p.up !== undefined && p.up !== '+y';
+    const isSnot = (p.up !== undefined && p.up !== '+y') || Boolean(p.mount);
     if (p.up !== undefined && !UPS.includes(p.up)) { E('up', `${tag}：up 只能是 +y/-y/+z/-z/+x/-x`, [p.id]); continue; }
     if (p.snot !== undefined && !Number.isInteger(p.snot)) { E('snot', `${tag}：snot 必须是整数（沿 up 方向偏移的片数）`, [p.id]); continue; }
     if (!Array.isArray(p.at) || p.at.length !== 3 || !p.at.every((v) => isSnot ? typeof v === 'number' && Number.isFinite(v) : Number.isInteger(v))) { E('at', `${tag}：at 必须是 3 个整数 [x, 层, z]`, [p.id]); continue; }
@@ -155,10 +155,10 @@ export function validate(model, cat, opts = {}) {
   }
   for (const st of plan.steps) if (st.mixed) W('sub-mixed', `第 ${st.n} 步同时包含子组件和主体的零件，建议分成两步`, st.parts);
 
-  // 占位冲突（水平朝向 +y 的标准零件参与网格占位）
+  // 占位冲突（水平朝向 +y 且整数网格对齐的标准零件参与网格占位）
   const occ = new Map();
   for (const { p, def } of good) {
-    if (def.occupies === false || (p.up && p.up !== '+y')) continue;
+    if (def.occupies === false || (p.up && p.up !== '+y') || !p.at.every(Number.isInteger)) continue;
     for (const f of footprint(p, def)) for (let y = p.at[1]; y < p.at[1] + def.h; y++) {
       const key = `${f.x},${y},${f.z}`, o = occ.get(key);
       if (o && o !== p.id) {
