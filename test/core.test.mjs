@@ -798,7 +798,7 @@ test('165 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide)
   assert.equal(boxesCollide(partBoxes(snotParent, cat.parts['11211']), partBoxes(snappedPlate, cat.parts['3795'])), null);
   assert.equal(partsConnected(snotParent, cat.parts['11211'], snappedPlate, cat.parts['3795']), true);
 
-  // 4. 验证 3D 穿模拦截：将竖向圆柱 (up: '+y') 强行插进横向侧装板 (up: '+z') 内部时，validate 必须报 overlap 错误
+  // 4. 验证 3D 穿模与虚假 mount 胶水拦截：将竖向圆柱 (up: '+y') 强行插进横向侧装板 (up: '+z') 内部且无凸点扣合时，validate 必须同时报 overlap 与 mount-disconnected 错误
   const badModel = baseModel({
     parts: [
       { id: 'base', part: '11211', color: 0, at: [0, 0, 0], rot: 0, step: 1 },
@@ -809,11 +809,23 @@ test('165 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide)
   const badRes = validate(badModel, cat);
   assert.equal(badRes.ok, false);
   assert.ok(badRes.errors.some((e) => e.code === 'overlap' && e.parts.includes('plate_z') && e.parts.includes('cyl_clip')));
+  assert.ok(badRes.errors.some((e) => e.code === 'mount-disconnected' && e.parts.includes('cyl_clip') && e.parts.includes('plate_z')));
 
-  // 5. 验证机翼底孔反扣机构：63868 端头单水平夹板 (snot: 0) 顶面凸点扣入 41769 楔形翼板 (snot: 1) 底面反凸点，且 0 穿模
+  // 5. 验证机翼底孔反扣与同轴把柄夹持机构：63868 端头单水平夹板 (snot: 0) 既同轴夹住 48336 把柄板 (p30)，又以顶面凸点扣入 41769 楔形翼板 (p57) 底孔，且 0 穿模
   const mecha = readJSON('examples/mecha.brick.json');
+  const p30 = mecha.parts.find((p) => p.id === 'p30');
   const p56 = mecha.parts.find((p) => p.id === 'p56');
   const p57 = mecha.parts.find((p) => p.id === 'p57');
+  assert.equal(partsConnected(p30, cat.parts[p30.part], p56, cat.parts[p56.part]), true);
   assert.equal(partsConnected(p56, cat.parts[p56.part], p57, cat.parts[p57.part]), true);
   assert.equal(boxesCollide(partBoxes(p56, cat.parts[p56.part]), partBoxes(p57, cat.parts[p57.part])), null);
+
+  // 6. 验证 mecha.brick.json 中全部带 mount 的零件 100% 具备真实物理扣合 (partsConnected === true)
+  const mechaById = new Map(mecha.parts.map((p) => [p.id, p]));
+  for (const p of mecha.parts) {
+    if (p.mount) {
+      const m = mechaById.get(p.mount);
+      assert.equal(partsConnected(p, cat.parts[p.part], m, cat.parts[m.part]), true, `${p.id} -> ${p.mount} 必须具备真实物理扣合`);
+    }
+  }
 });

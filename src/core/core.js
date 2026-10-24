@@ -157,7 +157,7 @@ export function partConnectors(p, def) {
     }
   }
 
-  // 2. SNOT 侧面凸点 & 支架侧面凸点
+  // 2. SNOT 侧面凸点 & 支架侧面凸点/插孔
   if (def.kind === 'snot' || def.kind === 'bracket') {
     const zMax = def.kind === 'bracket' ? hz + 0.2 : (def.recessed ? hz - 0.2 : hz);
     const rows = def.sideRows || (def.h >= 5 ? [1.25, 3.75] : [1.75]);
@@ -166,8 +166,13 @@ export function partConnectors(p, def) {
       if (face === '+z' || face === '-z') {
         const fz = face === '+z' ? zMax : -hz;
         const dir = localDirToWorld(0, 0, face === '+z' ? 1 : -1, rot, up);
+        const oppDir = localDirToWorld(0, 0, face === '+z' ? -1 : 1, rot, up);
         for (const r of rows) for (let i = 0; i < sx; i++) {
-          studs.push({ index: studs.length, kind: 'side', pos: localToWorld(p, def, i - hx + 0.5, r * PLATE, fz), dir, label: `side(${face})-${i}@${r}` });
+          const pos = localToWorld(p, def, i - hx + 0.5, r * PLATE, fz);
+          studs.push({ index: studs.length, kind: 'side', pos, dir, label: `side(${face})-${i}@${r}` });
+          if (def.kind === 'bracket') {
+            receptors.push({ index: receptors.length, kind: 'antistud', pos, dir: oppDir, i, k: 0 });
+          }
         }
       } else {
         const fx = face === '+x' ? hx : -hx;
@@ -179,19 +184,22 @@ export function partConnectors(p, def) {
     }
   }
 
-  // 3. 把柄 (Bars)
+  // 3. 把柄 (Bars) —— 包含圆杆轴向 axis ('x'|'y'|'z')
+  const axisOf = (d) => d.slice(1);
   if (def.kind === 'barplate') {
     const dir = localDirToWorld(0, 0, 1, rot, up);
+    const axis = axisOf(localDirToWorld(1, 0, 0, rot, up));
     for (let i = 0; i < sx; i++) {
-      studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, hz + 0.22), dir, label: `bar-${i}` });
+      studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, hz + 0.22), dir, axis, label: `bar-${i}` });
       if (def.bothEnds) {
         const dirBack = localDirToWorld(0, 0, -1, rot, up);
-        studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, -hz - 0.22), dir: dirBack, label: `bar-back-${i}` });
+        studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, -hz - 0.22), dir: dirBack, axis, label: `bar-back-${i}` });
       }
     }
   } else if (def.kind === 'bar') {
+    const axis = axisOf(topDir);
     for (let y = 0.5; y < def.h; y += 1) {
-      studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, 0, y * PLATE, 0), dir: topDir, label: `bar@${y}` });
+      studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, 0, y * PLATE, 0), dir: topDir, axis, label: `bar@${y}` });
     }
   }
 
@@ -204,27 +212,28 @@ export function partConnectors(p, def) {
     receptors.push({ index: receptors.length, kind: 'antistud', pos: localToWorld(p, def, 0, 0, 0), dir: topDir, i: -1, k: -1 });
   }
 
-  // 5. 夹子 (Clips)
+  // 5. 夹子 (Clips) —— 包含夹口圆柱轴向 axis ('x'|'y'|'z')
   if (def.kind === 'clip') {
     const clipDir = localDirToWorld(0, 0, 1, rot, up);
+    const axis = axisOf(localDirToWorld(1, 0, 0, rot, up));
     const clipXs = !def.singleClip && sx >= 2 ? [-0.5, 0.5] : [0];
     for (const cx of clipXs) {
-      receptors.push({ index: receptors.length, kind: 'clip', pos: localToWorld(p, def, cx, H / 2, hz + 0.22), dir: clipDir, i: 0, k: 0 });
+      receptors.push({ index: receptors.length, kind: 'clip', pos: localToWorld(p, def, cx, H / 2, hz + 0.22), dir: clipDir, axis, i: 0, k: 0 });
     }
   }
 
   return { studs, receptors };
 }
 
-/** 判断两个零件是否存在真实物理连接（凸点扣底孔 / 夹子扣把柄） */
+/** 判断两个零件是否存在真实物理连接（凸点扣底孔同向重合 / 夹子扣把柄同轴重合） */
 export function partsConnected(a, defA, b, defB, connA = partConnectors(a, defA), connB = partConnectors(b, defB)) {
   const close = (p1, p2) => Math.abs(p1[0] - p2[0]) <= 0.08 && Math.abs(p1[1] - p2[1]) <= 0.20 && Math.abs(p1[2] - p2[2]) <= 0.08;
   for (const s of connA.studs) for (const r of connB.receptors) {
-    if (s.kind === 'bar' && r.kind === 'clip' && close(s.pos, r.pos)) return true;
+    if (s.kind === 'bar' && r.kind === 'clip' && (!s.axis || !r.axis || s.axis === r.axis) && close(s.pos, r.pos)) return true;
     if (s.kind !== 'bar' && r.kind === 'antistud' && s.dir === r.dir && close(s.pos, r.pos)) return true;
   }
   for (const s of connB.studs) for (const r of connA.receptors) {
-    if (s.kind === 'bar' && r.kind === 'clip' && close(s.pos, r.pos)) return true;
+    if (s.kind === 'bar' && r.kind === 'clip' && (!s.axis || !r.axis || s.axis === r.axis) && close(s.pos, r.pos)) return true;
     if (s.kind !== 'bar' && r.kind === 'antistud' && s.dir === r.dir && close(s.pos, r.pos)) return true;
   }
   return false;
@@ -411,8 +420,10 @@ export function validate(model, cat, opts = {}) {
       }
     }
   }
-  for (const { p } of good) if (p.mount) {
-    if (!byId.has(p.mount)) E('mount', `${p.id}：mount 指向不存在的零件 ${p.mount}`, [p.id]); else link(p.id, p.mount);
+  for (const { p, def } of good) if (p.mount) {
+    if (!byId.has(p.mount)) E('mount', `${p.id}：mount 指向不存在的零件 ${p.mount}`, [p.id]);
+    else if (def.kind === 'door') link(p.id, p.mount);
+    else if (!adj.get(p.id).has(p.mount)) E('mount-disconnected', `${p.id}：与 mount 指定的父零件 ${p.mount} 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）`, [p.id, p.mount]);
   }
   for (const { p, def } of good) if (def.kind === 'door' && !p.mount) W('door-mount', `${p.id}：门需要用 mount 指明安装在哪个门框上`, [p.id]);
   const ground = good.length ? Math.min(...good.map(({ p }) => p.at[1])) : 0;

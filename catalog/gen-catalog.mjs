@@ -84,8 +84,8 @@ add('4733', 'Brick 1 x 1 with Studs on 4 Sides (Travis Brick)', '四面侧凸点
 add('4070', 'Brick 1 x 1 with Headlight', '车灯砖 1×1（内缩侧凸点）', 'snot', [1, 1], 3, {
   sideFaces: ['+z'], sideRows: [1.75], recessed: true, category: 'snot',
 });
-add('99206', 'Plate 2 x 2 x 2/3 with 2 Studs on Side', '侧面双凸点增高板 2×2×2/3（高2片）', 'snot', [2, 2], 2, {
-  sideFaces: ['+z'], sideRows: [1.0], category: 'snot',
+add('99206', 'Plate 2 x 2 x 2/3 with 2 Studs on Side', '侧面双凸点增高板 2×2×2/3（高2片，5:2 黄金凑高神件）', 'snot', [2, 2], 2, {
+  sideFaces: ['+z', '-z'], sideRows: [1.25], category: 'snot',
 });
 add('11211', 'Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side', '单面四凸点砖 1×2（高5片=2格）', 'snot', [2, 1], 5, {
   sideFaces: ['+z'], sideRows: [1.25, 3.75], category: 'snot',
@@ -103,7 +103,7 @@ add('30414', 'Brick 1 x 4 with 4 Studs on 1 Side', '单面四凸点砖 1×4', 's
 //       其 +z 外侧面挂有一块厚 0.5 片 (0.2 格) 的竖直侧板，带朝向 +z 的侧凸点
 // ================================================================
 add('99780', 'Bracket 1 x 2 - 1 x 2 Inverted (Up)', '倒支架 1×2-1×2（向上翻，高3片）', 'bracket', [2, 1], 1, {
-  dir: 'up', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [1.75], category: 'bracket',
+  dir: 'up', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [1.25], category: 'bracket',
 });
 add('99781', 'Bracket 1 x 2 - 1 x 2 (Down)', '正支架 1×2-1×2（向下垂，深3片）', 'bracket', [2, 1], 1, {
   dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [-1.25], category: 'bracket',

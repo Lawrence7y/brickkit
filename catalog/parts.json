@@ -2592,7 +2592,7 @@
   },
   "99206": {
    "name": "Plate 2 x 2 x 2/3 with 2 Studs on Side",
-   "zh": "侧面双凸点增高板 2×2×2/3（高2片）",
+   "zh": "侧面双凸点增高板 2×2×2/3（高2片，5:2 黄金凑高神件）",
    "kind": "snot",
    "size": [
     2,
@@ -2600,10 +2600,11 @@
    ],
    "h": 2,
    "sideFaces": [
-    "+z"
+    "+z",
+    "-z"
    ],
    "sideRows": [
-    1
+    1.25
    ],
    "category": "snot",
    "ldrawOrigin": [
@@ -2656,7 +2657,7 @@
     "+z"
    ],
    "sideRows": [
-    1.75
+    1.25
    ],
    "category": "bracket",
    "ldrawOrigin": [
