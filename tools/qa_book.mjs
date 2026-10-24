@@ -1,0 +1,20 @@
+import { chromium } from 'playwright';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const QA = path.join(ROOT, 'qa'); fs.mkdirSync(QA, { recursive: true });
+const EXE = process.env.CHROMIUM_PATH || ['/usr/local/bin/chromium', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find((p) => fs.existsSync(p));
+const browser = await chromium.launch({ executablePath: EXE, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const [w, h, prefix, list] = [+process.argv[2] || 1440, +process.argv[3] || 900, process.argv[4] || 'b', (process.argv[5] || '1,5,12,16,17,18').split(',').map(Number)];
+const page = await browser.newPage({ viewport: { width: w, height: h }, reducedMotion: 'reduce' });
+const errs = []; page.on('pageerror', (e) => errs.push(e.message)); page.on('console', (m) => (m.type() === 'error' || m.type() === 'warning') && errs.push(m.text()));
+await page.goto('file://' + path.join(ROOT, 'dist/viewer.html') + '#view=book');
+const t0 = Date.now();
+await page.waitForFunction(() => window.__bookReady === true, null, { timeout: 300000 });
+console.log('booklet ms', Date.now() - t0);
+await page.screenshot({ path: `${QA}/${prefix}_top.png` });
+await page.addStyleTag({ content: '#book-bar{position:static!important}' });
+for (const i of list) { const el = page.locator(`#pages .page:nth-child(${i})`); await el.scrollIntoViewIfNeeded(); await el.screenshot({ path: `${QA}/${prefix}_p${i}.png` }); }
+if (errs.length) console.log('ERR', errs.slice(0, 5));
+await browser.close();

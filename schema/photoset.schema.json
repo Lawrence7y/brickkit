@@ -1,0 +1,155 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://brickkit.local/schema/photoset.schema.json",
+ "title": "brickbuild 照片清单",
+ "description": "用户拍摄的照片及拍摄条件。方位角 azimuth：0=正面(+z)，90=站在正面时的右手边(+x)，180=背面，270=左侧；elevation：0=平视，90=正上方，负数=从下往上。",
+ "type": "object",
+ "required": [
+  "format",
+  "photos"
+ ],
+ "properties": {
+  "format": {
+   "const": "brickbuild-photos"
+  },
+  "version": {
+   "type": "string"
+  },
+  "model": {
+   "type": "string"
+  },
+  "capture": {
+   "type": "object",
+   "properties": {
+    "device": {
+     "type": "string"
+    },
+    "background": {
+     "type": "string"
+    },
+    "reference": {
+     "type": "string",
+     "description": "尺寸参照：8mm 方格纸 / 乐高底板"
+    },
+    "lighting": {
+     "type": "string"
+    },
+    "frontMarker": {
+     "type": "string",
+     "description": "怎么标记模型正面"
+    },
+    "turntable": {
+     "type": "boolean"
+    }
+   }
+  },
+  "mechanisms": {
+   "type": "array",
+   "description": "拍照时就登记的可开合设计（模型还没建好时用）",
+   "items": {
+    "type": "object",
+    "required": [
+     "id"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "type": {
+      "enum": [
+       "hinge",
+       "slide",
+       "removable"
+      ]
+     }
+    }
+   }
+  },
+  "skipped": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "slot",
+     "reason"
+    ],
+    "properties": {
+     "slot": {
+      "type": "string",
+      "description": "例如 bottom"
+     },
+     "reason": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "photos": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "file",
+     "kind"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "file": {
+      "type": "string"
+     },
+     "kind": {
+      "enum": [
+       "exterior",
+       "bottom",
+       "mechanism",
+       "interior",
+       "module",
+       "detail",
+       "layer"
+      ]
+     },
+     "azimuth": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 360
+     },
+     "elevation": {
+      "type": "number",
+      "minimum": -90,
+      "maximum": 90
+     },
+     "state": {
+      "enum": [
+       "closed",
+       "open",
+       "half"
+      ]
+     },
+     "mechanism": {
+      "type": "string",
+      "description": "对应的可开合设计 id"
+     },
+     "layer": {
+      "type": "integer",
+      "description": "kind=layer 时：拆到第几层"
+     },
+     "width": {
+      "type": "integer"
+     },
+     "height": {
+      "type": "integer"
+     },
+     "note": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ }
+}

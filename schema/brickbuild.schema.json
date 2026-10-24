@@ -1,0 +1,318 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://brickkit.local/schema/brickbuild.schema.json",
+ "title": "brickbuild 模型",
+ "description": "乐高实物模型的数字还原：零件、步骤、模块/子组件、可开合设计、照片证据。坐标：at=[x 格, 层(片), z 格]，y 向上，正面朝 +z。",
+ "type": "object",
+ "required": [
+  "format",
+  "version",
+  "parts"
+ ],
+ "properties": {
+  "format": {
+   "const": "brickbuild"
+  },
+  "version": {
+   "type": "string",
+   "examples": [
+    "0.2"
+   ]
+  },
+  "meta": {
+   "type": "object",
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "author": {
+     "type": "string"
+    },
+    "createdAt": {
+     "type": "string"
+    },
+    "front": {
+     "type": "string",
+     "description": "正面方向，固定为 +z"
+    },
+    "description": {
+     "type": "string"
+    },
+    "photoSet": {
+     "type": "string",
+     "description": "照片清单文件名"
+    }
+   }
+  },
+  "steps": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "n"
+    ],
+    "properties": {
+     "n": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "title": {
+      "type": "string"
+     },
+     "note": {
+      "type": "string"
+     },
+     "attach": {
+      "type": "string",
+      "description": "装配步：把这个子组件（modules[].subassembly=true）整体装到主体上；这一步可以没有零件"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "modules": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "parent": {
+      "type": "string",
+      "description": "父模块 id；爆炸位移会叠加"
+     },
+     "explode": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "“按模块”爆炸时的位移 [x 格, 层(片), z 格]（爆炸 100% 时）；不写则自动按高度排开"
+     },
+     "subassembly": {
+      "type": "boolean",
+      "description": "单独拼好再整体装上的子组件；需要一个 steps[].attach 装配步"
+     },
+     "note": {
+      "type": "string"
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  "parts": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "part",
+     "color",
+     "at",
+     "step"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "part": {
+      "type": "string",
+      "description": "LDraw 零件编号，见 catalog/parts.json"
+     },
+     "color": {
+      "type": "integer",
+      "description": "LDraw 颜色代码，见 catalog/colors.json"
+     },
+     "at": {
+      "type": "array",
+      "items": {
+       "type": "integer"
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "旋转后占地的最小角 [x 格, 层(片), z 格]"
+     },
+     "rot": {
+      "enum": [
+       0,
+       90,
+       180,
+       270
+      ],
+      "description": "俯视逆时针绕 +y 旋转"
+     },
+     "step": {
+      "type": "integer",
+      "minimum": 1
+     },
+     "module": {
+      "type": "string"
+     },
+     "group": {
+      "type": "string",
+      "description": "0.1 的旧字段，等同 module"
+     },
+     "mount": {
+      "type": "string",
+      "description": "不靠凸点连接时，安装在哪个零件上（例如门 → 门框）"
+     },
+     "status": {
+      "enum": [
+       "confirmed",
+       "inferred",
+       "uncertain"
+      ]
+     },
+     "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+     },
+     "evidence": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "能看到这个零件的照片 id"
+     },
+     "note": {
+      "type": "string"
+     }
+    }
+   }
+  },
+  "mechanisms": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "type",
+     "parts"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "label": {
+      "type": "string"
+     },
+     "type": {
+      "enum": [
+       "hinge",
+       "slide",
+       "removable"
+      ]
+     },
+     "parts": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "minItems": 1
+     },
+     "pivot": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "合页转轴上的一点 [x 格, 层(片), z 格]"
+     },
+     "axis": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "合页转轴方向 / 滑动方向（每单位 = 1 格或 1 片）"
+     },
+     "range": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "合页角度（度）或滑动距离"
+     },
+     "offset": {
+      "type": "array",
+      "items": {
+       "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "可取下部件取下时的位移 [x 格, 层(片), z 格]"
+     },
+     "default": {
+      "type": "number"
+     },
+     "evidence": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    },
+    "allOf": [
+     {
+      "if": {
+       "properties": {
+        "type": {
+         "const": "hinge"
+        }
+       }
+      },
+      "then": {
+       "required": [
+        "pivot",
+        "axis",
+        "range"
+       ]
+      }
+     },
+     {
+      "if": {
+       "properties": {
+        "type": {
+         "const": "slide"
+        }
+       }
+      },
+      "then": {
+       "required": [
+        "axis",
+        "range"
+       ]
+      }
+     },
+     {
+      "if": {
+       "properties": {
+        "type": {
+         "const": "removable"
+        }
+       }
+      },
+      "then": {
+       "required": [
+        "offset"
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
+}

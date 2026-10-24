@@ -1,0 +1,292 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.2",
+ "model": "cottage.brick.json",
+ "capture": {
+  "device": "iPhone 15 主摄 1x",
+  "background": "浅灰色哑光卡纸",
+  "reference": "模型下垫 8mm 方格纸",
+  "lighting": "窗边自然光 + 白色泡沫板补光，未开闪光",
+  "frontMarker": "方格纸正面一侧贴了红色胶带",
+  "turntable": true
+ },
+ "mechanisms": [
+  {
+   "id": "door",
+   "label": "前门",
+   "type": "hinge"
+  },
+  {
+   "id": "roof",
+   "label": "屋顶",
+   "type": "removable"
+  }
+ ],
+ "skipped": [
+  {
+   "slot": "bottom",
+   "reason": "底板粘在展示架上，不能翻过来"
+  }
+ ],
+ "photos": [
+  {
+   "id": "ext_a000_e30",
+   "file": "ext_a000_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 0,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a045_e30",
+   "file": "ext_a045_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 45,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a090_e30",
+   "file": "ext_a090_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a135_e30",
+   "file": "ext_a135_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 135,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a180_e30",
+   "file": "ext_a180_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 180,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a225_e30",
+   "file": "ext_a225_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 225,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a270_e30",
+   "file": "ext_a270_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 270,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a315_e30",
+   "file": "ext_a315_e30.jpg",
+   "kind": "exterior",
+   "azimuth": 315,
+   "elevation": 30,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a000_e00",
+   "file": "ext_a000_e00.jpg",
+   "kind": "exterior",
+   "azimuth": 0,
+   "elevation": 0,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a090_e00",
+   "file": "ext_a090_e00.jpg",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 0,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a180_e00",
+   "file": "ext_a180_e00.jpg",
+   "kind": "exterior",
+   "azimuth": 180,
+   "elevation": 0,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_a270_e00",
+   "file": "ext_a270_e00.jpg",
+   "kind": "exterior",
+   "azimuth": 270,
+   "elevation": 0,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "ext_top_e90",
+   "file": "ext_top_e90.jpg",
+   "kind": "exterior",
+   "elevation": 90,
+   "state": "closed",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_door_open_a000_e20",
+   "file": "mech_door_open_a000_e20.jpg",
+   "kind": "mechanism",
+   "mechanism": "door",
+   "state": "open",
+   "azimuth": 0,
+   "elevation": 20,
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_door_open_a045_e30",
+   "file": "mech_door_open_a045_e30.jpg",
+   "kind": "mechanism",
+   "mechanism": "door",
+   "state": "open",
+   "azimuth": 45,
+   "elevation": 30,
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_door_half_a000_e20",
+   "file": "mech_door_half_a000_e20.jpg",
+   "kind": "mechanism",
+   "mechanism": "door",
+   "state": "half",
+   "azimuth": 0,
+   "elevation": 20,
+   "note": "门开到约 45°，用来判断门轴位置",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_door_interior_a000_e10",
+   "file": "mech_door_interior_a000_e10.jpg",
+   "kind": "interior",
+   "mechanism": "door",
+   "state": "open",
+   "azimuth": 0,
+   "elevation": 10,
+   "note": "从门口往里拍",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_roof_open_a030_e35",
+   "file": "mech_roof_open_a030_e35.jpg",
+   "kind": "mechanism",
+   "mechanism": "roof",
+   "state": "open",
+   "azimuth": 30,
+   "elevation": 35,
+   "note": "屋顶取下后放在旁边",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_roof_open_a210_e35",
+   "file": "mech_roof_open_a210_e35.jpg",
+   "kind": "mechanism",
+   "mechanism": "roof",
+   "state": "open",
+   "azimuth": 210,
+   "elevation": 35,
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_roof_interior_e90",
+   "file": "mech_roof_interior_e90.jpg",
+   "kind": "interior",
+   "mechanism": "roof",
+   "state": "open",
+   "elevation": 90,
+   "note": "取下屋顶后从正上方拍室内",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_roof_module_top",
+   "file": "mech_roof_module_top.jpg",
+   "kind": "module",
+   "mechanism": "roof",
+   "elevation": 60,
+   "azimuth": 30,
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "mech_roof_module_bottom",
+   "file": "mech_roof_module_bottom.jpg",
+   "kind": "module",
+   "mechanism": "roof",
+   "elevation": -90,
+   "note": "屋顶翻过来拍底面",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "detail_door_handle",
+   "file": "detail_door_handle.jpg",
+   "kind": "detail",
+   "azimuth": 0,
+   "elevation": 10,
+   "note": "门把手特写",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "detail_window",
+   "file": "detail_window.jpg",
+   "kind": "detail",
+   "azimuth": 90,
+   "elevation": 0,
+   "note": "侧窗：透明砖 3065",
+   "width": 4032,
+   "height": 3024
+  },
+  {
+   "id": "detail_flowers",
+   "file": "detail_flowers.jpg",
+   "kind": "detail",
+   "azimuth": 330,
+   "elevation": 35,
+   "note": "左前角的花",
+   "width": 4032,
+   "height": 3024
+  }
+ ]
+}

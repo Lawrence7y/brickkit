@@ -1,0 +1,729 @@
+{
+ "format": "brickbuild-catalog",
+ "version": "0.1",
+ "units": {
+  "stud": "1 格 = 8 mm（LDraw 20 LDU）",
+  "plate": "1 层 = 3.2 mm（LDraw 8 LDU）"
+ },
+ "note": "size=[沿本地 x 的格数, 沿本地 z 的格数]（与 LDraw 零件的 X/Z 一致）；h=高度（片）；ldrawOrigin=LDraw 原点在本地坐标中的位置（x,z 以格为单位、相对占地中心；y 以片为单位、相对底面）；checked=已用 LDraw 官方库核对尺寸与原点",
+ "parts": {
+  "2431": {
+   "name": "Tile 1 x 4",
+   "zh": "平板 1×4",
+   "kind": "tile",
+   "size": [
+    4,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "2456": {
+   "name": "Brick 2 x 6",
+   "zh": "砖 2×6",
+   "kind": "brick",
+   "size": [
+    6,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3001": {
+   "name": "Brick 2 x 4",
+   "zh": "砖 2×4",
+   "kind": "brick",
+   "size": [
+    4,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3002": {
+   "name": "Brick 2 x 3",
+   "zh": "砖 2×3",
+   "kind": "brick",
+   "size": [
+    3,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3003": {
+   "name": "Brick 2 x 2",
+   "zh": "砖 2×2",
+   "kind": "brick",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3004": {
+   "name": "Brick 1 x 2",
+   "zh": "砖 1×2",
+   "kind": "brick",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3005": {
+   "name": "Brick 1 x 1",
+   "zh": "砖 1×1",
+   "kind": "brick",
+   "size": [
+    1,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3007": {
+   "name": "Brick 2 x 8",
+   "zh": "砖 2×8",
+   "kind": "brick",
+   "size": [
+    8,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3008": {
+   "name": "Brick 1 x 8",
+   "zh": "砖 1×8",
+   "kind": "brick",
+   "size": [
+    8,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3009": {
+   "name": "Brick 1 x 6",
+   "zh": "砖 1×6",
+   "kind": "brick",
+   "size": [
+    6,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3010": {
+   "name": "Brick 1 x 4",
+   "zh": "砖 1×4",
+   "kind": "brick",
+   "size": [
+    4,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3020": {
+   "name": "Plate 2 x 4",
+   "zh": "板 2×4",
+   "kind": "plate",
+   "size": [
+    4,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3021": {
+   "name": "Plate 2 x 3",
+   "zh": "板 2×3",
+   "kind": "plate",
+   "size": [
+    3,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3022": {
+   "name": "Plate 2 x 2",
+   "zh": "板 2×2",
+   "kind": "plate",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3023": {
+   "name": "Plate 1 x 2",
+   "zh": "板 1×2",
+   "kind": "plate",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3024": {
+   "name": "Plate 1 x 1",
+   "zh": "板 1×1",
+   "kind": "plate",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3031": {
+   "name": "Plate 4 x 4",
+   "zh": "板 4×4",
+   "kind": "plate",
+   "size": [
+    4,
+    4
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3032": {
+   "name": "Plate 4 x 6",
+   "zh": "板 4×6",
+   "kind": "plate",
+   "size": [
+    6,
+    4
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3033": {
+   "name": "Plate 6 x 10",
+   "zh": "板 6×10",
+   "kind": "plate",
+   "size": [
+    10,
+    6
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3034": {
+   "name": "Plate 2 x 8",
+   "zh": "板 2×8",
+   "kind": "plate",
+   "size": [
+    8,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3035": {
+   "name": "Plate 4 x 8",
+   "zh": "板 4×8",
+   "kind": "plate",
+   "size": [
+    8,
+    4
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3036": {
+   "name": "Plate 6 x 8",
+   "zh": "板 6×8",
+   "kind": "plate",
+   "size": [
+    8,
+    6
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3037": {
+   "name": "Slope Brick 45 2 x 4",
+   "zh": "斜面砖 45° 2×4",
+   "kind": "slope",
+   "size": [
+    4,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": true
+  },
+  "3038": {
+   "name": "Slope Brick 45 2 x 3",
+   "zh": "斜面砖 45° 2×3",
+   "kind": "slope",
+   "size": [
+    3,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": false
+  },
+  "3039": {
+   "name": "Slope Brick 45 2 x 2",
+   "zh": "斜面砖 45° 2×2",
+   "kind": "slope",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": true
+  },
+  "3041": {
+   "name": "Slope Brick 45 2 x 4 Double",
+   "zh": "双面斜砖 45° 2×4（屋脊）",
+   "kind": "ridge",
+   "size": [
+    4,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3043": {
+   "name": "Slope Brick 45 2 x 2 Double",
+   "zh": "双面斜砖 45° 2×2（屋脊）",
+   "kind": "ridge",
+   "size": [
+    2,
+    2
+   ],
+   "h": 3,
+   "checked": false,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ]
+  },
+  "3065": {
+   "name": "Brick 1 x 2 without Centre Stud",
+   "zh": "砖 1×2（无底管，常用于透明件）",
+   "kind": "brick",
+   "size": [
+    2,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3460": {
+   "name": "Plate 1 x 8",
+   "zh": "板 1×8",
+   "kind": "plate",
+   "size": [
+    8,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3622": {
+   "name": "Brick 1 x 3",
+   "zh": "砖 1×3",
+   "kind": "brick",
+   "size": [
+    3,
+    1
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
+  "3623": {
+   "name": "Plate 1 x 3",
+   "zh": "板 1×3",
+   "kind": "plate",
+   "size": [
+    3,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3666": {
+   "name": "Plate 1 x 6",
+   "zh": "板 1×6",
+   "kind": "plate",
+   "size": [
+    6,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3710": {
+   "name": "Plate 1 x 4",
+   "zh": "板 1×4",
+   "kind": "plate",
+   "size": [
+    4,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3795": {
+   "name": "Plate 2 x 6",
+   "zh": "板 2×6",
+   "kind": "plate",
+   "size": [
+    6,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3958": {
+   "name": "Plate 6 x 6",
+   "zh": "板 6×6",
+   "kind": "plate",
+   "size": [
+    6,
+    6
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "41539": {
+   "name": "Plate 8 x 8",
+   "zh": "板 8×8",
+   "kind": "plate",
+   "size": [
+    8,
+    8
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "60596": {
+   "name": "Door 1 x 4 x 6 Frame",
+   "zh": "门框 1×4×6",
+   "kind": "doorframe",
+   "size": [
+    4,
+    1
+   ],
+   "h": 18,
+   "ldrawOrigin": [
+    0,
+    18,
+    0
+   ],
+   "checked": true
+  },
+  "60623": {
+   "name": "Door 1 x 4 x 6 with 4 Panes and Stud Handle",
+   "zh": "门 1×4×6（四格窗）",
+   "kind": "door",
+   "size": [
+    4,
+    1
+   ],
+   "h": 18,
+   "occupies": false,
+   "ldrawOrigin": [
+    -1.6,
+    18,
+    -0.25
+   ],
+   "hinge": {
+    "pivot": [
+     -1.6,
+     0,
+     -0.25
+    ],
+    "axis": [
+     0,
+     1,
+     0
+    ]
+   },
+   "note": "与门框使用相同的 at/rot；门轴在门框背面左侧",
+   "checked": true
+  },
+  "63864": {
+   "name": "Tile 1 x 3",
+   "zh": "平板 1×3",
+   "kind": "tile",
+   "size": [
+    3,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "87079": {
+   "name": "Tile 2 x 4",
+   "zh": "平板 2×4",
+   "kind": "tile",
+   "size": [
+    4,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3070b": {
+   "name": "Tile 1 x 1",
+   "zh": "平板 1×1",
+   "kind": "tile",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3069b": {
+   "name": "Tile 1 x 2",
+   "zh": "平板 1×2",
+   "kind": "tile",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3068b": {
+   "name": "Tile 2 x 2",
+   "zh": "平板 2×2",
+   "kind": "tile",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "3040b": {
+   "name": "Slope Brick 45 2 x 1",
+   "zh": "斜面砖 45° 2×1",
+   "kind": "slope",
+   "size": [
+    1,
+    2
+   ],
+   "h": 3,
+   "ldrawOrigin": [
+    0,
+    3,
+    -0.5
+   ],
+   "checked": true
+  }
+ }
+}

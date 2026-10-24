@@ -1,0 +1,1288 @@
+{
+ "format": "brickbuild",
+ "version": "0.2",
+ "meta": {
+  "name": "林间小屋（示例）",
+  "author": "brickkit",
+  "createdAt": "2026-10-24",
+  "front": "+z",
+  "description": "演示用模型：门可以打开，屋顶可以整体取下。",
+  "photoSet": "cottage.photos.json"
+ },
+ "steps": [
+  {
+   "n": 1,
+   "title": "底板"
+  },
+  {
+   "n": 2,
+   "title": "前院小路和花草"
+  },
+  {
+   "n": 3,
+   "title": "室内桌椅"
+  },
+  {
+   "n": 4,
+   "title": "第 1 层墙和门框"
+  },
+  {
+   "n": 5,
+   "title": "装上门"
+  },
+  {
+   "n": 6,
+   "title": "第 2 层墙"
+  },
+  {
+   "n": 7,
+   "title": "第 3 层墙（开窗）"
+  },
+  {
+   "n": 8,
+   "title": "第 4 层墙（开窗）"
+  },
+  {
+   "n": 9,
+   "title": "第 5 层墙"
+  },
+  {
+   "n": 10,
+   "title": "第 6 层墙"
+  },
+  {
+   "n": 11,
+   "title": "屋顶底板"
+  },
+  {
+   "n": 12,
+   "title": "屋顶第 1 层斜面"
+  },
+  {
+   "n": 13,
+   "title": "屋顶第 2 层斜面"
+  },
+  {
+   "n": 14,
+   "title": "屋脊"
+  },
+  {
+   "n": 15,
+   "title": "装上屋顶",
+   "attach": "roof"
+  }
+ ],
+ "modules": [
+  {
+   "id": "base",
+   "label": "底板",
+   "explode": [0, 0, 0]
+  },
+  {
+   "id": "yard",
+   "label": "前院",
+   "explode": [0, 3, 6]
+  },
+  {
+   "id": "interior",
+   "label": "室内家具",
+   "explode": [0, 6, 0]
+  },
+  {
+   "id": "walls",
+   "label": "墙体",
+   "explode": [0, 16, 0]
+  },
+  {
+   "id": "door",
+   "label": "前门",
+   "parent": "walls",
+   "explode": [0, 0, 6]
+  },
+  {
+   "id": "roof",
+   "label": "屋顶",
+   "subassembly": true,
+   "explode": [0, 34, 0],
+   "note": "单独拼好后整体放到墙上"
+  }
+ ],
+ "parts": [
+  {
+   "id": "p001",
+   "part": "41539",
+   "color": 2,
+   "at": [0, 0, 0],
+   "rot": 0,
+   "step": 1,
+   "module": "base",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_top_e90",
+    "ext_a000_e30"
+   ]
+  },
+  {
+   "id": "p002",
+   "part": "3068b",
+   "color": 28,
+   "at": [3, 1, 6],
+   "rot": 0,
+   "step": 2,
+   "module": "yard",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_top_e90"
+   ]
+  },
+  {
+   "id": "p003",
+   "part": "3023",
+   "color": 10,
+   "at": [0, 1, 6],
+   "rot": 90,
+   "step": 2,
+   "module": "yard",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30"
+   ]
+  },
+  {
+   "id": "p004",
+   "part": "3024",
+   "color": 4,
+   "at": [0, 2, 6],
+   "rot": 0,
+   "step": 2,
+   "module": "yard",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "detail_flowers"
+   ]
+  },
+  {
+   "id": "p005",
+   "part": "3024",
+   "color": 14,
+   "at": [0, 2, 7],
+   "rot": 0,
+   "step": 2,
+   "module": "yard",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "detail_flowers"
+   ]
+  },
+  {
+   "id": "p006",
+   "part": "3003",
+   "color": 288,
+   "at": [6, 1, 6],
+   "rot": 0,
+   "step": 2,
+   "module": "yard",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a045_e30"
+   ]
+  },
+  {
+   "id": "p007",
+   "part": "3022",
+   "color": 10,
+   "at": [6, 4, 6],
+   "rot": 0,
+   "step": 2,
+   "module": "yard",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a045_e30"
+   ]
+  },
+  {
+   "id": "p008",
+   "part": "3005",
+   "color": 70,
+   "at": [5, 1, 1],
+   "rot": 0,
+   "step": 3,
+   "module": "interior",
+   "status": "uncertain",
+   "confidence": 0.55,
+   "evidence": [
+    "mech_roof_interior_e90"
+   ],
+   "note": "只在取下屋顶后的俯视图里看到桌面，桌腿位置为推断"
+  },
+  {
+   "id": "p009",
+   "part": "3068b",
+   "color": 19,
+   "at": [5, 4, 1],
+   "rot": 0,
+   "step": 3,
+   "module": "interior",
+   "status": "uncertain",
+   "confidence": 0.55,
+   "evidence": [
+    "mech_roof_interior_e90"
+   ],
+   "note": "桌面可见，颜色可能是沙色或浅肤色"
+  },
+  {
+   "id": "p010",
+   "part": "3005",
+   "color": 70,
+   "at": [4, 1, 1],
+   "rot": 0,
+   "step": 3,
+   "module": "interior",
+   "status": "uncertain",
+   "confidence": 0.55,
+   "evidence": [
+    "mech_roof_interior_e90"
+   ],
+   "note": "椅子被桌面挡住一半"
+  },
+  {
+   "id": "p011",
+   "part": "3004",
+   "color": 72,
+   "at": [0, 1, 5],
+   "rot": 0,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p012",
+   "part": "3004",
+   "color": 72,
+   "at": [6, 1, 5],
+   "rot": 0,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p013",
+   "part": "3010",
+   "color": 72,
+   "at": [0, 1, 0],
+   "rot": 0,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p014",
+   "part": "3010",
+   "color": 72,
+   "at": [4, 1, 0],
+   "rot": 0,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p015",
+   "part": "3010",
+   "color": 72,
+   "at": [0, 1, 1],
+   "rot": 90,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p016",
+   "part": "3010",
+   "color": 72,
+   "at": [7, 1, 1],
+   "rot": 90,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p017",
+   "part": "60596",
+   "color": 15,
+   "at": [2, 1, 5],
+   "rot": 0,
+   "step": 4,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p018",
+   "part": "3005",
+   "color": 19,
+   "at": [1, 4, 5],
+   "rot": 0,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p019",
+   "part": "3005",
+   "color": 19,
+   "at": [6, 4, 5],
+   "rot": 0,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p020",
+   "part": "3010",
+   "color": 19,
+   "at": [1, 4, 0],
+   "rot": 0,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p021",
+   "part": "3004",
+   "color": 19,
+   "at": [5, 4, 0],
+   "rot": 0,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p022",
+   "part": "3010",
+   "color": 19,
+   "at": [0, 4, 0],
+   "rot": 90,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p023",
+   "part": "3004",
+   "color": 19,
+   "at": [0, 4, 4],
+   "rot": 90,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p024",
+   "part": "3004",
+   "color": 19,
+   "at": [7, 4, 0],
+   "rot": 90,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p025",
+   "part": "3010",
+   "color": 19,
+   "at": [7, 4, 2],
+   "rot": 90,
+   "step": 6,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p026",
+   "part": "3004",
+   "color": 19,
+   "at": [0, 7, 5],
+   "rot": 0,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p027",
+   "part": "3004",
+   "color": 19,
+   "at": [6, 7, 5],
+   "rot": 0,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p028",
+   "part": "3622",
+   "color": 19,
+   "at": [0, 7, 0],
+   "rot": 0,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p029",
+   "part": "3622",
+   "color": 19,
+   "at": [5, 7, 0],
+   "rot": 0,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p030",
+   "part": "3065",
+   "color": 47,
+   "at": [3, 7, 0],
+   "rot": 0,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00",
+    "detail_window"
+   ]
+  },
+  {
+   "id": "p031",
+   "part": "3005",
+   "color": 19,
+   "at": [0, 7, 1],
+   "rot": 90,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p032",
+   "part": "3005",
+   "color": 19,
+   "at": [0, 7, 4],
+   "rot": 90,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p033",
+   "part": "3065",
+   "color": 47,
+   "at": [0, 7, 2],
+   "rot": 90,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00",
+    "detail_window"
+   ]
+  },
+  {
+   "id": "p034",
+   "part": "3005",
+   "color": 19,
+   "at": [7, 7, 1],
+   "rot": 90,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p035",
+   "part": "3005",
+   "color": 19,
+   "at": [7, 7, 4],
+   "rot": 90,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p036",
+   "part": "3065",
+   "color": 47,
+   "at": [7, 7, 2],
+   "rot": 90,
+   "step": 7,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00",
+    "detail_window"
+   ]
+  },
+  {
+   "id": "p037",
+   "part": "3005",
+   "color": 19,
+   "at": [1, 10, 5],
+   "rot": 0,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p038",
+   "part": "3005",
+   "color": 19,
+   "at": [6, 10, 5],
+   "rot": 0,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p039",
+   "part": "3004",
+   "color": 19,
+   "at": [1, 10, 0],
+   "rot": 0,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p040",
+   "part": "3004",
+   "color": 19,
+   "at": [5, 10, 0],
+   "rot": 0,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p041",
+   "part": "3065",
+   "color": 47,
+   "at": [3, 10, 0],
+   "rot": 0,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00",
+    "detail_window"
+   ]
+  },
+  {
+   "id": "p042",
+   "part": "3004",
+   "color": 19,
+   "at": [0, 10, 0],
+   "rot": 90,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p043",
+   "part": "3004",
+   "color": 19,
+   "at": [0, 10, 4],
+   "rot": 90,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p044",
+   "part": "3065",
+   "color": 47,
+   "at": [0, 10, 2],
+   "rot": 90,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00",
+    "detail_window"
+   ]
+  },
+  {
+   "id": "p045",
+   "part": "3004",
+   "color": 19,
+   "at": [7, 10, 0],
+   "rot": 90,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p046",
+   "part": "3004",
+   "color": 19,
+   "at": [7, 10, 4],
+   "rot": 90,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p047",
+   "part": "3065",
+   "color": 47,
+   "at": [7, 10, 2],
+   "rot": 90,
+   "step": 8,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00",
+    "detail_window"
+   ]
+  },
+  {
+   "id": "p048",
+   "part": "3004",
+   "color": 19,
+   "at": [0, 13, 5],
+   "rot": 0,
+   "step": 9,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p049",
+   "part": "3004",
+   "color": 19,
+   "at": [6, 13, 5],
+   "rot": 0,
+   "step": 9,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p050",
+   "part": "3010",
+   "color": 19,
+   "at": [0, 13, 0],
+   "rot": 0,
+   "step": 9,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p051",
+   "part": "3010",
+   "color": 19,
+   "at": [4, 13, 0],
+   "rot": 0,
+   "step": 9,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p052",
+   "part": "3010",
+   "color": 19,
+   "at": [0, 13, 1],
+   "rot": 90,
+   "step": 9,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p053",
+   "part": "3010",
+   "color": 19,
+   "at": [7, 13, 1],
+   "rot": 90,
+   "step": 9,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p054",
+   "part": "3005",
+   "color": 19,
+   "at": [1, 16, 5],
+   "rot": 0,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p055",
+   "part": "3005",
+   "color": 19,
+   "at": [6, 16, 5],
+   "rot": 0,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_a000_e00"
+   ]
+  },
+  {
+   "id": "p056",
+   "part": "3010",
+   "color": 19,
+   "at": [1, 16, 0],
+   "rot": 0,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p057",
+   "part": "3004",
+   "color": 19,
+   "at": [5, 16, 0],
+   "rot": 0,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_a180_e00"
+   ]
+  },
+  {
+   "id": "p058",
+   "part": "3010",
+   "color": 19,
+   "at": [0, 16, 0],
+   "rot": 90,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p059",
+   "part": "3004",
+   "color": 19,
+   "at": [0, 16, 4],
+   "rot": 90,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a270_e30",
+    "ext_a270_e00"
+   ]
+  },
+  {
+   "id": "p060",
+   "part": "3004",
+   "color": 19,
+   "at": [7, 16, 0],
+   "rot": 90,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p061",
+   "part": "3010",
+   "color": 19,
+   "at": [7, 16, 2],
+   "rot": 90,
+   "step": 10,
+   "module": "walls",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a090_e30",
+    "ext_a090_e00"
+   ]
+  },
+  {
+   "id": "p062",
+   "part": "60623",
+   "color": 70,
+   "at": [2, 1, 5],
+   "rot": 0,
+   "step": 5,
+   "module": "door",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "mount": "p017",
+   "evidence": [
+    "ext_a000_e00",
+    "mech_door_open_a000_e20",
+    "detail_door_handle"
+   ]
+  },
+  {
+   "id": "p063",
+   "part": "3036",
+   "color": 72,
+   "at": [0, 19, 0],
+   "rot": 0,
+   "step": 11,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "mech_roof_module_bottom"
+   ]
+  },
+  {
+   "id": "p064",
+   "part": "3037",
+   "color": 4,
+   "at": [0, 20, 4],
+   "rot": 0,
+   "step": 12,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_top_e90"
+   ]
+  },
+  {
+   "id": "p065",
+   "part": "3037",
+   "color": 4,
+   "at": [0, 20, 0],
+   "rot": 180,
+   "step": 12,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_top_e90"
+   ]
+  },
+  {
+   "id": "p066",
+   "part": "3001",
+   "color": 4,
+   "at": [0, 20, 2],
+   "rot": 0,
+   "step": 12,
+   "module": "roof",
+   "status": "inferred",
+   "confidence": 0.7,
+   "evidence": [
+    "ext_a090_e00",
+    "ext_a270_e00"
+   ],
+   "note": "两侧山墙只看到端面，长度按 2×4 推断"
+  },
+  {
+   "id": "p067",
+   "part": "3037",
+   "color": 4,
+   "at": [4, 20, 4],
+   "rot": 0,
+   "step": 12,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_top_e90"
+   ]
+  },
+  {
+   "id": "p068",
+   "part": "3037",
+   "color": 4,
+   "at": [4, 20, 0],
+   "rot": 180,
+   "step": 12,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30",
+    "ext_top_e90"
+   ]
+  },
+  {
+   "id": "p069",
+   "part": "3001",
+   "color": 4,
+   "at": [4, 20, 2],
+   "rot": 0,
+   "step": 12,
+   "module": "roof",
+   "status": "inferred",
+   "confidence": 0.7,
+   "evidence": [
+    "ext_a090_e00",
+    "ext_a270_e00"
+   ],
+   "note": "两侧山墙只看到端面，长度按 2×4 推断"
+  },
+  {
+   "id": "p070",
+   "part": "3037",
+   "color": 4,
+   "at": [0, 23, 3],
+   "rot": 0,
+   "step": 13,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30"
+   ]
+  },
+  {
+   "id": "p071",
+   "part": "3037",
+   "color": 4,
+   "at": [0, 23, 1],
+   "rot": 180,
+   "step": 13,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30"
+   ]
+  },
+  {
+   "id": "p072",
+   "part": "3037",
+   "color": 4,
+   "at": [4, 23, 3],
+   "rot": 0,
+   "step": 13,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30"
+   ]
+  },
+  {
+   "id": "p073",
+   "part": "3037",
+   "color": 4,
+   "at": [4, 23, 1],
+   "rot": 180,
+   "step": 13,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a180_e30"
+   ]
+  },
+  {
+   "id": "p074",
+   "part": "3041",
+   "color": 320,
+   "at": [0, 26, 2],
+   "rot": 0,
+   "step": 14,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_top_e90"
+   ]
+  },
+  {
+   "id": "p075",
+   "part": "3041",
+   "color": 320,
+   "at": [4, 26, 2],
+   "rot": 0,
+   "step": 14,
+   "module": "roof",
+   "status": "confirmed",
+   "confidence": 0.95,
+   "evidence": [
+    "ext_a000_e30",
+    "ext_top_e90"
+   ]
+  }
+ ],
+ "mechanisms": [
+  {
+   "id": "door",
+   "label": "前门",
+   "type": "hinge",
+   "parts": [
+    "p062"
+   ],
+   "pivot": [2.4, 1, 5.25],
+   "axis": [0, 1, 0],
+   "range": [
+    0,
+    95
+   ],
+   "default": 0,
+   "evidence": [
+    "mech_door_open_a000_e20",
+    "mech_door_open_a045_e30",
+    "mech_door_half_a000_e20"
+   ]
+  },
+  {
+   "id": "roof",
+   "label": "屋顶",
+   "type": "removable",
+   "parts": [
+    "p063",
+    "p064",
+    "p065",
+    "p066",
+    "p067",
+    "p068",
+    "p069",
+    "p070",
+    "p071",
+    "p072",
+    "p073",
+    "p074",
+    "p075"
+   ],
+   "offset": [0, 16, 0],
+   "default": 0,
+   "evidence": [
+    "mech_roof_open_a030_e35",
+    "mech_roof_module_top",
+    "mech_roof_module_bottom"
+   ]
+  }
+ ]
+}

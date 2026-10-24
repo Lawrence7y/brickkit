@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>brickkit 查看器</title>
+<style>/*CSS*/</style>
+</head>
+<body data-mode="3d">
+<div id="app">
+  <header id="appbar">
+    <div class="brand"><h1 id="m-name">加载中…</h1><p id="m-meta" class="sub"></p></div>
+    <div class="seg mode" role="tablist" aria-label="视图">
+      <button role="tab" data-mode="3d" aria-selected="true">3D 展示</button>
+      <button role="tab" data-mode="book" aria-selected="false">拼装图纸</button>
+    </div>
+    <div class="bar-end"></div>
+  </header>
+
+  <div id="view3d">
+    <main id="stage" aria-label="3D 模型">
+      <canvas id="c"></canvas>
+      <button id="btn-reset" class="icon-btn float" aria-label="重置视角" title="重置视角"></button>
+      <div id="infocard" class="card" hidden></div>
+      <div id="stepbar" class="card">
+        <div class="step-row">
+          <button id="first" class="icon-btn hide-narrow" aria-label="第一步"></button>
+          <button id="prev" class="icon-btn" aria-label="上一步"></button>
+          <button id="play" class="icon-btn primary" aria-label="播放"></button>
+          <button id="next" class="icon-btn" aria-label="下一步"></button>
+          <button id="last" class="icon-btn hide-narrow" aria-label="完整模型"></button>
+          <div class="step-label"><span class="step-line"><span id="step-num"></span><span id="step-badge" class="badge" hidden></span></span><span id="step-title" class="sub"></span></div>
+        </div>
+        <input type="range" id="step-range" min="0" max="0" value="0" aria-label="拼装步骤">
+      </div>
+    </main>
+    <aside id="panel">
+      <section>
+        <div class="sec-head"><h2>爆炸图</h2><span id="explode-val" class="sub">0%</span></div>
+        <input type="range" id="explode" min="0" max="100" value="0" aria-label="爆炸程度">
+        <div class="seg" role="group" aria-label="爆炸方式">
+          <button data-emode="layer" aria-pressed="true">按层级</button>
+          <button data-emode="module" aria-pressed="false">按模块</button>
+        </div>
+        <div id="mods-wrap" hidden>
+          <p class="sub hint">点模块可以单独高亮</p>
+          <ul id="mods" class="list"></ul>
+        </div>
+      </section>
+      <section id="mech-section">
+        <h2>可开合设计</h2>
+        <ul id="mechs" class="list"></ul>
+      </section>
+      <section>
+        <div class="sec-head"><h2>零件清单</h2><span id="bom-count" class="sub"></span></div>
+        <div class="seg" role="tablist" aria-label="零件范围">
+          <button data-bomtab="step" role="tab">本步</button>
+          <button data-bomtab="all" role="tab">全部</button>
+        </div>
+        <ul id="bom" class="list"></ul>
+      </section>
+      <details id="data-sec">
+        <summary><span class="sum-title">数据与校验</span><span id="check-chip" class="chip"></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></summary>
+        <div class="details-body">
+          <p id="conf-line" class="conf"></p>
+          <ul id="checks" class="list"></ul>
+          <h3>显示</h3>
+          <label class="opt"><input type="checkbox" id="opt-highlight" checked><span>高亮本步新加的零件</span></label>
+          <label class="opt"><input type="checkbox" id="opt-fade"><span>淡化前面步骤的零件</span></label>
+          <label class="opt"><input type="checkbox" id="opt-status"><span>标出推断和存疑的零件</span></label>
+          <div id="legend" hidden>
+            <span><i class="ln attention"></i>推断（照片里看不到）</span>
+            <span><i class="ln risk"></i>存疑（需要人工确认）</span>
+          </div>
+          <h3>文件</h3>
+          <div class="file-actions">
+            <button id="open-file" class="btn">打开模型 JSON</button>
+            <button id="dl-ldraw" class="btn">导出 LDraw</button>
+            <button id="dl-json" class="btn">下载 JSON</button>
+          </div>
+          <p class="sub hint">也可以把 .brick.json 文件直接拖到左边的画面里。</p>
+          <input type="file" id="file" accept=".json,application/json" hidden>
+        </div>
+      </details>
+    </aside>
+  </div>
+
+  <section id="book" hidden aria-label="拼装图纸">
+    <div id="book-bar">
+      <div class="book-status"><span id="book-status"></span><progress id="book-progress" max="1" value="0" hidden></progress></div>
+      <div class="book-actions">
+        <label class="opt"><input type="checkbox" id="book-fade"><span>淡化已拼好的部分</span></label>
+        <button id="btn-print" class="btn primary" disabled>打印 / 存为 PDF</button>
+      </div>
+    </div>
+    <div id="pages"></div>
+  </section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<!--MODEL-->
+<script>//JS</script>
+</body>
+</html>
