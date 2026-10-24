@@ -135,7 +135,10 @@ async function launch(model) {
   const { chromium } = await import('playwright');
   const tmp = path.join(fs.mkdtempSync(path.join(process.env.TMPDIR || '/tmp', 'brickkit-')), 'v.html'); fs.writeFileSync(tmp, embed(model));
   const exe = process.env.CHROMIUM_PATH || ['/usr/local/bin/chromium', '/usr/bin/chromium', '/usr/bin/chromium-browser'].find((p) => fs.existsSync(p));
-  const browser = await chromium.launch({ executablePath: exe, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const extraLib = '/home/administrator/.local/rootfs/usr/lib/x86_64-linux-gnu';
+  const env = { ...process.env };
+  if (fs.existsSync(extraLib)) env.LD_LIBRARY_PATH = env.LD_LIBRARY_PATH ? `${extraLib}:${env.LD_LIBRARY_PATH}` : extraLib;
+  const browser = await chromium.launch({ executablePath: exe, env, args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
   return { browser, url: 'file://' + tmp };
 }
 async function booklet(model, outFile) {

@@ -63,7 +63,7 @@ export function localCells(def) {
     if (def.kind === 'corner' && i === sx - 1 && k === sz - 1) continue;
     let stud = false;
     if (!def.tile && !def.centerStuds) {
-      if (['brick', 'plate', 'doorframe', 'round', 'snot', 'bracket', 'barplate', 'clip', 'corner', 'islope', 'arch', 'technic'].includes(def.kind)) stud = true;
+      if (['brick', 'plate', 'pinplate', 'doorframe', 'round', 'snot', 'bracket', 'barplate', 'clip', 'corner', 'islope', 'arch', 'technic'].includes(def.kind)) stud = true;
       else if (def.kind === 'slope' || (def.kind === 'cslope' && def.backStuds)) stud = k === 0;
       else if (def.kind === 'wedge') stud = def.side === 'L' ? i === 0 || k === 0 : i === 0 || k === sz - 1;
     }
@@ -184,6 +184,10 @@ export function partConnectors(p, def) {
     const dir = localDirToWorld(0, 0, 1, rot, up);
     for (let i = 0; i < sx; i++) {
       studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, hz + 0.22), dir, label: `bar-${i}` });
+      if (def.bothEnds) {
+        const dirBack = localDirToWorld(0, 0, -1, rot, up);
+        studs.push({ index: studs.length, kind: 'bar', pos: localToWorld(p, def, i - hx + 0.5, H / 2, -hz - 0.22), dir: dirBack, label: `bar-back-${i}` });
+      }
     }
   } else if (def.kind === 'bar') {
     for (let y = 0.5; y < def.h; y += 1) {
@@ -203,7 +207,8 @@ export function partConnectors(p, def) {
   // 5. 夹子 (Clips)
   if (def.kind === 'clip') {
     const clipDir = localDirToWorld(0, 0, 1, rot, up);
-    for (const cx of sx >= 2 ? [-0.5, 0.5] : [0]) {
+    const clipXs = !def.singleClip && sx >= 2 ? [-0.5, 0.5] : [0];
+    for (const cx of clipXs) {
       receptors.push({ index: receptors.length, kind: 'clip', pos: localToWorld(p, def, cx, H / 2, hz + 0.22), dir: clipDir, i: 0, k: 0 });
     }
   }

@@ -59,6 +59,23 @@
    ],
    "checked": true
   },
+  "2444": {
+   "name": "Plate 2 x 2 with Pin Hole",
+   "zh": "带销孔连接板 2×2",
+   "kind": "pinplate",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
   "2445": {
    "name": "Plate 2 x 12",
    "zh": "板 2×12",
@@ -668,6 +685,23 @@
    "ldrawOrigin": [
     0,
     3,
+    0
+   ],
+   "checked": true
+  },
+  "3176": {
+   "name": "Plate 3 x 2 with Hole",
+   "zh": "带圆孔半圆耳板 2×3（前/后伸出圆孔耳）",
+   "kind": "pinplate",
+   "size": [
+    2,
+    2
+   ],
+   "h": 1,
+   "category": "technic",
+   "ldrawOrigin": [
+    0,
+    1,
     0
    ],
    "checked": true
@@ -1330,6 +1364,24 @@
    ],
    "checked": true
   },
+  "11476": {
+   "name": "Plate 1 x 2 with Horizontal Clip on Side",
+   "zh": "侧边单水平夹板 1×2",
+   "kind": "clip",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "singleClip": true,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
   "11477": {
    "name": "Slope Curved 2 x 1 No Studs",
    "zh": "弧面斜坡 1×2（高2片，无凸点）",
@@ -1373,6 +1425,7 @@
     1
    ],
    "h": 1,
+   "singleClip": true,
    "category": "hinge",
    "ldrawOrigin": [
     0,
@@ -1489,6 +1542,23 @@
     ]
    ],
    "category": "round",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "18677": {
+   "name": "Plate 1 x 2 with Pin Hole Underneath",
+   "zh": "底面带销孔板 1×2",
+   "kind": "plate",
+   "size": [
+    2,
+    1
+   ],
+   "h": 1,
+   "category": "technic",
    "ldrawOrigin": [
     0,
     1,
@@ -1676,6 +1746,7 @@
     1
    ],
    "h": 3,
+   "singleClip": true,
    "category": "hinge",
    "ldrawOrigin": [
     0,
@@ -1910,6 +1981,40 @@
    ],
    "checked": true
   },
+  "44301": {
+   "name": "Hinge Plate 1 x 2 Locking with 1 Finger on End",
+   "zh": "棘轮合页板 1×2（单指端）",
+   "kind": "clip",
+   "size": [
+    1,
+    2
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "44302": {
+   "name": "Hinge Plate 1 x 2 Locking with 2 Fingers on End",
+   "zh": "棘轮合页板 1×2（双指端）",
+   "kind": "barplate",
+   "size": [
+    1,
+    2
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
   "44728": {
    "name": "Bracket 1 x 2 - 2 x 2 (Down)",
    "zh": "正支架 1×2-2×2（向下垂4凸点，深5片）",
@@ -1981,7 +2086,7 @@
   },
   "48336": {
    "name": "Plate 1 x 2 with Handle on Side",
-   "zh": "带侧把柄板 1×2",
+   "zh": "带侧把柄板 1×2（封闭端）",
    "kind": "barplate",
    "size": [
     2,
@@ -2051,11 +2156,28 @@
   },
   "60470": {
    "name": "Plate 1 x 2 with Horizontal Clips",
-   "zh": "带双水平夹板 1×2",
+   "zh": "侧边双水平夹板 1×2",
    "kind": "clip",
    "size": [
     2,
     1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "60478": {
+   "name": "Plate 1 x 2 with Handle on End",
+   "zh": "端头把柄板 1×2",
+   "kind": "barplate",
+   "size": [
+    1,
+    2
    ],
    "h": 1,
    "category": "hinge",
@@ -2218,13 +2340,14 @@
   },
   "63868": {
    "name": "Plate 1 x 2 with Clip on End",
-   "zh": "端头单水平夹板 1×2",
+   "zh": "端头单水平夹板 1×2（机翼底孔反扣高频件）",
    "kind": "clip",
    "size": [
     1,
     2
    ],
    "h": 1,
+   "endClip": true,
    "category": "hinge",
    "ldrawOrigin": [
     0,
@@ -2398,6 +2521,23 @@
    ],
    "checked": true
   },
+  "92946": {
+   "name": "Slope 45 2 x 1 with 2/3 Cutout",
+   "zh": "带切口斜面砖 45° 1×2（高3片）",
+   "kind": "slope",
+   "size": [
+    1,
+    2
+   ],
+   "h": 3,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    3,
+    0
+   ],
+   "checked": true
+  },
   "93273": {
    "name": "Slope Curved 4 x 1 Double No Studs",
    "zh": "双头弧面斜坡 1×4（高2片）",
@@ -2446,6 +2586,29 @@
    "ldrawOrigin": [
     0,
     3,
+    0
+   ],
+   "checked": true
+  },
+  "99206": {
+   "name": "Plate 2 x 2 x 2/3 with 2 Studs on Side",
+   "zh": "侧面双凸点增高板 2×2×2/3（高2片）",
+   "kind": "snot",
+   "size": [
+    2,
+    2
+   ],
+   "h": 2,
+   "sideFaces": [
+    "+z"
+   ],
+   "sideRows": [
+    1
+   ],
+   "category": "snot",
+   "ldrawOrigin": [
+    0,
+    2,
     0
    ],
    "checked": true
@@ -2655,6 +2818,23 @@
    ],
    "checked": true
   },
+  "3684c": {
+   "name": "Slope Brick 75 2 x 2 x 3",
+   "zh": "高斜面砖 75° 2×2×3（高9片）",
+   "kind": "slope",
+   "size": [
+    2,
+    2
+   ],
+   "h": 9,
+   "category": "slope",
+   "ldrawOrigin": [
+    0,
+    9,
+    0
+   ],
+   "checked": true
+  },
   "3062b": {
    "name": "Brick Round 1 x 1 Open Stud",
    "zh": "圆砖 1×1（竖纹柱）",
@@ -2724,9 +2904,61 @@
    ],
    "checked": true
   },
+  "3839b": {
+   "name": "Plate 1 x 2 with Handles on Ends",
+   "zh": "双端把柄板 1×2",
+   "kind": "barplate",
+   "size": [
+    1,
+    2
+   ],
+   "h": 1,
+   "bothEnds": true,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "2429c01": {
+   "name": "Hinge Plate 1 x 4 Swivel Complete",
+   "zh": "水平旋转合页板 1×4",
+   "kind": "plate",
+   "size": [
+    4,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
   "4085d": {
    "name": "Plate 1 x 1 with Vertical Clip",
    "zh": "带竖直夹板 1×1",
+   "kind": "clip",
+   "size": [
+    1,
+    1
+   ],
+   "h": 1,
+   "category": "hinge",
+   "ldrawOrigin": [
+    0,
+    1,
+    0
+   ],
+   "checked": true
+  },
+  "4081b": {
+   "name": "Plate 1 x 1 with Light Ring",
+   "zh": "带圆环扣板 1×1",
    "kind": "clip",
    "size": [
     1,

@@ -32,12 +32,13 @@ description: 将乐高实物模型的多角度照片转化为可 360° 交互旋
    node cli/brickkit.mjs check-photos examples/model.photos.json --dir <照片目录> --pretty
    ```
 
-### 第 2 步：检索 152 种内置零件与颜色表
+### 第 2 步：检索 165 种内置零件与颜色表
 在动笔写模型前，先用 CLI 查清所需零件编号与真实尺寸（切勿猜测编号）：
 ```bash
-node cli/brickkit.mjs catalog          # 列出全部 12 大类 152 种零件
-node cli/brickkit.mjs catalog snot     # 查侧凸点核心砖 (87087, 4733, 11211, 22885...)
+node cli/brickkit.mjs catalog          # 列出全部 12 大类 165 种零件
+node cli/brickkit.mjs catalog snot     # 查侧凸点核心砖 (87087, 4733, 11211, 22885, 99206...)
 node cli/brickkit.mjs catalog bracket  # 查正/倒转接支架 (99780, 99781, 99207, 36840...)
+node cli/brickkit.mjs catalog hinge    # 查把柄与夹板 (48336, 60478, 63868 端头夹板, 60470, 44301...)
 node cli/brickkit.mjs catalog wedge    # 查左右楔形机翼 (41769, 41770, 24299, 24307...)
 node cli/brickkit.mjs colors           # 查 LDraw 颜色代码表
 ```
@@ -84,6 +85,6 @@ node cli/brickkit.mjs export-ldraw examples/model.brick.json -o out/model.mpd
 ---
 
 ## 三、参考文档
-- [docs/乐高拼插与防穿模规范.md](docs/乐高拼插与防穿模规范.md)：5:2 几何定律、三大拼插铁律与 152 种零件分类表
+- [docs/乐高拼插与防穿模规范.md](docs/乐高拼插与防穿模规范.md)：5:2 几何定律、三大拼插铁律、三大复杂机构范式与 165 种零件分类表
 - [docs/数据格式.md](docs/数据格式.md)：`.brick.json` 与 `.photos.json` 字段定义
 - [docs/拍摄规范.md](docs/拍摄规范.md)：用户拍摄引导规范

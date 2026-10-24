@@ -84,6 +84,9 @@ add('4733', 'Brick 1 x 1 with Studs on 4 Sides (Travis Brick)', '四面侧凸点
 add('4070', 'Brick 1 x 1 with Headlight', '车灯砖 1×1（内缩侧凸点）', 'snot', [1, 1], 3, {
   sideFaces: ['+z'], sideRows: [1.75], recessed: true, category: 'snot',
 });
+add('99206', 'Plate 2 x 2 x 2/3 with 2 Studs on Side', '侧面双凸点增高板 2×2×2/3（高2片）', 'snot', [2, 2], 2, {
+  sideFaces: ['+z'], sideRows: [1.0], category: 'snot',
+});
 add('11211', 'Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side', '单面四凸点砖 1×2（高5片=2格）', 'snot', [2, 1], 5, {
   sideFaces: ['+z'], sideRows: [1.25, 3.75], category: 'snot',
 });
@@ -133,6 +136,8 @@ for (const [id, x, chk] of [['3040b', 1, true], ['3039', 2, true], ['3038', 3, f
 }
 add('60481', 'Slope Brick 65 2 x 1 x 2', '高斜面砖 65° 2×1×2（高6片）', 'slope', [1, 2], 6, { category: 'slope' });
 add('3678b', 'Slope Brick 65 2 x 2 x 2', '高斜面砖 65° 2×2×2（高6片）', 'slope', [2, 2], 6, { category: 'slope' });
+add('3684c', 'Slope Brick 75 2 x 2 x 3', '高斜面砖 75° 2×2×3（高9片）', 'slope', [2, 2], 9, { category: 'slope' });
+add('92946', 'Slope 45 2 x 1 with 2/3 Cutout', '带切口斜面砖 45° 1×2（高3片）', 'slope', [1, 2], 3, { category: 'slope' });
 add('3043', 'Slope Brick 45 2 x 2 Double', '双面斜砖 45° 2×2（屋脊）', 'ridge', [2, 2], 3, { checked: false, category: 'slope' });
 add('3041', 'Slope Brick 45 2 x 4 Double', '双面斜砖 45° 2×4（屋脊）', 'ridge', [4, 2], 3, { category: 'slope' });
 add('3665', 'Slope Brick 45 2 x 1 Inverted', '倒斜面砖 45° 2×1（底面仅后排有孔，顶面2凸点）', 'islope', [1, 2], 3, { category: 'slope' });
@@ -183,16 +188,23 @@ add('3960', 'Dish 4 x 4 Inverted (Radar)', '大雷达圆碟 4×4', 'dish', [4, 4
 // ================================================================
 // 10. 把柄、夹子、合页与球头关节 (Bars, Clips, Hinges & Ball Joints)
 // ================================================================
-add('48336', 'Plate 1 x 2 with Handle on Side', '带侧把柄板 1×2', 'barplate', [2, 1], 1, { category: 'hinge' });
+add('48336', 'Plate 1 x 2 with Handle on Side', '带侧把柄板 1×2（封闭端）', 'barplate', [2, 1], 1, { category: 'hinge' });
 add('2540', 'Plate 1 x 2 with Handle on Side (Free Ends)', '开放式侧把柄板 1×2', 'barplate', [2, 1], 1, { category: 'hinge' });
+add('60478', 'Plate 1 x 2 with Handle on End', '端头把柄板 1×2', 'barplate', [1, 2], 1, { category: 'hinge' });
+add('3839b', 'Plate 1 x 2 with Handles on Ends', '双端把柄板 1×2', 'barplate', [1, 2], 1, { bothEnds: true, category: 'hinge' });
 add('26047', 'Plate Round 1 x 1 with Handle', '带单把柄圆板 1×1', 'barplate', [1, 1], 1, { category: 'hinge' });
-add('60470', 'Plate 1 x 2 with Horizontal Clips', '带双水平夹板 1×2', 'clip', [2, 1], 1, { category: 'hinge' });
-add('63868', 'Plate 1 x 2 with Clip on End', '端头单水平夹板 1×2', 'clip', [1, 2], 1, { category: 'hinge' });
+add('60470', 'Plate 1 x 2 with Horizontal Clips', '侧边双水平夹板 1×2', 'clip', [2, 1], 1, { category: 'hinge' });
+add('11476', 'Plate 1 x 2 with Horizontal Clip on Side', '侧边单水平夹板 1×2', 'clip', [2, 1], 1, { singleClip: true, category: 'hinge' });
+add('63868', 'Plate 1 x 2 with Clip on End', '端头单水平夹板 1×2（机翼底孔反扣高频件）', 'clip', [1, 2], 1, { endClip: true, category: 'hinge' });
+add('44301', 'Hinge Plate 1 x 2 Locking with 1 Finger on End', '棘轮合页板 1×2（单指端）', 'clip', [1, 2], 1, { category: 'hinge' });
+add('44302', 'Hinge Plate 1 x 2 Locking with 2 Fingers on End', '棘轮合页板 1×2（双指端）', 'barplate', [1, 2], 1, { category: 'hinge' });
+add('2429c01', 'Hinge Plate 1 x 4 Swivel Complete', '水平旋转合页板 1×4', 'plate', [4, 1], 1, { category: 'hinge' });
 add('4085d', 'Plate 1 x 1 with Vertical Clip', '带竖直夹板 1×1', 'clip', [1, 1], 1, { category: 'hinge' });
+add('4081b', 'Plate 1 x 1 with Light Ring', '带圆环扣板 1×1', 'clip', [1, 1], 1, { category: 'hinge' });
 add('15712', 'Plate 1 x 1 with Top Clip', '顶面带夹板 1×1', 'clip', [1, 1], 1, { category: 'hinge' });
-add('30237', 'Brick 1 x 2 with Vertical Clip', '带侧竖夹砖 1×2', 'clip', [2, 1], 3, { category: 'hinge' });
+add('30237', 'Brick 1 x 2 with Vertical Clip', '带侧竖夹砖 1×2', 'clip', [2, 1], 3, { singleClip: true, category: 'hinge' });
 add('14417', 'Plate 1 x 2 with Towball on Side', '带侧球头板 1×2', 'barplate', [2, 1], 1, { category: 'hinge' });
-add('14418', 'Plate 1 x 2 with Towball Socket', '带球窝夹板 1×2', 'clip', [2, 1], 1, { category: 'hinge' });
+add('14418', 'Plate 1 x 2 with Towball Socket', '带球窝夹板 1×2', 'clip', [2, 1], 1, { singleClip: true, category: 'hinge' });
 add('87994', 'Bar 3L', '3格长光剑杆/连接杆（高9片）', 'bar', [1, 1], 9, { category: 'hinge' });
 add('30374', 'Bar 4L (Lightsaber Blade)', '4格长光剑杆（高12片）', 'bar', [1, 1], 12, { category: 'hinge' });
 
@@ -218,6 +230,9 @@ add('3700', 'Technic Brick 1 x 2 with Hole', '科技单孔砖 1×2', 'technic', 
 add('32000', 'Technic Brick 1 x 2 with 2 Holes', '科技双孔砖 1×2', 'technic', [2, 1], 3, { holes: 2, category: 'technic' });
 add('3701', 'Technic Brick 1 x 4 with 3 Holes', '科技三孔砖 1×4', 'technic', [4, 1], 3, { holes: 3, category: 'technic' });
 add('3894', 'Technic Brick 1 x 6 with 5 Holes', '科技五孔砖 1×6', 'technic', [6, 1], 3, { holes: 5, category: 'technic' });
+add('3176', 'Plate 3 x 2 with Hole', '带圆孔半圆耳板 2×3（前/后伸出圆孔耳）', 'pinplate', [2, 2], 1, { category: 'technic' });
+add('2444', 'Plate 2 x 2 with Pin Hole', '带销孔连接板 2×2', 'pinplate', [2, 2], 1, { category: 'technic' });
+add('18677', 'Plate 1 x 2 with Pin Hole Underneath', '底面带销孔板 1×2', 'plate', [2, 1], 1, { category: 'technic' });
 add('4274', 'Technic Pin 1/2 with Stud', '带凸点半长蓝销 1×1', 'round', [1, 1], 1, { category: 'technic' });
 
 for (const v of Object.values(P)) {

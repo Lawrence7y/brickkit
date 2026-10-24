@@ -66,6 +66,17 @@ export function partGeometry(id) {
       for (let i = -3; i <= 3; i++) list.push(box(i * (sx / 8) - 0.04, i * (sx / 8) + 0.04, H - 0.04, H + 0.01, -hz + 0.06, hz - 0.06));
     }
     studsOnTop(H - 0.004);
+  } else if (d.kind === 'pinplate') {
+    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+    studsOnTop(H - 0.004);
+    for (const sgn of [1, -1]) {
+      const ear = new THREE.CylinderGeometry(0.48, 0.48, H - 0.004, 24);
+      ear.translate(0, (H - 0.004) / 2, sgn * (hz + 0.35));
+      list.push(clean(ear));
+      const rim = new THREE.CylinderGeometry(0.26, 0.26, H + 0.02, 20);
+      rim.translate(0, H / 2, sgn * (hz + 0.35));
+      list.push(clean(rim));
+    }
   } else if (d.kind === 'corner') {
     list.push(
       box(-hx + G, hx - G, 0, H - 0.004, -hz + G, 0),
@@ -151,19 +162,29 @@ export function partGeometry(id) {
   } else if (d.kind === 'barplate') {
     list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
     studsOnTop(H - 0.004);
-    list.push(
-      box(-hx + 0.08, -hx + 0.26, 0.06, H - 0.06, hz - G, hz + 0.24),
-      box(hx - 0.26, hx - 0.08, 0.06, H - 0.06, hz - G, hz + 0.24)
-    );
-    const bar = new THREE.CylinderGeometry(0.09, 0.09, sx - 0.16, 16);
-    bar.rotateZ(Math.PI / 2);
-    bar.translate(0, H / 2, hz + 0.22);
-    list.push(clean(bar));
+    const addHandle = (sgn) => {
+      const z0 = sgn > 0 ? hz - G : -hz - 0.24;
+      const z1 = sgn > 0 ? hz + 0.24 : -hz + G;
+      list.push(
+        box(-hx + 0.08, -hx + 0.24, 0.06, H - 0.06, z0, z1),
+        box(hx - 0.24, hx - 0.08, 0.06, H - 0.06, z0, z1)
+      );
+      const bar = new THREE.CylinderGeometry(0.09, 0.09, sx - 0.16, 16);
+      bar.rotateZ(Math.PI / 2);
+      bar.translate(0, H / 2, sgn * (hz + 0.22));
+      list.push(clean(bar));
+    };
+    addHandle(1);
+    if (d.bothEnds) addHandle(-1);
   } else if (d.kind === 'clip') {
     list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
     studsOnTop(H - 0.004);
-    for (const cx of sx >= 2 ? [-0.5, 0.5] : [0]) {
-      list.push(box(cx - 0.18, cx + 0.18, 0.02, H - 0.02, hz - G, hz + 0.28));
+    for (const cx of !d.singleClip && sx >= 2 ? [-0.5, 0.5] : [0]) {
+      list.push(
+        box(cx - 0.18, cx + 0.18, 0.02, H - 0.02, hz - G, hz + 0.14),
+        box(cx - 0.18, cx + 0.18, H - 0.11, H - 0.01, hz + 0.14, hz + 0.34),
+        box(cx - 0.18, cx + 0.18, 0.01, 0.11, hz + 0.14, hz + 0.34)
+      );
     }
   } else if (d.kind === 'bar') {
     const cyl = new THREE.CylinderGeometry(0.16, 0.16, H - 0.004, 18);

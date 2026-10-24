@@ -778,10 +778,10 @@ test('6 向 SNOT 朝向 (up/snot)、扩展零件目录与实物样本 mecha.bric
   assert.equal(mp.missing.length, 0);
 });
 
-test('152 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide) 与凸点扣合 (snapPart)', () => {
-  // 1. 验证零件库规模 ≥ 150 且包含 12 大核心类别（含 Travis 四面侧凸点砖、正/倒支架、跳线板等）
-  assert.ok(Object.keys(cat.parts).length >= 150);
-  for (const id of ['4733', '11211', '22885', '99780', '99781', '99207', '36840', '15573', '87580', '4589b', '553b', '4740', '32000']) {
+test('165 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide) 与凸点扣合 (snapPart)', () => {
+  // 1. 验证零件库规模 ≥ 165 且包含 12 大核心类别（含 Travis 四面侧凸点砖、正/倒支架、端头夹板 63868、圆孔耳板 3176 等）
+  assert.ok(Object.keys(cat.parts).length >= 165);
+  for (const id of ['4733', '11211', '22885', '99206', '99780', '99781', '99207', '36840', '63868', '11476', '60478', '3839b', '44301', '44302', '3176', '2444', '15573', '87580']) {
     assert.ok(cat.parts[id], `缺少零件 ${id}`);
   }
 
@@ -809,4 +809,11 @@ test('152 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide)
   const badRes = validate(badModel, cat);
   assert.equal(badRes.ok, false);
   assert.ok(badRes.errors.some((e) => e.code === 'overlap' && e.parts.includes('plate_z') && e.parts.includes('cyl_clip')));
+
+  // 5. 验证机翼底孔反扣机构：63868 端头单水平夹板 (snot: 0) 顶面凸点扣入 41769 楔形翼板 (snot: 1) 底面反凸点，且 0 穿模
+  const mecha = readJSON('examples/mecha.brick.json');
+  const p56 = mecha.parts.find((p) => p.id === 'p56');
+  const p57 = mecha.parts.find((p) => p.id === 'p57');
+  assert.equal(partsConnected(p56, cat.parts[p56.part], p57, cat.parts[p57.part]), true);
+  assert.equal(boxesCollide(partBoxes(p56, cat.parts[p56.part]), partBoxes(p57, cat.parts[p57.part])), null);
 });
