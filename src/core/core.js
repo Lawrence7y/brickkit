@@ -98,6 +98,10 @@ export function partBoxes(p, def) {
     const y0 = def.dir === 'down' ? (1 - def.vH) * PLATE : 0;
     const y1 = def.dir === 'down' ? PLATE : def.vH * PLATE;
     localBoxes.push([-hx, hx, y0, y1, hz, hz + 0.2]);
+  } else if (def.kind === 'pinplate') {
+    localBoxes.push([-hx, hx, 0, H, -hz, hz], [-0.45, 0.45, 0, H, hz, hz + 0.8], [-0.45, 0.45, 0, H, -hz - 0.8, -hz]);
+  } else if (def.kind === 'slope' && sz >= 2) {
+    localBoxes.push([-hx, hx, 0, H, -hz, -hz + 1], [-hx, hx, 0, H * 0.5, -hz + 1, hz]);
   } else if (def.kind === 'snot' && def.recessed) {
     localBoxes.push([-hx, hx, 0, H, -hz, hz - 0.2]);
   } else {
@@ -166,13 +170,9 @@ export function partConnectors(p, def) {
       if (face === '+z' || face === '-z') {
         const fz = face === '+z' ? zMax : -hz;
         const dir = localDirToWorld(0, 0, face === '+z' ? 1 : -1, rot, up);
-        const oppDir = localDirToWorld(0, 0, face === '+z' ? -1 : 1, rot, up);
         for (const r of rows) for (let i = 0; i < sx; i++) {
           const pos = localToWorld(p, def, i - hx + 0.5, r * PLATE, fz);
           studs.push({ index: studs.length, kind: 'side', pos, dir, label: `side(${face})-${i}@${r}` });
-          if (def.kind === 'bracket') {
-            receptors.push({ index: receptors.length, kind: 'antistud', pos, dir: oppDir, i, k: 0 });
-          }
         }
       } else {
         const fx = face === '+x' ? hx : -hx;
