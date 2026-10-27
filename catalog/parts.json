@@ -741,18 +741,18 @@
       "category": "slope"
     },
     "3307": {
-      "name": "Brick Arch 1 x 6",
-      "zh": "长拱门砖 1×6（高3片）",
+      "name": "Arch 1 x 6 x 2 with Thick Top and Reinforced Underside",
+      "zh": "长拱门砖 1×6×2（高6片=2格）",
       "kind": "arch",
       "size": [
         6,
         1
       ],
-      "h": 3,
+      "h": 6,
       "category": "cslope",
       "ldrawOrigin": [
         0,
-        3,
+        6,
         0
       ],
       "checked": true
@@ -1220,18 +1220,18 @@
       "checked": true
     },
     "4740": {
-      "name": "Dish 2 x 2 Inverted (Radar)",
-      "zh": "雷达圆碟 2×2",
+      "name": "Dish 2 x 2 Inverted",
+      "zh": "雷达圆碟 2×2（倒扣，高1片）",
       "kind": "dish",
       "size": [
         2,
         2
       ],
-      "h": 2,
+      "h": 1,
       "category": "round",
       "ldrawOrigin": [
         0,
-        2,
+        1,
         0
       ],
       "checked": true
@@ -1341,25 +1341,24 @@
       "checked": true
     },
     "11211": {
-      "name": "Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side",
-      "zh": "单面四凸点砖 1×2（高5片=2格）",
+      "name": "Brick 1 x 2 with Two Studs on One Side",
+      "zh": "单面二凸点砖 1×2（高3片）",
       "kind": "snot",
       "size": [
         2,
         1
       ],
-      "h": 5,
+      "h": 3,
       "sideFaces": [
         "+z"
       ],
       "sideRows": [
-        1.25,
-        3.75
+        0.7
       ],
       "category": "snot",
       "ldrawOrigin": [
         0,
-        5,
+        3,
         0
       ],
       "checked": true
@@ -1584,8 +1583,8 @@
       "checked": true
     },
     "22885": {
-      "name": "Brick 1 x 2 x 1 2/3 with 8 Studs on 2 Opposite Sides",
-      "zh": "对向八凸点砖 1×2（高5片=2格）",
+      "name": "Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side",
+      "zh": "单面四凸点砖 1×2（高5片=2格）",
       "kind": "snot",
       "size": [
         2,
@@ -1593,12 +1592,11 @@
       ],
       "h": 5,
       "sideFaces": [
-        "+z",
-        "-z"
+        "+z"
       ],
       "sideRows": [
-        1.25,
-        3.75
+        0.5,
+        1.5
       ],
       "category": "snot",
       "ldrawOrigin": [
@@ -2043,19 +2041,19 @@
       "checked": true
     },
     "47457": {
-      "name": "Slope Curved 2 x 2 x 1 with 2 Studs",
-      "zh": "弧面斜砖 2×2×1（高3片）",
+      "name": "Slope Brick Curved 2 x 2 x 2/3 Triple with Two Top Studs",
+      "zh": "弧面斜砖 2×2×2/3（高2片）",
       "kind": "cslope",
       "size": [
         2,
         2
       ],
-      "h": 3,
+      "h": 2,
       "backStuds": true,
       "category": "cslope",
       "ldrawOrigin": [
         0,
-        3,
+        2,
         0
       ],
       "checked": true
@@ -2430,18 +2428,18 @@
       "checked": true
     },
     "61678": {
-      "name": "Slope Curved 4 x 1 No Studs",
-      "zh": "长弧面斜坡 1×4（高2片）",
+      "name": "Slope Brick Curved 4 x 1",
+      "zh": "长弧面斜坡 1×4（高3片=1砖）",
       "kind": "cslope",
       "size": [
         1,
         4
       ],
-      "h": 2,
+      "h": 3,
       "category": "cslope",
       "ldrawOrigin": [
         0,
-        2,
+        3,
         0
       ],
       "checked": true
@@ -2716,8 +2714,8 @@
       "checked": true
     },
     "99206": {
-      "name": "Plate 2 x 2 x 2/3 with 2 Studs on Side",
-      "zh": "侧面双凸点增高板 2×2×2/3（高2片，5:2 黄金凑高神件）",
+      "name": "Plate 2 x 2 x 2/3 with Two Studs On Side and Two Raised with Closed Understud",
+      "zh": "侧面双凸点增高板 2×2×2/3（高2片，单面）",
       "kind": "snot",
       "size": [
         2,
@@ -2725,11 +2723,10 @@
       ],
       "h": 2,
       "sideFaces": [
-        "+z",
-        "-z"
+        "+z"
       ],
       "sideRows": [
-        1.25
+        0.5
       ],
       "category": "snot",
       "ldrawOrigin": [

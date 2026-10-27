@@ -515,7 +515,15 @@ const r1 = (v) => Math.round(v * 10) / 10;
 //   smaller      x/z 小于网格（杆件、门板等比格子细；网格 AABB 高估实体）
 //   height-error 高度差无法用凸点解释 —— 目录 h 定义与官方几何矛盾（硬错误，ok=false）
 //   missing      官方库无此编号
-export function verifyPart(def, box) {
+//
+// 包围盒只能核对「外形占多高多大」，核对不了「凸点长在哪一面、有几个」。目录里
+// sideFaces/sideRows 是手写参数，装配引擎直接拿它生成侧凸点坐标，写错会让侧装件
+// 扣在空气上却又自洽通过校验。因此这里额外拿官方 .dat 实测的 sideStuds 对账：
+//   side-face-mismatch  目录声明的侧凸点朝向集合与官方不一致
+//   side-count-mismatch 朝向一致但每面凸点数不一致
+//   side-faces-missing  官方有侧凸点，目录一个没声明（引擎会当成没有侧装接口）
+// 这三类与 height-error 同级：都是「目录手写定义与官方几何冲突即硬错误」。
+export function verifyPart(def, box, opts = {}) {
   const expected = { x: def.size[0] * 20, y: def.h * 8, z: def.size[1] * 20 };
   const axes = {};
   const flags = [];
@@ -534,15 +542,70 @@ export function verifyPart(def, box) {
   for (const a of ['x', 'z']) {
     if (!axes[a].ok) flags.push(axes[a].measured > axes[a].expected ? 'protrudes' : 'smaller');
   }
+
+  // —— 侧凸点面/数对账（官方 sideStuds 形如 [x, y, z, "+z"]）——
+  const sideDetail = verifySideStuds(def, opts.officialSideStuds);
+  if (sideDetail) flags.push(sideDetail.flag);
+
   const status = flags.includes('height-error') ? 'height-error'
-    : flags.includes('protrudes') ? 'protrudes'
-      : flags.includes('smaller') ? 'smaller'
-        : flags.includes('stud-offset') ? 'stud-offset' : 'match';
+    : flags.includes('side-face-mismatch') || flags.includes('side-count-mismatch') ? 'side-mismatch'
+      : flags.includes('side-faces-missing') ? 'side-faces-missing'
+        : flags.includes('protrudes') ? 'protrudes'
+          : flags.includes('smaller') ? 'smaller'
+            : flags.includes('stud-offset') ? 'stud-offset' : 'match';
+  const hard = flags.some((f) => HARD_FLAGS.has(f));
   return {
     expected, measured: { x: axes.x.measured, y: axes.y.measured, z: axes.z.measured },
-    axes, flags, status, ok: !flags.includes('height-error'),
+    axes, flags, status, ok: !hard,
+    ...(sideDetail ? { sideStuds: sideDetail } : {}),
   };
 }
+
+const HARD_FLAGS = new Set(['height-error', 'side-face-mismatch', 'side-count-mismatch', 'side-faces-missing']);
+
+// 官方实测侧凸点按「朝向 → 数量」归并；凸点在本地的 y 也一并记下，供人工核对行高。
+function groupSideStuds(studs) {
+  const g = {};
+  for (const s of studs || []) {
+    const face = s[3];
+    if (!face) continue;
+    (g[face] ||= []).push({ x: s[0], y: s[1], z: s[2] });
+  }
+  return g;
+}
+
+// 目录声明（sideFaces/sideRows）与官方实测侧凸点对账。返回 null 表示无可比信息。
+//
+// 只在「目录自认有侧装接口」时才核对：sideFaces 已声明，或 kind 是 snot/bracket。
+// 否则零件没有侧装面，把它的外凸销/夹口/把柄当侧凸点比对会全是误报。
+export function verifySideStuds(def, officialSideStuds) {
+  const declared = Array.isArray(def.sideFaces) ? def.sideFaces : null;
+  const claimsSide = (declared && declared.length) || def.kind === 'snot' || def.kind === 'bracket';
+  if (!claimsSide) return null;
+  const measured = groupSideStuds(officialSideStuds);
+  const measuredFaces = Object.keys(measured).sort();
+  if (!measuredFaces.length) return null;
+  if (!declared || !declared.length) {
+    return { flag: 'side-faces-missing', declaredFaces: [], measuredFaces, measuredCount: measuredFaces.length };
+  }
+  const declaredFaces = [...new Set(declared)].sort();
+  if (declaredFaces.join(',') !== measuredFaces.join(',')) {
+    return { flag: 'side-face-mismatch', declaredFaces, measuredFaces };
+  }
+  // 每面凸点数：目录用 sideRows × 该面宽度推期望数，官方按实测点个数
+  const rows = def.sideRows || (def.h >= 5 ? [1.25, 3.75] : [1.75]);
+  const counts = {};
+  for (const face of measuredFaces) {
+    const span = face === '+z' || face === '-z' ? def.size[0] : def.size[1];
+    counts[face] = { declared: rows.length * span, measured: measured[face].length };
+  }
+  const bad = measuredFaces.find((f) => counts[f].declared !== counts[f].measured);
+  if (bad) {
+    return { flag: 'side-count-mismatch', counts, offendingFace: bad, declaredRows: rows };
+  }
+  return null;
+}
+
 
 // —— 下载 ————————————————————————————————————————————————————
 // 安全约束：仅允许 https 且主机必须为官方库域名，拒绝环回/私有/保留地址（防 SSRF）。

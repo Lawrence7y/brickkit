@@ -261,30 +261,45 @@ async function main() {
       const manifest = fs.existsSync(path.join(dir, 'manifest.json')) ? JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8')) : null;
       // 这些类别的零件官方几何天然超出网格占位（夹口/把柄/垂片/销孔/门叶），高度差不构成目录定义错误
       const featureKind = (def) => ['hinge', 'technic', 'bracket'].includes(def.category) || def.kind === 'door';
+      // 自动提取件（parts-ldraw.json）的 h 由官方包围盒反推，本身不是手写定义，所以只对精选目录
+      // 强制硬冲突；自动件报出来供参考（--strict-auto 可把它们一并当硬错误）。
+      const curated = cat.curated || {};
+      const strictAuto = flag('strict-auto', false) === true;
       const rows = [], missing = [];
       for (const [id, def] of Object.entries(cat.parts)) {
         const official = OFFICIAL_ALIASES[id] || id;
         const text = readLib(`${official}.dat`); const box = text && bboxFromText(text, readLib);
         if (!box) { missing.push(id); continue; }
-        const v = verifyPart(def, box);
-        const featureExplained = !v.ok && featureKind(def);
+        // 官方侧凸点：parts-ldraw.json 已从 .dat 实测过，优先复用其 sideStuds，避免重复解析
+        const officialSideStuds = cat.ext?.[id]?.sideStuds || [];
+        const v = verifyPart(def, box, { officialSideStuds });
+        const handWritten = Object.hasOwn(curated, id);
+        const enforced = handWritten || strictAuto;
+        const featureExplained = !v.ok && featureKind(def) && !v.flags.some((f) => f.startsWith('side-'));
+        const ok = enforced ? (v.ok || featureExplained) : true;
         rows.push({
           id, ...(official !== id ? { officialId: official, alias: true } : {}), zh: def.zh,
           officialDesc: manifest?.parts?.[id]?.desc || undefined, status: v.status, flags: v.flags,
-          featureExplained: featureExplained || undefined, expected: v.expected, measured: v.measured, ok: v.ok || featureExplained,
+          handWritten: handWritten || undefined,
+          featureExplained: featureExplained || undefined,
+          expected: v.expected, measured: v.measured, ok,
+          ...(v.sideStuds ? { sideStuds: v.sideStuds } : {}),
         });
       }
       const byStatus = {};
       for (const r of rows) byStatus[r.status] = (byStatus[r.status] || 0) + 1;
+      const hardRows = rows.filter((r) => !r.ok);
       const summary = { total: Object.keys(cat.parts).length, verified: rows.length, missing: missing.length, byStatus,
         featureExplained: rows.filter((r) => r.featureExplained).map((r) => r.id),
-        hardErrors: rows.filter((r) => !r.ok).map((r) => r.id) };
+        hardErrors: hardRows.map((r) => r.id),
+        hardErrorsHandWritten: hardRows.filter((r) => r.handWritten).map((r) => r.id) };
       fs.writeFileSync(path.join(dir, 'verification.json'), JSON.stringify({
         generatedAt: new Date().toISOString(),
-        note: 'status 说明见 src/ldraw/ldraw.js verifyPart：height-error 且非 featureExplained 是目录定义与官方几何的硬冲突；stud-offset = 官方几何含顶部凸点 +4 LDU；protrudes/smaller = 实体超出/小于网格占位（信息性）。',
+        governedBy: { curatedParts: Object.keys(curated).length, strictAuto },
+        note: 'status 说明见 src/ldraw/ldraw.js verifyPart：height-error / side-face-mismatch / side-count-mismatch / side-faces-missing 是目录手写定义与官方几何的硬冲突（精选目录一律 ok=false）；stud-offset = 官方几何含顶部凸点 +4 LDU；protrudes/smaller = 实体超出/小于网格占位（信息性）。自动提取件的 h 由包围盒反推，默认不计硬错误。',
         summary, missing, results: rows,
       }, null, 2));
-      out({ ok: !summary.hardErrors.length && !missing.length, ...summary, hardErrorDetails: rows.filter((r) => !r.ok), missingParts: missing, report: path.join(dir, 'verification.json') });
+      out({ ok: !summary.hardErrors.length && !missing.length, ...summary, hardErrorDetails: hardRows, missingParts: missing, report: path.join(dir, 'verification.json') });
       process.exit(summary.hardErrors.length || missing.length ? 1 : 0);
     }
     case 'catalog-audit': {
