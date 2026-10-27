@@ -74,10 +74,14 @@ node cli/brickkit.mjs render   examples/cottage.brick.json -o out/explode.png --
 | `photo-plan [--model m]` | 生成需要用户拍的照片清单 |
 | `plan <model>` | 步骤计划：每一步的零件数、子组件、装配步 |
 | `catalog [关键词]` / `colors` | 查零件目录 / 颜色代码 |
+| `catalog-fetch [--dir catalog/ldraw] [--mirror 整库解压目录] [--force] [--full]` | 下载/更新 LDraw 官方零件库素材（CC BY 2.0）。默认装目录引用的 165 种零件及闭包到 `catalog/ldraw/`；`--full` 从 `--mirror`（complete.zip 解压目录）整库安装约 3.7 万文件到 `catalog/ldraw-full/`（.gitignore，本地素材） |
+| `catalog-verify [--dir catalog/ldraw]` | 用官方几何实测尺寸逐件核对 `catalog/parts.json`，产出 `catalog/ldraw/verification.json` |
 | `bom <model> [--step n]` | 零件清单 |
 | `export-ldraw <model> [-o out.ldr\|out.mpd]` | 导出 LDraw / MPD |
 | `viewer <model> [-o out.html]` | 生成内嵌该模型的单文件查看器 |
 | `render <model> -o out.png [--az --el --step --explode 0-100 --emode layer\|module --mech door:90,roof:1 --w --h --status]` | 渲染 3D 图，用来和用户照片对比 |
+| `diff <model> --photos photos.json --dir 照片目录 [--out-dir out/diff] [--w 640] [--mode joint\|sweep\|fixed]` | 数值对账。默认 `joint` 联合标定：每张照片 320px 粗扫 `标注az±30°步15 × 4 向滚转` 取最优，全组取分数加权圆周中位数得共享 yaw 偏移 Δ，正式打分统一 `az=标注az+Δ` 并冻结滚转——压制逐照片择优虚高；`sweep` = 旧逐照片 `±20°` 方位角 + 滚转择优（沿用旧公式）；`fixed` = 仅清单姿态 + 4 向滚转（批量变体筛选）。总分 = `0.35 归一IoU + 0.15 长宽比 + 0.20 颜色直方图 + 0.20 色块结构（16×16 网格众数粗色类一致率，可见内部色块结构差异）+ 0.10 未归一IoU（比例惩罚）`；机关 open 状态照片跳过；写三联图与 `report.json`（含 `structureSim/roll/poseAz/bestAz/scale` 逐张诊断与 joint 的 `yawDelta`）；`overall.score ≥ 0.6` 退出 0，低于退出 1 供智能体迭代 |
+| `calibrate <model> --photos photos.json --photo <照片id> --dir 照片目录` | 机位标定：单张照片按 az 0..345 × el -10..45 × 滚转 0/90/180/270 低分辨率扫描，输出 best 与 top5 及与清单标注方位角的偏差 |
 | `booklet <model> -o out.pdf` | 生成拼装图纸 PDF |
 
 ---
@@ -94,7 +98,11 @@ photo-plan ──► 用户按规范拍照 ──► check-photos（直到 compl
 写 model.brick.json（parts、steps、modules、mechanisms，标注 status 与 evidence）
      │
      ▼
-validate --photos ──► 修复 errors ──► render（按每张照片的方位角/俯角）与原图对比 ──► 迭代
+validate --photos ──► 修复 errors ──► render 与原图肉眼对比 + diff 数值对账（overall.score ≥ 0.6）
+     │                                      ▲
+     │                                      └── 不达标：按 report.json 逐张分数改模型，重跑 diff
+     ▼
+calibrate（机位存疑时：best.az 与照片清单 azimuth 偏差 >15° 先修机位标注）
      │
      ▼
 viewer / booklet ──► 用户确认“存疑 / 推断”的零件 ──► export-ldraw（可选）
@@ -114,20 +122,24 @@ viewer / booklet ──► 用户确认“存疑 / 推断”的零件 ──► 
 ```
 cli/brickkit.mjs        命令行（Harness 入口）
 src/core/core.js        核心：坐标、校验、步骤计划、零件清单、LDraw/MPD 导出、照片检查（纯函数，网页与命令行共用）
+src/core/builder.js     程序化搭建 API：createBuilder 的 add 自动查编号/颜色/穿模并算扣合坐标（替代手写坐标）
+src/core/diff.js        数值对账：渲染 vs 实拍的前景掩膜打分（runDiff）、机位标定（calibratePhoto）
 src/viewer/             网页查看器（three.js）：main.js 3D 展示、booklet.js 拼装图纸、geom.js 零件几何
 dist/viewer.html        打包好的单文件查看器
-catalog/                零件目录（58 种常用零件：基础砖/板/平板/斜面/门窗 + 圆砖/圆板/弧面斜砖/SNOT 侧凸点砖/合页夹板/楔形翼板）、颜色表（32 色）
+catalog/                零件目录（165 种常用零件：基础砖/板/平板/斜面/门窗 + 圆砖/圆板/弧面斜砖/SNOT 侧凸点砖/合页夹板/楔形翼板）、颜色表（32 色）
+catalog/ldraw/          LDraw 官方零件库素材镜像（165 种零件 .dat 权威几何 + manifest.json 来源/SHA-256 + verification.json 目录核对报告，CC BY 2.0）
+catalog/ldraw-full/     （.gitignore）LDraw 官方零件库全量本地镜像（约 2.5 万种零件 + 基元，catalog-fetch --full 安装），识别/核对时可作二级解析源
 schema/                 JSON Schema：brickbuild.schema.json、photoset.schema.json
 examples/               示例模型：cottage（林间小屋，75 件）与 mecha（四翼重装侦察机甲塔，70 件实物重建样本）
 out/                    示例输出：拼装图纸 PDF、渲染图
 docs/                   数据格式、拍摄规范、截图
-tools/                  截图自检脚本（qa_run.mjs、qa_book.mjs）
+tools/                  截图自检脚本（qa_run.mjs、qa_book.mjs）、素材抓取（fetch-instructions.mjs：官方组装说明书 PDF）、LDraw 预览图库（ldraw-gallery.mjs）
 ```
 
 ---
 
 ## 现状与限制
 
-- 当前零件目录覆盖 58 种常用零件（砖、板、平板、斜面、弧面斜砖、圆砖/圆板、SNOT 侧凸点砖、合页夹板/把柄板、楔形翼板、门窗），支持 6 向 SNOT 朝向（`up: "+y"|"-y"|"+z"|"-z"|"+x"|"-x"` 与 `snot` 片偏移）；更复杂的 Technic 齿轮连杆可在 `catalog/gen-catalog.mjs` 中扩充。
+- 当前零件目录覆盖 165 种常用零件（砖、板、平板、斜面、弧面斜砖、圆砖/圆板、SNOT 侧凸点砖、合页夹板/把柄板、楔形翼板、门窗），支持 6 向 SNOT 朝向（`up: "+y"|"-y"|"+z"|"-z"|"+x"|"-x"` 与 `snot` 片偏移）；更复杂的 Technic 齿轮连杆可在 `catalog/gen-catalog.mjs` 中扩充。`catalog/ldraw/` 内置 LDraw 官方零件库几何镜像与逐件尺寸核对报告（`node cli/brickkit.mjs catalog-verify` 重建）。
 - 坐标是整格 / 整片网格，旋转只支持 90° 倍数。
 - 从照片识别零件本身不在本仓库内，需要智能体或第三方识别服务完成；BrickKit 负责约束、校验和展示，“准确还原”依赖人工确认环节。
