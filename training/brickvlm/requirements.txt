@@ -1,0 +1,19 @@
+# BrickVLM 依赖规范 (training/brickvlm/requirements.txt)
+# C2-1/C2-2 在 RTX 3060 Laptop 6GB 上实测通过的确切版本（2026-10-26，Python 3.12.10 / Windows）：
+#   torch 2.5.1+cu121 / transformers 4.56.2 / peft 0.21.2 / accelerate 1.15.0
+#   bitsandbytes 0.50.2（原生 win_amd64 wheel，CUDA 4bit 核实测可用）/ datasets 5.0.1 / qwen-vl-utils 0.0.14
+# 注意：transformers 4.56.2 要求 huggingface_hub<1.0（会自动降级 hub/tokenizers）。
+torch==2.5.1
+torchvision==0.20.1
+numpy>=1.24.0
+pytest>=8.0.0
+
+# Qwen2-VL / InternVL3 HF 基座 QLoRA 训练轨（6GB 显存预算内实测配置，见
+# out/prd-v2/run-20261026-c/C/env/c2-1-base-selection.md）
+transformers>=4.52,<4.57
+peft>=0.14.0
+accelerate>=1.2.0
+bitsandbytes>=0.45.0
+qwen-vl-utils
+datasets
+pillow
