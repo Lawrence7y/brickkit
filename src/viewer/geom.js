@@ -1,11 +1,14 @@
 // 零件几何（参数化：支持 12 大类 152 种乐高零件 + 顶面凸点/侧面凸点/把柄/夹子/支架）与颜色。3D 展示和拼装图纸共用。
+// JSON 导入带 type 属性：esbuild 打包与 node --test 直跑（test/ext-connectors.test.mjs）都能加载。
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import partsJson from '../../catalog/parts.json';
-import colorsJson from '../../catalog/colors.json';
+import partsJson from '../../catalog/parts.json' with { type: 'json' };
+import partsLdrawJson from '../../catalog/parts-ldraw.json' with { type: 'json' };
+import colorsJson from '../../catalog/colors.json' with { type: 'json' };
 import { localCells, partCenter, PLATE } from '../core/core.js';
 
-export const cat = { parts: partsJson.parts, colors: colorsJson.colors };
+// 精选目录优先，LDraw 自动提取目录兜底（auto 条目为官方几何实测的网格语义）
+export const cat = { parts: { ...partsLdrawJson.parts, ...partsJson.parts }, colors: colorsJson.colors };
 export const colorOf = (code) => cat.colors[String(code)] || { hex: '#C8C8C8', zh: `颜色 ${code}` };
 export const luminance = (c) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
 
@@ -52,7 +55,7 @@ export function partGeometry(id) {
   if (cache.has(id)) return cache.get(id);
   const d = cat.parts[id], [sx, sz] = d.size, H = d.h * PLATE, hx = sx / 2, hz = sz / 2, list = [], glass = [];
   const studsOnTop = (y) => {
-    if (d.tile) return;
+    if (d.tile || d.noTopStuds || d.studs === 0) return;
     if (d.centerStuds) {
       for (const [cx, cz] of d.centerStuds) list.push(stud(cx, cz, y));
       return;
@@ -100,7 +103,10 @@ export function partGeometry(id) {
     const rBot = hx - G, rTop = 0.34, cyl = new THREE.CylinderGeometry(rTop, rBot, H - 0.004, 28);
     cyl.translate(0, (H - 0.004) / 2, 0);
     list.push(clean(cyl));
-    list.push(stud(0, 0, H - 0.004));
+    if (!d.tile && !d.noTopStuds && d.studs !== 0) {
+      if (Array.isArray(d.studCells)) studsOnTop(H - 0.004);
+      else list.push(stud(0, 0, H - 0.004));
+    }
   } else if (d.kind === 'dome') {
     const r = hx - G, cyl = new THREE.CylinderGeometry(r, r, H * 0.4, 28);
     cyl.translate(0, H * 0.2, 0);
@@ -113,16 +119,20 @@ export function partGeometry(id) {
     const r = hx - G, cone = new THREE.CylinderGeometry(0.4, r, H - 0.004, 28);
     cone.translate(0, (H - 0.004) / 2, 0);
     list.push(clean(cone));
-    list.push(stud(0, 0, H - 0.004));
+    if (!d.tile && !d.noTopStuds && d.studs !== 0) {
+      if (Array.isArray(d.studCells)) studsOnTop(H - 0.004);
+      else list.push(stud(0, 0, H - 0.004));
+    }
   } else if (d.kind === 'cslope') {
+    const hasTopStuds = Boolean(d.backStuds || (Array.isArray(d.studCells) && d.studCells.length));
     const lip = 0.18, pts = [[-hz + G, 0], [hz - G, 0], [hz - G, lip]];
     for (let i = 1; i <= 8; i++) {
-      const t = i / 8, z = (hz - G) - (2 * hz - (d.backStuds ? 1.0 : 0.45)) * t, y = lip + (H - 0.004 - lip) * Math.sin((t * Math.PI) / 2);
+      const t = i / 8, z = (hz - G) - (2 * hz - (hasTopStuds ? 1.0 : 0.45)) * t, y = lip + (H - 0.004 - lip) * Math.sin((t * Math.PI) / 2);
       pts.push([z, y]);
     }
     pts.push([-hz + G, H - 0.004]);
     list.push(prism(pts, sx));
-    if (d.backStuds) studsOnTop(H - 0.004);
+    if (hasTopStuds) studsOnTop(H - 0.004);
   } else if (d.kind === 'arch') {
     list.push(
       box(-hx + G, -hx + 1, 0, H - 0.004, -hz + G, hz - G),
@@ -148,15 +158,21 @@ export function partGeometry(id) {
     }
   } else if (d.kind === 'bracket') {
     // 水平基板 + +z 外侧薄竖板 (厚 0.5 片 = 0.2 格)
+    // P0-b 守卫：ext 支架缺 vH/dir 时显式报错（undefined*0.4-0.004=NaN 会污染整个场景包围盒 → 整帧全白）
+    if (typeof d.vH !== 'number' || !Number.isFinite(d.vH) || (d.dir !== 'up' && d.dir !== 'down')) {
+      throw new Error(`零件 ${id}（bracket）目录条目缺 vH/dir：渲染需要支架臂高与朝向（ext 支架由生成器从官方 .dat 实测补齐；缺字段条目已标 needsManual），拒绝渲染`);
+    }
     const t = 0.2;
     list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz));
     studsOnTop(H - 0.004);
     const y0 = d.dir === 'down' ? (1 - d.vH) * PLATE : 0;
     const y1 = d.dir === 'down' ? PLATE - 0.004 : d.vH * PLATE - 0.004;
     list.push(box(-hx + G, hx - G, y0, y1, hz, hz + t - G));
-    for (let i = 0; i < sx; i++) {
-      for (const r of d.sideRows || [1.75]) {
-        list.push(sideStud(i - hx + 0.5, r * PLATE, hz + t - G, '+z'));
+    if (!Array.isArray(d.sideStuds)) {
+      for (let i = 0; i < sx; i++) {
+        for (const r of d.sideRows || [1.75]) {
+          list.push(sideStud(i - hx + 0.5, r * PLATE, hz + t - G, '+z'));
+        }
       }
     }
   } else if (d.kind === 'barplate') {
@@ -217,6 +233,7 @@ export function partGeometry(id) {
       box(-hx + G, -hx + 0.22, PLATE, H - 0.004, -hz + 0.22, hz - G),
       box(hx - 0.22, hx - G, PLATE, H - 0.004, -hz + 0.22, hz - G)
     );
+    studsOnTop(H - 0.004);
   } else if (d.kind === 'doorframe') {
     list.push(box(-hx + G, -hx + 0.25, 0, H, -hz + G, hz - G), box(hx - 0.25, hx - G, 0, H, -hz + G, hz - G));
     list.push(box(-hx + 0.25, hx - 0.25, H - 0.15, H, -hz + G, hz - G), box(-hx + 0.25, hx - 0.25, H - 0.5, H - 0.15, 0, hz - G));
@@ -230,7 +247,32 @@ export function partGeometry(id) {
     list.push(clean(h));
     for (const [x0, x1] of [[-1.45, -0.08], [0.08, 1.45]]) for (const [y0, y1] of [[4.0, 5.3], [5.5, 6.8]]) glass.push(box(x0, x1, y0, y1, -0.43, -0.07));
   } else {
-    list.push(box(-hx + G, hx - G, 0, H, -hz + G, hz - G));
+    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+    studsOnTop(H - 0.004);
+  }
+
+  // ext/auto 条目：官方 .dat 实测连接器的参数化示意（P1）——侧凸点 / 把手杆 / 外凸销
+  // （销孔/轴孔/夹口为受体语义，参数化渲染不表达，详见 catalog/parts-ldraw.json note）
+  if (Array.isArray(d.sideStuds)) {
+    for (const [lx, ly, lz, face] of d.sideStuds) list.push(sideStud(lx, ly, lz, face));
+  }
+  if (Array.isArray(d.bars)) {
+    for (const [lx, ly, lz, ax] of d.bars) {
+      const bar = new THREE.CylinderGeometry(0.09, 0.09, 1, 12);
+      if (ax === 'x') bar.rotateZ(Math.PI / 2);
+      else if (ax === 'z') bar.rotateX(Math.PI / 2);
+      bar.translate(lx, ly, lz);
+      list.push(clean(bar));
+    }
+  }
+  if (Array.isArray(d.pins)) {
+    for (const [lx, ly, lz, ax] of d.pins) {
+      const pin = new THREE.CylinderGeometry(0.15, 0.15, 1, 12);
+      if (ax === 'x') pin.rotateZ(Math.PI / 2);
+      else if (ax === 'z') pin.rotateX(Math.PI / 2);
+      pin.translate(lx, ly, lz);
+      list.push(clean(pin));
+    }
   }
 
   const main = mergeGeometries(list);
@@ -271,3 +313,5 @@ export function mechMatrix(m, v, out = new THREE.Matrix4()) {
 }
 export const mechRange = (m) => (m.type === 'removable' ? [0, 1] : [m.range?.[0] ?? 0, m.range?.[1] ?? 1]);
 export const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+// 模型 JSON 是不可信输入：数值字段直接拼进 HTML 属性前先归一，杜绝 `1" onpointerover="…` 之类的逃逸
+export const num = (v, d = 0) => { const n = Number(v); return Number.isFinite(n) ? n : d; };

@@ -3,12 +3,14 @@
   "version": "0.2.0",
   "description": "乐高实物模型（多角度照片）→ 3D 拼装演示、爆炸图、拼装图纸：数据格式、拍摄规范、校验、查看器与 Harness 命令行",
   "scripts": {
-    "test": "node --test",
+    "test": "node --test test/*.test.mjs",
+    "test:all": "node --test",
     "build": "node build.mjs",
     "demo": "node examples/gen-cottage.mjs",
     "validate": "node cli/brickkit.mjs validate examples/cottage.brick.json --photos examples/cottage.photos.json --pretty",
     "booklet": "node cli/brickkit.mjs booklet examples/cottage.brick.json -o out/cottage.booklet.pdf",
-    "qa": "node tools/qa_run.mjs"
+    "qa": "node tools/qa_run.mjs",
+    "assets:build": "node cli/brickkit.mjs assets compile --out catalog/assets-v1 --force"
   },
   "keywords": [
     "lego",
@@ -23,6 +25,8 @@
   "license": "Apache-2.0",
   "type": "module",
   "dependencies": {
+    "@napi-rs/canvas": "^1.0.13",
+    "pdfjs-dist": "^6.4.299",
     "three": "^0.186.1"
   },
   "bin": {

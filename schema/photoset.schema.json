@@ -111,8 +111,10 @@
        "interior",
        "module",
        "detail",
-       "layer"
-      ]
+       "layer",
+       "manual"
+      ],
+      "description": "manual = 说明书页（白底官方渲染图，任意 3/4 视角），diff 走近白背景掩膜 + elevation 扫描的一等通道"
      },
      "azimuth": {
       "type": "number",

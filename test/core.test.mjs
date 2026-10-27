@@ -829,3 +829,161 @@ test('165 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide)
     }
   }
 });
+
+test('validate：审计 5c1c2b9 回归——普通砖光滑侧面挂竖板的虚假 mount 必须报错，两砖正常叠放对照零错误', () => {
+  // 审计最小非法模型：3068b 光板以 up:'+z' 竖挂在 3001 光滑侧面并声明 mount，无任何凸点对底孔连接，validate 不许放过
+  const bad = validate(
+    baseModel({
+      parts: [
+        { id: 'p1', part: '3001', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'p2', part: '3068b', color: 15, at: [1, 0, 2], rot: 0, up: '+z', snot: 0, mount: 'p1', step: 1, module: 'base' },
+      ],
+    }),
+    cat
+  );
+  assert.equal(bad.ok, false);
+  assert.ok(bad.errors.length > 0);
+  assert.ok(
+    bad.errors.some((e) => e.code === 'mount-disconnected' || e.code === 'floating'),
+    `期望 mount-disconnected 或 floating 至少其一，实际：${codesOf(bad.errors).join(', ')}`
+  );
+
+  // 合法对照：两块 3001 正常叠放（底孔扣凸点），必须零错误
+  const ok = validate(
+    baseModel({
+      parts: [
+        { id: 'p1', part: '3001', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'p2', part: '3001', color: 4, at: [0, 3, 0], rot: 0, step: 1, module: 'base' },
+      ],
+    }),
+    cat
+  );
+  assert.equal(ok.ok, true);
+  assert.deepEqual(ok.errors, []);
+});
+
+test('checkPhotos：审计 5c1c2b9 回归——_missingFile 强制 complete=false，同文件反向机位触发 photo-conflict', () => {
+  // 文件缺失（cli check-photos 打 _missingFile 标记）：机位覆盖完整也不许虚假通过
+  const missingFileSet = fullPhotoSet({
+    photos: fullPhotoSet().photos.map((p, i) => (i === 0 ? { ...p, _missingFile: true } : p)),
+  });
+  const mf = checkPhotos(missingFileSet);
+  assert.equal(mf.complete, false);
+  assert.deepEqual(mf.missingFiles, ['ext_a000_e30']);
+  assert.deepEqual(mf.missing, []); // 机位本身是齐的，缺的是文件本身
+
+  // 同一张 jpg 被同时标成 90° 和 270° 两个机位（方位角差 180° > 100°）→ photo-conflict 警告，msg 含两张照片 id 与角度
+  const conflictSet = fullPhotoSet({
+    photos: [
+      ...fullPhotoSet().photos,
+      { id: 'conflict_right', file: 'dup_shot.jpg', kind: 'exterior', azimuth: 90, elevation: 30, state: 'closed', width: 4032, height: 3024 },
+      { id: 'conflict_left', file: 'dup_shot.jpg', kind: 'exterior', azimuth: 270, elevation: 30, state: 'closed', width: 4032, height: 3024 },
+    ],
+  });
+  const cf = checkPhotos(conflictSet);
+  const conflict = cf.warnings.find((w) => w.code === 'photo-conflict');
+  assert.ok(conflict, `期望 photo-conflict 警告，实际：${codesOf(cf.warnings).join(', ')}`);
+  assert.ok(conflict.msg.includes('conflict_right') && conflict.msg.includes('conflict_left'), `msg 需含两张照片 id：${conflict.msg}`);
+  assert.ok(conflict.msg.includes('180'), `msg 需含角度差：${conflict.msg}`);
+
+  // 不触发对照：同文件同方位复用（如 closed 与 open 各引一次）不算冲突
+  const reuseSet = fullPhotoSet({
+    photos: [
+      ...fullPhotoSet().photos,
+      { id: 'reuse_a', file: 'reuse.jpg', kind: 'exterior', azimuth: 90, elevation: 30, state: 'closed', width: 4032, height: 3024 },
+      { id: 'reuse_b', file: 'reuse.jpg', kind: 'exterior', azimuth: 135, elevation: 30, state: 'open', width: 4032, height: 3024 },
+    ],
+  });
+  const rf = checkPhotos(reuseSet);
+  assert.ok(!codesOf(rf.warnings).includes('photo-conflict'));
+});
+
+test('validate：snot 竖直偏移件不再被整数格占用误判 overlap（真实穿模仍由 3D 包围盒拦截）', () => {
+  // 3024 板 snot:1：物理占层 y∈[1,2]，与同格 snot:0 的板（y∈[0,1]）实际不穿模，凸点-底孔经 3D 连接器匹配相连
+  const stacked = validate(
+    baseModel({
+      parts: [
+        { id: 'a', part: '3024', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'b', part: '3024', color: 4, at: [0, 0, 0], rot: 0, snot: 1, step: 1, module: 'base' },
+      ],
+    }),
+    cat
+  );
+  assert.equal(stacked.ok, true, `期望零错误，实际：${JSON.stringify(stacked.errors)}`);
+  assert.deepEqual(stacked.errors, []);
+
+  // 反向对照：snot:1 的板物理上悬在 3001 砖（高 3 片，y∈[0,3]）实体内部 → 3D 包围盒必须报 overlap
+  const real = validate(
+    baseModel({
+      parts: [
+        { id: 'a', part: '3001', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'b', part: '3024', color: 4, at: [0, 0, 0], rot: 0, snot: 1, step: 1, module: 'base' },
+      ],
+    }),
+    cat
+  );
+  assert.equal(real.ok, false);
+  assert.ok(real.errors.some((e) => e.code === 'overlap'), `期望 3D overlap，实际：${codesOf(real.errors).join(', ')}`);
+});
+
+test('无顶凸点 (tile/studs:0) 与部分顶凸点 (studCells) 入册语义：底孔可连接、无凸点格禁止叠件', () => {
+  const customCat = {
+    ...cat,
+    parts: {
+      ...cat.parts,
+      auto_cslope_nostud: { name: 'Slope Curved 3 x 1 No Studs', kind: 'cslope', category: 'cslope', size: [1, 3], h: 2, studs: 0, grid: false, tile: true, auto: true },
+      auto_slope_partial: { name: 'Slope 2 x 2 Partial Studs', kind: 'slope', category: 'slope', size: [2, 2], h: 3, studs: 2, grid: false, studCells: [[0, 0], [1, 0]], auto: true },
+    },
+  };
+  // 1) 无顶凸点件：0 个输出凸点、3 个底孔，可扣在基础砖顶面，但上面不能再叠零件
+  const cNoStud = partConnectors({ id: 't1', part: 'auto_cslope_nostud', at: [0, 3, 0] }, customCat.parts.auto_cslope_nostud);
+  assert.equal(cNoStud.studs.length, 0);
+  assert.equal(cNoStud.receptors.length, 3);
+  const okSnapOnBase = validate(
+    baseModel({
+      parts: [
+        { id: 'base', part: '3001', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'top_tile', part: 'auto_cslope_nostud', color: 15, at: [0, 3, 0], rot: 90, step: 1, module: 'base' },
+      ],
+    }),
+    customCat
+  );
+  assert.equal(okSnapOnBase.ok, true);
+  const floatOnTile = validate(
+    baseModel({
+      parts: [
+        { id: 'base', part: '3001', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'top_tile', part: 'auto_cslope_nostud', color: 15, at: [0, 3, 0], rot: 90, step: 1, module: 'base' },
+        { id: 'illegal_on_tile', part: '3024', color: 4, at: [0, 5, 0], rot: 0, step: 1, module: 'base' },
+      ],
+    }),
+    customCat
+  );
+  assert.equal(floatOnTile.ok, false);
+  assert.ok(codesOf(floatOnTile.errors).includes('floating'));
+
+  // 2) 部分顶凸点件 (studCells)：仅后排 k=0 有凸点，前排斜面 k=1 无凸点（在 k=1 叠 1×1 板必须判为 floating）
+  const cPartial = partConnectors({ id: 's1', part: 'auto_slope_partial', at: [0, 0, 0] }, customCat.parts.auto_slope_partial);
+  assert.equal(cPartial.studs.length, 2);
+  const okOnBack = validate(
+    baseModel({
+      parts: [
+        { id: 's1', part: 'auto_slope_partial', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'on_back', part: '3024', color: 15, at: [0, 3, 0], rot: 0, step: 1, module: 'base' },
+      ],
+    }),
+    customCat
+  );
+  assert.equal(okOnBack.ok, true);
+  const badOnSlope = validate(
+    baseModel({
+      parts: [
+        { id: 's1', part: 'auto_slope_partial', color: 4, at: [0, 0, 0], rot: 0, step: 1, module: 'base' },
+        { id: 'on_slope', part: '3024', color: 15, at: [0, 3, 1], rot: 0, step: 1, module: 'base' },
+      ],
+    }),
+    customCat
+  );
+  assert.equal(badOnSlope.ok, false);
+  assert.ok(codesOf(badOnSlope.errors).includes('floating'));
+});

@@ -5,13 +5,19 @@ import { HorizontalBlurShader } from 'three/examples/jsm/shaders/HorizontalBlurS
 import { VerticalBlurShader } from 'three/examples/jsm/shaders/VerticalBlurShader.js';
 import demoModel from '../../examples/cottage.brick.json';
 import { validate, bom, toLDraw, ldrawExt, stepPlan, partModule, moduleChain, PLATE } from '../core/core.js';
-import { cat, colorOf, luminance, partGeometry, baseMatrix, mechMatrix, mechRange, esc } from './geom.js';
+import { cat, colorOf, luminance, partGeometry, baseMatrix, mechMatrix, mechRange, esc, num } from './geom.js';
+import { ldrawLocalGeometry } from './ldraw-geom.js';
 import { Booklet } from './booklet.js';
 
 const $ = (s) => document.querySelector(s);
 const V3 = THREE.Vector3;
-const params = new URLSearchParams(location.hash.slice(1));
+// 参数按 hash 优先、回退 search：diff 会话用 ?shot=1&az=… 触发整页重载（同一路径只改 hash 不会重新初始化）
+const params = new URLSearchParams(location.hash.slice(1) || location.search.slice(1));
 const SHOT = params.has('shot');
+// LDraw 真实几何：CLI 默认预烘焙并嵌入 window.__LDRAW_GEOM__；嵌入即默认开启。
+// 退回参数化有两条显式通道：嵌入侧 window.__GEOM_PARAM__=true（--geom param），或 URL geom=param。
+const LDRAW = window.__LDRAW_GEOM__ || null;
+let GEOM_ON = !!LDRAW && !window.__GEOM_PARAM__ && params.get('geom') !== 'param';
 const reduceMotion = SHOT || matchMedia('(prefers-reduced-motion: reduce)').matches;
 const STATUS_ZH = { confirmed: '已确认', inferred: '推断', uncertain: '存疑' };
 const MECH_ZH = { hinge: '合页', slide: '滑动', removable: '可取下' };
@@ -48,7 +54,7 @@ scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
 scene.environmentIntensity = 0.8;
 scene.add(new THREE.HemisphereLight(0xffffff, 0xd9d9de, 0.65));
 const key = new THREE.DirectionalLight(0xffffff, 1.25); key.position.set(-6, 14, 10); scene.add(key);
-const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 2000);
+let camera = new THREE.PerspectiveCamera(30, 1, 0.1, 2000);   // SHOT+ortho 模式会在启动后被替换为正交相机
 const controls = new OrbitControls(camera, canvas);
 controls.addEventListener('start', () => { S.userMoved = true; camAnim.t = 1; });
 controls.addEventListener('change', () => { S.dirty = true; });
@@ -95,7 +101,20 @@ const shadow = (() => {
 // ------------------------------------------------------------------ 状态
 const S = { ndc: { upper: 1, lower: -1 }, userMoved: false, model: null, plan: null, objs: [], byId: new Map(), steps: [], stepIdx: 0, attachIdx: new Map(), mechs: [],
   explode: { cur: 0, target: 0 }, emode: 'layer', opts: { highlight: true, fade: false, status: false }, sel: null, hiModule: null, playing: null, report: null, bomTab: 'step',
-  center: new V3(), size: new V3(), layerGap: 1, hasModules: false, fitKey: 'main', shadowFrames: 0, dirty: true, mode: '3d', book: null, bookDirty: true };
+  center: new V3(), size: new V3(), layerGap: 1, hasModules: false, fitKey: 'main', shadowFrames: 0, dirty: true, mode: '3d', book: null, bookDirty: true,
+  geomStat: { ldraw: 0, fallback: 0, fallbackKeys: new Set() } };
+/** LDraw 烘焙几何优先；缺失/解析失败显式回退参数化并计数（不得静默为空） */
+function geomFor(p) {
+  if (GEOM_ON && LDRAW) {
+    const key = `${p.part}|${p.color}`;
+    const baked = LDRAW.data[key];
+    const g = baked && ldrawLocalGeometry(key, baked, p.color);
+    if (g) { S.geomStat.ldraw++; return g; }
+    S.geomStat.fallback++; S.geomStat.fallbackKeys.add(key);
+    console.warn(`[geom] LDraw 几何不可用，回退参数化：${key}`);
+  }
+  return partGeometry(p.part);
+}
 const curStep = () => S.steps[S.stepIdx];
 const lastIdx = () => S.steps.length - 1;
 const ease = (t) => 1 - Math.pow(1 - t, 3);
@@ -104,6 +123,7 @@ const kick = () => { S.shadowFrames = Math.max(S.shadowFrames, 3); S.dirty = tru
 function loadModel(model, { keepCamera = false } = {}) {
   for (const o of S.objs) root.remove(o.group);
   S.model = model; S.objs = []; S.byId.clear(); S.sel = null; S.hiModule = null; selBox.visible = false; $('#infocard').hidden = true;
+  S.geomStat = { ldraw: 0, fallback: 0, fallbackKeys: new Set() };
   S.report = validate(model, cat);
   S.plan = stepPlan(model);
   S.steps = S.plan.steps.length ? S.plan.steps : [{ n: 1, title: '', parts: [], attach: null, sub: null }];
@@ -112,7 +132,7 @@ function loadModel(model, { keepCamera = false } = {}) {
   const bb = new THREE.Box3(), tmp = new THREE.Box3();
   for (const p of model.parts || []) {
     const def = cat.parts[p.part]; if (!def || !Array.isArray(p.at) || p.at.length !== 3) continue;
-    const g = partGeometry(p.part), m = mats(p.color);
+    const g = geomFor(p), m = mats(p.color);
     const group = new THREE.Group(); group.matrixAutoUpdate = false;
     const mesh = new THREE.Mesh(g.main, m.solid); mesh.userData.id = p.id;
     const edges = new THREE.LineSegments(g.edges, m.edge);
@@ -120,7 +140,9 @@ function loadModel(model, { keepCamera = false } = {}) {
     const meshes = [mesh];
     if (g.glass) { const gm = new THREE.Mesh(g.glass, glassMat); gm.userData.id = p.id; group.add(gm); meshes.push(gm); }
     const base = baseMatrix(p, def);
-    const o = { p, def, group, mesh, edges, meshes, base, localBox: g.main.boundingBox, rank: idx.get(p.step) ?? 0, sub: S.plan.partSub.get(p.id) || null, module: partModule(p),
+    const extras = (g.extras || []).map((ex) => ({ mesh: new THREE.Mesh(ex.geo, mats(ex.code).solid), code: ex.code }));
+    for (const e of extras) { e.mesh.userData.id = p.id; group.add(e.mesh); meshes.push(e.mesh); }
+    const o = { p, def, group, mesh, edges, meshes, extras, base, localBox: g.main.boundingBox, rank: idx.get(p.step) ?? 0, sub: S.plan.partSub.get(p.id) || null, module: partModule(p),
       layer: p.at[1], layerRank: 0, mechs: [], drop: 1, dropH: 2.6, staged: false, off: new V3(), offTarget: new V3(), modOff: new V3(), stageOff: new V3() };
     bb.union(tmp.copy(o.localBox).applyMatrix4(base));
     S.objs.push(o); S.byId.set(p.id, o); root.add(group);
@@ -149,6 +171,7 @@ function loadModel(model, { keepCamera = false } = {}) {
   buildUI(); refreshLook(); updateStepUI();
   S.userMoved = false; if (!keepCamera) setView(...VIEW, 1);
   S.bookDirty = true; if (S.mode === 'book') buildBooklet();
+  window.__geomStat = { geom: GEOM_ON ? 'ldraw' : 'param', ldraw: S.geomStat.ldraw, fallback: S.geomStat.fallback, fallbackKeys: [...S.geomStat.fallbackKeys], notes: LDRAW?.notes || [], noDat: LDRAW?.noDat || [] };
 }
 
 function computeModuleOffsets() {   // 每个模块的爆炸位移：用 modules[].explode，没写的自动按高度排开；子模块叠加父模块的位移
@@ -264,6 +287,7 @@ function refreshLook() {
     const m = mats(o.p.color), current = o.rank === i || (st.attach && o.sub === st.attach);
     const dim = (S.opts.fade && !current && !isLast) || (hi && !hi.has(o.module));
     o.mesh.material = dim ? m.faded : m.solid;
+    for (const ex of o.extras) { const em = mats(ex.code); ex.mesh.material = dim ? em.faded : em.solid; }
     let e = dim ? edgeMats.faded : m.edge;
     if (S.opts.highlight && current && !isLast) e = edgeMats.accent;
     if (S.opts.status && (o.p.status === 'inferred' || o.p.status === 'uncertain')) e = edgeMats[o.p.status];
@@ -336,10 +360,10 @@ function buildUI() {
   // 可开合
   $('#mech-section').hidden = !S.mechs.length;
   $('#mechs').innerHTML = S.mechs.map((mm, i) => {
-    const isOpen = Math.abs(mm.target - mm.lo) > 1e-6, slider = mm.m.type !== 'removable';
-    return `<li class="mech"><div class="mech-head"><div><div class="mech-name">${esc(mm.m.label || mm.m.id)}</div><div class="sub">${MECH_ZH[mm.m.type] || mm.m.type} · ${mm.m.parts.length} 个零件</div></div>
-      <button class="btn small" data-mech="${i}" aria-pressed="${isOpen}">${mm.m.type === 'removable' ? (isOpen ? '装回' : '取下') : isOpen ? '关上' : '打开'}</button></div>
-      ${slider ? `<input type="range" class="mech-range" data-mr="${i}" min="${mm.lo}" max="${mm.hi}" step="1" value="${mm.target}" aria-label="${esc(mm.m.label || mm.m.id)} 角度">` : ''}</li>`;
+    const isOpen = Math.abs(mm.target - mm.lo) > 1e-6, removable = mm.m.type === 'removable', slider = !removable;
+    return `<li class="mech"><div class="mech-head"><div><div class="mech-name">${esc(mm.m.label || mm.m.id)}</div><div class="sub">${esc(MECH_ZH[mm.m.type] || mm.m.type)} · ${mm.m.parts.length} 个零件</div></div>
+      <button class="btn small" data-mech="${i}" aria-pressed="${isOpen}">${removable ? (isOpen ? '装回' : '取下') : isOpen ? '关上' : '打开'}</button></div>
+      ${slider ? `<input type="range" class="mech-range" data-mr="${i}" min="${num(mm.lo)}" max="${num(mm.hi)}" step="1" value="${num(mm.target)}" aria-label="${esc(mm.m.label || mm.m.id)} 角度">` : ''}</li>`;
   }).join('');
   $('#mechs').querySelectorAll('[data-mech]').forEach((b) => b.addEventListener('click', () => {
     const mm = S.mechs[+b.dataset.mech]; mm.target = Math.abs(mm.target - mm.lo) > 1e-6 ? mm.lo : mm.hi; buildUI(); kick();
@@ -375,9 +399,9 @@ function select(id, jump = false) {
   if (jump && !o.group.visible) goStep(o.rank, false);
   const p = o.p, st = S.steps[o.rank], status = p.status || 'confirmed', mod = o.module ? S.plan.mods.get(o.module) : null;
   card.innerHTML = `<div class="card-head"><div><div class="card-title">${esc(partLabel(p))}</div><div class="sub">${esc(p.part)} · ${esc(colorOf(p.color).zh)} · ${esc(p.id)}</div></div><button class="icon-btn" id="card-close" aria-label="关闭">${ICON.close}</button></div>
-    <dl><dt>位置</dt><dd>[${p.at.join(', ')}] · 朝向 ${p.rot || 0}°${p.up && p.up !== '+y' ? ` · 凸点朝 ${esc(p.up)}${p.snot ? ` (+${p.snot}片)` : ''}` : ''}</dd><dt>步骤</dt><dd>第 ${o.rank + 1} 步${st?.title ? ` · ${esc(st.title)}` : ''}</dd>
+    <dl><dt>位置</dt><dd>[${(Array.isArray(p.at) ? p.at : []).map(num).join(', ')}] · 朝向 ${num(p.rot)}°${p.up && p.up !== '+y' ? ` · 凸点朝 ${esc(p.up)}${p.snot ? ` (+${num(p.snot)}片)` : ''}` : ''}</dd><dt>步骤</dt><dd>第 ${o.rank + 1} 步${st?.title ? ` · ${esc(st.title)}` : ''}</dd>
     ${o.module ? `<dt>模块</dt><dd>${esc(mod?.label || o.module)}</dd>` : ''}
-    <dt>状态</dt><dd><span class="tag ${status === 'confirmed' ? 'positive' : status === 'inferred' ? 'attention' : 'risk'}">${STATUS_ZH[status] || status}</span>${p.confidence != null ? ` <span class="sub">置信度 ${Math.round(p.confidence * 100)}%</span>` : ''}</dd>
+    <dt>状态</dt><dd><span class="tag ${status === 'confirmed' ? 'positive' : status === 'inferred' ? 'attention' : 'risk'}">${esc(STATUS_ZH[status] || status)}</span>${p.confidence != null ? ` <span class="sub">置信度 ${Math.round(p.confidence * 100)}%</span>` : ''}</dd>
     ${p.evidence?.length ? `<dt>照片</dt><dd class="ev">${p.evidence.map((e) => `<code>${esc(e)}</code>`).join('')}</dd>` : ''}
     ${p.note ? `<dt>备注</dt><dd>${esc(p.note)}</dd>` : ''}</dl>`;
   card.hidden = false; $('#card-close').addEventListener('click', () => select(null)); refreshLook();
@@ -439,6 +463,10 @@ function wire() {
   document.querySelectorAll('[data-bomtab]').forEach((b) => b.addEventListener('click', () => { S.bomTab = b.dataset.bomtab; renderBom(); }));
   document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => setMode(b.dataset.mode)));
   for (const k of ['highlight', 'fade', 'status']) $(`#opt-${k}`).addEventListener('change', (e) => { S.opts[k] = e.target.checked; refreshLook(); if (k === 'status') $('#legend').hidden = !e.target.checked; });
+  if (LDRAW) {   // 仅当渲染时嵌入了烘焙几何才显示开关
+    $('#opt-geom-wrap').hidden = false; $('#opt-geom').checked = GEOM_ON;
+    $('#opt-geom').addEventListener('change', (e) => { GEOM_ON = e.target.checked; loadModel(S.model, { keepCamera: true }); toast(GEOM_ON ? '已切换 LDraw 真实几何' : '已切回参数化几何'); });
+  }
   $('#book-fade').addEventListener('change', () => buildBooklet());
   $('#btn-print').onclick = () => window.print();
   $('#open-file').onclick = () => $('#file').click();
@@ -486,8 +514,9 @@ new ResizeObserver(resize).observe($('#stage')); resize();
 loadModel(window.__BRICK_MODEL__ || demoModel);
 if (SHOT) {
   document.body.classList.add('shot');
+  document.body.style.background = 'transparent';   // body 默认白底会垫穿 alpha；置透明后截图保留 canvas 透明背景
   const W = +params.get('w') || 1200, H = +params.get('h') || 900;
-  $('#stage').style.cssText = `width:${W}px;height:${H}px;flex:none`; resize();
+  $('#stage').style.cssText = `width:${W}px;height:${H}px;flex:none;background:transparent`; resize();   // 舞台渐变底也会垫穿 alpha，一并置透明
   if (params.has('step')) { const i = S.steps.findIndex((s) => s.n === +params.get('step')); goStep(i >= 0 ? i : lastIdx(), false); }
   if (params.has('emode')) S.emode = params.get('emode') === 'module' ? 'module' : 'layer';
   S.explode.target = (+params.get('explode') || 0) / 100; computeExplodeTargets(true); S.explode.cur = S.explode.target;
@@ -496,6 +525,23 @@ if (SHOT) {
   if (params.has('sel')) select(params.get('sel'));
   frameUpdate(1);
   setView(+(params.get('az') ?? VIEW[0]), +(params.get('el') ?? VIEW[1]), +params.get('zoom') || 1, false);
+  if (params.get('ortho') === '1') {   // 数值对账：正交投影（与实拍照片按同一比例对比，不允许透视收敛）
+    const { box } = contextFit();
+    camera.updateMatrixWorld();
+    let hw = 0, hh = 0;
+    for (let i = 0; i < 8; i++) {   // 包围盒 8 个角投到相机平面，取半宽/半高
+      _corner.set(i & 1 ? box.max.x : box.min.x, i & 2 ? box.max.y : box.min.y, i & 4 ? box.max.z : box.min.z).applyMatrix4(camera.matrixWorldInverse);
+      hw = Math.max(hw, Math.abs(_corner.x)); hh = Math.max(hh, Math.abs(_corner.y));
+    }
+    if (hw > 0 && hh > 0) {
+      const ar = canvas.width / Math.max(1, canvas.height);
+      if (ar > hw / hh) hw = hh * ar; else hh = hw / ar;   // 视锥纵横比对齐画布，避免拉伸
+      hw *= 1.08; hh *= 1.08;   // 留约 8% 边距
+      const oc = new THREE.OrthographicCamera(-hw, hw, hh, -hh, 0.1, 4000);
+      oc.position.copy(camera.position); oc.quaternion.copy(camera.quaternion); oc.updateMatrixWorld();
+      camera = oc; S.dirty = true;
+    }
+  }
 } else if (params.get('view') === 'book') setMode('book');
 let last = performance.now(), frames = 0;
 renderer.setAnimationLoop((t) => {
@@ -506,4 +552,29 @@ renderer.setAnimationLoop((t) => {
   if (S.dirty || SHOT) { renderer.render(scene, camera); S.dirty = false; }
   if (SHOT && ++frames === 4) window.__shotReady = true;
 });
-window.brickkit = { loadModel, goStep, setView, setMode, state: S };
+function projectWorldPoint(wx, wy, wz) {
+  camera.updateMatrixWorld();
+  const v = new THREE.Vector3(wx, wy * PLATE, wz).project(camera);
+  const w = canvas.clientWidth || canvas.width, h = canvas.clientHeight || canvas.height;
+  return { x: (v.x * 0.5 + 0.5) * w, y: (-v.y * 0.5 + 0.5) * h, z: v.z };
+}
+// 只读相机快照：供 renderState / 接口标号模块核对离线投影口径（与 actions-v1/render-state.js 的 CAMERA_CONTRACT 对齐）。
+// 不改任何渲染行为；拿到的就是当前帧实际在用的相机。
+function cameraSnapshot() {
+  camera.updateMatrixWorld();
+  const t = controls.target;
+  return {
+    position: camera.position.toArray(), target: t.toArray(),
+    dir: camera.position.clone().sub(t).normalize().toArray(),
+    up: camera.up.toArray(),
+    fov: camera.fov, near: camera.near, far: camera.far, aspect: camera.aspect,
+    type: camera.type, zoom: camera.zoom,
+    // 正交相机没有 fov；半高必须显式给出，否则离线侧只能靠复算取景公式，等于自证
+    orthoHalfHeight: camera.isOrthographicCamera ? camera.top : null,
+    orthoHalfWidth: camera.isOrthographicCamera ? camera.right : null,
+    view: camera.view ? { enabled: camera.view.enabled, offsetX: camera.view.offsetX, offsetY: camera.view.offsetY, width: camera.view.width, height: camera.view.height, fullWidth: camera.view.fullWidth, fullHeight: camera.view.fullHeight } : null,
+    canvas: { clientWidth: canvas.clientWidth, clientHeight: canvas.clientHeight, width: canvas.width, height: canvas.height },
+    plate: PLATE,
+  };
+}
+window.brickkit = { loadModel, goStep, setView, setMode, projectWorldPoint, cameraSnapshot, state: S };

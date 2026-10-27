@@ -4,3 +4,19 @@ out/
 qa/
 *.log
 .DS_Store
+
+# LDraw 官方零件库全量镜像（约数百 MB / 2.7 万文件，本地素材不入库；引用子集 catalog/ldraw/ 正常提交）
+catalog/ldraw-full/
+.mimosa/
+
+# 官方乐高组装说明书 PDF（版权归 The LEGO Group，官网免费个人下载；仅本地参考，不得再分发）
+assets/instructions-lego/
+
+# 本地临时脚本与中间产物
+.tmp/
+.zcode/
+
+# Python 训练环境与字节码缓存（依赖版本见 training/brickvlm/requirements.txt）
+training/brickvlm/.venv/
+__pycache__/
+*.pyc
