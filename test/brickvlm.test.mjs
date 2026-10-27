@@ -236,8 +236,15 @@ test('extractStepSamples：无 snap 的零件是根件，不计入 GT；under �
 
 /* ---------------------------------------------------------------- ② 奖励函数 */
 
-const STACK_BASE = path.join(CASE_STACK_01, 'state_t.brick.json');
-const stackBase = readJSON(STACK_BASE);
+// 奖励函数只需要「一颗 3001 当底座」这个最小状态来验证打分链路；
+// 原先读课程数据集里的 state_t.brick.json，而那套数据是本地产物（不进版本库）。
+// 这里直接构造等价底座，内容与 case_stack_01 的 state_t 完全一致（1 件 3001 @ [0,0,0]）。
+const stackBase = {
+  format: 'brickbuild',
+  version: '0.2',
+  meta: { name: 'reward-base-3001' },
+  parts: [{ id: 'p001', part: '3001', color: 14, at: [0, 0, 0], step: 1, status: 'confirmed' }],
+};
 const stackGt = [{ part: '3001', color: 14, on: 'p001', stud: 0, receptor: 0, rot: 0 }];
 
 test('奖励：全对 pred 给高分（physical=1、snapMatch=1、无 validate 错误）', () => {
@@ -365,7 +372,10 @@ test('奖励：CLI 输出 schema 与 --out 落盘（三条：全对/错 stud/穿
   ];
   fs.writeFileSync(preds, rows.map((r) => JSON.stringify(r)).join('\n') + '\n');
 
-  const r = runNode(REWARD, ['--predictions', preds, '--model', path.relative(ROOT, STACK_BASE), '--out', outFile]);
+  // CLI 需要一个真实的模型文件路径：把上面构造的等价底座写到临时目录
+  const baseFile = path.join(dir, 'stack-base.brick.json');
+  fs.writeFileSync(baseFile, JSON.stringify(stackBase, null, 2));
+  const r = runNode(REWARD, ['--predictions', preds, '--model', baseFile, '--out', outFile]);
   assert.equal(r.status, 0, r.stderr || r.stdout);
   const lines = r.stdout.trim().split('\n').map((s) => JSON.parse(s));
   const summary = lines.pop();
