@@ -91,7 +91,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T05:49:41.289Z",
+      "recordedAt": "2026-10-27T06:01:03.952Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -172,7 +172,7 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T05:49:41.289Z",
+    "recordedAt": "2026-10-27T06:01:03.952Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],

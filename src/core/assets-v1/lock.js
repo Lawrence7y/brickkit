@@ -36,6 +36,18 @@ export function tryReadAssetIndex(assetsDir) {
 // 用旧定义验证新模型，比没有索引更危险，所以这里要把过期状态显式查出来。
 const INDEX_SOURCE_FILES = ['catalog/parts.json', 'catalog/parts-ldraw.json', 'catalog/colors.json'];
 
+/**
+ * 读文件并归一化行尾后取哈希。
+ *
+ * 同一份内容在 Windows（autocrlf 检出为 CRLF）与 Linux（LF）下字节不同，但语义相同。
+ * 索引里记的哈希是构建机上算的；若直接比原始字节，别的机器一检出就是「过期」，
+ * 而实际上文件没改。归一化后比较的是内容而不是行尾风格。
+ */
+function contentSha256(file) {
+  const text = fs.readFileSync(file, 'utf8').split('\r\n').join('\n');
+  return crypto.createHash('sha256').update(text, 'utf8').digest('hex');
+}
+
 /** 返回索引已过期的源文件列表；空数组表示索引与源文件一致。 */
 export function staleAssetIndexSources(index, repoRoot) {
   const sources = index?.sourceHashes;
@@ -49,8 +61,7 @@ export function staleAssetIndexSources(index, repoRoot) {
     const target = path.resolve(root, rel);
     if (!target.startsWith(root + path.sep)) { stale.push({ role, file: meta.file, reason: 'path-outside-repo' }); continue; }
     if (!fs.existsSync(target)) { stale.push({ role, file: meta.file, reason: 'source-missing' }); continue; }
-    const cur = crypto.createHash('sha256').update(fs.readFileSync(target)).digest('hex');
-    if (cur !== meta.sha256) stale.push({ role, file: meta.file, recorded: meta.sha256, current: cur });
+    if (contentSha256(target) !== meta.sha256) stale.push({ role, file: meta.file, recorded: meta.sha256, current: contentSha256(target) });
   }
   return stale;
 }

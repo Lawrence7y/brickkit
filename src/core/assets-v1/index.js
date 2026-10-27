@@ -82,6 +82,10 @@ export function readRawCatalog(root, opts = {}) {
   const extDoc = extBuf ? JSON.parse(extBuf.toString('utf8')) : { parts: {} };
   const colors = JSON.parse(fs.readFileSync(colorsPath, 'utf8'));
 
+  // 源哈希按「归一化行尾后的文本」计算：同一份内容在 Windows（autocrlf 检出为 CRLF）
+  // 与 Linux（LF）下字节不同但语义相同，用原始字节做校验会让别的机器一检出就报过期。
+  const normSha = (buf) => sha256(Buffer.from(buf.toString('utf8').split('\r\n').join('\n'), 'utf8'));
+
   const merged = {};
   for (const [id, def] of Object.entries(extDoc.parts || {})) {
     merged[id] = { def, sourceType: 'extracted' };
@@ -93,9 +97,9 @@ export function readRawCatalog(root, opts = {}) {
     merged,
     colors: colors.colors || {},
     sourceHashes: {
-      curated: { file: 'catalog/parts.json', sha256: sha256(curatedBuf), bytes: curatedBuf.length },
-      extracted: extBuf ? { file: 'catalog/parts-ldraw.json', sha256: sha256(extBuf), bytes: extBuf.length } : null,
-      colors: { file: 'catalog/colors.json', sha256: sha256(fs.readFileSync(colorsPath)), bytes: fs.statSync(colorsPath).size },
+      curated: { file: 'catalog/parts.json', sha256: normSha(curatedBuf), bytes: curatedBuf.length },
+      extracted: extBuf ? { file: 'catalog/parts-ldraw.json', sha256: normSha(extBuf), bytes: extBuf.length } : null,
+      colors: { file: 'catalog/colors.json', sha256: normSha(fs.readFileSync(colorsPath)), bytes: fs.statSync(colorsPath).size },
     },
     catalogMeta: { format: curated.format, version: curated.version, units: curated.units },
   };
