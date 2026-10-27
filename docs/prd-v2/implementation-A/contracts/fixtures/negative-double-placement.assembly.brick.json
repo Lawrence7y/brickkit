@@ -13,12 +13,12 @@
       {
         "partId": "3001",
         "revision": "r1-curated",
-        "contentHash": "0079060b965f262b3666a8794241ee4809d2b28a337ac3ef20a550360436c314"
+        "contentHash": "2b0592c13a2cabef00ae043a45acaff54b9d8644c367bf81dd4f4702b5d3e73c"
       },
       {
         "partId": "3020",
         "revision": "r1-curated",
-        "contentHash": "059b3448523ff938934f1394530be470f71c92c6ae59224143f842953703e377"
+        "contentHash": "a9db13b1afc632996ea50ca92458e51cdda35aecc4c449acb7a434f878bf0fa2"
       }
     ]
   },

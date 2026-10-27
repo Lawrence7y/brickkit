@@ -521,8 +521,12 @@ const r1 = (v) => Math.round(v * 10) / 10;
 // 扣在空气上却又自洽通过校验。因此这里额外拿官方 .dat 实测的 sideStuds 对账：
 //   side-face-mismatch  目录声明的侧凸点朝向集合与官方不一致
 //   side-count-mismatch 朝向一致但每面凸点数不一致
+//   side-row-mismatch   朝向与数量都对，但凸点高度（sideRows）与官方实测不一致
 //   side-faces-missing  官方有侧凸点，目录一个没声明（引擎会当成没有侧装接口）
-// 这三类与 height-error 同级：都是「目录手写定义与官方几何冲突即硬错误」。
+// 这四类与 height-error 同级：都是「目录手写定义与官方几何冲突即硬错误」。
+// 高度这一项最容易被漏掉：sideRows 是「片，自零件底面起算」，官方 sideStuds 的 y 是
+// 「stud，自同一底面起算」，换算系数 2.5。写错单位（把 stud 值当片值抄进来）不会改变
+// 朝向与数量，只会让侧装件整体下沉、落到非网格位置，交给装配引擎时表现为莫名的穿模。
 export function verifyPart(def, box, opts = {}) {
   const expected = { x: def.size[0] * 20, y: def.h * 8, z: def.size[1] * 20 };
   const axes = {};
@@ -548,7 +552,7 @@ export function verifyPart(def, box, opts = {}) {
   if (sideDetail) flags.push(sideDetail.flag);
 
   const status = flags.includes('height-error') ? 'height-error'
-    : flags.includes('side-face-mismatch') || flags.includes('side-count-mismatch') ? 'side-mismatch'
+    : flags.includes('side-face-mismatch') || flags.includes('side-count-mismatch') || flags.includes('side-row-mismatch') ? 'side-mismatch'
       : flags.includes('side-faces-missing') ? 'side-faces-missing'
         : flags.includes('protrudes') ? 'protrudes'
           : flags.includes('smaller') ? 'smaller'
@@ -561,7 +565,12 @@ export function verifyPart(def, box, opts = {}) {
   };
 }
 
-const HARD_FLAGS = new Set(['height-error', 'side-face-mismatch', 'side-count-mismatch', 'side-faces-missing']);
+const HARD_FLAGS = new Set(['height-error', 'side-face-mismatch', 'side-count-mismatch', 'side-row-mismatch', 'side-faces-missing']);
+
+// 官方 sideStuds 的 y 单位是 stud（与零件同一底面为原点），目录 sideRows 的单位是片。
+// 1 stud = 2.5 片；两者都自零件底面向上量，所以只差这一个系数。
+const STUDS_TO_PLATES = 2.5;
+const ROW_TOL = 0.05;   // 片；官方 .dat 坐标常带 0.01 级舍入，留一点余量
 
 // 官方实测侧凸点按「朝向 → 数量」归并；凸点在本地的 y 也一并记下，供人工核对行高。
 function groupSideStuds(studs) {
@@ -572,6 +581,17 @@ function groupSideStuds(studs) {
     (g[face] ||= []).push({ x: s[0], y: s[1], z: s[2] });
   }
   return g;
+}
+
+// 官方侧凸点的行高（片，自零件底面起算）。同一面同一高度上的多个凸点并成一行。
+// 取 2 位小数：0.7 stud × 2.5 = 1.75 片，只留 1 位会舍成 1.8 与目录差出 0.05 片。
+export function officialSideRows(studs) {
+  const g = groupSideStuds(studs);
+  const rows = {};
+  for (const [face, list] of Object.entries(g)) {
+    rows[face] = [...new Set(list.map((s) => Math.round(s.y * STUDS_TO_PLATES * 100) / 100))].sort((a, b) => a - b);
+  }
+  return rows;
 }
 
 // 目录声明（sideFaces/sideRows）与官方实测侧凸点对账。返回 null 表示无可比信息。
@@ -592,16 +612,34 @@ export function verifySideStuds(def, officialSideStuds) {
   if (declaredFaces.join(',') !== measuredFaces.join(',')) {
     return { flag: 'side-face-mismatch', declaredFaces, measuredFaces };
   }
-  // 每面凸点数：目录用 sideRows × 该面宽度推期望数，官方按实测点个数
   const rows = def.sideRows || (def.h >= 5 ? [1.25, 3.75] : [1.75]);
+  // 每面凸点数：目录用 sideRows × 该面宽度推期望数，官方按实测点个数
   const counts = {};
   for (const face of measuredFaces) {
     const span = face === '+z' || face === '-z' ? def.size[0] : def.size[1];
     counts[face] = { declared: rows.length * span, measured: measured[face].length };
   }
-  const bad = measuredFaces.find((f) => counts[f].declared !== counts[f].measured);
-  if (bad) {
-    return { flag: 'side-count-mismatch', counts, offendingFace: bad, declaredRows: rows };
+  const badCount = measuredFaces.find((f) => counts[f].declared !== counts[f].measured);
+  if (badCount) {
+    return { flag: 'side-count-mismatch', counts, offendingFace: badCount, declaredRows: rows };
+  }
+  // 行高对账：目录每一行的 y（片）都必须能在官方实测行高里找到对应项，反之亦然。
+  // 只比数量会漏掉「整体平移一片」这类错误——朝向与个数都不变，但侧装件全错位。
+  const officialRows = officialSideRows(officialSideStuds);
+  const declaredRows = [...new Set(rows)].sort((a, b) => a - b);
+  const rowDiff = {};
+  let rowOffender = null;
+  for (const face of measuredFaces) {
+    const want = officialRows[face] || [];
+    const same = want.length === declaredRows.length
+      && want.every((v, i) => Math.abs(v - declaredRows[i]) <= ROW_TOL);
+    if (!same) {
+      rowDiff[face] = { declared: declaredRows, official: want };
+      rowOffender ||= face;
+    }
+  }
+  if (rowOffender) {
+    return { flag: 'side-row-mismatch', rows: rowDiff, offendingFace: rowOffender, declaredRows };
   }
   return null;
 }
