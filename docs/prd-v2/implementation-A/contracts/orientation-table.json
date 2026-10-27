@@ -1,0 +1,1030 @@
+{
+  "format": "brickkit-orientation-table",
+  "version": "1.0.0",
+  "generatedBy": "tools/prd-v2/emit-contracts.mjs",
+  "note": "orientationId=0 为恒等旋转。matrix 为列主序 [[r00,r01,r02],[r10,r11,r12],[r20,r21,r22]] = [ux uy uz]，满足 RᵀR=I 且 det=+1。assemblyAxis 为装配轴；显示外法线另见 faceNormal。",
+  "faceNormal": {
+    "+y": [
+      0,
+      1,
+      0
+    ],
+    "-y": [
+      0,
+      -1,
+      0
+    ],
+    "+z": [
+      0,
+      0,
+      1
+    ],
+    "-z": [
+      0,
+      0,
+      -1
+    ],
+    "+x": [
+      1,
+      0,
+      0
+    ],
+    "-x": [
+      -1,
+      0,
+      0
+    ]
+  },
+  "selfCheck": {
+    "count": 24,
+    "distinct": 24,
+    "orthonormal": true,
+    "determinantsAllPlusOne": true
+  },
+  "orientations": [
+    {
+      "orientationId": 0,
+      "up": "+y",
+      "rot": 0,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "assemblyAxis": "+y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          1,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "orientationId": 1,
+      "up": "+y",
+      "rot": 90,
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "+y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          -1
+        ],
+        "uy": [
+          0,
+          1,
+          0
+        ],
+        "uz": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 2,
+      "up": "+y",
+      "rot": 180,
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "assemblyAxis": "+y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          -1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          1,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "orientationId": 3,
+      "up": "+y",
+      "rot": 270,
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "+y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          1
+        ],
+        "uy": [
+          0,
+          1,
+          0
+        ],
+        "uz": [
+          -1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 4,
+      "up": "-y",
+      "rot": 0,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "assemblyAxis": "-y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          -1,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "orientationId": 5,
+      "up": "-y",
+      "rot": 90,
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "-y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          1
+        ],
+        "uy": [
+          0,
+          -1,
+          0
+        ],
+        "uz": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 6,
+      "up": "-y",
+      "rot": 180,
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "assemblyAxis": "-y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          -1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          -1,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "orientationId": 7,
+      "up": "-y",
+      "rot": 270,
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "-y",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          -1
+        ],
+        "uy": [
+          0,
+          -1,
+          0
+        ],
+        "uz": [
+          -1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 8,
+      "up": "+z",
+      "rot": 0,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "assemblyAxis": "+z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          1
+        ],
+        "uz": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 9,
+      "up": "+z",
+      "rot": 90,
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "assemblyAxis": "+z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          1,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          1
+        ],
+        "uz": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 10,
+      "up": "+z",
+      "rot": 180,
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "assemblyAxis": "+z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          -1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          1
+        ],
+        "uz": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 11,
+      "up": "+z",
+      "rot": 270,
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ]
+      ],
+      "assemblyAxis": "+z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          -1,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          1
+        ],
+        "uz": [
+          -1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 12,
+      "up": "-z",
+      "rot": 0,
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "assemblyAxis": "-z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          -1
+        ],
+        "uz": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 13,
+      "up": "-z",
+      "rot": 90,
+      "matrix": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "assemblyAxis": "-z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          -1,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          -1
+        ],
+        "uz": [
+          1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 14,
+      "up": "-z",
+      "rot": 180,
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "assemblyAxis": "-z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          -1,
+          0,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          -1
+        ],
+        "uz": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 15,
+      "up": "-z",
+      "rot": 270,
+      "matrix": [
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ]
+      ],
+      "assemblyAxis": "-z",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          1,
+          0
+        ],
+        "uy": [
+          0,
+          0,
+          -1
+        ],
+        "uz": [
+          -1,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 16,
+      "up": "+x",
+      "rot": 0,
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "assemblyAxis": "+x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          -1,
+          0
+        ],
+        "uy": [
+          1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "orientationId": 17,
+      "up": "+x",
+      "rot": 90,
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "+x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          -1
+        ],
+        "uy": [
+          1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          -1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 18,
+      "up": "+x",
+      "rot": 180,
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "assemblyAxis": "+x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          1,
+          0
+        ],
+        "uy": [
+          1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "orientationId": 19,
+      "up": "+x",
+      "rot": 270,
+      "matrix": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "+x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          1
+        ],
+        "uy": [
+          1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 20,
+      "up": "-x",
+      "rot": 0,
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "assemblyAxis": "-x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          1,
+          0
+        ],
+        "uy": [
+          -1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "orientationId": 21,
+      "up": "-x",
+      "rot": 90,
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "-x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          -1
+        ],
+        "uy": [
+          -1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          1,
+          0
+        ]
+      }
+    },
+    {
+      "orientationId": 22,
+      "up": "-x",
+      "rot": 180,
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "assemblyAxis": "-x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          -1,
+          0
+        ],
+        "uy": [
+          -1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          0,
+          -1
+        ]
+      }
+    },
+    {
+      "orientationId": 23,
+      "up": "-x",
+      "rot": 270,
+      "matrix": [
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "assemblyAxis": "-x",
+      "determinant": 1,
+      "deltas": {
+        "ux": [
+          0,
+          0,
+          1
+        ],
+        "uy": [
+          -1,
+          0,
+          0
+        ],
+        "uz": [
+          0,
+          -1,
+          0
+        ]
+      }
+    }
+  ]
+}

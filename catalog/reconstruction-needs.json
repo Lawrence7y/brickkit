@@ -1,0 +1,15 @@
+{
+  "format": "brickkit-part-research",
+  "model": "mecha",
+  "status": "in-progress",
+  "rule": "候选编号不代表照片识别确认；几何、连接器、运动与照片证据必须分别核实。禁止用普通砖替代特殊零件后宣称还原。",
+  "needs": [
+    { "feature": "四根带纵槽与环纹的柱状件", "evidence": ["ref_1792833393279", "ref_1792840635011"], "identification": "unresolved", "rejectedSubstitute": "3062b", "next": "核实两端接口、侧向承接方式和全长；不再为圆砖虚构水平托板" },
+    { "feature": "核心单面四凸点高砖", "evidence": ["ref_1792840635011", "ref_1792834080134"], "candidate": "22885", "identification": "candidate", "verifiedCatalog": "size=[2,1], h=5, sideFaces=['+z'], sideRows=[1.25,3.75]", "source": "https://library.ldraw.org/parts/2003" },
+    { "feature": "翼根双夹板", "evidence": ["ref_1792840635011"], "candidate": "60470b", "identification": "candidate", "source": "https://library.ldraw.org/library/official/parts/60470b.dat", "next": "核对模具变体；实现真实夹口轴、夹口位置及独立翼片姿态，不能把两个夹子当作两个侧凸点" },
+    { "feature": "双足彩色夹杆及四块黑色挂板", "evidence": ["ref_1792834080053", "ref_1792840634955"], "identification": "unresolved", "next": "逐件区分单夹、双夹、把柄、黑色挂板与横杆；确认装配朝向与连接链" },
+    { "feature": "两侧把柄板候选", "evidence": ["ref_1792840634955", "ref_1792834079990"], "candidate": "3839b", "identification": "candidate", "source": "https://library.ldraw.org/library/official/parts/3839b.dat", "next": "核对把柄是双侧还是端部结构；5c1c2b9已加入3839b，但尺寸轴和把柄坐标仍需与原始DAT核对，不得仅凭目录存在确认识别" },
+    { "feature": "顶部圆件底部与中心连接", "evidence": ["ref_1792840635011", "ref_1792833393176"], "identification": "unresolved", "next": "核对底部圆筒、槽口及是否另有销轴；不能只凭顶面四凸点认定3941" },
+    { "feature": "内部薄板填充、边缘色条及支撑", "evidence": ["ref_1792834080100", "ref_1792840635011", "ref_1792833393126"], "identification": "unresolved", "next": "建立逐层清单，区分外观饰条与承重/连接件；不可见处标inferred或uncertain" }
+  ]
+}

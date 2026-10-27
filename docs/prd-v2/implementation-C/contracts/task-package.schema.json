@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.dev/contracts/prd-v2-c/task-package.schema.json",
+  "title": "TaskPackageC2",
+  "description": "主从搭建流程子任务包契约 (C2)。为主体或独立子组件定义素材锁、局部坐标系、库存份额、接口契约与预算，支持主会话与子会话无缝协作。 【contracts-1.0 冻结版】自 B C2 并入，合并裁决：① assetLock 收紧为 buildAssetLock-v1（必须由 src/core/assets-v1/lock.js 的 buildAssetLock 生成；旧 partLocks 字典写法已被 A 的真实消费拒绝，见 A-B-integration-review-2026-10-26.md §6 与 A-to-B-asset-lock-fixture-20261026.json），catalogVersion 由 indexVersion 取代；② 任务收据必须经 src/manual-v2/workflow.js 的 createBoundTaskReceipt 构造（receiptBinding=createBoundTaskReceipt-v1）：revision/contractRevision/engineRevision/stateHash/declaredPartCount/consumedTokens/artifacts[].sha256 与本任务包真实绑定，门禁拒绝码 RECEIPT_*（见 api.md §6）。",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "taskId",
+    "revision",
+    "globalPlanRef",
+    "role",
+    "assetLock",
+    "inventory",
+    "localFrame",
+    "interfaces",
+    "spatialContracts",
+    "budget",
+    "acceptance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "taskId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "globalPlanRef": {
+      "type": "object",
+      "required": [
+        "planFile",
+        "planSha256"
+      ],
+      "properties": {
+        "planFile": {
+          "type": "string"
+        },
+        "planSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "role": {
+      "type": "string",
+      "enum": [
+        "main_body",
+        "subassembly",
+        "accessory"
+      ]
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "依赖的前序任务 ID 列表"
+    },
+    "assetLock": {
+      "type": "object",
+      "required": [
+        "profileId",
+        "indexVersion",
+        "parts"
+      ],
+      "additionalProperties": false,
+      "description": "资产锁（buildAssetLock-v1，与 asset-lock.schema.json 的 $defs.lockEntry 逐字一致）。必须调用 buildAssetLock(index, requiredPartIds, profileId) 生成；手写/手算哈希一律拒绝。旧 partLocks 字典（B 示例 sample-task-package.json 形态）自 contracts-1.0 起不再合法。",
+      "properties": {
+        "profileId": {
+          "type": "string",
+          "minLength": 1,
+          "description": "容差与配对规则 profile id。"
+        },
+        "indexVersion": {
+          "type": "string",
+          "pattern": "^d+.d+.d+$",
+          "description": "资产索引 version；取代旧 catalogVersion 字段。"
+        },
+        "parts": {
+          "type": "array",
+          "minItems": 1,
+          "description": "锁定零件清单（buildAssetLock 输出：按 partId 排序去重，三条目字段全必填）。",
+          "items": {
+            "type": "object",
+            "required": [
+              "partId",
+              "revision",
+              "contentHash"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "partId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "revision": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "[^s]"
+              },
+              "contentHash": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sourceEvidence": {
+      "type": "object",
+      "properties": {
+        "manualObservationRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pageRange": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "required": [
+        "totalCount",
+        "tokens"
+      ],
+      "properties": {
+        "totalCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "tokenId",
+              "partId",
+              "colorId"
+            ],
+            "properties": {
+              "tokenId": {
+                "type": "string"
+              },
+              "partId": {
+                "type": "string"
+              },
+              "colorId": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "localFrame": {
+      "type": "object",
+      "required": [
+        "originDescription",
+        "allowedRootParts"
+      ],
+      "properties": {
+        "originDescription": {
+          "type": "string"
+        },
+        "allowedRootParts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "initialOrientation": {
+          "type": "integer",
+          "default": 0
+        }
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "required": [
+        "outwardConnectors",
+        "targetMounts"
+      ],
+      "properties": {
+        "outwardConnectors": {
+          "type": "array",
+          "description": "本组件暴露给主体的对外挂载接口（若未确定可标 pending: true）",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "type",
+              "status"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "localPartInstance": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "frozen",
+                  "pending"
+                ]
+              }
+            }
+          }
+        },
+        "targetMounts": {
+          "type": "array",
+          "description": "主体上的目标挂接位点",
+          "items": {
+            "type": "object",
+            "required": [
+              "targetTask",
+              "parentConnectorId",
+              "status"
+            ],
+            "properties": {
+              "targetTask": {
+                "type": "string"
+              },
+              "parentConnectorId": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "frozen",
+                  "pending"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "spatialContracts": {
+      "type": "object",
+      "properties": {
+        "maxBoundingBoxLdu": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "keepOutZones": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "maxStepRetries",
+        "maxRepairRounds",
+        "timeoutSeconds"
+      ],
+      "properties": {
+        "maxStepRetries": {
+          "type": "integer",
+          "default": 3
+        },
+        "maxRepairRounds": {
+          "type": "integer",
+          "default": 2
+        },
+        "timeoutSeconds": {
+          "type": "integer",
+          "default": 300
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "required": [
+        "requireZeroErrors",
+        "requireFullInventoryConsumption"
+      ],
+      "properties": {
+        "requireZeroErrors": {
+          "type": "boolean",
+          "const": true
+        },
+        "requireZeroWarnings": {
+          "type": "boolean",
+          "default": true
+        },
+        "requireFullInventoryConsumption": {
+          "type": "boolean",
+          "const": true
+        },
+        "minVisualScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}

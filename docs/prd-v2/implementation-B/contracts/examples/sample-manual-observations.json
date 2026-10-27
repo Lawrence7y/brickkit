@@ -1,0 +1,79 @@
+{
+  "format": "brickkit-manual-observations",
+  "version": "1.0",
+  "meta": {
+    "setId": "60239-1",
+    "name": "LEGO 60239 Police Patrol Car",
+    "extractedAt": "2026-10-26T12:00:00Z",
+    "extractor": "tools/manual-v2/extractor.js",
+    "notes": "基于官方 PDF 6283855.pdf 原页独立提取，区别于由模型反推的历史假象。"
+  },
+  "sourceDocument": {
+    "fileName": "60239_book1.pdf",
+    "fileSha256": "35e59021f29942d9d19c3ac62a28a8915d35506ffbe546f89ace710c6a887436",
+    "totalPages": 36,
+    "sourceType": "official-pdf",
+    "url": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6283855.pdf"
+  },
+  "observations": [
+    {
+      "observationId": "obs-60239-p02-s01",
+      "page": 2,
+      "region": { "x": 0.05, "y": 0.1, "width": 0.4, "height": 0.8 },
+      "imageHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stepNumber": 1,
+      "subStepNumber": 1,
+      "callout": false,
+      "submodelRef": "minifig",
+      "isAssemblyEvent": false,
+      "isFlip": false,
+      "repeatCount": 1,
+      "pose": { "azimuth": 0, "elevation": 0, "confidence": "measured" },
+      "partsAdded": [
+        { "partIdCandidate": "73200", "colorId": 272, "qty": 1, "elementId": "6248890" },
+        { "partIdCandidate": "76382", "colorId": 212, "qty": 1, "elementId": "6251295" }
+      ],
+      "confidence": "high",
+      "notes": "人仔腿部插接躯干"
+    },
+    {
+      "observationId": "obs-60239-p03-s01",
+      "page": 3,
+      "region": { "x": 0.1, "y": 0.15, "width": 0.35, "height": 0.7 },
+      "imageHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stepNumber": 1,
+      "subStepNumber": 1,
+      "callout": false,
+      "submodelRef": "cones",
+      "isAssemblyEvent": false,
+      "isFlip": false,
+      "repeatCount": 2,
+      "pose": { "azimuth": 315, "elevation": 25, "confidence": "measured" },
+      "partsAdded": [
+        { "partIdCandidate": "4740", "colorId": 72, "qty": 2, "elementId": "4162916" },
+        { "partIdCandidate": "59900", "colorId": 25, "qty": 2, "elementId": "6056241" }
+      ],
+      "confidence": "high",
+      "notes": "路障雪糕筒拼装：2x 橙色圆盘 4740 + 2x 圆锥 59900"
+    },
+    {
+      "observationId": "obs-60239-p04-s01",
+      "page": 4,
+      "region": { "x": 0.1, "y": 0.2, "width": 0.8, "height": 0.7 },
+      "imageHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stepNumber": 1,
+      "subStepNumber": null,
+      "callout": false,
+      "submodelRef": "main",
+      "isAssemblyEvent": false,
+      "isFlip": false,
+      "repeatCount": 1,
+      "pose": { "azimuth": 315, "elevation": 25, "confidence": "calibrated" },
+      "partsAdded": [
+        { "partIdCandidate": "3023", "alternateParts": ["3023b"], "colorId": 15, "qty": 2, "elementId": "302301" }
+      ],
+      "confidence": "high",
+      "notes": "车体底盘第一步：在底板基准上放置 2 片 1x2 白色底板"
+    }
+  ]
+}

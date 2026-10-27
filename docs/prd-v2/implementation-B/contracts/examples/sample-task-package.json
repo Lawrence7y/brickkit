@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0",
+  "taskId": "task-front-bumper",
+  "revision": 1,
+  "globalPlanRef": {
+    "planFile": "out/prd-v2/run-dev/B/60239.build.plan.json",
+    "planSha256": "4a51e600868f0ef81e9f298f2402120092576b251fcfa11ecf11370ae24f5a2a"
+  },
+  "role": "subassembly",
+  "dependencies": ["task-main-chassis"],
+  "assetLock": {
+    "catalogVersion": "1.0.0",
+    "profileId": "standard-tolerance-v1",
+    "partLocks": {
+      "3023": { "revision": "rev-1", "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
+      "30414": { "revision": "rev-1", "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" },
+      "2412a": { "revision": "rev-1", "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" }
+    }
+  },
+  "sourceEvidence": {
+    "manualObservationRefs": ["obs-60239-p12-s01", "obs-60239-p13-s01"],
+    "pageRange": [12, 13],
+    "notes": "前保险杠独立子组件，在桌面平搭拼装后通过 90 度翻立扣入主体 30414 侧凸点"
+  },
+  "inventory": {
+    "totalCount": 4,
+    "tokens": [
+      { "tokenId": "tok-fb-01", "partId": "3023", "colorId": 15, "name": "Plate 1x2 White" },
+      { "tokenId": "tok-fb-02", "partId": "3023", "colorId": 15, "name": "Plate 1x2 White" },
+      { "tokenId": "tok-fb-03", "partId": "2412a", "colorId": 0, "name": "Radiator Grille Black" },
+      { "tokenId": "tok-fb-04", "partId": "54200", "colorId": 15, "name": "Slope 1x1 White" }
+    ]
+  },
+  "localFrame": {
+    "originDescription": "以底部 1x2 托板中心底孔为原点 [0, 0, 0]，up: +y",
+    "allowedRootParts": ["3023"],
+    "initialOrientation": 0
+  },
+  "interfaces": {
+    "outwardConnectors": [
+      {
+        "id": "antistud_mount_0",
+        "type": "antistud",
+        "localPartInstance": "p_fb_01",
+        "status": "frozen"
+      }
+    ],
+    "targetMounts": [
+      {
+        "targetTask": "task-main-chassis",
+        "parentConnectorId": "stud_side_0",
+        "status": "frozen"
+      }
+    ]
+  },
+  "spatialContracts": {
+    "maxBoundingBoxLdu": [80, 24, 40],
+    "keepOutZones": []
+  },
+  "budget": {
+    "maxStepRetries": 3,
+    "maxRepairRounds": 2,
+    "timeoutSeconds": 180
+  },
+  "acceptance": {
+    "requireZeroErrors": true,
+    "requireZeroWarnings": true,
+    "requireFullInventoryConsumption": true,
+    "minVisualScore": 0.70
+  }
+}

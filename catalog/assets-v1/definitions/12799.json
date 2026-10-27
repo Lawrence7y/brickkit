@@ -1,0 +1,304 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "12799",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "Technic Motor Pull Back  6 x  5 x  3 (Complete)",
+  "nameZh": "",
+  "category": "technic",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      3,
+      6
+    ],
+    "heightPlate": 12,
+    "bboxLdu": [
+      0,
+      60,
+      0,
+      96,
+      0,
+      120
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "unsupported",
+    "boxes": [
+      [
+        0,
+        60,
+        0,
+        96,
+        0,
+        120
+      ]
+    ],
+    "evidence": {
+      "grade": "inferred",
+      "method": "按 kind/size/h 单盒推导",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 23,
+  "connectorGroups": [
+    {
+      "t": "axle",
+      "r": "female",
+      "o": 16,
+      "k": "axle",
+      "d": "+x",
+      "mp": "pin-axle-v1",
+      "items": [
+        [
+          0,
+          29,
+          13.6,
+          1,
+          21
+        ],
+        [
+          60,
+          29,
+          13.6,
+          1,
+          22
+        ]
+      ],
+      "x": "x"
+    },
+    {
+      "t": "hole",
+      "r": "female",
+      "o": 16,
+      "k": "hole",
+      "d": "+x",
+      "mp": "pin-hole-v1",
+      "items": [
+        [
+          40,
+          9,
+          113.6,
+          1,
+          0
+        ],
+        [
+          30,
+          9,
+          113.6,
+          1,
+          1
+        ],
+        [
+          40,
+          9,
+          93.6,
+          1,
+          2
+        ],
+        [
+          30,
+          9,
+          93.6,
+          1,
+          3
+        ],
+        [
+          40,
+          9,
+          73.6,
+          1,
+          4
+        ],
+        [
+          30,
+          9,
+          73.6,
+          1,
+          5
+        ],
+        [
+          40,
+          9,
+          53.6,
+          1,
+          6
+        ],
+        [
+          30,
+          9,
+          53.6,
+          1,
+          7
+        ],
+        [
+          40,
+          9,
+          33.6,
+          1,
+          8
+        ],
+        [
+          30,
+          9,
+          33.6,
+          1,
+          9
+        ],
+        [
+          40,
+          89,
+          13.6,
+          1,
+          10
+        ],
+        [
+          30,
+          89,
+          13.6,
+          1,
+          11
+        ],
+        [
+          40,
+          89,
+          33.6,
+          1,
+          12
+        ],
+        [
+          30,
+          89,
+          33.6,
+          1,
+          13
+        ],
+        [
+          20,
+          9,
+          113.6,
+          1,
+          14
+        ],
+        [
+          20,
+          9,
+          93.6,
+          1,
+          15
+        ],
+        [
+          20,
+          9,
+          73.6,
+          1,
+          16
+        ],
+        [
+          20,
+          9,
+          53.6,
+          1,
+          17
+        ],
+        [
+          20,
+          9,
+          33.6,
+          1,
+          18
+        ],
+        [
+          20,
+          89,
+          13.6,
+          1,
+          19
+        ],
+        [
+          20,
+          89,
+          33.6,
+          1,
+          20
+        ]
+      ],
+      "x": "x"
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "unsupported",
+      "boxCount": 0,
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.22（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "hole",
+        "axle"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "7a21f0d5f2fcc56a72b4007ee53b7f16ce566ccc0efc354e34c12cd188486493"
+}

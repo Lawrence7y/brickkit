@@ -1,0 +1,330 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "54824",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "Electric Motor Boat with Light Bluish Grey  2 Blades Propeller and Rudder",
+  "nameZh": "",
+  "category": "other",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      4,
+      19
+    ],
+    "heightPlate": 13,
+    "bboxLdu": [
+      0,
+      80,
+      0,
+      100,
+      60,
+      380
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "inferred",
+    "boxes": [
+      [
+        0,
+        80,
+        0,
+        70,
+        60,
+        120
+      ],
+      [
+        20,
+        60,
+        0,
+        62,
+        120,
+        380
+      ],
+      [
+        0,
+        20,
+        0,
+        58,
+        140,
+        360
+      ],
+      [
+        60,
+        80,
+        0,
+        58,
+        140,
+        360
+      ],
+      [
+        0,
+        20,
+        58,
+        62,
+        140,
+        260
+      ],
+      [
+        60,
+        80,
+        58,
+        62,
+        140,
+        300
+      ],
+      [
+        0,
+        20,
+        58,
+        68,
+        280,
+        300
+      ],
+      [
+        20,
+        60,
+        62,
+        66,
+        120,
+        360
+      ],
+      [
+        0,
+        20,
+        62,
+        64,
+        160,
+        260
+      ],
+      [
+        60,
+        80,
+        62,
+        64,
+        160,
+        300
+      ],
+      [
+        0,
+        20,
+        64,
+        66,
+        160,
+        180
+      ],
+      [
+        60,
+        80,
+        64,
+        66,
+        160,
+        180
+      ],
+      [
+        0,
+        20,
+        64,
+        70,
+        240,
+        260
+      ],
+      [
+        60,
+        80,
+        64,
+        68,
+        240,
+        300
+      ],
+      [
+        20,
+        60,
+        66,
+        70,
+        120,
+        340
+      ],
+      [
+        60,
+        80,
+        68,
+        70,
+        240,
+        280
+      ],
+      [
+        20,
+        60,
+        70,
+        72,
+        60,
+        280
+      ],
+      [
+        0,
+        20,
+        70,
+        72,
+        100,
+        120
+      ],
+      [
+        60,
+        80,
+        70,
+        72,
+        100,
+        120
+      ],
+      [
+        60,
+        80,
+        70,
+        72,
+        260,
+        280
+      ],
+      [
+        20,
+        60,
+        72,
+        76,
+        80,
+        280
+      ],
+      [
+        20,
+        60,
+        76,
+        82,
+        100,
+        180
+      ],
+      [
+        20,
+        60,
+        76,
+        100,
+        220,
+        280
+      ],
+      [
+        20,
+        60,
+        82,
+        86,
+        100,
+        120
+      ]
+    ],
+    "coverage": 0.91,
+    "evidence": {
+      "grade": "inferred",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 2,
+  "connectorGroups": [
+    {
+      "t": "axle",
+      "r": "female",
+      "o": 8,
+      "k": "axle",
+      "d": "+z",
+      "mp": "pin-axle-v1",
+      "items": [
+        [
+          40,
+          98.6,
+          270.6,
+          1,
+          0
+        ],
+        [
+          40,
+          98.6,
+          231.6,
+          1,
+          1
+        ]
+      ],
+      "x": "z"
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "inferred",
+      "boxCount": 24,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "axle"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "63007e835ab63f2fd8bf2f62c9e339538957f8ff945316c0fbc97e1135d37c65"
+}

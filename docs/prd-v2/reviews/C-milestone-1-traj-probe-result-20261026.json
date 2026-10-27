@@ -1,0 +1,536 @@
+{
+  "probe": "trajectory-dataset-replay",
+  "at": "2026-10-26T21:57:45.410Z",
+  "seed": 1032798208,
+  "families": 14,
+  "totalSamples": 2225,
+  "sampled": 30,
+  "replay": {
+    "pass": 30,
+    "fail": 0,
+    "detail": [
+      {
+        "sampleId": "smp-traj-arch-arch-i07-s008",
+        "family": "fam-arch",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "f7aa2e5367204d4c6cb3f78c983a5d81b5813297f955ea635873dcf43092e09b",
+        "wantHash": "f7aa2e5367204d4c6cb3f78c983a5d81b5813297f955ea635873dcf43092e09b",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-bridge-bridge-i01-s008",
+        "family": "fam-bridge",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "e9ff18e99e56b6cb08424a7334d88daa0b818675975b8088a15e170ccdee9981",
+        "wantHash": "e9ff18e99e56b6cb08424a7334d88daa0b818675975b8088a15e170ccdee9981",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-cargoer-cargoer-i05-s006",
+        "family": "fam-cargoer",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "d511ab3798e7f28ee9c57fc33e7e38821d0f0c160c17bc86e4b8bcee4fc9123e",
+        "wantHash": "d511ab3798e7f28ee9c57fc33e7e38821d0f0c160c17bc86e4b8bcee4fc9123e",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-fixture-a03-snotchain-s001",
+        "family": "fam-fixture-a03",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "0c32de327a8152e589d46ee191d4ca6482bbc34d34f9d050f9f90cb31dcf1db6",
+        "wantHash": "0c32de327a8152e589d46ee191d4ca6482bbc34d34f9d050f9f90cb31dcf1db6",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-house-house-i12-s013",
+        "family": "fam-house",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "6abd8574fd415d01003a4b9428981722f69ab5d01d22248bebc5d5e84fd66508",
+        "wantHash": "6abd8574fd415d01003a4b9428981722f69ab5d01d22248bebc5d5e84fd66508",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i11-s004",
+        "family": "fam-pier",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "29c8b02afbf3e6e984b7b5c378f9dbbb487d33d4a89ad855efa091bca6518d04",
+        "wantHash": "29c8b02afbf3e6e984b7b5c378f9dbbb487d33d4a89ad855efa091bca6518d04",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pylon-pylon-i06-s006",
+        "family": "fam-pylon",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "f6ed439ce9d48702757e512366a079e0f393fe69259bad48d99a701b72f32ec1",
+        "wantHash": "f6ed439ce9d48702757e512366a079e0f393fe69259bad48d99a701b72f32ec1",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-snotwall-snotwall-i08-s002",
+        "family": "fam-snotwall",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "8e5faec22672c8403b395b72cb88a2d664754887b21f1f2aed657ca46145fb18",
+        "wantHash": "8e5faec22672c8403b395b72cb88a2d664754887b21f1f2aed657ca46145fb18",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-src-cottage-replay-s068",
+        "family": "fam-src-cottage",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "d12e3076f235f375953f13a2a9d923f0ad1b7b3f4fa23ce5b1054367fed713ea",
+        "wantHash": "d12e3076f235f375953f13a2a9d923f0ad1b7b3f4fa23ce5b1054367fed713ea",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-src-lantern-replay-s039",
+        "family": "fam-src-lantern",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "9b82e77b7418d697a9bcba1242698d02ff39430ae32a54aa4dcd8ab34447ba9c",
+        "wantHash": "9b82e77b7418d697a9bcba1242698d02ff39430ae32a54aa4dcd8ab34447ba9c",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-src-mecha-replay-s036",
+        "family": "fam-src-mecha",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "27a2b2bf0f71a42ad3b45d44a95fa45dfac99ac0f5fc1332ca73b7fdfc405395",
+        "wantHash": "27a2b2bf0f71a42ad3b45d44a95fa45dfac99ac0f5fc1332ca73b7fdfc405395",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-stair-stair-i02-s011",
+        "family": "fam-stair",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "c07fff445e41dc8db8a805357d28a9edc7f69d0f73adcfa83c9bfbd1994c99c4",
+        "wantHash": "c07fff445e41dc8db8a805357d28a9edc7f69d0f73adcfa83c9bfbd1994c99c4",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-table-table-i02-s006",
+        "family": "fam-table",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "848a82045434da2c5639f62406b75d57b477d007c0dae4ea024c8175349fef34",
+        "wantHash": "848a82045434da2c5639f62406b75d57b477d007c0dae4ea024c8175349fef34",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-tower-tower-i11-s014",
+        "family": "fam-tower",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "7329bb3e4d532b9d04ab9c6ad1f111f71435b004cbdc8fce72a35f4b851f8d64",
+        "wantHash": "7329bb3e4d532b9d04ab9c6ad1f111f71435b004cbdc8fce72a35f4b851f8d64",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-house-house-i02-s019",
+        "family": "fam-house",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "434c9c6e1eaac70534134ca9dba15faf967e64c6e71a7de9b08732a3d6a11be3",
+        "wantHash": "434c9c6e1eaac70534134ca9dba15faf967e64c6e71a7de9b08732a3d6a11be3",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-table-table-i12-s014",
+        "family": "fam-table",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "ef0d31546507970bb19d1e77dc07030834b7bb8212affc97853211013c3d51f2",
+        "wantHash": "ef0d31546507970bb19d1e77dc07030834b7bb8212affc97853211013c3d51f2",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i05-s014",
+        "family": "fam-pier",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "a613d289e160cd71ed47733e74940a44e3de43f8bbbdede3d40232c39584853b",
+        "wantHash": "a613d289e160cd71ed47733e74940a44e3de43f8bbbdede3d40232c39584853b",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-src-lantern-replay-s042",
+        "family": "fam-src-lantern",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "a802a4f8059d6e381a2d94464684c2687b3dfc40762c4ca5e316570734d5b185",
+        "wantHash": "a802a4f8059d6e381a2d94464684c2687b3dfc40762c4ca5e316570734d5b185",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i05-s009",
+        "family": "fam-pier",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "de82af357c0f90bee537bff27ee6cf4377f48533be89dac9cb31f40c1e8f234d",
+        "wantHash": "de82af357c0f90bee537bff27ee6cf4377f48533be89dac9cb31f40c1e8f234d",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-tower-tower-i05-s005",
+        "family": "fam-tower",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "7f17492abca1e6dd44dd140532f77fc7b144baa931e485853b4daf2958705698",
+        "wantHash": "7f17492abca1e6dd44dd140532f77fc7b144baa931e485853b4daf2958705698",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i12-s010",
+        "family": "fam-pier",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "dd64d4d73f96b41a96a823cb17cb8afa7c63d29a4002380cf2dfa2b41777b78b",
+        "wantHash": "dd64d4d73f96b41a96a823cb17cb8afa7c63d29a4002380cf2dfa2b41777b78b",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-cargoer-cargoer-i10-s002",
+        "family": "fam-cargoer",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "4eeb404b980071625b2ded1944e70ca471088df606eab6917c617d45348d0d6c",
+        "wantHash": "4eeb404b980071625b2ded1944e70ca471088df606eab6917c617d45348d0d6c",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-stair-stair-i02-s005",
+        "family": "fam-stair",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "1569d20083ad0a06375fdbfbbdb15a3c0af9621c3bf7896dbbff82a2d219257a",
+        "wantHash": "1569d20083ad0a06375fdbfbbdb15a3c0af9621c3bf7896dbbff82a2d219257a",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-house-house-i05-s005",
+        "family": "fam-house",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "83d28d499ed52de1716195a152bae593db9022c1bef49e40cf095834f989437d",
+        "wantHash": "83d28d499ed52de1716195a152bae593db9022c1bef49e40cf095834f989437d",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i11-s013",
+        "family": "fam-pier",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "9990af0958e3318ab16ae35a6d3139b3cccc8ec6cb443db118876e8b1e000a7b",
+        "wantHash": "9990af0958e3318ab16ae35a6d3139b3cccc8ec6cb443db118876e8b1e000a7b",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-cargoer-cargoer-i12-s011",
+        "family": "fam-cargoer",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "049078bdafca924c4d463c5da9c864ca79dd2015cf6f94315f1853069d9ec333",
+        "wantHash": "049078bdafca924c4d463c5da9c864ca79dd2015cf6f94315f1853069d9ec333",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-stair-stair-i02-s012",
+        "family": "fam-stair",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "8752d4bf2be8345a2a6c96a108f4ff8412eebb5656bdb9c8475a165f24bd7ef6",
+        "wantHash": "8752d4bf2be8345a2a6c96a108f4ff8412eebb5656bdb9c8475a165f24bd7ef6",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-src-lantern-replay-s045",
+        "family": "fam-src-lantern",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "4bad14d0bcdbe01cb51c552f94397b33d75acda3e61654c9f26df11526ae4179",
+        "wantHash": "4bad14d0bcdbe01cb51c552f94397b33d75acda3e61654c9f26df11526ae4179",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-house-house-i10-s029",
+        "family": "fam-house",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "afda7145c3b9703589a8d2b9c0a908cac46a1db18b042536aaf6ce459b96aab8",
+        "wantHash": "afda7145c3b9703589a8d2b9c0a908cac46a1db18b042536aaf6ce459b96aab8",
+        "passed": true,
+        "diags": []
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i05-s011",
+        "family": "fam-pier",
+        "state_t_recomputed": true,
+        "replayHashMatch": true,
+        "publicLabelLinkOk": true,
+        "gotHash": "9f9c5b519a584726896e9453b5068f76b26f2873f6bd50bba7ab842f058f9dca",
+        "wantHash": "9f9c5b519a584726896e9453b5068f76b26f2873f6bd50bba7ab842f058f9dca",
+        "passed": true,
+        "diags": []
+      }
+    ]
+  },
+  "images": {
+    "checked": 30,
+    "fail": 0,
+    "detail": [
+      {
+        "sampleId": "smp-traj-arch-arch-i07-s008",
+        "role": "current_labeled",
+        "file": "s0008-v1-labeled-f21de593.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-arch-arch-i07-s008",
+        "role": "target_state",
+        "file": "s0009-v1-plain-c664bef6.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-arch-arch-i07-s008",
+        "role": "score_unlabeled",
+        "file": "s0008-v1-plain-e4a18620.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-bridge-bridge-i01-s008",
+        "role": "current_labeled",
+        "file": "s0008-v1-labeled-008465e8.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-bridge-bridge-i01-s008",
+        "role": "target_state",
+        "file": "s0009-v1-plain-3dbc47fd.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-bridge-bridge-i01-s008",
+        "role": "score_unlabeled",
+        "file": "s0008-v1-plain-288fc6bf.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-cargoer-cargoer-i05-s006",
+        "role": "current_labeled",
+        "file": "s0006-v1-labeled-ac36cc83.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-cargoer-cargoer-i05-s006",
+        "role": "target_state",
+        "file": "s0007-v1-plain-e09cca4d.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-cargoer-cargoer-i05-s006",
+        "role": "score_unlabeled",
+        "file": "s0006-v1-plain-07a68371.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-fixture-a03-snotchain-s001",
+        "role": "current_labeled",
+        "file": "s0001-v0-labeled-86374666.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-fixture-a03-snotchain-s001",
+        "role": "target_state",
+        "file": "s0002-v0-plain-9ec39503.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-fixture-a03-snotchain-s001",
+        "role": "score_unlabeled",
+        "file": "s0001-v0-plain-7fded401.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-house-house-i12-s013",
+        "role": "current_labeled",
+        "file": "s0013-v0-labeled-a969a7c3.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-house-house-i12-s013",
+        "role": "target_state",
+        "file": "s0014-v0-plain-54f5882c.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-house-house-i12-s013",
+        "role": "score_unlabeled",
+        "file": "s0013-v0-plain-61ef3df4.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i11-s004",
+        "role": "current_labeled",
+        "file": "s0004-v0-labeled-145be583.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i11-s004",
+        "role": "target_state",
+        "file": "s0005-v0-plain-9a2766f3.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-pier-pier-i11-s004",
+        "role": "score_unlabeled",
+        "file": "s0004-v0-plain-d8907e55.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-pylon-pylon-i06-s006",
+        "role": "current_labeled",
+        "file": "s0006-v1-labeled-05f57b27.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-pylon-pylon-i06-s006",
+        "role": "target_state",
+        "file": "s0007-v1-plain-3788436f.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-pylon-pylon-i06-s006",
+        "role": "score_unlabeled",
+        "file": "s0006-v1-plain-2e17e7d7.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-snotwall-snotwall-i08-s002",
+        "role": "current_labeled",
+        "file": "s0002-v0-labeled-bc0b2066.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-snotwall-snotwall-i08-s002",
+        "role": "target_state",
+        "file": "s0003-v0-plain-5e9cde25.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-snotwall-snotwall-i08-s002",
+        "role": "score_unlabeled",
+        "file": "s0002-v0-plain-0e376dfc.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-src-cottage-replay-s068",
+        "role": "current_labeled",
+        "file": "s0068-v1-labeled-7c372e0c.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-src-cottage-replay-s068",
+        "role": "target_state",
+        "file": "s0069-v1-plain-c0758e41.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-src-cottage-replay-s068",
+        "role": "score_unlabeled",
+        "file": "s0068-v1-plain-f35f3652.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-src-lantern-replay-s039",
+        "role": "current_labeled",
+        "file": "s0039-v0-labeled-6660291f.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-src-lantern-replay-s039",
+        "role": "target_state",
+        "file": "s0040-v0-plain-7663adeb.png",
+        "shaOk": true
+      },
+      {
+        "sampleId": "smp-traj-src-lantern-replay-s039",
+        "role": "score_unlabeled",
+        "file": "s0039-v0-plain-9db24aa8.png",
+        "shaOk": true
+      }
+    ]
+  },
+  "leakScan": {
+    "scanned": 2225,
+    "leakHits": 0,
+    "samples": []
+  },
+  "allPass": true
+}

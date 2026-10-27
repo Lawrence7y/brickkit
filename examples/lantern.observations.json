@@ -1,0 +1,27 @@
+{
+  "format": "brickbuild-observations",
+  "version": "0.1",
+  "model": "lantern",
+  "note": "来源：视觉模型逐张观察实拍照片（out/lantern-diff/compare.png 分析）+ lantern.photos.json 拍摄备注。count 为区间；part 为候选（候选≠确认，按 catalog/ldraw 官方几何核实后才算确认）。",
+  "photos": [
+    { "id": "lantern_a045", "observed": ["直立 3/4：顶部粉十字棚 + 淡紫板", "4 根对角粉柱（圆截面）", "中央红芯可见分段", "底部深蓝 + 绿芯 + 粉支脚"] },
+    { "id": "lantern_a090_e05", "observed": ["躺倒侧视：4 根粉柱沿轴向贯通", "中芯左→右可见 深红/红/粉 交替分段（顺序待定）", "两端深蓝板圈", "上端淡紫板 V 形错位"] },
+    { "id": "lantern_a090_e00", "observed": ["躺倒平视：上 rail、中芯分段、下 rail", "端板厚度约 2-3 片", "柱在端板四角"] },
+    { "id": "lantern_a135_e10", "observed": ["躺倒 3/4：柱与芯间隙可见", "芯分段颜色与 a090_e05 一致"] },
+    { "id": "lantern_top_detail", "observed": ["棚顶端面：淡紫 2×4 板 ×2 呈 V 形对角错位（整数网格不可表达）", "四周粉 1×2 围成十字", "深蓝板在下层"] },
+    { "id": "lantern_base_detail", "observed": ["底座端面：绿十字板与深蓝板交错", "粉色板外挑支脚", "品红点缀件数量少（1-2 处）"] }
+  ],
+  "inventory": [
+    { "feature": "四角柱", "part": ["4073", "3062b"], "color": 29, "count": [12, 52], "note": "圆截面堆叠柱：4073 圆板×N 或 3062b 圆砖×M，高度按侧视比例定（候选待枚举）", "evidence": ["lantern_a090_e05", "lantern_a045"] },
+    { "feature": "中央芯柱", "part": ["3941"], "color": [320, 4, 29], "count": [3, 5], "note": "2×2 圆砖，深红/红/粉交替，分段顺序待枚举", "evidence": ["lantern_a090_e00", "lantern_a135_e10", "lantern_a090_e05"] },
+    { "feature": "端板蓝圈", "part": ["3022", "3795", "3020"], "color": 272, "count": [4, 12], "evidence": ["lantern_base_detail", "lantern_top_detail", "lantern_a090_e00"] },
+    { "feature": "棚顶淡紫板", "part": ["3795"], "color": 31, "count": [2, 2], "note": "实拍呈 V 形对角错位，整数网格 + 90° 旋转不可表达，允许近似摆放但必须标 status:uncertain 并注明", "evidence": ["lantern_top_detail"] },
+    { "feature": "棚面粉/十字围边", "part": ["3065", "3023"], "color": 29, "count": [4, 12], "evidence": ["lantern_top_detail", "lantern_a045"] },
+    { "feature": "绿色件", "part": ["3795", "3022"], "color": 10, "count": [1, 4], "note": "实拍中绿色件小而少（旧模型明显偏多）", "evidence": ["lantern_base_detail", "lantern_a045"] },
+    { "feature": "品红点缀", "part": ["3069b"], "color": 5, "count": [1, 3], "evidence": ["lantern_base_detail"] },
+    { "feature": "底部蓝十字", "part": ["3795"], "color": 272, "count": [2, 4], "evidence": ["lantern_base_detail"] }
+  ],
+  "dimensions": {
+    "note": "比例约束从照片程序化测量（躺倒侧视）：整体长:宽、柱高占总长比、芯各色段高度占比——由重建脚本用掩膜+色带分析实测后写入，不在此预估"
+  }
+}

@@ -1,0 +1,796 @@
+{
+  "format": "brickbuild",
+  "version": "0.2",
+  "meta": {
+    "name": "31058 威猛恐龙 T-Rex（说明书还原 v6）",
+    "createdAt": "2026-10-25",
+    "front": "+z",
+    "description": "按官方说明书第 1 册（48 页）+ 第 45 页零件表（examples/trex.bom.json，55 条 138 件）还原。v6 已用真实件：27261 三爪牙板（官方 6046381 精确匹配）作脚爪与口牙、4073+98138 橙眼黑瞳、4589b 黑圆锥替代背棘（官方 6270091 未收录）、11477/15068 曲面斜坡。已知简化（披露）：①下颌/舌/前臂未建（需倒置与悬臂支撑，引擎限制）；②球关节髋/滚轮踝以刚性简化；③腿部侧凸点楔形件（4543262/59）以普通板近似；④目测取色，个别深浅棕褐可能与官方有色差。",
+    "photoSet": "trex.instructions.json"
+  },
+  "parts": [
+    {
+      "id": "p001",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        1,
+        0,
+        12
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "脚底板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p002",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        1,
+        1,
+        12
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "脚面",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p003",
+      "part": "3023",
+      "color": 320,
+      "at": [
+        1,
+        2,
+        12
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "脚后跟板（官方同位暗红件）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p004",
+      "part": "27261",
+      "color": 15,
+      "at": [
+        1,
+        2,
+        14
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "三爪牙板作脚爪（官方 6046381/6052824 真实爪件的目录对应；z16 悬臂 1 格合法）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p005",
+      "part": "3003",
+      "color": 2,
+      "at": [
+        1,
+        3,
+        12
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "踝",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p006",
+      "part": "3022",
+      "color": 2,
+      "at": [
+        1,
+        6,
+        12
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "大腿板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p007",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        5,
+        0,
+        12
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "脚底板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p008",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        5,
+        1,
+        12
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "脚面",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p009",
+      "part": "3023",
+      "color": 320,
+      "at": [
+        5,
+        2,
+        12
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "脚后跟板（官方同位暗红件）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p010",
+      "part": "27261",
+      "color": 15,
+      "at": [
+        5,
+        2,
+        14
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "三爪牙板作脚爪（官方 6046381/6052824 真实爪件的目录对应；z16 悬臂 1 格合法）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p011",
+      "part": "3003",
+      "color": 2,
+      "at": [
+        5,
+        3,
+        12
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "踝",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p012",
+      "part": "3022",
+      "color": 2,
+      "at": [
+        5,
+        6,
+        12
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "legs",
+      "note": "大腿板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p013",
+      "part": "41539",
+      "color": 2,
+      "at": [
+        0,
+        7,
+        6
+      ],
+      "snot": 0,
+      "step": 2,
+      "module": "body",
+      "note": "身体平台 8×8（骑双腿）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p014",
+      "part": "2456",
+      "color": 2,
+      "at": [
+        1,
+        8,
+        11
+      ],
+      "snot": 0,
+      "step": 2,
+      "module": "body",
+      "note": "身体上行前",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p015",
+      "part": "2456",
+      "color": 2,
+      "at": [
+        1,
+        8,
+        13
+      ],
+      "snot": 0,
+      "step": 2,
+      "module": "body",
+      "note": "身体上行后",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p016",
+      "part": "3020",
+      "color": 288,
+      "at": [
+        1,
+        11,
+        11
+      ],
+      "snot": 0,
+      "step": 2,
+      "module": "body",
+      "note": "背部深绿条纹板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p017",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        1,
+        11,
+        13
+      ],
+      "snot": 0,
+      "step": 2,
+      "module": "body",
+      "note": "背板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p018",
+      "part": "3001",
+      "color": 2,
+      "at": [
+        2,
+        8,
+        6
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾根砖",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p019",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        2,
+        11,
+        8
+      ],
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾根顶板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p020",
+      "part": "2456",
+      "color": 2,
+      "at": [
+        2,
+        12,
+        3
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾段（跨 z3-8）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p021",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        2,
+        15,
+        4
+      ],
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾背板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p022",
+      "part": "3023",
+      "color": 288,
+      "at": [
+        2,
+        15,
+        3
+      ],
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾尖连接板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p023",
+      "part": "11477",
+      "color": 288,
+      "at": [
+        2,
+        16,
+        3
+      ],
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾尖曲面（官方 1×4 长曲面以 1×2 近似）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p024",
+      "part": "4589b",
+      "color": 0,
+      "at": [
+        2,
+        16,
+        5
+      ],
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾背棘（官方 6270091 替代）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p025",
+      "part": "3003",
+      "color": 2,
+      "at": [
+        1,
+        12,
+        14
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "颈柱左",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p026",
+      "part": "3003",
+      "color": 2,
+      "at": [
+        3,
+        12,
+        14
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "颈柱右",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p027",
+      "part": "3001",
+      "color": 2,
+      "at": [
+        1,
+        15,
+        14
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "头后（砖）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p028",
+      "part": "3020",
+      "color": 2,
+      "at": [
+        1,
+        18,
+        15
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "头悬臂板1",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p029",
+      "part": "3001",
+      "color": 2,
+      "at": [
+        1,
+        19,
+        16
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "头中（砖）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p030",
+      "part": "3020",
+      "color": 288,
+      "at": [
+        1,
+        22,
+        17
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "吻顶悬臂板2（深绿）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p031",
+      "part": "11477",
+      "color": 2,
+      "at": [
+        1,
+        22,
+        16
+      ],
+      "rot": 90,
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "头后曲面",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p032",
+      "part": "4589b",
+      "color": 0,
+      "at": [
+        1,
+        18,
+        14
+      ],
+      "snot": 0,
+      "step": 4,
+      "module": "head",
+      "note": "头后棘",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p033",
+      "part": "27261",
+      "color": 15,
+      "at": [
+        2,
+        23,
+        18
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "head",
+      "note": "口部牙板（官方 6046381 精确匹配件）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p034",
+      "part": "4073",
+      "color": 25,
+      "at": [
+        1,
+        23,
+        18
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "head",
+      "note": "左眼橙圆板（官方 6171764）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p035",
+      "part": "4073",
+      "color": 25,
+      "at": [
+        4,
+        23,
+        18
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "head",
+      "note": "右眼橙圆板",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p036",
+      "part": "98138",
+      "color": 0,
+      "at": [
+        1,
+        24,
+        18
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "head",
+      "note": "左瞳",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p037",
+      "part": "98138",
+      "color": 0,
+      "at": [
+        4,
+        24,
+        18
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "head",
+      "note": "右瞳",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p038",
+      "part": "4589b",
+      "color": 0,
+      "at": [
+        2,
+        12,
+        9
+      ],
+      "snot": 0,
+      "step": 3,
+      "module": "tail",
+      "note": "尾根背棘（官方 6270091 替代）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p039",
+      "part": "4589b",
+      "color": 0,
+      "at": [
+        2,
+        12,
+        11
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "body",
+      "note": "背棘（官方 6270091 黑棘 ×6 之三）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p040",
+      "part": "4589b",
+      "color": 0,
+      "at": [
+        2,
+        12,
+        12
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "body",
+      "note": "背棘（官方 6270091 黑棘 ×6 之三）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    },
+    {
+      "id": "p041",
+      "part": "4589b",
+      "color": 0,
+      "at": [
+        2,
+        12,
+        13
+      ],
+      "snot": 0,
+      "step": 5,
+      "module": "body",
+      "note": "背棘（官方 6270091 黑棘 ×6 之三）",
+      "evidence": [
+        "trex_p44",
+        "trex_cover"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "legs",
+      "label": "双腿",
+      "explode": [
+        0,
+        -8,
+        0
+      ]
+    },
+    {
+      "id": "body",
+      "label": "身体",
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "tail",
+      "label": "尾巴",
+      "explode": [
+        0,
+        4,
+        -8
+      ]
+    },
+    {
+      "id": "head",
+      "label": "头颈",
+      "explode": [
+        0,
+        18,
+        6
+      ]
+    }
+  ]
+}

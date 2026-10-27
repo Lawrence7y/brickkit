@@ -1,0 +1,302 @@
+{
+  "probe": "en05-independent-20261026",
+  "requiredConnectionCount": 95,
+  "spotChecked": [
+    {
+      "pair": "p001|p002",
+      "parentPart": "28324",
+      "childPart": "50745",
+      "parentAt": [
+        0,
+        0,
+        0
+      ],
+      "childAt": [
+        0,
+        -5,
+        0
+      ],
+      "positiveConnected": true,
+      "attempts": [
+        {
+          "axis": 0,
+          "delta": 0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": -0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": 1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": -1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": 0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": -0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": 1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": -1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        }
+      ],
+      "offGridAttempts": 4,
+      "offGridRejected": 4,
+      "offGridAllRejected": true,
+      "legalReseatObserved": 4,
+      "ok": true
+    },
+    {
+      "pair": "p029|p063",
+      "parentPart": "30414",
+      "childPart": "3023b",
+      "parentAt": [
+        0,
+        3,
+        2
+      ],
+      "childAt": [
+        2,
+        6,
+        2
+      ],
+      "positiveConnected": true,
+      "attempts": [
+        {
+          "axis": 0,
+          "delta": 0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": -0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": 1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": -1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": 0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": -0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": 1,
+          "offGrid": false,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "floating"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": -1,
+          "offGrid": false,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "floating"
+          ],
+          "validateOverlapNamesPair": false
+        }
+      ],
+      "offGridAttempts": 4,
+      "offGridRejected": 4,
+      "offGridAllRejected": true,
+      "legalReseatObserved": 2,
+      "ok": true
+    },
+    {
+      "pair": "p075|p089",
+      "parentPart": "18892",
+      "childPart": "87609",
+      "parentAt": [
+        2,
+        13,
+        -1
+      ],
+      "childAt": [
+        -1,
+        11,
+        1
+      ],
+      "positiveConnected": true,
+      "attempts": [
+        {
+          "axis": 0,
+          "delta": 0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": -0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": 1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 0,
+          "delta": -1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": 0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": -0.5,
+          "offGrid": true,
+          "partsConnected": false,
+          "validateErrorCodes": [
+            "at"
+          ],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": 1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        },
+        {
+          "axis": 2,
+          "delta": -1,
+          "offGrid": false,
+          "partsConnected": true,
+          "validateErrorCodes": [],
+          "validateOverlapNamesPair": false
+        }
+      ],
+      "offGridAttempts": 4,
+      "offGridRejected": 4,
+      "offGridAllRejected": true,
+      "legalReseatObserved": 4,
+      "ok": true
+    }
+  ],
+  "allRejected": true,
+  "summary": {
+    "checked": 3,
+    "positivesConnect": 3,
+    "offGridShiftRejectedAll": true,
+    "legalWholeStudReseat": 10
+  }
+}

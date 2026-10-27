@@ -1,0 +1,625 @@
+{
+ "format": "brickkit-bom-import",
+ "version": "0.1",
+ "source": {
+  "set": "31058-1",
+  "book": "第 1 册（T-Rex，48 页）",
+  "page": "45（零件清单页，LEGO 元素编号）",
+  "transcribedFrom": "out/trex/hires/p45.png（4x 高分辨率重渲 + 3x3 重叠切片转录，2026-10-25）",
+  "note": "LEGO 元素编号 → LDraw 编号映射规则：6 位且前 4 位为经典设计号（30xx）按 设计号+颜色后缀 解码；7 位新品按形状/颜色在 4,600 目录中匹配。color 为说明书渲染目测色。"
+ },
+ "stats": {
+  "entries": 67,
+  "qtyTotal": 174,
+  "exact": 30,
+  "exactQty": 80,
+  "substitute": 33,
+  "omit": 4,
+  "note": "由 gen-trex-v6.mjs 运行时核回；174 件与 31058 整盒件数一致"
+ },
+ "entries": [
+  {
+   "legoId": "6052824",
+   "qty": 6,
+   "color": "白",
+   "shape": "双趾爪（销底）",
+   "ldraw": null,
+   "status": "omit",
+   "note": "目录无此模具；脚爪由 27261 白色爪板风格化替代"
+  },
+  {
+   "legoId": "6270092",
+   "qty": 3,
+   "color": "白",
+   "shape": "弯角棘刺",
+   "ldraw": "13564",
+   "status": "substitute",
+   "note": "Animal Cow Horn 2.25L 近似替代獠牙/眉角"
+  },
+  {
+   "legoId": "6046381",
+   "qty": 7,
+   "color": "白",
+   "shape": "1×2板+3爪齿",
+   "ldraw": "27261",
+   "status": "exact",
+   "note": "Plate 1x2 with 3 Rocky Claws，精确匹配"
+  },
+  {
+   "legoId": "6116602",
+   "qty": 1,
+   "color": "白",
+   "shape": "直杆4L",
+   "ldraw": "30374",
+   "status": "exact",
+   "note": "Bar 4L"
+  },
+  {
+   "legoId": "6110023",
+   "qty": 3,
+   "color": "白",
+   "shape": "大弯獠牙",
+   "ldraw": "13564",
+   "status": "substitute",
+   "note": "牛角替代"
+  },
+  {
+   "legoId": "4107736",
+   "qty": 2,
+   "color": "棕褐",
+   "shape": "2×2砖",
+   "ldraw": "3003",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4118790",
+   "qty": 2,
+   "color": "棕褐",
+   "shape": "2×3板",
+   "ldraw": "3021",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4113233",
+   "qty": 2,
+   "color": "棕褐",
+   "shape": "1×4板",
+   "ldraw": "3710",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4550324",
+   "qty": 2,
+   "color": "棕褐",
+   "shape": "1×6板",
+   "ldraw": "3666",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4114319",
+   "qty": 1,
+   "color": "深棕褐",
+   "shape": "2×4砖",
+   "ldraw": "3001",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4114309",
+   "qty": 1,
+   "color": "棕褐",
+   "shape": "2×4板",
+   "ldraw": "3020",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4113993",
+   "qty": 1,
+   "color": "棕褐",
+   "shape": "2×6板",
+   "ldraw": "3795",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6135609",
+   "qty": 3,
+   "color": "深棕褐",
+   "shape": "科技砖1×2双孔",
+   "ldraw": "32000",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6175968",
+   "qty": 4,
+   "color": "深棕褐",
+   "shape": "1×1砖侧2孔",
+   "ldraw": "6541",
+   "status": "substitute",
+   "note": "单孔近似（官方为双孔 28192 未收录）"
+  },
+  {
+   "legoId": "6029889",
+   "qty": 4,
+   "color": "深棕褐",
+   "shape": "1×1侧夹",
+   "ldraw": "4085d",
+   "status": "substitute",
+   "note": "竖直夹近似"
+  },
+  {
+   "legoId": "6046922",
+   "qty": 2,
+   "color": "棕褐",
+   "shape": "曲面斜坡1×2无凸点",
+   "ldraw": "11477",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4118866",
+   "qty": 2,
+   "color": "棕褐",
+   "shape": "45°斜面2×2",
+   "ldraw": "3039",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4500453",
+   "qty": 1,
+   "color": "棕褐",
+   "shape": "斜面2×2带孔(存疑)",
+   "ldraw": "3039",
+   "status": "substitute",
+   "note": "形状存疑，按普通斜面处理"
+  },
+  {
+   "legoId": "6270091",
+   "qty": 6,
+   "color": "黑",
+   "shape": "弯角棘刺（背棘）",
+   "ldraw": "4589b",
+   "status": "substitute",
+   "note": "圆锥 1×1 风格化替代背棘"
+  },
+  {
+   "legoId": "4286267",
+   "qty": 2,
+   "color": "黑",
+   "shape": "球顶圆顶(存疑)",
+   "ldraw": "553b",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6281993",
+   "qty": 4,
+   "color": "黑",
+   "shape": "滚轮关节",
+   "ldraw": null,
+   "status": "omit",
+   "note": "目录无；踝关节在本模型中为刚性简化"
+  },
+  {
+   "legoId": "4556158",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "2×2板前双爪扣",
+   "ldraw": "60470",
+   "status": "substitute",
+   "note": "双水平夹板近似"
+  },
+  {
+   "legoId": "4535739",
+   "qty": 1,
+   "color": "深灰",
+   "shape": "板端带销",
+   "ldraw": "4274",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6093525",
+   "qty": 1,
+   "color": "黑",
+   "shape": "轴杆",
+   "ldraw": null,
+   "status": "omit",
+   "note": "内部轴，刚性简化不建"
+  },
+  {
+   "legoId": "302428",
+   "qty": 2,
+   "color": "亮绿",
+   "shape": "1×1板",
+   "ldraw": "3024",
+   "status": "exact",
+   "note": "元素号解码 3024+28"
+  },
+  {
+   "legoId": "4546705",
+   "qty": 4,
+   "color": "亮绿",
+   "shape": "45°斜面1×2",
+   "ldraw": "3040b",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "4543262",
+   "qty": 3,
+   "color": "亮绿",
+   "shape": "楔形板侧4孔",
+   "ldraw": "43723",
+   "status": "substitute",
+   "note": "侧孔楔形件未收录，普通楔形板替代（左）"
+  },
+  {
+   "legoId": "4543259",
+   "qty": 3,
+   "color": "亮绿",
+   "shape": "楔形板侧4凸点",
+   "ldraw": "43722",
+   "status": "substitute",
+   "note": "（右）"
+  },
+  {
+   "legoId": "4142717",
+   "qty": 2,
+   "color": "亮绿",
+   "shape": "2×2圆角斜件(存疑)",
+   "ldraw": "3039",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "302228",
+   "qty": 2,
+   "color": "亮绿",
+   "shape": "2×2板",
+   "ldraw": "3022",
+   "status": "exact",
+   "note": "3022+28"
+  },
+  {
+   "legoId": "6116259",
+   "qty": 4,
+   "color": "亮绿",
+   "shape": "曲面斜坡2×2无凸点",
+   "ldraw": "15068",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6062166",
+   "qty": 4,
+   "color": "亮绿",
+   "shape": "2×3圆角板",
+   "ldraw": "3021",
+   "status": "substitute",
+   "note": "普通板替代"
+  },
+  {
+   "legoId": "6042951",
+   "qty": 6,
+   "color": "亮绿",
+   "shape": "曲面斜坡1×4",
+   "ldraw": "61678",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "302028",
+   "qty": 3,
+   "color": "亮绿",
+   "shape": "2×4板",
+   "ldraw": "3020",
+   "status": "exact",
+   "note": "3020+28"
+  },
+  {
+   "legoId": "4655332",
+   "qty": 1,
+   "color": "亮绿",
+   "shape": "大曲面4×2带侧凸点",
+   "ldraw": "47457",
+   "status": "substitute",
+   "note": "弧面斜砖2×2×1带2凸点近似"
+  },
+  {
+   "legoId": "6167129",
+   "qty": 1,
+   "color": "深绿",
+   "shape": "楔形板（左）",
+   "ldraw": "43723",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6167130",
+   "qty": 1,
+   "color": "深绿",
+   "shape": "楔形板（右）",
+   "ldraw": "43722",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6035029",
+   "qty": 1,
+   "color": "深绿",
+   "shape": "圆板2×2带缺口",
+   "ldraw": "4032",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6013102",
+   "qty": 8,
+   "color": "深绿",
+   "shape": "1×2板",
+   "ldraw": "3023",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6130035",
+   "qty": 3,
+   "color": "深绿",
+   "shape": "1×3圆头板",
+   "ldraw": "3623",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "4245571",
+   "qty": 2,
+   "color": "深绿",
+   "shape": "1×4砖",
+   "ldraw": "3010",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6047426",
+   "qty": 2,
+   "color": "亮绿",
+   "shape": "曲面斜坡2×1切口",
+   "ldraw": "92946",
+   "status": "exact",
+   "note": "带切口斜面砖"
+  },
+  {
+   "legoId": "300328",
+   "qty": 3,
+   "color": "亮绿",
+   "shape": "2×2砖",
+   "ldraw": "3003",
+   "status": "exact",
+   "note": "3003+28"
+  },
+  {
+   "legoId": "302328",
+   "qty": 4,
+   "color": "亮绿",
+   "shape": "1×2板",
+   "ldraw": "3023",
+   "status": "exact",
+   "note": "3023+28"
+  },
+  {
+   "legoId": "4121969",
+   "qty": 2,
+   "color": "亮绿",
+   "shape": "33°斜面3×2(存疑)",
+   "ldraw": "3298",
+   "status": "substitute",
+   "note": "斜面型号存疑"
+  },
+  {
+   "legoId": "6172458",
+   "qty": 4,
+   "color": "深绿",
+   "shape": "2×2板圆头",
+   "ldraw": "3022",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6172459",
+   "qty": 1,
+   "color": "深绿",
+   "shape": "6×4大弧面背板",
+   "ldraw": "3020",
+   "status": "substitute",
+   "note": "大弧面件未收录，板替代"
+  },
+  {
+   "legoId": "4539097",
+   "qty": 2,
+   "color": "暗红",
+   "shape": "1×2砖",
+   "ldraw": "3004",
+   "status": "exact",
+   "note": "舌根"
+  },
+  {
+   "legoId": "4539060",
+   "qty": 1,
+   "color": "暗红",
+   "shape": "1×4板",
+   "ldraw": "3710",
+   "status": "exact",
+   "note": "舌"
+  },
+  {
+   "legoId": "4142865",
+   "qty": 2,
+   "color": "暗红",
+   "shape": "1×2光面板(存疑)",
+   "ldraw": "3069b",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "4211483",
+   "qty": 2,
+   "color": "浅灰",
+   "shape": "1×1空心圆砖",
+   "ldraw": "3062b",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6043639",
+   "qty": 3,
+   "color": "浅灰",
+   "shape": "板端夹",
+   "ldraw": "63868",
+   "status": "substitute",
+   "note": "端头夹板近似"
+  },
+  {
+   "legoId": "6071226",
+   "qty": 4,
+   "color": "深灰",
+   "shape": "1×1竖夹",
+   "ldraw": "4085d",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6265669",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "转盘+杆关节",
+   "ldraw": null,
+   "status": "omit",
+   "note": "目录无对应关节件"
+  },
+  {
+   "legoId": "6039479",
+   "qty": 5,
+   "color": "深灰",
+   "shape": "板端球头",
+   "ldraw": "22890",
+   "status": "substitute",
+   "note": "Plate 1x2 with Ball Joint-8 on End"
+  },
+  {
+   "legoId": "4210884",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "1×3板端横杆",
+   "ldraw": "60478",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "4547958",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "2×2双夹座",
+   "ldraw": "60470",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6065816",
+   "qty": 1,
+   "color": "深灰",
+   "shape": "2×2砖双侧球关节",
+   "ldraw": "17114",
+   "status": "exact",
+   "note": "Brick 2x2 with Two Ball Joints，精确匹配（髋关节）"
+  },
+  {
+   "legoId": "6171764",
+   "qty": 2,
+   "color": "橙",
+   "shape": "1×1圆钮（眼）",
+   "ldraw": "4073",
+   "status": "exact",
+   "note": ""
+  },
+  {
+   "legoId": "6240227",
+   "qty": 2,
+   "color": "橙",
+   "shape": "1×1圆环（眼圈）",
+   "ldraw": "85861",
+   "status": "substitute",
+   "note": "空心圆板近似眼圈"
+  },
+  {
+   "legoId": "6270103",
+   "qty": 4,
+   "color": "黑",
+   "shape": "小爪",
+   "ldraw": "88695",
+   "status": "substitute",
+   "note": "棱面小棘刺替代前臂小爪"
+  },
+  {
+   "legoId": "306226",
+   "qty": 2,
+   "color": "黑",
+   "shape": "1×1圆砖",
+   "ldraw": "3062b",
+   "status": "exact",
+   "note": "3062+26"
+  },
+  {
+   "legoId": "4210726",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "板带立式带孔扣",
+   "ldraw": "15712",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6019987",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "板带拱筒(存疑)",
+   "ldraw": "3023",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6028812",
+   "qty": 2,
+   "color": "浅灰",
+   "shape": "板端/侧夹",
+   "ldraw": "11476",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6043656",
+   "qty": 2,
+   "color": "深灰",
+   "shape": "板端弯爪",
+   "ldraw": "26047",
+   "status": "substitute",
+   "note": ""
+  },
+  {
+   "legoId": "6123809",
+   "qty": 1,
+   "color": "浅灰",
+   "shape": "2×2砖侧4孔",
+   "ldraw": "3003",
+   "status": "substitute",
+   "note": ""
+  }
+ ]
+}

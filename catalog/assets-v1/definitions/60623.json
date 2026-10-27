@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "60623",
+  "revision": "r1-curated",
+  "aliases": [],
+  "name": "Door 1 x 4 x 6 with 4 Panes and Stud Handle",
+  "nameZh": "门 1×4×6（四格窗）",
+  "category": "building",
+  "source": {
+    "kind": "catalog-entry",
+    "ref": "catalog/parts.json",
+    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": ""
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "ldraw-mesh",
+    "sizeStud": [
+      4,
+      1
+    ],
+    "heightPlate": 18,
+    "assetRef": {
+      "datFile": "catalog/ldraw/parts/60623.dat",
+      "sha256": "3eec68f5894ab1fa49f9b5d3a596ccf63d1e064c70a2675eaec4ee60e9cd7f8e",
+      "bytes": 4956
+    }
+  },
+  "collision": {
+    "shape": "none",
+    "state": "verified",
+    "boxes": [],
+    "occupiesVolume": false,
+    "evidence": {
+      "grade": "inferred",
+      "method": "按 kind/size/h 单盒推导",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 4,
+  "connectorGroups": [
+    {
+      "t": "antistud",
+      "r": "female",
+      "o": 0,
+      "k": "antistud",
+      "d": "+y",
+      "mp": "stud-antistud-v1",
+      "items": [
+        [
+          10,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          30,
+          0,
+          10,
+          1,
+          1
+        ],
+        [
+          50,
+          0,
+          10,
+          1,
+          2
+        ],
+        [
+          70,
+          0,
+          10,
+          1,
+          3
+        ]
+      ]
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "measured",
+      "geometryKind": "ldraw-mesh",
+      "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
+    },
+    "collide": {
+      "state": "verified",
+      "boxCount": 0,
+      "note": "声明不占体积（occupies:false），碰撞视为空集"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "antistud"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "measured",
+    "method": "精选目录（人工核对 + 官方 .dat 验证）",
+    "evidenceRefs": [
+      "catalog/ldraw/parts/60623.dat"
+    ],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "1b2b82dbcc4509b699f81ae8c9b64c1338ad1af122c053eac4f2a17ef8591e90"
+}

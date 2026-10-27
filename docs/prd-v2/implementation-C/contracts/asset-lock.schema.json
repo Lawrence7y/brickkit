@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.dev/contracts/prd-v2-c/asset-lock.schema.json",
+  "title": "BrickKit Asset Lock (buildAssetLock-v1)",
+  "description": "资产锁的冻结交换格式（A/B 合并裁决）。锁必须由 src/core/assets-v1/lock.js 的 buildAssetLock(index, requiredPartIds, profileId) 生成——严禁手写或手算 contentHash/revision。生成后由同一模块的 checkAssetLock(source, {index, requiredPartIds}) 严格校验；任何拒绝码都是 error，不降级为 warning。B 旧示例中的 partLocks 字典写法已被 A 的真实消费拒绝（asset-lock-format），此格式为唯一权威。lock.js 引擎内部还接受 parts:\"closure\" 便捷写法（由引擎按用件闭包展开），它不是本冻结交换格式的一部分：跨执行器交付的锁必须是显式 parts 数组。",
+  "type": "object",
+  "required": ["profileId", "indexVersion", "parts"],
+  "additionalProperties": false,
+  "properties": {
+    "profileId": {
+      "type": "string",
+      "minLength": 1,
+      "description": "容差与配对规则 profile id，例如 default-2026-10-26。与资产索引 profileId 不符 → asset-lock-profile-mismatch（error）。"
+    },
+    "indexVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "生成锁时所用资产索引（catalog/assets-v1/index.json）的 version，来自 buildAssetLock(index, ...) 的 index.version。"
+    },
+    "parts": {
+      "type": "array",
+      "minItems": 1,
+      "description": "锁定零件清单，由 buildAssetLock 按 partId 排序去重生成。空锁等同没锁（asset-lock-empty）。重复条目由 checkAssetLock 拒绝（asset-lock-part-dup）；任务实际用到的件号缺失 → asset-lock-incomplete（error）。lockHash 由 checkAssetLock 按规范化条目重算，不属于本交换格式（存进文件只会引入漂移）。",
+      "items": { "$ref": "#/$defs/lockEntry" }
+    }
+  },
+  "$defs": {
+    "lockEntry": {
+      "type": "object",
+      "required": ["partId", "revision", "contentHash"],
+      "additionalProperties": false,
+      "properties": {
+        "partId": { "type": "string", "minLength": 1, "description": "零件编号；必须在资产索引中存在，否则 asset-lock-unknown-part（error）。" },
+        "revision": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "[^\\s]",
+          "description": "零件修订号。空串/缺失不算锁定（asset-lock-revision-missing）；与索引不符 → asset-lock-revision-mismatch（error）。接口别名解析按本 revision 进行。"
+        },
+        "contentHash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "零件定义的规范化内容哈希，取自索引条目（不是手算）。空串/缺失 → asset-lock-hash-missing；格式非法 → asset-lock-hash-invalid；与索引不符 → asset-lock-hash-mismatch。"
+        }
+      }
+    }
+  }
+}

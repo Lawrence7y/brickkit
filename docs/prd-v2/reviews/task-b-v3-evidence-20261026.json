@@ -1,0 +1,285 @@
+{
+  "reviewDate": "2026-10-26",
+  "scope": "out/prd-v2/run-20261026-v3/B",
+  "dataset": {
+    "splitSizes": {
+      "train": 300,
+      "validation": 150,
+      "holdout_test": 300
+    },
+    "imageReferences": 1500,
+    "existingImageReferences": 1500,
+    "matchingContentHashes": 1500,
+    "familyIdOverlap": [],
+    "uniqueCurrentStateImages": 8,
+    "holdoutStateImagesAlreadySeenInTrain": 300,
+    "colorOnlyActionBaseline": {
+      "correct": 150,
+      "total": 150,
+      "accuracy": 1
+    },
+    "colorOnlyStructureBaseline": {
+      "correct": 75,
+      "total": 75,
+      "accuracy": 1
+    }
+  },
+  "extraction": {
+    "missingSource": {
+      "ok": false,
+      "observations": 0,
+      "sha256": null
+    },
+    "unrelatedExistingDirectory": {
+      "setId": "60239-1",
+      "observations": 8
+    }
+  },
+  "inventoryAudit": {
+    "oldFailedEmptyProbe": {
+      "ok": false,
+      "isConserved": false,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 0,
+      "duplicateTokens": 0,
+      "errors": [
+        "任务 task-minifig 状态未成功（当前状态: failed）",
+        "任务 task-cones 状态未成功（当前状态: failed）",
+        "任务 task-front-bumper 状态未成功（当前状态: failed）",
+        "任务 task-wheels 状态未成功（当前状态: failed）",
+        "任务 task-main-chassis 状态未成功（当前状态: failed）"
+      ],
+      "warnings": [],
+      "errorCount": 96
+    },
+    "oldFailedForeignProbe": {
+      "ok": false,
+      "isConserved": false,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 91,
+      "duplicateTokens": 0,
+      "errors": [
+        "任务 task-minifig 状态未成功（当前状态: failed）",
+        "任务 task-minifig 消费了非法/未分配的 Token: foreign-1 (wrong-part)",
+        "消费了未在全局计划中登记的外部 Token: foreign-1",
+        "任务 task-minifig 消费了非法/未分配的 Token: foreign-2 (wrong-part)",
+        "消费了未在全局计划中登记的外部 Token: foreign-2"
+      ],
+      "warnings": [],
+      "errorCount": 278
+    },
+    "wrongPartColorRevisionAndState": {
+      "ok": true,
+      "isConserved": true,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 91,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": [],
+      "errorCount": 0
+    },
+    "noModelOrSessionEvidence": {
+      "ok": true,
+      "isConserved": true,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 91,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": [],
+      "errorCount": 0
+    },
+    "emptyPlanDeclaring91Parts": {
+      "ok": true,
+      "isConserved": true,
+      "totalExpectedTokens": 0,
+      "totalConsumedTokens": 0,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": [],
+      "errorCount": 0
+    }
+  },
+  "locks": {
+    "emptyContentSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actualPlanFileSha256": "ab90b251e0ca829e32c285efa1ef09a73bd5f2c41b7993af81383d8cc4e5e9fc",
+    "taskLocks": [
+      {
+        "taskId": "task-minifig",
+        "globalPlanRef": {
+          "planFile": "out/prd-v2/run-20261026-v3/B/60239.build.plan.json",
+          "planSha256": "fb5a5a752605ebbf2a27118f72dce81df151c055eb6b2621176f5fb4835d1a16"
+        },
+        "assetLock": {
+          "catalogVersion": "1.0.0",
+          "profileId": "standard-tolerance-v1",
+          "partLocks": {
+            "3001": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "3023": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      },
+      {
+        "taskId": "task-cones",
+        "globalPlanRef": {
+          "planFile": "out/prd-v2/run-20261026-v3/B/60239.build.plan.json",
+          "planSha256": "fb5a5a752605ebbf2a27118f72dce81df151c055eb6b2621176f5fb4835d1a16"
+        },
+        "assetLock": {
+          "catalogVersion": "1.0.0",
+          "profileId": "standard-tolerance-v1",
+          "partLocks": {
+            "3001": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "3023": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      },
+      {
+        "taskId": "task-front-bumper",
+        "globalPlanRef": {
+          "planFile": "out/prd-v2/run-20261026-v3/B/60239.build.plan.json",
+          "planSha256": "fb5a5a752605ebbf2a27118f72dce81df151c055eb6b2621176f5fb4835d1a16"
+        },
+        "assetLock": {
+          "catalogVersion": "1.0.0",
+          "profileId": "standard-tolerance-v1",
+          "partLocks": {
+            "3001": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "3023": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      },
+      {
+        "taskId": "task-wheels",
+        "globalPlanRef": {
+          "planFile": "out/prd-v2/run-20261026-v3/B/60239.build.plan.json",
+          "planSha256": "fb5a5a752605ebbf2a27118f72dce81df151c055eb6b2621176f5fb4835d1a16"
+        },
+        "assetLock": {
+          "catalogVersion": "1.0.0",
+          "profileId": "standard-tolerance-v1",
+          "partLocks": {
+            "3001": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "3023": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      },
+      {
+        "taskId": "task-main-chassis",
+        "globalPlanRef": {
+          "planFile": "out/prd-v2/run-20261026-v3/B/60239.build.plan.json",
+          "planSha256": "fb5a5a752605ebbf2a27118f72dce81df151c055eb6b2621176f5fb4835d1a16"
+        },
+        "assetLock": {
+          "catalogVersion": "1.0.0",
+          "profileId": "standard-tolerance-v1",
+          "partLocks": {
+            "3001": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            "3023": {
+              "revision": "1.0",
+              "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            }
+          }
+        }
+      }
+    ],
+    "note": "File SHA comparison is reported directly; no canonical self-reference-excluding plan hash scheme was implemented by this probe."
+  },
+  "sourceHashes": [
+    {
+      "path": "tools/brickvlm/gen_dataset.py",
+      "sha256": "fac1965ad61564634f5165fe9e186a96a9477635c803119a7e14491827ad7818"
+    },
+    {
+      "path": "tools/brickvlm/visual_encoder.py",
+      "sha256": "9629b6b43b6c73366378a15213f197aa455370534b305251bb09a4ab6bc99e04"
+    },
+    {
+      "path": "tools/brickvlm/train_r3_pilot.py",
+      "sha256": "cb602a705e465a3c24f0199982dc505edf76962539c89d72c4ce78f222bd7c44"
+    },
+    {
+      "path": "tools/brickvlm/evaluate_r5.py",
+      "sha256": "2953051ea87c83aee7b5631a5e6d8f40c5c1e77ca23047db94fc523e2d4bcd67"
+    },
+    {
+      "path": "tools/brickvlm/model_compact.py",
+      "sha256": "ea7ceaf94b6d37a4659e89ac49ed1b98cb14392812ba877bcbfa08893b95b3d0"
+    },
+    {
+      "path": "src/manual-v2/extractor.js",
+      "sha256": "1b17407bef5a70cf270480d7ef1a6edc0aee2a69ca793131fb876949b676c59d"
+    },
+    {
+      "path": "src/manual-v2/workflow.js",
+      "sha256": "b27e6c90898471402241ecede838fc1eda668884891d1c2e5553d8d9bd84b911"
+    },
+    {
+      "path": "training/brickvlm/train_qwen_qlora.py",
+      "sha256": "a5864cbdc5272a35ed93d61b11bb8456cd373f6a1c6a254603c934946a049ded"
+    }
+  ],
+  "checkpointProbe": {
+    "checkpointLoadedWeightsOnly": true,
+    "modelParameterCount": 2605955,
+    "allWeightsFinite": true,
+    "visualEncoderKeysInCheckpoint": [],
+    "visualFeatureRequiresGrad": false,
+    "samplesProbed": 16,
+    "encoderSeeds": [
+      123,
+      456
+    ],
+    "maxAbsFeatureDifference": 0.21547572314739227,
+    "maxAbsActionLogitDifference": 0.3251667022705078,
+    "actionArgmaxChanged": 0
+  },
+  "submissionReport": {
+    "reportFileSha256": "1fda9f4a6535db057eec0e980c4741856660777cc17efbc4598669e0adb17e8e",
+    "checkpointSha256": "4855d42d530b6111ee4736f561d80089596993a99069417463ce8974252b51f1",
+    "top1": 0.6867,
+    "top3": 0.9533,
+    "stepMetric": 0.16,
+    "structure": {
+      "tp": 11,
+      "fp": 0,
+      "fn": 13,
+      "tn": 51,
+      "precision": 1,
+      "recall": 0.4583,
+      "f1": 0.6286
+    },
+    "workflow": {
+      "status": "unverified",
+      "zeroHumanInterventionCount": 0,
+      "totalCompleted": 0,
+      "note": "离线模型动作排序与结构诊断评估已独立完成；端到端自动化物理装配依赖 Executor A 运行时事务引擎集成"
+    }
+  }
+}

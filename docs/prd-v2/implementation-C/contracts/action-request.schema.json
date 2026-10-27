@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.dev/contracts/prd-v2-c/action-request.schema.json",
+  "title": "BrickKit 动作请求 C1",
+  "description": "模型提出离散动作，引擎计算位姿。模型不得手填世界坐标、不得执行任意代码、不得覆盖全图。stateHash 不匹配必须返回 stale-state，不得在新状态上执行旧动作。 【contracts-1.0 冻结版】自 A 契约 0.9.0-draft 并入；attach_assembly 动作补充 childModel 字段（A 真实引擎 applyActions/candidates 已按此消费，见 A-to-B-full-assembly-fixture-20261026.json 真实载荷）。",
+  "$defs": {
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "stableId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "action": {
+      "type": "object",
+      "required": [
+        "id",
+        "op"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/stableId",
+          "description": "动作 id，请求内唯一；后续动作可引用它"
+        },
+        "op": {
+          "enum": [
+            "place_root",
+            "attach_part",
+            "attach_assembly",
+            "inspect",
+            "abstain",
+            "undo",
+            "detach",
+            "replace"
+          ],
+          "description": "undo/detach/replace 仅在 repairMode 下允许（repairActions 已实现并有独立复核证据，见 version.json sourceHashes）。"
+        },
+        "taskId": {
+          "type": "string",
+          "description": "所属任务包 id；跨任务动作必须拒绝"
+        },
+        "dependsOn": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/stableId"
+          },
+          "description": "前置动作 id。引擎按拓扑序执行；引用不存在的动作直接失败，禁止猜测自动编号。"
+        },
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "动作作用对象。不同 op 需要的键不同，由 allOf 约束。",
+          "properties": {
+            "nodeId": {
+              "type": "string"
+            },
+            "instancePath": {
+              "type": "string"
+            },
+            "partInstanceId": {
+              "type": "string",
+              "description": "预声明的实例 id（pending-XX）；引擎不得自动编号"
+            },
+            "componentId": {
+              "type": "string"
+            }
+          }
+        },
+        "candidateId": {
+          "type": "string",
+          "description": "引擎生成的候选 id。候选已含完整接口对、父子身份、姿态、库存项与候选哈希。"
+        },
+        "candidateHash": {
+          "$ref": "#/$defs/sha256",
+          "description": "候选内容哈希；与引擎当前生成结果不一致时拒绝执行（防过期候选）"
+        },
+        "partId": {
+          "type": "string"
+        },
+        "revision": {
+          "type": "string"
+        },
+        "color": {
+          "type": "integer"
+        },
+        "inventoryToken": {
+          "type": "string"
+        },
+        "basePlacement": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "place_root 专用：任务指定的合法基准。不接受任意世界坐标。",
+          "properties": {
+            "baseId": {
+              "type": "string",
+              "description": "任务包声明的基准 id（如 bench-origin）"
+            },
+            "orientationId": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 23
+            }
+          }
+        },
+        "reason": {
+          "type": "string",
+          "description": "abstain 必填：原因"
+        },
+        "needs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "abstain 必填：所需最小补充信息（视角/候选/接口），不得留空"
+        },
+        "repair": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "修复模式专用",
+          "properties": {
+            "undoActionId": {
+              "type": "string"
+            },
+            "detachNodeId": {
+              "type": "string"
+            },
+            "replacePartId": {
+              "type": "string"
+            },
+            "replaceRevision": {
+              "type": "string"
+            }
+          }
+        },
+        "note": {
+          "type": "string"
+        },
+        "childModel": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "attach_assembly 专用：整组子组件的 0.2 快照（parts + anchor），与生成候选时传给 enumerateCandidates 的 childModel 必须逐字一致——candidateHash 把它绑进候选，防过期/换件重放。子组件挂装必须带 childModel 一起重枚举，否则引擎只枚举单件候选（src/core/actions-v1/apply.js）。",
+          "required": [
+            "parts"
+          ],
+          "properties": {
+            "parts": {
+              "type": "array",
+              "minItems": 1,
+              "description": "子组件成员的 brickbuild 0.2 零件对象（id/part/color/at/rot/up/snot/snap/step）。字段集合沿用 0.2 兼容层，不在此逐字收紧。",
+              "items": {
+                "type": "object"
+              }
+            },
+            "anchor": {
+              "type": "string",
+              "description": "锚点成员 id：子组件按该件的接口对求解挂装位姿。"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "place_root"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "target",
+              "partId",
+              "basePlacement"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "attach_part"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "candidateId",
+              "target"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "attach_assembly"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "candidateId",
+              "target"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "const": "abstain"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reason",
+              "needs"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "op": {
+                "enum": [
+                  "undo",
+                  "detach",
+                  "replace"
+                ]
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "repair"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "required": [
+    "protocolVersion",
+    "taskId",
+    "stateHash",
+    "actions"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "protocolVersion": {
+      "const": "1.0.0"
+    },
+    "taskId": {
+      "type": "string"
+    },
+    "stateHash": {
+      "$ref": "#/$defs/sha256",
+      "description": "提交动作所基于的权威状态哈希。不匹配 → stale-state，整批拒绝。"
+    },
+    "candidateSetHash": {
+      "$ref": "#/$defs/sha256",
+      "description": "生成这些候选时的枚举结果哈希（可选；提供则一并校验）"
+    },
+    "repairMode": {
+      "type": "boolean",
+      "default": false,
+      "description": "只有 true 时 undo/detach/replace 可用"
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "执行预算；缺省取任务包冻结值。单步默认最多 3 次候选执行，局部修复默认最多 2 轮。",
+      "properties": {
+        "maxAttempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
+        },
+        "maxRepairRounds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "actionSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "谁提出的动作：用于区分小模型独立成功与强模型介入（ML-08）。",
+      "properties": {
+        "kind": {
+          "enum": [
+            "brickvlm",
+            "orchestrator",
+            "human",
+            "mock"
+          ]
+        },
+        "modelId": {
+          "type": "string"
+        },
+        "adapterRevision": {
+          "type": "string"
+        },
+        "mock": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/action"
+      },
+      "minItems": 1
+    }
+  }
+}

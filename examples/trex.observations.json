@@ -1,0 +1,1086 @@
+{
+ "format": "brickbuild-observations",
+ "version": "0.1",
+ "model": "trex-v6",
+ "note": "来源：官方说明书第 45 页零件表逐条转录（examples/trex.bom.json），count 为精确数量——作为真值清单对账重建模型，而非照片推测区间。",
+ "photos": [
+  {
+   "id": "trex_cover",
+   "observed": [
+    "封面 3/4 成品视图：绿身、深绿背纹、黑背棘、白爪牙、橙眼"
+   ]
+  },
+  {
+   "id": "trex_p44",
+   "observed": [
+    "第 44 步成品侧视：抬头像、开颌白牙、腹下腿、尾后延"
+   ]
+  }
+ ],
+ "inventory": [
+  {
+   "feature": "6052824 双趾爪（销底）",
+   "part": [],
+   "color": 15,
+   "count": [
+    6,
+    6
+   ],
+   "note": "目录无此模具；脚爪由 27261 白色爪板风格化替代 | 状态:omit",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6270092 弯角棘刺",
+   "part": [
+    "13564"
+   ],
+   "color": 15,
+   "count": [
+    3,
+    3
+   ],
+   "note": "Animal Cow Horn 2.25L 近似替代獠牙/眉角 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6046381 1×2板+3爪齿",
+   "part": [
+    "27261"
+   ],
+   "color": 15,
+   "count": [
+    7,
+    7
+   ],
+   "note": "Plate 1x2 with 3 Rocky Claws，精确匹配 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6116602 直杆4L",
+   "part": [
+    "30374"
+   ],
+   "color": 15,
+   "count": [
+    1,
+    1
+   ],
+   "note": "Bar 4L | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6110023 大弯獠牙",
+   "part": [
+    "13564"
+   ],
+   "color": 15,
+   "count": [
+    3,
+    3
+   ],
+   "note": "牛角替代 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4107736 2×2砖",
+   "part": [
+    "3003"
+   ],
+   "color": 19,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4118790 2×3板",
+   "part": [
+    "3021"
+   ],
+   "color": 19,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4113233 1×4板",
+   "part": [
+    "3710"
+   ],
+   "color": 19,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4550324 1×6板",
+   "part": [
+    "3666"
+   ],
+   "color": 19,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4114319 2×4砖",
+   "part": [
+    "3001"
+   ],
+   "color": 28,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4114309 2×4板",
+   "part": [
+    "3020"
+   ],
+   "color": 19,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4113993 2×6板",
+   "part": [
+    "3795"
+   ],
+   "color": 19,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6135609 科技砖1×2双孔",
+   "part": [
+    "32000"
+   ],
+   "color": 28,
+   "count": [
+    3,
+    3
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6175968 1×1砖侧2孔",
+   "part": [
+    "6541"
+   ],
+   "color": 28,
+   "count": [
+    4,
+    4
+   ],
+   "note": "单孔近似（官方为双孔 28192 未收录） | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6029889 1×1侧夹",
+   "part": [
+    "4085d"
+   ],
+   "color": 28,
+   "count": [
+    4,
+    4
+   ],
+   "note": "竖直夹近似 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6046922 曲面斜坡1×2无凸点",
+   "part": [
+    "11477"
+   ],
+   "color": 19,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4118866 45°斜面2×2",
+   "part": [
+    "3039"
+   ],
+   "color": 19,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4500453 斜面2×2带孔(存疑)",
+   "part": [
+    "3039"
+   ],
+   "color": 19,
+   "count": [
+    1,
+    1
+   ],
+   "note": "形状存疑，按普通斜面处理 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6270091 弯角棘刺（背棘）",
+   "part": [
+    "4589b"
+   ],
+   "color": 0,
+   "count": [
+    6,
+    6
+   ],
+   "note": "圆锥 1×1 风格化替代背棘 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4286267 球顶圆顶(存疑)",
+   "part": [
+    "553b"
+   ],
+   "color": 0,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6281993 滚轮关节",
+   "part": [],
+   "color": 0,
+   "count": [
+    4,
+    4
+   ],
+   "note": "目录无；踝关节在本模型中为刚性简化 | 状态:omit",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4556158 2×2板前双爪扣",
+   "part": [
+    "60470"
+   ],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": "双水平夹板近似 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4535739 板端带销",
+   "part": [
+    "4274"
+   ],
+   "color": 72,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6093525 轴杆",
+   "part": [],
+   "color": 0,
+   "count": [
+    1,
+    1
+   ],
+   "note": "内部轴，刚性简化不建 | 状态:omit",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "302428 1×1板",
+   "part": [
+    "3024"
+   ],
+   "color": 2,
+   "count": [
+    2,
+    2
+   ],
+   "note": "元素号解码 3024+28 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4546705 45°斜面1×2",
+   "part": [
+    "3040b"
+   ],
+   "color": 2,
+   "count": [
+    4,
+    4
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4543262 楔形板侧4孔",
+   "part": [
+    "43723"
+   ],
+   "color": 2,
+   "count": [
+    3,
+    3
+   ],
+   "note": "侧孔楔形件未收录，普通楔形板替代（左） | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4543259 楔形板侧4凸点",
+   "part": [
+    "43722"
+   ],
+   "color": 2,
+   "count": [
+    3,
+    3
+   ],
+   "note": "（右） | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4142717 2×2圆角斜件(存疑)",
+   "part": [
+    "3039"
+   ],
+   "color": 2,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "302228 2×2板",
+   "part": [
+    "3022"
+   ],
+   "color": 2,
+   "count": [
+    2,
+    2
+   ],
+   "note": "3022+28 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6116259 曲面斜坡2×2无凸点",
+   "part": [
+    "15068"
+   ],
+   "color": 2,
+   "count": [
+    4,
+    4
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6062166 2×3圆角板",
+   "part": [
+    "3021"
+   ],
+   "color": 2,
+   "count": [
+    4,
+    4
+   ],
+   "note": "普通板替代 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6042951 曲面斜坡1×4",
+   "part": [
+    "61678"
+   ],
+   "color": 2,
+   "count": [
+    6,
+    6
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "302028 2×4板",
+   "part": [
+    "3020"
+   ],
+   "color": 2,
+   "count": [
+    3,
+    3
+   ],
+   "note": "3020+28 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4655332 大曲面4×2带侧凸点",
+   "part": [
+    "47457"
+   ],
+   "color": 2,
+   "count": [
+    1,
+    1
+   ],
+   "note": "弧面斜砖2×2×1带2凸点近似 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6167129 楔形板（左）",
+   "part": [
+    "43723"
+   ],
+   "color": 288,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6167130 楔形板（右）",
+   "part": [
+    "43722"
+   ],
+   "color": 288,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6035029 圆板2×2带缺口",
+   "part": [
+    "4032"
+   ],
+   "color": 288,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6013102 1×2板",
+   "part": [
+    "3023"
+   ],
+   "color": 288,
+   "count": [
+    8,
+    8
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6130035 1×3圆头板",
+   "part": [
+    "3623"
+   ],
+   "color": 288,
+   "count": [
+    3,
+    3
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4245571 1×4砖",
+   "part": [
+    "3010"
+   ],
+   "color": 288,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6047426 曲面斜坡2×1切口",
+   "part": [
+    "92946"
+   ],
+   "color": 2,
+   "count": [
+    2,
+    2
+   ],
+   "note": "带切口斜面砖 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "300328 2×2砖",
+   "part": [
+    "3003"
+   ],
+   "color": 2,
+   "count": [
+    3,
+    3
+   ],
+   "note": "3003+28 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "302328 1×2板",
+   "part": [
+    "3023"
+   ],
+   "color": 2,
+   "count": [
+    4,
+    4
+   ],
+   "note": "3023+28 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4121969 33°斜面3×2(存疑)",
+   "part": [
+    "3298"
+   ],
+   "color": 2,
+   "count": [
+    2,
+    2
+   ],
+   "note": "斜面型号存疑 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6172458 2×2板圆头",
+   "part": [
+    "3022"
+   ],
+   "color": 288,
+   "count": [
+    4,
+    4
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6172459 6×4大弧面背板",
+   "part": [
+    "3020"
+   ],
+   "color": 288,
+   "count": [
+    1,
+    1
+   ],
+   "note": "大弧面件未收录，板替代 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4539097 1×2砖",
+   "part": [
+    "3004"
+   ],
+   "color": 320,
+   "count": [
+    2,
+    2
+   ],
+   "note": "舌根 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4539060 1×4板",
+   "part": [
+    "3710"
+   ],
+   "color": 320,
+   "count": [
+    1,
+    1
+   ],
+   "note": "舌 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4142865 1×2光面板(存疑)",
+   "part": [
+    "3069b"
+   ],
+   "color": 320,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4211483 1×1空心圆砖",
+   "part": [
+    "3062b"
+   ],
+   "color": 71,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6043639 板端夹",
+   "part": [
+    "63868"
+   ],
+   "color": 71,
+   "count": [
+    3,
+    3
+   ],
+   "note": "端头夹板近似 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6071226 1×1竖夹",
+   "part": [
+    "4085d"
+   ],
+   "color": 72,
+   "count": [
+    4,
+    4
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6265669 转盘+杆关节",
+   "part": [],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": "目录无对应关节件 | 状态:omit",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6039479 板端球头",
+   "part": [
+    "22890"
+   ],
+   "color": 72,
+   "count": [
+    5,
+    5
+   ],
+   "note": "Plate 1x2 with Ball Joint-8 on End | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4210884 1×3板端横杆",
+   "part": [
+    "60478"
+   ],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4547958 2×2双夹座",
+   "part": [
+    "60470"
+   ],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6065816 2×2砖双侧球关节",
+   "part": [
+    "17114"
+   ],
+   "color": 72,
+   "count": [
+    1,
+    1
+   ],
+   "note": "Brick 2x2 with Two Ball Joints，精确匹配（髋关节） | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6171764 1×1圆钮（眼）",
+   "part": [
+    "4073"
+   ],
+   "color": 25,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6240227 1×1圆环（眼圈）",
+   "part": [
+    "85861"
+   ],
+   "color": 25,
+   "count": [
+    2,
+    2
+   ],
+   "note": "空心圆板近似眼圈 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6270103 小爪",
+   "part": [
+    "88695"
+   ],
+   "color": 0,
+   "count": [
+    4,
+    4
+   ],
+   "note": "棱面小棘刺替代前臂小爪 | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "306226 1×1圆砖",
+   "part": [
+    "3062b"
+   ],
+   "color": 0,
+   "count": [
+    2,
+    2
+   ],
+   "note": "3062+26 | 状态:exact",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "4210726 板带立式带孔扣",
+   "part": [
+    "15712"
+   ],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6019987 板带拱筒(存疑)",
+   "part": [
+    "3023"
+   ],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6028812 板端/侧夹",
+   "part": [
+    "11476"
+   ],
+   "color": 71,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6043656 板端弯爪",
+   "part": [
+    "26047"
+   ],
+   "color": 72,
+   "count": [
+    2,
+    2
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  },
+  {
+   "feature": "6123809 2×2砖侧4孔",
+   "part": [
+    "3003"
+   ],
+   "color": 71,
+   "count": [
+    1,
+    1
+   ],
+   "note": " | 状态:substitute",
+   "evidence": [
+    "trex_p44",
+    "trex_cover"
+   ]
+  }
+ ]
+}

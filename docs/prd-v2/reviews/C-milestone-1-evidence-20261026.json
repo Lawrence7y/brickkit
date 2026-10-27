@@ -1,0 +1,297 @@
+{
+  "review": {
+    "id": "C-milestone-1-review-20261026",
+    "reviewer": "independent read-only reviewer (PRD §13.4)",
+    "reviewedMilestone": "C0 + C1 + C3-4（contracts freeze / data factory / engine gates）",
+    "reviewedAt": "2026-10-26T09:05:00Z",
+    "repo": "D:/Project/brickkit",
+    "constraint": "CPU only — no python/torch/model code executed; Node probes only",
+    "sessionStatement": "本复核为同一模型的不同会话复核，不等同于跨 Harness 复核。",
+    "independence": "未参与被复核实现的编写；全部探针在 docs/prd-v2/reviews/ 独立新写，未复用既有 C-milestone-1-*-probe 脚本的结果作为判据"
+  },
+  "items": [
+    {
+      "id": "C0-contracts-freeze",
+      "title": "契约冻结",
+      "verdict": "PASS",
+      "commands": [
+        "node docs/prd-v2/implementation-C/contracts/validate-contracts-1.0.mjs"
+      ],
+      "observed": {
+        "verdict": "FROZEN-VALID",
+        "jsChecksPassed": true,
+        "pythonCrossCheck": "ok",
+        "fixtureAssetLock": "5/5 tasks",
+        "fixtureRenderState": true,
+        "fixtureFullAssembly": true,
+        "curriculumSamples": "15 samples, passed=true",
+        "negativeProbes": "12/12",
+        "blockers": 0,
+        "versionConsistency": true,
+        "versionJson": {
+          "frozen": true,
+          "version": "1.0.0",
+          "frozenAt": "2026-10-26T16:36:27.493Z",
+          "refrozenAt": "2026-10-26T22:05:00Z"
+        },
+        "engineRevisionDeclared": "85ad171008ef1fa68570eb16d7b759d8fbf34bc4df846c748127238e1e2d1fd8",
+        "engineRevisionRecomputed": "85ad171008ef1fa68570eb16d7b759d8fbf34bc4df846c748127238e1e2d1fd8",
+        "engineRevisionMatch": true,
+        "engineRevisionPerDirMatch": true,
+        "engineRevisionFileCount": 12,
+        "refreezeHistoryDocumentsCP02": true,
+        "refreezeHistoryPriorEngineRevision": "88b51e1934c3fec901b9b6df5466188920c9b556487d110615938eaadcede5d3",
+        "oldSnapshotEngineRevisionRecomputed": "88b51e1934c3fec901b9b6df5466188920c9b556487d110615938eaadcede5d3",
+        "oldSnapshotEngineRevisionMatch": true,
+        "filesChangedVsOldSnapshot": ["src/core/actions-v1/render-state.js", "src/core/actions-v1/state.js"],
+        "cp02FingerprintsIdentical": true
+      },
+      "notes": "refreezeHistory 明确记录 CP-02 行为保持性优化导致 engineRevision 失效并复算重冻结；用 engine/old-snapshot 独立复算旧引擎哈希，与 priorEngineRevision 逐字符相等，改动的正是 state.js / render-state.js 两个文件，与记录一致。"
+    },
+    {
+      "id": "C0-4-receipt-gating",
+      "title": "收据门禁（反例伪造）",
+      "verdict": "PASS",
+      "commands": [
+        "node --test test/receipt-gating.test.mjs",
+        "node docs/prd-v2/reviews/C-milestone-1-indep-receipt-probe-20261026.mjs"
+      ],
+      "observed": {
+        "sourceTest": { "tests": 11, "pass": 11, "fail": 0 },
+        "goodPath": { "declaredTotalBOMParts": 91, "allocatedTokens": 91, "taskCount": 5, "auditOk": true, "reasonCodes": [] },
+        "caseA_revision999_fake_stateHash": {
+          "rejected": true,
+          "reasonCodes": ["RECEIPT_REVISION_MISMATCH", "RECEIPT_STATEHASH_UNBOUND", "RECEIPT_EVIDENCE_MISSING"],
+          "targetBinding": "unverified"
+        },
+        "caseA2_validRevision_fakeStateHash_noEvidence": {
+          "rejected": true,
+          "reasonCodes": ["RECEIPT_REVISION_MISMATCH", "RECEIPT_STATEHASH_UNBOUND"]
+        },
+        "caseB_plan_totalBOM_999_vs_91": {
+          "declared": 999,
+          "allocated": 91,
+          "rejected": true,
+          "reasonCodes": ["PLAN_BOM_TOTAL_MISMATCH"]
+        },
+        "allBadReceiptsRejected": true
+      },
+      "notes": "两条反例由独立探针重新构造（非复用测试文件），均以明确原因码被拒；正向 91 件真实绑定收据全数通过。"
+    },
+    {
+      "id": "C1-trajectory-dataset",
+      "title": "轨迹数据集（真实引擎重放 + 图像哈希 + 泄漏扫描）",
+      "verdict": "PASS",
+      "commands": [
+        "node docs/prd-v2/reviews/C-milestone-1-indep-traj-probe-20261026.mjs"
+      ],
+      "observed": {
+        "totalSamples": 2225,
+        "picked": 25,
+        "replay": { "checked": 25, "passed": 25, "failed": 0 },
+        "replayMethod": "从 state_t 状态文件 → inspectFromModel 复算 → REAL src/core/actions-v1/apply.js applyActions（携带 enumerateCandidates 的 ctx）→ 比较 apply.stateHashAfter",
+        "stateTPlus1Match": "25/25",
+        "storedActionResponseMatch": "25/25",
+        "imageSha": { "checked": 10, "matched": 10 },
+        "publicCandidateLeak": { "checked": 10, "samplesWithTargetFlagsInCandidates": 0 },
+        "publicPayloadLeakExcludingTarget": 0,
+        "verificationIllegalLeak": 0,
+        "anonymizedCandidateIds": true,
+        "fullCorpusSanity": { "samples": 2225, "answerMissingFromCandidates": 0, "answerMissingFromEquivalent": 0, "candidateMarkerLeaks": 0 }
+      },
+      "notes": "公开候选条数（3-5）是引擎等价组（equivalentGroupSize 可到 4）的对外子集，target 与 equivalentCandidates 始终落在公开候选集内；泄漏字段只出现在 verification.labels（ground-truth 区，按设计不属于模型输入），公开区零命中。"
+    },
+    {
+      "id": "C1-perturbation-dataset",
+      "title": "扰动数据集（修复重放 + 结构 diff 复核 + 匿名性）",
+      "verdict": "PASS",
+      "commands": [
+        "node docs/prd-v2/reviews/C-milestone-1-indep-pert-probe-20261026.mjs"
+      ],
+      "observed": {
+        "pools": { "repair_local": 1248, "understand_structure": 1248 },
+        "picked": { "repair_local": 13, "understand_structure": 12 },
+        "repairLocal": {
+          "checked": 13,
+          "passed": 13,
+          "allStepsPassed": "13/13",
+          "modelOnlyStateHashRestored": "13/13",
+          "fullStateHashRestored": "8/13",
+          "storedFlagAgreementOnFullHash": "13/13 与 stored repairVerification.fullStateHashRestored 一致"
+        },
+        "understandStructure": {
+          "checked": 12,
+          "passed": 12,
+          "errorTypeMatches": "12/12",
+          "issueCountMatches": "12/12",
+          "issuesPayloadMatch": "12/12",
+          "errorTypeHistogram": { "misaligned": 5, "missing_part": 2, "reversed_orientation": 2, "wrong_color": 1, "left_right_swap": 2 }
+        },
+        "anonymity": { "checked": 10, "clean": 10 },
+        "fullCorpusAnonymity": { "samples": 2496, "candidateMarkerLeaks": 0, "realInstanceOrTokenIdsInPublic": 0 }
+      },
+      "notes": "修复重放从扰动态出发，事务 stateHashIn 逐条等于事务声明（13/13），最终 canonical model-only 哈希 13/13 恢复为参考态。full hash 仅 8/13 恢复，与 stored 记录逐条一致：wrong_color 等扰动改变了库存 token 消耗面，canonical（model-only）口径恢复而含库存的 full 口径不必然恢复——这是数据既有口径，非新发现缺陷。"
+    },
+    {
+      "id": "C1-5-splits",
+      "title": "数据划分与防泄漏",
+      "verdict": "PASS",
+      "commands": [
+        "node docs/prd-v2/reviews/C-milestone-1-indep-splits-probe-20261026.mjs"
+      ],
+      "observed": {
+        "fileHashes": {
+          "checked": 5,
+          "matched": 5,
+          "train": "765f794107c0137d3cb55df8df86917760030b795e9d362875afb8125563082d",
+          "validation": "4226981f8df308e2193ec8e1f253fd35b1ecefeaa6d59455fc9e79534313a80f",
+          "holdout_test": "5599e8ba253bbb9246c0510cb25ba05c3ccb826c7443c43aba4fc731277cdca5",
+          "dev": "514ef88e807755f4f46d587db331159040176f070f5d57eae5536c919f1b5b50",
+          "assignment": "7a62ae4678ef29896f40127796d5ed7d85789c4398de9f61f58dde6226adc585"
+        },
+        "dotFrozenPresent": true,
+        "dotFrozenManifestShaMatch": true,
+        "dotFrozenProbesShaMatch": true,
+        "counts": { "train": 3155, "validation": 905, "holdout_test": 827, "dev": 33 },
+        "countsMatchManifest": true,
+        "crossSplitOverlapPairs": 0,
+        "holdoutFamilies": ["fam-arch", "fam-snotwall", "fam-cargoer", "fam-bracketholder"],
+        "holdoutFamiliesLeakedIntoTrain": []
+      },
+      "notes": "manifest 与 .frozen 两份冻结记录自洽（manifestSha256 / probesSha256 双向复算一致）；4 个留出族在 train 中零出现。"
+    },
+    {
+      "id": "C3-4-engine-gates",
+      "title": "引擎门禁 + EN-05 独立负例抽查",
+      "verdict": "PASS",
+      "commands": [
+        "node --test --test-reporter=spec test/*.test.mjs",
+        "node docs/prd-v2/reviews/C-milestone-1-indep-en05-probe-20261026.mjs"
+      ],
+      "observed": {
+        "tests": 275,
+        "pass": 275,
+        "fail": 0,
+        "c3_4_reportExists": true,
+        "c3_4_reportPath": "out/prd-v2/run-20261026-c/C/engine/c3-4-report.md",
+        "requiredConnections": 95,
+        "snapRecorded": 83,
+        "extraPhysical": 12,
+        "fixtureTotal": 380,
+        "en05Evidence": {
+          "shifted": "95/95 partsConnected=false",
+          "direction": "95/95 rejected",
+          "colliding": "95/95 overlap rejected"
+        },
+        "independentSpotCheck": {
+          "pairs": ["p001|p002", "p029|p063", "p075|p089"],
+          "positivesConnected": "3/3",
+          "offGridHalfStudShiftsRejected": "12/12",
+          "legalWholeStudReseatObserved": 10
+        }
+      },
+      "notes": "独立抽查自建（未用测试文件里的夹具代码逻辑），3 对必需连接的正例全部真实扣合，半格错位负例 12/12 全被 partsConnected 拒绝；整格沿凸点阵滑动仍可合法扣合（10 次），与测试文件对引擎行为的注释一致，属正确行为而非漏判。"
+    },
+    {
+      "id": "C3-6-60239-zero-error",
+      "title": "60239 修复模型零错误",
+      "verdict": "PASS",
+      "commands": [
+        "node cli/brickkit.mjs validate out/prd-v2/run-20261026-c/C/integration/60239/60239.fixed.brick.json"
+      ],
+      "observed": {
+        "ok": true,
+        "errors": 0,
+        "warnings": 0,
+        "parts": 91,
+        "steps": 36,
+        "connectedComponents": 4,
+        "largestComponentRatio": 0.912088
+      }
+    },
+    {
+      "id": "C3-3-WF-04-requested-checks",
+      "title": "四步流程 WF-04：题面列明的 5 项核验",
+      "verdict": "PASS",
+      "commands": [
+        "node cli/brickkit.mjs validate out/prd-v2/run-20261026-c/C/integration/fourstep/build/harbor-crane.assembly.brick.json"
+      ],
+      "observed": {
+        "sessions": 3,
+        "subSessions": 2,
+        "conversationIds": {
+          "master": "session_d1aabeed38c279be3291dd2d6c82cf76",
+          "SA-1": "agent_65007cda-b943-4c48-8400-6b8fedd6029b",
+          "SA-2": "agent_b505358a-11ef-4691-bf57-0fe6eecab95d"
+        },
+        "allConversationIdsDistinct": true,
+        "subSessionIdsDifferFromMaster": true,
+        "receiptRecordsSubagentConversationIds": true,
+        "subagentSessionsField": 2,
+        "assembly": { "ok": true, "errors": 0, "warnings": 0, "parts": 66, "steps": 8, "connectedComponents": 1 },
+        "bomConservation": {
+          "planTotalParts": 66,
+          "packageSplit": { "main": 30, "SA-1": 24, "SA-2": 12 },
+          "sum": 66,
+          "eachPackageTokensMatchBuiltModelBOM": true,
+          "artifactHashesMatch": "8/8"
+        }
+      },
+      "notes": "两个子收据的 sessionEvidence.conversationId 分别与 receipt.sessions[] 记录一致；三个子模型各自 validate 0/0（30 / 24 / 12 件）。"
+    },
+    {
+      "id": "C3-3-WF-04-receipt-binding",
+      "title": "四步流程 WF-04：收据真实绑定（复核新增项）",
+      "verdict": "FAIL",
+      "commands": [
+        "node -e \"import('./src/manual-v2/workflow.js').then(W=>{const plan={contractRevision:'1.0.0',totalBOMParts:66,taskPackages:[...3 real packages]}; console.log(W.auditTotalAssembly(plan,[sa1Receipt,sa2Receipt]))})\"",
+        "node -e \"compare task-package inventory.tokens vs receipt consumedTokens\""
+      ],
+      "observed": {
+        "storedAuditInReceipt": { "ok": false, "issueCount": 5, "note": "以空收据列表调用，故只报「缺少执行收据」，不含任何 Token/版本错误" },
+        "independentReaudit": { "ok": false, "errors": 79, "reasonCodes": ["RECEIPT_REVISION_MISMATCH", "RECEIPT_TOKEN_PART_MISMATCH", "RECEIPT_TOKEN_COLOR_MISMATCH", "RECEIPT_TOKEN_NOT_ALLOCATED", "RECEIPT_TOKEN_FOREIGN", "RECEIPT_MISSING", "TOKEN_UNCONSUMED"] },
+        "revisionTypeMismatch": { "taskPackageRevision": 1, "taskPackageDesignRevision": "c3-3-fourstep-1.0", "receiptRevision": "c3-3-fourstep-1.0", "receiptContractRevision": null },
+        "tokenWindowOffset": {
+          "SA-1": { "allocated": "tok-031..tok-054", "claimed": "tok-033..tok-056", "partColorSequenceIdentical": true },
+          "SA-2": { "allocated": "tok-055..tok-066", "claimed": "tok-057..tok-068", "partColorSequenceIdentical": true }
+        },
+        "tokensNotInGlobalPlan": ["tok-067", "tok-068"],
+        "mainTaskReceipt": "missing",
+        "stateHashBindingRecomputed": "SA-1 true / SA-2 true（内联 state 可复算，但被上述错误判为 unverified）"
+      },
+      "notes": "题面列明的 5 项都通过，但把两份真实子收据交给真实 auditTotalAssembly 后 79 errors：收据 revision 用字符串 designRevision 而非正整数 revision、未声明 contractRevision、consumedTokens 的 tokenId 整体错位 +2（SA-2 还引用了计划中不存在的 tok-067/068），且主任务 c3-3-main 完全没有收据。按 WF-04 的验收语义（收据记录并绑定任务包分配）该收据不成立；收据自身 totalAssemblyAudit.ok=false 已如实记录，但没有在交付层解决。此为遗留缺陷，本复核不修复。"
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "pass": 8,
+    "fail": 1,
+    "unable": 0,
+    "blockingFindings": [
+      "WF-04 收据未通过真实收据门禁：revision 类型不符 + consumedTokens tokenId 窗口错位 2 位 + tok-067/068 不在计划内 + 主任务缺收据；独立重审 79 errors / 7 reason codes。"
+    ],
+    "nonBlockingObservations": [
+      "WF-04 receipt 的 totalAssemblyAudit 是以空收据列表计算的，故仅 5 条 issue 且不含 Token/版本错误，字段本身具有误导性。",
+      "扰动数据集 repair_local 的 canonical(model-only) 哈希 13/13 恢复，full（含库存）哈希 8/13 恢复，与 stored 标记逐条一致，属既有口径。",
+      "EN-05 零穿模口径下整格沿凸点阵滑动仍合法扣合，属引擎正确行为，负例应取半格错位。"
+    ]
+  },
+  "artifacts": {
+    "report": "docs/prd-v2/reviews/C-milestone-1-review-20261026.md",
+    "evidence": "docs/prd-v2/reviews/C-milestone-1-evidence-20261026.json",
+    "probes": [
+      "docs/prd-v2/reviews/C-milestone-1-indep-receipt-probe-20261026.mjs",
+      "docs/prd-v2/reviews/C-milestone-1-indep-traj-probe-20261026.mjs",
+      "docs/prd-v2/reviews/C-milestone-1-indep-pert-probe-20261026.mjs",
+      "docs/prd-v2/reviews/C-milestone-1-indep-splits-probe-20261026.mjs",
+      "docs/prd-v2/reviews/C-milestone-1-indep-en05-probe-20261026.mjs"
+    ],
+    "probeResults": [
+      "docs/prd-v2/reviews/C-milestone-1-indep-receipt-probe-result-20261026.json",
+      "docs/prd-v2/reviews/C-milestone-1-indep-traj-probe-result-20261026.json",
+      "docs/prd-v2/reviews/C-milestone-1-indep-pert-probe-result-20261026.json",
+      "docs/prd-v2/reviews/C-milestone-1-indep-splits-probe-result-20261026.json",
+      "docs/prd-v2/reviews/C-milestone-1-indep-en05-probe-result-20261026.json"
+    ]
+  }
+}

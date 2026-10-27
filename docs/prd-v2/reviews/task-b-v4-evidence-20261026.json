@@ -1,0 +1,171 @@
+{
+  "reviewDate": "2026-10-26",
+  "scope": "out/prd-v2/run-20261026-v4/B",
+  "dataset": {
+    "splitSizes": {
+      "train": 300,
+      "validation": 150,
+      "holdout_test": 300
+    },
+    "imageReferences": 1500,
+    "existingImages": 1500,
+    "matchingSha256": 1500,
+    "uniqueRawStateImages": 750,
+    "uniqueStateImagesWithoutTop24px": 8,
+    "uniqueSilhouettesWithoutTop24px": 4,
+    "datasetKinds": [
+      "synthetic_badge_smoke"
+    ]
+  },
+  "trainingOnlyLookupBaseline": {
+    "inputUsesImages": false,
+    "usesOnlyTrainingLabelsToBuildTables": true,
+    "actionLookupKeys": 12,
+    "structureLookupKeys": 3,
+    "conflictingTrainLabels": 0,
+    "action": {
+      "correct": 150,
+      "total": 150,
+      "accuracy": 1
+    },
+    "structure": {
+      "correct": 75,
+      "total": 75,
+      "accuracy": 1
+    }
+  },
+  "receiptBinding": {
+    "revision999FakeStateAndSigner": {
+      "ok": true,
+      "isConserved": true,
+      "inventoryAudit": {
+        "passed": true,
+        "totalExpectedTokens": 91,
+        "totalConsumedTokens": 91,
+        "duplicateTokens": 0
+      },
+      "assemblyAudit": {
+        "status": "unverified",
+        "engineConnected": false,
+        "note": "物理装配无穿模与几何连接待 Executor A 运行时事务引擎执行"
+      },
+      "overallAssemblyVerified": false,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 91,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": []
+    },
+    "declared999ButAllocated91": {
+      "ok": true,
+      "isConserved": true,
+      "inventoryAudit": {
+        "passed": true,
+        "totalExpectedTokens": 91,
+        "totalConsumedTokens": 91,
+        "duplicateTokens": 0
+      },
+      "assemblyAudit": {
+        "status": "unverified",
+        "engineConnected": false,
+        "note": "物理装配无穿模与几何连接待 Executor A 运行时事务引擎执行"
+      },
+      "overallAssemblyVerified": false,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 91,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "reportedMetrics": {
+    "datasetKind": "synthetic_badge_smoke",
+    "action": {
+      "overallTop1": 0.8733,
+      "overallTop3": 0.9933,
+      "byDifficulty": {
+        "bracket": {
+          "top1": 0.86,
+          "top3": 1,
+          "samples": 50
+        },
+        "accessory": {
+          "top1": 0.86,
+          "top3": 0.98,
+          "samples": 50
+        },
+        "snot": {
+          "top1": 0.9,
+          "top3": 1,
+          "samples": 50
+        }
+      },
+      "totalActions": 150
+    },
+    "understanding": {
+      "stepExactMatchRate": 0.16,
+      "structureDiagnosis": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 24,
+        "tn": 51,
+        "precision": 0,
+        "recall": 0,
+        "f1": 0
+      }
+    },
+    "fullWorkflow": {
+      "status": "unverified",
+      "zeroHumanInterventionCount": 0,
+      "totalCompleted": 0,
+      "note": "离线模型动作排序与结构诊断评估已独立完成；端到端自动化物理装配依赖 Executor A 运行时事务引擎集成"
+    }
+  },
+  "sourceHashes": [
+    {
+      "path": "tools/brickvlm/gen_dataset.py",
+      "sha256": "f3e8252ac5a04a3dbfadf344c13cd05c20530e10f95dc30cc38f8ca82a119a52"
+    },
+    {
+      "path": "tools/brickvlm/model_compact.py",
+      "sha256": "76494ee79b79299d803cdf8070bf7aa6de72876f96f2e10dd04b1865346e2329"
+    },
+    {
+      "path": "tools/brickvlm/visual_encoder.py",
+      "sha256": "e640592ffeea49871927329167b6cd3b606b3950a4cb6e1fd7a542ee6e181ce5"
+    },
+    {
+      "path": "tools/brickvlm/train_r3_pilot.py",
+      "sha256": "cf5aec71c02a7aaa2e6392c05df55a199ac4a883ea391ff2faab7ced11562b4c"
+    },
+    {
+      "path": "tools/brickvlm/evaluate_r5.py",
+      "sha256": "3e03d29afa13bcce4016beef953e539b7d9b5f8e814ba114acfef77c6eda4dce"
+    },
+    {
+      "path": "src/manual-v2/workflow.js",
+      "sha256": "d118fbe31001688c21685255c5fba758a11a54f6354db3a9285c5cdca35b5fcd"
+    },
+    {
+      "path": "src/manual-v2/extractor.js",
+      "sha256": "bd20b759ebd379a0b1703ba963a96685b2be3a986d9f2bc2ecea8980ba7547ba"
+    },
+    {
+      "path": "training/brickvlm/train_qwen_qlora.py",
+      "sha256": "aa901b8ebf95a7f9f61cca2fdb5e330a68eded2ea4ebd191040a404f7f009830"
+    }
+  ],
+  "reportSha256": "b6558da4188f2d677d2a6eab43f93fa1f081fdc927bbc69887355fb9537272c9",
+  "checkpointProbe": {
+    "checkpointLoadedWeightsOnly": true,
+    "embeddedVisualStateKeys": 23,
+    "allWeightsFinite": true,
+    "modelParameterCount": 3097219,
+    "sampleCount": 16,
+    "seeds": [
+      123,
+      456
+    ],
+    "maxAbsActionLogitDifference": 0
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-10-26T14:19:47.503Z",
+  "engine": "assembly-v1@1.0.0",
+  "cases": [
+    {
+      "file": "negative-placement-cycle.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "placement-cycle"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "placement-cycle"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "placement-cycle: 定位依赖存在环，以下节点无法排序：main/base, main/plate"
+      ]
+    },
+    {
+      "file": "negative-double-placement.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "double-placement"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "double-placement"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "double-placement: 节点 main/plate 有多条定位记录（connector 与 connector）；每个节点只能有一种权威定位方式"
+      ]
+    },
+    {
+      "file": "negative-missing-reference.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "missing-reference"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "missing-reference",
+        "placement-cycle"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "missing-reference: 节点 main/plate 的父节点 main/does-not-exist 不存在",
+        "placement-cycle: 定位依赖存在环，以下节点无法排序：main/plate"
+      ]
+    },
+    {
+      "file": "negative-recursive-template.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "recursive-template"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "recursive-template"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "recursive-template: 组件归属形成递归包含：loop → loop"
+      ]
+    },
+    {
+      "file": "negative-missing-asset.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "missing-asset",
+        "asset-lock-incomplete"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "asset-lock-incomplete"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "asset-lock-incomplete: 任务实际用到零件 999999，但 assetLock 未列出"
+      ]
+    },
+    {
+      "file": "negative-unknown-connector.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "unknown-connector"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "unknown-connector"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "unknown-connector: 父节点 main/base 上不存在接口 ctop#9999"
+      ]
+    },
+    {
+      "file": "negative-inventory-double-consume.assembly.brick.json",
+      "kind": "negative",
+      "expected": [
+        "inventory-double-consume"
+      ],
+      "actualOk": false,
+      "actualCodes": [
+        "inventory-double-consume",
+        "inventory-double-consume"
+      ],
+      "pass": true,
+      "errorMessages": [
+        "inventory-double-consume: 库存 token tok-3001-1 被 2 个零件实例占用：main/base, main/plate",
+        "inventory-double-consume: 库存 token 被多个零件实例占用：tok-3001-1"
+      ]
+    },
+    {
+      "file": "positive-component-instance.assembly.brick.json",
+      "kind": "positive",
+      "expected": "ok",
+      "actualOk": true,
+      "actualCodes": [],
+      "pass": true,
+      "errorMessages": []
+    }
+  ]
+}

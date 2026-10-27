@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.org/schemas/task-package-1.0.json",
+  "title": "TaskPackageC2",
+  "description": "主从搭建流程子任务包契约 (C2)。为主体或独立子组件定义素材锁、局部坐标系、库存份额、接口契约与预算，支持主会话与子会话无缝协作。",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "taskId",
+    "revision",
+    "globalPlanRef",
+    "role",
+    "assetLock",
+    "inventory",
+    "localFrame",
+    "interfaces",
+    "spatialContracts",
+    "budget",
+    "acceptance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "taskId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "globalPlanRef": {
+      "type": "object",
+      "required": ["planFile", "planSha256"],
+      "properties": {
+        "planFile": { "type": "string" },
+        "planSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    },
+    "role": {
+      "type": "string",
+      "enum": ["main_body", "subassembly", "accessory"]
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "依赖的前序任务 ID 列表"
+    },
+    "assetLock": {
+      "type": "object",
+      "required": ["profileId", "indexVersion", "parts"],
+      "properties": {
+        "profileId": { "type": "string" },
+        "indexVersion": { "type": "string" },
+        "catalogVersion": { "type": "string" },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["partId", "revision", "contentHash"],
+            "properties": {
+              "partId": { "type": "string" },
+              "revision": { "type": "string" },
+              "contentHash": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+            }
+          }
+        },
+        "partLocks": {
+          "type": "object"
+        }
+      }
+    },
+    "sourceEvidence": {
+      "type": "object",
+      "properties": {
+        "manualObservationRefs": { "type": "array", "items": { "type": "string" } },
+        "pageRange": { "type": "array", "items": { "type": "integer" } },
+        "notes": { "type": "string" }
+      }
+    },
+    "inventory": {
+      "type": "object",
+      "required": ["totalCount", "tokens"],
+      "properties": {
+        "totalCount": { "type": "integer", "minimum": 1 },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["tokenId", "partId", "colorId"],
+            "properties": {
+              "tokenId": { "type": "string" },
+              "partId": { "type": "string" },
+              "colorId": { "type": "integer" },
+              "name": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "localFrame": {
+      "type": "object",
+      "required": ["originDescription", "allowedRootParts"],
+      "properties": {
+        "originDescription": { "type": "string" },
+        "allowedRootParts": { "type": "array", "items": { "type": "string" } },
+        "initialOrientation": { "type": "integer", "default": 0 }
+      }
+    },
+    "interfaces": {
+      "type": "object",
+      "required": ["outwardConnectors", "targetMounts"],
+      "properties": {
+        "outwardConnectors": {
+          "type": "array",
+          "description": "本组件暴露给主体的对外挂载接口（若未确定可标 pending: true）",
+          "items": {
+            "type": "object",
+            "required": ["id", "type", "status"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "type": "string" },
+              "localPartInstance": { "type": "string" },
+              "status": { "type": "string", "enum": ["frozen", "pending"] }
+            }
+          }
+        },
+        "targetMounts": {
+          "type": "array",
+          "description": "主体上的目标挂接位点",
+          "items": {
+            "type": "object",
+            "required": ["targetTask", "parentConnectorId", "status"],
+            "properties": {
+              "targetTask": { "type": "string" },
+              "parentConnectorId": { "type": "string" },
+              "status": { "type": "string", "enum": ["frozen", "pending"] }
+            }
+          }
+        }
+      }
+    },
+    "spatialContracts": {
+      "type": "object",
+      "properties": {
+        "maxBoundingBoxLdu": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "keepOutZones": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": ["maxStepRetries", "maxRepairRounds", "timeoutSeconds"],
+      "properties": {
+        "maxStepRetries": { "type": "integer", "default": 3 },
+        "maxRepairRounds": { "type": "integer", "default": 2 },
+        "timeoutSeconds": { "type": "integer", "default": 300 }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "required": ["requireZeroErrors", "requireFullInventoryConsumption"],
+      "properties": {
+        "requireZeroErrors": { "type": "boolean", "const": true },
+        "requireZeroWarnings": { "type": "boolean", "default": true },
+        "requireFullInventoryConsumption": { "type": "boolean", "const": true },
+        "minVisualScore": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

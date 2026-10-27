@@ -1,0 +1,375 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.local/schema/prd-v2/part-asset.schema.json",
+  "title": "BrickKit Part Asset v1",
+  "description": "零件素材的规范化定义与索引。分两个顶层对象：definition（单件定义，按件加载）与 index（全库索引，按需查表）。原始素材、覆盖修订、能力判定、接口 ID 必须可分别追溯。内部物理单位统一 LDU：1 格 = 20 LDU，1 片 = 8 LDU，1 砖 = 24 LDU。规范空间为右手系、+y 向上、+z 为正面。",
+  "$defs": {
+    "lduVec3": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 3,
+      "maxItems": 3,
+      "description": "LDU 三元组 [x, y, z]"
+    },
+    "stableId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64,
+      "pattern": "^[a-z][a-z0-9_.:-]*$",
+      "description": "稳定标识：小写字母开头，只含 [a-z0-9_.:-]。接口 ID 不得随数组排序变化。"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "semver": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "capabilityState": {
+      "enum": ["verified", "measured", "inferred", "assumed", "unsupported", "unknown"],
+      "description": "能力判定等级。verified 需有通过的正反用例；measured 有实测来源但未过配对夹具；inferred/assumed 只作参考，不得执行关键连接；unsupported/unknown 必须显式返回能力缺口，不能当作可用。"
+    },
+    "sourceRef": {
+      "type": "object",
+      "required": ["kind", "ref", "license"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["ldraw-dat", "catalog-entry", "derived", "manual-measurement"] },
+        "ref": { "type": "string", "description": "相对仓库根的路径或 URL" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "bytes": { "type": "integer", "minimum": 0 },
+        "license": { "type": "string", "description": "CC BY 2.0 / Apache-2.0 / 内部实测 等；不得留空" },
+        "licenseUrl": { "type": "string" },
+        "extractor": { "type": "string", "description": "提取工具名与版本，例如 src/ldraw/ldraw.js#bboxFromText@1" },
+        "note": { "type": "string" }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["grade"],
+      "additionalProperties": false,
+      "properties": {
+        "grade": { "enum": ["measured", "inferred", "assumed"] },
+        "method": { "type": "string", "description": "如何得到：官方 .dat 实测 / 同类件推断 / 目测假设" },
+        "evidenceRefs": {
+          "type": "array", "items": { "type": "string" },
+          "description": "夹具 id、照片 id、官方 URL"
+        },
+        "recordedAt": { "type": "string", "description": "ISO 8601" },
+        "recordedBy": { "type": "string" }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "required": ["render", "collide", "assemble"],
+      "additionalProperties": false,
+      "description": "三类能力必须分别判定，禁止用一个 checked:true 同时代表三者已验证（PRD §5.2）。",
+      "properties": {
+        "render": {
+          "type": "object",
+          "required": ["state"],
+          "additionalProperties": false,
+          "properties": {
+            "state": { "$ref": "#/$defs/capabilityState" },
+            "geometryKind": { "enum": ["ldraw-mesh", "parametric", "none"] },
+            "note": { "type": "string" }
+          }
+        },
+        "collide": {
+          "type": "object",
+          "required": ["state"],
+          "additionalProperties": false,
+          "properties": {
+            "state": { "$ref": "#/$defs/capabilityState" },
+            "boxCount": { "type": "integer", "minimum": 0 },
+            "note": { "type": "string" }
+          }
+        },
+        "assemble": {
+          "type": "object",
+          "required": ["state"],
+          "additionalProperties": false,
+          "properties": {
+            "state": { "$ref": "#/$defs/capabilityState" },
+            "verifiedConnectorTypes": {
+              "type": "array",
+              "items": { "enum": ["stud", "antistud", "bar", "clip", "pin", "hole", "axle", "rim", "tyre", "minifig"] }
+            },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    },
+    "collisionBox": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 6,
+      "maxItems": 6,
+      "description": "局部坐标盒 [x0,x1,y0,y1,z0,z1]，单位 LDU，原点为零件本地原点。多盒用来表达凹形件空腔（底盘/轮拱/双阶斜坡）。"
+    },
+    "connector": {
+      "type": "object",
+      "required": ["id", "type", "frame", "mateProfile", "capacity", "verification"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/stableId",
+          "description": "稳定接口 ID，权威标识。必须由接口语义（面 + 格位 + 层高）生成，不得由数组下标生成：重排数组不得改变 ID 含义。"
+        },
+        "type": {
+          "enum": ["stud", "antistud", "bar", "clip", "pin", "hole", "axle", "rim", "tyre", "minifig-peg", "minifig-socket"],
+          "description": "连接类型；每种类型有独立匹配规则，不得互相套用。"
+        },
+        "role": {
+          "enum": ["male", "female"],
+          "description": "公母方向。stud/bar/pin/rim/minifig-peg 为 male；antistud/clip/hole/axle/tyre/minifig-socket 为 female。"
+        },
+        "frame": {
+          "type": "object",
+          "required": ["translationLdu", "orientationId"],
+          "additionalProperties": false,
+          "properties": {
+            "translationLdu": { "$ref": "#/$defs/lduVec3" },
+            "orientationId": {
+              "type": "integer", "minimum": 0, "maximum": 23,
+              "description": "24 姿态表中的 orientationId。接口局部 +y 定义为装配轴；显示外法线不在此表达。"
+            }
+          }
+        },
+        "mateProfile": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*-v\\d+$",
+          "description": "配对规则 id，例如 stud-antistud-v1、bar-clip-v1、tyre-rim-v1"
+        },
+        "capacity": { "type": "integer", "minimum": 1, "description": "该接口可同时接纳的对端数量上限（通常 1）" },
+        "geometry": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "radiusLdu": { "type": "number", "exclusiveMinimum": 0 },
+            "lengthLdu": { "type": "number", "exclusiveMinimum": 0 },
+            "axis": { "enum": ["x", "y", "z"] }
+          }
+        },
+        "legacyIndex": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "旧 stud/receptor 数字索引到稳定 ID 的固定映射。用于适配 core.partConnectors 的数组下标语义。",
+          "properties": {
+            "collection": { "enum": ["studs", "receptors"] },
+            "index": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "verification": {
+          "type": "object",
+          "required": ["status"],
+          "additionalProperties": false,
+          "properties": {
+            "status": { "$ref": "#/$defs/capabilityState" },
+            "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+            "positiveCases": { "type": "integer", "minimum": 0 },
+            "negativeCases": { "type": "integer", "minimum": 0 },
+            "note": { "type": "string" }
+          }
+        }
+      }
+    },
+    "override": {
+      "type": "object",
+      "required": ["partId", "baseRevision", "fields", "reason", "author", "recordedAt"],
+      "additionalProperties": false,
+      "description": "经验证的覆盖修订。原始定义与覆盖分离；生效结果必须能列出合并来源。",
+      "properties": {
+        "partId": { "type": "string" },
+        "baseRevision": { "type": "string", "description": "被覆盖的原始 revision，防止覆盖错版本" },
+        "fields": {
+          "type": "object",
+          "description": "只覆盖声明字段：collision / connectors / capabilities / canonicalFrame 等",
+          "additionalProperties": true
+        },
+        "reason": { "type": "string", "minLength": 1 },
+        "verification": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "fixtures": { "type": "array", "items": { "type": "string" } },
+            "positiveCases": { "type": "integer", "minimum": 0 },
+            "negativeCases": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "author": { "type": "string" },
+        "recordedAt": { "type": "string" }
+      }
+    },
+    "connectorGroup": {
+      "type": "object",
+      "required": ["t", "r", "o", "k", "d", "mp", "items"],
+      "additionalProperties": false,
+      "description": "连接器紧凑分组。同组内 type/role/orientationId/kind/dir/mateProfile 完全相同，组内只存位置与旧数组下标。完整接口对象由 expandConnectorGroups() 在运行时按需生成；稳定 ID 由 type + 语义位置确定，与数组顺序无关。",
+      "properties": {
+        "t": { "type": "string", "description": "type：stud/antistud/bar/clip/pin/hole/axle/rim/tyre/minifig-peg/minifig-socket" },
+        "r": { "enum": ["male", "female"] },
+        "o": { "type": "integer", "minimum": 0, "maximum": 23, "description": "orientationId" },
+        "k": { "type": "string", "description": "core 内部 kind（top/side/antistud/bar/clip/pin/hole/axle/rim/tyre/minifig），用于与引擎对照" },
+        "d": { "type": "string", "description": "core 连接的 dir（装配轴方向）" },
+        "x": { "enum": ["x", "y", "z"], "description": "轴向类连接的轴" },
+        "mp": { "type": "string", "description": "mateProfile" },
+        "items": {
+          "type": "array",
+          "description": "每项 [xLdu, yLdu, zLdu, collectionIndex, coreArrayIndex]；collectionIndex 0=studs 1=receptors",
+          "items": { "type": "array", "items": { "type": "number" }, "minItems": 5, "maxItems": 5 }
+        }
+      }
+    },
+    "partDefinition": {
+      "type": "object",
+      "required": [
+        "schemaVersion", "partId", "revision", "name", "source", "canonicalFrame",
+        "geometry", "collision", "connectorCount", "connectorGroups", "capabilities", "provenance"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "schemaVersion": {
+          "$ref": "#/$defs/semver",
+          "description": "未知主版本必须拒绝装配执行（不是警告）。"
+        },
+        "partId": { "type": "string", "minLength": 1, "description": "稳定零件身份，例如 3001" },
+        "revision": {
+          "type": "string", "minLength": 1,
+          "description": "不可混淆的修订号。内容变化必须换 revision；模型与训练样本锁定 revision + 内容哈希。"
+        },
+        "contentHash": { "$ref": "#/$defs/sha256", "description": "本定义规范化后的内容哈希（不含 recordedAt 等易变字段）" },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "object", "required": ["id", "relation"], "additionalProperties": false, "properties": {
+            "id": { "type": "string" },
+            "relation": { "enum": ["mold-variant", "renumber", "print-substitute"] },
+            "note": { "type": "string" }
+          } },
+          "description": "有来源的等价编号。print-substitute 只做外观替代，不自动等价身份（不得据此改变几何/接口）。"
+        },
+        "name": { "type": "string" },
+        "nameZh": { "type": "string" },
+        "category": { "type": "string" },
+        "source": { "$ref": "#/$defs/sourceRef" },
+        "canonicalFrame": {
+          "type": "object",
+          "required": ["units", "upAxis", "frontAxis", "origin", "sourceToCanonical"],
+          "additionalProperties": false,
+          "properties": {
+            "units": { "const": "LDU" },
+            "lduPerStud": { "const": 20 },
+            "lduPerPlate": { "const": 8 },
+            "lduPerBrick": { "const": 24 },
+            "upAxis": { "const": "+y" },
+            "frontAxis": { "const": "+z" },
+            "origin": {
+              "enum": ["bbox-bottom-center", "ldraw-origin", "wheel-center"],
+              "description": "本定义内所有局部坐标的参考原点。轮毂/轮胎用 wheel-center。"
+            },
+            "sourceToCanonical": {
+              "type": "object",
+              "required": ["matrix", "translationLdu", "note"],
+              "additionalProperties": false,
+              "description": "原始空间 → 规范空间的基变换。必须用完整矩阵表达，不得只翻转单轴符号（会引入手性错误）。LDraw 原始空间是右手系、+y 向上但 -z 为正面，brickkit 用 +z 正面，故为绕 y 轴 180° 旋转 + 平移。",
+              "properties": {
+                "matrix": {
+                  "type": "array",
+                  "minItems": 3, "maxItems": 3,
+                  "items": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 }
+                },
+                "translationLdu": { "$ref": "#/$defs/lduVec3" },
+                "determinant": { "type": "number", "description": "必须为 +1；-1 表示镜像，禁止用于旋转适配" },
+                "note": { "type": "string" }
+              }
+            }
+          }
+        },
+        "geometry": {
+          "type": "object",
+          "required": ["kind", "sizeStud"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": { "enum": ["ldraw-mesh", "parametric", "none"] },
+            "sizeStud": {
+              "type": "array", "items": { "type": "number", "exclusiveMinimum": 0 }, "minItems": 2, "maxItems": 2,
+              "description": "占地格数 [宽 x, 深 z]"
+            },
+            "heightPlate": { "type": "number", "exclusiveMinimum": 0, "description": "高（片）" },
+            "assetRef": {
+              "type": "object", "additionalProperties": false,
+              "description": "按需读取的原始资源引用；未声明时该件只能走参数化外形。",
+              "properties": {
+                "datFile": { "type": "string" },
+                "sha256": { "$ref": "#/$defs/sha256" },
+                "bytes": { "type": "integer", "minimum": 0 }
+              }
+            },
+            "bboxLdu": {
+              "type": "array", "items": { "type": "number" }, "minItems": 6, "maxItems": 6,
+              "description": "[x0,x1,y0,y1,z0,z1]，局部 LDU 包围盒"
+            }
+          }
+        },
+        "collision": {
+          "type": "object",
+          "required": ["shape", "state"],
+          "additionalProperties": false,
+          "properties": {
+            "shape": { "enum": ["boxes", "none"] },
+            "state": { "$ref": "#/$defs/capabilityState" },
+            "boxes": { "type": "array", "items": { "$ref": "#/$defs/collisionBox" } },
+            "coverage": { "type": "number", "minimum": 0, "maximum": 1, "description": "盒对真实材料的覆盖率（来自 .dat 实测）" },
+            "occupiesVolume": { "type": "boolean", "description": "false 表示不参与占位（极少见，需证据）" },
+            "evidence": { "$ref": "#/$defs/provenance" }
+          }
+        },
+        "connectorCount": { "type": "integer", "minimum": 0, "description": "本件连接器总数（展开后）" },
+        "connectorGroups": { "type": "array", "items": { "$ref": "#/$defs/connectorGroup" } },
+        "capabilities": { "$ref": "#/$defs/capabilities" },
+        "provenance": { "$ref": "#/$defs/provenance" },
+        "overrides": {
+          "type": "array", "items": { "$ref": "#/$defs/override" },
+          "description": "已应用的覆盖链；生效结果必须能逐字段列出合并来源。"
+        },
+        "tags": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "indexEntry": {
+      "type": "object",
+      "required": ["partId", "revision", "definitionFile", "capabilities"],
+      "additionalProperties": false,
+      "properties": {
+        "partId": { "type": "string" },
+        "revision": { "type": "string" },
+        "contentHash": { "$ref": "#/$defs/sha256" },
+        "definitionFile": { "type": "string", "description": "相对 assets-v1/ 的定义文件路径，例如 definitions/3001.json" },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "capabilities": { "$ref": "#/$defs/capabilities" },
+        "connectorCount": { "type": "integer", "minimum": 0 },
+        "sourceType": { "enum": ["curated", "extracted", "override-only"] }
+      }
+    }
+  },
+  "type": "object",
+  "oneOf": [
+    {
+      "title": "Part Asset index",
+      "required": ["format", "version", "parts"],
+      "additionalProperties": false,
+      "properties": {
+        "format": { "const": "brickkit-asset-index" },
+        "version": { "$ref": "#/$defs/semver" },
+        "generatedBy": { "type": "string" },
+        "generatedAt": { "type": "string" },
+        "profileId": { "type": "string", "description": "该索引适用的装配 profile" },
+        "parts": { "type": "array", "items": { "$ref": "#/$defs/indexEntry" } }
+      }
+    },
+    {
+      "title": "Part Asset definition",
+      "$ref": "#/$defs/partDefinition"
+    }
+  ]
+}

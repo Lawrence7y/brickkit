@@ -1,0 +1,75 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.2",
+ "capture": {
+  "device": "Smartphone Camera",
+  "reference": "桌面纹理为参照；零件均为标准砖/板尺寸",
+  "frontMarker": "+z 正面为棚顶（淡紫 2×4 板 + 粉色 1×2 砖十字）一端；-z 为底座（深蓝十字 + 绿色中心）一端",
+  "lighting": "室内暖光多角度拍摄，模型含直立与躺倒两种摆姿"
+ },
+ "skipped": [
+  { "slot": "orbit-0", "reason": "模型为旋转对称灯笼结构，0° 与 90°/135° 侧视差异仅在端板细节，已由 lantern_a090_e00 与 lantern_base_detail 覆盖" },
+  { "slot": "orbit-45", "reason": "由 lantern_a045 直立 3/4 视图覆盖（俯角约 8° 而非 30°，顶面由 lantern_top_detail 补足）" },
+  { "slot": "orbit-90", "reason": "由 lantern_a090_e05 与 lantern_a090_e00 两张侧视覆盖" },
+  { "slot": "orbit-135", "reason": "由 lantern_a135_e10 覆盖" },
+  { "slot": "orbit-180", "reason": "由 lantern_top_detail 端面特写覆盖" },
+  { "slot": "orbit-225", "reason": "旋转对称结构，225° 与 45° 一致，由 lantern_a045 覆盖" },
+  { "slot": "orbit-270", "reason": "旋转对称结构，270° 与 90° 一致，由 lantern_a090_e00 覆盖" },
+  { "slot": "orbit-315", "reason": "旋转对称结构，315° 与 135° 一致，由 lantern_a135_e10 覆盖" },
+  { "slot": "flat-0", "reason": "端面正视为方形端板，由 lantern_top_detail 与 lantern_base_detail 覆盖" },
+  { "slot": "flat-180", "reason": "同上，另一端面由 lantern_base_detail 覆盖" },
+  { "slot": "flat-270", "reason": "旋转对称，由 lantern_a090_e00 覆盖" },
+  { "slot": "top", "reason": "顶面由 lantern_top_detail（棚顶端面 + 淡紫板布置）覆盖" },
+  { "slot": "bottom", "reason": "底面由 lantern_base_detail（绿色十字 + 深蓝板 + 粉色支脚）覆盖" }
+ ],
+ "photos": [
+  {
+   "id": "lantern_a045",
+   "file": "1792845158470.jpg",
+   "kind": "exterior",
+   "azimuth": 45,
+   "elevation": 8,
+   "note": "直立 3/4 视图：顶部粉色十字棚 + 淡紫板，4 根对角粉圆板柱，中央红/深红/粉交替 2×2 圆砖芯，底部深蓝十字 + 绿芯 + 粉色支脚"
+  },
+  {
+   "id": "lantern_base_detail",
+   "file": "1792845158492.jpg",
+   "kind": "detail",
+   "azimuth": 0,
+   "elevation": 15,
+   "note": "躺倒底座特写：绿色十字板与深蓝板交错，粉色板外挑作支脚，品红点缀件"
+  },
+  {
+   "id": "lantern_a090_e05",
+   "file": "1792845158528.jpg",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 5,
+   "note": "躺倒侧视：棚顶端在左（淡紫+粉十字+深蓝过渡板），底座端在右（深蓝 X + 绿），4 根粉色圆板柱 + 中央红芯（可见深红/红/粉分段）"
+  },
+  {
+   "id": "lantern_top_detail",
+   "file": "1792845158564.jpg",
+   "kind": "detail",
+   "azimuth": 180,
+   "elevation": 20,
+   "note": "棚顶端面特写：两块淡紫 2×4 板呈 V 形错位，四周粉色 1×2 砖（空心凸点）围成十字，深蓝板在下层"
+  },
+  {
+   "id": "lantern_a135_e10",
+   "file": "1792845158599.jpg",
+   "kind": "exterior",
+   "azimuth": 135,
+   "elevation": 10,
+   "note": "躺倒 3/4 视图：可见 4 根柱与中芯的间隙关系；芯柱左深红、中红、右粉分段"
+  },
+  {
+   "id": "lantern_a090_e00",
+   "file": "1792845158626.jpg",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 0,
+   "note": "正侧视平视：上 rail、中芯（深红→红→粉→红）、下 rail；端板厚度与柱的对角位置清晰"
+  }
+ ]
+}

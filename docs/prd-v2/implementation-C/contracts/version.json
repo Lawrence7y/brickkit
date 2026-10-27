@@ -1,0 +1,153 @@
+{
+  "version": "1.0.0",
+  "name": "contracts-1.0",
+  "contractSet": "brickkit-contracts-1.0",
+  "frozen": true,
+  "frozenAt": "2026-10-26T16:36:27.493Z",
+  "refrozenAt": "2026-10-26T22:05:00Z",
+  "refreezeHistory": [
+    {
+      "at": "2026-10-26T22:05:00Z",
+      "reason": "C3-4 CP-02 行为保持性性能优化修改了 src/core/actions-v1/state.js 与 render-state.js（输出指纹逐字节相等、275/275 测试通过），engineRevision 失效；按 PRD §13.3 复算并重冻结。非破坏性变更，版本号保持 1.0.0。",
+      "priorEngineRevision": "88b51e1934c3fec901b9b6df5466188920c9b556487d110615938eaadcede5d3",
+      "evidence": "out/prd-v2/run-20261026-c/C/engine/c3-4-report.md"
+    }
+  ],
+  "frozenBy": "C (single-agent session, subagent C0-3; refrozen by main session C)",
+  "freezeGate": "frozen:true 成立的前提是 docs/prd-v2/implementation-C/contracts/validate-contracts-1.0.mjs 全部通过（schema 解析、三个 A/B 消费夹具、15 条真实课程样本、真实引擎对账）；结果见 out/prd-v2/run-20261026-c/C/contracts/freeze-validation.json。若复跑失败必须回到 frozen:false 并列 blockers。",
+  "engineRevision": "85ad171008ef1fa68570eb16d7b759d8fbf34bc4df846c748127238e1e2d1fd8",
+  "engineRevisionAlgo": "sha256( concat( sort( sha256(fileBytes) for every file under src/core/actions-v1/**, src/core/assets-v1/**, src/core/assembly-v1/** ) ) )，即全部文件哈希按十六进制字符串升序拼接后取 sha256；由 validate-contracts-1.0.mjs 复算校验。",
+  "engineRevisionPerDir": {
+    "src/core/actions-v1": "ae0d10884c12c3599be295d532d097354861ff2b9e8a5e811a8b57851e7f6d05",
+    "src/core/assets-v1": "fa14eb41edb478cf3ed3e769cc2efac066a26f35b8723a9e274d617edc699284",
+    "src/core/assembly-v1": "b7ece3d92377fb111b9f0c40da7253cc27d8915c12b85d0ad04d2011adc9497c"
+  },
+  "engineRevisionFileCount": 12,
+  "sourceHashes": {
+    "aContracts": {
+      "version": "0.9.0-draft",
+      "path": "docs/prd-v2/implementation-A/contracts/",
+      "combinedHash": "ee0bf84b1693623e6a744991f0e04fac1a0b0b01b533956a12db1d95cb137204",
+      "hashAlgo": "sha256 over sorted per-file sha256 hex strings (19 files, recursive)",
+      "note": "A 契约 0.9.0-draft（frozen:false）作为合并输入；part-asset/action-* /render-state 原样并入，assembly 的 assetLock 收紧为 buildAssetLock-v1。"
+    },
+    "bContracts": {
+      "dataset.schema.json": "1f395f9f5884af2db982f78a5da479d1ec50e800d346f7fea1937acfdb682713",
+      "examples/sample-dataset.json": "a62bd77fb7fa24c44b1d79157faed24c40ce85ce9b90794b631823bf9ce7fa12",
+      "examples/sample-manual-observations.json": "424f9bbfb9bc268342c12304c6f9f7629a24fdfa0306573b1d3e1a2dc9dad5a8",
+      "examples/sample-task-package.json": "68a3e50a416966eaf5873ab9f4ae5305bd018efa9df245184c86eca8591993da",
+      "inference-protocol.md": "c969d6760d0265d5791f86871b6040ca95b5af07432df8bb8deb6d1a19af8cb8",
+      "manual-observation.schema.json": "2f40ac0c722c08263c56177bbb1604668cfab3a91803ee4400e37a46fa34442f",
+      "render-requirements.md": "f2db6163cdd659767cffded8dbb302faf8de6610b5cc1ceda46fe402e5e0fc8c",
+      "task-package.schema.json": "868a1ec6ced6ef68937f802410dd52be09f47055b83856f5ce4cc31594268a2a"
+    }
+  },
+  "datasetSchemaVersion": "1.0",
+  "actionProtocolVersion": "1.0.0",
+  "assetLockFormat": "buildAssetLock-v1",
+  "receiptBinding": "createBoundTaskReceipt-v1",
+  "protocolVersions": {
+    "partAsset": "1.0.0",
+    "assembly": "0.3.0",
+    "actionProtocol": "1.0.0",
+    "renderState": "1.0.0",
+    "cameraContract": "1.0.0",
+    "manualObservation": "1.0",
+    "taskPackageC2": "1.0",
+    "datasetC3": "1.0",
+    "assetLock": "buildAssetLock-v1",
+    "receiptBinding": "createBoundTaskReceipt-v1"
+  },
+  "files": {
+    "part-asset.schema.json": "零件素材定义 + 索引（自 A 原样并入，partAsset 1.0.0）",
+    "assembly.schema.json": "关系装配源 0.3（自 A 并入；assetLock 收紧为 buildAssetLock-v1，snot 层级说明补全）",
+    "action-request.schema.json": "动作请求 1.0.0（自 A 并入；attach_assembly 补 childModel——A 真实引擎已按此消费）",
+    "action-response.schema.json": "动作/候选/状态响应 1.0.0（自 A 原样并入）",
+    "render-state.schema.json": "renderState 输出契约 MV-01（自 A 并入；相机显式取景 + stateHash≠视图 语义写进描述）",
+    "asset-lock.schema.json": "资产锁冻结格式（新推导自 src/core/assets-v1/lock.js：buildAssetLock 生成 + checkAssetLock 拒绝码）",
+    "manual-observation.schema.json": "说明书原始观察（自 B 原样并入，version 1.0）",
+    "task-package.schema.json": "子任务包 C2（自 B 并入；partLocks 字典删除，assetLock 收紧为 buildAssetLock-v1，收据绑定 createBoundTaskReceipt-v1）",
+    "dataset.schema.json": "BrickVLM 数据集样本 C3（自 B 并入，version 1.0；连接器身份裁决写入描述，保持可接受 15 条真实课程样本）",
+    "api.md": "合并接口文档：版本映射、连接器身份、相机契约、资产锁、收据绑定、SNOT 层级、未完成项"
+  },
+  "units": {
+    "internal": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "canonicalFrame": "right-handed, +y up, +z front; 24 姿态表沿用 implementation-A/contracts/orientation-table.json"
+  },
+  "tolerances": {
+    "profileId": "default-2026-10-26",
+    "transformEpsLdu": 0.000001,
+    "connectorPositionTolLdu": 0.05,
+    "connectorAngleTolDeg": 0.1,
+    "collisionEpsLdu": 0.8,
+    "note": "沿用 A；profile 冻结仍为 unverified（需完整正/错配对夹具），见 api.md §9。"
+  },
+  "capabilityStates": [
+    "verified",
+    "measured",
+    "inferred",
+    "assumed",
+    "unsupported",
+    "unknown"
+  ],
+  "connectorIdPolicy": {
+    "authority": "stable semantic connectorId（ctop#N/cside#N/cantistud#N 短形态或 stud-<ldu> 形态），与数组下标解耦",
+    "aliases": [
+      "stud_top_N",
+      "stud_side_N"
+    ],
+    "inputOnlyCompat": [
+      "stud_N（仅解释为顶凸点；侧接口禁止裸 stud_N，必须 stud_side_N）"
+    ],
+    "revisionBinding": "别名解析必须携带 assetLock 的 revision；过期 revision 应用覆盖被拒绝（override-rejected）"
+  },
+  "receiptReasonCodes": [
+    "RECEIPT_MISSING",
+    "RECEIPT_UNKNOWN_TASK",
+    "RECEIPT_STATUS_NOT_COMPLETED",
+    "RECEIPT_REVISION_MISMATCH",
+    "RECEIPT_STATEHASH_MALFORMED",
+    "RECEIPT_STATEHASH_UNBOUND",
+    "RECEIPT_STATEHASH_MISMATCH",
+    "RECEIPT_STATE_TOKEN_MISMATCH",
+    "RECEIPT_EVIDENCE_MISSING",
+    "RECEIPT_PART_COUNT_MISMATCH",
+    "RECEIPT_ARTIFACT_HASH_MALFORMED",
+    "RECEIPT_ARTIFACT_HASH_MISMATCH",
+    "RECEIPT_TOKEN_NOT_ALLOCATED",
+    "RECEIPT_TOKEN_FOREIGN",
+    "RECEIPT_TOKEN_PART_MISMATCH",
+    "RECEIPT_TOKEN_COLOR_MISMATCH",
+    "RECEIPT_TOKEN_DUPLICATE",
+    "RECEIPT_ARTIFACT_MISSING (warning)"
+  ],
+  "snotLayerRule": "第一层侧装件 snot:0，第二层 snot:1，每向外叠 1 片加 1；严禁清零（AGENTS.md 红线 1）",
+  "contractFiles": {
+    "asset-lock.schema.json": "8a1951f914a730c8ed063c90c8a9fa41f6953e358b4ccddc93333e571282f365",
+    "action-request.schema.json": "37c032903197eb43835519246e4007ae9a32a11ce5a022f7f8f0292af5bad9a8",
+    "action-response.schema.json": "0102f26a76e3fd174689ab5bb943d82aa450dd55a8804438b8555e118165900e",
+    "assembly.schema.json": "76bec3f6faa905ff6acc843ef4461361c0331f9326f5de1599a3ddf8d7f416f4",
+    "dataset.schema.json": "1707fc3e7f64d54a82737f60d87eb526b0bf0c6eba9b3db0e666c57b0e522daa",
+    "manual-observation.schema.json": "134086bf6fa093b7ec345ec55463cbfb891e5f1a2e618c9632b2663b3dde1c3c",
+    "part-asset.schema.json": "11f722684d2a197f9951e6c75c3557c466e0087f2c8aa9ca3856dbe76edd6c75",
+    "render-state.schema.json": "d33251ca49ea426362f5dbc3f26bf25c3a43576d3d601e6e067f66ee409e20ce",
+    "task-package.schema.json": "def86f18f1b04f71575498d56cc1fcbf740a8139eb59f1a0f839a99a592bd542",
+    "api.md": "9b7f6070551b8bc0c88d0cb9a1233219d77860c45f9e1ca98948c03482bb776f"
+  },
+  "changePolicy": "已冻结（PRD §13.3）：破坏性变更提升主版本并附迁移与重跑范围；新增可选字段按次版本递增。",
+  "openQuestionsResolved": {
+    "implicitFraming": "已裁决：不接受隐式取景；UI 自动取景必须序列化 cameraSnapshot 传入（A-B-integration-review §6 相机）",
+    "connectorNaming": "已裁决：稳定语义 ID 为权威键，stud_top_N/stud_side_N 为别名，裸 stud_N 仅输入且仅顶凸点",
+    "toConnectorMap": "已裁决：renderState 输出为准，toConnectorMap 作为 B 侧交付形态之一，stableConnectorId 判等",
+    "assetLockGenerator": "已裁决：生产锁必须由 buildAssetLock 生成（B v4 五任务锁已逐字通过 A 重建）"
+  },
+  "remainingOpenItems": [
+    "SNOT 渲染侧 / MPD 导出侧逐层对账 partial",
+    "装配 constraints（extra-mate/keep-out）参与求解 partial",
+    "容差 profile 冻结 unverified",
+    "ML-* 训练与留出验收未完成（不在契约范围）"
+  ]
+}

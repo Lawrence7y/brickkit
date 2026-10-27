@@ -1,0 +1,405 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "69730",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "Electric Powered Up Large Angular Motor with Dark Bluish Grey Back",
+  "nameZh": "",
+  "category": "other",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      5,
+      9
+    ],
+    "heightPlate": 10,
+    "bboxLdu": [
+      0,
+      100,
+      0,
+      80,
+      0,
+      180
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "unsupported",
+    "boxes": [
+      [
+        0,
+        100,
+        0,
+        80,
+        0,
+        180
+      ]
+    ],
+    "evidence": {
+      "grade": "inferred",
+      "method": "按 kind/size/h 单盒推导",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 36,
+  "connectorGroups": [
+    {
+      "t": "hole",
+      "r": "female",
+      "o": 0,
+      "k": "hole",
+      "d": "+y",
+      "mp": "pin-hole-v1",
+      "items": [
+        [
+          90,
+          60,
+          150,
+          1,
+          3
+        ],
+        [
+          10,
+          60,
+          150,
+          1,
+          7
+        ],
+        [
+          90,
+          0,
+          150,
+          1,
+          9
+        ],
+        [
+          10,
+          0,
+          150,
+          1,
+          12
+        ],
+        [
+          90,
+          60,
+          30,
+          1,
+          17
+        ],
+        [
+          90,
+          60,
+          70,
+          1,
+          18
+        ],
+        [
+          90,
+          0,
+          30,
+          1,
+          21
+        ],
+        [
+          90,
+          0,
+          70,
+          1,
+          22
+        ],
+        [
+          10,
+          60,
+          30,
+          1,
+          26
+        ],
+        [
+          10,
+          60,
+          70,
+          1,
+          27
+        ],
+        [
+          10,
+          0,
+          30,
+          1,
+          30
+        ],
+        [
+          10,
+          0,
+          70,
+          1,
+          31
+        ],
+        [
+          50,
+          80,
+          170,
+          1,
+          32
+        ],
+        [
+          30,
+          80,
+          150,
+          1,
+          33
+        ],
+        [
+          50,
+          80,
+          130,
+          1,
+          34
+        ],
+        [
+          70,
+          80,
+          150,
+          1,
+          35
+        ]
+      ],
+      "x": "y"
+    },
+    {
+      "t": "hole",
+      "r": "female",
+      "o": 16,
+      "k": "hole",
+      "d": "+x",
+      "mp": "pin-hole-v1",
+      "items": [
+        [
+          100,
+          50,
+          170,
+          1,
+          0
+        ],
+        [
+          100,
+          50,
+          130,
+          1,
+          1
+        ],
+        [
+          0,
+          50,
+          170,
+          1,
+          4
+        ],
+        [
+          0,
+          50,
+          130,
+          1,
+          5
+        ],
+        [
+          100,
+          10,
+          170,
+          1,
+          8
+        ],
+        [
+          100,
+          10,
+          130,
+          1,
+          10
+        ],
+        [
+          0,
+          10,
+          170,
+          1,
+          11
+        ],
+        [
+          0,
+          10,
+          130,
+          1,
+          13
+        ],
+        [
+          100,
+          50,
+          10,
+          1,
+          15
+        ],
+        [
+          100,
+          50,
+          50,
+          1,
+          16
+        ],
+        [
+          100,
+          10,
+          10,
+          1,
+          19
+        ],
+        [
+          100,
+          10,
+          50,
+          1,
+          20
+        ],
+        [
+          0,
+          50,
+          10,
+          1,
+          24
+        ],
+        [
+          0,
+          50,
+          50,
+          1,
+          25
+        ],
+        [
+          0,
+          10,
+          10,
+          1,
+          28
+        ],
+        [
+          0,
+          10,
+          50,
+          1,
+          29
+        ]
+      ],
+      "x": "x"
+    },
+    {
+      "t": "hole",
+      "r": "female",
+      "o": 8,
+      "k": "hole",
+      "d": "+z",
+      "mp": "pin-hole-v1",
+      "items": [
+        [
+          90,
+          30,
+          180,
+          1,
+          2
+        ],
+        [
+          10,
+          30,
+          180,
+          1,
+          6
+        ],
+        [
+          90,
+          30,
+          0,
+          1,
+          14
+        ],
+        [
+          10,
+          30,
+          0,
+          1,
+          23
+        ]
+      ],
+      "x": "z"
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "unsupported",
+      "boxCount": 0,
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.21（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "hole"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "eab16d849b4c741066a96fff4e25d3b3e0f0ec45b79220b676d426d28dd9120a"
+}

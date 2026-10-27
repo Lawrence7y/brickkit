@@ -1,0 +1,260 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "3008",
+  "revision": "r1-curated",
+  "aliases": [],
+  "name": "Brick 1 x 8",
+  "nameZh": "砖 1×8",
+  "category": "brick",
+  "source": {
+    "kind": "catalog-entry",
+    "ref": "catalog/parts.json",
+    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": ""
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "ldraw-mesh",
+    "sizeStud": [
+      8,
+      1
+    ],
+    "heightPlate": 3,
+    "assetRef": {
+      "datFile": "catalog/ldraw/parts/3008.dat",
+      "sha256": "961b645476d8ae0a68c7c9a12be0521510737ad2b1eecd690302912a8dc81828",
+      "bytes": 673
+    },
+    "bboxLdu": [
+      0,
+      160,
+      0,
+      24,
+      0,
+      20
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "inferred",
+    "boxes": [
+      [
+        0,
+        160,
+        0,
+        24,
+        0,
+        20
+      ]
+    ],
+    "evidence": {
+      "grade": "inferred",
+      "method": "按 kind/size/h 单盒推导",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 16,
+  "connectorGroups": [
+    {
+      "t": "antistud",
+      "r": "female",
+      "o": 0,
+      "k": "antistud",
+      "d": "+y",
+      "mp": "stud-antistud-v1",
+      "items": [
+        [
+          10,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          30,
+          0,
+          10,
+          1,
+          1
+        ],
+        [
+          50,
+          0,
+          10,
+          1,
+          2
+        ],
+        [
+          70,
+          0,
+          10,
+          1,
+          3
+        ],
+        [
+          90,
+          0,
+          10,
+          1,
+          4
+        ],
+        [
+          110,
+          0,
+          10,
+          1,
+          5
+        ],
+        [
+          130,
+          0,
+          10,
+          1,
+          6
+        ],
+        [
+          150,
+          0,
+          10,
+          1,
+          7
+        ]
+      ]
+    },
+    {
+      "t": "stud",
+      "r": "male",
+      "o": 0,
+      "k": "top",
+      "d": "+y",
+      "mp": "stud-antistud-v1",
+      "items": [
+        [
+          10,
+          24,
+          10,
+          0,
+          0
+        ],
+        [
+          30,
+          24,
+          10,
+          0,
+          1
+        ],
+        [
+          50,
+          24,
+          10,
+          0,
+          2
+        ],
+        [
+          70,
+          24,
+          10,
+          0,
+          3
+        ],
+        [
+          90,
+          24,
+          10,
+          0,
+          4
+        ],
+        [
+          110,
+          24,
+          10,
+          0,
+          5
+        ],
+        [
+          130,
+          24,
+          10,
+          0,
+          6
+        ],
+        [
+          150,
+          24,
+          10,
+          0,
+          7
+        ]
+      ]
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "measured",
+      "geometryKind": "ldraw-mesh",
+      "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
+    },
+    "collide": {
+      "state": "inferred",
+      "boxCount": 1,
+      "note": "按 kind/size/h 生成的单实心盒；凹形件会高估体积（保守，不产生假阴性穿模，但可能误报）"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "stud",
+        "antistud"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "measured",
+    "method": "精选目录（人工核对 + 官方 .dat 验证）",
+    "evidenceRefs": [
+      "catalog/ldraw/parts/3008.dat"
+    ],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "4c65dc282028238177812723a14bf47f371c73ee0b3181ecc8bdaa0db2edb66b"
+}

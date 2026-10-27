@@ -1,0 +1,13 @@
+{
+  "format": "brickkit-assembly-profile",
+  "profileId": "default-2026-10-26",
+  "version": "1.0.0",
+  "transformEpsLdu": 0.000001,
+  "connectorPositionTolLdu": 0.05,
+  "connectorAngleTolDeg": 0.1,
+  "collisionEpsLdu": 0.8,
+  "legacyCollisionTol": {
+    "stud": 0.04,
+    "plate": 0.1
+  }
+}

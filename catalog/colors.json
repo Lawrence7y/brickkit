@@ -1,38 +1,193 @@
 {
- "format": "brickbuild-colors", "version": "0.1",
- "note": "LDraw 颜色代码，色值取自 LDraw 官方 LDConfig.ldr",
- "colors": {
-  "0":   {"name": "Black", "zh": "黑", "hex": "#1B2A34"},
-  "1":   {"name": "Blue", "zh": "蓝", "hex": "#1E5AA8"},
-  "2":   {"name": "Green", "zh": "绿", "hex": "#00852B"},
-  "4":   {"name": "Red", "zh": "红", "hex": "#B40000"},
-  "6":   {"name": "Brown", "zh": "棕", "hex": "#543324"},
-  "10":  {"name": "Bright Green", "zh": "亮绿", "hex": "#58AB41"},
-  "14":  {"name": "Yellow", "zh": "黄", "hex": "#FAC80A"},
-  "15":  {"name": "White", "zh": "白", "hex": "#F4F4F4"},
-  "19":  {"name": "Tan", "zh": "沙色", "hex": "#D7BA8C"},
-  "25":  {"name": "Orange", "zh": "橙", "hex": "#D67923"},
-  "27":  {"name": "Lime", "zh": "青柠绿", "hex": "#A5CA18"},
-  "28":  {"name": "Dark Tan", "zh": "深沙色", "hex": "#897D62"},
-  "29":  {"name": "Bright Pink", "zh": "亮粉", "hex": "#FF9ECD"},
-  "70":  {"name": "Reddish Brown", "zh": "红棕", "hex": "#5F3109"},
-  "71":  {"name": "Light Bluish Grey", "zh": "浅蓝灰", "hex": "#969696"},
-  "72":  {"name": "Dark Bluish Grey", "zh": "深蓝灰", "hex": "#646464"},
-  "73":  {"name": "Medium Blue", "zh": "中蓝", "hex": "#7396C8"},
-  "84":  {"name": "Medium Nougat", "zh": "中肤色", "hex": "#AA7D55"},
-  "191": {"name": "Bright Light Orange", "zh": "亮浅橙", "hex": "#FCAC00"},
-  "212": {"name": "Bright Light Blue", "zh": "亮浅蓝", "hex": "#9DC3F7"},
-  "226": {"name": "Bright Light Yellow", "zh": "亮浅黄", "hex": "#FFEC6C"},
-  "288": {"name": "Dark Green", "zh": "深绿", "hex": "#00451A"},
-  "308": {"name": "Dark Brown", "zh": "深棕", "hex": "#352100"},
-  "320": {"name": "Dark Red", "zh": "深红", "hex": "#720012"},
-  "378": {"name": "Sand Green", "zh": "沙绿", "hex": "#708E7C"},
-  "484": {"name": "Dark Orange", "zh": "深橙", "hex": "#91501C"},
-  "33":  {"name": "Trans Dark Blue", "zh": "透明深蓝", "hex": "#0020A0", "alpha": 0.5},
-  "34":  {"name": "Trans Green", "zh": "透明绿", "hex": "#237841", "alpha": 0.5},
-  "36":  {"name": "Trans Red", "zh": "透明红", "hex": "#C91A09", "alpha": 0.5},
-  "43":  {"name": "Trans Light Blue", "zh": "透明浅蓝", "hex": "#AEE9EF", "alpha": 0.5},
-  "46":  {"name": "Trans Yellow", "zh": "透明黄", "hex": "#F5CD2F", "alpha": 0.5},
-  "47":  {"name": "Trans Clear", "zh": "透明", "hex": "#FCFCFC", "alpha": 0.35}
- }
+  "format": "brickbuild-colors",
+  "version": "0.1",
+  "note": "LDraw 颜色代码，色值取自 LDraw 官方 LDConfig.ldr",
+  "colors": {
+    "0": {
+      "name": "Black",
+      "zh": "黑",
+      "hex": "#1B2A34"
+    },
+    "1": {
+      "name": "Blue",
+      "zh": "蓝",
+      "hex": "#1E5AA8"
+    },
+    "2": {
+      "name": "Green",
+      "zh": "绿",
+      "hex": "#00852B"
+    },
+    "4": {
+      "name": "Red",
+      "zh": "红",
+      "hex": "#B40000"
+    },
+    "5": {
+      "name": "Dark Pink",
+      "zh": "深粉",
+      "hex": "#D3359D"
+    },
+    "6": {
+      "name": "Brown",
+      "zh": "棕",
+      "hex": "#543324"
+    },
+    "10": {
+      "name": "Bright Green",
+      "zh": "亮绿",
+      "hex": "#58AB41"
+    },
+    "14": {
+      "name": "Yellow",
+      "zh": "黄",
+      "hex": "#FAC80A"
+    },
+    "15": {
+      "name": "White",
+      "zh": "白",
+      "hex": "#F4F4F4"
+    },
+    "19": {
+      "name": "Tan",
+      "zh": "沙色",
+      "hex": "#D7BA8C"
+    },
+    "25": {
+      "name": "Orange",
+      "zh": "橙",
+      "hex": "#D67923"
+    },
+    "26": {
+      "name": "Magenta",
+      "zh": "品红",
+      "hex": "#901F76"
+    },
+    "27": {
+      "name": "Lime",
+      "zh": "青柠绿",
+      "hex": "#A5CA18"
+    },
+    "28": {
+      "name": "Dark Tan",
+      "zh": "深沙色",
+      "hex": "#897D62"
+    },
+    "29": {
+      "name": "Bright Pink",
+      "zh": "亮粉",
+      "hex": "#FF9ECD"
+    },
+    "31": {
+      "name": "Lavender",
+      "zh": "淡紫",
+      "hex": "#CDA4DE"
+    },
+    "33": {
+      "name": "Trans Dark Blue",
+      "zh": "透明深蓝",
+      "hex": "#0020A0",
+      "alpha": 0.5
+    },
+    "34": {
+      "name": "Trans Green",
+      "zh": "透明绿",
+      "hex": "#237841",
+      "alpha": 0.5
+    },
+    "36": {
+      "name": "Trans Red",
+      "zh": "透明红",
+      "hex": "#C91A09",
+      "alpha": 0.5
+    },
+    "43": {
+      "name": "Trans Light Blue",
+      "zh": "透明浅蓝",
+      "hex": "#AEE9EF",
+      "alpha": 0.5
+    },
+    "46": {
+      "name": "Trans Yellow",
+      "zh": "透明黄",
+      "hex": "#F5CD2F",
+      "alpha": 0.5
+    },
+    "47": {
+      "name": "Trans Clear",
+      "zh": "透明",
+      "hex": "#FCFCFC",
+      "alpha": 0.35
+    },
+    "70": {
+      "name": "Reddish Brown",
+      "zh": "红棕",
+      "hex": "#5F3109"
+    },
+    "71": {
+      "name": "Light Bluish Grey",
+      "zh": "浅蓝灰",
+      "hex": "#969696"
+    },
+    "72": {
+      "name": "Dark Bluish Grey",
+      "zh": "深蓝灰",
+      "hex": "#646464"
+    },
+    "73": {
+      "name": "Medium Blue",
+      "zh": "中蓝",
+      "hex": "#7396C8"
+    },
+    "84": {
+      "name": "Medium Nougat",
+      "zh": "中肤色",
+      "hex": "#AA7D55"
+    },
+    "191": {
+      "name": "Bright Light Orange",
+      "zh": "亮浅橙",
+      "hex": "#FCAC00"
+    },
+    "212": {
+      "name": "Bright Light Blue",
+      "zh": "亮浅蓝",
+      "hex": "#9DC3F7"
+    },
+    "226": {
+      "name": "Bright Light Yellow",
+      "zh": "亮浅黄",
+      "hex": "#FFEC6C"
+    },
+    "272": {
+      "name": "Dark Blue",
+      "zh": "深蓝",
+      "hex": "#19325A"
+    },
+    "288": {
+      "name": "Dark Green",
+      "zh": "深绿",
+      "hex": "#00451A"
+    },
+    "308": {
+      "name": "Dark Brown",
+      "zh": "深棕",
+      "hex": "#352100"
+    },
+    "320": {
+      "name": "Dark Red",
+      "zh": "深红",
+      "hex": "#720012"
+    },
+    "378": {
+      "name": "Sand Green",
+      "zh": "沙绿",
+      "hex": "#708E7C"
+    },
+    "484": {
+      "name": "Dark Orange",
+      "zh": "深橙",
+      "hex": "#91501C"
+    }
+  }
 }

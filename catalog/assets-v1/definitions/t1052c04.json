@@ -1,0 +1,231 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "t1052c04",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "| Circuit Cubes NO/NC Switch",
+  "nameZh": "",
+  "category": "other",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      4,
+      4
+    ],
+    "heightPlate": 7,
+    "bboxLdu": [
+      0,
+      80,
+      0,
+      54,
+      0,
+      80
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "inferred",
+    "boxes": [
+      [
+        0,
+        80,
+        0,
+        18,
+        0,
+        80
+      ],
+      [
+        0,
+        20,
+        18,
+        32,
+        0,
+        80
+      ],
+      [
+        60,
+        80,
+        18,
+        32,
+        0,
+        80
+      ],
+      [
+        20,
+        60,
+        18,
+        30,
+        20,
+        80
+      ],
+      [
+        20,
+        60,
+        30,
+        50,
+        20,
+        60
+      ],
+      [
+        0,
+        20,
+        32,
+        44,
+        0,
+        60
+      ],
+      [
+        60,
+        80,
+        32,
+        42,
+        0,
+        60
+      ],
+      [
+        60,
+        80,
+        42,
+        48,
+        0,
+        20
+      ],
+      [
+        0,
+        20,
+        44,
+        48,
+        0,
+        20
+      ],
+      [
+        40,
+        60,
+        50,
+        54,
+        20,
+        60
+      ]
+    ],
+    "coverage": 0.98,
+    "evidence": {
+      "grade": "inferred",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 4,
+  "connectorGroups": [
+    {
+      "t": "stud",
+      "r": "male",
+      "o": 0,
+      "k": "top",
+      "d": "+y",
+      "mp": "stud-antistud-v1",
+      "items": [
+        [
+          10,
+          48,
+          10,
+          0,
+          0
+        ],
+        [
+          10,
+          48,
+          70,
+          0,
+          1
+        ],
+        [
+          70,
+          48,
+          10,
+          0,
+          2
+        ],
+        [
+          70,
+          48,
+          70,
+          0,
+          3
+        ]
+      ]
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "inferred",
+      "boxCount": 10,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "stud"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "40e04dd10fd6848458a08db30ee664b94ef25fe678f096c841d6fa8714816094"
+}

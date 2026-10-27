@@ -1,0 +1,67 @@
+{
+  "probe": "splits-hash-chain-disjointness",
+  "at": "2026-10-26T22:03:03.891Z",
+  "hashes": [
+    {
+      "name": "train",
+      "path": "out/prd-v2/run-20261026-c/C/data/splits/train.json",
+      "expected": "765f794107c0137d3cb55df8df86917760030b795e9d362875afb8125563082d",
+      "actual": "765f794107c0137d3cb55df8df86917760030b795e9d362875afb8125563082d",
+      "match": true
+    },
+    {
+      "name": "validation",
+      "path": "out/prd-v2/run-20261026-c/C/data/splits/validation.json",
+      "expected": "4226981f8df308e2193ec8e1f253fd35b1ecefeaa6d59455fc9e79534313a80f",
+      "actual": "4226981f8df308e2193ec8e1f253fd35b1ecefeaa6d59455fc9e79534313a80f",
+      "match": true
+    },
+    {
+      "name": "holdout_test",
+      "path": "out/prd-v2/run-20261026-c/C/data/splits/holdout_test.json",
+      "expected": "5599e8ba253bbb9246c0510cb25ba05c3ccb826c7443c43aba4fc731277cdca5",
+      "actual": "5599e8ba253bbb9246c0510cb25ba05c3ccb826c7443c43aba4fc731277cdca5",
+      "match": true
+    },
+    {
+      "name": "dev",
+      "path": "out/prd-v2/run-20261026-c/C/data/splits/dev.json",
+      "expected": "514ef88e807755f4f46d587db331159040176f070f5d57eae5536c919f1b5b50",
+      "actual": "514ef88e807755f4f46d587db331159040176f070f5d57eae5536c919f1b5b50",
+      "match": true
+    },
+    {
+      "name": "assignment",
+      "path": "out/prd-v2/run-20261026-c/C/data/splits/assignment.json",
+      "expected": "7a62ae4678ef29896f40127796d5ed7d85789c4398de9f61f58dde6226adc585",
+      "actual": "7a62ae4678ef29896f40127796d5ed7d85789c4398de9f61f58dde6226adc585",
+      "match": true
+    },
+    {
+      "name": "shortcut-probes",
+      "path": "out/prd-v2/run-20261026-c/C/data/splits/shortcut-probes.json",
+      "expected": "f63f061e1977b29565337013e2e36b460f783af77f1b40ad02cc2c39f435f052",
+      "actual": "f63f061e1977b29565337013e2e36b460f783af77f1b40ad02cc2c39f435f052",
+      "match": true
+    }
+  ],
+  "frozen": {
+    "fileExists": true,
+    "manifestFlag": true,
+    "frozenAt": "2026-10-26T21:27:32.109Z"
+  },
+  "disjoint": true,
+  "countsOk": true,
+  "trainLeakCount": 0,
+  "holdoutFamiliesOk": true,
+  "sampleShaChecks": {
+    "checked": 10,
+    "failed": 0
+  },
+  "shortcutProbes": {
+    "checked": 6,
+    "overThreshold": 0,
+    "verdict": "PASS：全部探针 ≤ 2×随机水平，未发现查表/候选ID/姿态捷径泄漏；v1 划分为最终版"
+  },
+  "allPass": true
+}

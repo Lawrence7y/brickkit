@@ -1,0 +1,177 @@
+{
+  "format": "brickbuild-assembly",
+  "version": "0.3.0",
+  "meta": {
+    "name": "负例：同一库存 token 被两个实例占用",
+    "front": "+z",
+    "createdBy": "docs/prd-v2/implementation-A/contracts/fixtures/make-fixtures.mjs"
+  },
+  "assetLock": {
+    "profileId": "default-2026-10-26",
+    "indexVersion": "1.0.0",
+    "parts": [
+      {
+        "partId": "3001",
+        "revision": "r1-curated",
+        "contentHash": "f12888203692a65740b3d0fff4b53c08ecdc0efab0d5e5575e8664ee6bbaff7f"
+      },
+      {
+        "partId": "3020",
+        "revision": "r1-curated",
+        "contentHash": "7f24bf043db49733deb78c4f45dbf0d37712049c389b4bd6ca1df22a3838c39c"
+      }
+    ]
+  },
+  "definitions": [
+    {
+      "id": "main",
+      "label": "主体",
+      "parts": [
+        {
+          "instanceId": "base",
+          "partId": "3001",
+          "revision": "r1-curated",
+          "color": 15,
+          "pose": {
+            "grid": [
+              0,
+              0,
+              0
+            ],
+            "orientationId": 0
+          },
+          "stepRef": "s1",
+          "inventoryToken": "tok-3001-1"
+        },
+        {
+          "instanceId": "plate",
+          "partId": "3020",
+          "revision": "r1-curated",
+          "color": 4,
+          "pose": {
+            "placed": true
+          },
+          "stepRef": "s2",
+          "inventoryToken": "tok-3001-1"
+        }
+      ],
+      "steps": [
+        {
+          "id": "s1",
+          "order": 1,
+          "adds": [
+            "main/base"
+          ],
+          "action": {
+            "op": "place_root"
+          },
+          "evidence": [
+            {
+              "id": "fixture-manual-p1",
+              "grade": "assumed",
+              "kind": "manual-page"
+            }
+          ]
+        },
+        {
+          "id": "s2",
+          "order": 2,
+          "adds": [
+            "main/plate"
+          ],
+          "action": {
+            "op": "attach_part"
+          }
+        }
+      ]
+    }
+  ],
+  "instances": [
+    {
+      "instancePath": "main",
+      "componentId": "main"
+    }
+  ],
+  "placements": [
+    {
+      "nodeId": "main/base",
+      "kind": "root",
+      "baseFrame": {
+        "originLdu": [
+          0,
+          0,
+          0
+        ],
+        "orientationId": 0,
+        "groundPlane": true
+      }
+    },
+    {
+      "nodeId": "main/plate",
+      "kind": "connector",
+      "parentNodeId": "main/base",
+      "parentConnectorId": "ctop#0",
+      "childConnectorId": "cantistud#0",
+      "mateProfile": "stud-antistud-v1",
+      "spinDeg": 0
+    }
+  ],
+  "constraints": [],
+  "steps": [
+    {
+      "id": "s1",
+      "order": 1,
+      "adds": [
+        "main/base"
+      ],
+      "action": {
+        "op": "place_root"
+      }
+    },
+    {
+      "id": "s2",
+      "order": 2,
+      "adds": [
+        "main/plate"
+      ],
+      "action": {
+        "op": "attach_part"
+      }
+    },
+    {
+      "id": "s3",
+      "order": 3,
+      "adds": [],
+      "action": {
+        "op": "final-assembly"
+      },
+      "note": "零新增件总装步：必须显式存在"
+    }
+  ],
+  "inventory": [
+    {
+      "token": "tok-3001-1",
+      "partId": "3001",
+      "color": 15,
+      "qty": 1,
+      "role": "body",
+      "consumedBy": "main/base"
+    },
+    {
+      "token": "tok-3020-1",
+      "partId": "3020",
+      "color": 4,
+      "qty": 1,
+      "role": "body",
+      "consumedBy": "main/plate"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "fixture-manual-p1",
+      "grade": "assumed",
+      "kind": "manual-page",
+      "note": "本夹具用于契约连通性验证，不代表任何真实说明书页"
+    }
+  ]
+}

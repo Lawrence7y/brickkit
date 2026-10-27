@@ -1,0 +1,418 @@
+{
+  "probe": "perturbation-dataset-replay",
+  "at": "2026-10-26T22:01:03.339Z",
+  "seed": 1256010752,
+  "families": 6,
+  "totalRepair": 1248,
+  "totalUnderstand": 1248,
+  "repairReplay": {
+    "sampled": 30,
+    "pass": 30,
+    "fail": 0,
+    "detail": [
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i15-p02-rl",
+        "family": "fam-bracketholder",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i01-p05-rl",
+        "family": "fam-cart",
+        "pertType": "reversed_orientation",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i10-p04-rl",
+        "family": "fam-lstack",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i06-p02-rl",
+        "family": "fam-pgate",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i17-p05-rl",
+        "family": "fam-snotpanel",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i22-p06-rl",
+        "family": "fam-twintower",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i22-p10-rl",
+        "family": "fam-lstack",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i16-p03-rl",
+        "family": "fam-pgate",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i13-p03-rl",
+        "family": "fam-twintower",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i24-p04-rl",
+        "family": "fam-lstack",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i08-p05-rl",
+        "family": "fam-pgate",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i13-p08-rl",
+        "family": "fam-bracketholder",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i16-p11-rl",
+        "family": "fam-bracketholder",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i20-p06-rl",
+        "family": "fam-pgate",
+        "pertType": "left_right_swap",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i13-p09-rl",
+        "family": "fam-cart",
+        "pertType": "left_right_swap",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i09-p05-rl",
+        "family": "fam-twintower",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i24-p05-rl",
+        "family": "fam-lstack",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i02-p01-rl",
+        "family": "fam-snotpanel",
+        "pertType": "misaligned",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i23-p11-rl",
+        "family": "fam-lstack",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i13-p11-rl",
+        "family": "fam-twintower",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i04-p04-rl",
+        "family": "fam-pgate",
+        "pertType": "left_right_swap",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i07-p07-rl",
+        "family": "fam-cart",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i07-p05-rl",
+        "family": "fam-snotpanel",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i18-p12-rl",
+        "family": "fam-cart",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i03-p07-rl",
+        "family": "fam-pgate",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i10-p06-rl",
+        "family": "fam-cart",
+        "pertType": "reversed_orientation",
+        "pass": true,
+        "transactions": 2
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i07-p08-rl",
+        "family": "fam-snotpanel",
+        "pertType": "missing_part",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i02-p03-rl",
+        "family": "fam-snotpanel",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i04-p01-rl",
+        "family": "fam-lstack",
+        "pertType": "left_right_swap",
+        "pass": true,
+        "transactions": 1
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i24-p02-rl",
+        "family": "fam-lstack",
+        "pertType": "wrong_color",
+        "pass": true,
+        "transactions": 1
+      }
+    ]
+  },
+  "understandDiff": {
+    "sampled": 30,
+    "pass": 30,
+    "fail": 0,
+    "detail": [
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i19-p09-us",
+        "family": "fam-bracketholder",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i06-p04-us",
+        "family": "fam-cart",
+        "pertType": "missing_part",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i08-p05-us",
+        "family": "fam-lstack",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i18-p13-us",
+        "family": "fam-pgate",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i21-p01-us",
+        "family": "fam-snotpanel",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i12-p07-us",
+        "family": "fam-twintower",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i16-p05-us",
+        "family": "fam-pgate",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i18-p01-us",
+        "family": "fam-snotpanel",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i10-p01-us",
+        "family": "fam-lstack",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i17-p01-us",
+        "family": "fam-snotpanel",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i19-p06-us",
+        "family": "fam-pgate",
+        "pertType": "missing_part",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i24-p07-us",
+        "family": "fam-lstack",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i18-p01-us",
+        "family": "fam-cart",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i19-p09-us",
+        "family": "fam-cart",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i08-p07-us",
+        "family": "fam-bracketholder",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i20-p06-us",
+        "family": "fam-lstack",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i04-p08-us",
+        "family": "fam-cart",
+        "pertType": "left_right_swap",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i08-p08-us",
+        "family": "fam-cart",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i25-p07-us",
+        "family": "fam-lstack",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i23-p06-us",
+        "family": "fam-snotpanel",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i22-p11-us",
+        "family": "fam-bracketholder",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i13-p04-us",
+        "family": "fam-snotpanel",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i11-p10-us",
+        "family": "fam-cart",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i26-p06-us",
+        "family": "fam-pgate",
+        "pertType": "left_right_swap",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i19-p01-us",
+        "family": "fam-twintower",
+        "pertType": "left_right_swap",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i24-p10-us",
+        "family": "fam-cart",
+        "pertType": "missing_part",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i23-p11-us",
+        "family": "fam-bracketholder",
+        "pertType": "misaligned",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i10-p05-us",
+        "family": "fam-bracketholder",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i11-p02-us",
+        "family": "fam-twintower",
+        "pertType": "wrong_color",
+        "pass": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i14-p06-us",
+        "family": "fam-pgate",
+        "pertType": "wrong_color",
+        "pass": true
+      }
+    ]
+  },
+  "anonymity": {
+    "scanned": 2496,
+    "hits": 0,
+    "samples": []
+  },
+  "allPass": true
+}

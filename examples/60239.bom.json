@@ -1,0 +1,707 @@
+{
+  "format": "brickkit-bom",
+  "set": "60239-1",
+  "source": "lego-instructions-pdf",
+  "sourceMethod": "pdf-text-layer+visual-check",
+  "url": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6283855.pdf",
+  "fetchedAt": "2026-10-25T11:27:36.205Z",
+  "totalParts": 92,
+  "totalPartsSource": "brickset.com 套装页 Pieces 字段（官方盒内件数 92）；Brickset 库存页自述 90 件",
+  "confidence": "medium",
+  "confidenceNote": "零件总览页有可提取文字层（数量 + 元素编号），已机器解析并渲染页面图人工复核；仍属说明书快照而非在线目录 API，且与 Brickset 库存存在元素替换差异，故非 high。",
+  "parts": [
+    {
+      "ldraw": "54200",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "4504369",
+      "name": "ROOF TILE 1X1X2/3, ABS",
+      "catalog": true,
+      "colorName": "White",
+      "design": "54200"
+    },
+    {
+      "ldraw": "29120",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "6213880",
+      "name": "LEFT PLATE 1X2, W/ BOW, 45 DEG. CUT",
+      "catalog": true,
+      "colorName": "White",
+      "design": "29120"
+    },
+    {
+      "ldraw": "29119",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "6213881",
+      "name": "RIGHT PLATE 1X2, W/ BOW, 45 DEG. CUT",
+      "catalog": true,
+      "colorName": "White",
+      "design": "29119"
+    },
+    {
+      "ldraw": "43722a",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "4179874",
+      "name": "RIGHT PLATE 2X3 W/ANGLE",
+      "catalog": true,
+      "colorName": "White",
+      "design": "43722",
+      "ldrawNote": "LDraw 43722 → 43722a"
+    },
+    {
+      "ldraw": "43723a",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "4179875",
+      "name": "LEFT PLATE 2X3 W/ANGLE",
+      "catalog": true,
+      "colorName": "White",
+      "design": "43723",
+      "ldrawNote": "LDraw 43723 → 43723a"
+    },
+    {
+      "ldraw": "85984",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "4547489",
+      "name": "ROOF TILE 1 X 2 X 2/3, ABS",
+      "catalog": true,
+      "colorName": "White",
+      "design": "85984"
+    },
+    {
+      "ldraw": "3023b",
+      "color": 15,
+      "qty": 6,
+      "sourceId": "302301",
+      "name": "PLATE 1X2",
+      "catalog": true,
+      "colorName": "White",
+      "design": "3023",
+      "ldrawNote": "LDraw 3023 → 3023b"
+    },
+    {
+      "ldraw": "27263",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "6168612",
+      "name": "TILE 2X2, DEG. 90, W/ DEG. 45 CUT",
+      "catalog": true,
+      "colorName": "White",
+      "design": "27263"
+    },
+    {
+      "ldraw": "50745",
+      "color": 15,
+      "qty": 4,
+      "sourceId": "4259940",
+      "name": "BRICK 2X4X1 W. SCREEN",
+      "catalog": true,
+      "colorName": "White",
+      "design": "50745"
+    },
+    {
+      "ldraw": "2431",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "243101",
+      "name": "FLAT TILE 1X4",
+      "catalog": true,
+      "colorName": "White",
+      "design": "2431"
+    },
+    {
+      "ldraw": "93273",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "6023806",
+      "name": "PLATE W. BOW 1X4X2/3",
+      "catalog": true,
+      "colorName": "White",
+      "design": "93273"
+    },
+    {
+      "ldraw": "60477",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "4515359",
+      "name": "ROOF TILE 1X4X1",
+      "catalog": true,
+      "colorName": "White",
+      "design": "60477"
+    },
+    {
+      "ldraw": "93606",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "6031947",
+      "name": "BRICK W. BOW 2X4",
+      "catalog": true,
+      "colorName": "White",
+      "design": "93606"
+    },
+    {
+      "ldraw": "87609",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "4560929",
+      "name": "PLATE 2X6X2/3 W 4 HOR. KNOB",
+      "catalog": true,
+      "colorName": "White",
+      "design": "87609"
+    },
+    {
+      "ldraw": "98281",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "4646574",
+      "name": "ROOF 4X6X2/3",
+      "catalog": true,
+      "colorName": "White",
+      "design": "98281"
+    },
+    {
+      "ldraw": "4162",
+      "color": 15,
+      "qty": 2,
+      "sourceId": "416201",
+      "name": "FLAT TILE 1X8",
+      "catalog": true,
+      "colorName": "White",
+      "design": "4162"
+    },
+    {
+      "ldraw": "28324",
+      "color": 15,
+      "qty": 1,
+      "sourceId": "6259271",
+      "name": "CHASSIS 6X12, NO. 1",
+      "catalog": true,
+      "colorName": "White",
+      "design": "28324"
+    },
+    {
+      "ldraw": "3002",
+      "color": 19,
+      "qty": 1,
+      "sourceId": "4159739",
+      "name": "BRICK 2X3",
+      "catalog": true,
+      "colorName": "Brick Yellow",
+      "design": "3002"
+    },
+    {
+      "ldraw": "52107",
+      "color": 4,
+      "qty": 1,
+      "sourceId": "4569056",
+      "name": "BRICK 1X2 W. FOUR KNOBS",
+      "catalog": true,
+      "colorName": "Bright Red",
+      "design": "52107"
+    },
+    {
+      "ldraw": "3021",
+      "color": 4,
+      "qty": 2,
+      "sourceId": "302121",
+      "name": "PLATE 2X3",
+      "catalog": true,
+      "colorName": "Bright Red",
+      "design": "3021"
+    },
+    {
+      "ldraw": "2420",
+      "color": 1,
+      "qty": 2,
+      "sourceId": "242023",
+      "name": "CORNER PLATE 1X2X2",
+      "catalog": true,
+      "colorName": "Bright Blue",
+      "design": "2420"
+    },
+    {
+      "ldraw": "3010",
+      "color": 1,
+      "qty": 2,
+      "sourceId": "301023",
+      "name": "BRICK 1X4",
+      "catalog": true,
+      "colorName": "Bright Blue",
+      "design": "3010"
+    },
+    {
+      "ldraw": "3666",
+      "color": 1,
+      "qty": 2,
+      "sourceId": "366623",
+      "name": "PLATE 1X6",
+      "catalog": true,
+      "colorName": "Bright Blue",
+      "design": "3666"
+    },
+    {
+      "ldraw": "22889",
+      "color": 1,
+      "qty": 2,
+      "sourceId": "6188643",
+      "name": "INV. ROOF 2X6 45 DEG. W/CUT",
+      "catalog": true,
+      "colorName": "Bright Blue",
+      "design": "22889"
+    },
+    {
+      "ldraw": "32059",
+      "color": 1,
+      "qty": 1,
+      "sourceId": "6016165",
+      "name": "PLATE 4X6 26 DEGREES",
+      "catalog": true,
+      "colorName": "Bright Blue",
+      "design": "32059"
+    },
+    {
+      "ldraw": "3626b",
+      "color": 14,
+      "qty": 1,
+      "sourceId": "6112622",
+      "name": "MINI HEAD 'NO. 1663'",
+      "catalog": true,
+      "colorName": "Bright Yellow",
+      "design": "21023",
+      "ldrawNote": "LDraw 官方库无 21023（印刷人仔头）；按 T2 补库以素头替代",
+      "substituteFor": "3626b",
+      "substituteNote": "印刷头→素头：21023 为 Bright Yellow 印刷人仔头（'NO. 1663' 表情），官方库无此件号；替代件 3626b 为官方素模 Minifig Head with Blocked Hollow Stud，同为人仔头部形态（1×1 占地、3 片高、顶部 1 凸点可戴帽 11303），仅无印刷图案，印刷与几何解耦由模型颜色层表达。"
+    },
+    {
+      "ldraw": "2432",
+      "color": 14,
+      "qty": 1,
+      "sourceId": "243224",
+      "name": "CLAMP 1X2",
+      "catalog": true,
+      "colorName": "Bright Yellow",
+      "design": "2432"
+    },
+    {
+      "ldraw": "73081",
+      "color": 14,
+      "qty": 1,
+      "sourceId": "9553",
+      "name": "CONSOLE W/ST WHEEL YE/BL",
+      "catalog": true,
+      "colorName": "Bright Yellow",
+      "design": "73081",
+      "ldrawNote": "官方几何经 BOM 需求白名单入库（T2 补库 2026-10，LDraw 73081 为 Physical_Colour shortcut 标 Obsolete 但几何有效）"
+    },
+    {
+      "ldraw": "76382",
+      "color": 212,
+      "qty": 1,
+      "sourceId": "6172536",
+      "name": "MINI UPPER PART NO. 3627",
+      "catalog": true,
+      "colorName": "Light Royal Blue",
+      "design": "76382",
+      "ldrawNote": "官方几何经 BOM 需求白名单入库（T2 补库 2026-10；LDraw: Minifig Torso with Arms and Hands）"
+    },
+    {
+      "ldraw": "2412a",
+      "color": 0,
+      "qty": 1,
+      "sourceId": "241226",
+      "name": "RADIATOR GRILLE 1X2",
+      "catalog": true,
+      "colorName": "Black",
+      "design": "2412",
+      "ldrawNote": "LDraw 2412 → 2412a"
+    },
+    {
+      "ldraw": "11209",
+      "color": 0,
+      "qty": 4,
+      "sourceId": "6029208",
+      "name": "TYRE NORMAL / NARROW Ø 21X9,9",
+      "catalog": true,
+      "colorName": "Black",
+      "design": "11209"
+    },
+    {
+      "ldraw": "34103",
+      "color": 0,
+      "qty": 2,
+      "sourceId": "6199908",
+      "name": "PLATE 1X3 W/ 2 KNOBS",
+      "catalog": true,
+      "colorName": "Black",
+      "design": "34103"
+    },
+    {
+      "ldraw": "47456",
+      "color": 0,
+      "qty": 1,
+      "sourceId": "4285883",
+      "name": "PLATE W. BOWS 2X3½",
+      "catalog": true,
+      "colorName": "Black",
+      "design": "47456"
+    },
+    {
+      "ldraw": "18892",
+      "color": 0,
+      "qty": 2,
+      "sourceId": "6097381",
+      "name": "BEARING ELEMENT 2X4 MINI SNAP",
+      "catalog": true,
+      "colorName": "Black",
+      "design": "18892"
+    },
+    {
+      "ldraw": "54200",
+      "color": 47,
+      "qty": 2,
+      "sourceId": "6245250",
+      "name": "ROOF TILE 1X1X2/3",
+      "catalog": true,
+      "colorName": "Transparent",
+      "design": "35338",
+      "ldrawNote": "LDraw 35338 → 54200"
+    },
+    {
+      "ldraw": "54200",
+      "color": 36,
+      "qty": 2,
+      "sourceId": "6245252",
+      "name": "ROOF TILE 1X1X2/3",
+      "catalog": true,
+      "colorName": "Transparent Red",
+      "design": "35338",
+      "ldrawNote": "LDraw 35338 → 54200"
+    },
+    {
+      "ldraw": "3069b",
+      "color": 43,
+      "qty": 1,
+      "sourceId": "6251295",
+      "name": "FLAT TILE 1X2",
+      "catalog": true,
+      "colorName": "Transparent Light Blue",
+      "design": "35386",
+      "ldrawNote": "LDraw 35386 → 30070 → 3069b"
+    },
+    {
+      "ldraw": "57783",
+      "color": 43,
+      "qty": 1,
+      "sourceId": "6247360",
+      "name": "WINDSCREEN 4X3X1 1/3",
+      "catalog": true,
+      "colorName": "Transparent Light Blue",
+      "design": "35279",
+      "ldrawNote": "LDraw 官方库无 35279 件号；按 T2 补库以同设计件 57783 替代",
+      "substituteFor": "57783",
+      "substituteNote": "挡风玻璃→挡风玻璃：35279 与 57783 为同一设计——BrickLink 以 57783 目录收录（'Windscreen 3 x 4 x 1 1/3 Large Glass Surface'），35279 是件底模印设计号；替代件 57783 在合并目录内为 panel 类，4×3 占地、4 片（1⅓ 砖）高、顶部 2 凸点，与原设计 4X3X1 1/3 完全同形。"
+    },
+    {
+      "ldraw": "98138",
+      "color": 33,
+      "qty": 2,
+      "sourceId": "4646861",
+      "name": "FLAT TILE 1X1, ROUND",
+      "catalog": true,
+      "colorName": "Transparent Blue",
+      "design": "98138"
+    },
+    {
+      "ldraw": "2431",
+      "color": 33,
+      "qty": 1,
+      "sourceId": "6252050",
+      "name": "FLAT TILE 1X4",
+      "catalog": true,
+      "colorName": "Transparent Blue",
+      "design": "35371",
+      "ldrawNote": "LDraw 35371 → 2431"
+    },
+    {
+      "ldraw": "59900",
+      "color": 25,
+      "qty": 2,
+      "sourceId": "4518029",
+      "name": "NOSE CONE SMALL 1X1",
+      "catalog": true,
+      "colorName": "Bright Orange",
+      "design": "59900"
+    },
+    {
+      "ldraw": "11303",
+      "color": 272,
+      "qty": 1,
+      "sourceId": "6056241",
+      "name": "FIGUR HEAD CLOTHING NO 6",
+      "catalog": true,
+      "colorName": "Earth Blue",
+      "design": "11303",
+      "ldrawNote": "官方几何经 BOM 需求白名单入库（T2 补库 2026-10；LDraw: Minifig Cap with Short Arched Peak with Seams and Top Pin Hole，60239 警察人仔的 Earth Blue 警帽）"
+    },
+    {
+      "ldraw": "73200",
+      "color": 272,
+      "qty": 1,
+      "sourceId": "4162916",
+      "name": "MINI LOWER PART",
+      "catalog": true,
+      "colorName": "Earth Blue",
+      "design": "73200",
+      "ldrawNote": "官方几何经 BOM 需求白名单入库（T2 补库 2026-10；LDraw: Minifig Hips and Legs (Complete)，Physical_Colour shortcut 标 Obsolete 但几何有效）"
+    },
+    {
+      "ldraw": "3023b",
+      "color": 272,
+      "qty": 3,
+      "sourceId": "4528981",
+      "name": "PLATE 1X2",
+      "catalog": true,
+      "colorName": "Earth Blue",
+      "design": "3023",
+      "ldrawNote": "LDraw 3023 → 3023b"
+    },
+    {
+      "ldraw": "3710",
+      "color": 272,
+      "qty": 3,
+      "sourceId": "4502089",
+      "name": "PLATE 1X4",
+      "catalog": true,
+      "colorName": "Earth Blue",
+      "design": "3710"
+    },
+    {
+      "ldraw": "35480",
+      "color": 71,
+      "qty": 1,
+      "sourceId": "6248890",
+      "name": "PLATE 1X2, ROUNDED, NO. 1",
+      "catalog": true,
+      "colorName": "Medium Stone Grey",
+      "design": "35480"
+    },
+    {
+      "ldraw": "11208",
+      "color": 71,
+      "qty": 4,
+      "sourceId": "6029209",
+      "name": "RIM NARROW Ø14,6X9,9 HOLE Ø 3,2",
+      "catalog": true,
+      "colorName": "Medium Stone Grey",
+      "design": "11208"
+    },
+    {
+      "ldraw": "30414",
+      "color": 71,
+      "qty": 1,
+      "sourceId": "4211636",
+      "name": "BRICK 1X4 W. 4 KNOBS",
+      "catalog": true,
+      "colorName": "Medium Stone Grey",
+      "design": "30414"
+    },
+    {
+      "ldraw": "3020",
+      "color": 71,
+      "qty": 1,
+      "sourceId": "4211395",
+      "name": "PLATE 2X4",
+      "catalog": true,
+      "colorName": "Medium Stone Grey",
+      "design": "3020"
+    },
+    {
+      "ldraw": "85984",
+      "color": 72,
+      "qty": 1,
+      "sourceId": "6134910",
+      "name": "ROOF TILE 1 X 2 X 2/3 'NO. 143'",
+      "catalog": true,
+      "colorName": "Dark Stone Grey",
+      "design": "24741",
+      "ldrawNote": "LDraw 官方库无 24741（印刷斜砖）；按 T2 补库以素斜砖替代",
+      "substituteFor": "85984",
+      "substituteNote": "印刷斜砖→素斜砖：24741 为 Dark Stone Grey 印刷 1×2×2/3 斜砖面（'NO. 143' 车头灯图案），官方库无此件号；替代件 85984 为同规格素模 Slope 30 1 x 2 x 2/3（cheese 斜砖，2×1 占地、2 片高），形态同族仅无印刷；本套装 BOM 本身也含同模具素模（85984 White ×2），印刷与几何解耦由模型颜色层表达。"
+    },
+    {
+      "ldraw": "4740",
+      "color": 72,
+      "qty": 2,
+      "sourceId": "4211010",
+      "name": "PARABOLA Ø16",
+      "catalog": true,
+      "colorName": "Dark Stone Grey",
+      "design": "4740"
+    },
+    {
+      "ldraw": "15207",
+      "color": 72,
+      "qty": 2,
+      "sourceId": "6092649",
+      "name": "WALL ELEMENT 1X4X1 ABS",
+      "catalog": true,
+      "colorName": "Dark Stone Grey",
+      "design": "15207"
+    }
+  ],
+  "crossCheck": {
+    "primary": {
+      "source": "lego-instructions-pdf",
+      "pdf": "assets\\instructions-lego\\60239_book1.pdf",
+      "page": 35,
+      "textLayer": true,
+      "renders": [
+        "C:\\Users\\Administrator\\AppData\\Local\\Temp\\brickkit-bom-60239-1\\pdf-parts-page-35.png"
+      ]
+    },
+    "qtySum": 91,
+    "totalParts": 92,
+    "delta": -1,
+    "deltaNote": "零件清单合计 91 件，来源标注 92 件，差 -1 件（未定位，见 notes）",
+    "bricksetSetPagePieces": 92,
+    "bricksetInventoryStatedTotal": 90,
+    "bricklinkSetPage": {
+      "url": "https://www.bricklink.com/v2/catalog/catalogitem.page?S=60239-1",
+      "catalogParts": 88,
+      "minifigs": 1
+    },
+    "against": "brickset-inventory",
+    "pdfOnly": [
+      {
+        "element": "9553",
+        "qty": 1,
+        "design": "73081"
+      },
+      {
+        "element": "6097381",
+        "qty": 2,
+        "design": "18892"
+      },
+      {
+        "element": "4646861",
+        "qty": 2,
+        "design": "98138"
+      }
+    ],
+    "bricksetOnly": [
+      {
+        "element": "6369923",
+        "qty": 2,
+        "design": "42947"
+      },
+      {
+        "element": "6273627",
+        "qty": 2,
+        "design": "35380"
+      }
+    ],
+    "qtyMismatch": [],
+    "bricksetQtySum": 90
+  },
+  "catalogGaps": [
+    {
+      "ldraw": null,
+      "design": "21023",
+      "color": 14,
+      "qty": 1,
+      "sourceId": "6112622",
+      "name": "MINI HEAD 'NO. 1663'",
+      "ldrawAvailable": false
+    },
+    {
+      "ldraw": "73081",
+      "design": "73081",
+      "color": 14,
+      "qty": 1,
+      "sourceId": "9553",
+      "name": "CONSOLE W/ST WHEEL YE/BL",
+      "ldrawAvailable": true
+    },
+    {
+      "ldraw": "76382",
+      "design": "76382",
+      "color": 212,
+      "qty": 1,
+      "sourceId": "6172536",
+      "name": "MINI UPPER PART NO. 3627",
+      "ldrawAvailable": true
+    },
+    {
+      "ldraw": null,
+      "design": "35279",
+      "color": 43,
+      "qty": 1,
+      "sourceId": "6247360",
+      "name": "WINDSCREEN 4X3X1 1/3",
+      "ldrawAvailable": false
+    },
+    {
+      "ldraw": "11303",
+      "design": "11303",
+      "color": 272,
+      "qty": 1,
+      "sourceId": "6056241",
+      "name": "FIGUR HEAD CLOTHING NO 6",
+      "ldrawAvailable": true
+    },
+    {
+      "ldraw": "73200",
+      "design": "73200",
+      "color": 272,
+      "qty": 1,
+      "sourceId": "4162916",
+      "name": "MINI LOWER PART",
+      "ldrawAvailable": true
+    },
+    {
+      "ldraw": null,
+      "design": "24741",
+      "color": 72,
+      "qty": 1,
+      "sourceId": "6134910",
+      "name": "ROOF TILE 1 X 2 X 2/3 'NO. 143'",
+      "ldrawAvailable": false
+    }
+  ],
+  "lowColourConfidence": [],
+  "sources": [
+    {
+      "source": "rebrickable",
+      "ok": false,
+      "error": "被 Cloudflare 人机挑战拦截（无 API key）"
+    },
+    {
+      "source": "bricklink",
+      "ok": false,
+      "error": "HTTP 空体（AWS WAF 挑战页，无可用库存数据）"
+    },
+    {
+      "source": "brickset",
+      "ok": true,
+      "url": "https://brickset.com/inventories/60239-1",
+      "note": "51 行"
+    },
+    {
+      "source": "lego-instructions-pdf",
+      "ok": true,
+      "url": "https://www.lego.com/cdn/product-assets/product.bi.core.pdf/6283855.pdf",
+      "note": "52 行"
+    }
+  ],
+  "notes": [
+    "T2 补库（2026-10）：7 条 catalog:false 缺口已全部解决——73081/76382/11303/73200 经 BOM 需求白名单放行进入 catalog/parts-ldraw.json（官方 .dat 几何，minifig/obsolete 分类过滤按件号放行，不做全量放开）；21023/35279/24741 官方库无此件号，按形态近似原则以合并目录内替代件表示（3626b 素头 / 57783 同设计挡风玻璃 / 85984 素斜砖），替代关系见各条目 substituteFor/substituteNote。",
+    "主列表取自说明书零件总览页的文字层（非纯视觉点数）；Brickset 库存表用于补全元素→设计号与颜色，并作第二来源对账。",
+    "PDF 有而 Brickset 无的元素 3 个、共 5 件（LEGO 补件页未列或已被新元素号替换，按盒内实际零件保留）。",
+    "Brickset 有而 PDF 无的元素 2 个、共 4 件（备件或新版元件号）。",
+    "合计差 -1 件：Brickset 套装页 Pieces=92、Brickset 库存页自述=90、说明书零件总览页 35 页清单合计=91。该页数量 token 与元素编号 token 一一配对成功（52/52），即说明书印刷页本身只列到 91 件。与库存表对账：仅在 PDF 出现 5 件（含 9553/6097381/4646861）、仅在库存表出现 4 件（含 6369923/6273627），逐元素数量无一处不一致（qtyMismatch 为空）。差额来源（官方盒内是否含备件/是否另有页面）无法用现有可访问来源判定：BrickLink 库存页被 AWS WAF 拦截（202 空体）、Rebrickable 被 Cloudflare 拦截、无 API key。"
+  ]
+}

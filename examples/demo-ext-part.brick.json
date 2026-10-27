@@ -1,0 +1,43 @@
+{
+ "format": "brickbuild",
+ "version": "0.2",
+ "meta": {
+  "name": "扩充目录零件演示",
+  "front": "+z"
+ },
+ "parts": [
+  {
+   "id": "a",
+   "part": "3386",
+   "color": 4,
+   "at": [
+    0,
+    0,
+    0
+   ],
+   "step": 1
+  },
+  {
+   "id": "b",
+   "part": "3386",
+   "color": 14,
+   "at": [
+    0,
+    0,
+    3
+   ],
+   "step": 1
+  },
+  {
+   "id": "c",
+   "part": "3386",
+   "color": 1,
+   "at": [
+    0,
+    0,
+    6
+   ],
+   "step": 1
+  }
+ ]
+}

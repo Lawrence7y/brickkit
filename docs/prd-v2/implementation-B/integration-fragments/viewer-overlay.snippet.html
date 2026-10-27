@@ -1,0 +1,29 @@
+<!-- 供执行者 A 合入既有 viewer 模板或独立预览页面的集成片段 -->
+<!-- 引入独立标号模块并挂载至渲染视口 -->
+<script type="module">
+  import { generateConnectorOverlay } from './stud-overlay-v2.js';
+
+  // 当用户开启 "显示接口标号" 或通过 URL 参数 ?labels=1 触发时：
+  export function updateConnectorOverlay(model, catalog, camera, options = {}) {
+    const overlayContainer = document.getElementById('stud-overlay-container');
+    if (!overlayContainer) return;
+
+    if (!options.showLabels) {
+      overlayContainer.innerHTML = '';
+      return;
+    }
+
+    const { svg, labelMap } = generateConnectorOverlay(model, catalog, camera, {
+      viewport: {
+        width: window.innerWidth,
+        height: window.innerHeight
+      },
+      stateHash: options.stateHash || model.stateHash,
+      maxLabels: options.maxLabels || 32,
+      occupiedConnectors: options.occupiedConnectors || new Set()
+    });
+
+    overlayContainer.innerHTML = svg;
+    window.__currentConnectorLabelMap = labelMap; // 供自动化测试与交互式点击反查
+  }
+</script>

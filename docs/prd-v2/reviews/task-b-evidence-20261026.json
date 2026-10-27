@@ -1,0 +1,149 @@
+{
+  "reviewDate": "2026-10-26",
+  "scope": "out/prd-v2/run-20261026-v2/B",
+  "method": "Read-only data/code inspection and independent Node probes; no checkpoint deserialization or retraining.",
+  "dataset": {
+    "splitSizes": {
+      "train": 150,
+      "validation": 150,
+      "holdout_test": 150
+    },
+    "trainHoldoutFamilyOverlap": [
+      "set-31058"
+    ],
+    "imageReferences": 900,
+    "existingImageReferences": 0,
+    "holdoutActionCases": 72,
+    "alwaysFirstCandidateCorrect": 72,
+    "uniqueModelInputPatterns": 2,
+    "holdoutInputsAlreadySeenInTrain": 150
+  },
+  "missingSourceProbe": {
+    "sourceExists": false,
+    "observationsReturned": 7,
+    "fileSha256": "unknown-pdf-sha256",
+    "allHighConfidence": true
+  },
+  "generatedAllocation": [
+    {
+      "taskId": "task-minifig",
+      "count": 4
+    },
+    {
+      "taskId": "task-cones",
+      "count": 4
+    },
+    {
+      "taskId": "task-front-bumper",
+      "count": 2
+    },
+    {
+      "taskId": "task-wheels",
+      "count": 8
+    },
+    {
+      "taskId": "task-main-chassis",
+      "count": 73
+    }
+  ],
+  "savedTaskRequiredFieldCheck": [
+    {
+      "taskId": "task-minifig",
+      "missingRequiredTopLevelFields": [
+        "globalPlanRef",
+        "assetLock",
+        "spatialContracts"
+      ]
+    },
+    {
+      "taskId": "task-cones",
+      "missingRequiredTopLevelFields": [
+        "globalPlanRef",
+        "assetLock",
+        "spatialContracts"
+      ]
+    },
+    {
+      "taskId": "task-front-bumper",
+      "missingRequiredTopLevelFields": [
+        "globalPlanRef",
+        "assetLock",
+        "spatialContracts"
+      ]
+    },
+    {
+      "taskId": "task-wheels",
+      "missingRequiredTopLevelFields": [
+        "globalPlanRef",
+        "assetLock",
+        "spatialContracts"
+      ]
+    },
+    {
+      "taskId": "task-main-chassis",
+      "missingRequiredTopLevelFields": [
+        "globalPlanRef",
+        "assetLock",
+        "spatialContracts"
+      ]
+    }
+  ],
+  "assemblyAuditProbes": {
+    "allFailedEmptyReceipts": {
+      "ok": true,
+      "isConserved": false,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 0,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": []
+    },
+    "allFailedForeignTokenReceipts": {
+      "ok": true,
+      "isConserved": true,
+      "totalExpectedTokens": 91,
+      "totalConsumedTokens": 91,
+      "duplicateTokens": 0,
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "checkpoint": {
+    "path": "out/prd-v2/run-20261026-v2/B/weights/r3-pilot-best/model.pt",
+    "exists": true,
+    "bytes": 10438188,
+    "independentlyLoaded": false,
+    "trainingDeviceIndependentlyVerified": false
+  },
+  "deliverablesFoundInSubmittedRun": [],
+  "sourceHashes": [
+    {
+      "path": "tools/brickvlm/gen_dataset.py",
+      "sha256": "18f915e9fe5fd11c9cff296d86b1ce8ad271f1c18f25963a5aace057e24298cb"
+    },
+    {
+      "path": "tools/brickvlm/evaluate_r5.py",
+      "sha256": "eab35d71ecc9fe02b32b8bbcb2c43f20fb62500fcfbaf35b35fafda4f0f95a82"
+    },
+    {
+      "path": "tools/brickvlm/model_compact.py",
+      "sha256": "ea7ceaf94b6d37a4659e89ac49ed1b98cb14392812ba877bcbfa08893b95b3d0"
+    },
+    {
+      "path": "tools/brickvlm/train_r3_pilot.py",
+      "sha256": "7f42a2123eb0ae7e984fd75e0130088e903342e10f58d2ba2a0f49d7f86ef6af"
+    },
+    {
+      "path": "src/manual-v2/extractor.js",
+      "sha256": "828866268dece1f32622835d28272f5d6674f74557c92a851afa28be75311411"
+    },
+    {
+      "path": "src/manual-v2/workflow.js",
+      "sha256": "e30f431feacd21269e0099a1c4daa764e589fb833e80744cd41f45dd7030b028"
+    },
+    {
+      "path": "training/brickvlm/train_qwen_qlora.py",
+      "sha256": "8db492be2a4040961e6aec93a5a0aa9b95f34e1d407424d9c96c2d72dc02d001"
+    }
+  ]
+}

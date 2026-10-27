@@ -1,0 +1,1313 @@
+{
+  "probe": "perturbation-independent-20261026",
+  "pools": {
+    "repair_local": 1248,
+    "understand_structure": 1248
+  },
+  "repairLocal": {
+    "checked": 13,
+    "passed": 13,
+    "failed": 0,
+    "failures": [],
+    "samples": [
+      {
+        "sampleId": "smp-pert-lstack-lstack-i21-p07-rl",
+        "family": "fam-lstack",
+        "errorType": "missing_part",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-lstack-fam-lstack-i21-p07-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "e844d8c635835f73d661efe5d12607b7a86ab8f2e038636c35ae40acd8dbe4b5",
+            "stateHashAfter": "5aa16d97213e521924ef47474c8ed70c66b042c923ae6fc8226cd8662dd6eaf8",
+            "expectIn": "e844d8c635835f73d661efe5d12607b7a86ab8f2e038636c35ae40acd8dbe4b5",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "1bd4ebbbf40afb39c28264b40c19731e04eb2b788aa15ccc9aca694d171095af",
+        "referenceModelOnlyHash": "1bd4ebbbf40afb39c28264b40c19731e04eb2b788aa15ccc9aca694d171095af",
+        "restoredModelOnly": true,
+        "finalFullHash": "1210e42cbafed6884f39f5ad89c72e826a293bb7e56c38e4d353b1b8d7756127",
+        "referenceFullHash": "1210e42cbafed6884f39f5ad89c72e826a293bb7e56c38e4d353b1b8d7756127",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i15-p11-rl",
+        "family": "fam-bracketholder",
+        "errorType": "misaligned",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 2,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-bracketholder-fam-bracketholder-i15-p11-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "ffaecfcb3e55665a58e6f7deb25230a645cc5692d47bd34dea9d0a2ec7919a8c",
+            "stateHashAfter": "96f65a1d4fe51888957474348b6c2c04e8782696b9c951b1134cb2aa63797cc7",
+            "expectIn": "ffaecfcb3e55665a58e6f7deb25230a645cc5692d47bd34dea9d0a2ec7919a8c",
+            "hashInMatches": true
+          },
+          {
+            "taskId": "task-pert-fam-bracketholder-fam-bracketholder-i15-p11-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "96f65a1d4fe51888957474348b6c2c04e8782696b9c951b1134cb2aa63797cc7",
+            "stateHashAfter": "99b1402d1e0cd766e1afb6c29abec37f174f50767aff131e23ec9112b530da43",
+            "expectIn": "96f65a1d4fe51888957474348b6c2c04e8782696b9c951b1134cb2aa63797cc7",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "36b0e1be1cef6f6ac724224c05e826e7ef390e206845a8a1e6137aa238b32545",
+        "referenceModelOnlyHash": "36b0e1be1cef6f6ac724224c05e826e7ef390e206845a8a1e6137aa238b32545",
+        "restoredModelOnly": true,
+        "finalFullHash": "da82aaba64c72cc47cfe65be8f6ac6b4f297567be3e5a44d31751420356ec16d",
+        "referenceFullHash": "da82aaba64c72cc47cfe65be8f6ac6b4f297567be3e5a44d31751420356ec16d",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i07-p04-rl",
+        "family": "fam-bracketholder",
+        "errorType": "missing_part",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-bracketholder-fam-bracketholder-i07-p04-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "6b8dee53192a915519c87c17ad75f7a8c665f56235b7f302462a55ff41e01c9a",
+            "stateHashAfter": "72c3bedcfed782c72aa2eeca989f0f6c3e85bd2ba17633104eaef9e6d7fd452f",
+            "expectIn": "6b8dee53192a915519c87c17ad75f7a8c665f56235b7f302462a55ff41e01c9a",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "36b0e1be1cef6f6ac724224c05e826e7ef390e206845a8a1e6137aa238b32545",
+        "referenceModelOnlyHash": "36b0e1be1cef6f6ac724224c05e826e7ef390e206845a8a1e6137aa238b32545",
+        "restoredModelOnly": true,
+        "finalFullHash": "cfd4d512e27bff1d196c482673eebdd508ba2f3b241e585746c134539efaaa42",
+        "referenceFullHash": "cfd4d512e27bff1d196c482673eebdd508ba2f3b241e585746c134539efaaa42",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i22-p01-rl",
+        "family": "fam-lstack",
+        "errorType": "wrong_color",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-lstack-fam-lstack-i22-p01-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "e7688cc325a14cb3fa6b736cb20654543450fe339b870c20491943cf787039e4",
+            "stateHashAfter": "027eecd09d52e0adc877c602f1fedbd20ee1e40bf510c7b015234c885d8889ae",
+            "expectIn": "e7688cc325a14cb3fa6b736cb20654543450fe339b870c20491943cf787039e4",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "5f1627dad129ccbe20b33e6698e6b753bdc01fe291b0dd987641a42a14f5bd08",
+        "referenceModelOnlyHash": "5f1627dad129ccbe20b33e6698e6b753bdc01fe291b0dd987641a42a14f5bd08",
+        "restoredModelOnly": true,
+        "finalFullHash": "027eecd09d52e0adc877c602f1fedbd20ee1e40bf510c7b015234c885d8889ae",
+        "referenceFullHash": "08123b77d6d29e2d86f309549ba5f227865e3793d94c2f98e82d4c3aa48e3ded",
+        "restoredFullHash": false,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i10-p03-rl",
+        "family": "fam-cart",
+        "errorType": "wrong_color",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-cart-fam-cart-i10-p03-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "9af12748aec400637c0ae540baa7f45fcb54fbe47fde7c7add783ff4b3e3927d",
+            "stateHashAfter": "2858c3c5088dce4d2bd92a1f9b858c91b7ec3349753af53134c97cd55c4380ac",
+            "expectIn": "9af12748aec400637c0ae540baa7f45fcb54fbe47fde7c7add783ff4b3e3927d",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "f189250dba1fe5c0b819a01d46ba6384b09fdd32606111b24834e07cd7562c5d",
+        "referenceModelOnlyHash": "f189250dba1fe5c0b819a01d46ba6384b09fdd32606111b24834e07cd7562c5d",
+        "restoredModelOnly": true,
+        "finalFullHash": "2858c3c5088dce4d2bd92a1f9b858c91b7ec3349753af53134c97cd55c4380ac",
+        "referenceFullHash": "a246516d81963c8cbb5d2df77cc362e6a64196df8edef80b167d4e7d0b2ce5dd",
+        "restoredFullHash": false,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i22-p11-rl",
+        "family": "fam-pgate",
+        "errorType": "missing_part",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-pgate-fam-pgate-i22-p11-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "84c749973e0400e19eb9bd8a25de06fe41d4825c312a86b6e36efddf9db1cec0",
+            "stateHashAfter": "f88b78d7fd6a05d1374e9819f479e15f11d86c33ad84796f48ccb757a7665a07",
+            "expectIn": "84c749973e0400e19eb9bd8a25de06fe41d4825c312a86b6e36efddf9db1cec0",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "bae23d5fa03da89eac8d4041ff3a7636d151f6fbc35b4350385de12052304d74",
+        "referenceModelOnlyHash": "bae23d5fa03da89eac8d4041ff3a7636d151f6fbc35b4350385de12052304d74",
+        "restoredModelOnly": true,
+        "finalFullHash": "a8221c86be9a5022924c4bcb61a4312e020f184725b5d77ebcf1001eac545cd5",
+        "referenceFullHash": "a8221c86be9a5022924c4bcb61a4312e020f184725b5d77ebcf1001eac545cd5",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i21-p12-rl",
+        "family": "fam-pgate",
+        "errorType": "misaligned",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 2,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-pgate-fam-pgate-i21-p12-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "3f4324ca1847b6822f20c961d30205cd670dc2ed47d892ad605aa0c90253d7c0",
+            "stateHashAfter": "770291a93737fc83541d01ba0fbc77ffae591670a82083bfe07d899dcd50b93d",
+            "expectIn": "3f4324ca1847b6822f20c961d30205cd670dc2ed47d892ad605aa0c90253d7c0",
+            "hashInMatches": true
+          },
+          {
+            "taskId": "task-pert-fam-pgate-fam-pgate-i21-p12-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "770291a93737fc83541d01ba0fbc77ffae591670a82083bfe07d899dcd50b93d",
+            "stateHashAfter": "65da222d2a14e2348de50ec35abf181d60ba3b96f54e8302b4ce7d6c7a83dcf6",
+            "expectIn": "770291a93737fc83541d01ba0fbc77ffae591670a82083bfe07d899dcd50b93d",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "9b4d1464f424850c0b069f0f8596440fa038c2eb91a02602784f8ca26c002742",
+        "referenceModelOnlyHash": "9b4d1464f424850c0b069f0f8596440fa038c2eb91a02602784f8ca26c002742",
+        "restoredModelOnly": true,
+        "finalFullHash": "00b7576d9ee95b694115edc52ba601aa458550de9ef5c8e4cf44501d32659d03",
+        "referenceFullHash": "00b7576d9ee95b694115edc52ba601aa458550de9ef5c8e4cf44501d32659d03",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i25-p01-rl",
+        "family": "fam-pgate",
+        "errorType": "missing_part",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-pgate-fam-pgate-i25-p01-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "343c84f07cc0804c54128cd2e063c751fb30e0c7e30c287c636131f66152a22b",
+            "stateHashAfter": "28d10b959eaf8e9c42a85f7e1621f3cb3faa67e66f73f3bfa241d7a9809f9ac6",
+            "expectIn": "343c84f07cc0804c54128cd2e063c751fb30e0c7e30c287c636131f66152a22b",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "d9167bf3b3b8a009b0c5644247404f86c51c61a75a5924f55f2ec8435df31654",
+        "referenceModelOnlyHash": "d9167bf3b3b8a009b0c5644247404f86c51c61a75a5924f55f2ec8435df31654",
+        "restoredModelOnly": true,
+        "finalFullHash": "28d10b959eaf8e9c42a85f7e1621f3cb3faa67e66f73f3bfa241d7a9809f9ac6",
+        "referenceFullHash": "28d10b959eaf8e9c42a85f7e1621f3cb3faa67e66f73f3bfa241d7a9809f9ac6",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i12-p14-rl",
+        "family": "fam-cart",
+        "errorType": "misaligned",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 2,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-cart-fam-cart-i12-p14-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "c8d173a0974e5d3054d9f158e6b907182b9414689d2b0b4c60bf7e00e2fce82e",
+            "stateHashAfter": "446442efe0a89a8274e72dd9cfe6082794a096159c573c236c482640461fe1c8",
+            "expectIn": "c8d173a0974e5d3054d9f158e6b907182b9414689d2b0b4c60bf7e00e2fce82e",
+            "hashInMatches": true
+          },
+          {
+            "taskId": "task-pert-fam-cart-fam-cart-i12-p14-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "446442efe0a89a8274e72dd9cfe6082794a096159c573c236c482640461fe1c8",
+            "stateHashAfter": "5ae6c5fc365084f4fc2ce22c78076957716893f605e441264ba7d45c31eef786",
+            "expectIn": "446442efe0a89a8274e72dd9cfe6082794a096159c573c236c482640461fe1c8",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "3766569d56acef5173bdc1119fee3d3aefed334d4499e6e39a9d728e8415f5e8",
+        "referenceModelOnlyHash": "3766569d56acef5173bdc1119fee3d3aefed334d4499e6e39a9d728e8415f5e8",
+        "restoredModelOnly": true,
+        "finalFullHash": "16d8477f6e327dfc91fddea2677137f5bb7814f81ee2674d1ab00d39eb6e4d22",
+        "referenceFullHash": "16d8477f6e327dfc91fddea2677137f5bb7814f81ee2674d1ab00d39eb6e4d22",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i02-p08-rl",
+        "family": "fam-snotpanel",
+        "errorType": "missing_part",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-snotpanel-fam-snotpanel-i02-p08-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "60e0113964c84276b4b0e422eda940252558d6923d70cb6884656b881871cbbb",
+            "stateHashAfter": "e9a6a630cff007bbece30ba3242fb2b762220c95d5da9290f8fbb94c30188a3e",
+            "expectIn": "60e0113964c84276b4b0e422eda940252558d6923d70cb6884656b881871cbbb",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "41d577a27a0bb429e2f5d35ab055eb1b96417bf426d0eaba391b30d4bab143bd",
+        "referenceModelOnlyHash": "41d577a27a0bb429e2f5d35ab055eb1b96417bf426d0eaba391b30d4bab143bd",
+        "restoredModelOnly": true,
+        "finalFullHash": "d28ec591df03f1e0942a3bb27c5f5bcd0b3f3865807c1c6de76c0f7191b01874",
+        "referenceFullHash": "d28ec591df03f1e0942a3bb27c5f5bcd0b3f3865807c1c6de76c0f7191b01874",
+        "restoredFullHash": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i15-p06-rl",
+        "family": "fam-lstack",
+        "errorType": "wrong_color",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-lstack-fam-lstack-i15-p06-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "bc965063388275a52285bf1353a6a509b37d4a364e20cbed2b09106c95b00975",
+            "stateHashAfter": "a43d2cc049af4094a9a6d2e8c8d2c187b1dcc3d98bc946fc64a884ad0be19b22",
+            "expectIn": "bc965063388275a52285bf1353a6a509b37d4a364e20cbed2b09106c95b00975",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "5d6a2b358f18d8d8ebe1da679bb6f6cfe3eff86f2576a8d2ddb1dd4f36ae279b",
+        "referenceModelOnlyHash": "5d6a2b358f18d8d8ebe1da679bb6f6cfe3eff86f2576a8d2ddb1dd4f36ae279b",
+        "restoredModelOnly": true,
+        "finalFullHash": "a43d2cc049af4094a9a6d2e8c8d2c187b1dcc3d98bc946fc64a884ad0be19b22",
+        "referenceFullHash": "556dec888190667c41ce821ae1088d7eda8d82f50a93527d49aa6c939ba3dd33",
+        "restoredFullHash": false,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i15-p06-rl",
+        "family": "fam-cart",
+        "errorType": "left_right_swap",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-cart-fam-cart-i15-p06-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "4e594b81b4886820f40b2dc707922c5e96ca83b720c41bb5a0b5231dd8a02a54",
+            "stateHashAfter": "345d43f1593ed354a8cf4c848460e152ba532a76ff1d10d966b79cf4dc912485",
+            "expectIn": "4e594b81b4886820f40b2dc707922c5e96ca83b720c41bb5a0b5231dd8a02a54",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "93a279490333b17c27892134a997edd997373e4fdc9af115141a53b85319bc07",
+        "referenceModelOnlyHash": "93a279490333b17c27892134a997edd997373e4fdc9af115141a53b85319bc07",
+        "restoredModelOnly": true,
+        "finalFullHash": "345d43f1593ed354a8cf4c848460e152ba532a76ff1d10d966b79cf4dc912485",
+        "referenceFullHash": "0817fa5246646873c9a673fcfad03258ef458df1cfd375076e38f1013eb81576",
+        "restoredFullHash": false,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i02-p08-rl",
+        "family": "fam-lstack",
+        "errorType": "wrong_color",
+        "referenceHashFileOk": true,
+        "perturbedHashFileOk": true,
+        "transactionCount": 1,
+        "storedRepairPassed": true,
+        "perturbedHashRecomputedMatches": true,
+        "perturbedCanonicalMatchesStored": true,
+        "referenceCanonicalMatchesStored": true,
+        "steps": [
+          {
+            "taskId": "task-pert-fam-lstack-fam-lstack-i02-p08-repair",
+            "passed": true,
+            "diagCode": null,
+            "stateHashIn": "8e27a14f104403fef605569faa0d56658c659cdfefbf331f68fd49f3ba07b1b2",
+            "stateHashAfter": "ecae4d1850fd2f959ff0393cf964b928f56093b609f714f3830188ca3aef2dc7",
+            "expectIn": "8e27a14f104403fef605569faa0d56658c659cdfefbf331f68fd49f3ba07b1b2",
+            "hashInMatches": true
+          }
+        ],
+        "allStepsPassed": true,
+        "finalModelOnlyHash": "31f94045ccda347fc501c29025c1a9fe083a39a02c03d36dc2a0a9469b9bd42a",
+        "referenceModelOnlyHash": "31f94045ccda347fc501c29025c1a9fe083a39a02c03d36dc2a0a9469b9bd42a",
+        "restoredModelOnly": true,
+        "finalFullHash": "ecae4d1850fd2f959ff0393cf964b928f56093b609f714f3830188ca3aef2dc7",
+        "referenceFullHash": "98e8249a936b065a58f412686cbb894ed150687d8ee7e9106f69068cef7a6440",
+        "restoredFullHash": false,
+        "ok": true
+      }
+    ]
+  },
+  "understandStructure": {
+    "checked": 12,
+    "passed": 12,
+    "failed": 0,
+    "failures": [],
+    "samples": [
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i08-p06-us",
+        "family": "fam-snotpanel",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "misaligned",
+        "storedErrorType": "misaligned",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "misaligned",
+            "ref": "p017",
+            "expected": {
+              "at": [
+                5,
+                11,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                4,
+                11,
+                0
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_8a57",
+            "issueType": "misaligned",
+            "expected": {
+              "at": [
+                5,
+                11,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                4,
+                11,
+                0
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i23-p01-us",
+        "family": "fam-pgate",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "misaligned",
+        "storedErrorType": "misaligned",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "misaligned",
+            "ref": "p014",
+            "expected": {
+              "at": [
+                3,
+                7,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                3,
+                17,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_feba",
+            "issueType": "misaligned",
+            "expected": {
+              "at": [
+                3,
+                7,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                3,
+                17,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i01-p08-us",
+        "family": "fam-pgate",
+        "myDiff": {
+          "removed": 1,
+          "added": 0,
+          "changed": 0
+        },
+        "myErrorType": "missing_part",
+        "storedErrorType": "missing_part",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "missing_part",
+            "ref": "p006",
+            "expected": {
+              "part": "3005",
+              "color": 72,
+              "at": [
+                3,
+                1,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": null
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_c4ab",
+            "issueType": "missing_part",
+            "expected": {
+              "part": "3005",
+              "color": 72,
+              "at": [
+                3,
+                1,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": null
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i07-p05-us",
+        "family": "fam-cart",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "reversed_orientation",
+        "storedErrorType": "reversed_orientation",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "reversed_orientation",
+            "ref": "p009",
+            "expected": {
+              "at": [
+                2,
+                1,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                2,
+                1,
+                2
+              ],
+              "rot": 180,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_1be8",
+            "issueType": "reversed_orientation",
+            "expected": {
+              "at": [
+                2,
+                1,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                2,
+                1,
+                2
+              ],
+              "rot": 180,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i13-p03-us",
+        "family": "fam-pgate",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "wrong_color",
+        "storedErrorType": "wrong_color",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "wrong_color",
+            "ref": "p007",
+            "expected": {
+              "color": 29
+            },
+            "actual": {
+              "color": 14
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_6a12",
+            "issueType": "wrong_color",
+            "expected": {
+              "color": 29
+            },
+            "actual": {
+              "color": 14
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i16-p08-us",
+        "family": "fam-twintower",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 2
+        },
+        "myErrorType": "left_right_swap",
+        "storedErrorType": "left_right_swap",
+        "errorTypeMatches": true,
+        "myIssueCount": 2,
+        "storedIssueCount": 2,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "left_right_swap",
+            "ref": "p003",
+            "expected": {
+              "color": 26
+            },
+            "actual": {
+              "color": 31
+            }
+          },
+          {
+            "issueType": "left_right_swap",
+            "ref": "p004",
+            "expected": {
+              "color": 31
+            },
+            "actual": {
+              "color": 26
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_0636",
+            "issueType": "left_right_swap",
+            "expected": {
+              "color": 26
+            },
+            "actual": {
+              "color": 31
+            }
+          },
+          {
+            "partRef": "prt_f791",
+            "issueType": "left_right_swap",
+            "expected": {
+              "color": 31
+            },
+            "actual": {
+              "color": 26
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i15-p05-us",
+        "family": "fam-cart",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "reversed_orientation",
+        "storedErrorType": "reversed_orientation",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "reversed_orientation",
+            "ref": "p008",
+            "expected": {
+              "at": [
+                0,
+                1,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                0,
+                1,
+                2
+              ],
+              "rot": 180,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_fb62",
+            "issueType": "reversed_orientation",
+            "expected": {
+              "at": [
+                0,
+                1,
+                2
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                0,
+                1,
+                2
+              ],
+              "rot": 180,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i01-p03-us",
+        "family": "fam-lstack",
+        "myDiff": {
+          "removed": 1,
+          "added": 0,
+          "changed": 0
+        },
+        "myErrorType": "missing_part",
+        "storedErrorType": "missing_part",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "missing_part",
+            "ref": "p006",
+            "expected": {
+              "part": "3004",
+              "color": 72,
+              "at": [
+                0,
+                4,
+                2
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": null
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_ef94",
+            "issueType": "missing_part",
+            "expected": {
+              "part": "3004",
+              "color": 72,
+              "at": [
+                0,
+                4,
+                2
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": null
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-twintower-twintower-i01-p02-us",
+        "family": "fam-twintower",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "misaligned",
+        "storedErrorType": "misaligned",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "misaligned",
+            "ref": "p009",
+            "expected": {
+              "at": [
+                0,
+                10,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                0,
+                17,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_4754",
+            "issueType": "misaligned",
+            "expected": {
+              "at": [
+                0,
+                10,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                0,
+                17,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i19-p01-us",
+        "family": "fam-snotpanel",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "misaligned",
+        "storedErrorType": "misaligned",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "misaligned",
+            "ref": "p004",
+            "expected": {
+              "at": [
+                3,
+                1,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                5,
+                14,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_a252",
+            "issueType": "misaligned",
+            "expected": {
+              "at": [
+                3,
+                1,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                5,
+                14,
+                0
+              ],
+              "rot": 0,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i20-p06-us",
+        "family": "fam-pgate",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 2
+        },
+        "myErrorType": "left_right_swap",
+        "storedErrorType": "left_right_swap",
+        "errorTypeMatches": true,
+        "myIssueCount": 2,
+        "storedIssueCount": 2,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "left_right_swap",
+            "ref": "p005",
+            "expected": {
+              "color": 2
+            },
+            "actual": {
+              "color": 10
+            }
+          },
+          {
+            "issueType": "left_right_swap",
+            "ref": "p006",
+            "expected": {
+              "color": 10
+            },
+            "actual": {
+              "color": 2
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_ea1a",
+            "issueType": "left_right_swap",
+            "expected": {
+              "color": 2
+            },
+            "actual": {
+              "color": 10
+            }
+          },
+          {
+            "partRef": "prt_20cb",
+            "issueType": "left_right_swap",
+            "expected": {
+              "color": 10
+            },
+            "actual": {
+              "color": 2
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i15-p04-us",
+        "family": "fam-bracketholder",
+        "myDiff": {
+          "removed": 0,
+          "added": 0,
+          "changed": 1
+        },
+        "myErrorType": "misaligned",
+        "storedErrorType": "misaligned",
+        "errorTypeMatches": true,
+        "myIssueCount": 1,
+        "storedIssueCount": 1,
+        "issueCountMatches": true,
+        "myIssues": [
+          {
+            "issueType": "misaligned",
+            "ref": "p004",
+            "expected": {
+              "at": [
+                0,
+                1,
+                2
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                2,
+                1,
+                -1
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "storedIssues": [
+          {
+            "partRef": "prt_4e6b",
+            "issueType": "misaligned",
+            "expected": {
+              "at": [
+                0,
+                1,
+                2
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            },
+            "actual": {
+              "at": [
+                2,
+                1,
+                -1
+              ],
+              "rot": 90,
+              "up": "+y",
+              "snot": 0
+            }
+          }
+        ],
+        "issuesPayloadMatch": true,
+        "storedHasStructuralError": true,
+        "ok": true
+      }
+    ]
+  },
+  "anonymity": {
+    "checked": 10,
+    "clean": 10,
+    "dirty": [],
+    "samples": [
+      {
+        "sampleId": "smp-pert-lstack-lstack-i21-p07-rl",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": true,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i15-p11-rl",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": true,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-bracketholder-bracketholder-i07-p04-rl",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": true,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-lstack-lstack-i22-p01-rl",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": true,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i10-p03-rl",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": true,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-snotpanel-snotpanel-i08-p06-us",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": false,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i23-p01-us",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": false,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i01-p08-us",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": false,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-cart-cart-i07-p05-us",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": false,
+        "clean": true
+      },
+      {
+        "sampleId": "smp-pert-pgate-pgate-i13-p03-us",
+        "realInstanceIdHits": [],
+        "realTokenHits": [],
+        "realCandidateIdHits": [],
+        "publicCandidateIdsMatchAnonPattern": false,
+        "clean": true
+      }
+    ]
+  },
+  "summary": {
+    "repairAllPass": true,
+    "structureAllMatch": true,
+    "anonymityClean": true
+  }
+}

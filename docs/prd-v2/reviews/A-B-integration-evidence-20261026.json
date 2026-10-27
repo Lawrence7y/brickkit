@@ -1,0 +1,1253 @@
+{
+  "reviewDate": "2026-10-26",
+  "maintainedTestRun": {
+    "command": "node --test --test-reporter=dot test/*.test.mjs",
+    "exitCode": 0,
+    "observedPassingTests": 226,
+    "rawOutputLocation": "tool output in this chat"
+  },
+  "A": {
+    "index": {
+      "profile": "default-2026-10-26",
+      "entries": 4605
+    },
+    "BLocks": [
+      {
+        "task": "task-minifig",
+        "required": 4,
+        "BDeclaredParts": 4,
+        "BHasEmptyContentHash": false,
+        "rawAccepted": false,
+        "rawErrorCodes": [
+          "asset-lock-format",
+          "asset-lock-empty",
+          "asset-lock-incomplete",
+          "asset-lock-profile-mismatch"
+        ],
+        "normalizedAccepted": false,
+        "normalizedErrorCodes": [
+          "asset-lock-revision-mismatch",
+          "asset-lock-hash-mismatch",
+          "asset-lock-profile-mismatch"
+        ],
+        "generatedByA": {
+          "ok": true,
+          "verified": 4,
+          "parts": 4
+        }
+      },
+      {
+        "task": "task-cones",
+        "required": 2,
+        "BDeclaredParts": 2,
+        "BHasEmptyContentHash": false,
+        "rawAccepted": false,
+        "rawErrorCodes": [
+          "asset-lock-format",
+          "asset-lock-empty",
+          "asset-lock-incomplete",
+          "asset-lock-profile-mismatch"
+        ],
+        "normalizedAccepted": false,
+        "normalizedErrorCodes": [
+          "asset-lock-revision-mismatch",
+          "asset-lock-hash-mismatch",
+          "asset-lock-profile-mismatch"
+        ],
+        "generatedByA": {
+          "ok": true,
+          "verified": 2,
+          "parts": 2
+        }
+      },
+      {
+        "task": "task-front-bumper",
+        "required": 3,
+        "BDeclaredParts": 3,
+        "BHasEmptyContentHash": false,
+        "rawAccepted": false,
+        "rawErrorCodes": [
+          "asset-lock-format",
+          "asset-lock-empty",
+          "asset-lock-incomplete",
+          "asset-lock-profile-mismatch"
+        ],
+        "normalizedAccepted": false,
+        "normalizedErrorCodes": [
+          "asset-lock-revision-mismatch",
+          "asset-lock-hash-mismatch",
+          "asset-lock-profile-mismatch"
+        ],
+        "generatedByA": {
+          "ok": true,
+          "verified": 3,
+          "parts": 3
+        }
+      },
+      {
+        "task": "task-wheels",
+        "required": 2,
+        "BDeclaredParts": 2,
+        "BHasEmptyContentHash": false,
+        "rawAccepted": false,
+        "rawErrorCodes": [
+          "asset-lock-format",
+          "asset-lock-empty",
+          "asset-lock-incomplete",
+          "asset-lock-profile-mismatch"
+        ],
+        "normalizedAccepted": false,
+        "normalizedErrorCodes": [
+          "asset-lock-revision-mismatch",
+          "asset-lock-hash-mismatch",
+          "asset-lock-profile-mismatch"
+        ],
+        "generatedByA": {
+          "ok": true,
+          "verified": 2,
+          "parts": 2
+        }
+      },
+      {
+        "task": "task-main-chassis",
+        "required": 38,
+        "BDeclaredParts": 38,
+        "BHasEmptyContentHash": false,
+        "rawAccepted": false,
+        "rawErrorCodes": [
+          "asset-lock-format",
+          "asset-lock-empty",
+          "asset-lock-incomplete",
+          "asset-lock-profile-mismatch"
+        ],
+        "normalizedAccepted": false,
+        "normalizedErrorCodes": [
+          "asset-lock-revision-mismatch",
+          "asset-lock-hash-mismatch",
+          "asset-lock-profile-mismatch"
+        ],
+        "generatedByA": {
+          "ok": true,
+          "verified": 38,
+          "parts": 38
+        }
+      }
+    ],
+    "translatedSnotProbe": {
+      "totalCandidates": 160,
+      "invalid": 0,
+      "cases": [
+        {
+          "at": [
+            4,
+            3,
+            -2
+          ],
+          "rot": 0,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            4,
+            3,
+            -2
+          ],
+          "rot": 90,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            4,
+            3,
+            -2
+          ],
+          "rot": 180,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            4,
+            3,
+            -2
+          ],
+          "rot": 270,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            -5,
+            1,
+            7
+          ],
+          "rot": 0,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            -5,
+            1,
+            7
+          ],
+          "rot": 90,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            -5,
+            1,
+            7
+          ],
+          "rot": 180,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        },
+        {
+          "at": [
+            -5,
+            1,
+            7
+          ],
+          "rot": 270,
+          "candidates": 20,
+          "sideCandidates": 16,
+          "invalid": 0
+        }
+      ]
+    },
+    "occupancy": {
+      "connections": 8,
+      "occupied": 16,
+      "bottomOccupied": 8
+    }
+  },
+  "inventoryRegression": {
+    "firstPassed": true,
+    "firstTokens": [
+      "audit-member-1",
+      "audit-member-2"
+    ],
+    "inventoryReturnedAfterFirst": [
+      {
+        "token": "audit-member-1",
+        "partId": "3023",
+        "color": 0,
+        "state": "available"
+      },
+      {
+        "token": "audit-member-2",
+        "partId": "2412b",
+        "color": 4,
+        "state": "available"
+      }
+    ],
+    "secondPassed": true,
+    "secondTokens": [
+      "audit-member-1",
+      "audit-member-2"
+    ],
+    "sameTokensReused": [
+      "audit-member-1",
+      "audit-member-2"
+    ],
+    "initialParts": 1,
+    "afterFirstParts": 3,
+    "afterSecondParts": 5,
+    "secondDiagnosticCodes": [],
+    "finalStaticValidation": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "inventoryInvariantViolated": true
+  },
+  "fullAssemblyAndRollback": {
+    "candidateCount": 64,
+    "chosenCandidate": "cand-asm-db2bbb669eca",
+    "applied": true,
+    "committed": true,
+    "outputPartCount": 3,
+    "targetPartCount": 3,
+    "fullTargetMatched": true,
+    "consumedInventory": 0,
+    "errors": 0,
+    "warnings": 0,
+    "rollbackProbe": {
+      "passed": false,
+      "rolledBack": true,
+      "allCallerInputsUnchanged": true,
+      "diagnosticCodes": [
+        "candidate-unknown"
+      ]
+    }
+  },
+  "projection": {
+    "ok": true,
+    "tolerancePx": 0.5,
+    "maxDeltaPx": 0.0005,
+    "meanDeltaPx": 0.0004,
+    "within0_01": 60,
+    "within0_1": 60,
+    "within0_5": 60,
+    "total": 60,
+    "cameraFromViewer": {
+      "position": [
+        0,
+        8.31329551567094,
+        28.74995940934412
+      ],
+      "target": [
+        0,
+        5.797999990522862,
+        0
+      ],
+      "dir": [
+        0,
+        0.08715574274765811,
+        0.9961946980917455
+      ],
+      "up": [
+        0,
+        1,
+        0
+      ],
+      "fov": 30,
+      "near": 0.1,
+      "far": 2000,
+      "aspect": 0.9,
+      "type": "PerspectiveCamera",
+      "zoom": 1,
+      "view": {
+        "enabled": true,
+        "offsetX": 0,
+        "offsetY": 0,
+        "width": 900,
+        "height": 1000,
+        "fullWidth": 900,
+        "fullHeight": 1000
+      },
+      "canvas": {
+        "clientWidth": 900,
+        "clientHeight": 1000,
+        "width": 900,
+        "height": 1000
+      },
+      "plate": 0.4
+    },
+    "cameraOffline": {
+      "eye": [
+        0,
+        8.313296,
+        28.749959
+      ],
+      "target": [
+        0,
+        5.798,
+        0
+      ],
+      "distance": 28.85978,
+      "fovYDeg": 30,
+      "aspect": 0.9,
+      "mode": "perspective"
+    },
+    "worst": [
+      {
+        "id": "p006",
+        "part": "3003",
+        "core": [
+          7,
+          1,
+          7
+        ],
+        "world": [
+          7,
+          0.4,
+          7
+        ],
+        "offline": [
+          1034.2573,
+          999.7526
+        ],
+        "viewer": [
+          1034.2575,
+          999.753
+        ],
+        "dPx": 0.0005,
+        "depthDiff": 21.365738
+      },
+      {
+        "id": "p007",
+        "part": "3022",
+        "core": [
+          7,
+          4,
+          7
+        ],
+        "world": [
+          7,
+          1.6,
+          7
+        ],
+        "offline": [
+          1037.0034,
+          901.8552
+        ],
+        "viewer": [
+          1037.0036,
+          901.8556
+        ],
+        "dPx": 0.0005,
+        "depthDiff": 21.261192
+      },
+      {
+        "id": "p012",
+        "part": "3004",
+        "core": [
+          7,
+          1,
+          5.5
+        ],
+        "world": [
+          7,
+          0.4,
+          5.5
+        ],
+        "offline": [
+          997.6532,
+          958.2146
+        ],
+        "viewer": [
+          997.6534,
+          958.215
+        ],
+        "dPx": 0.0005,
+        "depthDiff": 22.85947
+      },
+      {
+        "id": "p001",
+        "part": "41539",
+        "core": [
+          4,
+          0,
+          4
+        ],
+        "world": [
+          4,
+          0,
+          4
+        ],
+        "offline": [
+          744.0899,
+          950.2926
+        ],
+        "viewer": [
+          744.09,
+          950.293
+        ],
+        "dPx": 0.0004,
+        "depthDiff": 24.38812
+      },
+      {
+        "id": "p002",
+        "part": "3068b",
+        "core": [
+          4,
+          1,
+          7
+        ],
+        "world": [
+          4,
+          0.4,
+          7
+        ],
+        "offline": [
+          783.8613,
+          999.7526
+        ],
+        "viewer": [
+          783.8615,
+          999.753
+        ],
+        "dPx": 0.0004,
+        "depthDiff": 21.365738
+      }
+    ]
+  },
+  "modelAndSourceSnapshot": {
+    "models": [
+      {
+        "path": "examples/60239.brick.json",
+        "parts": 91,
+        "errorCount": 9,
+        "warningCount": 17,
+        "errors": [
+          {
+            "code": "overlap",
+            "parts": [
+              "p002",
+              "p003"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p002",
+              "p022"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p003",
+              "p022"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p004",
+              "p005"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p056",
+              "p088"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p057",
+              "p090"
+            ]
+          },
+          {
+            "code": "mount-disconnected",
+            "parts": [
+              "p003",
+              "p002"
+            ]
+          },
+          {
+            "code": "mount-disconnected",
+            "parts": [
+              "p005",
+              "p004"
+            ]
+          },
+          {
+            "code": "floating",
+            "parts": [
+              "p002",
+              "p003",
+              "p004",
+              "p005",
+              "p006",
+              "p007",
+              "p008",
+              "p009",
+              "p024",
+              "p025",
+              "p030",
+              "p031",
+              "p032",
+              "p033",
+              "p035",
+              "p036",
+              "p037",
+              "p038",
+              "p039",
+              "p040",
+              "p041",
+              "p042",
+              "p044",
+              "p045",
+              "p046",
+              "p047",
+              "p048",
+              "p049",
+              "p050",
+              "p051",
+              "p052",
+              "p053",
+              "p054",
+              "p055",
+              "p056",
+              "p057",
+              "p058",
+              "p059",
+              "p060",
+              "p061",
+              "p062",
+              "p063",
+              "p064",
+              "p065",
+              "p066",
+              "p067",
+              "p068",
+              "p069",
+              "p070",
+              "p071",
+              "p072",
+              "p074",
+              "p075",
+              "p076",
+              "p077",
+              "p084",
+              "p085",
+              "p086",
+              "p087",
+              "p088",
+              "p089",
+              "p090",
+              "p091"
+            ]
+          }
+        ],
+        "stats": {
+          "parts": 91,
+          "steps": 40,
+          "modules": 0,
+          "subassemblies": 0,
+          "mechanisms": 0,
+          "confirmed": 91,
+          "inferred": 0,
+          "uncertain": 0,
+          "connectedComponents": 36,
+          "largestComponentRatio": 0.307692
+        }
+      },
+      {
+        "path": "out/prd-v2/2026-10-26-a/A/compat/60239-advanced.brick.json",
+        "parts": 91,
+        "errorCount": 5,
+        "warningCount": 17,
+        "errors": [
+          {
+            "code": "overlap",
+            "parts": [
+              "p002",
+              "p022"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p003",
+              "p022"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p056",
+              "p088"
+            ]
+          },
+          {
+            "code": "overlap",
+            "parts": [
+              "p057",
+              "p090"
+            ]
+          },
+          {
+            "code": "floating",
+            "parts": [
+              "p002",
+              "p003",
+              "p004",
+              "p005",
+              "p006",
+              "p007",
+              "p008",
+              "p009",
+              "p024",
+              "p025",
+              "p030",
+              "p031",
+              "p032",
+              "p033",
+              "p035",
+              "p036",
+              "p037",
+              "p038",
+              "p039",
+              "p040",
+              "p041",
+              "p042",
+              "p044",
+              "p045",
+              "p046",
+              "p047",
+              "p048",
+              "p049",
+              "p050",
+              "p051",
+              "p052",
+              "p053",
+              "p054",
+              "p055",
+              "p056",
+              "p057",
+              "p058",
+              "p059",
+              "p060",
+              "p061",
+              "p062",
+              "p063",
+              "p064",
+              "p065",
+              "p066",
+              "p067",
+              "p068",
+              "p069",
+              "p070",
+              "p071",
+              "p072",
+              "p074",
+              "p075",
+              "p076",
+              "p077",
+              "p084",
+              "p085",
+              "p086",
+              "p087",
+              "p088",
+              "p089",
+              "p090",
+              "p091"
+            ]
+          }
+        ],
+        "stats": {
+          "parts": 91,
+          "steps": 40,
+          "modules": 0,
+          "subassemblies": 0,
+          "mechanisms": 0,
+          "confirmed": 91,
+          "inferred": 0,
+          "uncertain": 0,
+          "connectedComponents": 34,
+          "largestComponentRatio": 0.307692
+        }
+      },
+      {
+        "path": "examples/mecha.brick.json",
+        "parts": 83,
+        "errorCount": 0,
+        "warningCount": 0,
+        "errors": [],
+        "stats": {
+          "parts": 83,
+          "steps": 12,
+          "modules": 8,
+          "subassemblies": 1,
+          "mechanisms": 4,
+          "confirmed": 82,
+          "inferred": 1,
+          "uncertain": 0,
+          "connectedComponents": 1,
+          "largestComponentRatio": 1
+        }
+      }
+    ],
+    "renderFixture": {
+      "passed": true,
+      "commandOk": true,
+      "stateHash": "ac2fb8f8d1961323a591298cffe5245983d343e4f8127b56af15b3db97a044d8",
+      "responseKeys": [
+        "ok",
+        "commandOk",
+        "passed",
+        "kind",
+        "renderStateVersion",
+        "cameraContract",
+        "camera",
+        "stateHash",
+        "labels",
+        "enumerationComplete",
+        "truncated",
+        "maxLabels",
+        "candidatesInView",
+        "skipped",
+        "diagnostics",
+        "elapsedMs"
+      ],
+      "mapKeys": [
+        "version",
+        "stateHash",
+        "camera",
+        "totalVisibleLabels",
+        "enumerationComplete",
+        "labels"
+      ]
+    },
+    "sourceHashes": [
+      {
+        "path": "src/core/actions-v1/apply.js",
+        "sha256": "66bd4167fcbdbbb07dd41997ad2cd8773ac189b92cfc2bace4715856943b0d67"
+      },
+      {
+        "path": "src/core/actions-v1/candidates.js",
+        "sha256": "ac76bc312317351616d06329ea6c2230e6cf50031c8df4477c0388f0fafc1a5e"
+      },
+      {
+        "path": "src/core/actions-v1/state.js",
+        "sha256": "f45554af9ffe00a70f233b10601ab5ba4777c6d77e60051449638cbac6e587d6"
+      },
+      {
+        "path": "src/core/actions-v1/render-state.js",
+        "sha256": "0feee4523e26ff6503077413725994f2459baca90b5497e71ed3249e4e13d564"
+      },
+      {
+        "path": "src/core/assets-v1/lock.js",
+        "sha256": "23c56a0a4eb7af78488b959dd0ba1d92a586466205d597bea0fe43b6ef6afa23"
+      },
+      {
+        "path": "src/core/core.js",
+        "sha256": "3de52d202f603a14b4232040102cba927205278ce56c132386add04d901800e5"
+      },
+      {
+        "path": "src/viewer/main.js",
+        "sha256": "81a5a84983790dc0cbfd1711f855a266c0c53f96019d3af31617cd74072e075c"
+      },
+      {
+        "path": "catalog/assets-v1/index.json",
+        "sha256": "030ffb688ed71377e08443f5317048f6738add6fdfa1f39f204988a144f517d0"
+      },
+      {
+        "path": "docs/prd-v2/implementation-A/contracts/version.json",
+        "sha256": "45a3cf2d04d92d7b5cb87e2abfbe61af9a14dc7d2ad7c3766106e16d4e046379"
+      },
+      {
+        "path": "tools/brickvlm/gen_real_assembly_curriculum.mjs",
+        "sha256": "002ad28e27c9a2684169ef5f9d29936be7c38e0a6c7c2619ce05acedc913a6b9"
+      }
+    ]
+  },
+  "mechaGitHistory": {
+    "scope": "Git-reachable history returned by git log for examples/mecha.brick.json; does not cover prior untracked files",
+    "history": [
+      {
+        "sha": "47f02a57886aacbe809732f1f9abbde51c09eb19",
+        "parts": 83
+      },
+      {
+        "sha": "57d36e4ebb5d80c4552a5625dff190b5f5ebd33a",
+        "parts": 83
+      },
+      {
+        "sha": "5c1c2b9b537fd2f8f4b3a55b8b0286b00bb883b0",
+        "parts": 82
+      },
+      {
+        "sha": "bd489297b62e6e362b509083364cbdfd252b92ad",
+        "parts": 69
+      },
+      {
+        "sha": "9d9036d2e67cbe93b649e69732d7ccfd84622446",
+        "parts": 69
+      },
+      {
+        "sha": "e6b60a5941755edbf0b40402783c4ee4b618f9d9",
+        "parts": 64
+      }
+    ],
+    "maxParts": 83,
+    "part11211": {
+      "h": 5,
+      "sideRows": [
+        1.25,
+        3.75
+      ]
+    }
+  },
+  "mechaScriptReadOnlyOutput": "\r\nvalidate: FAIL errors 29 warnings 3\r\n  E mount-disconnected [\"p49\",\"p30\"] p49：与 mount 指定的父零件 p30 之间没有真实物理连接（凸点未对准底孔或夹口未对准把\r\n柄）\r\n  E mount-disconnected [\"p53\",\"p31\"] p53：与 mount 指定的父零件 p31 之间没有真实物理连接（凸点未对准底孔或夹口未对准把\r\n柄）\r\n  E mount-disconnected [\"p56\",\"p30\"] p56：与 mount 指定的父零件 p30 之间没有真实物理连接（凸点未对准底孔或夹口未对准把\r\n柄）\r\n  E mount-disconnected [\"p58\",\"p31\"] p58：与 mount 指定的父零件 p31 之间没有真实物理连接（凸点未对准底孔或夹口未对准把\r\n柄）\r\n  E mount-disconnected [\"p60\",\"p32\"] p60：与 mount 指定的父零件 p32 之间没有真实物理连接（凸点未对准底孔或夹口未对准把\r\n柄）\r\n  E mount-disconnected [\"p62\",\"p33\"] p62：与 mount 指定的父零件 p33 之间没有真实物理连接（凸点未对准底孔或夹口未对准把\r\n柄）\r\n  E floating [\"p49\",\"p50\",\"p51\",\"p53\",\"p54\",\"p55\",\"p56\",\"p57\",\"p58\",\"p59\",\"p60\",\"p61\",\"p62\",\"p63\"] 14 个零件没有连到底\r\n座（悬空）：p49, p50, p51, p53, p54, p55, p56, p57, p58, p59, p60, p61 …\r\n  W step-order [\"p28\",\"p29\",\"rsp280\",\"rsp281\",\"rsp282\",\"rsp290\",\"rsp291\",\"rsp292\"] 第 5 步：p28, p29, rsp280, rsp281, r\r\nsp282, rsp290, rsp291, rsp292 在这一步还没有支撑（支撑它的零件在后面的步骤）\r\n  W step-order [\"p30\",\"p31\",\"p32\",\"p33\"] 第 6 步：p30, p31, p32, p33 在这一步还没有支撑（支撑它的零件在后面的步骤）\r\n  W step-order [\"p76\",\"p77\",\"p48\",\"p79\",\"p80\",\"p52\"] 第 8 步：p76, p77, p48, p79, p80, p52 在这一步还没有支撑（支撑它的\r\n零件在后面的步骤）\r\n\r\n",
+  "BLatestCurriculum": {
+    "core": {
+      "modelsHash": 30,
+      "imagesHash": 30,
+      "errors": 0,
+      "warnings": 0,
+      "diag": [],
+      "anonymousOnly": true,
+      "primitiveEquivalenceCases": [
+        {
+          "case": "case_snot_01",
+          "equiv": [
+            "cand_3",
+            "cand_4"
+          ]
+        },
+        {
+          "case": "case_snot_03",
+          "equiv": [
+            "cand_1",
+            "cand_2"
+          ]
+        },
+        {
+          "case": "case_snot_05",
+          "equiv": [
+            "cand_2",
+            "cand_3"
+          ]
+        }
+      ],
+      "duplicates": [
+        {
+          "sample": "smp-curriculum-00011",
+          "first": "cand_2",
+          "second": "cand_4",
+          "op": "attach_assembly"
+        },
+        {
+          "sample": "smp-curriculum-00012",
+          "first": "cand_2",
+          "second": "cand_3",
+          "op": "attach_assembly"
+        },
+        {
+          "sample": "smp-curriculum-00013",
+          "first": "cand_2",
+          "second": "cand_4",
+          "op": "attach_assembly"
+        },
+        {
+          "sample": "smp-curriculum-00014",
+          "first": "cand_2",
+          "second": "cand_4",
+          "op": "attach_assembly"
+        },
+        {
+          "sample": "smp-curriculum-00015",
+          "first": "cand_2",
+          "second": "cand_3",
+          "op": "attach_assembly"
+        }
+      ],
+      "components": [
+        {
+          "case": "case_subasm_01",
+          "sourceParts": 1,
+          "targetParts": 3,
+          "equivalentCandidates": [
+            "cand_2",
+            "cand_4"
+          ],
+          "candidates": [
+            {
+              "id": "cand_1",
+              "child": "3023",
+              "template": null
+            },
+            {
+              "id": "cand_2",
+              "child": "3023",
+              "template": null
+            },
+            {
+              "id": "cand_3",
+              "child": "3023",
+              "template": null
+            },
+            {
+              "id": "cand_4",
+              "child": "3023",
+              "template": null
+            }
+          ],
+          "templateFiles": []
+        },
+        {
+          "case": "case_subasm_02",
+          "sourceParts": 1,
+          "targetParts": 3,
+          "equivalentCandidates": [
+            "cand_2",
+            "cand_3"
+          ],
+          "candidates": [
+            {
+              "id": "cand_1",
+              "child": "3020",
+              "template": null
+            },
+            {
+              "id": "cand_2",
+              "child": "3020",
+              "template": null
+            },
+            {
+              "id": "cand_3",
+              "child": "3020",
+              "template": null
+            },
+            {
+              "id": "cand_4",
+              "child": "3020",
+              "template": null
+            }
+          ],
+          "templateFiles": []
+        },
+        {
+          "case": "case_subasm_03",
+          "sourceParts": 1,
+          "targetParts": 3,
+          "equivalentCandidates": [
+            "cand_2",
+            "cand_4"
+          ],
+          "candidates": [
+            {
+              "id": "cand_1",
+              "child": "48336",
+              "template": null
+            },
+            {
+              "id": "cand_2",
+              "child": "48336",
+              "template": null
+            },
+            {
+              "id": "cand_3",
+              "child": "48336",
+              "template": null
+            },
+            {
+              "id": "cand_4",
+              "child": "48336",
+              "template": null
+            }
+          ],
+          "templateFiles": []
+        },
+        {
+          "case": "case_subasm_04",
+          "sourceParts": 1,
+          "targetParts": 3,
+          "equivalentCandidates": [
+            "cand_1",
+            "cand_2",
+            "cand_4"
+          ],
+          "candidates": [
+            {
+              "id": "cand_1",
+              "child": "4073",
+              "template": null
+            },
+            {
+              "id": "cand_2",
+              "child": "4073",
+              "template": null
+            },
+            {
+              "id": "cand_3",
+              "child": "4073",
+              "template": null
+            },
+            {
+              "id": "cand_4",
+              "child": "4073",
+              "template": null
+            }
+          ],
+          "templateFiles": []
+        },
+        {
+          "case": "case_subasm_05",
+          "sourceParts": 1,
+          "targetParts": 3,
+          "equivalentCandidates": [
+            "cand_2",
+            "cand_3"
+          ],
+          "candidates": [
+            {
+              "id": "cand_1",
+              "child": "3020",
+              "template": null
+            },
+            {
+              "id": "cand_2",
+              "child": "3020",
+              "template": null
+            },
+            {
+              "id": "cand_3",
+              "child": "3020",
+              "template": null
+            },
+            {
+              "id": "cand_4",
+              "child": "3020",
+              "template": null
+            }
+          ],
+          "templateFiles": []
+        }
+      ],
+      "tileCase": [
+        {
+          "id": "cand_1",
+          "part": "3710",
+          "receipt": {
+            "status": "success",
+            "physicalConnected": true,
+            "collides": false,
+            "sameMaterialBoxesAsTarget": true,
+            "outcome": "matches_target_geometry"
+          },
+          "equivalent": true
+        },
+        {
+          "id": "cand_2",
+          "part": "2431",
+          "receipt": {
+            "status": "success",
+            "physicalConnected": true,
+            "collides": false,
+            "sameMaterialBoxesAsTarget": true,
+            "outcome": "matches_target_geometry"
+          },
+          "equivalent": true
+        },
+        {
+          "id": "cand_3",
+          "part": "2431",
+          "receipt": {
+            "status": "target_mismatch",
+            "physicalConnected": true,
+            "collides": false,
+            "sameMaterialBoxesAsTarget": false,
+            "outcome": "different_bounding_box_or_offset"
+          },
+          "equivalent": false
+        },
+        {
+          "id": "cand_4",
+          "part": "2431",
+          "receipt": {
+            "status": "target_mismatch",
+            "physicalConnected": true,
+            "collides": false,
+            "sameMaterialBoxesAsTarget": false,
+            "outcome": "different_bounding_box_or_offset"
+          },
+          "equivalent": false
+        }
+      ]
+    },
+    "fullSchemaValidation": {
+      "validator": "Draft202012Validator",
+      "samples": 15,
+      "valid": 15,
+      "invalid": []
+    },
+    "remainingEquivalenceDetails": {
+      "wrongPartEquivalences": [
+        {
+          "case": "case_stack_04",
+          "candidate": "cand_1",
+          "expectedPart": "2431",
+          "acceptedDifferentPart": "3710"
+        },
+        {
+          "case": "case_snot_02",
+          "candidate": "cand_4",
+          "expectedPart": "2412b",
+          "acceptedDifferentPart": "3023"
+        }
+      ],
+      "componentReplayWitness": {
+        "case": "case_subasm_01",
+        "candidateId": "cand_2",
+        "listedAsEquivalent": true,
+        "inputParts": 1,
+        "replayedParts": 2,
+        "targetParts": 3,
+        "replayErrors": [],
+        "replayWarnings": [],
+        "actualReplayedParts": [
+          "3001",
+          "3023"
+        ],
+        "targetPartsList": [
+          "3001",
+          "3023",
+          "2412b"
+        ]
+      },
+      "orientationInvalid": 0,
+      "preflight": {
+        "status": "dry_run_preflight_recorded",
+        "stages": {
+          "image_file_integrity": "verified",
+          "processor_batch": "unverified",
+          "assistant_token_mask": "unverified",
+          "training_forward_backward": "unverified"
+        },
+        "diagnostics": {
+          "image_check": {
+            "checked_count": 24,
+            "missing_count": 0,
+            "dual_image_verified": true
+          },
+          "processor_check": "unverified: No module named 'transformers'",
+          "vram_status": "unverified_offline_environment"
+        },
+        "train_samples": 9,
+        "val_samples": 3,
+        "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+        "note": "图像文件完整性已通过 PIL 独立验证；由于运行环境缺少 transformers/Qwen2.5-VL 离线权重，多模态批次与梯度反向传播保持未测 (unverified)，杜绝 mock 冒充。"
+      },
+      "sourceHashes": [
+        {
+          "path": "tools/brickvlm/gen_real_assembly_curriculum.mjs",
+          "sha256": "002ad28e27c9a2684169ef5f9d29936be7c38e0a6c7c2619ce05acedc913a6b9"
+        },
+        {
+          "path": "training/brickvlm/train_qwen_qlora.py",
+          "sha256": "ced204fe7482c95122d3c2d70305edc42ee6d37316fb4c96d244baba24a8df0c"
+        },
+        {
+          "path": "docs/prd-v2/implementation-B/contracts/dataset.schema.json",
+          "sha256": "60a60dd96f4c75847d3d11892c29d1a71c672bd40937059c3d7d874f308e501a"
+        },
+        {
+          "path": "test/real-assembly-curriculum.test.mjs",
+          "sha256": "23fc36fcf667c84d1e8c2f4f6b7f8a01686be4ee0ff212c7378251aca3731362"
+        },
+        {
+          "path": "src/core/core.js",
+          "sha256": "3de52d202f603a14b4232040102cba927205278ce56c132386add04d901800e5"
+        },
+        {
+          "path": "catalog/parts.json",
+          "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d"
+        },
+        {
+          "path": "catalog/colors.json",
+          "sha256": "4652bcf5a0b385f59ac288e1e116d67fd1f43b23c87d6e12931a9006c757059c"
+        }
+      ]
+    }
+  }
+}

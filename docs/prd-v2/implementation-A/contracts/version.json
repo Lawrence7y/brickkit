@@ -1,0 +1,180 @@
+{
+  "contractVersion": "0.9.0-draft",
+  "contractSet": "brickkit-contracts",
+  "status": "draft-for-B-review",
+  "frozen": false,
+  "owners": {
+    "A": "ST/AS/EN/CP + 公共入口集成（src/core/assets-v1, src/core/assembly-v1, src/core/actions-v1, cli, catalog 索引, 契约）",
+    "B": "WF/MV/ML（src/manual-v2, src/brickvlm, tools/manual-v2, tools/brickvlm, training, C2/C3 Schema）"
+  },
+  "producedBy": "A (ZCode)",
+  "producedAt": "2026-10-26",
+  "baseline": {
+    "gitHead": "47f02a57886aacbe809732f1f9abbde51c09eb19",
+    "worktree": "dirty (77 entries; src/core/builder.js, src/ldraw/, examples/60239.* untracked)",
+    "note": "契约面向工作树快照，不是纯 HEAD。未提交源码同样进入基线。"
+  },
+  "protocolVersions": {
+    "partAsset": "1.0.0",
+    "assembly": "0.3.0",
+    "actionProtocol": "1.0.0",
+    "legacyBrickbuild": "0.2",
+    "legacyPlan": "0.1",
+    "renderState": "1.0.0"
+  },
+  "files": {
+    "part-asset.schema.json": "零件素材定义 + 索引（ST）",
+    "assembly.schema.json": "关系装配源 0.3（AS）",
+    "action-request.schema.json": "动作请求 C1（EN）",
+    "action-response.schema.json": "动作/候选/状态响应 C1（EN）",
+    "orientation-table.json": "24 正交姿态表（AS-02），含 id/矩阵/行列式校验",
+    "api.md": "JS 模块与 CLI 双入口调用约定、错误协议",
+    "fixtures/": "最小可运行夹具（正例 + 负例）",
+    "render-state.schema.json": "renderState 输出契约（MV-01）：相机契约、2D↔3D 标号映射、stateHash 绑定"
+  },
+  "units": {
+    "internal": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "canonicalFrame": "right-handed, +y up, +z front, +x right; origin at part bounding-box bottom-center for solids; wheels/round use catalog ldrawOrigin",
+    "legacyGridApi": "builder 仍用 [x格, y片, z格]；适配层换算 ×20 LDU x/z、×8 LDU y"
+  },
+  "tolerances": {
+    "profileId": "default-2026-10-26",
+    "transformEpsLdu": 0.000001,
+    "connectorPositionTolLdu": 0.05,
+    "connectorAngleTolDeg": 0.1,
+    "collisionEpsLdu": 0.8,
+    "note": "collisionEpsLdu=0.8 等价于旧 boxesCollide 的水平 0.04 格 / 竖直 0.10 片。只处理浮点边界，不吃真实壁厚。"
+  },
+  "capabilityStates": [
+    "verified",
+    "measured",
+    "inferred",
+    "assumed",
+    "unsupported",
+    "unknown"
+  ],
+  "changePolicy": "破坏性变更提升主版本并附迁移与重跑范围；mock 与真实引擎结果必须分开标注。",
+  "openQuestionsForB": [
+    "隐式取景是否允许：A 要求 renderState 必须显式传 target/distance/视口，B 的 stud-overlay-v2.js 默认 target=[0,5,0]，需确认能否去掉默认值（B 的夹具已按显式相机取值，此项仅剩「是否保留 UI 默认值」待签）",
+    "接口命名已裁决（稳定语义 ID 为权威键，stud_top_N/stud_side_N 为别名，裸 stud_N 仅输入）；A 侧已落地（见本文件 connectorIdPolicy），待 B 确认其输出契约改为别名形式并携带 assetLock revision",
+    "renderState 消费夹具（A 已消费 B 的夹具：8/8 标签像素差 0、hash 一致）——剩「是否把 toConnectorMap 作为唯一交付形态」一项待签",
+    "assetLock 真实内容哈希：**已对齐**——B v4 的五任务锁（4/2/3/2/38 件）逐条通过 A 的严格校验，且与 A 的 buildAssetLock 重建逐字相同；剩「B 用 A 的生成器产出生产锁」的流程落地"
+  ],
+  "revision": 4,
+  "revisedAt": "2026-10-26",
+  "repairActions": {
+    "status": "implemented",
+    "gate": "undo / detach / replace 均要求 repairMode:true，否则 repair-not-allowed",
+    "undo": {
+      "scope": "本批次已成功应用的动作",
+      "removes": "该动作产生的全部实例（含 attach_assembly 的 <nodeId>/<memberId> 成员）",
+      "inventory": "按动作记录释放 token 回 available",
+      "rejects": ["undo-no-target", "undo-unknown"]
+    },
+    "detach": {
+      "scope": "模型中已存在的件（可来自更早事务）",
+      "inventory": "按 consumedBy 反查释放 token",
+      "rejects": ["detach-no-target", "detach-unknown-node", "detach-orphans-parts"],
+      "conservatism": "拆完会让别的件失去唯一连接时整批拒绝并点名会悬空的件，不接受「拆完留下悬空件」"
+    },
+    "replace": {
+      "scope": "同姿态原地换件，at/rot/up/snot 全保留",
+      "inventory": "先扣新件 token，再按 consumedBy 释放旧件 token",
+      "rejects": ["replace-no-target", "replace-no-part", "replace-unknown-node", "replace-noop", "collision", "replace-disconnected", "replace-no-neighbours", "inventory-insufficient", "missing-asset"],
+      "boundary": "同姿态换不上时不让 replace 自己挪位姿；正确路径是 detach + attach 重新求解候选"
+    },
+    "evidence": [
+      "out/prd-v2/2026-10-26-a/A/repair/verify-detach-replace.json（14 项断言）",
+      "out/prd-v2/2026-10-26-a/A/repair/mutation-prove-repair-guards.json（4 条守卫逐条变异，均为唯一拦截者，正例未误伤）"
+    ]
+  },
+  "thirdRoundClosures": {
+    "A-INV-01": {
+      "title": "跨事务库存重复消费",
+      "status": "closed",
+      "rootCause": "apply.js 只用批次内 consumedNow 去重，成功提交时未把 token 写回库存记录的 state；rehash 又按原记录复制状态",
+      "fix": [
+        "consumeToken()：写 inv.state='consumed' 并记 consumedBy",
+        "releaseTokens()：undo 撤销时把 token 放回 available",
+        "rehash()：库存状态以记录本体为准",
+        "单件路径同件号库存全耗尽 → inventory-insufficient（不再静默继续）",
+        "undo 移除整组成员（含 attach_assembly 带前缀成员），不只删锚点"
+      ],
+      "evidence": [
+        "out/prd-v2/2026-10-26-a/A/inventory/verify-cross-transaction-conservation.json（8/8）",
+        "out/prd-v2/2026-10-26-a/A/inventory/mutation-prove-assertion-bites.json（变异测试：还原旧行为复现 1→3→5）"
+      ],
+      "callerContract": "事务成功后必须同时接管 _workingModel 与 _inventory；只取模型会丢掉消费事实"
+    },
+    "bFixtureConsumption": {
+      "assetLock": "out/prd-v2/2026-10-26-a/A/contracts/verify-b-asset-lock-consumption.json（5/5 任务通过，partLocks 旧写法被拒）",
+      "renderState": "out/prd-v2/2026-10-26-a/A/contracts/verify-b-fixtures-consumption.json（8/8 标签像素差 0）",
+      "fullAssembly": "同上（64 候选 → 3 件目标，0 errors/0 warnings）",
+      "caveat": "三份夹具自身标注 review-*-not-integrated，B 转生产接线前只算「A 侧能消费」"
+    }
+  },
+  "connectorIdPolicy": {
+    "authority": "stable semantic connectorId（type + 零件局部 LDU 语义位置 [+ 面标记]），与数组下标解耦，可独立复算",
+    "aliases": [
+      "stud_top_N",
+      "stud_side_N"
+    ],
+    "inputOnlyCompat": [
+      "stud_N（仅解释为顶凸点；侧凸点必须写 stud_side_N，否则有损）"
+    ],
+    "revisionBinding": "别名解析必须携带 assetLock.revision；用过期 revision 应用覆盖会被拒绝",
+    "evidence": "out/prd-v2/2026-10-26-a/A/contracts/connector-id-authority.json（8/8）"
+  },
+  "renderState": {
+    "versions": {
+      "schema": "1.0.0",
+      "cameraContract": "1.0.0"
+    },
+    "camera": {
+      "dir": "dir = [sin(az)*cos(el), sin(el), cos(az)*cos(el)]，由 target 指向相机",
+      "world": "[x格, y片*0.4, z格]",
+      "projection": {
+        "type": "perspective",
+        "fovYDeg": 30,
+        "near": 0.1,
+        "far": 2000
+      },
+      "pixelOrigin": "top-left"
+    },
+    "verification": {
+      "perspective": "真实浏览器 60/60 点，最大误差 0.0005 px",
+      "orthographic": "真实浏览器 60/60 点，最大误差 0.0005 px（半高取自 viewer cameraSnapshot().orthoHalfHeight，不复算取景）",
+      "evidence": [
+        "out/prd-v2/2026-10-26-a/A/render/projection-verify.json",
+        "out/prd-v2/2026-10-26-a/A/render/projection-verify-ortho.json"
+      ]
+    },
+    "invariants": [
+      "必须显式给 camera.target / distance / width / height，不接受隐式取景",
+      "stateHash 不符直接拒绝（stale-state），标号不得跨状态复用",
+      "maxLabels 上限 32（PRD MV-01），超过即夹取",
+      "截断时 enumerationComplete=false，不得声称穷尽",
+      "每个剔除原因必须计入 skipped，不得静默丢弃"
+    ]
+  },
+  "assetLock": {
+    "module": "src/core/assets-v1/lock.js",
+    "rejectionRules": [
+      "asset-lock-missing：缺 assetLock",
+      "asset-lock-empty：parts 为空（空锁等同没锁）",
+      "asset-lock-incomplete：任务实际用到的件号未列入",
+      "asset-lock-revision-missing：revision 空串/缺失",
+      "asset-lock-hash-missing：contentHash 空串/缺失",
+      "asset-lock-hash-invalid：contentHash 非 64 位小写十六进制",
+      "asset-lock-hash-mismatch：与索引 contentHash 不符",
+      "asset-lock-revision-mismatch：与索引 revision 不符",
+      "asset-lock-unknown-part：件号不在索引",
+      "asset-lock-profile-mismatch：profileId 与索引不符",
+      "asset-lock-index-unavailable：索引不可用（需 assets compile）"
+    ],
+    "note": "全部为 error，不再降级为 warning。ST-01 只有在「每条锁记录都带真实哈希且与索引逐条相符」时才记 verified。"
+  }
+}

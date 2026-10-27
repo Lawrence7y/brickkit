@@ -1,0 +1,346 @@
+{
+  "status": "review-consumer-fixture-not-training-data",
+  "sourceCase": "case_subasm_01",
+  "model": {
+    "format": "brickbuild",
+    "version": "0.2",
+    "meta": {
+      "name": "c11_t",
+      "front": "+z"
+    },
+    "parts": [
+      {
+        "id": "p001",
+        "part": "3001",
+        "color": 15,
+        "at": [
+          0,
+          0,
+          0
+        ],
+        "rootAt": [
+          0,
+          0,
+          0
+        ],
+        "snot": 0,
+        "step": 1
+      }
+    ]
+  },
+  "childModel": {
+    "parts": [
+      {
+        "id": "bump1",
+        "part": "3023",
+        "color": 0,
+        "at": [
+          10,
+          0,
+          0
+        ],
+        "rootAt": [
+          10,
+          0,
+          0
+        ],
+        "snot": 0,
+        "step": 2
+      },
+      {
+        "id": "bump2",
+        "part": "2412b",
+        "color": 4,
+        "up": "+y",
+        "rot": 0,
+        "snot": 0,
+        "at": [
+          10,
+          1,
+          0
+        ],
+        "snap": {
+          "on": "bump1",
+          "stud": 0,
+          "receptor": 0
+        },
+        "step": 2
+      }
+    ],
+    "anchor": "bump1"
+  },
+  "inventory": [
+    {
+      "token": "audit-member-1",
+      "partId": "3023",
+      "color": 0,
+      "state": "available"
+    },
+    {
+      "token": "audit-member-2",
+      "partId": "2412b",
+      "color": 4,
+      "state": "available"
+    }
+  ],
+  "candidateRequest": {
+    "childModel": {
+      "parts": [
+        {
+          "id": "bump1",
+          "part": "3023",
+          "color": 0,
+          "at": [
+            10,
+            0,
+            0
+          ],
+          "rootAt": [
+            10,
+            0,
+            0
+          ],
+          "snot": 0,
+          "step": 2
+        },
+        {
+          "id": "bump2",
+          "part": "2412b",
+          "color": 4,
+          "up": "+y",
+          "rot": 0,
+          "snot": 0,
+          "at": [
+            10,
+            1,
+            0
+          ],
+          "snap": {
+            "on": "bump1",
+            "stud": 0,
+            "receptor": 0
+          },
+          "step": 2
+        }
+      ],
+      "anchor": "bump1"
+    },
+    "parentNodeId": "p001",
+    "maxResults": 5000
+  },
+  "request": {
+    "protocolVersion": "1.0.0",
+    "taskId": "audit-bumper",
+    "stateHash": "ae0b1a28ee7c4a5bab85eb52c5f99b73df8326d7ce815832654c14d200c7a315",
+    "actions": [
+      {
+        "id": "attach-bumper",
+        "op": "attach_assembly",
+        "target": {
+          "partInstanceId": "mounted-bumper"
+        },
+        "candidateId": "cand-asm-db2bbb669eca",
+        "candidateHash": "48af757f072a44c1b73665a749ba9c0c17a01cba3aca9dd975b57fc88bd713bf",
+        "partId": "3023",
+        "color": 0,
+        "childModel": {
+          "parts": [
+            {
+              "id": "bump1",
+              "part": "3023",
+              "color": 0,
+              "at": [
+                10,
+                0,
+                0
+              ],
+              "rootAt": [
+                10,
+                0,
+                0
+              ],
+              "snot": 0,
+              "step": 2
+            },
+            {
+              "id": "bump2",
+              "part": "2412b",
+              "color": 4,
+              "up": "+y",
+              "rot": 0,
+              "snot": 0,
+              "at": [
+                10,
+                1,
+                0
+              ],
+              "snap": {
+                "on": "bump1",
+                "stud": 0,
+                "receptor": 0
+              },
+              "step": 2
+            }
+          ],
+          "anchor": "bump1"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "candidateCount": 64,
+    "chosenCandidate": "cand-asm-db2bbb669eca",
+    "applied": true,
+    "committed": true,
+    "outputPartCount": 3,
+    "targetPartCount": 3,
+    "fullTargetMatched": true,
+    "consumedInventory": 0,
+    "errors": 0,
+    "warnings": 0,
+    "rollbackProbe": {
+      "passed": false,
+      "rolledBack": true,
+      "allCallerInputsUnchanged": true,
+      "diagnosticCodes": [
+        "candidate-unknown"
+      ]
+    }
+  },
+  "result": {
+    "protocolVersion": "1.0.0",
+    "kind": "apply",
+    "commandOk": true,
+    "passed": true,
+    "stateHash": "ae0b1a28ee7c4a5bab85eb52c5f99b73df8326d7ce815832654c14d200c7a315",
+    "engine": {
+      "engineRevision": "actions-v1@1.0.0",
+      "contractVersion": "1.0.0",
+      "mock": false
+    },
+    "apply": {
+      "committed": true,
+      "rolledBack": false,
+      "stateHashBefore": "ae0b1a28ee7c4a5bab85eb52c5f99b73df8326d7ce815832654c14d200c7a315",
+      "stateHashAfter": "e013e64f8bea689fe057cd1f7ce676d586839cd756853637ab1b93f34882d40b",
+      "results": [
+        {
+          "actionId": "attach-bumper",
+          "op": "attach_assembly",
+          "status": "applied",
+          "applied": {
+            "nodeId": "mounted-bumper",
+            "memberNodeIds": [
+              "mounted-bumper",
+              "mounted-bumper/bump2"
+            ],
+            "memberCount": 2,
+            "translationLdu": [
+              0,
+              24,
+              0
+            ],
+            "orientationId": 0,
+            "inventoryTokens": [
+              "audit-member-1",
+              "audit-member-2"
+            ],
+            "connectorsUsed": [
+              "ctop#0",
+              "cantistud#0"
+            ],
+            "physicalConnection": true,
+            "atomic": true
+          },
+          "stateHashAfter": null
+        }
+      ],
+      "executedCount": 1,
+      "rejectedCount": 0,
+      "abstainedCount": 0,
+      "clientStateUpdated": true
+    },
+    "_workingModel": {
+      "format": "brickbuild",
+      "version": "0.2",
+      "meta": {
+        "name": "c11_t",
+        "front": "+z"
+      },
+      "parts": [
+        {
+          "id": "p001",
+          "part": "3001",
+          "color": 15,
+          "at": [
+            0,
+            0,
+            0
+          ],
+          "rootAt": [
+            0,
+            0,
+            0
+          ],
+          "snot": 0,
+          "step": 1
+        },
+        {
+          "id": "mounted-bumper",
+          "part": "3023",
+          "color": 0,
+          "at": [
+            0,
+            3,
+            0
+          ],
+          "rootAt": [
+            10,
+            0,
+            0
+          ],
+          "snot": 0,
+          "step": 2,
+          "rot": 0,
+          "up": "+y"
+        },
+        {
+          "id": "mounted-bumper/bump2",
+          "part": "2412b",
+          "color": 4,
+          "up": "+y",
+          "rot": 0,
+          "snot": 0,
+          "at": [
+            0,
+            4,
+            0
+          ],
+          "snap": {
+            "on": "bump1",
+            "stud": 0,
+            "receptor": 0
+          },
+          "step": 2
+        }
+      ]
+    },
+    "_inventory": [
+      {
+        "token": "audit-member-1",
+        "partId": "3023",
+        "color": 0,
+        "state": "available"
+      },
+      {
+        "token": "audit-member-2",
+        "partId": "2412b",
+        "color": 4,
+        "state": "available"
+      }
+    ],
+    "diagnostics": [],
+    "capabilityGaps": [],
+    "notMeasured": []
+  }
+}

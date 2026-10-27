@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.org/schemas/manual-observation-1.0.json",
+  "title": "ManualObservationSet",
+  "description": "说明书原始观察记录契约。从说明书页面中独立提取，记录步骤、区域、新增件候选、视角与装配事件，禁止由完成模型反推伪造。",
+  "type": "object",
+  "required": [
+    "format",
+    "version",
+    "meta",
+    "sourceDocument",
+    "observations"
+  ],
+  "properties": {
+    "format": {
+      "type": "string",
+      "const": "brickkit-manual-observations"
+    },
+    "version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "meta": {
+      "type": "object",
+      "required": ["setId", "name", "extractedAt", "extractor"],
+      "properties": {
+        "setId": { "type": "string" },
+        "name": { "type": "string" },
+        "extractedAt": { "type": "string", "format": "date-time" },
+        "extractor": { "type": "string" },
+        "notes": { "type": "string" }
+      }
+    },
+    "sourceDocument": {
+      "type": "object",
+      "required": ["fileName", "fileSha256", "totalPages", "sourceType"],
+      "properties": {
+        "fileName": { "type": "string" },
+        "fileSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "totalPages": { "type": "integer", "minimum": 1 },
+        "sourceType": { "type": "string", "enum": ["official-pdf", "scan-images", "photos"] },
+        "url": { "type": "string" }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "observationId",
+          "page",
+          "region",
+          "stepNumber",
+          "confidence",
+          "partsAdded"
+        ],
+        "properties": {
+          "observationId": {
+            "type": "string",
+            "pattern": "^obs-[a-zA-Z0-9_-]+$"
+          },
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "region": {
+            "type": "object",
+            "description": "归一化边界框 [0, 1]",
+            "required": ["x", "y", "width", "height"],
+            "properties": {
+              "x": { "type": "number", "minimum": 0, "maximum": 1 },
+              "y": { "type": "number", "minimum": 0, "maximum": 1 },
+              "width": { "type": "number", "minimum": 0, "maximum": 1 },
+              "height": { "type": "number", "minimum": 0, "maximum": 1 }
+            }
+          },
+          "imageHash": {
+            "type": "string",
+            "description": "裁剪区域或页面的 SHA256 哈希"
+          },
+          "stepNumber": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "subStepNumber": {
+            "type": ["integer", "null"]
+          },
+          "callout": {
+            "type": "boolean",
+            "description": "是否为局部放大插图或分步子组件指示框"
+          },
+          "submodelRef": {
+            "type": ["string", "null"],
+            "description": "所属子模型标识（如 minifig, cone_1, front_bumper, main 等）"
+          },
+          "isAssemblyEvent": {
+            "type": "boolean",
+            "description": "是否为零新增件的总装或挂装动作（将已拼好的子组件扣上主体）"
+          },
+          "isFlip": {
+            "type": "boolean",
+            "description": "说明书是否在此步指示翻面施工（如将模型翻倒安装底部）"
+          },
+          "repeatCount": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1,
+            "description": "组装重复次数（如 2x, 4x）"
+          },
+          "pose": {
+            "type": "object",
+            "properties": {
+              "azimuth": { "type": "number" },
+              "elevation": { "type": "number" },
+              "confidence": { "type": "string", "enum": ["measured", "calibrated", "assumed"] }
+            }
+          },
+          "partsAdded": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["partIdCandidate", "colorId", "qty"],
+              "properties": {
+                "partIdCandidate": { "type": "string" },
+                "alternateParts": { "type": "array", "items": { "type": "string" } },
+                "colorId": { "type": "integer" },
+                "qty": { "type": "integer", "minimum": 1 },
+                "elementId": { "type": "string" }
+              }
+            }
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low", "inferred"]
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

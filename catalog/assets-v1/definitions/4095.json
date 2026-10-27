@@ -1,0 +1,250 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "4095",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "Bar  6.6L with Stop",
+  "nameZh": "",
+  "category": "hinge",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      1,
+      1
+    ],
+    "heightPlate": 17,
+    "bboxLdu": [
+      0,
+      20,
+      0,
+      136,
+      0,
+      20
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "unsupported",
+    "boxes": [
+      [
+        0,
+        20,
+        0,
+        136,
+        0,
+        20
+      ]
+    ],
+    "evidence": {
+      "grade": "inferred",
+      "method": "按 kind/size/h 单盒推导",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 17,
+  "connectorGroups": [
+    {
+      "t": "bar",
+      "r": "male",
+      "o": 0,
+      "k": "bar",
+      "d": "+y",
+      "mp": "bar-clip-v1",
+      "items": [
+        [
+          10,
+          4,
+          10,
+          0,
+          0
+        ],
+        [
+          10,
+          12,
+          10,
+          0,
+          1
+        ],
+        [
+          10,
+          20,
+          10,
+          0,
+          2
+        ],
+        [
+          10,
+          28,
+          10,
+          0,
+          3
+        ],
+        [
+          10,
+          36,
+          10,
+          0,
+          4
+        ],
+        [
+          10,
+          44,
+          10,
+          0,
+          5
+        ],
+        [
+          10,
+          52,
+          10,
+          0,
+          6
+        ],
+        [
+          10,
+          60,
+          10,
+          0,
+          7
+        ],
+        [
+          10,
+          68,
+          10,
+          0,
+          8
+        ],
+        [
+          10,
+          76,
+          10,
+          0,
+          9
+        ],
+        [
+          10,
+          84,
+          10,
+          0,
+          10
+        ],
+        [
+          10,
+          92,
+          10,
+          0,
+          11
+        ],
+        [
+          10,
+          100,
+          10,
+          0,
+          12
+        ],
+        [
+          10,
+          108,
+          10,
+          0,
+          13
+        ],
+        [
+          10,
+          116,
+          10,
+          0,
+          14
+        ],
+        [
+          10,
+          124,
+          10,
+          0,
+          15
+        ],
+        [
+          10,
+          132,
+          10,
+          0,
+          16
+        ]
+      ],
+      "x": "y"
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "unsupported",
+      "boxCount": 0,
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.5（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "bar"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "d8afc488102fb5cdc3b22d16687103cbe411984d1a8dc6c887bfe4a4e7387d02"
+}

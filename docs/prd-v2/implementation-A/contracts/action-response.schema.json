@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.local/schema/prd-v2/action-response.schema.json",
+  "title": "BrickKit 动作 / 状态 / 候选响应 C1",
+  "description": "引擎的结构化响应。四类响应通过 top-level kind 区分：state（inspectState）、candidates（enumerateCandidates）、apply（applyActions）、recompute/compile/validate。共同要求：commandOk 与 passed 分离；未测项进 notMeasured，不得把未知记成通过。",
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "lduVec3": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+    "diagnostic": {
+      "type": "object",
+      "required": ["code", "severity", "msg"],
+      "additionalProperties": false,
+      "properties": {
+        "code": { "type": "string", "description": "稳定错误码，见 api.md 错误协议表" },
+        "severity": { "enum": ["error", "warning", "info", "notice"] },
+        "msg": { "type": "string" },
+        "nodes": { "type": "array", "items": { "type": "string" } },
+        "connectors": { "type": "array", "items": { "type": "string" } },
+        "detail": { "type": "object", "additionalProperties": true }
+      }
+    },
+    "capabilityGap": {
+      "type": "object",
+      "required": ["kind", "detail"],
+      "additionalProperties": false,
+      "description": "明确的「做不到」声明。接口不可信时必须返回缺口，不能把未知当已验证。",
+      "properties": {
+        "kind": { "enum": ["missing-asset", "unsupported-connector", "untrusted-collision", "unverified-interface", "unmeasured", "out-of-scope"] },
+        "partId": { "type": "string" },
+        "detail": { "type": "string" },
+        "blocksTask": { "type": "boolean", "default": true }
+      }
+    },
+    "noSolutionReason": {
+      "enum": [
+        "missing-asset", "unsupported-connector", "occupied", "collision",
+        "out-of-envelope", "ambiguity", "stale-state", "inventory-exhausted",
+        "task-constraint", "none"
+      ],
+      "description": "无解原因必须可区分。不得自动把零件摆在地面充当候选。"
+    },
+    "candidate": {
+      "type": "object",
+      "required": ["candidateId", "candidateHash", "parentNodeId", "parentConnectorId", "childConnectorId", "partId", "orientationId", "translationLdu", "features"],
+      "additionalProperties": false,
+      "properties": {
+        "candidateId": { "type": "string" },
+        "candidateHash": { "$ref": "#/$defs/sha256", "description": "候选内容哈希：接口对 + 父子身份 + 姿态 + 库存项。动作请求带回以校验未过期。" },
+        "equivalenceGroup": { "type": "string", "description": "对称/多挂点等价组 id。同组候选视为同一正确结果，评分接受任一。" },
+        "parentNodeId": { "type": "string" },
+        "parentPartId": { "type": "string" },
+        "parentConnectorId": { "type": "string", "description": "父件稳定接口 ID" },
+        "parentConnectorType": { "type": "string" },
+        "childNodeId": { "type": "string" },
+        "childPartId": { "type": "string" },
+        "childConnectorId": { "type": "string" },
+        "childConnectorType": { "type": "string" },
+        "mateProfile": { "type": "string" },
+        "orientationId": { "type": "integer", "minimum": 0, "maximum": 23 },
+        "spinDeg": { "type": "integer", "enum": [0, 90, 180, 270] },
+        "translationLdu": { "$ref": "#/$defs/lduVec3", "description": "引擎计算的世界位姿（编译产物，不是可手填的输入）" },
+        "snot": { "type": "integer", "description": "SNOT 层级编码：直接侧装第一层 0，逐片递增。严禁全部清零。" },
+        "inventoryToken": { "type": "string" },
+        "collisionChecked": {
+          "type": "object", "required": ["againstNodeIds"], "additionalProperties": false,
+          "description": "本候选做过碰撞检查的零件集合。必须包含父件，否则视为未检查。",
+          "properties": {
+            "againstNodeIds": { "type": "array", "items": { "type": "string" } },
+            "includesParent": { "type": "boolean" }
+          }
+        },
+        "features": {
+          "type": "object", "additionalProperties": true,
+          "description": "排序前特征（离散、可复现）：接口朝向、与主体距离、占用层、露出度等。引擎只提供特征，不替 B 或主会话决定「符合说明书意图」。"
+        },
+        "evidenceRefs": { "type": "array", "items": { "type": "string" } },
+        "mock": { "type": "boolean", "default": false, "description": "true 表示该候选来自 mock 适配层，不得进入正式行为验收。" }
+      }
+    },
+    "actionResult": {
+      "type": "object",
+      "required": ["actionId", "op", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "actionId": { "type": "string" },
+        "op": { "type": "string" },
+        "status": { "enum": ["applied", "rejected", "skipped", "abstained", "noop"] },
+        "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+        "applied": {
+          "type": "object", "additionalProperties": true,
+          "description": "实际落到状态的节点与位姿（引擎计算，不是请求回显）",
+          "properties": {
+            "nodeId": { "type": "string" },
+            "translationLdu": { "$ref": "#/$defs/lduVec3" },
+            "orientationId": { "type": "integer", "minimum": 0, "maximum": 23 },
+            "snot": { "type": "integer" },
+            "inventoryToken": { "type": "string" },
+            "connectorsUsed": { "type": "array", "items": { "type": "string" } },
+            "physicalConnection": { "type": "boolean" }
+          }
+        },
+        "stateHashAfter": { "$ref": "#/$defs.sha256" }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["protocolVersion", "kind", "commandOk", "passed"],
+  "additionalProperties": false,
+  "properties": {
+    "protocolVersion": { "const": "1.0.0" },
+    "kind": { "enum": ["state", "candidates", "apply", "recompute", "compile", "validate", "assets"] },
+    "commandOk": { "type": "boolean", "description": "命令本身是否正常执行（输入可解析、环境可用）。命令成功 ≠ 结果通过。" },
+    "passed": { "type": "boolean", "description": "本次范围的全部硬门禁是否通过。commandOk=true 且 passed=false 是正常结果。" },
+    "taskId": { "type": "string" },
+    "stateHash": { "$ref": "#/$defs.sha256" },
+    "engine": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "engineRevision": { "type": "string" },
+        "contractVersion": { "type": "string" },
+        "assetIndexVersion": { "type": "string" },
+        "orientationTableVersion": { "type": "string" },
+        "mock": { "type": "boolean", "default": false }
+      }
+    },
+    "diagnostics": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+    "capabilityGaps": { "type": "array", "items": { "$ref": "#/$defs/capabilityGap" } },
+    "notMeasured": {
+      "type": "array",
+      "items": { "type": "object", "required": ["item", "reason"], "additionalProperties": false, "properties": { "item": { "type": "string" }, "reason": { "type": "string" } } },
+      "description": "明确未测项。不得用空数组表示「全都测过」而不给证据。"
+    },
+    "stats": { "type": "object", "additionalProperties": true },
+    "state": {
+      "type": "object", "additionalProperties": false,
+      "description": "inspectState 结果",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["nodePath", "partId", "translationLdu", "orientationId"], "additionalProperties": false,
+            "properties": {
+              "nodePath": { "type": "string" },
+              "partId": { "type": "string" },
+              "revision": { "type": "string" },
+              "color": { "type": "integer" },
+              "translationLdu": { "$ref": "#/$defs/lduVec3" },
+              "orientationId": { "type": "integer" },
+              "snot": { "type": "integer" },
+              "componentPath": { "type": "string" },
+              "stepOrder": { "type": "integer" }
+            }
+          }
+        },
+        "connections": {
+          "type": "array",
+          "description": "物理连接图（由连接器计算，不是元数据声明）。可含环。",
+          "items": {
+            "type": "object", "required": ["aNodeId", "aConnectorId", "bNodeId", "bConnectorId", "mateProfile"], "additionalProperties": false,
+            "properties": {
+              "aNodeId": { "type": "string" }, "aConnectorId": { "type": "string" },
+              "bNodeId": { "type": "string" }, "bConnectorId": { "type": "string" },
+              "mateProfile": { "type": "string" }
+            }
+          }
+        },
+        "occupancy": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["nodeId", "connectorId", "occupiedBy"], "additionalProperties": false,
+            "properties": { "nodeId": { "type": "string" }, "connectorId": { "type": "string" }, "occupiedBy": { "type": "string" } }
+          },
+          "description": "接口占用由引擎计算；小模型不得自行声称某接口空闲。"
+        },
+        "inventory": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["token", "partId", "color", "state"], "additionalProperties": false,
+            "properties": {
+              "token": { "type": "string" }, "partId": { "type": "string" }, "color": { "type": "integer" },
+              "state": { "enum": ["available", "consumed", "spare"] },
+              "consumedBy": { "type": "string" }
+            }
+          }
+        },
+        "reachability": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "mainRootNodeId": { "type": "string" },
+            "bodyPartsTotal": { "type": "integer" },
+            "bodyPartsReachable": { "type": "integer" },
+            "bodyPartsUnreachable": { "type": "array", "items": { "type": "string" } },
+            "largestComponentRatio": { "type": "number", "description": "仅作诊断，不作通过依据" }
+          }
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["id", "order"], "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string" }, "order": { "type": "integer" },
+              "status": { "enum": ["planned", "applied", "partial", "failed", "not-measured"] },
+              "adds": { "type": "array", "items": { "type": "string" } }
+            }
+          }
+        }
+      }
+    },
+    "candidates": {
+      "type": "object", "additionalProperties": false,
+      "description": "enumerateCandidates 结果。区分「几何合法」与「符合说明书意图」：引擎只给前者。",
+      "properties": {
+        "request": {
+          "type": "object", "additionalProperties": true,
+          "description": "本次枚举的输入约束回显（父件/接口/区域/姿态/最大结果数）"
+        },
+        "enumerationComplete": { "type": "boolean", "description": "是否穷尽搜索。false 时不得声称无其他候选。" },
+        "truncated": { "type": "boolean", "description": "是否因 maxResults 截断" },
+        "maxResults": { "type": "integer" },
+        "count": { "type": "integer", "minimum": 0 },
+        "noSolutionReason": { "$ref": "#/$defs/noSolutionReason" },
+        "noSolutionDetail": { "type": "string" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/candidate" } }
+      }
+    },
+    "apply": {
+      "type": "object", "additionalProperties": false,
+      "description": "applyActions 结果。事务语义：任一步失败则整体回滚，stateHash 不变。",
+      "properties": {
+        "committed": { "type": "boolean" },
+        "rolledBack": { "type": "boolean" },
+        "stateHashBefore": { "$ref": "#/$defs/sha256" },
+        "stateHashAfter": { "$ref": "#/$defs/sha256" },
+        "results": { "type": "array", "items": { "$ref": "#/$defs/actionResult" } },
+        "executedCount": { "type": "integer", "minimum": 0 },
+        "rejectedCount": { "type": "integer", "minimum": 0 },
+        "abstainedCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "validate": {
+      "type": "object", "additionalProperties": false,
+      "description": "validateAssembly 结果。errors/warnings/notices/notMeasured 分开，结构错误不得降级成 notice。",
+      "properties": {
+        "errors": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+        "warnings": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+        "notices": { "type": "array", "items": { "$ref": "#/$defs/diagnostic" } },
+        "tests": {
+          "type": "array",
+          "description": "逐验收项状态（implemented/unverified/verified/partial/failed/not-started/unavailable）",
+          "items": {
+            "type": "object", "required": ["id", "status"], "additionalProperties": false,
+            "properties": {
+              "id": { "type": "string", "description": "PRD 验收编号，例如 ST-01" },
+              "status": { "enum": ["implemented", "unverified", "verified", "partial", "failed", "not-started", "unavailable"] },
+              "evidence": { "type": "array", "items": { "type": "string" } },
+              "note": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "compile": {
+      "type": "object", "additionalProperties": false,
+      "description": "compileLegacy 结果：0.2 兼容快照与可追溯实例映射",
+      "properties": {
+        "snapshot": { "type": "object", "additionalProperties": true, "description": "brickbuild 0.2 对象" },
+        "instanceMap": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["legacyPartId", "nodePath"], "additionalProperties": false,
+            "properties": {
+              "legacyPartId": { "type": "string" },
+              "nodePath": { "type": "string" },
+              "partId": { "type": "string" },
+              "revision": { "type": "string" }
+            }
+          }
+        },
+        "losses": {
+          "type": "array",
+          "items": { "type": "object", "required": ["field", "reason"], "additionalProperties": false, "properties": { "field": { "type": "string" }, "reason": { "type": "string" } } },
+          "description": "编译到 0.2 时丢失的信息，必须逐项列出，不能静默丢弃。"
+        }
+      }
+    }
+  }
+}

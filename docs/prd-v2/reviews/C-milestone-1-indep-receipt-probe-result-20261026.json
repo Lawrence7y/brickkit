@@ -1,0 +1,52 @@
+{
+  "probe": "receipt-gating-independent-20261026",
+  "cases": [
+    {
+      "id": "a_revision999_fake_stateHash",
+      "targetTaskId": "task-minifig",
+      "auditOk": false,
+      "rejected": true,
+      "reasonCodes": [
+        "RECEIPT_REVISION_MISMATCH",
+        "RECEIPT_STATEHASH_UNBOUND",
+        "RECEIPT_EVIDENCE_MISSING"
+      ],
+      "targetBinding": "unverified",
+      "requiredCodesPresent": true
+    },
+    {
+      "id": "a2_valid_revision_fake_stateHash_no_evidence",
+      "targetTaskId": "task-cones",
+      "auditOk": false,
+      "rejected": true,
+      "reasonCodes": [
+        "RECEIPT_REVISION_MISMATCH",
+        "RECEIPT_STATEHASH_UNBOUND"
+      ],
+      "requiredCodesPresent": true
+    },
+    {
+      "id": "b_plan_totalBOM_999_vs_91",
+      "declared": 999,
+      "allocated": 91,
+      "auditOk": false,
+      "rejected": true,
+      "reasonCodes": [
+        "PLAN_BOM_TOTAL_MISMATCH"
+      ],
+      "requiredCodesPresent": true
+    }
+  ],
+  "goodPath": {
+    "declaredTotalBOMParts": 91,
+    "allocatedTokens": 91,
+    "taskCount": 5,
+    "auditOk": true,
+    "reasonCodes": []
+  },
+  "summary": {
+    "goodPathPasses": true,
+    "allocatedIs91": true,
+    "allBadReceiptsRejected": true
+  }
+}

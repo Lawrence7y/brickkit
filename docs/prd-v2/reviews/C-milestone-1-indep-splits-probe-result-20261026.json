@@ -1,0 +1,184 @@
+{
+  "probe": "splits-independent-20261026",
+  "manifestFrozen": true,
+  "frozenAt": "2026-10-26T21:27:32.109Z",
+  "fileHashChecks": {
+    "checked": 5,
+    "matched": 5,
+    "detail": [
+      {
+        "name": "train",
+        "path": "out/prd-v2/run-20261026-c/C/data/splits/train.json",
+        "exists": true,
+        "declared": "765f794107c0137d3cb55df8df86917760030b795e9d362875afb8125563082d",
+        "disk": "765f794107c0137d3cb55df8df86917760030b795e9d362875afb8125563082d",
+        "match": true,
+        "declaredCount": 3155
+      },
+      {
+        "name": "validation",
+        "path": "out/prd-v2/run-20261026-c/C/data/splits/validation.json",
+        "exists": true,
+        "declared": "4226981f8df308e2193ec8e1f253fd35b1ecefeaa6d59455fc9e79534313a80f",
+        "disk": "4226981f8df308e2193ec8e1f253fd35b1ecefeaa6d59455fc9e79534313a80f",
+        "match": true,
+        "declaredCount": 905
+      },
+      {
+        "name": "holdout_test",
+        "path": "out/prd-v2/run-20261026-c/C/data/splits/holdout_test.json",
+        "exists": true,
+        "declared": "5599e8ba253bbb9246c0510cb25ba05c3ccb826c7443c43aba4fc731277cdca5",
+        "disk": "5599e8ba253bbb9246c0510cb25ba05c3ccb826c7443c43aba4fc731277cdca5",
+        "match": true,
+        "declaredCount": 827
+      },
+      {
+        "name": "dev",
+        "path": "out/prd-v2/run-20261026-c/C/data/splits/dev.json",
+        "exists": true,
+        "declared": "514ef88e807755f4f46d587db331159040176f070f5d57eae5536c919f1b5b50",
+        "disk": "514ef88e807755f4f46d587db331159040176f070f5d57eae5536c919f1b5b50",
+        "match": true,
+        "declaredCount": 33
+      },
+      {
+        "name": "assignment",
+        "path": "out/prd-v2/run-20261026-c/C/data/splits/assignment.json",
+        "exists": true,
+        "declared": "7a62ae4678ef29896f40127796d5ed7d85789c4398de9f61f58dde6226adc585",
+        "disk": "7a62ae4678ef29896f40127796d5ed7d85789c4398de9f61f58dde6226adc585",
+        "match": true
+      }
+    ]
+  },
+  "dotFrozen": {
+    "present": true,
+    "content": "{\n \"frozen\": true,\n \"frozenAt\": \"2026-10-26T21:27:32.109Z\",\n \"datasetRoot\": \"out/prd-v2/run-20261026-c/C/data\",\n \"statement\": \"冻结时点（2026-10-26T21:27:32.109Z）不存在任何针对本数据集的模型训练、基座选择或阈值调优：C2 阶段（R0 复检/基座选择/R1 基线/R3 SFT）尚未开始，历史 v4 权重仅由 smoke 数据训练、与本数据集无关。\",\n \"rules\": \"PRD v2 §10.6（见 split-manifest.json.rules 全文）\",\n \"manifestSha256\": \"cd61847cd0d98793ceea278fad18485dc732f8d440bd458878e8b3fc4a1bc7b0\",\n \"splitFiles\": {\n  \"train\": {\n   \"path\": \"out/prd-v2/run-20261026-c/C/data/splits/train.json\",\n   \"sha256\": \"765f794107c0137d3cb55df8df86917760030b795e9d362875afb8125563082d\",\n   \"sampleCount\": 3155\n  },\n  \"validation\": {\n   \"path\": \"out/prd-v2/run-20261026-c/C/data/splits/validation.json\",\n   \"sha256\": \"4226981f8df308e2193ec8e1f253fd35b1ecefeaa6d59455fc9e79534313a80f\",\n   \"sampleCount\": 905\n  },\n  \""
+  },
+  "countChecks": [
+    {
+      "name": "train",
+      "arrayLen": 3155,
+      "declaredCount": 3155,
+      "matches": true,
+      "manifestCount": 3155,
+      "matchesManifest": true
+    },
+    {
+      "name": "validation",
+      "arrayLen": 905,
+      "declaredCount": 905,
+      "matches": true,
+      "manifestCount": 905,
+      "matchesManifest": true
+    },
+    {
+      "name": "holdout_test",
+      "arrayLen": 827,
+      "declaredCount": 827,
+      "matches": true,
+      "manifestCount": 827,
+      "matchesManifest": true
+    },
+    {
+      "name": "dev",
+      "arrayLen": 33,
+      "declaredCount": 33,
+      "matches": true,
+      "manifestCount": 33,
+      "matchesManifest": true
+    }
+  ],
+  "overlaps": {
+    "pairCount": 0,
+    "detail": []
+  },
+  "holdoutIsolation": {
+    "holdoutFamilies": [
+      "fam-arch",
+      "fam-snotwall",
+      "fam-cargoer",
+      "fam-bracketholder"
+    ],
+    "holdoutFamilyIdsInHoldout": [
+      "10715",
+      "31062",
+      "42065",
+      "fam-bracketholder",
+      "fam-arch",
+      "fam-cargoer",
+      "fam-snotwall"
+    ],
+    "trainFamilyIds": [
+      "31058",
+      "70615",
+      "fam-cart",
+      "fam-lstack",
+      "fam-twintower",
+      "fam-bridge",
+      "fam-fixture-a03",
+      "fam-house",
+      "fam-pier",
+      "fam-pylon",
+      "fam-src-lantern",
+      "fam-src-mecha",
+      "fam-stair",
+      "fam-table",
+      "fam-tower"
+    ],
+    "leakedIntoTrain": [],
+    "isolated": true
+  },
+  "devExclusion": {
+    "trainDatasets": [
+      "manual",
+      "perturbation",
+      "trajectory"
+    ],
+    "trainHasManual": true,
+    "devCount": 33,
+    "devSampleIds": [
+      "smp-60239-b1-p04sub",
+      "smp-60239-b1-p06s02",
+      "smp-60239-b1-p07s04",
+      "smp-60239-b1-p08s05",
+      "smp-60239-b1-p09s06",
+      "smp-60239-b1-p09s07",
+      "smp-60239-b1-p10s08",
+      "smp-60239-b1-p11s09",
+      "smp-60239-b1-p11s10",
+      "smp-60239-b1-p12s11",
+      "smp-60239-b1-p13s12",
+      "smp-60239-b1-p14s13",
+      "smp-60239-b1-p15s14",
+      "smp-60239-b1-p16s16",
+      "smp-60239-b1-p17s18",
+      "smp-60239-b1-p18s20",
+      "smp-60239-b1-p18s21",
+      "smp-60239-b1-p19s22",
+      "smp-60239-b1-p19s23",
+      "smp-60239-b1-p20s25",
+      "smp-60239-b1-p21s26",
+      "smp-60239-b1-p21s27",
+      "smp-60239-b1-p22s28",
+      "smp-60239-b1-p24s32",
+      "smp-60239-b1-p25s34",
+      "smp-60239-b1-p26s36",
+      "smp-60239-b1-p26s37",
+      "smp-60239-b1-p28s39",
+      "smp-60239-b1-p29s40",
+      "smp-60239-b1-p30s41",
+      "smp-60239-b1-p31s42",
+      "smp-60239-b1-p32s44",
+      "smp-60239-b1-p32s45"
+    ]
+  },
+  "summary": {
+    "allFileHashesMatch": true,
+    "frozenSentinelPresent": true,
+    "noCrossSplitOverlap": true,
+    "countsConsistent": true,
+    "heldOutFamiliesIsolated": true
+  }
+}

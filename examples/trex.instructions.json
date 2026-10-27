@@ -1,0 +1,94 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.2",
+ "capture": {
+  "device": "官方说明书 PDF（assets/instructions-lego/31058_book1of3.pdf）",
+  "reference": "成品视图页与步骤页按原尺寸参照",
+  "frontMarker": "+z 为鼻尖方向",
+  "lighting": "说明书渲染图"
+ },
+ "skipped": [
+  {
+   "slot": "orbit-0",
+   "reason": "说明书仅提供有限成品视图，已用第 44 页侧视图、封面、封底合集覆盖主体形态"
+  },
+  {
+   "slot": "orbit-45",
+   "reason": "封面 3/4 视图覆盖"
+  },
+  {
+   "slot": "orbit-90",
+   "reason": "第 44 页侧视图覆盖"
+  },
+  {
+   "slot": "orbit-135",
+   "reason": "封底合集视图覆盖"
+  },
+  {
+   "slot": "orbit-180",
+   "reason": "对称性由建模保证；封底合集覆盖"
+  },
+  {
+   "slot": "orbit-225",
+   "reason": "同 orbit-180"
+  },
+  {
+   "slot": "orbit-270",
+   "reason": "侧视对称，由第 44 页覆盖"
+  },
+  {
+   "slot": "orbit-315",
+   "reason": "封面视图覆盖"
+  },
+  {
+   "slot": "flat-0",
+   "reason": "正面由封底合集覆盖"
+  },
+  {
+   "slot": "flat-90",
+   "reason": "第 44 页侧视覆盖"
+  },
+  {
+   "slot": "flat-180",
+   "reason": "封底合集覆盖"
+  },
+  {
+   "slot": "flat-270",
+   "reason": "第 44 页覆盖"
+  },
+  {
+   "slot": "top",
+   "reason": "顶部由封面与步骤页覆盖"
+  },
+  {
+   "slot": "bottom",
+   "reason": "腹面不可见，按推断处理"
+  }
+ ],
+ "photos": [
+  {
+   "id": "trex_cover",
+   "file": "p01.png",
+   "kind": "exterior",
+   "azimuth": 45,
+   "elevation": 10,
+   "note": "封面成品 3/4 视图"
+  },
+  {
+   "id": "trex_p44",
+   "file": "p44.png",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 5,
+   "note": "第 44 页成品侧视图（步骤 52）"
+  },
+  {
+   "id": "trex_back",
+   "file": "p46.png",
+   "kind": "exterior",
+   "azimuth": 135,
+   "elevation": 10,
+   "note": "封底合集 T-Rex 视图"
+  }
+ ]
+}

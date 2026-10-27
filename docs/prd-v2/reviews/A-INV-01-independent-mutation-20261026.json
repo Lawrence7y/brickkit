@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-10-26T15:11:25.162Z",
+  "purpose": "证明 A-INV-01 回归断言不是空断言：还原旧行为后必须复现缺陷（1→3→5 件且零错误）",
+  "mutations": [
+    "consumeToken 只维护批次内 Set，不写回 inv.state=consumed",
+    "rehash 恢复旧的库存映射（不把 consumed 当权威）",
+    "去掉单件路径「同件号库存全消费必须拒绝」守卫"
+  ],
+  "fixed": {
+    "firstPassed": true,
+    "inventoryAfterFirst": [
+      "m1:consumed",
+      "m2:consumed"
+    ],
+    "afterFirstParts": 3,
+    "secondPassed": false,
+    "secondCodes": [
+      "inventory-insufficient"
+    ],
+    "finalParts": null,
+    "reusedSameTokens": []
+  },
+  "mutant": {
+    "firstPassed": true,
+    "inventoryAfterFirst": [
+      "m1:available",
+      "m2:available"
+    ],
+    "afterFirstParts": 3,
+    "secondPassed": true,
+    "secondCodes": [],
+    "finalParts": 5,
+    "reusedSameTokens": [
+      "m1",
+      "m2"
+    ]
+  },
+  "assertions": {
+    "fixedSecondRejected": true,
+    "fixedNoTokenReuse": true,
+    "fixedInventoryConsumed": true,
+    "mutantReproducesDefect": true,
+    "mutantReusesSameTokens": true,
+    "mutantMatchesBReportedCounterexample": true
+  },
+  "ok": true
+}

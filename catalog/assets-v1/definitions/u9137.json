@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "u9137",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "Train Track 12V Tapered Crossing",
+  "nameZh": "",
+  "category": "other",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      17,
+      17
+    ],
+    "heightPlate": 2,
+    "bboxLdu": [
+      0,
+      340,
+      0,
+      16,
+      0,
+      340
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "inferred",
+    "boxes": [
+      [
+        100,
+        240,
+        0,
+        8,
+        0,
+        340
+      ],
+      [
+        0,
+        100,
+        0,
+        8,
+        100,
+        240
+      ],
+      [
+        240,
+        340,
+        0,
+        8,
+        100,
+        240
+      ],
+      [
+        140,
+        160,
+        8,
+        16,
+        0,
+        200
+      ],
+      [
+        180,
+        200,
+        8,
+        12,
+        0,
+        120
+      ],
+      [
+        0,
+        140,
+        8,
+        16,
+        140,
+        160
+      ],
+      [
+        160,
+        200,
+        8,
+        16,
+        140,
+        160
+      ],
+      [
+        220,
+        340,
+        8,
+        16,
+        140,
+        160
+      ],
+      [
+        0,
+        120,
+        8,
+        12,
+        180,
+        200
+      ],
+      [
+        220,
+        340,
+        8,
+        12,
+        180,
+        200
+      ],
+      [
+        140,
+        160,
+        8,
+        16,
+        220,
+        340
+      ],
+      [
+        180,
+        200,
+        8,
+        12,
+        220,
+        340
+      ]
+    ],
+    "coverage": 1,
+    "evidence": {
+      "grade": "inferred",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 0,
+  "connectorGroups": [],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "inferred",
+      "boxCount": 12,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
+    },
+    "assemble": {
+      "state": "unsupported",
+      "verifiedConnectorTypes": [],
+      "note": "未生成任何连接器；该件不能参与装配求解"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "521582f9f4b37c8f754e7d8c60de62f6971d1b5cfb12408ed37cc3f3ca672444"
+}

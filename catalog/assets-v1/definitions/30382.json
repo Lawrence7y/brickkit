@@ -1,0 +1,487 @@
+{
+  "schemaVersion": "1.0.0",
+  "partId": "30382",
+  "revision": "r1-extracted",
+  "aliases": [],
+  "name": "Wedge  2 x 12 Triple",
+  "nameZh": "",
+  "category": "wedge",
+  "source": {
+    "kind": "ldraw-dat",
+    "ref": "catalog/parts-ldraw.json",
+    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://library.ldraw.org/license",
+    "extractor": "assets-v1/build-definition@1",
+    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+  },
+  "canonicalFrame": {
+    "units": "LDU",
+    "lduPerStud": 20,
+    "lduPerPlate": 8,
+    "lduPerBrick": 24,
+    "upAxis": "+y",
+    "frontAxis": "+z",
+    "origin": "bbox-bottom-center",
+    "sourceToCanonical": {
+      "matrix": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "translationLdu": [
+        0,
+        0,
+        0
+      ],
+      "determinant": 1,
+      "note": "LDraw 正面朝 -z，BrickKit 正面朝 +z；绕 y 轴 180°。det=+1 为纯旋转（无镜像）。若要叠加 ldrawOrigin 平移，由调用方按 ldrawOrigin*20 LDU 另行应用，不并入本矩阵。"
+    }
+  },
+  "geometry": {
+    "kind": "parametric",
+    "sizeStud": [
+      16,
+      2
+    ],
+    "heightPlate": 3,
+    "bboxLdu": [
+      0,
+      320,
+      0,
+      24,
+      0,
+      40
+    ]
+  },
+  "collision": {
+    "shape": "boxes",
+    "state": "inferred",
+    "boxes": [
+      [
+        0,
+        320,
+        0,
+        8,
+        0,
+        20
+      ],
+      [
+        20,
+        300,
+        0,
+        6,
+        20,
+        40
+      ],
+      [
+        40,
+        280,
+        6,
+        10,
+        20,
+        40
+      ],
+      [
+        20,
+        300,
+        8,
+        12,
+        0,
+        20
+      ],
+      [
+        60,
+        260,
+        10,
+        14,
+        20,
+        40
+      ],
+      [
+        40,
+        280,
+        12,
+        16,
+        0,
+        20
+      ],
+      [
+        80,
+        240,
+        14,
+        18,
+        20,
+        40
+      ],
+      [
+        60,
+        260,
+        16,
+        20,
+        0,
+        20
+      ],
+      [
+        100,
+        220,
+        18,
+        20,
+        20,
+        40
+      ],
+      [
+        80,
+        240,
+        20,
+        24,
+        0,
+        20
+      ]
+    ],
+    "coverage": 0.75,
+    "evidence": {
+      "grade": "inferred",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedBy": "assets-v1/build-definition"
+    }
+  },
+  "connectorCount": 39,
+  "connectorGroups": [
+    {
+      "t": "antistud",
+      "r": "female",
+      "o": 0,
+      "k": "antistud",
+      "d": "+y",
+      "mp": "stud-antistud-v1",
+      "items": [
+        [
+          10,
+          0,
+          10,
+          1,
+          0
+        ],
+        [
+          10,
+          0,
+          30,
+          1,
+          1
+        ],
+        [
+          30,
+          0,
+          10,
+          1,
+          2
+        ],
+        [
+          30,
+          0,
+          30,
+          1,
+          3
+        ],
+        [
+          50,
+          0,
+          10,
+          1,
+          4
+        ],
+        [
+          50,
+          0,
+          30,
+          1,
+          5
+        ],
+        [
+          70,
+          0,
+          10,
+          1,
+          6
+        ],
+        [
+          70,
+          0,
+          30,
+          1,
+          7
+        ],
+        [
+          90,
+          0,
+          10,
+          1,
+          8
+        ],
+        [
+          90,
+          0,
+          30,
+          1,
+          9
+        ],
+        [
+          110,
+          0,
+          10,
+          1,
+          10
+        ],
+        [
+          110,
+          0,
+          30,
+          1,
+          11
+        ],
+        [
+          130,
+          0,
+          10,
+          1,
+          12
+        ],
+        [
+          130,
+          0,
+          30,
+          1,
+          13
+        ],
+        [
+          150,
+          0,
+          10,
+          1,
+          14
+        ],
+        [
+          150,
+          0,
+          30,
+          1,
+          15
+        ],
+        [
+          170,
+          0,
+          10,
+          1,
+          16
+        ],
+        [
+          170,
+          0,
+          30,
+          1,
+          17
+        ],
+        [
+          190,
+          0,
+          10,
+          1,
+          18
+        ],
+        [
+          190,
+          0,
+          30,
+          1,
+          19
+        ],
+        [
+          210,
+          0,
+          10,
+          1,
+          20
+        ],
+        [
+          210,
+          0,
+          30,
+          1,
+          21
+        ],
+        [
+          230,
+          0,
+          10,
+          1,
+          22
+        ],
+        [
+          230,
+          0,
+          30,
+          1,
+          23
+        ],
+        [
+          250,
+          0,
+          10,
+          1,
+          24
+        ],
+        [
+          250,
+          0,
+          30,
+          1,
+          25
+        ],
+        [
+          270,
+          0,
+          10,
+          1,
+          26
+        ],
+        [
+          270,
+          0,
+          30,
+          1,
+          27
+        ],
+        [
+          290,
+          0,
+          10,
+          1,
+          28
+        ],
+        [
+          290,
+          0,
+          30,
+          1,
+          29
+        ],
+        [
+          310,
+          0,
+          10,
+          1,
+          30
+        ],
+        [
+          310,
+          0,
+          30,
+          1,
+          31
+        ],
+        [
+          160,
+          0,
+          20,
+          1,
+          32
+        ]
+      ]
+    },
+    {
+      "t": "stud",
+      "r": "male",
+      "o": 0,
+      "k": "top",
+      "d": "+y",
+      "mp": "stud-antistud-v1",
+      "items": [
+        [
+          110,
+          24,
+          10,
+          0,
+          0
+        ],
+        [
+          130,
+          24,
+          10,
+          0,
+          1
+        ],
+        [
+          150,
+          24,
+          10,
+          0,
+          2
+        ],
+        [
+          170,
+          24,
+          10,
+          0,
+          3
+        ],
+        [
+          190,
+          24,
+          10,
+          0,
+          4
+        ],
+        [
+          210,
+          24,
+          10,
+          0,
+          5
+        ]
+      ]
+    }
+  ],
+  "capabilities": {
+    "render": {
+      "state": "inferred",
+      "geometryKind": "parametric",
+      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+    },
+    "collide": {
+      "state": "inferred",
+      "boxCount": 10,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
+    },
+    "assemble": {
+      "state": "measured",
+      "verifiedConnectorTypes": [
+        "stud",
+        "antistud"
+      ],
+      "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
+    }
+  },
+  "provenance": {
+    "grade": "inferred",
+    "method": "LDraw 官方 .dat 自动提取",
+    "evidenceRefs": [],
+    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedBy": "assets-v1/build-definition"
+  },
+  "_buildWarnings": [],
+  "contentHash": "d429266a264d1b005daa547ba6b366f9ff2cfcbbaea6dc19b55d9eaad480d6ac"
+}

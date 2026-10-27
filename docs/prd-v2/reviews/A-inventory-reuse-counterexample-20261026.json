@@ -1,0 +1,268 @@
+{
+  "scope": "independent integration counterexample; no implementation edits",
+  "request": {
+    "protocolVersion": "1.0.0",
+    "taskId": "audit-second-attachment",
+    "stateHash": "e013e64f8bea689fe057cd1f7ce676d586839cd756853637ab1b93f34882d40b",
+    "actions": [
+      {
+        "id": "second-attachment-reuses-consumed-stock",
+        "op": "attach_assembly",
+        "target": {
+          "partInstanceId": "second-bumper"
+        },
+        "candidateId": "cand-asm-dcca6323ccf2",
+        "candidateHash": "6fa75f943117d4141fbee4f9b296d700866d1f25af173c89730bca33f16b5c9b",
+        "partId": "3023",
+        "color": 0,
+        "childModel": {
+          "parts": [
+            {
+              "id": "bump1",
+              "part": "3023",
+              "color": 0,
+              "at": [
+                10,
+                0,
+                0
+              ],
+              "rootAt": [
+                10,
+                0,
+                0
+              ],
+              "snot": 0,
+              "step": 2
+            },
+            {
+              "id": "bump2",
+              "part": "2412b",
+              "color": 4,
+              "up": "+y",
+              "rot": 0,
+              "snot": 0,
+              "at": [
+                10,
+                1,
+                0
+              ],
+              "snap": {
+                "on": "bump1",
+                "stud": 0,
+                "receptor": 0
+              },
+              "step": 2
+            }
+          ],
+          "anchor": "bump1"
+        }
+      }
+    ]
+  },
+  "summary": {
+    "firstCommitted": true,
+    "firstConsumedTokenIds": [
+      "audit-member-1",
+      "audit-member-2"
+    ],
+    "inventoryReturnedAfterFirst": [
+      {
+        "token": "audit-member-1",
+        "partId": "3023",
+        "color": 0,
+        "state": "available"
+      },
+      {
+        "token": "audit-member-2",
+        "partId": "2412b",
+        "color": 4,
+        "state": "available"
+      }
+    ],
+    "secondPassed": true,
+    "secondCommitted": true,
+    "secondClaimedConsumedTokens": [
+      "audit-member-1",
+      "audit-member-2"
+    ],
+    "finalParts": 5,
+    "partsAfterFirst": 3,
+    "finalErrors": 0,
+    "finalWarnings": 0,
+    "diagnosticCodes": []
+  },
+  "secondResult": {
+    "protocolVersion": "1.0.0",
+    "kind": "apply",
+    "commandOk": true,
+    "passed": true,
+    "stateHash": "e013e64f8bea689fe057cd1f7ce676d586839cd756853637ab1b93f34882d40b",
+    "engine": {
+      "engineRevision": "actions-v1@1.0.0",
+      "contractVersion": "1.0.0",
+      "mock": false
+    },
+    "apply": {
+      "committed": true,
+      "rolledBack": false,
+      "stateHashBefore": "e013e64f8bea689fe057cd1f7ce676d586839cd756853637ab1b93f34882d40b",
+      "stateHashAfter": "ed1cc23543f45bdfafcf4be1f84d388487c998e84d00a078427a9dc7ece7bc47",
+      "results": [
+        {
+          "actionId": "second-attachment-reuses-consumed-stock",
+          "op": "attach_assembly",
+          "status": "applied",
+          "applied": {
+            "nodeId": "second-bumper",
+            "memberNodeIds": [
+              "second-bumper",
+              "second-bumper/bump2"
+            ],
+            "memberCount": 2,
+            "translationLdu": [
+              0,
+              24,
+              20
+            ],
+            "orientationId": 0,
+            "inventoryTokens": [
+              "audit-member-1",
+              "audit-member-2"
+            ],
+            "connectorsUsed": [
+              "ctop#1",
+              "cantistud#0"
+            ],
+            "physicalConnection": true,
+            "atomic": true
+          },
+          "stateHashAfter": null
+        }
+      ],
+      "executedCount": 1,
+      "rejectedCount": 0,
+      "abstainedCount": 0,
+      "clientStateUpdated": true
+    },
+    "_workingModel": {
+      "format": "brickbuild",
+      "version": "0.2",
+      "meta": {
+        "name": "c11_t",
+        "front": "+z"
+      },
+      "parts": [
+        {
+          "id": "p001",
+          "part": "3001",
+          "color": 15,
+          "at": [
+            0,
+            0,
+            0
+          ],
+          "rootAt": [
+            0,
+            0,
+            0
+          ],
+          "snot": 0,
+          "step": 1
+        },
+        {
+          "id": "mounted-bumper",
+          "part": "3023",
+          "color": 0,
+          "at": [
+            0,
+            3,
+            0
+          ],
+          "rootAt": [
+            10,
+            0,
+            0
+          ],
+          "snot": 0,
+          "step": 2,
+          "rot": 0,
+          "up": "+y"
+        },
+        {
+          "id": "mounted-bumper/bump2",
+          "part": "2412b",
+          "color": 4,
+          "up": "+y",
+          "rot": 0,
+          "snot": 0,
+          "at": [
+            0,
+            4,
+            0
+          ],
+          "snap": {
+            "on": "bump1",
+            "stud": 0,
+            "receptor": 0
+          },
+          "step": 2
+        },
+        {
+          "id": "second-bumper",
+          "part": "3023",
+          "color": 0,
+          "at": [
+            0,
+            3,
+            1
+          ],
+          "rootAt": [
+            10,
+            0,
+            0
+          ],
+          "snot": 0,
+          "step": 2,
+          "rot": 0,
+          "up": "+y"
+        },
+        {
+          "id": "second-bumper/bump2",
+          "part": "2412b",
+          "color": 4,
+          "up": "+y",
+          "rot": 0,
+          "snot": 0,
+          "at": [
+            0,
+            4,
+            1
+          ],
+          "snap": {
+            "on": "bump1",
+            "stud": 0,
+            "receptor": 0
+          },
+          "step": 2
+        }
+      ]
+    },
+    "_inventory": [
+      {
+        "token": "audit-member-1",
+        "partId": "3023",
+        "color": 0,
+        "state": "available"
+      },
+      {
+        "token": "audit-member-2",
+        "partId": "2412b",
+        "color": 4,
+        "state": "available"
+      }
+    ],
+    "diagnostics": [],
+    "capabilityGaps": [],
+    "notMeasured": []
+  }
+}

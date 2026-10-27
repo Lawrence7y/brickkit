@@ -1,0 +1,405 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brickkit.local/schema/prd-v2/assembly.schema.json",
+  "title": "BrickBuild 0.3 关系装配源",
+  "description": "关系装配的权威源格式。世界坐标不是权威数据，而是 recompute 从局部关系与组件实例确定性计算出的产物。三种图分开存储：① 组件归属树（containment）② 定位依赖 DAG（placements）③ 物理连接图（由 connectors 计算，不存于此，含环合法）。坐标一律 LDU；1 格 = 20 LDU，1 片 = 8 LDU。",
+  "$defs": {
+    "lduVec3": { "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3 },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "semver": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "evidenceGrade": {
+      "enum": ["measured", "inferred", "assumed", "unknown"],
+      "description": "measured 有原始资料区域引用；inferred 由结构推断；assumed 无来源。不得把 assumed 自动升级为 confirmed。"
+    },
+    "evidenceRef": {
+      "type": "object",
+      "required": ["id", "grade"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "grade": { "$ref": "#/$defs/evidenceGrade" },
+        "kind": { "enum": ["manual-page", "photo", "bom", "derived", "external-datasheet"] },
+        "source": { "type": "string", "description": "原始文件路径/URL" },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "region": {
+          "type": "object", "additionalProperties": false,
+          "description": "原始页面区域（归一化 0..1 或像素，取决于 units）",
+          "properties": {
+            "page": { "type": "integer", "minimum": 1 },
+            "x": { "type": "number" }, "y": { "type": "number" },
+            "w": { "type": "number" }, "h": { "type": "number" },
+            "units": { "enum": ["normalized", "px"] }
+          }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "assetLock": {
+      "type": "object",
+      "required": ["profileId", "parts"],
+      "additionalProperties": false,
+      "description": "模型锁定使用的零件 revision 与内容哈希。同一 lock 必须解析出相同定义；训练样本同样锁定。",
+      "properties": {
+        "profileId": { "type": "string" },
+        "indexVersion": { "$ref": "#/$defs/semver" },
+        "parts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["partId", "revision"],
+            "additionalProperties": false,
+            "properties": {
+              "partId": { "type": "string" },
+              "revision": { "type": "string" },
+              "contentHash": { "$ref": "#/$defs/sha256" },
+              "datSha256": { "$ref": "#/$defs/sha256" }
+            }
+          }
+        },
+        "lockHash": { "$ref": "#/$defs/sha256", "description": "整个 lock 的规范化哈希" }
+      }
+    },
+    "partInstance": {
+      "type": "object",
+      "required": ["instanceId", "partId", "revision", "color", "pose"],
+      "additionalProperties": false,
+      "description": "组件定义内部的局部零件实例。局部坐标独立于世界位置；世界位姿由 recompute 计算。",
+      "properties": {
+        "instanceId": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "description": "定义内唯一 id。全局引用用稳定实例路径 componentPath/instanceId，不依赖数组位置。"
+        },
+        "partId": { "type": "string" },
+        "revision": { "type": "string" },
+        "color": { "type": "integer" },
+        "pose": { "$ref": "#/$defs/localPose" },
+        "inventoryToken": { "type": "string", "description": "占用哪一个库存 token；重复组件实例化时各自占用" },
+        "stepRef": { "type": "string", "description": "指向 steps[].id 的局部步骤引用" },
+        "note": { "type": "string" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidenceRef" } }
+      }
+    },
+    "localPose": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "局部姿态。三种表达互斥（oneOf）：grid（整数格/片，外部 builder 口径）、ldu（LDU 精确）、placed（由定位关系决定，此时 at 不得出现）。",
+      "oneOf": [
+        {
+          "required": ["grid"],
+          "properties": {
+            "grid": {
+              "type": "array", "items": { "type": "number" }, "minItems": 3, "maxItems": 3,
+              "description": "[x格, y片, z格]，等价于旧 brickbuild 的 at"
+            },
+            "orientationId": { "type": "integer", "minimum": 0, "maximum": 23 }
+          }
+        },
+        {
+          "required": ["ldu"],
+          "properties": {
+            "ldu": { "$ref": "#/$defs/lduVec3" },
+            "orientationId": { "type": "integer", "minimum": 0, "maximum": 23 }
+          }
+        },
+        {
+          "required": ["placed"],
+          "properties": {
+            "placed": { "const": true, "description": "位姿完全由 placements 中的一条定位关系决定；此处不得重复写坐标" }
+          }
+        }
+      ]
+    },
+    "placement": {
+      "type": "object",
+      "required": ["nodeId", "kind"],
+      "additionalProperties": false,
+      "description": "定位依赖 DAG 的一条边。每个可定位节点恰好一种权威定位方式（root / connector / rigid），oneOf 强制互斥。",
+      "properties": {
+        "nodeId": { "type": "string", "description": "被定位节点（零件实例路径或组件实例路径）" },
+        "kind": { "enum": ["root", "connector", "rigid"] }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "kind": { "const": "root" },
+            "baseFrame": {
+              "type": "object", "additionalProperties": false,
+              "description": "根基准：任务指定的合法基准（如桌面 y=0 面）",
+              "properties": {
+                "originLdu": { "$ref": "#/$defs/lduVec3" },
+                "orientationId": { "type": "integer", "minimum": 0, "maximum": 23 },
+                "groundPlane": { "type": "boolean", "description": "是否以 y=0 为施工基准面（翻面搭建时基准面为顶层，由 flip 表达）" }
+              }
+            }
+          },
+          "required": ["kind", "baseFrame"]
+        },
+        {
+          "properties": {
+            "kind": { "const": "connector" },
+            "parentNodeId": { "type": "string" },
+            "parentConnectorId": { "type": "string", "description": "父件的稳定接口 ID" },
+            "childConnectorId": { "type": "string", "description": "子件的稳定接口 ID" },
+            "mateProfile": { "type": "string" },
+            "spinDeg": { "type": "integer", "minimum": 0, "maximum": 270, "multipleOf": 90, "description": "绕装配轴自旋；不改变连接合法性，只改变朝向" }
+          },
+          "required": ["kind", "parentNodeId", "parentConnectorId", "childConnectorId"]
+        },
+        {
+          "properties": {
+            "kind": { "const": "rigid" },
+            "assemblyInstancePath": { "type": "string", "description": "整体刚体挂装：该组件实例由图中的父关系一次定位，内部所有零件共享同一变换" },
+            "anchorNodeId": { "type": "string" },
+            "anchorConnectorId": { "type": "string" },
+            "parentNodeId": { "type": "string" },
+            "parentConnectorId": { "type": "string" },
+            "spinDeg": { "type": "integer", "minimum": 0, "maximum": 270, "multipleOf": 90 }
+          },
+          "required": ["kind", "assemblyInstancePath", "anchorNodeId", "anchorConnectorId", "parentNodeId", "parentConnectorId"]
+        }
+      ]
+    },
+    "constraint": {
+      "type": "object",
+      "required": ["id", "kind", "nodes"],
+      "additionalProperties": false,
+      "description": "额外约束。用于验证而不制造新的定位依赖：扣合约束不改变 placements 的拓扑序，避免为了「多扣一个点」造出环。",
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "enum": ["extra-mate", "rigid-group", "joint", "keep-out", "expose-connector"] },
+        "nodes": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "note": { "type": "string" }
+      },
+      "oneOf": [
+        {
+          "properties": {
+            "kind": { "const": "extra-mate" },
+            "connectorA": { "type": "object", "required": ["nodeId", "connectorId"], "additionalProperties": false, "properties": { "nodeId": { "type": "string" }, "connectorId": { "type": "string" } } },
+            "connectorB": { "type": "object", "required": ["nodeId", "connectorId"], "additionalProperties": false, "properties": { "nodeId": { "type": "string" }, "connectorId": { "type": "string" } } },
+            "mateProfile": { "type": "string" }
+          },
+          "required": ["kind", "connectorA", "connectorB"]
+        },
+        {
+          "properties": {
+            "kind": { "const": "rigid-group" },
+            "note2": { "type": "string" }
+          },
+          "required": ["kind"]
+        },
+        {
+          "properties": {
+            "kind": { "const": "joint" },
+            "jointType": { "enum": ["hinge", "slide", "removable"] },
+            "pivotLdu": { "$ref": "#/$defs/lduVec3" },
+            "axis": { "$ref": "#/$defs/lduVec3" },
+            "range": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+            "note2": { "type": "string" }
+          },
+          "required": ["kind", "jointType"]
+        },
+        {
+          "properties": {
+            "kind": { "const": "keep-out" },
+            "envelopeLdu": { "type": "array", "items": { "type": "number" }, "minItems": 6, "maxItems": 6 },
+            "note2": { "type": "string" }
+          },
+          "required": ["kind", "envelopeLdu"]
+        },
+        {
+          "properties": {
+            "kind": { "const": "expose-connector" },
+            "nodeId": { "type": "string" },
+            "connectorId": { "type": "string" }
+          },
+          "required": ["kind", "nodeId", "connectorId"]
+        }
+      ]
+    },
+    "step": {
+      "type": "object",
+      "required": ["id", "order"],
+      "additionalProperties": false,
+      "description": "步骤。区分原始步骤引用与局部/全局执行顺序；零新增件的总装步必须显式存在（adds 为空数组，不能省略）。",
+      "properties": {
+        "id": { "type": "string" },
+        "order": { "type": "integer", "minimum": 1, "description": "全局执行顺序" },
+        "sourceStepRef": {
+          "type": "object", "additionalProperties": false,
+          "description": "原始说明书步骤引用（B 的观察产物）；没有来源时不得填写",
+          "properties": {
+            "page": { "type": "integer", "minimum": 1 },
+            "stepNo": { "type": "string" },
+            "subStepNo": { "type": "string" },
+            "observationId": { "type": "string" }
+          }
+        },
+        "componentPath": { "type": "string", "description": "该步骤属于哪个组件实例（局部步骤）" },
+        "adds": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "本步新增的节点路径。空数组表示零新增件总装步（合法且必须存在）。"
+        },
+        "action": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "op": { "enum": ["place_root", "attach_part", "attach_assembly", "flip", "subassembly-finish", "final-assembly"] },
+            "note": { "type": "string" }
+          }
+        },
+        "flip": { "type": "boolean", "description": "本步翻面作业" },
+        "repeatOf": { "type": "string", "description": "重复步骤（×N）指向被重复的步骤 id" },
+        "evidence": { "type": "array", "items": { "$ref": "#/$defs/evidenceRef" } }
+      }
+    },
+    "componentDefinition": {
+      "type": "object",
+      "required": ["id", "parts"],
+      "additionalProperties": false,
+      "description": "可复用组件模板。保留局部坐标及内部关系；不得递归包含自身。修改模板影响全部实例；改单实例用 instanceOverrides。",
+      "properties": {
+        "id": { "type": "string" },
+        "label": { "type": "string" },
+        "parts": { "type": "array", "items": { "$ref": "#/$defs/partInstance" } },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["instancePath", "componentId"], "additionalProperties": false,
+            "description": "嵌套组件实例（组件归属树）。禁止递归：componentId 的祖先链不得包含本组件 id。",
+            "properties": {
+              "instancePath": { "type": "string" },
+              "componentId": { "type": "string" },
+              "pose": { "$ref": "#/$defs/localPose" },
+              "mirror": { "type": "boolean", "description": "左右镜像实例。镜像改变手性，不等于旋转；左右异形件必须用不同 partId，不能镜像冒充。", "default": false }
+            }
+          }
+        },
+        "joints": { "type": "array", "items": { "$ref": "#/$defs/constraint" } },
+        "steps": { "type": "array", "items": { "$ref": "#/$defs/step" } },
+        "workState": {
+          "type": "object", "additionalProperties": false,
+          "description": "施工暂存状态：正在桌面搭建的独立子组件是合法中间状态，但未完成挂装的车身组件不能进入最终总装通过状态。临时夹具不计入 BOM，也不得用来消除最终悬空错误。",
+          "properties": {
+            "status": { "enum": ["on-bench", "attached", "pending-interface"] },
+            "fixture": { "type": "string", "description": "临时夹具描述；不计入 BOM" },
+            "localOriginLdu": { "$ref": "#/$defs/lduVec3" }
+          }
+        }
+      }
+    },
+    "componentInstance": {
+      "type": "object",
+      "required": ["instancePath", "componentId"],
+      "additionalProperties": false,
+      "description": "根装配中的组件实例。每个实例有独立全局路径与 BOM 份额。",
+      "properties": {
+        "instancePath": { "type": "string", "description": "稳定实例路径，例如 car/front_bumper/lamp_left" },
+        "componentId": { "type": "string" },
+        "pose": { "$ref": "#/$defs/localPose" },
+        "mirror": { "type": "boolean", "default": false },
+        "instanceOverrides": {
+          "type": "object", "additionalProperties": false,
+          "description": "只改本实例，不污染模板",
+          "properties": {
+            "colorOverrides": {
+              "type": "array",
+              "items": { "type": "object", "required": ["instanceId", "color"], "additionalProperties": false, "properties": { "instanceId": { "type": "string" }, "color": { "type": "integer" } } }
+            },
+            "note": { "type": "string" }
+          }
+        },
+        "inventoryTokens": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["format", "version", "assetLock", "definitions", "instances", "placements", "steps"],
+  "additionalProperties": false,
+  "properties": {
+    "format": { "const": "brickbuild-assembly" },
+    "version": { "const": "0.3.0" },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "name": { "type": "string" },
+        "setId": { "type": "string" },
+        "front": { "const": "+z" },
+        "flip": { "type": "boolean", "description": "整机翻面搭建：以最上层为施工基准面" },
+        "strictAssembly": { "type": "boolean" },
+        "createdBy": { "type": "string" }
+      }
+    },
+    "assetLock": { "$ref": "#/$defs/assetLock" },
+    "definitions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/componentDefinition" },
+      "description": "主体与可复用子组件的局部定义。根装配必须存在 id=\"main\" 的定义。"
+    },
+    "instances": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/componentInstance" },
+      "description": "根装配中的组件实例与独立配件归属"
+    },
+    "placements": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/placement" },
+      "description": "定位依赖 DAG。必须无环、无缺引用、每节点恰好一条；缺失/环/双重定位必须报错并原子回滚。"
+    },
+    "constraints": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/constraint" },
+      "description": "额外扣合、刚性/关节关系与验证约束。不产生定位依赖边。"
+    },
+    "steps": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/step" },
+      "description": "原始步骤引用、局部步骤、全局执行顺序、动作与总装事件"
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/evidenceRef" },
+      "description": "说明书/照片观察引用及证据等级"
+    },
+    "inventory": {
+      "type": "array",
+      "description": "库存：每颗实际使用件分配唯一 token；重复组件模板实例化时分别占用",
+      "items": {
+        "type": "object",
+        "required": ["token", "partId", "color"],
+        "additionalProperties": false,
+        "properties": {
+          "token": { "type": "string" },
+          "partId": { "type": "string" },
+          "color": { "type": "integer" },
+          "qty": { "type": "integer", "minimum": 1, "default": 1 },
+          "role": { "enum": ["body", "accessory", "spare", "sticker", "print"], "default": "body" },
+          "consumedBy": { "type": "string", "description": "哪个组件实例/零件路径占用；null 表示尚未消费" }
+        }
+      }
+    },
+    "derived": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "可选缓存。不得覆盖权威关系；输入哈希变化即失效。",
+      "properties": {
+        "stateHash": { "$ref": "#/$defs/sha256" },
+        "inputHash": { "$ref": "#/$defs/sha256" },
+        "worldPoses": {
+          "type": "array",
+          "items": {
+            "type": "object", "required": ["nodePath", "translationLdu", "orientationId"], "additionalProperties": false,
+            "properties": {
+              "nodePath": { "type": "string" },
+              "translationLdu": { "$ref": "#/$defs/lduVec3" },
+              "orientationId": { "type": "integer", "minimum": 0, "maximum": 23 },
+              "snot": { "type": "integer" }
+            }
+          }
+        },
+        "generatedAt": { "type": "string" }
+      }
+    }
+  }
+}

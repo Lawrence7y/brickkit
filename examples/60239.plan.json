@@ -1,0 +1,1164 @@
+{
+  "format": "brickbuild-plan",
+  "version": "0.1",
+  "meta": {
+    "name": "LEGO 60239 警察巡逻车",
+    "setId": "60239",
+    "generatedBy": "tools/extract-plan.mjs",
+    "generatedAt": "2026-10-26T10:46:34.979Z",
+    "source": "examples/60239.brick.json"
+  },
+  "bomFile": "examples/60239.bom.json",
+  "manual": {
+    "pdf": "assets/instructions-lego/60239_book1.pdf",
+    "pagesDir": "out/manual-pages/60239",
+    "pages": 36,
+    "book": null
+  },
+  "submodels": [
+    {
+      "id": "main",
+      "label": "主干",
+      "steps": [
+        1,
+        45
+      ],
+      "attachStep": null,
+      "bom": [
+        {
+          "part": "11208",
+          "color": 71,
+          "qty": 4
+        },
+        {
+          "part": "11209",
+          "color": 0,
+          "qty": 4
+        },
+        {
+          "part": "11303",
+          "color": 272,
+          "qty": 1
+        },
+        {
+          "part": "15207",
+          "color": 72,
+          "qty": 2
+        },
+        {
+          "part": "18892",
+          "color": 0,
+          "qty": 2
+        },
+        {
+          "part": "22889",
+          "color": 1,
+          "qty": 2
+        },
+        {
+          "part": "2412a",
+          "color": 0,
+          "qty": 1
+        },
+        {
+          "part": "2420",
+          "color": 1,
+          "qty": 2
+        },
+        {
+          "part": "2431",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "2431",
+          "color": 33,
+          "qty": 1
+        },
+        {
+          "part": "2432",
+          "color": 14,
+          "qty": 1
+        },
+        {
+          "part": "27263",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "28324",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "29119",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "29120",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "3002",
+          "color": 19,
+          "qty": 1
+        },
+        {
+          "part": "3010",
+          "color": 1,
+          "qty": 2
+        },
+        {
+          "part": "3020",
+          "color": 71,
+          "qty": 1
+        },
+        {
+          "part": "3021",
+          "color": 4,
+          "qty": 2
+        },
+        {
+          "part": "3023b",
+          "color": 15,
+          "qty": 6
+        },
+        {
+          "part": "3023b",
+          "color": 272,
+          "qty": 3
+        },
+        {
+          "part": "30414",
+          "color": 71,
+          "qty": 1
+        },
+        {
+          "part": "3069b",
+          "color": 43,
+          "qty": 1
+        },
+        {
+          "part": "32059",
+          "color": 1,
+          "qty": 1
+        },
+        {
+          "part": "34103",
+          "color": 0,
+          "qty": 2
+        },
+        {
+          "part": "35480",
+          "color": 71,
+          "qty": 1
+        },
+        {
+          "part": "3626b",
+          "color": 14,
+          "qty": 1
+        },
+        {
+          "part": "3666",
+          "color": 1,
+          "qty": 2
+        },
+        {
+          "part": "3710",
+          "color": 272,
+          "qty": 3
+        },
+        {
+          "part": "4162",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "43722a",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "43723a",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "4740",
+          "color": 72,
+          "qty": 2
+        },
+        {
+          "part": "47456",
+          "color": 0,
+          "qty": 1
+        },
+        {
+          "part": "50745",
+          "color": 15,
+          "qty": 4
+        },
+        {
+          "part": "52107",
+          "color": 4,
+          "qty": 1
+        },
+        {
+          "part": "54200",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "54200",
+          "color": 36,
+          "qty": 2
+        },
+        {
+          "part": "54200",
+          "color": 47,
+          "qty": 2
+        },
+        {
+          "part": "57783",
+          "color": 43,
+          "qty": 1
+        },
+        {
+          "part": "59900",
+          "color": 25,
+          "qty": 2
+        },
+        {
+          "part": "60477",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "73081",
+          "color": 14,
+          "qty": 1
+        },
+        {
+          "part": "73200",
+          "color": 272,
+          "qty": 1
+        },
+        {
+          "part": "76382",
+          "color": 212,
+          "qty": 1
+        },
+        {
+          "part": "85984",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "85984",
+          "color": 72,
+          "qty": 1
+        },
+        {
+          "part": "87609",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "93273",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "93606",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "98138",
+          "color": 33,
+          "qty": 2
+        },
+        {
+          "part": "98281",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "source": "fallback",
+      "stepList": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "n": 1,
+      "page": 2,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "11303",
+          "color": 272,
+          "qty": 1
+        },
+        {
+          "part": "28324",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "3626b",
+          "color": 14,
+          "qty": 1
+        },
+        {
+          "part": "4740",
+          "color": 72,
+          "qty": 2
+        },
+        {
+          "part": "59900",
+          "color": 25,
+          "qty": 2
+        },
+        {
+          "part": "73200",
+          "color": 272,
+          "qty": 1
+        },
+        {
+          "part": "76382",
+          "color": 212,
+          "qty": 1
+        }
+      ],
+      "note": "与第 1–2 步共用第 2 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 2,
+      "page": 2,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3710",
+          "color": 272,
+          "qty": 2
+        }
+      ],
+      "note": "与第 1–2 步共用第 2 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 3,
+      "page": 3,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3021",
+          "color": 4,
+          "qty": 1
+        },
+        {
+          "part": "3023b",
+          "color": 272,
+          "qty": 1
+        }
+      ],
+      "note": "与第 3–4 步共用第 3 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 4,
+      "page": 3,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "52107",
+          "color": 4,
+          "qty": 1
+        }
+      ],
+      "note": "与第 3–4 步共用第 3 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 5,
+      "page": 4,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "2432",
+          "color": 14,
+          "qty": 1
+        },
+        {
+          "part": "73081",
+          "color": 14,
+          "qty": 1
+        }
+      ],
+      "note": "与第 5–6 步共用第 4 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 6,
+      "page": 4,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3002",
+          "color": 19,
+          "qty": 1
+        },
+        {
+          "part": "30414",
+          "color": 71,
+          "qty": 1
+        }
+      ],
+      "note": "与第 5–6 步共用第 4 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 7,
+      "page": 5,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "22889",
+          "color": 1,
+          "qty": 2
+        }
+      ],
+      "note": "与第 7–8 步共用第 5 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 8,
+      "page": 5,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "18892",
+          "color": 0,
+          "qty": 2
+        }
+      ],
+      "note": "与第 7–8 步共用第 5 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 9,
+      "page": 6,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3021",
+          "color": 4,
+          "qty": 1
+        }
+      ],
+      "note": "与第 9–10 步共用第 6 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 10,
+      "page": 6,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "15207",
+          "color": 72,
+          "qty": 2
+        }
+      ],
+      "note": "与第 9–10 步共用第 6 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 11,
+      "page": 7,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3010",
+          "color": 1,
+          "qty": 1
+        }
+      ],
+      "note": "与第 11–12 步共用第 7 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 12,
+      "page": 7,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3010",
+          "color": 1,
+          "qty": 1
+        }
+      ],
+      "note": "与第 11–12 步共用第 7 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 13,
+      "page": 8,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3666",
+          "color": 1,
+          "qty": 2
+        }
+      ],
+      "note": "与第 13–14 步共用第 8 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 14,
+      "page": 8,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "50745",
+          "color": 15,
+          "qty": 4
+        }
+      ],
+      "note": "与第 13–14 步共用第 8 页（页码按顺序均摊，未经 OCR/文字层核对）"
+    },
+    {
+      "n": 15,
+      "page": 9,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "2412a",
+          "color": 0,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 9 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 16,
+      "page": 10,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "87609",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "93606",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 10 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 17,
+      "page": 11,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3023b",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 11 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 18,
+      "page": 12,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "54200",
+          "color": 36,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 12 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 19,
+      "page": 13,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "35480",
+          "color": 71,
+          "qty": 1
+        },
+        {
+          "part": "85984",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 13 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 20,
+      "page": 14,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "2431",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 14 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 22,
+      "page": 15,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "32059",
+          "color": 1,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 15 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 23,
+      "page": 16,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "34103",
+          "color": 0,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 16 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 24,
+      "page": 17,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3023b",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "43722a",
+          "color": 15,
+          "qty": 1
+        },
+        {
+          "part": "43723a",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 17 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 25,
+      "page": 18,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3069b",
+          "color": 43,
+          "qty": 1
+        },
+        {
+          "part": "47456",
+          "color": 0,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 18 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 26,
+      "page": 19,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "60477",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 19 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 28,
+      "page": 20,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "4162",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 20 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 29,
+      "page": 21,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3023b",
+          "color": 272,
+          "qty": 1
+        },
+        {
+          "part": "57783",
+          "color": 43,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 21 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 31,
+      "page": 22,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3023b",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 22 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 32,
+      "page": 23,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3710",
+          "color": 272,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 23 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 33,
+      "page": 24,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "54200",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "54200",
+          "color": 47,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 24 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 34,
+      "page": 25,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3020",
+          "color": 71,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 25 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 35,
+      "page": 26,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "3023b",
+          "color": 272,
+          "qty": 1
+        },
+        {
+          "part": "98138",
+          "color": 33,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 26 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 36,
+      "page": 27,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "85984",
+          "color": 72,
+          "qty": 1
+        },
+        {
+          "part": "93273",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 27 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 39,
+      "page": 28,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "98281",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 28 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 40,
+      "page": 29,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "2420",
+          "color": 1,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 29 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 41,
+      "page": 30,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "27263",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 30 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 42,
+      "page": 31,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "29119",
+          "color": 15,
+          "qty": 2
+        },
+        {
+          "part": "29120",
+          "color": 15,
+          "qty": 2
+        }
+      ],
+      "note": "页码按顺序均摊到第 31 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 43,
+      "page": 32,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "87609",
+          "color": 15,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 32 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 44,
+      "page": 33,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "2431",
+          "color": 33,
+          "qty": 1
+        }
+      ],
+      "note": "页码按顺序均摊到第 33 页（未经 OCR/文字层核对）"
+    },
+    {
+      "n": 45,
+      "page": 34,
+      "pageConfidence": "assumed",
+      "pageKind": "step",
+      "az": 315,
+      "el": 25,
+      "poseConfidence": "assumed",
+      "parts": [
+        {
+          "part": "11208",
+          "color": 71,
+          "qty": 4
+        },
+        {
+          "part": "11209",
+          "color": 0,
+          "qty": 4
+        }
+      ],
+      "note": "页码按顺序均摊到第 34 页（未经 OCR/文字层核对）"
+    }
+  ],
+  "pageMapping": {
+    "source": "out/manual-pages/60239/manifest.json",
+    "method": "even-split",
+    "stepPages": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "stepCount": 40,
+    "measuredSteps": 0,
+    "assumedSteps": 40
+  },
+  "assumptions": [
+    "模型没有 modules/subassembly、submodels 或 --assign 归属信息：全部零件归入 main（单子模型），子模型拆分需后续用 --assign 明确声明",
+    "页码口径：40 个步骤按顺序均摊到 33 张 kind=step 页（无 OCR/文字层核对），全部 pageConfidence=assumed",
+    "视角口径：无 --poses 来源，全部步骤用默认说明书视角初值 az=315 el=25（poseConfidence=assumed），可用 brickkit calibrate 逐页标定后回填"
+  ],
+  "notes": []
+}

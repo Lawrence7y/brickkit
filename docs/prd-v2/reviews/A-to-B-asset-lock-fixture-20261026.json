@@ -1,0 +1,387 @@
+{
+  "status": "review-proposal-not-integrated",
+  "sourceIndex": {
+    "path": "catalog/assets-v1/index.json",
+    "sha256": "030ffb688ed71377e08443f5317048f6738add6fdfa1f39f204988a144f517d0"
+  },
+  "sourcePlan": {
+    "path": "out/prd-v2/run-20261026-v4/B/60239.build.plan.json",
+    "sha256": "1b6d5cd25d8954613d2ec2b8dee9389e993f023673afddd171717477cba1de0a"
+  },
+  "tasks": [
+    {
+      "taskId": "task-minifig",
+      "requiredPartIds": [
+        "3626b",
+        "76382",
+        "11303",
+        "73200"
+      ],
+      "assetLock": {
+        "profileId": "default-2026-10-26",
+        "indexVersion": "1.0.0",
+        "parts": [
+          {
+            "partId": "11303",
+            "revision": "r1-extracted",
+            "contentHash": "8a2b6912b6e88eca9a0c702e6e42ab3ad3b322c63fa529daa6ccaf7031b0388b"
+          },
+          {
+            "partId": "3626b",
+            "revision": "r1-extracted",
+            "contentHash": "39ee8aa1935ca7159b0b688b2ba735413c1bc2603863a566503803bc4ba7e941"
+          },
+          {
+            "partId": "73200",
+            "revision": "r1-extracted",
+            "contentHash": "cc23f70386f9ca040dc46bcfa4b102a439c5fd0de42ad8ea0d5a8af94178b475"
+          },
+          {
+            "partId": "76382",
+            "revision": "r1-extracted",
+            "contentHash": "deb7deb200b971e27510470150fce87f258d60abf12a6dd3e83b04cf7bfc365e"
+          }
+        ]
+      },
+      "check": {
+        "passed": true,
+        "verifiedCount": 4,
+        "missing": []
+      }
+    },
+    {
+      "taskId": "task-cones",
+      "requiredPartIds": [
+        "59900",
+        "4740"
+      ],
+      "assetLock": {
+        "profileId": "default-2026-10-26",
+        "indexVersion": "1.0.0",
+        "parts": [
+          {
+            "partId": "4740",
+            "revision": "r1-curated",
+            "contentHash": "237f2404740dc8c8a779c56ac9aa5fa47c577d599023e5720a1ac6026f9d8399"
+          },
+          {
+            "partId": "59900",
+            "revision": "r1-extracted",
+            "contentHash": "c84390712674c9d16a7b22279130e3536e1ca9b826f3b6893e8b2c67399faeed"
+          }
+        ]
+      },
+      "check": {
+        "passed": true,
+        "verifiedCount": 2,
+        "missing": []
+      }
+    },
+    {
+      "taskId": "task-front-bumper",
+      "requiredPartIds": [
+        "54200",
+        "3023b",
+        "2412a"
+      ],
+      "assetLock": {
+        "profileId": "default-2026-10-26",
+        "indexVersion": "1.0.0",
+        "parts": [
+          {
+            "partId": "2412a",
+            "revision": "r1-extracted",
+            "contentHash": "2d8cc8475406f8bea4a2ce856ca51dfc084d9f60e3ebb0867eeb9049780af144"
+          },
+          {
+            "partId": "3023b",
+            "revision": "r1-extracted",
+            "contentHash": "32cedaf292861f849fc4aff9a198489bac43db2f82febd72d855971059bf29c5"
+          },
+          {
+            "partId": "54200",
+            "revision": "r1-curated",
+            "contentHash": "00f04501fe1e31fd46c2a95fd2443fc927cb68ab3bbafb058535d1074f9d2506"
+          }
+        ]
+      },
+      "check": {
+        "passed": true,
+        "verifiedCount": 3,
+        "missing": []
+      }
+    },
+    {
+      "taskId": "task-wheels",
+      "requiredPartIds": [
+        "11209",
+        "11208"
+      ],
+      "assetLock": {
+        "profileId": "default-2026-10-26",
+        "indexVersion": "1.0.0",
+        "parts": [
+          {
+            "partId": "11208",
+            "revision": "r1-extracted",
+            "contentHash": "d9565c8233f7ccf5361c47a93d92f4f0aef6a63d2381bd2b78dfd5cf14d07fcb"
+          },
+          {
+            "partId": "11209",
+            "revision": "r1-extracted",
+            "contentHash": "eae4d2693bacecea06dc59d7cf68ee8c1569c831ff00d94cf86f942791efbbde"
+          }
+        ]
+      },
+      "check": {
+        "passed": true,
+        "verifiedCount": 2,
+        "missing": []
+      }
+    },
+    {
+      "taskId": "task-main-chassis",
+      "requiredPartIds": [
+        "54200",
+        "29120",
+        "29119",
+        "43722a",
+        "43723a",
+        "85984",
+        "3023b",
+        "27263",
+        "50745",
+        "2431",
+        "93273",
+        "60477",
+        "93606",
+        "87609",
+        "98281",
+        "4162",
+        "28324",
+        "3002",
+        "52107",
+        "3021",
+        "2420",
+        "3010",
+        "3666",
+        "22889",
+        "32059",
+        "2432",
+        "73081",
+        "34103",
+        "47456",
+        "18892",
+        "3069b",
+        "57783",
+        "98138",
+        "3710",
+        "35480",
+        "30414",
+        "3020",
+        "15207"
+      ],
+      "assetLock": {
+        "profileId": "default-2026-10-26",
+        "indexVersion": "1.0.0",
+        "parts": [
+          {
+            "partId": "15207",
+            "revision": "r1-extracted",
+            "contentHash": "7613e20a2270d15e17fe32b6ccccf97a73251a929b7e14b38920ff41d7e4f504"
+          },
+          {
+            "partId": "18892",
+            "revision": "r1-extracted",
+            "contentHash": "5e4ea6bf9952979f5e4ef0eb550a532b8a8c24aeaf6a53d038af7ab0eae0daa5"
+          },
+          {
+            "partId": "22889",
+            "revision": "r1-extracted",
+            "contentHash": "0c6172fab65ffd2557b14ababac55b3f9d89a0d47ea39a624114c955689a4374"
+          },
+          {
+            "partId": "2420",
+            "revision": "r1-curated",
+            "contentHash": "387a3408d08e59ca9eaa162fe452880169cd8145e4f86e10565a5e40776e1554"
+          },
+          {
+            "partId": "2431",
+            "revision": "r1-curated",
+            "contentHash": "21244f312c635921698e45f1e4705a1dd5ed62a9b6f3c42af3a82503169fd8ae"
+          },
+          {
+            "partId": "2432",
+            "revision": "r1-extracted",
+            "contentHash": "e68e6ee94ce1cfccca9ac7e1e05d888a11ab2f80869e7a740fdc4417bd1b951b"
+          },
+          {
+            "partId": "27263",
+            "revision": "r1-extracted",
+            "contentHash": "f40272a216e62f826fdd8b92fa33e0ac8c71ec7818c3c3c576444089e0093218"
+          },
+          {
+            "partId": "28324",
+            "revision": "r1-extracted",
+            "contentHash": "ab02dc56aa6b6aa84f2d0a35c8e891572f0a6525f9a3b22b54c4c5e2a5d9cb10"
+          },
+          {
+            "partId": "29119",
+            "revision": "r1-extracted",
+            "contentHash": "f147bb6784fa9c0f5213805e1a868b6ac544cd7edcd041a3444ba145fc9110d0"
+          },
+          {
+            "partId": "29120",
+            "revision": "r1-extracted",
+            "contentHash": "f5e617d1e74ba2bd442b0bf53220de247da4ced8db94985cabf489ecfb6d23ca"
+          },
+          {
+            "partId": "3002",
+            "revision": "r1-curated",
+            "contentHash": "4572bcccfe0cdbd03c9f3e790e296971304acebf24c09bd60051929f2ce234a8"
+          },
+          {
+            "partId": "3010",
+            "revision": "r1-curated",
+            "contentHash": "dae57890ae49d26f7bf71c59988b3b72b42dae9e2fddd9231c7e0ce6473b23fe"
+          },
+          {
+            "partId": "3020",
+            "revision": "r1-curated",
+            "contentHash": "7f24bf043db49733deb78c4f45dbf0d37712049c389b4bd6ca1df22a3838c39c"
+          },
+          {
+            "partId": "3021",
+            "revision": "r1-curated",
+            "contentHash": "2889e7a120f3b585fc09a58d9f1a1aad1707caaacd343f05b3a0463dfb48973c"
+          },
+          {
+            "partId": "3023b",
+            "revision": "r1-extracted",
+            "contentHash": "32cedaf292861f849fc4aff9a198489bac43db2f82febd72d855971059bf29c5"
+          },
+          {
+            "partId": "30414",
+            "revision": "r1-curated",
+            "contentHash": "f6313497083d913dec26640204e420db1097e34ee6abf0411093416e55db9f75"
+          },
+          {
+            "partId": "3069b",
+            "revision": "r1-curated",
+            "contentHash": "a647400e35fc539f36eb8ef502a762de8d37b30f9ec60d57fa9ae5f476f65777"
+          },
+          {
+            "partId": "32059",
+            "revision": "r1-extracted",
+            "contentHash": "d01833f8819a9df6d3caa5ea6fab8703505ee46e6122f7293b9b985d316231cd"
+          },
+          {
+            "partId": "34103",
+            "revision": "r1-curated",
+            "contentHash": "7a55b98dd24bb06cc94cefa325392c18b1bccfa6a3e280d27fe0fb0676813728"
+          },
+          {
+            "partId": "35480",
+            "revision": "r1-extracted",
+            "contentHash": "b06c1bc2ad1227306b5bfa78a6b45607d28c6dace3bbb0a765309d3e5099bac9"
+          },
+          {
+            "partId": "3666",
+            "revision": "r1-curated",
+            "contentHash": "0d5b29bae0ead94409588e9eac54257868ecb0d87b3bc1eeee5e9a2e109b981d"
+          },
+          {
+            "partId": "3710",
+            "revision": "r1-curated",
+            "contentHash": "af73f8bf40087ebc17663cd38852040be36a15eabb3a4349362abbf9ee6f4b68"
+          },
+          {
+            "partId": "4162",
+            "revision": "r1-curated",
+            "contentHash": "1909db699ee32cc6fdde09c404212e28fdd76ac2de67e31d68e84ab675545d19"
+          },
+          {
+            "partId": "43722a",
+            "revision": "r1-extracted",
+            "contentHash": "2f10bb1565d67498dbd50ec11bba977838773b02fd63ee634ecbc1ee0859c139"
+          },
+          {
+            "partId": "43723a",
+            "revision": "r1-extracted",
+            "contentHash": "ea9fd287b6737df03cd69e6eb939eb6347143ff97496cbe5ffb4c29648fbf179"
+          },
+          {
+            "partId": "47456",
+            "revision": "r1-extracted",
+            "contentHash": "dceca59686151ce34bd19b22bf5e8096a2966db004b072cf5b443d45303a764d"
+          },
+          {
+            "partId": "50745",
+            "revision": "r1-curated",
+            "contentHash": "8e8518c3ed778e29b9225dc3df4d4d5b26b1101017efc04b4afac3a352dc6010"
+          },
+          {
+            "partId": "52107",
+            "revision": "r1-extracted",
+            "contentHash": "7e10749db2baf9f724ec736870c1074a3c320043734dcf775509cca2f7469f0c"
+          },
+          {
+            "partId": "54200",
+            "revision": "r1-curated",
+            "contentHash": "00f04501fe1e31fd46c2a95fd2443fc927cb68ab3bbafb058535d1074f9d2506"
+          },
+          {
+            "partId": "57783",
+            "revision": "r1-extracted",
+            "contentHash": "eadcf04429d19a7bfa7e00bbb2a3f379c6ee09438125fbc9b3410c05e6c47e23"
+          },
+          {
+            "partId": "60477",
+            "revision": "r1-curated",
+            "contentHash": "1a3841bb750e13d69ab6e5a1bdd39719792486913ea830e2e86926b6b5c307e1"
+          },
+          {
+            "partId": "73081",
+            "revision": "r1-extracted",
+            "contentHash": "97f2540b941ecfb83f91f4c43112857a187362d38213562409fdba1e70814c58"
+          },
+          {
+            "partId": "85984",
+            "revision": "r1-curated",
+            "contentHash": "93e70766dfbb48349e9de23e4f8f02cdf510d9ec0882197741620dc84acf2b41"
+          },
+          {
+            "partId": "87609",
+            "revision": "r1-extracted",
+            "contentHash": "c80909334f8a090597411a033ff35e204016bf8b1d911c0971bd0115dd2d9eae"
+          },
+          {
+            "partId": "93273",
+            "revision": "r1-curated",
+            "contentHash": "b6dc1a3c2ddd3bc15f9eb3eda11d8a1c9b14d4ebbeee9fdcd5e9e1b14a7e63c9"
+          },
+          {
+            "partId": "93606",
+            "revision": "r1-extracted",
+            "contentHash": "4b2c8a276fac2fce2631c0645b754dec84477e8704c48e36921725b905d909a9"
+          },
+          {
+            "partId": "98138",
+            "revision": "r1-curated",
+            "contentHash": "875a41740c7526d588bfec76469b5f75a317b4c56c37317bc9197ebe560cd95a"
+          },
+          {
+            "partId": "98281",
+            "revision": "r1-extracted",
+            "contentHash": "2838b194c5a4ba3e28f2905c2905b9a397c290c7a814743fbc59d69745660850"
+          }
+        ]
+      },
+      "check": {
+        "passed": true,
+        "verifiedCount": 38,
+        "missing": []
+      }
+    }
+  ]
+}

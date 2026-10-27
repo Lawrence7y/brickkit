@@ -1,0 +1,27 @@
+{
+  "probe": "receipt-gating-forgery",
+  "at": "2026-10-26T21:54:42.629Z",
+  "allPass": true,
+  "results": [
+    {
+      "name": "(a1) revision=999/stateHash=64a 伪造收据被拒",
+      "ok": true,
+      "detail": "ok=false reasonCodes=RECEIPT_REVISION_MISMATCH,RECEIPT_STATEHASH_UNBOUND,RECEIPT_EVIDENCE_MISSING binding=unverified"
+    },
+    {
+      "name": "(a2) 无状态证据的随机十六进制 stateHash 被拒",
+      "ok": true,
+      "detail": "reasonCodes=RECEIPT_STATEHASH_UNBOUND"
+    },
+    {
+      "name": "(b) totalBOMParts=999 vs 分配 91 被拒",
+      "ok": true,
+      "detail": "reasonCodes=PLAN_BOM_TOTAL_MISMATCH errors=[\"全局计划声明了 999 件，但任务包实际分配了 91 件，总量不守恒\"]"
+    },
+    {
+      "name": "(c) 真实绑定收据审计通过",
+      "ok": true,
+      "detail": "ok=true reasonCodes=(none) bindings=verified"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "reviewDate": "2026-10-26",
+  "issue": "A-INV-01",
+  "decision": "closed",
+  "originalIndependentReproduction": {
+    "firstPassed": true,
+    "firstTokens": [
+      "audit-member-1",
+      "audit-member-2"
+    ],
+    "inventoryReturnedAfterFirst": [
+      {
+        "token": "audit-member-1",
+        "partId": "3023",
+        "color": 0,
+        "state": "consumed",
+        "consumedBy": "first-group",
+        "consumedAt": "transaction"
+      },
+      {
+        "token": "audit-member-2",
+        "partId": "2412b",
+        "color": 4,
+        "state": "consumed",
+        "consumedBy": "first-group",
+        "consumedAt": "transaction"
+      }
+    ],
+    "secondPassed": false,
+    "secondTokens": [],
+    "sameTokensReused": [],
+    "initialParts": 1,
+    "afterFirstParts": 3,
+    "afterSecondParts": null,
+    "secondDiagnosticCodes": [
+      "inventory-insufficient"
+    ],
+    "finalStaticValidation": null,
+    "inventoryInvariantViolated": false
+  },
+  "independentMutation": {
+    "generatedAt": "2026-10-26T15:11:25.162Z",
+    "purpose": "证明 A-INV-01 回归断言不是空断言：还原旧行为后必须复现缺陷（1→3→5 件且零错误）",
+    "mutations": [
+      "consumeToken 只维护批次内 Set，不写回 inv.state=consumed",
+      "rehash 恢复旧的库存映射（不把 consumed 当权威）",
+      "去掉单件路径「同件号库存全消费必须拒绝」守卫"
+    ],
+    "fixed": {
+      "firstPassed": true,
+      "inventoryAfterFirst": [
+        "m1:consumed",
+        "m2:consumed"
+      ],
+      "afterFirstParts": 3,
+      "secondPassed": false,
+      "secondCodes": [
+        "inventory-insufficient"
+      ],
+      "finalParts": null,
+      "reusedSameTokens": []
+    },
+    "mutant": {
+      "firstPassed": true,
+      "inventoryAfterFirst": [
+        "m1:available",
+        "m2:available"
+      ],
+      "afterFirstParts": 3,
+      "secondPassed": true,
+      "secondCodes": [],
+      "finalParts": 5,
+      "reusedSameTokens": [
+        "m1",
+        "m2"
+      ]
+    },
+    "assertions": {
+      "fixedSecondRejected": true,
+      "fixedNoTokenReuse": true,
+      "fixedInventoryConsumed": true,
+      "mutantReproducesDefect": true,
+      "mutantReusesSameTokens": true,
+      "mutantMatchesBReportedCounterexample": true
+    },
+    "ok": true
+  },
+  "independentFixtureConsumption": {
+    "locks": [
+      {
+        "task": "task-minifig",
+        "passed": true,
+        "verified": 4,
+        "partCount": 4,
+        "sameAsRebuilt": true
+      },
+      {
+        "task": "task-cones",
+        "passed": true,
+        "verified": 2,
+        "partCount": 2,
+        "sameAsRebuilt": true
+      },
+      {
+        "task": "task-front-bumper",
+        "passed": true,
+        "verified": 3,
+        "partCount": 3,
+        "sameAsRebuilt": true
+      },
+      {
+        "task": "task-wheels",
+        "passed": true,
+        "verified": 2,
+        "partCount": 2,
+        "sameAsRebuilt": true
+      },
+      {
+        "task": "task-main-chassis",
+        "passed": true,
+        "verified": 38,
+        "partCount": 38,
+        "sameAsRebuilt": true
+      }
+    ],
+    "render": {
+      "passed": true,
+      "labelCount": 8,
+      "sameLabels": true,
+      "sameMap": true,
+      "sameStateHash": true,
+      "tagResolves": true,
+      "wrongHashRejected": true
+    },
+    "assembly": {
+      "passed": true,
+      "candidates": 64,
+      "partCount": 3,
+      "targetMatched": true,
+      "errors": 0,
+      "warnings": 0,
+      "inventory": [
+        {
+          "token": "audit-member-1",
+          "state": "consumed",
+          "consumedBy": "mounted-bumper"
+        },
+        {
+          "token": "audit-member-2",
+          "state": "consumed",
+          "consumedBy": "mounted-bumper"
+        }
+      ]
+    }
+  },
+  "compoundUndoAndCurrentProductionPlan": {
+    "compoundUndo": {
+      "passed": true,
+      "remainingParts": 1,
+      "inventory": [
+        {
+          "token": "audit-member-1",
+          "partId": "3023",
+          "color": 0,
+          "state": "available"
+        },
+        {
+          "token": "audit-member-2",
+          "partId": "2412b",
+          "color": 4,
+          "state": "available"
+        }
+      ],
+      "undoResult": {
+        "nodeId": "undo-group",
+        "removed": true,
+        "removedNodeIds": [
+          "undo-group",
+          "undo-group/bump2"
+        ],
+        "releasedInventoryTokens": [
+          "audit-member-1",
+          "audit-member-2"
+        ]
+      },
+      "errors": 0,
+      "warnings": 0
+    },
+    "productionBPlanLocks": [
+      {
+        "task": "task-minifig",
+        "hasPartsArray": true,
+        "hasPartLocksDictionary": false,
+        "accepted": true,
+        "errorCodes": []
+      },
+      {
+        "task": "task-cones",
+        "hasPartsArray": true,
+        "hasPartLocksDictionary": false,
+        "accepted": true,
+        "errorCodes": []
+      },
+      {
+        "task": "task-front-bumper",
+        "hasPartsArray": true,
+        "hasPartLocksDictionary": false,
+        "accepted": true,
+        "errorCodes": []
+      },
+      {
+        "task": "task-wheels",
+        "hasPartsArray": true,
+        "hasPartLocksDictionary": false,
+        "accepted": true,
+        "errorCodes": []
+      },
+      {
+        "task": "task-main-chassis",
+        "hasPartsArray": true,
+        "hasPartLocksDictionary": false,
+        "accepted": true,
+        "errorCodes": []
+      }
+    ],
+    "sourceHashes": [
+      {
+        "path": "src/core/actions-v1/apply.js",
+        "sha256": "0a8a523d8b6c5c241e92779e618fbe3b540701d8f04d6fbf3ec76412658d33dc"
+      },
+      {
+        "path": "src/core/actions-v1/state.js",
+        "sha256": "f45554af9ffe00a70f233b10601ab5ba4777c6d77e60051449638cbac6e587d6"
+      },
+      {
+        "path": "src/core/assets-v1/lock.js",
+        "sha256": "23c56a0a4eb7af78488b959dd0ba1d92a586466205d597bea0fe43b6ef6afa23"
+      },
+      {
+        "path": "test/assets-assembly.test.mjs",
+        "sha256": "6ec1ef314dfc565d37bcd93d81fce67b0295c6245430540c242490b1f2489802"
+      },
+      {
+        "path": "docs/prd-v2/implementation-A/contracts/version.json",
+        "sha256": "c132faaf99e43e97435a8ba87681f0d8867f8f0d42a8859817df3838f095caa1"
+      }
+    ],
+    "mutationTempFiles": []
+  },
+  "maintainedTests": {
+    "command": "node --test --test-reporter=dot test/*.test.mjs",
+    "exitCode": 0,
+    "dotPassCount": 248,
+    "rawOutput": "....................\n....................\n....................\n....................\n....................\n....................\n....................\n....................\n....................\n....................\n....................\n....................\n........\n"
+  },
+  "snapshot": {
+    "contract": {
+      "version": "0.9.0-draft",
+      "revision": 3,
+      "status": "draft-for-B-review",
+      "frozen": false
+    },
+    "files": [
+      {
+        "path": "out/prd-v2/run-20261026-v4/B/60239.build.plan.json",
+        "sha256": "6363664e29942119835ccd693b14a9b19e9bccf3075e3903e58f4928cd8ce590"
+      },
+      {
+        "path": "catalog/assets-v1/index.json",
+        "sha256": "030ffb688ed71377e08443f5317048f6738add6fdfa1f39f204988a144f517d0"
+      },
+      {
+        "path": "docs/prd-v2/implementation-A/contracts/version.json",
+        "sha256": "c132faaf99e43e97435a8ba87681f0d8867f8f0d42a8859817df3838f095caa1"
+      },
+      {
+        "path": "src/core/actions-v1/apply.js",
+        "sha256": "0a8a523d8b6c5c241e92779e618fbe3b540701d8f04d6fbf3ec76412658d33dc"
+      }
+    ]
+  },
+  "boundaries": {
+    "B_R02": "not_closed_by_this_review",
+    "contractFrozen": false,
+    "fullWorkflow": "unverified",
+    "formalModelAcceptance": "unverified"
+  }
+}

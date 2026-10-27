@@ -1,0 +1,85 @@
+{
+  "sampleId": "smp-act-00124",
+  "protocolVersion": "1.0",
+  "taskType": "select_action",
+  "provenance": {
+    "sourceFamilyId": "set-31058",
+    "sourceModelId": "31058-dino",
+    "sourceKind": "real_manual",
+    "split": "train",
+    "difficulty": "snot"
+  },
+  "assetLock": {
+    "catalogVersion": "1.0.0",
+    "engineRevision": "v2.0.0-rc1"
+  },
+  "images": [
+    {
+      "role": "target_manual_step",
+      "imagePath": "assets/manual-crops/31058/step-14.png",
+      "imageSha256": "4a51e600868f0ef81e9f298f2402120092576b251fcfa11ecf11370ae24f5a2a",
+      "labeled": false
+    },
+    {
+      "role": "current_rendered_state",
+      "imagePath": "out/renders/31058/state-step13-labeled.png",
+      "imageSha256": "8f3b2591e600868f0ef81e9f298f2402120092576b251fcfa11ecf11370ae24f",
+      "cameraPose": { "azimuth": 315, "elevation": 25 },
+      "labeled": true,
+      "connectorLabelMapRef": "out/renders/31058/state-step13-map.json"
+    }
+  ],
+  "stateRef": {
+    "taskId": "task-dino-head",
+    "stepNumber": 14,
+    "stateHash": "9b12a600868f0ef81e9f298f2402120092576b251fcfa11ecf11370ae24f5a2a"
+  },
+  "inventory": [
+    { "tokenId": "tok-014", "partId": "87087", "colorId": 28 },
+    { "tokenId": "tok-015", "partId": "3023", "colorId": 28 }
+  ],
+  "candidates": {
+    "enumerationComplete": true,
+    "truncated": false,
+    "items": [
+      {
+        "candidateId": "cand-01",
+        "parentInstanceId": "p008",
+        "parentConnectorId": "stud_0",
+        "childPartId": "87087",
+        "childConnectorId": "antistud_0",
+        "orientationId": 0,
+        "candidateHash": "1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b"
+      },
+      {
+        "candidateId": "cand-02",
+        "parentInstanceId": "p008",
+        "parentConnectorId": "stud_1",
+        "childPartId": "87087",
+        "childConnectorId": "antistud_0",
+        "orientationId": 0,
+        "candidateHash": "2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c"
+      }
+    ]
+  },
+  "target": {
+    "primaryAction": {
+      "op": "attach_part",
+      "selectedCandidateId": "cand-01",
+      "consumedTokenId": "tok-014",
+      "assignedInstanceId": "p009"
+    },
+    "equivalentCandidates": ["cand-01"],
+    "stepUnderstanding": {
+      "partsAdded": [{ "partId": "87087", "colorId": 28, "qty": 1 }],
+      "isFlip": false,
+      "isAssemblyEvent": false
+    }
+  },
+  "verification": {
+    "isGeometricallyLegal": true,
+    "hasManualGroundTruth": true,
+    "verifiedBy": "manual_review_annotator_1",
+    "evidenceNote": "核对 31058 书 1 第 14 步图示：87087 侧凸点砖朝向模型外侧安装在 p008 的 stud_0"
+  }
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "partId": "4740",
+    "baseRevision": "r1-curated",
+    "fields": {
+      "collision": {
+        "shape": "boxes",
+        "state": "measured",
+        "boxes": [
+          [0, 2, 0, 0.5, 0, 2],
+          [0, 2, 0.5, 0.75, 0, 0.6],
+          [0, 2, 0.5, 0.75, 1.4, 2],
+          [0, 0.6, 0.5, 0.75, 0.6, 1.4],
+          [1.4, 2, 0.5, 0.75, 0.6, 1.4],
+          [0, 0.6, 0.75, 2, 0.6, 1.4],
+          [1.4, 2, 0.75, 2, 0.6, 1.4],
+          [0.6, 1.4, 0.75, 2, 0.6, 0.8],
+          [0.6, 1.4, 0.75, 2, 1.2, 1.4]
+        ],
+        "evidence": {
+          "grade": "measured",
+          "method": "按官方 4740.dat 实测 bbox（x/z ±20 LDU，y -4..8 LDU）与 Inverted Dish 凹面朝上结构分解：底环 + 外壁 + 内环，中央留空（内腔可放 1×1 件）。坐标单位：x/z 为格，y 为片。",
+          "evidenceRefs": ["catalog/ldraw/parts/4740.dat"],
+          "recordedBy": "A/TaskA-2026-10-26"
+        }
+      }
+    },
+    "reason": "60239 的雪糕筒 59900（1×1×3）合法坐在 4740 内腔里，但目录单实心盒把内腔也算成实心，导致 3 处 overlap 假阳性。官方 .dat bbox 显示该件是 Inverted Dish（凹面朝上、内部空腔），必须多盒分解才能表达。仅改碰撞盒，不改尺寸、接口、渲染。",
+    "verification": {
+      "fixtures": [
+        "59900 放进 4740 内腔 → 不再误报 overlap（60239 p002/p003, p004/p005）",
+        "4740 与相邻 3001 共占同一空间 → 仍报 overlap（未放宽）"
+      ],
+      "positiveCases": 1,
+      "negativeCases": 1
+    },
+    "author": "A/TaskA-2026-10-26",
+    "recordedAt": "2026-10-26T00:00:00.000Z"
+  }
+]

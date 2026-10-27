@@ -1,0 +1,543 @@
+{
+  "status": "review-consumer-fixture-not-integrated",
+  "source": {
+    "path": "out/prd-v2/run-20261026-v4/B/real-assembly-curriculum/cases/case_stack_01/state_t.brick.json",
+    "sha256": "61c2351d1d3f6a9ff609aa46d695750ead6ee8e608a5c13478e623f9ad7437e6"
+  },
+  "request": {
+    "camera": {
+      "azimuthDeg": 35,
+      "elevationDeg": 35,
+      "target": [
+        2,
+        0.6,
+        1
+      ],
+      "distance": 16,
+      "width": 900,
+      "height": 1000
+    },
+    "maxLabels": 8
+  },
+  "response": {
+    "ok": true,
+    "commandOk": true,
+    "passed": true,
+    "kind": "renderState",
+    "renderStateVersion": "1.0.0",
+    "cameraContract": {
+      "version": "1.0.0",
+      "worldUnit": "stud",
+      "sourceSpace": "core [x格, y片, z格]",
+      "sourceToWorld": {
+        "scale": [
+          1,
+          0.4,
+          1
+        ],
+        "note": "Y 方向片→格需乘 PLATE=0.4"
+      },
+      "azimuthDefinition": "dir = [sin(az)cos(el), sin(el), cos(az)cos(el)]，由 target 指向相机；az=0 时相机在 +Z 正前方",
+      "elevationDefinition": "el 为正值时相机在上方；夹在 (-90, 90)",
+      "upAxis": "+Y",
+      "pixelOrigin": "top-left",
+      "pixelAxes": {
+        "x": "right",
+        "y": "down"
+      },
+      "projection": {
+        "type": "perspective",
+        "fovYDeg": 30,
+        "near": 0.1,
+        "far": 2000
+      },
+      "handedness": "right-handed, 与 three.js PerspectiveCamera 一致"
+    },
+    "camera": {
+      "mode": "perspective",
+      "eye": [
+        9.517541,
+        9.777223,
+        11.736161
+      ],
+      "target": [
+        2,
+        0.6,
+        1
+      ],
+      "distance": 16,
+      "azimuthDeg": 35,
+      "elevationDeg": 35,
+      "dir": [
+        0.469846,
+        0.573576,
+        0.67101
+      ],
+      "up": [
+        -0.32899,
+        0.819152,
+        -0.469846
+      ],
+      "fovYDeg": 30,
+      "near": 0.1,
+      "far": 2000,
+      "aspect": 0.9,
+      "orthoHalfHeight": null,
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "viewRect": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 1000
+      },
+      "pixelOrigin": "top-left"
+    },
+    "stateHash": "ac2fb8f8d1961323a591298cffe5245983d343e4f8127b56af15b3db97a044d8",
+    "labels": [
+      {
+        "tag": "1",
+        "pixel": [
+          344.724513,
+          363.659453
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#0",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          0.5,
+          1.2,
+          0.5
+        ],
+        "worldPosLdu": [
+          10,
+          24,
+          10
+        ],
+        "depth": 16.696121,
+        "aliases": {
+          "bStyle": "stud_top_0",
+          "bare": "stud_0"
+        }
+      },
+      {
+        "tag": "2",
+        "pixel": [
+          435.878838,
+          397.545519
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#2",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          1.5,
+          1.2,
+          0.5
+        ],
+        "worldPosLdu": [
+          30,
+          24,
+          10
+        ],
+        "depth": 16.226275,
+        "aliases": {
+          "bStyle": "stud_top_2",
+          "bare": "stud_2"
+        }
+      },
+      {
+        "tag": "3",
+        "pixel": [
+          273.526985,
+          412.661216
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#1",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          0.5,
+          1.2,
+          1.5
+        ],
+        "worldPosLdu": [
+          10,
+          24,
+          30
+        ],
+        "depth": 16.025111,
+        "aliases": {
+          "bStyle": "stud_top_1",
+          "bare": "stud_1"
+        }
+      },
+      {
+        "tag": "4",
+        "pixel": [
+          366.462932,
+          449.489126
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#3",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          1.5,
+          1.2,
+          1.5
+        ],
+        "worldPosLdu": [
+          30,
+          24,
+          30
+        ],
+        "depth": 15.555265,
+        "aliases": {
+          "bStyle": "stud_top_3",
+          "bare": "stud_3"
+        }
+      },
+      {
+        "tag": "5",
+        "pixel": [
+          532.469484,
+          433.452504
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#4",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          2.5,
+          1.2,
+          0.5
+        ],
+        "worldPosLdu": [
+          50,
+          24,
+          10
+        ],
+        "depth": 15.756429,
+        "aliases": {
+          "bStyle": "stud_top_4",
+          "bare": "stud_4"
+        }
+      },
+      {
+        "tag": "6",
+        "pixel": [
+          634.997719,
+          471.566752
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#6",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          3.5,
+          1.2,
+          0.5
+        ],
+        "worldPosLdu": [
+          70,
+          24,
+          10
+        ],
+        "depth": 15.286583,
+        "aliases": {
+          "bStyle": "stud_top_6",
+          "bare": "stud_6"
+        }
+      },
+      {
+        "tag": "7",
+        "pixel": [
+          465.18799,
+          488.611099
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#5",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          2.5,
+          1.2,
+          1.5
+        ],
+        "worldPosLdu": [
+          50,
+          24,
+          30
+        ],
+        "depth": 15.085419,
+        "aliases": {
+          "bStyle": "stud_top_5",
+          "bare": "stud_5"
+        }
+      },
+      {
+        "tag": "8",
+        "pixel": [
+          570.260466,
+          530.248376
+        ],
+        "nodeId": "p001",
+        "partId": "3001",
+        "connectorId": "ctop#7",
+        "connectorType": "top",
+        "dir": "+y",
+        "worldPos": [
+          3.5,
+          1.2,
+          1.5
+        ],
+        "worldPosLdu": [
+          70,
+          24,
+          30
+        ],
+        "depth": 14.615573,
+        "aliases": {
+          "bStyle": "stud_top_7",
+          "bare": "stud_7"
+        }
+      }
+    ],
+    "enumerationComplete": true,
+    "truncated": false,
+    "maxLabels": 8,
+    "candidatesInView": 8,
+    "skipped": {
+      "backFacing": 0,
+      "outOfView": 0,
+      "occluded": 0,
+      "occupied": 0,
+      "outOfFocus": 0,
+      "unsupported": 0
+    },
+    "diagnostics": [],
+    "elapsedMs": 3
+  },
+  "BConnectorMap": {
+    "version": "1.0.0",
+    "stateHash": "ac2fb8f8d1961323a591298cffe5245983d343e4f8127b56af15b3db97a044d8",
+    "camera": {
+      "azimuth": 35,
+      "elevation": 35,
+      "distance": 16,
+      "target": [
+        2,
+        0.6,
+        1
+      ],
+      "eye": [
+        9.517541,
+        9.777223,
+        11.736161
+      ],
+      "fovYDeg": 30,
+      "viewport": {
+        "width": 900,
+        "height": 1000
+      },
+      "viewRect": {
+        "x": 0,
+        "y": 0,
+        "width": 900,
+        "height": 1000
+      },
+      "pixelOrigin": "top-left"
+    },
+    "totalVisibleLabels": 8,
+    "enumerationComplete": true,
+    "labels": [
+      {
+        "tag": "1",
+        "pixel": [
+          344.724513,
+          363.659453
+        ],
+        "2d": [
+          344.724513,
+          363.659453
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_0",
+        "stableConnectorId": "ctop#0",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          0.5,
+          1.2,
+          0.5
+        ],
+        "depth": 16.696121
+      },
+      {
+        "tag": "2",
+        "pixel": [
+          435.878838,
+          397.545519
+        ],
+        "2d": [
+          435.878838,
+          397.545519
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_2",
+        "stableConnectorId": "ctop#2",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          1.5,
+          1.2,
+          0.5
+        ],
+        "depth": 16.226275
+      },
+      {
+        "tag": "3",
+        "pixel": [
+          273.526985,
+          412.661216
+        ],
+        "2d": [
+          273.526985,
+          412.661216
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_1",
+        "stableConnectorId": "ctop#1",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          0.5,
+          1.2,
+          1.5
+        ],
+        "depth": 16.025111
+      },
+      {
+        "tag": "4",
+        "pixel": [
+          366.462932,
+          449.489126
+        ],
+        "2d": [
+          366.462932,
+          449.489126
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_3",
+        "stableConnectorId": "ctop#3",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          1.5,
+          1.2,
+          1.5
+        ],
+        "depth": 15.555265
+      },
+      {
+        "tag": "5",
+        "pixel": [
+          532.469484,
+          433.452504
+        ],
+        "2d": [
+          532.469484,
+          433.452504
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_4",
+        "stableConnectorId": "ctop#4",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          2.5,
+          1.2,
+          0.5
+        ],
+        "depth": 15.756429
+      },
+      {
+        "tag": "6",
+        "pixel": [
+          634.997719,
+          471.566752
+        ],
+        "2d": [
+          634.997719,
+          471.566752
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_6",
+        "stableConnectorId": "ctop#6",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          3.5,
+          1.2,
+          0.5
+        ],
+        "depth": 15.286583
+      },
+      {
+        "tag": "7",
+        "pixel": [
+          465.18799,
+          488.611099
+        ],
+        "2d": [
+          465.18799,
+          488.611099
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_5",
+        "stableConnectorId": "ctop#5",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          2.5,
+          1.2,
+          1.5
+        ],
+        "depth": 15.085419
+      },
+      {
+        "tag": "8",
+        "pixel": [
+          570.260466,
+          530.248376
+        ],
+        "2d": [
+          570.260466,
+          530.248376
+        ],
+        "partInstanceId": "p001",
+        "connectorId": "stud_top_7",
+        "stableConnectorId": "ctop#7",
+        "type": "top",
+        "up": "+y",
+        "worldPos": [
+          3.5,
+          1.2,
+          1.5
+        ],
+        "depth": 14.615573
+      }
+    ]
+  }
+}

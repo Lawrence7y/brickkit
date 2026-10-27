@@ -1,0 +1,411 @@
+{
+  "reviewDate": "2026-10-26",
+  "scope": "out/prd-v2/run-20261026-v4/B/real-assembly-curriculum",
+  "cases": 15,
+  "integrity": {
+    "matchingModelHashes": 30,
+    "matchingImageHashes": 30,
+    "uniqueImageHashes": 30
+  },
+  "staticValidation": {
+    "states": 30,
+    "statesWithErrors": 0,
+    "statesWithWarnings": 9,
+    "totalWarnings": 10,
+    "diagnostics": [
+      {
+        "caseId": "case_stack_05",
+        "state": "state_t",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "color-unknown",
+            "msg": "p001：颜色代码 7 不在颜色表中",
+            "parts": [
+              "p001"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_stack_05",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "color-unknown",
+            "msg": "p001：颜色代码 7 不在颜色表中",
+            "parts": [
+              "p001"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_snot_04",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "color-unknown",
+            "msg": "p002：颜色代码 7 不在颜色表中",
+            "parts": [
+              "p002"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_subasm_01",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "sub-mixed",
+            "msg": "第 1 步同时包含子组件和主体的零件，建议分成两步",
+            "parts": [
+              "p001",
+              "bump1",
+              "bump2"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_subasm_02",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "sub-mixed",
+            "msg": "第 1 步同时包含子组件和主体的零件，建议分成两步",
+            "parts": [
+              "p001",
+              "roof1",
+              "roof2"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_subasm_03",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "sub-mixed",
+            "msg": "第 1 步同时包含子组件和主体的零件，建议分成两步",
+            "parts": [
+              "p001",
+              "h1",
+              "h2"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_subasm_04",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "sub-mixed",
+            "msg": "第 1 步同时包含子组件和主体的零件，建议分成两步",
+            "parts": [
+              "p001",
+              "bc1",
+              "bc2"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_subasm_05",
+        "state": "state_t",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "color-unknown",
+            "msg": "p001：颜色代码 7 不在颜色表中",
+            "parts": [
+              "p001"
+            ]
+          }
+        ]
+      },
+      {
+        "caseId": "case_subasm_05",
+        "state": "state_next",
+        "errors": [],
+        "warnings": [
+          {
+            "code": "color-unknown",
+            "msg": "p001：颜色代码 7 不在颜色表中",
+            "parts": [
+              "p001"
+            ]
+          },
+          {
+            "code": "sub-mixed",
+            "msg": "第 1 步同时包含子组件和主体的零件，建议分成两步",
+            "parts": [
+              "p001",
+              "w1",
+              "w2"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "labelLeakBaseline": {
+    "rule": "Choose the candidate whose public candidateId is cand_target. No target labels or images are read for prediction.",
+    "correct": 15,
+    "total": 15
+  },
+  "equivalentNegativeProbes": [
+    {
+      "caseId": "case_snot_01",
+      "negativeCandidateId": "cand_dist_2",
+      "sameMaterialBoxesAsReference": true,
+      "connected": true,
+      "collides": false
+    },
+    {
+      "caseId": "case_snot_03",
+      "negativeCandidateId": "cand_dist_2",
+      "sameMaterialBoxesAsReference": true,
+      "connected": true,
+      "collides": false
+    },
+    {
+      "caseId": "case_snot_05",
+      "negativeCandidateId": "cand_dist_2",
+      "sameMaterialBoxesAsReference": true,
+      "connected": true,
+      "collides": false
+    }
+  ],
+  "contractChecks": {
+    "invalidOrientationCount": 15,
+    "invalidOrientationExamples": [
+      {
+        "sampleId": "curriculum-case_stack_01",
+        "candidateId": "cand_dist_2",
+        "orientationId": 90
+      },
+      {
+        "sampleId": "curriculum-case_stack_02",
+        "candidateId": "cand_dist_2",
+        "orientationId": 90
+      },
+      {
+        "sampleId": "curriculum-case_stack_03",
+        "candidateId": "cand_dist_2",
+        "orientationId": 90
+      },
+      {
+        "sampleId": "curriculum-case_stack_04",
+        "candidateId": "cand_dist_2",
+        "orientationId": 90
+      },
+      {
+        "sampleId": "curriculum-case_stack_05",
+        "candidateId": "cand_dist_2",
+        "orientationId": 90
+      }
+    ],
+    "missingRequiredTopLevelFields": [
+      {
+        "sampleId": "curriculum-case_stack_01",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_stack_02",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_stack_03",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_stack_04",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_stack_05",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_snot_01",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_snot_02",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_snot_03",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_snot_04",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_snot_05",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_subasm_01",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_subasm_02",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_subasm_03",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_subasm_04",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      },
+      {
+        "sampleId": "curriculum-case_subasm_05",
+        "fields": [
+          "protocolVersion",
+          "assetLock",
+          "stateRef",
+          "verification"
+        ]
+      }
+    ]
+  },
+  "qwenSubmittedPreflight": {
+    "status": "preflight_verified",
+    "multimodal_pipeline": {
+      "dual_image_support": true,
+      "image_pixels_loaded": true,
+      "test_image_resolution": [
+        128,
+        128
+      ],
+      "simulated_image_grid_thw": [
+        [
+          1,
+          9,
+          9
+        ]
+      ],
+      "assistant_only_loss_masking_verified": true,
+      "missing_images_count": 0,
+      "checked_images_count": 24
+    },
+    "train_samples": 9,
+    "val_samples": 3,
+    "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+    "note": "多模态 Dataset、双图加载、图像网格张量与 Assistant-only 标签掩码已在离线环境完整预检通过"
+  },
+  "sourceHashes": [
+    {
+      "path": "tools/brickvlm/gen_real_assembly_curriculum.mjs",
+      "sha256": "11409f1b4191e4ce94a014ef0fbcef4f1f6c46b783137ad30ccf46a155bdcf0d"
+    },
+    {
+      "path": "training/brickvlm/train_qwen_qlora.py",
+      "sha256": "91ee80822ba88a7075d2e7d3e7aa27efc3f6f5210ef9b342d0accbd841fba953"
+    },
+    {
+      "path": "test/real-assembly-curriculum.test.mjs",
+      "sha256": "bfae73c4dd55b863afd02e217b4d68c7c73655bc9c7c8b08b3593cbb3fe06f5d"
+    },
+    {
+      "path": "src/core/core.js",
+      "sha256": "51d120cf3347f4944b143fd14386db4158cbc9f85fd3bf5afb9480682f04c875"
+    },
+    {
+      "path": "src/core/builder.js",
+      "sha256": "1f73ec180ff5922b58f35f3b4cb78e2070f12809e3fdad61b0ed34b58284e157"
+    },
+    {
+      "path": "catalog/parts.json",
+      "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d"
+    },
+    {
+      "path": "catalog/colors.json",
+      "sha256": "4652bcf5a0b385f59ac288e1e116d67fd1f43b23c87d6e12931a9006c757059c"
+    }
+  ]
+}

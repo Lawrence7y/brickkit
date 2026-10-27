@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-26",
+  "reviewer": "C0-2-readonly-subagent",
+  "head": "47f02a5",
+  "scope": "executor A four fixes landed 2026-10-26 23:31, re-verified by independent re-run on HEAD 47f02a5 + uncommitted changes",
+  "harnessNote": "本复核为同一模型的不同会话复核，不等同于跨 Harness 复核",
+  "items": [
+    {
+      "id": "1",
+      "name": "A-INV-01 库存跨事务持久化（inventory cross-transaction persistence）",
+      "command": "node docs/prd-v2/reviews/check-A-inventory-reuse-20261026.mjs ; node out/prd-v2/2026-10-26-a/A/inventory/verify-cross-transaction-conservation.mjs",
+      "reproduced": true,
+      "result": "PASS",
+      "details": {
+        "inventoryInvariantViolated": false,
+        "firstPassed": true,
+        "firstTokens": ["audit-member-1", "audit-member-2"],
+        "firstTokenStateAfterCommit": "consumed (consumedBy=first-group)",
+        "modelParts": { "initial": 1, "afterFirst": 3, "afterSecond": null },
+        "secondTransaction": { "passed": false, "diagnosticCodes": ["inventory-insufficient"], "tokensReused": [] },
+        "evidenceJsonClaimsMatchObservation": true,
+        "conservationScriptRerun": { "total": 8, "passed": 8, "failed": 0, "ok": true, "checks": ["INV-01", "INV-02", "INV-03", "INV-04", "INV-05", "INV-06", "INV-07", "INV-08"] },
+        "note": "两事务测试语义复现：首次挂装持久消耗 token；同 token 二次复用被拒绝；A 守恒脚本 INV-04 同时证明备新料时第二次合法装配仍通过。复跑守恒脚本在 out/ 原位重新生成 JSON（原 generatedAt 2026-10-26T15:31:20.522Z，内容一致）。"
+      }
+    },
+    {
+      "id": "2",
+      "name": "detach / replace 修复动作",
+      "command": "node out/prd-v2/2026-10-26-a/A/repair/verify-detach-replace.mjs",
+      "reproduced": true,
+      "result": "PASS",
+      "details": {
+        "total": 14,
+        "passed": 14,
+        "failed": 0,
+        "ok": true,
+        "keyAssertions": {
+          "detachRemovesExactlyTarget": "DET-01: 3件链拆叶子件后 remainingParts=2，released=[cap-1]，validate 0 errors",
+          "detachRejectsOrphaning": "DET-02: detach-orphans-parts，rolledBack=true，不回传已推进模型",
+          "detachGuards": "DET-03 detach-unknown-node；DET-04 repair-not-allowed",
+          "replacePoseAndConservation": "REP-01: keptPose.at=[0,3,0] 不动，connectedTo=[base]，consume new-1 / release old-1",
+          "replaceRejections": "REP-02 replace-disconnected；REP-03 collision；REP-04 replace-noop；REP-05 inventory-insufficient；REP-06 missing-asset；REP-07 replace-unknown-node；REP-08 replace-no-neighbours；失败均回滚",
+          "crossCheckWithCore": "X-01: 3022=accept / 104=disconnected / 99781=collision，与 core.partsConnected/partsCollide 一致"
+        },
+        "note": "复跑在 out/ 原位重新生成 verify-detach-replace.json（原 generatedAt 2026-10-26T15:31:19.894Z，summary 14/14 一致）。"
+      }
+    },
+    {
+      "id": "3",
+      "name": "正交投影像素对账（orthographic projection pixel reconciliation）",
+      "command": "node docs/prd-v2/reviews/C0-2-verify-projection-ortho.mjs",
+      "reproduced": true,
+      "result": "PASS",
+      "details": {
+        "adaptedCopy": "docs/prd-v2/reviews/C0-2-verify-projection-ortho.mjs（仅改 ROOT 层数与输出路径，原始脚本与原始 JSON 未覆写）",
+        "ownOutput": "docs/prd-v2/reviews/C0-2-projection-verify-ortho.json",
+        "ok": true,
+        "mode": "orthographic",
+        "tolerancePx": 0.5,
+        "maxDeltaPx": 0.0005,
+        "meanDeltaPx": 0.0003,
+        "probes": "60/60（全部 <=0.01 px）",
+        "cameraFromViewer": { "type": "OrthographicCamera", "orthoHalfHeight": 6.613395069110807, "orthoHalfWidth": 5.952055562199727, "aspect": 0.9 },
+        "matchesOriginalEvidence": true,
+        "note": "半高取自真实 viewer cameraSnapshot()，不复算取景；本次 max/mean/相机参数/最差五探针与原始 projection-verify-ortho.json 逐位一致。"
+      }
+    },
+    {
+      "id": "4",
+      "name": "B 资产锁消费（asset-lock consumption via src/core/assets-v1/lock.js）",
+      "command": "node out/prd-v2/2026-10-26-a/A/contracts/verify-b-asset-lock-consumption.mjs",
+      "reproduced": true,
+      "result": "PASS",
+      "details": {
+        "api": "checkAssetLock + buildAssetLock（lock.js 实际导出名）",
+        "allPassed": true,
+        "fixture": "docs/prd-v2/reviews/A-to-B-asset-lock-fixture-20261026.json",
+        "fixtureStatus": "review-proposal-not-integrated",
+        "sourceIndexShaMatches": true,
+        "sourceIndexSha256": "030ffb688ed71377e08443f5317048f6738add6fdfa1f39f204988a144f517d0",
+        "indexPartCount": 4605,
+        "tasks": [
+          { "taskId": "task-minifig", "requiredCount": 4, "lockCount": 4, "verified": "4/4", "lockHash": "cc76307166b6d9b2", "errorCodes": [], "matchesARebuild": true },
+          { "taskId": "task-cones", "requiredCount": 2, "lockCount": 2, "verified": "2/2", "lockHash": "a85cd038910fb5e2", "errorCodes": [], "matchesARebuild": true },
+          { "taskId": "task-front-bumper", "requiredCount": 3, "lockCount": 3, "verified": "3/3", "lockHash": "14b7dc367418e08b", "errorCodes": [], "matchesARebuild": true },
+          { "taskId": "task-wheels", "requiredCount": 2, "lockCount": 2, "verified": "2/2", "lockHash": "11d3e9a2705f0b31", "errorCodes": [], "matchesARebuild": true },
+          { "taskId": "task-main-chassis", "requiredCount": 38, "lockCount": 38, "verified": "38/38", "lockHash": "ba6216d2446b2f26", "errorCodes": [], "matchesARebuild": true }
+        ],
+        "negativeLegacyShape": { "rejected": true, "errorCodes": ["asset-lock-format", "asset-lock-empty", "asset-lock-incomplete", "asset-lock-incomplete", "asset-lock-incomplete", "asset-lock-incomplete"] },
+        "note": "lockHash 与原始证据逐一相同；复跑在 out/ 原位重新生成 verify-b-asset-lock-consumption.json（原 generatedAt 2026-10-26T15:31:21.089Z，内容一致）。"
+      }
+    }
+  ],
+  "testSuite": {
+    "total": 250,
+    "pass": 250,
+    "fail": 0,
+    "command": "node --test --test-reporter=dot test/*.test.mjs",
+    "exitCode": 0,
+    "crossCheck": "TAP 报告复核计数：tests 250 / pass 250 / fail 0 / skipped 0",
+    "baselineClaim": "250/250",
+    "matchesBaseline": true
+  },
+  "filesCreated": [
+    "docs/prd-v2/reviews/C0-2-a-fixes-review-20261026.md",
+    "docs/prd-v2/reviews/C0-2-a-fixes-evidence-20261026.json",
+    "docs/prd-v2/reviews/C0-2-verify-projection-ortho.mjs",
+    "docs/prd-v2/reviews/C0-2-projection-verify-ortho.json"
+  ],
+  "businessSourceModified": false
+}
