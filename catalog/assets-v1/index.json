@@ -2,13 +2,13 @@
   "format": "brickkit-asset-index",
   "version": "1.0.0",
   "generatedBy": "src/core/assets-v1/index.js#buildIndex",
-  "generatedAt": "2026-10-26T12:26:34.219Z",
+  "generatedAt": "2026-10-27T05:49:41.289Z",
   "profileId": "default-2026-10-26",
   "sourceHashes": {
     "curated": {
       "file": "catalog/parts.json",
-      "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
-      "bytes": 54569
+      "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
+      "bytes": 57746
     },
     "extracted": {
       "file": "catalog/parts-ldraw.json",
@@ -1430,7 +1430,7 @@
     {
       "partId": "11211",
       "revision": "r1-curated",
-      "contentHash": "b9714be864d85e31b2e53d4db44475e642712929439c744efd8dd850c00227de",
+      "contentHash": "b85fc61928f1b74d5fbcb2e877d019859e5f2460a3e5c7b21e08ae10bfdb0fe5",
       "definitionFile": "definitions/11211.json",
       "aliases": [],
       "capabilities": {
@@ -1453,7 +1453,7 @@
           "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
         }
       },
-      "connectorCount": 8,
+      "connectorCount": 6,
       "sourceType": "curated"
     },
     {
@@ -2120,7 +2120,7 @@
     {
       "partId": "11476",
       "revision": "r1-curated",
-      "contentHash": "7f03542b0db1e0fec36a476faa68ade80623e565a52b7b6f98d844637e41020e",
+      "contentHash": "a6ca3d291f994b1948ceffbcf2a6826476b60016731650faa71f53e379a0e65d",
       "definitionFile": "definitions/11476.json",
       "aliases": [],
       "capabilities": {
@@ -2150,7 +2150,7 @@
     {
       "partId": "11477",
       "revision": "r1-curated",
-      "contentHash": "b0772dfb33cee80b477f3706811d6b39b9d267a3aa8e20d0116ec4d0507adfc5",
+      "contentHash": "35c61c96004ae75389e9f5e1e74bef1b5f291559d8b4b02cb233f9dee5642042",
       "definitionFile": "definitions/11477.json",
       "aliases": [],
       "capabilities": {
@@ -3662,7 +3662,7 @@
     {
       "partId": "14417",
       "revision": "r1-curated",
-      "contentHash": "1838ee9f95337a5b2f86368665cedb72708d1aa2419b04c325a3a126ffe385ec",
+      "contentHash": "609d0517a5d96de66586c6d7ee57d099f2bd23048ed4ad125ecc7ac660ce66ec",
       "definitionFile": "definitions/14417.json",
       "aliases": [],
       "capabilities": {
@@ -3692,7 +3692,7 @@
     {
       "partId": "14418",
       "revision": "r1-curated",
-      "contentHash": "6442dbdf0884ffc6634757a9626fb4b14022f322d9040c2209658418270dbf5c",
+      "contentHash": "b9d042110a5445c36b0bcf00fda45b151e6df4dd132543289b3fb38b62b283ee",
       "definitionFile": "definitions/14418.json",
       "aliases": [],
       "capabilities": {
@@ -4046,7 +4046,7 @@
     {
       "partId": "14716",
       "revision": "r1-curated",
-      "contentHash": "44d0916a044a6ad19bc3bd46da244fdc060daeb724b905c94baaf6943acb8574",
+      "contentHash": "2c8e6220ee505817e726c73c68f20e050041086e791ba6c65a9b5e9a6752170f",
       "definitionFile": "definitions/14716.json",
       "aliases": [],
       "capabilities": {
@@ -4104,7 +4104,7 @@
     {
       "partId": "14719",
       "revision": "r1-curated",
-      "contentHash": "87bec4521903a3bba39d59c2ebdf7a2c2b7f6767d919efcc6d0d97516bbb6738",
+      "contentHash": "078e7bdaf21528dd1c00b5d7499ad35e4634d0943ff30ae24d0545ae889b8f55",
       "definitionFile": "definitions/14719.json",
       "aliases": [],
       "capabilities": {
@@ -4322,7 +4322,7 @@
     {
       "partId": "15068",
       "revision": "r1-curated",
-      "contentHash": "08c37021952ae29e9553345c9a1c5c06085d223708826594cae32e70683928b9",
+      "contentHash": "538988bc641a0031c36e6fb56969c3174e20e0bcfd2e1edf666981252519517c",
       "definitionFile": "definitions/15068.json",
       "aliases": [],
       "capabilities": {
@@ -5575,7 +5575,7 @@
     {
       "partId": "15573",
       "revision": "r1-curated",
-      "contentHash": "35283800a29be693e209a770d4773de6f63308fa30e6657bb568b2fdcaaa3db4",
+      "contentHash": "43ca8eb5f7f85cafeed8b4dd51b31f4eec9144bc3ac78dc54f1000cee5331b53",
       "definitionFile": "definitions/15573.json",
       "aliases": [],
       "capabilities": {
@@ -5945,7 +5945,7 @@
     {
       "partId": "15712",
       "revision": "r1-curated",
-      "contentHash": "b318ec312b3d7b71b164455f3f54c5932c06efb8c992a48ac5041ca5877a816c",
+      "contentHash": "945bc910f3b0df5ee8a214c877725f1cb32487d29c20b17313ba338758d1543e",
       "definitionFile": "definitions/15712.json",
       "aliases": [],
       "capabilities": {
@@ -7219,7 +7219,7 @@
     {
       "partId": "18674",
       "revision": "r1-curated",
-      "contentHash": "b3153c985b67fb79e0d6545df0d77685acd42dd3a8c4314a6b017d55a02b3503",
+      "contentHash": "a0779949c826fc662d2c4241e9fd7e0f4031f3c35cb1641720e8eb10f0920bfd",
       "definitionFile": "definitions/18674.json",
       "aliases": [],
       "capabilities": {
@@ -7274,7 +7274,7 @@
     {
       "partId": "18677",
       "revision": "r1-curated",
-      "contentHash": "e4f20252322e7c3a37969211d9250c40b495509c5ae996919e63d5b506db8b3c",
+      "contentHash": "23dd76e3541b05e54d9780c48eac64f163d9b070ab4076fc390856eaf560d2c2",
       "definitionFile": "definitions/18677.json",
       "aliases": [],
       "capabilities": {
@@ -11301,7 +11301,7 @@
     {
       "partId": "22385",
       "revision": "r1-curated",
-      "contentHash": "416ba4a2a29978fdb98e851a5ed96cb24d10514b7e74b0d469d63692b1ffd89b",
+      "contentHash": "def841e75b5ca9c5c3048c29e432bf3d7d361b389e0280a2e9033495f3678e72",
       "definitionFile": "definitions/22385.json",
       "aliases": [],
       "capabilities": {
@@ -11663,7 +11663,7 @@
     {
       "partId": "22885",
       "revision": "r1-curated",
-      "contentHash": "ee95cf13e35603a2028f2039c85e22dc7d8f12b5e2b77e836273710b6a7ba3ac",
+      "contentHash": "aa5fadf1dc5ef050f3ebc75444d28f2df55bc3e413f3a508c4a4d72c6fc13325",
       "definitionFile": "definitions/22885.json",
       "aliases": [],
       "capabilities": {
@@ -11686,7 +11686,7 @@
           "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
         }
       },
-      "connectorCount": 12,
+      "connectorCount": 8,
       "sourceType": "curated"
     },
     {
@@ -12722,7 +12722,7 @@
     {
       "partId": "2357",
       "revision": "r1-curated",
-      "contentHash": "f6ded67345427fbcc7f5dbbe67a33a53e440c1d54800bd859e04cbb1ef7e81dd",
+      "contentHash": "ebe2a3772af406569b2606cad545cb74c6f09c16835141512055239a5cde0285",
       "definitionFile": "definitions/2357.json",
       "aliases": [],
       "capabilities": {
@@ -14168,7 +14168,7 @@
     {
       "partId": "2412b",
       "revision": "r1-curated",
-      "contentHash": "a52219bd28d8f3b335f5e57119a62a193a735a204d6069f7026700dede1bff9f",
+      "contentHash": "1ac15e6596c4d0b10e872e330f96c9d68c3551cfe2b48eed8948d1a1af361377",
       "definitionFile": "definitions/2412b.json",
       "aliases": [],
       "capabilities": {
@@ -14541,7 +14541,7 @@
     {
       "partId": "2420",
       "revision": "r1-curated",
-      "contentHash": "387a3408d08e59ca9eaa162fe452880169cd8145e4f86e10565a5e40776e1554",
+      "contentHash": "6893d87492557d370671ec99993526691efe72b21ecb4c94545b76f95f54c95c",
       "definitionFile": "definitions/2420.json",
       "aliases": [],
       "capabilities": {
@@ -14856,7 +14856,7 @@
     {
       "partId": "24299",
       "revision": "r1-curated",
-      "contentHash": "68f8789d7230fc064bc290b38830bb0e7816033b418c8d106b268046a438068e",
+      "contentHash": "5f7ff7b15f748bd90165dd7c84a724194d5c865a3e0481c172d64454fe8a8936",
       "definitionFile": "definitions/24299.json",
       "aliases": [],
       "capabilities": {
@@ -14885,7 +14885,7 @@
     {
       "partId": "2429c01",
       "revision": "r1-curated",
-      "contentHash": "24a58e006590dd3bdda893f753389ac0be1a20e6fcb752cae5fe705a1e1a5443",
+      "contentHash": "85508a90d3537f7bbc9a7daab2fe99ae815a3dd7c9535aa85bc845474ef57de1",
       "definitionFile": "definitions/2429c01.json",
       "aliases": [],
       "capabilities": {
@@ -14944,7 +14944,7 @@
     {
       "partId": "24307",
       "revision": "r1-curated",
-      "contentHash": "0112607ceb2de8fba644303cf71442d941b04bf95ad6980e1edc1ddc0acd500e",
+      "contentHash": "7c5807390f504b080f2ac0415fab56c5ead634122f614c650238530f7ed24036",
       "definitionFile": "definitions/24307.json",
       "aliases": [],
       "capabilities": {
@@ -15059,7 +15059,7 @@
     {
       "partId": "2431",
       "revision": "r1-curated",
-      "contentHash": "21244f312c635921698e45f1e4705a1dd5ed62a9b6f3c42af3a82503169fd8ae",
+      "contentHash": "8d31d3ad9db4dbd0a06b2d56500e8567c4458201e23f88c850fa3e62646958d0",
       "definitionFile": "definitions/2431.json",
       "aliases": [],
       "capabilities": {
@@ -15545,7 +15545,7 @@
     {
       "partId": "2444",
       "revision": "r1-curated",
-      "contentHash": "448e0b94e35b6c7a7ae6fedf1834ec81be9c0c47ec059f3d08eaf2fbdce39927",
+      "contentHash": "da0274677fd84bd600d32279392e10b4502febcb1d4738a14b91c3d541008670",
       "definitionFile": "definitions/2444.json",
       "aliases": [],
       "capabilities": {
@@ -15602,7 +15602,7 @@
     {
       "partId": "2445",
       "revision": "r1-curated",
-      "contentHash": "337000a06dc95d06fb5ae7275f2ea7d84fcd663981ed0e3d3ed99d2237a599d5",
+      "contentHash": "4c35d05fc6329910e36a9a9dde9f1d97d0a30dea3d0c5a751b8ca2a8b701e61d",
       "definitionFile": "definitions/2445.json",
       "aliases": [],
       "capabilities": {
@@ -15775,7 +15775,7 @@
     {
       "partId": "2453",
       "revision": "r1-curated",
-      "contentHash": "6d0000ecbbf9f9a910d6ecd30a25e6155f095129712b6420302091214e6281ec",
+      "contentHash": "b586044bda4638e72f47ab774af291411ff9a349690872589aca137616a62577",
       "definitionFile": "definitions/2453.json",
       "aliases": [],
       "capabilities": {
@@ -15862,7 +15862,7 @@
     {
       "partId": "2454",
       "revision": "r1-curated",
-      "contentHash": "bcd8cde2646fb1d37e3d6c73c1dee70ef6fa4a002fc42e192e342842d982ce11",
+      "contentHash": "8c100d8abd1cca9b77f7005846e92e85f3978d27b30b041e7da661cd7a88480e",
       "definitionFile": "definitions/2454.json",
       "aliases": [],
       "capabilities": {
@@ -15949,7 +15949,7 @@
     {
       "partId": "2456",
       "revision": "r1-curated",
-      "contentHash": "8947be26b8c1ba8cacef1538b23776351058a6823aef2a57f700b1034fefb16c",
+      "contentHash": "1314ba496d1c7974cb51181b8400558c80ffe819af6fe1080a80fd905d973f08",
       "definitionFile": "definitions/2456.json",
       "aliases": [],
       "capabilities": {
@@ -17757,7 +17757,7 @@
     {
       "partId": "2540",
       "revision": "r1-curated",
-      "contentHash": "27dfca62c49913265caa0ba841d12a9dd15956abcaff304d5e1baa2d6bb2cb0e",
+      "contentHash": "c4d0454efbb4d93a565dfcee9a45f7b3dd62aac62c8ab508c0fdf8cbdbcf38bd",
       "definitionFile": "definitions/2540.json",
       "aliases": [],
       "capabilities": {
@@ -18723,7 +18723,7 @@
     {
       "partId": "26047",
       "revision": "r1-curated",
-      "contentHash": "1e9064b7c1ad8fe0e2c17ec171b400d3d05be1a860eff7c822ebc01aab3b2f20",
+      "contentHash": "1df62eb39e445eb38b1e49d703cd190c91c60d82cce31f7d9e49a1de3b7edbd0",
       "definitionFile": "definitions/26047.json",
       "aliases": [],
       "capabilities": {
@@ -20032,7 +20032,7 @@
     {
       "partId": "2654",
       "revision": "r1-curated",
-      "contentHash": "56b9674b18deb03b61fe9de8be194a026767d88c34244173005b898d749b1e59",
+      "contentHash": "57709718f9255e66198f4fba679e3dc8747bb568f000ea47b032aa667d43618c",
       "definitionFile": "definitions/2654.json",
       "aliases": [],
       "capabilities": {
@@ -20380,7 +20380,7 @@
     {
       "partId": "26603",
       "revision": "r1-curated",
-      "contentHash": "2f4346217f84cc10b95fc7e660f1d52ba03d4d321ed4276db832ca320a576535",
+      "contentHash": "888c26b8f94615e0d20c8048bdf3bc789470ff29bb418189a62dcb18747c9ecb",
       "definitionFile": "definitions/26603.json",
       "aliases": [],
       "capabilities": {
@@ -20408,7 +20408,7 @@
     {
       "partId": "26604",
       "revision": "r1-curated",
-      "contentHash": "4a839855913c468eed7184a13167ee96da952397a32d5c102ebc991d1d7333f7",
+      "contentHash": "5c81070e9f5e4f3c0a4518de46af0097d65803b3e344d70887cee40efa0babb9",
       "definitionFile": "definitions/26604.json",
       "aliases": [],
       "capabilities": {
@@ -23973,7 +23973,7 @@
     {
       "partId": "2877",
       "revision": "r1-curated",
-      "contentHash": "01de7f512f51ecb6e7299f091e9de8b65c75f79f24a11f5ddb63878783ad1d59",
+      "contentHash": "717e0cab7b12f6e4034e7c1d5c3abf3c41f4ed4a1ef3e257daa5a8d00e54400a",
       "definitionFile": "definitions/2877.json",
       "aliases": [],
       "capabilities": {
@@ -25914,7 +25914,7 @@
     {
       "partId": "3001",
       "revision": "r1-curated",
-      "contentHash": "f12888203692a65740b3d0fff4b53c08ecdc0efab0d5e5575e8664ee6bbaff7f",
+      "contentHash": "53dd4a45a5d4a5575d326e94da2891fcceda65a2e11d776b247ee5e5d025ba82",
       "definitionFile": "definitions/3001.json",
       "aliases": [],
       "capabilities": {
@@ -26030,7 +26030,7 @@
     {
       "partId": "3002",
       "revision": "r1-curated",
-      "contentHash": "4572bcccfe0cdbd03c9f3e790e296971304acebf24c09bd60051929f2ce234a8",
+      "contentHash": "481ec365f1c2f210e0cbf6de90797135c6d3212251660ea1d59035b5144cadb6",
       "definitionFile": "definitions/3002.json",
       "aliases": [],
       "capabilities": {
@@ -26261,7 +26261,7 @@
     {
       "partId": "3003",
       "revision": "r1-curated",
-      "contentHash": "1d45b4e9d47e4f57ef1b342c9aefb21c1bb8f1b671f729f4010d37b82f9cd686",
+      "contentHash": "431693c5996d426be5faf8c97bc14bfc9bcad50ee53ad780181aaf6aafbbe646",
       "definitionFile": "definitions/3003.json",
       "aliases": [],
       "capabilities": {
@@ -26436,7 +26436,7 @@
     {
       "partId": "3004",
       "revision": "r1-curated",
-      "contentHash": "eafe9ba8c53c5f9b20af7ba4282841add0338c9bcc83d53b8d2976a1ad7db662",
+      "contentHash": "0643459005b4d88a265bc1db28ba25ad71da8b2785981053e8111e0d0c367f98",
       "definitionFile": "definitions/3004.json",
       "aliases": [],
       "capabilities": {
@@ -26666,7 +26666,7 @@
     {
       "partId": "3005",
       "revision": "r1-curated",
-      "contentHash": "8e593d4f1bf00fa6a3f8a2717da93e0de04c25be0e36a7e6461228d8786edf01",
+      "contentHash": "4cbdab886e7e10141c1682723b3b9b2af48ca979fe177928c17476a57e244482",
       "definitionFile": "definitions/3005.json",
       "aliases": [],
       "capabilities": {
@@ -26753,7 +26753,7 @@
     {
       "partId": "3006",
       "revision": "r1-curated",
-      "contentHash": "af2e2e3a70ca75493654cd8036babb5d7e47bee83e1686ea25efb71ec5a2a71e",
+      "contentHash": "001cc65638de8bdc4186a9082ca32be9ab82ba99f59926d8ba917d812cd31829",
       "definitionFile": "definitions/3006.json",
       "aliases": [],
       "capabilities": {
@@ -26811,7 +26811,7 @@
     {
       "partId": "3007",
       "revision": "r1-curated",
-      "contentHash": "fc784a2f2b6d6e2c35049be7e42832dc8be9684443e9226ed2c847541d6acc06",
+      "contentHash": "c07382ee75871ff43a43ec0f1e6ec8afb1c1462ef3c39a5c2e4cd6ee05e52b38",
       "definitionFile": "definitions/3007.json",
       "aliases": [],
       "capabilities": {
@@ -27074,7 +27074,7 @@
     {
       "partId": "3008",
       "revision": "r1-curated",
-      "contentHash": "4c65dc282028238177812723a14bf47f371c73ee0b3181ecc8bdaa0db2edb66b",
+      "contentHash": "cb4c6b12fe184ea574b42b295afb4c077fd852abe6379e566dcd74c00bb1e2fd",
       "definitionFile": "definitions/3008.json",
       "aliases": [],
       "capabilities": {
@@ -27213,7 +27213,7 @@
     {
       "partId": "3009",
       "revision": "r1-curated",
-      "contentHash": "524f0f64db3c1334983c69163c42298a28fd00483e48402adb0b34fa9c2fc1c4",
+      "contentHash": "21dabc934eafc40f44d358c1d8cba210a2b3079f8bbf9dd5968d3350bbb26b20",
       "definitionFile": "definitions/3009.json",
       "aliases": [],
       "capabilities": {
@@ -27357,7 +27357,7 @@
     {
       "partId": "3010",
       "revision": "r1-curated",
-      "contentHash": "dae57890ae49d26f7bf71c59988b3b72b42dae9e2fddd9231c7e0ce6473b23fe",
+      "contentHash": "7794595ada754b33c7ffa50efc536713335bd7b0ba0e3ee06ad91e3055be042c",
       "definitionFile": "definitions/3010.json",
       "aliases": [],
       "capabilities": {
@@ -27813,7 +27813,7 @@
     {
       "partId": "30136",
       "revision": "r1-curated",
-      "contentHash": "d3450e2aeb01aae130eb56e36f9f40b91f6ff816d8b3e4301a8d3e80eb8874e5",
+      "contentHash": "ec716f61b30dd5170703ba26b972f0e0fb7c77cd612d3d3f691df79a046dbbe5",
       "definitionFile": "definitions/30136.json",
       "aliases": [],
       "capabilities": {
@@ -27957,7 +27957,7 @@
     {
       "partId": "30145",
       "revision": "r1-curated",
-      "contentHash": "0e92826baa10086bc457e72b45c2bfa6ebc049e9af6bd4f3e8ab08f81efefbba",
+      "contentHash": "d8ae923a9c30c20c90fb8a70cb2fbf95ef4740a264e18f6ecc24e91cd561d405",
       "definitionFile": "definitions/30145.json",
       "aliases": [],
       "capabilities": {
@@ -28930,7 +28930,7 @@
     {
       "partId": "3020",
       "revision": "r1-curated",
-      "contentHash": "7f24bf043db49733deb78c4f45dbf0d37712049c389b4bd6ca1df22a3838c39c",
+      "contentHash": "45a14e691a9e26e90d914d9e67504be485656b34cc73e9f7ac41870efb70eb86",
       "definitionFile": "definitions/3020.json",
       "aliases": [],
       "capabilities": {
@@ -29073,7 +29073,7 @@
     {
       "partId": "3021",
       "revision": "r1-curated",
-      "contentHash": "2889e7a120f3b585fc09a58d9f1a1aad1707caaacd343f05b3a0463dfb48973c",
+      "contentHash": "60567097b46e942c69b8679782b3d2f2411bd9a3638cfc86da6b315558d358e3",
       "definitionFile": "definitions/3021.json",
       "aliases": [],
       "capabilities": {
@@ -29359,7 +29359,7 @@
     {
       "partId": "3022",
       "revision": "r1-curated",
-      "contentHash": "874998cfd9f5658d1736ac38432e0f2b118e2e2c5383b494291d5b29e7f5eed1",
+      "contentHash": "0951fd27c3a5d58c72216c698395fce35e5781192cd428032b30accc52f2bf50",
       "definitionFile": "definitions/3022.json",
       "aliases": [],
       "capabilities": {
@@ -29474,7 +29474,7 @@
     {
       "partId": "3023",
       "revision": "r1-curated",
-      "contentHash": "b515a33b10c9c7b9a66e66ae91ce6da28095615bfc9ec414966a346ca0ba9467",
+      "contentHash": "1cad672aeed546da90e60c7eee118c5ac924abaeaa66a277017333d8abd3f928",
       "definitionFile": "definitions/3023.json",
       "aliases": [],
       "capabilities": {
@@ -29619,7 +29619,7 @@
     {
       "partId": "30237",
       "revision": "r1-curated",
-      "contentHash": "6e3f98a3de3240e93b1631999058871b5f71f9603780991c1f360fe3fea7cab3",
+      "contentHash": "9dfe8f463c925d629e0f5a9cbcba2c487cd4d0d7e9f2f0d53e292ba9ac485364",
       "definitionFile": "definitions/30237.json",
       "aliases": [],
       "capabilities": {
@@ -29764,7 +29764,7 @@
     {
       "partId": "3024",
       "revision": "r1-curated",
-      "contentHash": "872c55e3c9d644b2957d111ef319f13d83f6e38b6c2a9fe8750c786cd543144b",
+      "contentHash": "f86270f92566fc597bbb385fe3d18146eab67483098d9d1ab714361effc34094",
       "definitionFile": "definitions/3024.json",
       "aliases": [],
       "capabilities": {
@@ -30402,7 +30402,7 @@
     {
       "partId": "3028",
       "revision": "r1-curated",
-      "contentHash": "c01522c63645366d3236a2558715f49848564ddcddfb01e1fe8eb425d3c6a9eb",
+      "contentHash": "cd90abaf4a3d118c603ebd6ce15818fe5e338c7b894de036a4af166368556c34",
       "definitionFile": "definitions/3028.json",
       "aliases": [],
       "capabilities": {
@@ -30775,7 +30775,7 @@
     {
       "partId": "3030",
       "revision": "r1-curated",
-      "contentHash": "4a10a316f650a83c9df010d0e9931e58ad2f814755ab5118af3658773cdda4d7",
+      "contentHash": "6f4c871cf496bbe718e8103e61d456909bed7028edbca5b094c8f214ce631d87",
       "definitionFile": "definitions/3030.json",
       "aliases": [],
       "capabilities": {
@@ -30862,7 +30862,7 @@
     {
       "partId": "3031",
       "revision": "r1-curated",
-      "contentHash": "e385e4cc48cb49abf6f2c36ec7e6ac576f6829d98bdbfa0aa4366bc1d39af74d",
+      "contentHash": "0004bf030ea8729cfe2084bc6d1addaff557ebd2d7daed66039204fc8cb0e83b",
       "definitionFile": "definitions/3031.json",
       "aliases": [],
       "capabilities": {
@@ -30891,7 +30891,7 @@
     {
       "partId": "3032",
       "revision": "r1-curated",
-      "contentHash": "96858c1e15edd2da6bd06c46c1cf7e4e90b154364a409eacc93759b141e7afb4",
+      "contentHash": "681c26c5cb3ab8611cd2758a5e9930a0b767adc775628b36b11fb9d3c8b564be",
       "definitionFile": "definitions/3032.json",
       "aliases": [],
       "capabilities": {
@@ -31004,7 +31004,7 @@
     {
       "partId": "3033",
       "revision": "r1-curated",
-      "contentHash": "ff5ada509f7deb90364ec536ba3fffa6114f93f91097a6e0790707dfc42bafed",
+      "contentHash": "91de144acaf6b9d76ffecbc72d1995e0f05b6a7a6076b42556388c7f2a80bad3",
       "definitionFile": "definitions/3033.json",
       "aliases": [],
       "capabilities": {
@@ -31114,7 +31114,7 @@
     {
       "partId": "3034",
       "revision": "r1-curated",
-      "contentHash": "c1c25045eb2791e9cf00f5f249f9a34a7b8788861d304c242c92cc143eb45317",
+      "contentHash": "2c7e28b77513ec9806e053a4900b7f51534db37e82eb9576dfaf51ad19086c23",
       "definitionFile": "definitions/3034.json",
       "aliases": [],
       "capabilities": {
@@ -31172,7 +31172,7 @@
     {
       "partId": "3035",
       "revision": "r1-curated",
-      "contentHash": "858c671a4a9db4d34f0ae9bc44731079eea3fabfd4f0afa4960dba3240e3dfe1",
+      "contentHash": "dbf48d9bd5912a0228aa100dc9fb1dc0ee7ec83491ece5d6b3f2a71e87c1081a",
       "definitionFile": "definitions/3035.json",
       "aliases": [],
       "capabilities": {
@@ -31461,7 +31461,7 @@
     {
       "partId": "3036",
       "revision": "r1-curated",
-      "contentHash": "cc482d009e603f2715e30e324b31ad7f5c32efd10f91a8489127517e31c565b6",
+      "contentHash": "f41a39a1b73bb585446b0ce5483ff3ace98bd34b7ca55b2d685c3f6b280c0e40",
       "definitionFile": "definitions/3036.json",
       "aliases": [],
       "capabilities": {
@@ -31780,7 +31780,7 @@
     {
       "partId": "3037",
       "revision": "r1-curated",
-      "contentHash": "9b2d240a8686e655d9eeebb2782915e7b8257dadcea2733941f9be106d36ca56",
+      "contentHash": "e97f04117b4f90c74fffc0df0ab2c09ca7111b69e5824d15e69d8cbee79d0689",
       "definitionFile": "definitions/3037.json",
       "aliases": [],
       "capabilities": {
@@ -31867,7 +31867,7 @@
     {
       "partId": "30374",
       "revision": "r1-curated",
-      "contentHash": "b4b23e3fdaf430aea35c453d63be264358c63c0b8a5ac4d84189935e9d0e648a",
+      "contentHash": "d9f9ce86cce098916940baeff85ff4fba2180f72002598ffa6ebffc2fb270523",
       "definitionFile": "definitions/30374.json",
       "aliases": [],
       "capabilities": {
@@ -31896,7 +31896,7 @@
     {
       "partId": "3038",
       "revision": "r1-curated",
-      "contentHash": "0f7f191b708c5e23e699280b3504c7fa28e849b0b9563f9d3fcbb852f3b23bbf",
+      "contentHash": "07b9fea55851e40e0f45b7bd9dd7c120dac3731e73c23a5b30ebf5332b526a60",
       "definitionFile": "definitions/3038.json",
       "aliases": [],
       "capabilities": {
@@ -32212,7 +32212,7 @@
     {
       "partId": "3039",
       "revision": "r1-curated",
-      "contentHash": "f88e9292ed7f8c99000d6a9a3f08e13fbfbfdb1da6d77f91344d53f57bbd1001",
+      "contentHash": "f14da042f59f244c8fb66ca48451b44fe2d1f7d556b86980a226099a127fcaae",
       "definitionFile": "definitions/3039.json",
       "aliases": [],
       "capabilities": {
@@ -32611,7 +32611,7 @@
     {
       "partId": "3040b",
       "revision": "r1-curated",
-      "contentHash": "6f5a273d90ef9ba354baa7a75bf30b9291bbf59ebc9e96bb5bae3f24c98f3ad5",
+      "contentHash": "baf138c110720d87435f5442ea5a3d310193181617a255a8ace153f957779029",
       "definitionFile": "definitions/3040b.json",
       "aliases": [],
       "capabilities": {
@@ -32640,7 +32640,7 @@
     {
       "partId": "3041",
       "revision": "r1-curated",
-      "contentHash": "9b0e46b6419dbbd4c015c7418a248b35964bbd4582869d8481fda6afde0f5b1a",
+      "contentHash": "1d99eb73bf15c9a7e6f0f2ccb82f0ee6b38cdbf68eb8aae09dc596d9fbb2b07e",
       "definitionFile": "definitions/3041.json",
       "aliases": [],
       "capabilities": {
@@ -32696,7 +32696,7 @@
     {
       "partId": "30414",
       "revision": "r1-curated",
-      "contentHash": "f6313497083d913dec26640204e420db1097e34ee6abf0411093416e55db9f75",
+      "contentHash": "2efc4e1ff0536fa0e917c7bfa9690a08795457bc6bb39cab37f6f95ff773e03d",
       "definitionFile": "definitions/30414.json",
       "aliases": [],
       "capabilities": {
@@ -32753,7 +32753,7 @@
     {
       "partId": "3043",
       "revision": "r1-curated",
-      "contentHash": "7a216b88ee0169b3cbda74d8c4d7e125ba10b60d0f02b87ddfc320f2a876fd64",
+      "contentHash": "ddbab5fc40290af36de8d256bbd1d7b28d2a09bf7e53ff00fe1e9412424d920a",
       "definitionFile": "definitions/3043.json",
       "aliases": [],
       "capabilities": {
@@ -34534,7 +34534,7 @@
     {
       "partId": "3062b",
       "revision": "r1-curated",
-      "contentHash": "71fd0e19c2d6cb25de60e30e53e96565560bff0a83f427a046d44115cbd0f62a",
+      "contentHash": "a03005cc83b37c7950a30179bde3463932eff136bc69cb116a2e964700c343a1",
       "definitionFile": "definitions/3062b.json",
       "aliases": [],
       "capabilities": {
@@ -35023,7 +35023,7 @@
     {
       "partId": "3065",
       "revision": "r1-curated",
-      "contentHash": "ee488069754b4a7ec14d2f37986d56a5e7daa47c2abfc316e0ed561b5172c35d",
+      "contentHash": "0e7b6f0410dc8d934104585e08c6e13f3066b85ff3dfbc6e7162243043b377b2",
       "definitionFile": "definitions/3065.json",
       "aliases": [],
       "capabilities": {
@@ -35250,7 +35250,7 @@
     {
       "partId": "3068b",
       "revision": "r1-curated",
-      "contentHash": "a7c41f16752eec86d0475b3f2cdf5fefe4404539be9501bed2213a9029a2e1e0",
+      "contentHash": "d5989f1f9fd5c3b06fadb85cc2b2862e42a2ecd1309e29ba65122d7fe3b10182",
       "definitionFile": "definitions/3068b.json",
       "aliases": [],
       "capabilities": {
@@ -35334,7 +35334,7 @@
     {
       "partId": "3069b",
       "revision": "r1-curated",
-      "contentHash": "a647400e35fc539f36eb8ef502a762de8d37b30f9ec60d57fa9ae5f476f65777",
+      "contentHash": "404ab78a99ac9b50be31e77549748967039ae90345d93f36d367833f806ab646",
       "definitionFile": "definitions/3069b.json",
       "aliases": [],
       "capabilities": {
@@ -35390,7 +35390,7 @@
     {
       "partId": "3070b",
       "revision": "r1-curated",
-      "contentHash": "a3b828e952cedaab5d022243c30d507f077802b3743adad2289293f526754f3c",
+      "contentHash": "2880dc35dc29148ee2032f54de23c52efb386d8b89b652180289be7d2f657452",
       "definitionFile": "definitions/3070b.json",
       "aliases": [],
       "capabilities": {
@@ -36250,7 +36250,7 @@
     {
       "partId": "3176",
       "revision": "r1-curated",
-      "contentHash": "39f71de986176c058771fa7f9f9af886c498de6349dc37f82a7a8a2126899dc5",
+      "contentHash": "55f49e377082d7ebb05d138a34396801fe4fad93181d063b04fdf3393c062c09",
       "definitionFile": "definitions/3176.json",
       "aliases": [],
       "capabilities": {
@@ -36740,7 +36740,7 @@
     {
       "partId": "32000",
       "revision": "r1-curated",
-      "contentHash": "c6b43a77a5d099ee90394771a81a6f74dedb92dafe99571383d983c14797562b",
+      "contentHash": "7af7bf852233d386bf3b798d83896f6bc1c2e6895dc11be1405f3c9f1f4f40a4",
       "definitionFile": "definitions/32000.json",
       "aliases": [],
       "capabilities": {
@@ -42033,7 +42033,7 @@
     {
       "partId": "3297",
       "revision": "r1-curated",
-      "contentHash": "fa61454d6ec9d6a28ca29f0c8dcdff27343d4d26e662d9079eaa03f1d2259088",
+      "contentHash": "7f3c3fb004973afdc016dd520a24bab29c7dcb7de1f202c2be563551e7ca1e65",
       "definitionFile": "definitions/3297.json",
       "aliases": [],
       "capabilities": {
@@ -42062,7 +42062,7 @@
     {
       "partId": "3298",
       "revision": "r1-curated",
-      "contentHash": "39df75e4830938dfa869069f205c6fae161219c32829f8adf3f182a26dbb99f0",
+      "contentHash": "2ea1958d50390596b7183baa4ebc00a791f9bb79124a956eb0d4b42df10463ba",
       "definitionFile": "definitions/3298.json",
       "aliases": [],
       "capabilities": {
@@ -42175,7 +42175,7 @@
     {
       "partId": "3307",
       "revision": "r1-curated",
-      "contentHash": "7f9189cc96d0df0ecb01ab115edb86f89eda58813785f3376e8e5c7a52447640",
+      "contentHash": "a771e635b1be7952f2194d390cd8d89dd9e7b07fd202a3bd2727b41713ae655c",
       "definitionFile": "definitions/3307.json",
       "aliases": [],
       "capabilities": {
@@ -43560,7 +43560,7 @@
     {
       "partId": "34103",
       "revision": "r1-curated",
-      "contentHash": "7a55b98dd24bb06cc94cefa325392c18b1bccfa6a3e280d27fe0fb0676813728",
+      "contentHash": "2d6092a8e5d3e384a6dbb4c65d5f0de179e6e881578b96c0d1226f273967c599",
       "definitionFile": "definitions/34103.json",
       "aliases": [],
       "capabilities": {
@@ -43813,7 +43813,7 @@
     {
       "partId": "3460",
       "revision": "r1-curated",
-      "contentHash": "336e13d6b0020c592706a9531181c0a4d157127a93cf498eaad34775d4d62c08",
+      "contentHash": "709e78d3928d76ab173a744c85eb394a06e091c922ff128b94fd6624dbd61ee9",
       "definitionFile": "definitions/3460.json",
       "aliases": [],
       "capabilities": {
@@ -46721,7 +46721,7 @@
     {
       "partId": "3622",
       "revision": "r1-curated",
-      "contentHash": "2234c55e45292ab91c66bc585ac641ccc1f055212bbf266534ab7b44a9e1e954",
+      "contentHash": "82a87b7d5c9ae78919fb4b1bfb62bfbe5286d1d4779a36f71985e4c9226cef6b",
       "definitionFile": "definitions/3622.json",
       "aliases": [],
       "capabilities": {
@@ -46750,7 +46750,7 @@
     {
       "partId": "3623",
       "revision": "r1-curated",
-      "contentHash": "2c51fd6303215bbe188f5ecf3fa1f02c32cf80e20221051fe5b16fd752380914",
+      "contentHash": "210acb5106eaa05f0c215b9591201cff0e0bd60f1964022da00438689de80051",
       "definitionFile": "definitions/3623.json",
       "aliases": [],
       "capabilities": {
@@ -46838,7 +46838,7 @@
     {
       "partId": "3633",
       "revision": "r1-curated",
-      "contentHash": "2c7a6c12bc17ac9a99bee2f25c1a00323b1072d245844699553225516a5065aa",
+      "contentHash": "b194a5d9aba31296da90a9fc7892ee61cc5d50706175770542128b867f55a0b7",
       "definitionFile": "definitions/3633.json",
       "aliases": [],
       "capabilities": {
@@ -47315,7 +47315,7 @@
     {
       "partId": "3659",
       "revision": "r1-curated",
-      "contentHash": "c2dee12a5ad6c17031c816432a1646641e2f42d031e91376c9fcacc4610374e2",
+      "contentHash": "695a762f8f7855f30dd096e7557dd6147bd6b61ee8e720d4b0ae79e73b4e7de8",
       "definitionFile": "definitions/3659.json",
       "aliases": [],
       "capabilities": {
@@ -47344,7 +47344,7 @@
     {
       "partId": "3660",
       "revision": "r1-curated",
-      "contentHash": "6c6a5b3412994afdd0d46f6cc26a836b1e68d6819ce9d44d47941a7e720ffcdf",
+      "contentHash": "adf77fa82845ac288db4581b90e5de9cbd62bd1bfb0af9679c159cffbafbbd6d",
       "definitionFile": "definitions/3660.json",
       "aliases": [],
       "capabilities": {
@@ -47431,7 +47431,7 @@
     {
       "partId": "3665",
       "revision": "r1-curated",
-      "contentHash": "c4ac8e24c2fa67860868abf453b0df6d27a043f7e110ebe611f9048c719a9d68",
+      "contentHash": "1b34199f70e84bbd5e17d7eecde86656da8a2f694a9bf01e2d7dd62388cbd303",
       "definitionFile": "definitions/3665.json",
       "aliases": [],
       "capabilities": {
@@ -47518,7 +47518,7 @@
     {
       "partId": "3666",
       "revision": "r1-curated",
-      "contentHash": "0d5b29bae0ead94409588e9eac54257868ecb0d87b3bc1eeee5e9a2e109b981d",
+      "contentHash": "8eb8d2e699598ae035c0871f7759a19c772dfeb25d1014c5cabcc00d2272709b",
       "definitionFile": "definitions/3666.json",
       "aliases": [],
       "capabilities": {
@@ -47747,7 +47747,7 @@
     {
       "partId": "3678b",
       "revision": "r1-curated",
-      "contentHash": "acd32997d8d717bf4ecbf3bed762a0be575e1945b5f5fe4d257be5c929edd0c6",
+      "contentHash": "c563a839146916f000e95087bf52608512e341c6e919e9fd6498ab11811df981",
       "definitionFile": "definitions/3678b.json",
       "aliases": [],
       "capabilities": {
@@ -47833,7 +47833,7 @@
     {
       "partId": "36840",
       "revision": "r1-curated",
-      "contentHash": "a5292811a474d9f65805058a32a602a23bb508a454809d101c20d314acf6213a",
+      "contentHash": "3c6f589c24fe0deb7f3e8d62d1b6723b1512acaa04e7003f00f259ffb154e368",
       "definitionFile": "definitions/36840.json",
       "aliases": [],
       "capabilities": {
@@ -47862,7 +47862,7 @@
     {
       "partId": "36841",
       "revision": "r1-curated",
-      "contentHash": "635edea1413c4e7cf3bc91c4a9ffb586cae206067ce7b645621850b444e07362",
+      "contentHash": "2a78f6eb8b19bd310a304d57a356951cd117bcb2762c4a48b333abfef48f885f",
       "definitionFile": "definitions/36841.json",
       "aliases": [],
       "capabilities": {
@@ -47920,7 +47920,7 @@
     {
       "partId": "3684c",
       "revision": "r1-curated",
-      "contentHash": "cf4c942e94c1a3a86015622ca316e4262f1056c027b152928fbc2f42cacf4946",
+      "contentHash": "e1e7d7ac341ad03f38e1099054cb6f9630e68d9b76ae080b5f5f261379d90e88",
       "definitionFile": "definitions/3684c.json",
       "aliases": [],
       "capabilities": {
@@ -48037,7 +48037,7 @@
     {
       "partId": "3700",
       "revision": "r1-curated",
-      "contentHash": "1708db234162c8cce3267dd00a3fee9ebcb543ef7fd0a1e897c5190a5534a56c",
+      "contentHash": "426af9fc9307c6dd9c4214ff79b5b2df828f70aab37930ed833cc3d83d42dc4f",
       "definitionFile": "definitions/3700.json",
       "aliases": [],
       "capabilities": {
@@ -48066,7 +48066,7 @@
     {
       "partId": "3701",
       "revision": "r1-curated",
-      "contentHash": "82a1448aae8b6d32f7b598d3d5e68f98cce1179eb41cfefab50453d063b6de61",
+      "contentHash": "b0801ccf7493ae60d1739503ac5cb90c98a3f77594a5a5adceebe1ae4057216c",
       "definitionFile": "definitions/3701.json",
       "aliases": [],
       "capabilities": {
@@ -48372,7 +48372,7 @@
     {
       "partId": "3710",
       "revision": "r1-curated",
-      "contentHash": "af73f8bf40087ebc17663cd38852040be36a15eabb3a4349362abbf9ee6f4b68",
+      "contentHash": "49b07995527e5644486327b475e5caf22142a412d931fc6c4176b8c9f25e4d54",
       "definitionFile": "definitions/3710.json",
       "aliases": [],
       "capabilities": {
@@ -49811,7 +49811,7 @@
     {
       "partId": "3794b",
       "revision": "r1-curated",
-      "contentHash": "2bf7831ce54c712df2e41064928f2d7fff786ca8f91b69df87508a87e1017f30",
+      "contentHash": "f4646f0b0b706726e79599b2824b273ee93cfdf15a65283f7368e55fdd9a44ee",
       "definitionFile": "definitions/3794b.json",
       "aliases": [],
       "capabilities": {
@@ -49840,7 +49840,7 @@
     {
       "partId": "3795",
       "revision": "r1-curated",
-      "contentHash": "d1eabcbe312c5d4cc148a215a5ef4633207e71ab3e73d84121c4abf4de71ffa5",
+      "contentHash": "91561fb14ca4be3c1e208ca2cc47fac3bd440694614c6a348932788b998958b1",
       "definitionFile": "definitions/3795.json",
       "aliases": [],
       "capabilities": {
@@ -50130,7 +50130,7 @@
     {
       "partId": "3832",
       "revision": "r1-curated",
-      "contentHash": "86caa5e6ec6ae6b8d0883350078cad756bbc4889ac80c8aedfb135e5a9d2391f",
+      "contentHash": "b61d084716cfda54c5a127287273a3e3ade9aa235901ba298f368996c1f0582d",
       "definitionFile": "definitions/3832.json",
       "aliases": [],
       "capabilities": {
@@ -50271,7 +50271,7 @@
     {
       "partId": "3839b",
       "revision": "r1-curated",
-      "contentHash": "bafe9d628e7dde2cc972f640ee800d24e294bf85c19249cdb6fbce21ee416784",
+      "contentHash": "007504ebbcbd573db378149c6806173eca0a181667ccc3f1535258ca51ecd95b",
       "definitionFile": "definitions/3839b.json",
       "aliases": [],
       "capabilities": {
@@ -50868,7 +50868,7 @@
     {
       "partId": "3894",
       "revision": "r1-curated",
-      "contentHash": "f5c67ad3b90a130d2dccf1c4058f8c54786601e7cd073d45133a886e7901906c",
+      "contentHash": "2415d3e7d19d680c5a7cc26f41603425e6ec4ff1271d600ecb19a8e90f9c0538",
       "definitionFile": "definitions/3894.json",
       "aliases": [],
       "capabilities": {
@@ -51442,7 +51442,7 @@
     {
       "partId": "3941",
       "revision": "r1-curated",
-      "contentHash": "4d54873f99f6bb3884f113eb8a3e66d9e537c30217984d3a47a5cfb60091576c",
+      "contentHash": "20b2e25d8826839de4132fb3d1ac41e27864844547863d37dd1de2e43c4b894d",
       "definitionFile": "definitions/3941.json",
       "aliases": [],
       "capabilities": {
@@ -51531,7 +51531,7 @@
     {
       "partId": "3942c",
       "revision": "r1-curated",
-      "contentHash": "ca68a20a26c1f589549fae374306655d353e58f996c685d1dad81219e4172020",
+      "contentHash": "872a13402c161f6c2f8a7e2dac4c4ccf6d563f3f4a23b94ce2e940e04d0b9fe5",
       "definitionFile": "definitions/3942c.json",
       "aliases": [],
       "capabilities": {
@@ -51735,7 +51735,7 @@
     {
       "partId": "3958",
       "revision": "r1-curated",
-      "contentHash": "55e3559a1386387064c32d3fdf1cc1c87a1374b4b61bcaf14632d5b07e6b2ee1",
+      "contentHash": "eb27d298df2e95bc8dd4670e335b256a3e9d3752f3836ce6e97f649bf9e0435d",
       "definitionFile": "definitions/3958.json",
       "aliases": [],
       "capabilities": {
@@ -51764,7 +51764,7 @@
     {
       "partId": "3960",
       "revision": "r1-curated",
-      "contentHash": "4b4c6cb30376aafbea01b64b76dc7e081391a14f4ef79e5a68900b0251c103bc",
+      "contentHash": "2b08129be2379e3a272237fabcc1bf530a1c879e0485b7aac710fc0dfaa9b38b",
       "definitionFile": "definitions/3960.json",
       "aliases": [],
       "capabilities": {
@@ -52747,7 +52747,7 @@
     {
       "partId": "4032",
       "revision": "r1-curated",
-      "contentHash": "80a7bf8c9aa606897a996dbe5b9b4bb4f2e002ea2ce04e98afba6180db46649b",
+      "contentHash": "8f607e8505753d76561b22cdef4fc50a60f3f8596f86f41a57a7d249dcfc79f8",
       "definitionFile": "definitions/4032.json",
       "aliases": [],
       "capabilities": {
@@ -53429,7 +53429,7 @@
     {
       "partId": "4070",
       "revision": "r1-curated",
-      "contentHash": "71804280049e1f035d8b386dd02ac8ba5f83f6835e8c73d143fe49f0e327db10",
+      "contentHash": "1731f2e17cc3891f3969b385a1424c6d979a972c50b6cd8acdc59cc133e5c072",
       "definitionFile": "definitions/4070.json",
       "aliases": [],
       "capabilities": {
@@ -53515,7 +53515,7 @@
     {
       "partId": "4073",
       "revision": "r1-curated",
-      "contentHash": "6048eb4c2e19e6eaefa21af4bf93e3e67917154cbf1c6e357b8c5277d11aefb9",
+      "contentHash": "b62c95dbe99e2af18c52886685671fd12caf0404dd59e5abaa77188ddbbd0fd2",
       "definitionFile": "definitions/4073.json",
       "aliases": [],
       "capabilities": {
@@ -53602,7 +53602,7 @@
     {
       "partId": "4081b",
       "revision": "r1-curated",
-      "contentHash": "6681a7d3f28e2ffb39b8996d0f44ed815ac9021abf76264983fc61996b650304",
+      "contentHash": "da674a4cc472dbd43c5f740f7f13e488ea4776256895b78a33d7974868d457ab",
       "definitionFile": "definitions/4081b.json",
       "aliases": [],
       "capabilities": {
@@ -53808,7 +53808,7 @@
     {
       "partId": "4085d",
       "revision": "r1-curated",
-      "contentHash": "3a77a71544078122113a5c51f6b33f591dc02ecfabdb6879df484d2077df473e",
+      "contentHash": "e20303be862cadba33be5f5af0975858693456304b41b833b4401b528b6d5b6d",
       "definitionFile": "definitions/4085d.json",
       "aliases": [],
       "capabilities": {
@@ -54602,7 +54602,7 @@
     {
       "partId": "4150",
       "revision": "r1-curated",
-      "contentHash": "2f1ba3f4980d97c8d6a15dc36f7952397e264a4e87a39bfd15c13954cefcc1e8",
+      "contentHash": "f9b7947de05278375559300947294afed00474db9f1c572dba0bba6efc77421b",
       "definitionFile": "definitions/4150.json",
       "aliases": [],
       "capabilities": {
@@ -54887,7 +54887,7 @@
     {
       "partId": "41539",
       "revision": "r1-curated",
-      "contentHash": "e3276c1ea898a78b8e3ff99ed2a3f7a2c2e0c99168036c2820dcf095e386f889",
+      "contentHash": "677fb7ee9a07115c1fb19973f402856fce760d0aa0a69491f65b4ae8286b5223",
       "definitionFile": "definitions/41539.json",
       "aliases": [],
       "capabilities": {
@@ -55000,7 +55000,7 @@
     {
       "partId": "4162",
       "revision": "r1-curated",
-      "contentHash": "1909db699ee32cc6fdde09c404212e28fdd76ac2de67e31d68e84ab675545d19",
+      "contentHash": "012eed345b4627391585e6746fdd65376e10a23b504065a10fa61d4b1830e9ee",
       "definitionFile": "definitions/4162.json",
       "aliases": [],
       "capabilities": {
@@ -56059,7 +56059,7 @@
     {
       "partId": "41769",
       "revision": "r1-curated",
-      "contentHash": "3a6267950b81d29b280524a00502507595146790ff62e89279997cdf9179ff12",
+      "contentHash": "caa3caa474ff63561497bce4d9aaee211ab8cdd6b333aa186066a94c3873a449",
       "definitionFile": "definitions/41769.json",
       "aliases": [],
       "capabilities": {
@@ -56146,7 +56146,7 @@
     {
       "partId": "41770",
       "revision": "r1-curated",
-      "contentHash": "e351dc9d15906e7d4c42baefb545466e2aa486be5b4224d7dad0283ae795ae6a",
+      "contentHash": "10f77663d5e69d6a4931fbc56399829b15b0755cf0960dad2952efd8fb3e7e1c",
       "definitionFile": "definitions/41770.json",
       "aliases": [],
       "capabilities": {
@@ -59116,7 +59116,7 @@
     {
       "partId": "4274",
       "revision": "r1-curated",
-      "contentHash": "1aa5a051a310da63cb4b53d8ea847bace53e6f500954d68d05322a991929e951",
+      "contentHash": "6e46d7f914d0aba4d03393022c7bdc6405077bccad212f2ca80795b89d6d419b",
       "definitionFile": "definitions/4274.json",
       "aliases": [],
       "capabilities": {
@@ -59436,7 +59436,7 @@
     {
       "partId": "4286",
       "revision": "r1-curated",
-      "contentHash": "13d40a618a6e9bc8206c52bb6eeed079f601e2bc4facf58a53f0de23b15810c0",
+      "contentHash": "0cd28c5ddee8d59f2cdab74663bf54c31f7b277e3312e8dc2fe1e9c216250673",
       "definitionFile": "definitions/4286.json",
       "aliases": [],
       "capabilities": {
@@ -60821,7 +60821,7 @@
     {
       "partId": "43722",
       "revision": "r1-curated",
-      "contentHash": "7e6ca984f22be29bb38df0c298dc47d035d92755652ad5df6aa6b11ed5f9c063",
+      "contentHash": "4b2e7bee15bc405136ee9286b4a8f590d176be51dafb87dba1884c04d389cf3d",
       "definitionFile": "definitions/43722.json",
       "aliases": [],
       "capabilities": {
@@ -60908,7 +60908,7 @@
     {
       "partId": "43723",
       "revision": "r1-curated",
-      "contentHash": "5112a1a633b7e71b8cc574eda7805664d391aede03a910310d116613a1d0a6f7",
+      "contentHash": "428eaa3bd3457f8f86f4d2b725a2784791a74495f062591d9dd6acd586422dfb",
       "definitionFile": "definitions/43723.json",
       "aliases": [],
       "capabilities": {
@@ -61892,7 +61892,7 @@
     {
       "partId": "44301",
       "revision": "r1-curated",
-      "contentHash": "1f8218e2e016867370334beb5666077c076323d1d2a41c9bcad592bc028c0a24",
+      "contentHash": "1a52833219994e8ba586488abc962d2b0dba1bfea205925447fbdc657a9d034f",
       "definitionFile": "definitions/44301.json",
       "aliases": [],
       "capabilities": {
@@ -61980,7 +61980,7 @@
     {
       "partId": "44302",
       "revision": "r1-curated",
-      "contentHash": "0b2b12aac6b33be0d3a83fdb02b82de4304ec58a7bc263c8f1b0e0ec47665e51",
+      "contentHash": "e32175dae58df350cb76c626a7318a8e87d4d3250f3f1bb2ca7bb44b6e6c1895",
       "definitionFile": "definitions/44302.json",
       "aliases": [],
       "capabilities": {
@@ -63374,7 +63374,7 @@
     {
       "partId": "44728",
       "revision": "r1-curated",
-      "contentHash": "d1b960635aba5c704c3eecd67d29582f197a236adff07cc6f3c99997f3272304",
+      "contentHash": "aeb291a400f66796425b50fab56641783837cced80d74935fc3946fe673ea331",
       "definitionFile": "definitions/44728.json",
       "aliases": [],
       "capabilities": {
@@ -63489,7 +63489,7 @@
     {
       "partId": "4477",
       "revision": "r1-curated",
-      "contentHash": "11123914540a9b95278556fce01716e587cac5454b86a78d533c25eb685aa4b6",
+      "contentHash": "a9c0a540abf2e28f3408425cc070f65d63d8e0627d6bfff617f497b7ad834934",
       "definitionFile": "definitions/4477.json",
       "aliases": [],
       "capabilities": {
@@ -65782,7 +65782,7 @@
     {
       "partId": "4589b",
       "revision": "r1-curated",
-      "contentHash": "45f4e2baa8b5a584e4f2a63fcd72330887bd1c2787d3e621f32864aa3aa435ec",
+      "contentHash": "13362732410a63aa6267a36980af9e150b3cec64f6462dbafe3f6aa472222520",
       "definitionFile": "definitions/4589b.json",
       "aliases": [],
       "capabilities": {
@@ -67905,7 +67905,7 @@
     {
       "partId": "4733",
       "revision": "r1-curated",
-      "contentHash": "4b9a05a79ddbfba3991586595127eb69ae8dea0b8d38153741197c85f4dc9da9",
+      "contentHash": "a0a1cc9af6057d22f168c351f5bd45cf098917ea7c33a32038acde12601a2bf4",
       "definitionFile": "definitions/4733.json",
       "aliases": [],
       "capabilities": {
@@ -68335,7 +68335,7 @@
     {
       "partId": "4740",
       "revision": "r1-curated",
-      "contentHash": "237f2404740dc8c8a779c56ac9aa5fa47c577d599023e5720a1ac6026f9d8399",
+      "contentHash": "12399c89de9619f5ac3e04b80e6e78c693ff4546e045c72ea394625751b0b10b",
       "definitionFile": "definitions/4740.json",
       "aliases": [],
       "capabilities": {
@@ -68797,7 +68797,7 @@
     {
       "partId": "47457",
       "revision": "r1-curated",
-      "contentHash": "3447f6f00da0a4e33701ef47420fb1f3b2d72f86a0b991920f074b241732b155",
+      "contentHash": "64ebfc8784fea39e7018ed0e962aefe7bc436b700bb17f623f29a59fd42beb7b",
       "definitionFile": "definitions/47457.json",
       "aliases": [],
       "capabilities": {
@@ -69950,7 +69950,7 @@
     {
       "partId": "47905",
       "revision": "r1-curated",
-      "contentHash": "6cba9d5b3b8150bd7286cccfa2cac242d917ed7fbd8f0c2a3bd66b22f1c9b5fc",
+      "contentHash": "90598a6ea4a1e7ef0b7302dda6d4b03fa548ede0670f54fe795cf9d1f37af7a3",
       "definitionFile": "definitions/47905.json",
       "aliases": [],
       "capabilities": {
@@ -70956,7 +70956,7 @@
     {
       "partId": "48336",
       "revision": "r1-curated",
-      "contentHash": "3985a24d5d6c9e3aa880b992c7638673b4b5a2996dd6d3ac2fa64025f93be884",
+      "contentHash": "aca799b99893aab4ccb21beaa4e84c05eaf618fd35c41fac5dfc6657527a6d9f",
       "definitionFile": "definitions/48336.json",
       "aliases": [],
       "capabilities": {
@@ -71500,7 +71500,7 @@
     {
       "partId": "4864b",
       "revision": "r1-curated",
-      "contentHash": "a07bdc1b82b30103f304f4f303c947bdf6fea69ea773d844819a7ba5fa4086c0",
+      "contentHash": "3714877c6169cb3c0e93cf31a857a52f4bd007f005f845d209bedb5850ea74f7",
       "definitionFile": "definitions/4864b.json",
       "aliases": [],
       "capabilities": {
@@ -71556,7 +71556,7 @@
     {
       "partId": "4865b",
       "revision": "r1-curated",
-      "contentHash": "2239ab3a80312fc8553195aaf5d33ff8219c0eaefd7ef86ae4949fab896ae0e7",
+      "contentHash": "51d96ce520e8752b77c37660de503717057b90f66c994965cf92010344b36073",
       "definitionFile": "definitions/4865b.json",
       "aliases": [],
       "capabilities": {
@@ -73598,7 +73598,7 @@
     {
       "partId": "50745",
       "revision": "r1-curated",
-      "contentHash": "8e8518c3ed778e29b9225dc3df4d4d5b26b1101017efc04b4afac3a352dc6010",
+      "contentHash": "4b6b93175912c300c7cce103669d27f1206a84900c0fa1c31601b2a1f382c247",
       "definitionFile": "definitions/50745.json",
       "aliases": [],
       "capabilities": {
@@ -77586,7 +77586,7 @@
     {
       "partId": "54200",
       "revision": "r1-curated",
-      "contentHash": "00f04501fe1e31fd46c2a95fd2443fc927cb68ab3bbafb058535d1074f9d2506",
+      "contentHash": "5eb0215f6ddb0182be79fd855401086ab82c662a62a845ba4fd4b6df94475b2d",
       "definitionFile": "definitions/54200.json",
       "aliases": [],
       "capabilities": {
@@ -77757,7 +77757,7 @@
     {
       "partId": "54383",
       "revision": "r1-curated",
-      "contentHash": "323c3f2c71a2b2aacbb179595e9711b257c259d97f7ec1ef47c71e5ef5217cba",
+      "contentHash": "aedadfa7b012d807b222b9f789c0e1a854568bbbdd338aed9b88967f07b17c85",
       "definitionFile": "definitions/54383.json",
       "aliases": [],
       "capabilities": {
@@ -77786,7 +77786,7 @@
     {
       "partId": "54384",
       "revision": "r1-curated",
-      "contentHash": "b581c005c9e46411ab15de233cecec7ad67cbdde3649a8b1b0a20deb09897773",
+      "contentHash": "c0853e1dba4f69a220b515dd4b1ee0a18c586bb719da601ce6f3f03ca11d8b7c",
       "definitionFile": "definitions/54384.json",
       "aliases": [],
       "capabilities": {
@@ -78297,7 +78297,7 @@
     {
       "partId": "553b",
       "revision": "r1-curated",
-      "contentHash": "4fffeea26594e1348e4e7301b4e2feaab494506dc00024aecffc8456cc7b4eeb",
+      "contentHash": "b6be94166357b02279656adae63cf6d120ef400f893203f2aabf5deb216af912",
       "definitionFile": "definitions/553b.json",
       "aliases": [],
       "capabilities": {
@@ -82566,7 +82566,7 @@
     {
       "partId": "60470",
       "revision": "r1-curated",
-      "contentHash": "21f0bc17c47c4a9df7d2df7104880d88074000440a7cb59b2a785253c9b1763d",
+      "contentHash": "ae1c7d701353dd23883ba0604b585b212bf3d8dc28065785ff6ec03f1c6dc05e",
       "definitionFile": "definitions/60470.json",
       "aliases": [],
       "capabilities": {
@@ -82804,7 +82804,7 @@
     {
       "partId": "60477",
       "revision": "r1-curated",
-      "contentHash": "1a3841bb750e13d69ab6e5a1bdd39719792486913ea830e2e86926b6b5c307e1",
+      "contentHash": "5a27e04b76703e660e8f1f4bfa067e8abf6625a4a71ce772d598bdbacd0923ff",
       "definitionFile": "definitions/60477.json",
       "aliases": [],
       "capabilities": {
@@ -82833,7 +82833,7 @@
     {
       "partId": "60478",
       "revision": "r1-curated",
-      "contentHash": "15d5a568677f96cb1bf4f2830b0feca2dbfb52486fe4726e4be4107b82804cc3",
+      "contentHash": "740108d4351bbbc8dc06a91f96eb36b7c5a15d48908d1f8f353782433190ca31",
       "definitionFile": "definitions/60478.json",
       "aliases": [],
       "capabilities": {
@@ -82863,7 +82863,7 @@
     {
       "partId": "60479",
       "revision": "r1-curated",
-      "contentHash": "06d4726c8ce0971c7e79a13079448c738e8fd6eac954b0f26961bced003ca9a7",
+      "contentHash": "beb47ef2ff93b6112dce637a63190f454eda66045ef8fe6d8ea47f408e488757",
       "definitionFile": "definitions/60479.json",
       "aliases": [],
       "capabilities": {
@@ -82921,7 +82921,7 @@
     {
       "partId": "60481",
       "revision": "r1-curated",
-      "contentHash": "a1530af602f2af8d2971c07810fae777a525327949dd4dbdb572f71450c85944",
+      "contentHash": "3694ec136751f28ebd5e0699644bfbfc631ff3659dbff33a9eb714e611bc0950",
       "definitionFile": "definitions/60481.json",
       "aliases": [],
       "capabilities": {
@@ -83353,7 +83353,7 @@
     {
       "partId": "60592",
       "revision": "r1-curated",
-      "contentHash": "6b5f3f37e28f21702421cdbca1729d5af6800f5e78d95b9aaa083ddf55e8d5a1",
+      "contentHash": "9ef881acc41c7c312db58c0c86cd8e97d27d2a58015159d4fd6b12337fe70df4",
       "definitionFile": "definitions/60592.json",
       "aliases": [],
       "capabilities": {
@@ -83411,7 +83411,7 @@
     {
       "partId": "60594",
       "revision": "r1-curated",
-      "contentHash": "9ef896c2ab928cf05b4df34e9ee2cb156de1b3814d88a41064e7b1fd2b4e5237",
+      "contentHash": "e211bbdceb37e97f0009140dcda8ee3ada19303797213a7152d6ed98474bba99",
       "definitionFile": "definitions/60594.json",
       "aliases": [],
       "capabilities": {
@@ -83440,7 +83440,7 @@
     {
       "partId": "60596",
       "revision": "r1-curated",
-      "contentHash": "e7cc67805e35ca7bcfa6c49795a4bd4c4ce5cf87538e13756d7d59bfe81949fb",
+      "contentHash": "f8316f390ad717be080f33714ce7c22a6dda893d16bb4db0daf1c7dfeb045bff",
       "definitionFile": "definitions/60596.json",
       "aliases": [],
       "capabilities": {
@@ -83872,7 +83872,7 @@
     {
       "partId": "60623",
       "revision": "r1-curated",
-      "contentHash": "1b2b82dbcc4509b699f81ae8c9b64c1338ad1af122c053eac4f2a17ef8591e90",
+      "contentHash": "1f09843f836361168f7b8c9fbbc149e887b5976430da89854d46d71a5e9ebe9c",
       "definitionFile": "definitions/60623.json",
       "aliases": [],
       "capabilities": {
@@ -84762,7 +84762,7 @@
     {
       "partId": "6091",
       "revision": "r1-curated",
-      "contentHash": "bcae6c9ac6b9eaebb3a80713304e75f827adeec621e1d22933e177c04feeee06",
+      "contentHash": "842ca671be91f500a626e1eedfaac3f22cb642aa12eb0b413dc9fbe4d01896f0",
       "definitionFile": "definitions/6091.json",
       "aliases": [],
       "capabilities": {
@@ -85365,7 +85365,7 @@
     {
       "partId": "6111",
       "revision": "r1-curated",
-      "contentHash": "48261e465e399df1118074456943d968c89c0d46c4e228d84a88f79467d4189b",
+      "contentHash": "0b3ce9e9783f83156c6d946d21bfb032c884182bba780f58a0d1c762dd1206ec",
       "definitionFile": "definitions/6111.json",
       "aliases": [],
       "capabilities": {
@@ -85394,7 +85394,7 @@
     {
       "partId": "6112",
       "revision": "r1-curated",
-      "contentHash": "56909a0923df14d2161955ce74481be68ef925c30b560d511fb57ead8fa2afd5",
+      "contentHash": "17821e36f6a3e5b6ed45b99ce6bd75d214c6ec2ca5e7ed22916da10cd0e52b76",
       "definitionFile": "definitions/6112.json",
       "aliases": [],
       "capabilities": {
@@ -86705,7 +86705,7 @@
     {
       "partId": "61678",
       "revision": "r1-curated",
-      "contentHash": "632470ab376e832738b33f35a3a528a98153c9d8c407638bd5359b6bec4c4f22",
+      "contentHash": "257d5f7836461a4976caffa5f72d0a4c4a1292cb481b2957bc28f8a80c710037",
       "definitionFile": "definitions/61678.json",
       "aliases": [],
       "capabilities": {
@@ -86961,7 +86961,7 @@
     {
       "partId": "6182",
       "revision": "r1-curated",
-      "contentHash": "c385aa74014de52bf18fbcb2780f081cb97070e0c149f0beff61cea4a2dad69d",
+      "contentHash": "b81ec442bdae3026ec772570e1d3cfbb94191958ebe74e72e7ec167c9a984855",
       "definitionFile": "definitions/6182.json",
       "aliases": [],
       "capabilities": {
@@ -89539,7 +89539,7 @@
     {
       "partId": "63864",
       "revision": "r1-curated",
-      "contentHash": "c3e48fe6299686429e2fa1176c5254929be4d4e08f45b221c1e0aba8818e5ba0",
+      "contentHash": "c896d7a3ef0c1752713db6190ab67b51300953f67f3341624d1b04f204782c9b",
       "definitionFile": "definitions/63864.json",
       "aliases": [],
       "capabilities": {
@@ -89567,7 +89567,7 @@
     {
       "partId": "63868",
       "revision": "r1-curated",
-      "contentHash": "510b40546144cc394bd631115d374553133a8c630643f298310efb5fe2387ebf",
+      "contentHash": "5d266aa460d2b8a91cdef3fd8db285cfd33eb3d95cd69e33b6cd14671d2fca9a",
       "definitionFile": "definitions/63868.json",
       "aliases": [],
       "capabilities": {
@@ -91942,7 +91942,7 @@
     {
       "partId": "6541",
       "revision": "r1-curated",
-      "contentHash": "a6a204383ed11e30fa9c42fd97dba87e1872b27891e8bc4c6459bd48a3027472",
+      "contentHash": "4ca8d2713be84ca121fa9d9276e0517153c8d5dd03214050c660895b05df77b5",
       "definitionFile": "definitions/6541.json",
       "aliases": [],
       "capabilities": {
@@ -94588,7 +94588,7 @@
     {
       "partId": "6636",
       "revision": "r1-curated",
-      "contentHash": "e3f1090fccca7d69e4093627c092775a58d68c37b1391203ca220ef524937c17",
+      "contentHash": "0ccf44503b6f40c25ba60f6afa0e751b114e5a08479b09ab73af30767df6630f",
       "definitionFile": "definitions/6636.json",
       "aliases": [],
       "capabilities": {
@@ -97303,7 +97303,7 @@
     {
       "partId": "69729",
       "revision": "r1-curated",
-      "contentHash": "12e0995a4a89d08ef28605aba2cebea4d65ca14140aa3dca7df5b28963b129cf",
+      "contentHash": "a8f333d4469a699133992f6f832b9bf98e5ad9634284dbb35a78f56742e8ff4f",
       "definitionFile": "definitions/69729.json",
       "aliases": [],
       "capabilities": {
@@ -107229,7 +107229,7 @@
     {
       "partId": "78329",
       "revision": "r1-curated",
-      "contentHash": "afff850a61e7d6c85c472f0c711332375fb11c7caa3a12b7a27bc2053388551f",
+      "contentHash": "1b1b0b5d3909aad34323b51610af1878b37c421c975a664442ceae46328a27ab",
       "definitionFile": "definitions/78329.json",
       "aliases": [],
       "capabilities": {
@@ -112149,7 +112149,7 @@
     {
       "partId": "85861",
       "revision": "r1-curated",
-      "contentHash": "55010727559d104b734e84df881c316c9e8afc03e1e7dfbf4dda2e9c39c161a5",
+      "contentHash": "a28a9516131ff38225b3507f7952ea5f2058ad8ab5db6790f763035edd4b36e9",
       "definitionFile": "definitions/85861.json",
       "aliases": [],
       "capabilities": {
@@ -112381,7 +112381,7 @@
     {
       "partId": "85984",
       "revision": "r1-curated",
-      "contentHash": "93e70766dfbb48349e9de23e4f8f02cdf510d9ec0882197741620dc84acf2b41",
+      "contentHash": "3b2bf728d1cff36ea7f66aa60ec7be619e91c19ccf0db2f08a546603053ab0cf",
       "definitionFile": "definitions/85984.json",
       "aliases": [],
       "capabilities": {
@@ -112774,7 +112774,7 @@
     {
       "partId": "87079",
       "revision": "r1-curated",
-      "contentHash": "72ca1b4adcaccd6aac547db2485d99d46b10fac93fbc230021ca5c736e75d2fd",
+      "contentHash": "7a4509e6bf27a5b06c7a1e0211eafa6b57bbbc4c04ab5afe0cc41d5e8e5c8516",
       "definitionFile": "definitions/87079.json",
       "aliases": [],
       "capabilities": {
@@ -112830,7 +112830,7 @@
     {
       "partId": "87081",
       "revision": "r1-curated",
-      "contentHash": "41a75f0ea8d0b5c27fc2e884114509602c47439864dce7fd89bce2b5fde2b76a",
+      "contentHash": "cb5559fb2f85080759ebf02cb218dcdd8dbd446ab67be845db1304101101e171",
       "definitionFile": "definitions/87081.json",
       "aliases": [],
       "capabilities": {
@@ -112944,7 +112944,7 @@
     {
       "partId": "87087",
       "revision": "r1-curated",
-      "contentHash": "dccab6c67cbf9d71b741d8a560d862b471be980d88c1f78c460c0075688f3e3a",
+      "contentHash": "472b0e315a19469a1c44b18c7556cb785733f5fec82b620fc8b264e07abab58d",
       "definitionFile": "definitions/87087.json",
       "aliases": [],
       "capabilities": {
@@ -113459,7 +113459,7 @@
     {
       "partId": "87580",
       "revision": "r1-curated",
-      "contentHash": "d60efb87ce5cdb70954b3a93a453bba795c21ed9b101c9c237b3fff090e55ec6",
+      "contentHash": "b790e749c01a272aa3609aa3865773844a3ffd186b9de639918fcb4bf3e656a7",
       "definitionFile": "definitions/87580.json",
       "aliases": [],
       "capabilities": {
@@ -114328,7 +114328,7 @@
     {
       "partId": "87994",
       "revision": "r1-curated",
-      "contentHash": "5bff1f550a4dbcab69eb8bb1e5fe80d3442ae7b820075e7b3e20a712c0ddbc19",
+      "contentHash": "f5996004041534e11d2cfd2636de8ece2c19e4d9ad24305285eafa664806001c",
       "definitionFile": "definitions/87994.json",
       "aliases": [],
       "capabilities": {
@@ -118177,7 +118177,7 @@
     {
       "partId": "92946",
       "revision": "r1-curated",
-      "contentHash": "db650e0ae51952be065198aef57992e376421ca40bdb6b25280f4ad247f993e3",
+      "contentHash": "851d0773c373f3504d1b8c953b2ecf8c14ad0ca92a1b93318d459c619b70bda6",
       "definitionFile": "definitions/92946.json",
       "aliases": [],
       "capabilities": {
@@ -118565,7 +118565,7 @@
     {
       "partId": "93273",
       "revision": "r1-curated",
-      "contentHash": "b6dc1a3c2ddd3bc15f9eb3eda11d8a1c9b14d4ebbeee9fdcd5e9e1b14a7e63c9",
+      "contentHash": "65ae564c9e086b8abab413a8df0b9043a7e796c99df3c919cedbae732cc6c712",
       "definitionFile": "definitions/93273.json",
       "aliases": [],
       "capabilities": {
@@ -120509,7 +120509,7 @@
     {
       "partId": "98138",
       "revision": "r1-curated",
-      "contentHash": "875a41740c7526d588bfec76469b5f75a317b4c56c37317bc9197ebe560cd95a",
+      "contentHash": "78a1d0406482f232bf98eae9596f4c4b965442059a3c420252ebb3a6848b3ab1",
       "definitionFile": "definitions/98138.json",
       "aliases": [],
       "capabilities": {
@@ -120681,7 +120681,7 @@
     {
       "partId": "98283",
       "revision": "r1-curated",
-      "contentHash": "46de55e22a9ee465a725f1e08c9b0d29a46b19ad982d5e49c9d31c746ab23523",
+      "contentHash": "cad29be8a11a06de955cf78632c5a1fd29b021ba51c2e885a265eb93c6f2ea45",
       "definitionFile": "definitions/98283.json",
       "aliases": [],
       "capabilities": {
@@ -121796,7 +121796,7 @@
     {
       "partId": "99206",
       "revision": "r1-curated",
-      "contentHash": "957f5ebec09e0bc3fccbc3a1584ac5a6848cd4a95323941805ec74b776d5c67d",
+      "contentHash": "b54b9992c21a10eb82b7cb677a8055ebfe2774e8c135e0cc1f3a71402dfb6ea9",
       "definitionFile": "definitions/99206.json",
       "aliases": [],
       "capabilities": {
@@ -121819,13 +121819,13 @@
           "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
         }
       },
-      "connectorCount": 13,
+      "connectorCount": 11,
       "sourceType": "curated"
     },
     {
       "partId": "99207",
       "revision": "r1-curated",
-      "contentHash": "da1f6de00d97605e5dd21bfcb2a84db0f8624f885f7f6efe655a527af0a84e26",
+      "contentHash": "758761a9bc3e0e607bdab01b8e382e51154ac847e4b1f39e2ee19e5b95408501",
       "definitionFile": "definitions/99207.json",
       "aliases": [],
       "capabilities": {
@@ -122082,7 +122082,7 @@
     {
       "partId": "99780",
       "revision": "r1-curated",
-      "contentHash": "e4ed95cff3fa44895180c68acfa51374fdf0799f0e20fbdc95b1c4924e6cbfee",
+      "contentHash": "e90d1469d583e4da626bda4abaad6c36f54ca6391f3b41fe85575de21e230acf",
       "definitionFile": "definitions/99780.json",
       "aliases": [],
       "capabilities": {
@@ -122111,7 +122111,7 @@
     {
       "partId": "99781",
       "revision": "r1-curated",
-      "contentHash": "df045f019d8ee7fdff7b5df494bebc712078eca2a60795def94e9c38d661a743",
+      "contentHash": "02134361fa4c730ade5f2fa7fa297d0d8de66de9ba2f6732fe3b094ad30ed119",
       "definitionFile": "definitions/99781.json",
       "aliases": [],
       "capabilities": {

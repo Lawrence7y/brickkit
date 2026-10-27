@@ -3,13 +3,13 @@
   "partId": "61678",
   "revision": "r1-curated",
   "aliases": [],
-  "name": "Slope Curved 4 x 1 No Studs",
-  "nameZh": "长弧面斜坡 1×4（高2片）",
+  "name": "Slope Brick Curved 4 x 1",
+  "nameZh": "长弧面斜坡 1×4（高3片=1砖）",
   "category": "cslope",
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -56,7 +56,7 @@
       1,
       4
     ],
-    "heightPlate": 2,
+    "heightPlate": 3,
     "assetRef": {
       "datFile": "catalog/ldraw/parts/61678.dat",
       "sha256": "e06daaca0499570e65d18b3e969be2e7be66896e0735b829c579bfcb6caa1eb8",
@@ -66,7 +66,7 @@
       0,
       20,
       0,
-      16,
+      24,
       0,
       80
     ]
@@ -79,7 +79,7 @@
         0,
         20,
         0,
-        16,
+        24,
         0,
         80
       ]
@@ -87,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedAt": "2026-10-27T05:49:41.289Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -157,9 +157,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/61678.dat"
     ],
-    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedAt": "2026-10-27T05:49:41.289Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "632470ab376e832738b33f35a3a528a98153c9d8c407638bd5359b6bec4c4f22"
+  "contentHash": "257d5f7836461a4976caffa5f72d0a4c4a1292cb481b2957bc28f8a80c710037"
 }

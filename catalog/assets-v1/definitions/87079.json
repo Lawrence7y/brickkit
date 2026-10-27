@@ -9,7 +9,7 @@
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -87,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedAt": "2026-10-27T05:49:41.289Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -192,9 +192,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/87079.dat"
     ],
-    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedAt": "2026-10-27T05:49:41.289Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "72ca1b4adcaccd6aac547db2485d99d46b10fac93fbc230021ca5c736e75d2fd"
+  "contentHash": "7a4509e6bf27a5b06c7a1e0211eafa6b57bbbc4c04ab5afe0cc41d5e8e5c8516"
 }

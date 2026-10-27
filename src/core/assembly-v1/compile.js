@@ -591,6 +591,7 @@ export function validateAssembly(source, cat, opts = {}) {
     assetsDir: opts.assetsDir ?? (opts.assetIndex ? undefined : path.join(process.cwd(), 'catalog/assets-v1')),
     requiredPartIds: usedPartIds,
     requireIndex: opts.requireAssetIndex !== false,
+    repoRoot: opts.repoRoot ?? process.cwd(),
   });
   for (const e of lockRes.errors) errors.push(e);
   for (const w of lockRes.warnings) warnings.push(w);

@@ -3,13 +3,13 @@
   "partId": "47457",
   "revision": "r1-curated",
   "aliases": [],
-  "name": "Slope Curved 2 x 2 x 1 with 2 Studs",
-  "nameZh": "弧面斜砖 2×2×1（高3片）",
+  "name": "Slope Brick Curved 2 x 2 x 2/3 Triple with Two Top Studs",
+  "nameZh": "弧面斜砖 2×2×2/3（高2片）",
   "category": "cslope",
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -56,7 +56,7 @@
       2,
       2
     ],
-    "heightPlate": 3,
+    "heightPlate": 2,
     "assetRef": {
       "datFile": "catalog/ldraw/parts/47457.dat",
       "sha256": "3f25d139cb8c6347a9bfdba72859abb013906329c91e70cf7a41c140d6f246c3",
@@ -66,7 +66,7 @@
       0,
       40,
       0,
-      24,
+      16,
       0,
       40
     ]
@@ -79,7 +79,7 @@
         0,
         40,
         0,
-        24,
+        16,
         0,
         40
       ]
@@ -87,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedAt": "2026-10-27T05:49:41.289Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -148,14 +148,14 @@
       "items": [
         [
           10,
-          24,
+          16,
           10,
           0,
           0
         ],
         [
           30,
-          24,
+          16,
           10,
           0,
           1
@@ -189,9 +189,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/47457.dat"
     ],
-    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedAt": "2026-10-27T05:49:41.289Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "3447f6f00da0a4e33701ef47420fb1f3b2d72f86a0b991920f074b241732b155"
+  "contentHash": "64ebfc8784fea39e7018ed0e962aefe7bc436b700bb17f623f29a59fd42beb7b"
 }

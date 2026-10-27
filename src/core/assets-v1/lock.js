@@ -19,6 +19,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { contentHashOf } from '../assets-v1/index.js';
 
 const HASH_RE = /^[0-9a-f]{64}$/;
@@ -28,6 +29,30 @@ export function tryReadAssetIndex(assetsDir) {
   const f = path.join(assetsDir, 'index.json');
   if (!fs.existsSync(f)) return null;
   try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return null; }
+}
+
+// 索引登记的源文件（仓库相对路径）。index.json 记录的是「生成索引时读到的源文件哈希」；
+// 源文件改过而没重跑 `assets compile`，索引就是过期的。拿过期索引核验 assetLock 等于
+// 用旧定义验证新模型，比没有索引更危险，所以这里要把过期状态显式查出来。
+const INDEX_SOURCE_FILES = ['catalog/parts.json', 'catalog/parts-ldraw.json', 'catalog/colors.json'];
+
+/** 返回索引已过期的源文件列表；空数组表示索引与源文件一致。 */
+export function staleAssetIndexSources(index, repoRoot) {
+  const sources = index?.sourceHashes;
+  if (!sources || typeof sources !== 'object' || !repoRoot) return [];
+  const root = path.resolve(repoRoot);
+  const stale = [];
+  for (const [role, meta] of Object.entries(sources)) {
+    if (!meta || typeof meta.file !== 'string' || typeof meta.sha256 !== 'string') continue;
+    const rel = meta.file.split('\\').join('/');
+    if (!INDEX_SOURCE_FILES.includes(rel)) { stale.push({ role, file: meta.file, reason: 'not-an-index-source' }); continue; }
+    const target = path.resolve(root, rel);
+    if (!target.startsWith(root + path.sep)) { stale.push({ role, file: meta.file, reason: 'path-outside-repo' }); continue; }
+    if (!fs.existsSync(target)) { stale.push({ role, file: meta.file, reason: 'source-missing' }); continue; }
+    const cur = crypto.createHash('sha256').update(fs.readFileSync(target)).digest('hex');
+    if (cur !== meta.sha256) stale.push({ role, file: meta.file, recorded: meta.sha256, current: cur });
+  }
+  return stale;
 }
 
 /**
@@ -61,6 +86,13 @@ export function checkAssetLock(source, opts = {}) {
   if (!indexAvailable && requireIndex) {
     E('asset-lock-index-unavailable', '资产索引不可用（catalog/assets-v1/index.json 缺失或损坏）：无法核验 assetLock；'
       + '请先运行 assets compile，或显式传 requireIndex:false 以标注「未核验」');
+  }
+  // 索引存在但源文件已改过（没重跑 assets compile）：索引里的 revision/contentHash
+  // 反映的是旧定义，用它核验等于「用旧目录验证新模型」。这种情况按不可核验处理。
+  const indexStale = indexAvailable && opts.repoRoot ? staleAssetIndexSources(index, opts.repoRoot) : [];
+  if (indexStale.length) {
+    E('asset-lock-index-stale', `资产索引已过期（${indexStale.map((s) => s.file).join('、')} 改动后未重跑 assets compile）：`
+      + '索引内容不再反映当前零件定义，无法据此核验 assetLock');
   }
 
   const indexByPart = new Map();

@@ -74,7 +74,7 @@ node cli/brickkit.mjs render   examples/cottage.brick.json -o out/explode.png --
 | `photo-plan [--model m]` | 生成需要用户拍的照片清单 |
 | `plan <model>` | 步骤计划：每一步的零件数、子组件、装配步 |
 | `catalog [关键词]` / `colors` | 查零件目录 / 颜色代码 |
-| `catalog-fetch [--dir catalog/ldraw] [--mirror 整库解压目录] [--force] [--full]` | 下载/更新 LDraw 官方零件库素材（CC BY 2.0）。默认装目录引用的 165 种零件及闭包到 `catalog/ldraw/`；`--full` 从 `--mirror`（complete.zip 解压目录）整库安装约 3.7 万文件到 `catalog/ldraw-full/`（.gitignore，本地素材） |
+| `catalog-fetch [--dir catalog/ldraw] [--mirror 整库解压目录] [--force] [--full]` | 下载/更新 LDraw 官方零件库素材（CC BY 2.0）。默认装目录引用的 167 种零件及闭包到 `catalog/ldraw/`；`--full` 从 `--mirror`（complete.zip 解压目录）整库安装约 3.7 万文件到 `catalog/ldraw-full/`（.gitignore，本地素材） |
 | `catalog-verify [--dir catalog/ldraw]` | 用官方几何实测尺寸逐件核对 `catalog/parts.json`，产出 `catalog/ldraw/verification.json` |
 | `bom <model> [--step n]` | 零件清单 |
 | `export-ldraw <model> [-o out.ldr\|out.mpd]` | 导出 LDraw / MPD |
@@ -126,11 +126,11 @@ src/core/builder.js     程序化搭建 API：createBuilder 的 add 自动查编
 src/core/diff.js        数值对账：渲染 vs 实拍的前景掩膜打分（runDiff）、机位标定（calibratePhoto）
 src/viewer/             网页查看器（three.js）：main.js 3D 展示、booklet.js 拼装图纸、geom.js 零件几何
 dist/viewer.html        打包好的单文件查看器
-catalog/                零件目录（165 种常用零件：基础砖/板/平板/斜面/门窗 + 圆砖/圆板/弧面斜砖/SNOT 侧凸点砖/合页夹板/楔形翼板）、颜色表（32 色）
-catalog/ldraw/          LDraw 官方零件库素材镜像（165 种零件 .dat 权威几何 + manifest.json 来源/SHA-256 + verification.json 目录核对报告，CC BY 2.0）
+catalog/                零件目录（167 种常用零件：砖/板/平板/斜面/弧面斜砖/圆件/科技件/SNOT 侧凸点砖/合页夹板/楔形翼板/门窗/支架）、颜色表（32 色）
+catalog/ldraw/          LDraw 官方零件库素材镜像（目录引用零件 .dat 权威几何 + manifest.json 来源/SHA-256 + verification.json 目录核对报告，CC BY 2.0）
 catalog/ldraw-full/     （.gitignore）LDraw 官方零件库全量本地镜像（约 2.5 万种零件 + 基元，catalog-fetch --full 安装），识别/核对时可作二级解析源
 schema/                 JSON Schema：brickbuild.schema.json、photoset.schema.json
-examples/               示例模型：cottage（林间小屋，75 件）与 mecha（四翼重装侦察机甲塔，70 件实物重建样本）
+examples/               示例模型：cottage（林间小屋，75 件）与 mecha（四翼重装侦察机甲塔，83 件实物重建样本）
 out/                    示例输出：拼装图纸 PDF、渲染图
 docs/                   数据格式、拍摄规范、截图
 tools/                  截图自检脚本（qa_run.mjs、qa_book.mjs）、素材抓取（fetch-instructions.mjs：官方组装说明书 PDF）、LDraw 预览图库（ldraw-gallery.mjs）
@@ -140,6 +140,27 @@ tools/                  截图自检脚本（qa_run.mjs、qa_book.mjs）、素�
 
 ## 现状与限制
 
-- 当前零件目录覆盖 165 种常用零件（砖、板、平板、斜面、弧面斜砖、圆砖/圆板、SNOT 侧凸点砖、合页夹板/把柄板、楔形翼板、门窗），支持 6 向 SNOT 朝向（`up: "+y"|"-y"|"+z"|"-z"|"+x"|"-x"` 与 `snot` 片偏移）；更复杂的 Technic 齿轮连杆可在 `catalog/gen-catalog.mjs` 中扩充。`catalog/ldraw/` 内置 LDraw 官方零件库几何镜像与逐件尺寸核对报告（`node cli/brickkit.mjs catalog-verify` 重建）。
-- 坐标是整格 / 整片网格，旋转只支持 90° 倍数。
-- 从照片识别零件本身不在本仓库内，需要智能体或第三方识别服务完成；BrickKit 负责约束、校验和展示，“准确还原”依赖人工确认环节。
+**零件目录（已核对到官方 LDraw 几何）**
+
+- 精选目录 `catalog/parts.json` 覆盖 **167 种**常用零件（板 30、砖 23、合页夹板 19、斜面 18、平板 15、圆件 13、科技件 9、弧面斜砖 9、SNOT 侧凸点砖 9、楔形翼板 8、门窗 7、支架 6、其他 1）。
+- 支持 6 向 SNOT 朝向（`up: "+y"|"-y"|"+z"|"-z"|"+x"|"-x"` 与 `snot` 片偏移）。
+- `catalog/ldraw/` 内置 LDraw 官方零件几何镜像（CC BY 2.0）。`node cli/brickkit.mjs catalog-verify` 会把每个手写定义与官方 `.dat` 实测尺寸、**侧凸点朝向与数量**逐件对账；**手写参数与官方几何冲突即报错**（退出码 1），不存在「标了 checked 但与官方矛盾」的条目。当前 167 件全部通过，最近修正的 7 处冲突见 `git log --grep=catalog`。
+- `catalog/parts-ldraw.json` 是从官方 `.dat` 自动提取的扩展零件表（约 4,585 种，含销孔/轴孔/夹口/侧凸点/底孔等连接字段），可直接在模型里引用；它的 `h` 由包围盒反推，非整片零件会有小数高度，这类条目不计入硬冲突（需要严格核对时用 `catalog-verify --strict-auto`）。
+- 扩充更复杂的 Technic 齿轮连杆：编辑 `catalog/gen-catalog.mjs` 后重跑生成器。
+
+**几何与姿态**
+
+- 坐标是整格 / 整片网格，旋转只支持 90° 倍数（24 种正交姿态，行列式恒为 +1，不含镜像）。
+- 轴对齐包围盒做碰撞判定。铰链角度、球关节、夹子夹在把手上任意转动这类**连续姿态不在当前表达范围内** —— 可开合机构用 `mechanisms` 单独描述开合范围，但零件之间的相对姿态仍限于正交。
+- `offGrid: true` 的圆盘件允许 `at` 取非整数格。
+
+**识别与还原**
+
+- 从照片识别零件**不在**本仓库主的交付路径内：BrickKit 提供拍摄规范、校验器、`diff` 数值对账、`calibrate` 机位标定和 `builder` 自动扣合，识别环节由智能体或人工完成。
+- `training/brickvlm/` 下有一份 Qwen2-VL-2B 的 QLoRA 领域微调代码与评测脚本（PRD v2 产物）。**它目前不是可用能力**：留出集评测未通过验收门槛（结构识别 F1 为 0.0、端到端 0/3），且训练依赖本机 `out/` 下的模型与数据集，无法从仓库直接复现。默认使用现成的强视觉模型提候选 + 人工确认。
+
+**已知限制**
+
+- 场景/环境光、透明件折射、印刷图案均不建模；颜色以 LDraw 色号为准。
+- 零件 × 颜色是否真实存在于某个官方套装，目前没有数据（无 Rebrickable/BrickLink 联动），因此无法自动排除「件号对但该颜色不存在」的候选。
+

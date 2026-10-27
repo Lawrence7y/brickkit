@@ -42,14 +42,20 @@ const sha256Json = (obj) => sha256(Buffer.from(JSON.stringify(obj), 'utf8'));
 
 /**
  * 稳定内容哈希：只对语义字段排序后序列化，排除 recordedAt / generatedAt 等易变元数据。
+ *
+ * 注意 source.sha256 刻意参与哈希：它是「源文件变了 → 缓存必须失效」的依据
+ * （见 test/assets-assembly.test.mjs 的 ST-01）。代价是改任一零件会让全库
+ * contentHash 一起变，进而使既有 assetLock 全部失配 —— 这是有意的保守取舍：
+ * 宁可要求重新冻结锁，也不要让旧锁悄悄核验新定义。
  */
 export function contentHashOf(obj) {
+  const VOLATILE = new Set(['recordedAt', 'generatedAt', 'checkedAt', 'extractedAt']);
   const strip = (v) => {
     if (Array.isArray(v)) return v.map(strip);
     if (v && typeof v === 'object') {
       const out = {};
       for (const k of Object.keys(v).sort()) {
-        if (['recordedAt', 'generatedAt', 'checkedAt', 'extractedAt'].includes(k)) continue;
+        if (VOLATILE.has(k)) continue;
         out[k] = strip(v[k]);
       }
       return out;

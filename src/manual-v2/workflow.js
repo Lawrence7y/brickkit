@@ -48,10 +48,34 @@
 
 import crypto from 'node:crypto';
 import fs from 'node:fs';
+import path from 'node:path';
 // 真实状态哈希：与动作协议 (actions-v1) 完全同一实现，杜绝第二套哈希口径
 import { stateHashOf } from '../core/actions-v1/state.js';
 
 const SHA256_HEX = /^[0-9a-f]{64}$/;
+
+// 60239 开发样例默认锁定的件号（主体用砖 + LDraw 提取件），
+// 具体 revision/contentHash 一律从当前资产索引现取，不写死。
+const CATALOG_LOCK_PART_IDS = ['3001', '3023'];
+
+/** 从仓库资产索引构造资产锁；索引缺失时抛错而不是返回写死的假锁。 */
+export function buildAssetLockFromCatalog(repoRoot = process.cwd(), partIds = CATALOG_LOCK_PART_IDS) {
+  const indexFile = path.join(repoRoot, 'catalog', 'assets-v1', 'index.json');
+  const index = JSON.parse(fs.readFileSync(indexFile, 'utf8'));
+  const byPart = new Map((index.parts || []).map((e) => [String(e.partId), e]));
+  const missing = partIds.filter((id) => !byPart.has(String(id)));
+  if (missing.length) {
+    throw new Error(`资产索引缺少件号 ${missing.join(', ')}；请先运行 node cli/brickkit.mjs assets compile`);
+  }
+  return {
+    profileId: index.profileId,
+    indexVersion: index.version,
+    parts: partIds.map((id) => {
+      const e = byPart.get(String(id));
+      return { partId: String(id), revision: e.revision, contentHash: e.contentHash };
+    }),
+  };
+}
 
 export function hashString(str) {
   return crypto.createHash('sha256').update(str).digest('hex');
@@ -109,14 +133,9 @@ export function generateBuildPlan(observationsSet, bomData, options = {}) {
 
   const contractRevision = options.contractRevision || '0.9.0-draft';
 
-  const defaultAssetLock = {
-    profileId: 'default-2026-10-26',
-    indexVersion: '1.0.0',
-    parts: [
-      { partId: '3001', revision: 'r1-extracted', contentHash: '39ee8aa1935ca7159b0b688b2ba735413c1bc2603863a566503803bc4ba7e941' },
-      { partId: '3023', revision: 'r1-extracted', contentHash: '32cedaf292861f849fc4aff9a198489bac43db2f82febd72d855971059bf29c5' }
-    ]
-  };
+  // 资产锁必须反映当前零件定义的 contentHash。写死常量会在目录修订后静默失配，
+  // 所以默认从 catalog/assets-v1/index.json 现取（也可由 options.assetLock 显式覆盖）。
+  const defaultAssetLock = options.assetLock || buildAssetLockFromCatalog(options.repoRoot, CATALOG_LOCK_PART_IDS);
 
   const defaultSpatialContracts = {
     maxBoundingBoxLdu: [200, 100, 400],

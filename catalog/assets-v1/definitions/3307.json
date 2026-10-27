@@ -3,13 +3,13 @@
   "partId": "3307",
   "revision": "r1-curated",
   "aliases": [],
-  "name": "Brick Arch 1 x 6",
-  "nameZh": "长拱门砖 1×6（高3片）",
+  "name": "Arch 1 x 6 x 2 with Thick Top and Reinforced Underside",
+  "nameZh": "长拱门砖 1×6×2（高6片=2格）",
   "category": "cslope",
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -56,7 +56,7 @@
       6,
       1
     ],
-    "heightPlate": 3,
+    "heightPlate": 6,
     "assetRef": {
       "datFile": "catalog/ldraw/parts/3307.dat",
       "sha256": "3be2db471878dc07f165208dd70a8b139b5118365dbf6f4ca3c63ec76bfb6555",
@@ -66,7 +66,7 @@
       0,
       120,
       0,
-      24,
+      48,
       0,
       20
     ]
@@ -79,7 +79,7 @@
         0,
         120,
         0,
-        24,
+        48,
         0,
         20
       ]
@@ -87,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedAt": "2026-10-27T05:49:41.289Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -155,42 +155,42 @@
       "items": [
         [
           10,
-          24,
+          48,
           10,
           0,
           0
         ],
         [
           30,
-          24,
+          48,
           10,
           0,
           1
         ],
         [
           50,
-          24,
+          48,
           10,
           0,
           2
         ],
         [
           70,
-          24,
+          48,
           10,
           0,
           3
         ],
         [
           90,
-          24,
+          48,
           10,
           0,
           4
         ],
         [
           110,
-          24,
+          48,
           10,
           0,
           5
@@ -224,9 +224,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/3307.dat"
     ],
-    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedAt": "2026-10-27T05:49:41.289Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "7f9189cc96d0df0ecb01ab115edb86f89eda58813785f3376e8e5c7a52447640"
+  "contentHash": "a771e635b1be7952f2194d390cd8d89dd9e7b07fd202a3bd2727b41713ae655c"
 }

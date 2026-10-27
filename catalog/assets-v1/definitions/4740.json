@@ -3,13 +3,13 @@
   "partId": "4740",
   "revision": "r1-curated",
   "aliases": [],
-  "name": "Dish 2 x 2 Inverted (Radar)",
-  "nameZh": "雷达圆碟 2×2",
+  "name": "Dish 2 x 2 Inverted",
+  "nameZh": "雷达圆碟 2×2（倒扣，高1片）",
   "category": "round",
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -56,7 +56,7 @@
       2,
       2
     ],
-    "heightPlate": 2,
+    "heightPlate": 1,
     "assetRef": {
       "datFile": "catalog/ldraw/parts/4740.dat",
       "sha256": "ae5f6d05a1aab00f3e9e66e29f95af272821ed94eecda1ad719462115b7aa144",
@@ -66,7 +66,7 @@
       0,
       40,
       0,
-      16,
+      8,
       0,
       40
     ]
@@ -79,7 +79,7 @@
         0,
         40,
         0,
-        16,
+        8,
         0,
         40
       ]
@@ -87,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedAt": "2026-10-27T05:49:41.289Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -148,7 +148,7 @@
       "items": [
         [
           20,
-          16,
+          8,
           20,
           0,
           0
@@ -182,9 +182,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/4740.dat"
     ],
-    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedAt": "2026-10-27T05:49:41.289Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "237f2404740dc8c8a779c56ac9aa5fa47c577d599023e5720a1ac6026f9d8399"
+  "contentHash": "12399c89de9619f5ac3e04b80e6e78c693ff4546e045c72ea394625751b0b10b"
 }

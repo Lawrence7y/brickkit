@@ -12,6 +12,28 @@ import { buildIndex, DEFAULT_PROFILE, contentHashOf, connectorCountOf } from './
 
 const sha256File = (f) => crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
 
+// Windows 上杀毒/索引服务会在文件刚被读过后短暂持有句柄，此时写入会抛
+// UNKNOWN/EBUSY/EPERM。整库重建要写 4600+ 个文件，必然撞上，所以带退避重试。
+// 只重试「疑似瞬时占用」的错误码；真权限问题（EACCES）直接抛出。
+const RETRYABLE = new Set(['UNKNOWN', 'EBUSY', 'EPERM', 'EAGAIN']);
+function writeFileRetry(file, body, opts = {}) {
+  const attempts = opts.attempts ?? 8;
+  let lastErr;
+  for (let i = 0; i < attempts; i += 1) {
+    try {
+      fs.writeFileSync(file, body, 'utf8');
+      return;
+    } catch (err) {
+      lastErr = err;
+      if (!RETRYABLE.has(err.code)) throw err;
+      // 同步短退避：重建是批处理，几十毫秒的开销远小于整轮重来的代价
+      const until = Date.now() + 40 * (i + 1);
+      while (Date.now() < until) { /* spin */ }
+    }
+  }
+  throw lastErr;
+}
+
 /**
  * 写盘。返回 { outDir, indexBytes, totalBytes, files, indexHash, stats, elapsedMs }
  * 同名目录已存在时默认拒绝覆盖（保护历史证据），需显式 { force: true }。
@@ -41,7 +63,7 @@ export function writeAssetStore(root, outDir, opts = {}) {
   for (const [partId, def] of [...built.definitions].sort((a, b) => a[0].localeCompare(b[0]))) {
     const body = JSON.stringify(def, null, 2) + '\n';
     const file = path.join(outDir, 'definitions', `${partId}.json`);
-    fs.writeFileSync(file, body, 'utf8');
+    writeFileRetry(file, body);
     totalBytes += Buffer.byteLength(body);
     defSizes.push({ partId, bytes: Buffer.byteLength(body) });
   }
@@ -54,7 +76,7 @@ export function writeAssetStore(root, outDir, opts = {}) {
 
   // index 最后写：其它文件齐了再写索引，避免半成品被当成可用
   const indexBody = JSON.stringify(built.index, null, 2) + '\n';
-  fs.writeFileSync(path.join(outDir, 'index.json'), indexBody, 'utf8');
+  writeFileRetry(path.join(outDir, 'index.json'), indexBody);
 
   defSizes.sort((a, b) => b.bytes - a.bytes);
   return {

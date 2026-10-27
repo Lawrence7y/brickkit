@@ -3,13 +3,13 @@
   "partId": "11211",
   "revision": "r1-curated",
   "aliases": [],
-  "name": "Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side",
-  "nameZh": "单面四凸点砖 1×2（高5片=2格）",
+  "name": "Brick 1 x 2 with Two Studs on One Side",
+  "nameZh": "单面二凸点砖 1×2（高3片）",
   "category": "snot",
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "939449914464288149640c43474382ef6744e0c46e11ca9afbbdf9ee7a90255d",
+    "sha256": "08e3c1cef23c6327befbb52cd5c18de121aa556e6b8ac0cc0d2dcdee7c40b288",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -56,7 +56,7 @@
       2,
       1
     ],
-    "heightPlate": 5,
+    "heightPlate": 3,
     "assetRef": {
       "datFile": "catalog/ldraw/parts/11211.dat",
       "sha256": "a88c76a8936395abe5554aa2273c92271cc3c595e800a6ecfb479d2a9670f532",
@@ -66,7 +66,7 @@
       0,
       40,
       0,
-      40,
+      24,
       0,
       20
     ]
@@ -79,7 +79,7 @@
         0,
         40,
         0,
-        40,
+        24,
         0,
         20
       ]
@@ -87,11 +87,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-26T12:26:34.219Z",
+      "recordedAt": "2026-10-27T05:49:41.289Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 8,
+  "connectorCount": 6,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -127,14 +127,14 @@
       "items": [
         [
           10,
-          40,
+          24,
           10,
           0,
           0
         ],
         [
           30,
-          40,
+          24,
           10,
           0,
           1
@@ -151,31 +151,17 @@
       "items": [
         [
           10,
-          10,
+          5.6,
           20,
           0,
           2
         ],
         [
           30,
-          10,
+          5.6,
           20,
           0,
           3
-        ],
-        [
-          10,
-          30,
-          20,
-          0,
-          4
-        ],
-        [
-          30,
-          30,
-          20,
-          0,
-          5
         ]
       ]
     }
@@ -206,9 +192,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/11211.dat"
     ],
-    "recordedAt": "2026-10-26T12:26:34.219Z",
+    "recordedAt": "2026-10-27T05:49:41.289Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "b9714be864d85e31b2e53d4db44475e642712929439c744efd8dd850c00227de"
+  "contentHash": "b85fc61928f1b74d5fbcb2e877d019859e5f2460a3e5c7b21e08ae10bfdb0fe5"
 }
