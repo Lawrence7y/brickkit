@@ -1,0 +1,1810 @@
+{
+  "format": "brickbuild",
+  "version": "0.2",
+  "meta": {
+    "name": "LEGO 60239 警察巡逻车（重建版）",
+    "front": "-x",
+    "source": "official-manual-pages-60239"
+  },
+  "parts": [
+    {
+      "id": "p001",
+      "part": "28324",
+      "color": 15,
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "rootAt": [
+        0,
+        0,
+        0
+      ],
+      "snot": 0,
+      "step": 1
+    },
+    {
+      "id": "p002",
+      "part": "50745",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        -5,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 6,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 14
+    },
+    {
+      "id": "p003",
+      "part": "50745",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        -5,
+        4
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 10,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 14
+    },
+    {
+      "id": "p004",
+      "part": "50745",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        -5,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 54,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 14
+    },
+    {
+      "id": "p005",
+      "part": "50745",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        -5,
+        4
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 58,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 14
+    },
+    {
+      "id": "p006",
+      "part": "11208",
+      "color": 71,
+      "at": [
+        1,
+        1,
+        0
+      ],
+      "rootAt": [
+        1,
+        1,
+        0
+      ],
+      "snot": 0,
+      "step": 45,
+      "note": "轮辋"
+    },
+    {
+      "id": "p007",
+      "part": "11209",
+      "color": 0,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0.5,
+        0,
+        0
+      ],
+      "snap": {
+        "on": "p006",
+        "stud": 0,
+        "receptor": 0,
+        "up": "+y"
+      },
+      "mount": "p006",
+      "step": 45,
+      "note": "轮胎"
+    },
+    {
+      "id": "p008",
+      "part": "11208",
+      "color": 71,
+      "at": [
+        1,
+        1,
+        5
+      ],
+      "rootAt": [
+        1,
+        1,
+        5
+      ],
+      "snot": 0,
+      "step": 45,
+      "note": "轮辋"
+    },
+    {
+      "id": "p009",
+      "part": "11209",
+      "color": 0,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0.5,
+        0,
+        5
+      ],
+      "snap": {
+        "on": "p008",
+        "stud": 0,
+        "receptor": 0,
+        "up": "+y"
+      },
+      "mount": "p008",
+      "step": 45,
+      "note": "轮胎"
+    },
+    {
+      "id": "p010",
+      "part": "11208",
+      "color": 71,
+      "at": [
+        10,
+        1,
+        0
+      ],
+      "rootAt": [
+        10,
+        1,
+        0
+      ],
+      "snot": 0,
+      "step": 45,
+      "note": "轮辋"
+    },
+    {
+      "id": "p011",
+      "part": "11209",
+      "color": 0,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        9.5,
+        0,
+        0
+      ],
+      "snap": {
+        "on": "p010",
+        "stud": 0,
+        "receptor": 0,
+        "up": "+y"
+      },
+      "mount": "p010",
+      "step": 45,
+      "note": "轮胎"
+    },
+    {
+      "id": "p012",
+      "part": "11208",
+      "color": 71,
+      "at": [
+        10,
+        1,
+        5
+      ],
+      "rootAt": [
+        10,
+        1,
+        5
+      ],
+      "snot": 0,
+      "step": 45,
+      "note": "轮辋"
+    },
+    {
+      "id": "p013",
+      "part": "11209",
+      "color": 0,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        9.5,
+        0,
+        5
+      ],
+      "snap": {
+        "on": "p012",
+        "stud": 0,
+        "receptor": 0,
+        "up": "+y"
+      },
+      "mount": "p012",
+      "step": 45,
+      "note": "轮胎"
+    },
+    {
+      "id": "p014",
+      "part": "73200",
+      "color": 272,
+      "at": [
+        12,
+        0,
+        2
+      ],
+      "rootAt": [
+        12,
+        0,
+        2
+      ],
+      "snot": 0,
+      "step": 46
+    },
+    {
+      "id": "p015",
+      "part": "76382",
+      "color": 212,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        12,
+        6,
+        2
+      ],
+      "snap": {
+        "on": "p014",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 46
+    },
+    {
+      "id": "p016",
+      "part": "3626b",
+      "color": 14,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        13,
+        12,
+        3
+      ],
+      "snap": {
+        "on": "p015",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 46
+    },
+    {
+      "id": "p017",
+      "part": "11303",
+      "color": 272,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        13,
+        15,
+        3
+      ],
+      "snap": {
+        "on": "p016",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 46
+    },
+    {
+      "id": "p018",
+      "part": "4740",
+      "color": 72,
+      "at": [
+        13,
+        0,
+        5
+      ],
+      "rootAt": [
+        13,
+        0,
+        5
+      ],
+      "snot": 0,
+      "step": 46
+    },
+    {
+      "id": "p019",
+      "part": "59900",
+      "color": 25,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        13.5,
+        1,
+        5.5
+      ],
+      "snap": {
+        "on": "p018",
+        "stud": 0,
+        "receptor": 0
+      },
+      "mount": "p018",
+      "step": 46
+    },
+    {
+      "id": "p020",
+      "part": "4740",
+      "color": 72,
+      "at": [
+        15,
+        0,
+        4
+      ],
+      "rootAt": [
+        15,
+        0,
+        4
+      ],
+      "snot": 0,
+      "step": 46
+    },
+    {
+      "id": "p021",
+      "part": "59900",
+      "color": 25,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        15.5,
+        1,
+        4.5
+      ],
+      "snap": {
+        "on": "p020",
+        "stud": 0,
+        "receptor": 0
+      },
+      "mount": "p020",
+      "step": 46
+    },
+    {
+      "id": "p022",
+      "part": "3710",
+      "color": 272,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        4,
+        3,
+        1
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 9,
+        "receptor": 0
+      },
+      "step": 2
+    },
+    {
+      "id": "p023",
+      "part": "3710",
+      "color": 272,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        4,
+        3,
+        4
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 12,
+        "receptor": 0
+      },
+      "step": 2
+    },
+    {
+      "id": "p024",
+      "part": "3021",
+      "color": 4,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        9,
+        3,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 34,
+        "receptor": 0
+      },
+      "step": 3
+    },
+    {
+      "id": "p025",
+      "part": "3023b",
+      "color": 272,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        1,
+        3,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 3,
+        "receptor": 0
+      },
+      "step": 3
+    },
+    {
+      "id": "p026",
+      "part": "52107",
+      "color": 4,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        9,
+        4,
+        2
+      ],
+      "snap": {
+        "on": "p024",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 4
+    },
+    {
+      "id": "p027",
+      "part": "73081",
+      "color": 14,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        4,
+        0.5,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 10,
+        "receptor": 0
+      },
+      "step": 5
+    },
+    {
+      "id": "p028",
+      "part": "2432",
+      "color": 14,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        6,
+        0.5,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 22,
+        "receptor": 0
+      },
+      "step": 5
+    },
+    {
+      "id": "p029",
+      "part": "30414",
+      "color": 71,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        3,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 6
+    },
+    {
+      "id": "p030",
+      "part": "3002",
+      "color": 19,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        1,
+        4,
+        3
+      ],
+      "snap": {
+        "on": "p025",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 6
+    },
+    {
+      "id": "p031",
+      "part": "3666",
+      "color": 1,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        3,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 33,
+        "receptor": 2,
+        "rot": 90
+      },
+      "step": 13
+    },
+    {
+      "id": "p032",
+      "part": "4162",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        4,
+        3
+      ],
+      "snap": {
+        "on": "p024",
+        "stud": 1,
+        "receptor": 4,
+        "rot": 0
+      },
+      "step": 16
+    },
+    {
+      "id": "p033",
+      "part": "15207",
+      "color": 72,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        3,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 7,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 10
+    },
+    {
+      "id": "p034",
+      "part": "15207",
+      "color": 72,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        1.5,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 8,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 10
+    },
+    {
+      "id": "p035",
+      "part": "3010",
+      "color": 1,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        4,
+        4,
+        1
+      ],
+      "snap": {
+        "on": "p022",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 11
+    },
+    {
+      "id": "p036",
+      "part": "3010",
+      "color": 1,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        4,
+        4,
+        4
+      ],
+      "snap": {
+        "on": "p023",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 12
+    },
+    {
+      "id": "p037",
+      "part": "22889",
+      "color": 1,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        7,
+        0
+      ],
+      "snap": {
+        "on": "p035",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 13
+    },
+    {
+      "id": "p038",
+      "part": "3666",
+      "color": 1,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        8,
+        1
+      ],
+      "snap": {
+        "on": "p037",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 13
+    },
+    {
+      "id": "p039",
+      "part": "22889",
+      "color": 1,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        7,
+        4
+      ],
+      "snap": {
+        "on": "p036",
+        "stud": 0,
+        "receptor": 1,
+        "rot": 90
+      },
+      "step": 13
+    },
+    {
+      "id": "p040",
+      "part": "32059",
+      "color": 1,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        10,
+        0
+      ],
+      "snap": {
+        "on": "p037",
+        "stud": 0,
+        "receptor": 1,
+        "rot": 0
+      },
+      "step": 22
+    },
+    {
+      "id": "p041",
+      "part": "57783",
+      "color": 43,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        11,
+        -1
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 4,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 25
+    },
+    {
+      "id": "p042",
+      "part": "98281",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        11,
+        0
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 14,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 43
+    },
+    {
+      "id": "p043",
+      "part": "4162",
+      "color": 15,
+      "rot": 180,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        7,
+        2
+      ],
+      "snap": {
+        "on": "p026",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 180
+      },
+      "step": 30
+    },
+    {
+      "id": "p044",
+      "part": "93606",
+      "color": 15,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        1.5,
+        5
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 13,
+        "receptor": 1,
+        "rot": 270
+      },
+      "step": 30
+    },
+    {
+      "id": "p045",
+      "part": "27263",
+      "color": 15,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        3,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 270
+      },
+      "step": 41
+    },
+    {
+      "id": "p046",
+      "part": "27263",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        10,
+        7,
+        2
+      ],
+      "snap": {
+        "on": "p026",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 41
+    },
+    {
+      "id": "p047",
+      "part": "3021",
+      "color": 4,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        6,
+        2
+      ],
+      "snap": {
+        "on": "p029",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 270
+      },
+      "step": 9
+    },
+    {
+      "id": "p048",
+      "part": "54200",
+      "color": 47,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        0.5,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 11,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5
+    },
+    {
+      "id": "p049",
+      "part": "54200",
+      "color": 47,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        0.5,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 17,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5
+    },
+    {
+      "id": "p050",
+      "part": "35480",
+      "color": 71,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        6,
+        0.5,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 23,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 15
+    },
+    {
+      "id": "p051",
+      "part": "3020",
+      "color": 71,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        7,
+        3
+      ],
+      "snap": {
+        "on": "p030",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 270
+      },
+      "step": 34
+    },
+    {
+      "id": "p052",
+      "part": "3710",
+      "color": 272,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        0,
+        1
+      ],
+      "snap": {
+        "on": "p002",
+        "stud": 1,
+        "receptor": 1,
+        "rot": 0
+      },
+      "step": 32
+    },
+    {
+      "id": "p053",
+      "part": "3023b",
+      "color": 272,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        0,
+        4
+      ],
+      "snap": {
+        "on": "p003",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 32
+    },
+    {
+      "id": "p054",
+      "part": "3023b",
+      "color": 272,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        9,
+        0,
+        1
+      ],
+      "snap": {
+        "on": "p004",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 35
+    },
+    {
+      "id": "p055",
+      "part": "98138",
+      "color": 33,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        9,
+        0,
+        4
+      ],
+      "snap": {
+        "on": "p005",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 35
+    },
+    {
+      "id": "p056",
+      "part": "98138",
+      "color": 33,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        10,
+        0,
+        4
+      ],
+      "snap": {
+        "on": "p005",
+        "stud": 2,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 35
+    },
+    {
+      "id": "p057",
+      "part": "2412a",
+      "color": 0,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        11,
+        4,
+        1
+      ],
+      "snap": {
+        "on": "p024",
+        "stud": 4,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 36
+    },
+    {
+      "id": "p058",
+      "part": "93273",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        7,
+        3
+      ],
+      "snap": {
+        "on": "p030",
+        "stud": 2,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 36
+    },
+    {
+      "id": "p059",
+      "part": "60477",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        7,
+        3
+      ],
+      "snap": {
+        "on": "p030",
+        "stud": 4,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p060",
+      "part": "60477",
+      "color": 15,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        4,
+        4
+      ],
+      "snap": {
+        "on": "p031",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 33
+    },
+    {
+      "id": "p061",
+      "part": "2431",
+      "color": 33,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        4,
+        -1
+      ],
+      "snap": {
+        "on": "p031",
+        "stud": 3,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 44
+    },
+    {
+      "id": "p062",
+      "part": "85984",
+      "color": 72,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        6,
+        1
+      ],
+      "snap": {
+        "on": "p029",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 37
+    },
+    {
+      "id": "p063",
+      "part": "3023b",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        6,
+        2
+      ],
+      "snap": {
+        "on": "p029",
+        "stud": 2,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 17
+    },
+    {
+      "id": "p064",
+      "part": "3023b",
+      "color": 15,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        4,
+        5
+      ],
+      "snap": {
+        "on": "p031",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 270
+      },
+      "step": 17
+    },
+    {
+      "id": "p065",
+      "part": "3023b",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        8,
+        0
+      ],
+      "snap": {
+        "on": "p037",
+        "stud": 7,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 24
+    },
+    {
+      "id": "p066",
+      "part": "3023b",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        7,
+        8,
+        0
+      ],
+      "snap": {
+        "on": "p037",
+        "stud": 9,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 24
+    },
+    {
+      "id": "p067",
+      "part": "3023b",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        9,
+        1
+      ],
+      "snap": {
+        "on": "p038",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 31
+    },
+    {
+      "id": "p068",
+      "part": "3023b",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        7,
+        9,
+        1
+      ],
+      "snap": {
+        "on": "p038",
+        "stud": 2,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 31
+    },
+    {
+      "id": "p069",
+      "part": "54200",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        10,
+        9,
+        1
+      ],
+      "snap": {
+        "on": "p038",
+        "stud": 5,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p070",
+      "part": "54200",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        10,
+        5
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p071",
+      "part": "85984",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        8,
+        5
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 19
+    },
+    {
+      "id": "p072",
+      "part": "85984",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        7,
+        8,
+        5
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 3,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 19
+    },
+    {
+      "id": "p073",
+      "part": "2431",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        9,
+        10,
+        5
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 5,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 20
+    },
+    {
+      "id": "p074",
+      "part": "87609",
+      "color": 15,
+      "rot": 180,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        11,
+        -1
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 180
+      },
+      "step": 22
+    },
+    {
+      "id": "p075",
+      "part": "87609",
+      "color": 15,
+      "rot": 180,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        11,
+        1
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 1,
+        "receptor": 1,
+        "rot": 180
+      },
+      "step": 30
+    },
+    {
+      "id": "p076",
+      "part": "29119",
+      "color": 15,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        10,
+        4
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 6,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 42
+    },
+    {
+      "id": "p077",
+      "part": "29119",
+      "color": 15,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        8,
+        4
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 7,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 42
+    },
+    {
+      "id": "p078",
+      "part": "29120",
+      "color": 15,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        7,
+        8,
+        4
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 9,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 42
+    },
+    {
+      "id": "p079",
+      "part": "29120",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        11,
+        0
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 2,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 42
+    },
+    {
+      "id": "p080",
+      "part": "43722a",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        6,
+        11,
+        3
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 9,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 24
+    },
+    {
+      "id": "p081",
+      "part": "43723a",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        15,
+        2
+      ],
+      "snap": {
+        "on": "p041",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 25
+    },
+    {
+      "id": "p082",
+      "part": "2420",
+      "color": 1,
+      "rot": 180,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        9,
+        1
+      ],
+      "snap": {
+        "on": "p038",
+        "stud": 4,
+        "receptor": 1,
+        "rot": 180
+      },
+      "step": 24
+    },
+    {
+      "id": "p083",
+      "part": "2420",
+      "color": 1,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        8,
+        10,
+        4
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 11,
+        "receptor": 2,
+        "rot": 0
+      },
+      "step": 24
+    },
+    {
+      "id": "p084",
+      "part": "34103",
+      "color": 0,
+      "rot": 180,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        11,
+        3
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 5,
+        "receptor": 0,
+        "rot": 180
+      },
+      "step": 23
+    },
+    {
+      "id": "p085",
+      "part": "34103",
+      "color": 0,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        15,
+        -1
+      ],
+      "snap": {
+        "on": "p041",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 25
+    },
+    {
+      "id": "p086",
+      "part": "47456",
+      "color": 0,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        9,
+        13,
+        2
+      ],
+      "snap": {
+        "on": "p042",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 43
+    },
+    {
+      "id": "p087",
+      "part": "3069b",
+      "color": 43,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        7,
+        1
+      ],
+      "snap": {
+        "on": "p047",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 25
+    },
+    {
+      "id": "p088",
+      "part": "18892",
+      "color": 0,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        8,
+        3
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 270
+      },
+      "step": 34
+    },
+    {
+      "id": "p089",
+      "part": "18892",
+      "color": 0,
+      "rot": 270,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        13,
+        -1
+      ],
+      "snap": {
+        "on": "p074",
+        "stud": 3,
+        "receptor": 0,
+        "rot": 270
+      },
+      "step": 22
+    },
+    {
+      "id": "p090",
+      "part": "54200",
+      "color": 36,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        7,
+        2
+      ],
+      "snap": {
+        "on": "p047",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 18
+    },
+    {
+      "id": "p091",
+      "part": "54200",
+      "color": 36,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        7,
+        3
+      ],
+      "snap": {
+        "on": "p047",
+        "stud": 3,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 18
+    }
+  ]
+}

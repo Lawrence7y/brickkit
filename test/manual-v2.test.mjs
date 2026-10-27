@@ -10,8 +10,15 @@ import {
   auditTotalAssembly
 } from '../src/manual-v2/workflow.js';
 
-test('extractManualObservations：从说明书事实独立提取 60239 关键步骤', async () => {
-  const result = await extractManualObservations('assets/instructions-lego/60239_book1.pdf', {
+// 官方说明书 PDF 版权归 LEGO Group，只在本机作参考、不进版本库（.gitignore 的
+// assets/instructions-lego/）。自己没有这份 PDF 时无法提取，应显式跳过。
+const MANUAL_PDF = 'assets/instructions-lego/60239_book1.pdf';
+const MANUAL_MISSING = fs.existsSync(MANUAL_PDF)
+  ? false
+  : `缺少官方说明书 ${MANUAL_PDF}（版权素材，需自行从 LEGO 官网下载后放到该路径）`;
+
+test('extractManualObservations：从说明书事实独立提取 60239 关键步骤', { skip: MANUAL_MISSING }, async () => {
+  const result = await extractManualObservations(MANUAL_PDF, {
     bomFile: 'examples/60239.bom.json'
   });
 

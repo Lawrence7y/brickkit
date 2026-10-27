@@ -24,7 +24,8 @@ const MIRROR_ROOTS = [
   path.join(ROOT, 'catalog', 'ldraw-full'),
   path.join(ROOT, 'catalog', 'ldraw'),
 ];
-const MODEL_PATH = path.join(ROOT, 'out/prd-v2/run-20261026-c/C/integration/60239/60239.fixed.brick.json');
+// 模型已提升进版本库（examples/），不再依赖本地的 out/ 产物
+const MODEL_PATH = path.join(ROOT, 'examples/60239.fixed.brick.json');
 const MAX_DEPTH = 12;
 
 const { refCandidates, OFFICIAL_ALIASES } = await import(pathToFileURL(path.join(ROOT, 'src/ldraw/ldraw.js')).href);

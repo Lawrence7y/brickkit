@@ -23,7 +23,7 @@ const cat = {
   },
   colors: JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/colors.json'), 'utf8')).colors,
 };
-const FIXED_PATH = path.join(ROOT, 'out/prd-v2/run-20261026-c/C/integration/60239/60239.fixed.brick.json');
+const FIXED_PATH = path.join(ROOT, 'examples/60239.fixed.brick.json');
 const clone = (m) => JSON.parse(JSON.stringify(m));
 const PLATE_LDU = 8, STUD_LDU = 20;
 
@@ -51,7 +51,7 @@ test('AS-05 ① 60239.fixed 连续 100 次 recompute 零漂移（模型 JSON 与
   fs.mkdirSync(ENGINE_OUT, { recursive: true });
   fs.writeFileSync(path.join(ENGINE_OUT, 'as05-recompute-100x.json'), JSON.stringify({
     gate: 'AS-05', item: '100x-recompute-drift',
-    model: 'out/prd-v2/run-20261026-c/C/integration/60239/60239.fixed.brick.json',
+    model: 'examples/60239.fixed.brick.json',
     parts: 91, snapDeps: original.parts.filter((p) => p.snap && p.snap.on).length,
     iterations: 100, allJsonByteIdentical: true, allStateHashIdentical: true,
     stateHashFirst: baselineHash, stateHashes: hashes,
