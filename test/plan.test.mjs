@@ -14,7 +14,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const MODEL = path.join(ROOT, 'examples/60239.brick.json');
 const BOM = path.join(ROOT, 'examples/60239.bom.json');
-const MANIFEST = path.join(ROOT, 'out/manual-pages/60239/manifest.json');
+// 页面清单是 60239 页面映射的真实输入（36 页），随仓库分发
+const MANIFEST = path.join(ROOT, 'examples/60239/manual-pages.manifest.json');
 const CLI = path.join(ROOT, 'cli/brickkit.mjs');
 
 const model = readJSON(MODEL);
@@ -307,7 +308,7 @@ test('CLI：extract-plan 写盘 + check-plan 退出码 0（真实 60239），坏
   const planFile = path.join(dir, '60239.plan.json');
   const run = (...argv) => spawnSync(process.execPath, [CLI, ...argv], { cwd: ROOT, encoding: 'utf8' });
 
-  const ex = run('extract-plan', '--from-model', 'examples/60239.brick.json', '--from-pages', 'out/manual-pages/60239/manifest.json', '--bom', 'examples/60239.bom.json', '-o', planFile);
+  const ex = run('extract-plan', '--from-model', 'examples/60239.brick.json', '--from-pages', 'examples/60239/manual-pages.manifest.json', '--bom', 'examples/60239.bom.json', '-o', planFile);
   assert.equal(ex.status, 0, ex.stderr || ex.stdout);
   const res = JSON.parse(ex.stdout.trim().split('\n').pop());
   assert.equal(res.ok, true);

@@ -21,7 +21,7 @@ import { inspectFromModel } from '../src/core/actions-v1/state.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engine');
-const FIXED_PATH = path.join(ROOT, 'out/prd-v2/run-20261026-c/C/integration/60239/60239.fixed.brick.json');
+const FIXED_PATH = path.join(ROOT, 'examples/60239.fixed.brick.json');
 const cat = {
   parts: {
     ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
@@ -71,7 +71,7 @@ function writeSummary() {
   fs.mkdirSync(ENGINE_OUT, { recursive: true });
   fs.writeFileSync(path.join(ENGINE_OUT, 'en05-connection-fixtures.json'), JSON.stringify({
     gate: 'EN-05', item: '60239-required-connection-fixtures',
-    model: 'out/prd-v2/run-20261026-c/C/integration/60239/60239.fixed.brick.json',
+    model: 'examples/60239.fixed.brick.json',
     requiredConnections: PAIRS.length,
     snapRecorded: PAIRS.filter((p) => p.snap).length,
     extraPhysical: PAIRS.filter((p) => !p.snap).length,

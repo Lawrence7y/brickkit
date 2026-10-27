@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0",
+  "setId": "60239-1",
+  "frozenAt": "2026-10-26T19:28:30.083Z",
+  "criteria": {
+    "strictZeroErrors": true,
+    "strictZeroWarnings": true,
+    "totalPartsAuthoritative": 91,
+    "partAllocation": {
+      "carBodyParts": 83,
+      "accessoriesParts": 8,
+      "totalParts": 91
+    },
+    "reachability": {
+      "requireCarBodyReachableToRoot": true,
+      "rootPartId": "p001"
+    },
+    "visualDiff": {
+      "minProductScore": 0.6,
+      "minStepScore": 0.7
+    },
+    "budget": {
+      "maxRetriesPerStep": 3,
+      "maxRepairRounds": 2
+    }
+  }
+}

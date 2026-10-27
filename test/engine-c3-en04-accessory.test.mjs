@@ -17,7 +17,8 @@ import { inspectFromModel } from '../src/core/actions-v1/state.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engine');
-const DIR = path.join(ROOT, 'out/prd-v2/run-20261026-c/C/integration/60239');
+// 验收标准与构建计划是固定契约产物，放 examples/60239/ 随仓库分发
+const DIR = path.join(ROOT, 'examples/60239');
 const cat = {
   parts: {
     ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
@@ -27,7 +28,7 @@ const cat = {
 };
 const acceptance = JSON.parse(fs.readFileSync(path.join(DIR, '60239.acceptance.json'), 'utf8'));
 const plan = JSON.parse(fs.readFileSync(path.join(DIR, '60239.build.plan.json'), 'utf8'));
-const fixed = JSON.parse(fs.readFileSync(path.join(DIR, '60239.fixed.brick.json'), 'utf8'));
+const fixed = JSON.parse(fs.readFileSync(path.join(ROOT, 'examples/60239.fixed.brick.json'), 'utf8'));
 
 /** 冻结计划里的 accessory 任务包（task-minifig + task-cones）→ (partId,colorId) 多重集合 */
 function accessoryTokens() {

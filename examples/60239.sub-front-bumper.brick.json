@@ -1,0 +1,266 @@
+{
+  "format": "brickbuild",
+  "version": "0.2",
+  "meta": {
+    "name": "sub-front-bumper",
+    "submodel": true
+  },
+  "parts": [
+    {
+      "id": "p001",
+      "part": "3023b",
+      "color": 15,
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "rootAt": [
+        0,
+        0,
+        0
+      ],
+      "rot": 0,
+      "snot": 0,
+      "step": 31
+    },
+    {
+      "id": "p002",
+      "part": "3023b",
+      "color": 15,
+      "at": [
+        0,
+        0,
+        3
+      ],
+      "rootAt": [
+        0,
+        0,
+        3
+      ],
+      "rot": 0,
+      "snot": 0,
+      "step": 31
+    },
+    {
+      "id": "p003",
+      "part": "3710",
+      "color": 272,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 0,
+        "receptor": 3,
+        "rot": 90
+      },
+      "step": 32
+    },
+    {
+      "id": "p004",
+      "part": "54200",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        2,
+        0
+      ],
+      "snap": {
+        "on": "p003",
+        "stud": 3,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p005",
+      "part": "54200",
+      "color": 47,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        2,
+        1
+      ],
+      "snap": {
+        "on": "p003",
+        "stud": 2,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p006",
+      "part": "54200",
+      "color": 47,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        2,
+        2
+      ],
+      "snap": {
+        "on": "p003",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p007",
+      "part": "54200",
+      "color": 15,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        2,
+        3
+      ],
+      "snap": {
+        "on": "p003",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 33
+    },
+    {
+      "id": "p008",
+      "part": "3020",
+      "color": 71,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        1,
+        3
+      ],
+      "snap": {
+        "on": "p002",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 34
+    },
+    {
+      "id": "p009",
+      "part": "3023b",
+      "color": 272,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 35
+    },
+    {
+      "id": "p010",
+      "part": "98138",
+      "color": 33,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        2,
+        0
+      ],
+      "snap": {
+        "on": "p009",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 35
+    },
+    {
+      "id": "p011",
+      "part": "98138",
+      "color": 33,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        2,
+        0
+      ],
+      "snap": {
+        "on": "p009",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 35
+    },
+    {
+      "id": "p012",
+      "part": "85984",
+      "color": 72,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        2,
+        3
+      ],
+      "snap": {
+        "on": "p008",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 36
+    },
+    {
+      "id": "p013",
+      "part": "93273",
+      "color": 15,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        2,
+        3
+      ],
+      "snap": {
+        "on": "p008",
+        "stud": 4,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 36
+    }
+  ]
+}

@@ -12,7 +12,14 @@ import { runSt04 } from '../tools/perf-st04-closure.mjs';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engine');
 
-test('ST-04 60239 依赖闭包：缺失 0、打包无多余、打包即完整（烘焙逐字节一致）、每文件只读一次', async () => {
+// ST-04 要对比「依赖闭包」与「整库镜像」的文件数比例，后者是 catalog/ldraw-full/
+// （约 3.7 万文件，按设计不入库）。没有整库镜像时无法算这个比例，显式跳过。
+const LDR_FULL_MISSING = !fs.existsSync(path.join(ROOT, 'catalog', 'ldraw-full'))
+  ? '缺少全量 LDraw 镜像 catalog/ldraw-full/（不入库）：'
+    + '先运行 node cli/brickkit.mjs catalog-fetch --full --mirror <complete.zip 解压目录>'
+  : false;
+
+test('ST-04 60239 依赖闭包：缺失 0、打包无多余、打包即完整（烘焙逐字节一致）、每文件只读一次', { skip: LDR_FULL_MISSING }, async () => {
   const report = await runSt04();
   // 缺失引用必须为 0（闭包内每个 type-1 引用都能解析）
   assert.deepEqual(report.missingRefs, [], `缺失引用：${report.missingRefs.join(', ')}`);

@@ -29,7 +29,7 @@ const CORE = { partConnectors, partsConnected, snapPart };
 
 const MODEL_60239 = path.join(ROOT, 'examples/60239.brick.json');
 const CASE_STACK_01 = path.join(ROOT, 'out/prd-v2/run-20261026-v4/B/real-assembly-curriculum/cases/case_stack_01');
-const SUB_FRONT = path.join(ROOT, 'out/60239/sub-front-bumper.brick.json');
+const SUB_FRONT = path.join(ROOT, 'examples/60239.sub-front-bumper.brick.json');
 const GEN = path.join(ROOT, 'tools/gen-training-steps.mjs');
 const REWARD = path.join(ROOT, 'tools/brickvlm-reward.mjs');
 
