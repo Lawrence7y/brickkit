@@ -4,7 +4,8 @@
   "meta": {
     "name": "LEGO 60239 警察巡逻车",
     "front": "-x",
-    "flip": true
+    "flip": true,
+    "note": "未修复的原始转录（34 个连通分量、5 errors），保留作为对照；可装配版本见 60239.fixed.brick.json"
   },
   "parts": [
     {
