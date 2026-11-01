@@ -1,0 +1,3928 @@
+{
+ "generatedAt": "2026-10-31T13:17:50.266Z",
+ "scope": "只读盘点：未修改 catalog/parts.json、parts-ldraw.json、别名映射或网格包",
+ "sources": {
+  "curated": {
+   "file": "catalog/parts.json",
+   "entries": 167
+  },
+  "extracted": {
+   "file": "catalog/parts-ldraw.json",
+   "entries": 4585,
+   "generatedAt": "2026-10-26T05:53:35.256Z",
+   "stats": {
+    "scanned": 24856,
+    "kept": 4585,
+    "keptByMode": {
+     "withTopStuds": 498,
+     "noTopStuds": 2424,
+     "partialStuds": 1248,
+     "centerStuds": 415,
+     "subGridClamped": 180,
+     "needsManual": 35,
+     "antiMeasured": 383,
+     "antiAssumed": 494,
+     "decomposed": 622,
+     "interiorStuds": 18546,
+     "boxCoverageRejected": 2176,
+     "wheelRim": 77,
+     "wheelTyre": 85,
+     "minifig": 4
+    },
+    "skip": {
+     "moved": 1161,
+     "sticker": 4707,
+     "obsolete": 899,
+     "nonSystem": 1277,
+     "patterned": 10737,
+     "minifig": 1406,
+     "flatSheet": 79,
+     "huge": 5,
+     "empty": 0
+    }
+   }
+  },
+  "merged": {
+   "entries": 4605,
+   "formula": "167 + 4585 - 147 重叠"
+  },
+  "ldraw": {
+   "manifestParts": 165,
+   "trackedDatFiles": 184,
+   "fullDatFiles": 24856,
+   "colors": 36
+  }
+ },
+ "identity": {
+  "aliasMapEntries": 3,
+  "aliases": [
+   {
+    "id": "4589b",
+    "officialId": "4589",
+    "targetInCatalog": true,
+    "alias": {
+     "kind": "cone",
+     "size": [
+      1,
+      1
+     ],
+     "h": 3,
+     "studs": 1,
+     "receptors": 1
+    },
+    "target": {
+     "kind": "cone",
+     "size": [
+      1,
+      1
+     ],
+     "h": 3,
+     "studs": 1,
+     "receptors": 3
+    },
+    "connectorDelta": {
+     "studs": 0,
+     "receptors": 2
+    },
+    "geometryDisagreement": false
+   },
+   {
+    "id": "553b",
+    "officialId": "30367a",
+    "targetInCatalog": true,
+    "alias": {
+     "kind": "dome",
+     "size": [
+      2,
+      2
+     ],
+     "h": 3,
+     "studs": 0,
+     "receptors": 5
+    },
+    "target": {
+     "kind": "dome",
+     "size": [
+      2,
+      2
+     ],
+     "h": 3,
+     "studs": 1,
+     "receptors": 5
+    },
+    "connectorDelta": {
+     "studs": 1,
+     "receptors": 0
+    },
+    "geometryDisagreement": false
+   },
+   {
+    "id": "4085d",
+    "officialId": "4085b",
+    "targetInCatalog": true,
+    "alias": {
+     "kind": "clip",
+     "size": [
+      1,
+      1
+     ],
+     "h": 1,
+     "studs": 1,
+     "receptors": 2
+    },
+    "target": {
+     "kind": "plate",
+     "size": [
+      1,
+      1
+     ],
+     "h": 1,
+     "studs": 1,
+     "receptors": 2
+    },
+    "connectorDelta": {
+     "studs": 0,
+     "receptors": 0
+    },
+    "geometryDisagreement": false
+   }
+  ],
+  "redirectStats": {
+   "scanned": 1161,
+   "resolvedOneLevel": 1161,
+   "resolvedTargetShipped": 421,
+   "resolvedTargetFiltered": 740,
+   "twoLevel": 0,
+   "aliasEntries": 16,
+   "equalAliasEntries": 493
+  },
+  "crossCatalogDuplicates": [
+   {
+    "curatedId": "3023",
+    "name": "Plate 1 x 2",
+    "extIds": [
+     "3023b"
+    ]
+   },
+   {
+    "curatedId": "50745",
+    "name": "Car Mudguard  4 x  2.5 x  2",
+    "extIds": [
+     "3387"
+    ]
+   },
+   {
+    "curatedId": "4589b",
+    "name": "Cone 1 x 1",
+    "extIds": [
+     "4589"
+    ]
+   }
+  ],
+  "duplicateIdentityClusters": [
+   {
+    "key": "windscreen 3 x 4 x 1.333|4x3|4|panel",
+    "ids": [
+     "2437",
+     "57783"
+    ]
+   },
+   {
+    "key": "brick 4 x 4 corner round|4x4|3|brick",
+    "ids": [
+     "2577",
+     "48092"
+    ]
+   },
+   {
+    "key": "plate 8 x 16 x 0.667 with cutouts and recessed studs|16x8|2|plate",
+    "ids": [
+     "2629",
+     "71772"
+    ]
+   },
+   {
+    "key": "plate 1 x 2|2x1|1|plate",
+    "ids": [
+     "3023",
+     "3023b"
+    ]
+   },
+   {
+    "key": "cone 1 x 1|1x1|3|cone",
+    "ids": [
+     "4589",
+     "4589b"
+    ]
+   },
+   {
+    "key": "wedge 6 x 8 x 2 triple inverted|6x8|6|wedge",
+    "ids": [
+     "41761",
+     "42021"
+    ]
+   },
+   {
+    "key": "slope brick curved 6 x 8 x 2 double|6x8|6|ridge",
+    "ids": [
+     "45411",
+     "56204"
+    ]
+   }
+  ],
+  "identityConflictsCuratedVsExt": [
+   {
+    "id": "2357",
+    "name": "Brick 2 x 2 Corner",
+    "diffs": [
+     "kind corner vs brick"
+    ]
+   },
+   {
+    "id": "2420",
+    "name": "Plate 2 x 2 Corner",
+    "diffs": [
+     "kind corner vs plate"
+    ]
+   },
+   {
+    "id": "2444",
+    "name": "Plate 2 x 2 with Pin Hole",
+    "diffs": [
+     "h 1 vs 2",
+     "kind pinplate vs plate",
+     "category technic vs plate"
+    ]
+   },
+   {
+    "id": "2540",
+    "name": "Plate 1 x 2 with Handle on Side (Free Ends)",
+    "diffs": [
+     "kind barplate vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "3176",
+    "name": "Plate 3 x 2 with Hole",
+    "diffs": [
+     "size 2,2 vs 2,3",
+     "kind pinplate vs plate",
+     "category technic vs plate"
+    ]
+   },
+   {
+    "id": "3941",
+    "name": "Brick Round 2 x 2",
+    "diffs": [
+     "kind round vs brick",
+     "category round vs brick"
+    ]
+   },
+   {
+    "id": "4070",
+    "name": "Brick 1 x 1 with Headlight",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "4150",
+    "name": "Tile Round 2 x 2",
+    "diffs": [
+     "kind round vs tile"
+    ]
+   },
+   {
+    "id": "4274",
+    "name": "Technic Pin 1/2 with Stud",
+    "diffs": [
+     "h 1 vs 2",
+     "kind round vs technic"
+    ]
+   },
+   {
+    "id": "4733",
+    "name": "Brick 1 x 1 with Studs on 4 Sides (Travis Brick)",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "4740",
+    "name": "Dish 2 x 2 Inverted",
+    "diffs": [
+     "kind dish vs jumper"
+    ]
+   },
+   {
+    "id": "6091",
+    "name": "Brick Curved Top 1 x 2 x 1 1/3",
+    "diffs": [
+     "kind cslope vs brick",
+     "category cslope vs brick"
+    ]
+   },
+   {
+    "id": "11211",
+    "name": "Brick 1 x 2 with Two Studs on One Side",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "11476",
+    "name": "Plate 1 x 2 with Horizontal Clip on Side",
+    "diffs": [
+     "kind clip vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "11477",
+    "name": "Slope Curved 2 x 1 No Studs",
+    "diffs": [
+     "kind cslope vs cheese",
+     "category cslope vs slope"
+    ]
+   },
+   {
+    "id": "14417",
+    "name": "Plate 1 x 2 with Towball on Side",
+    "diffs": [
+     "size 2,1 vs 2,2",
+     "h 1 vs 2",
+     "kind barplate vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "14418",
+    "name": "Plate 1 x 2 with Towball Socket",
+    "diffs": [
+     "size 2,1 vs 3,1",
+     "kind clip vs hinge"
+    ]
+   },
+   {
+    "id": "14719",
+    "name": "Tile 2 x 2 Corner",
+    "diffs": [
+     "kind corner vs tile"
+    ]
+   },
+   {
+    "id": "15068",
+    "name": "Slope Curved 2 x 2 No Studs",
+    "diffs": [
+     "kind cslope vs cheese",
+     "category cslope vs slope"
+    ]
+   },
+   {
+    "id": "15712",
+    "name": "Plate 1 x 1 with Top Clip",
+    "diffs": [
+     "h 1 vs 2",
+     "kind clip vs tile",
+     "category hinge vs tile"
+    ]
+   },
+   {
+    "id": "18674",
+    "name": "Plate Round 2 x 2 with 1 Center Stud",
+    "diffs": [
+     "kind round vs jumper",
+     "category round vs plate"
+    ]
+   },
+   {
+    "id": "18677",
+    "name": "Plate 1 x 2 with Pin Hole Underneath",
+    "diffs": [
+     "h 1 vs 2",
+     "category technic vs plate"
+    ]
+   },
+   {
+    "id": "22885",
+    "name": "Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "24299",
+    "name": "Wedge Plate 2 x 2 Left",
+    "diffs": [
+     "kind wedge vs other",
+     "category wedge vs other"
+    ]
+   },
+   {
+    "id": "24307",
+    "name": "Wedge Plate 2 x 2 Right",
+    "diffs": [
+     "kind wedge vs other",
+     "category wedge vs other"
+    ]
+   },
+   {
+    "id": "26047",
+    "name": "Plate Round 1 x 1 with Handle",
+    "diffs": [
+     "kind barplate vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "26604",
+    "name": "Brick 1 x 1 with Studs on 2 Adjacent Sides",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "30237",
+    "name": "Brick 1 x 2 with Vertical Clip",
+    "diffs": [
+     "kind clip vs brick",
+     "category hinge vs brick"
+    ]
+   },
+   {
+    "id": "30374",
+    "name": "Bar 4L (Lightsaber Blade)",
+    "diffs": [
+     "h 12 vs 10"
+    ]
+   },
+   {
+    "id": "30414",
+    "name": "Brick 1 x 4 with 4 Studs on 1 Side",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "47457",
+    "name": "Slope Brick Curved 2 x 2 x 2/3 Triple with Two Top Studs",
+    "diffs": [
+     "kind cslope vs slope",
+     "category cslope vs slope"
+    ]
+   },
+   {
+    "id": "47905",
+    "name": "Brick 1 x 1 with Studs on 2 Opposite Sides",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "48336",
+    "name": "Plate 1 x 2 with Handle on Side",
+    "diffs": [
+     "kind barplate vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "54383",
+    "name": "Wedge Plate 6 x 3 Right",
+    "diffs": [
+     "kind wedge vs other",
+     "category wedge vs other"
+    ]
+   },
+   {
+    "id": "54384",
+    "name": "Wedge Plate 6 x 3 Left",
+    "diffs": [
+     "kind wedge vs other",
+     "category wedge vs other"
+    ]
+   },
+   {
+    "id": "60478",
+    "name": "Plate 1 x 2 with Handle on End",
+    "diffs": [
+     "size 1,2 vs 2,1",
+     "kind barplate vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "60623",
+    "name": "Door 1 x 4 x 6 with 4 Panes and Stud Handle",
+    "diffs": [
+     "h 18 vs 17"
+    ]
+   },
+   {
+    "id": "61678",
+    "name": "Slope Brick Curved 4 x 1",
+    "diffs": [
+     "kind cslope vs slope",
+     "category cslope vs slope"
+    ]
+   },
+   {
+    "id": "63868",
+    "name": "Plate 1 x 2 with Clip on End",
+    "diffs": [
+     "size 1,2 vs 2,1",
+     "kind clip vs plate",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "85861",
+    "name": "Plate Round 1 x 1 with Open Stud",
+    "diffs": [
+     "kind round vs plate",
+     "category round vs plate"
+    ]
+   },
+   {
+    "id": "87081",
+    "name": "Brick Round 4 x 4",
+    "diffs": [
+     "kind round vs brick",
+     "category round vs brick"
+    ]
+   },
+   {
+    "id": "87087",
+    "name": "Brick 1 x 1 with Stud on 1 Side",
+    "diffs": [
+     "kind snot vs brick",
+     "category snot vs brick"
+    ]
+   },
+   {
+    "id": "87994",
+    "name": "Bar 3L",
+    "diffs": [
+     "h 9 vs 8"
+    ]
+   },
+   {
+    "id": "93273",
+    "name": "Slope Curved 4 x 1 Double No Studs",
+    "diffs": [
+     "kind cslope vs ridge",
+     "category cslope vs slope"
+    ]
+   },
+   {
+    "id": "98138",
+    "name": "Tile Round 1 x 1",
+    "diffs": [
+     "kind round vs tile"
+    ]
+   },
+   {
+    "id": "99206",
+    "name": "Plate 2 x 2 x 2/3 with Two Studs On Side and Two Raised with Closed Understud",
+    "diffs": [
+     "kind snot vs plate",
+     "category snot vs plate"
+    ]
+   },
+   {
+    "id": "3062b",
+    "name": "Brick Round 1 x 1 Open Stud",
+    "diffs": [
+     "kind round vs brick",
+     "category round vs brick"
+    ]
+   },
+   {
+    "id": "3839b",
+    "name": "Plate 1 x 2 with Handles on Ends",
+    "diffs": [
+     "size 1,2 vs 3,2",
+     "kind barplate vs jumper",
+     "category hinge vs plate"
+    ]
+   },
+   {
+    "id": "4081b",
+    "name": "Plate 1 x 1 with Light Ring",
+    "diffs": [
+     "size 1,1 vs 1,2",
+     "h 1 vs 2",
+     "kind clip vs plate",
+     "category hinge vs plate"
+    ]
+   }
+  ],
+  "variantFamilies": [
+   {
+    "base": "10",
+    "present": [
+     "10a",
+     "10b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "10a",
+     "10b"
+    ]
+   },
+   {
+    "base": "18978",
+    "present": [
+     "18978a",
+     "18978b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "18978a",
+     "18978b"
+    ]
+   },
+   {
+    "base": "18979",
+    "present": [
+     "18979a",
+     "18979b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "18979a",
+     "18979b"
+    ]
+   },
+   {
+    "base": "2348",
+    "present": [
+     "2348a",
+     "2348b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2348a",
+     "2348b"
+    ]
+   },
+   {
+    "base": "2349",
+    "present": [
+     "2349a",
+     "2349b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2349a",
+     "2349b"
+    ]
+   },
+   {
+    "base": "2350",
+    "present": [
+     "2350a",
+     "2350b",
+     "2350c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2350a",
+     "2350b",
+     "2350c"
+    ]
+   },
+   {
+    "base": "2362",
+    "present": [
+     "2362a",
+     "2362b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2362a",
+     "2362b"
+    ]
+   },
+   {
+    "base": "2412",
+    "present": [
+     "2412a",
+     "2412b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2412a",
+     "2412b"
+    ]
+   },
+   {
+    "base": "2418",
+    "present": [
+     "2418a",
+     "2418b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2418a",
+     "2418b"
+    ]
+   },
+   {
+    "base": "24308",
+    "present": [
+     "24308a",
+     "24308b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "24308a",
+     "24308b"
+    ]
+   },
+   {
+    "base": "2436",
+    "present": [
+     "2436a",
+     "2436b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2436a",
+     "2436b"
+    ]
+   },
+   {
+    "base": "2453",
+    "present": [
+     "2453",
+     "2453a",
+     "2453b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "2453a",
+     "2453b"
+    ]
+   },
+   {
+    "base": "2454",
+    "present": [
+     "2454",
+     "2454a",
+     "2454b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "2454a",
+     "2454b"
+    ]
+   },
+   {
+    "base": "2476",
+    "present": [
+     "2476a",
+     "2476b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2476a",
+     "2476b"
+    ]
+   },
+   {
+    "base": "2493",
+    "present": [
+     "2493a",
+     "2493b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2493a",
+     "2493b"
+    ]
+   },
+   {
+    "base": "2515",
+    "present": [
+     "2515a",
+     "2515b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2515a",
+     "2515b"
+    ]
+   },
+   {
+    "base": "2536",
+    "present": [
+     "2536a",
+     "2536b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2536a",
+     "2536b"
+    ]
+   },
+   {
+    "base": "2538",
+    "present": [
+     "2538c",
+     "2538d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2538c",
+     "2538d"
+    ]
+   },
+   {
+    "base": "2547",
+    "present": [
+     "2547a",
+     "2547b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2547a",
+     "2547b"
+    ]
+   },
+   {
+    "base": "2578",
+    "present": [
+     "2578a",
+     "2578b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2578a",
+     "2578b"
+    ]
+   },
+   {
+    "base": "2609",
+    "present": [
+     "2609b",
+     "2609c",
+     "2609d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2609b",
+     "2609c",
+     "2609d"
+    ]
+   },
+   {
+    "base": "2641",
+    "present": [
+     "2641a",
+     "2641b",
+     "2641c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2641a",
+     "2641b",
+     "2641c"
+    ]
+   },
+   {
+    "base": "2654",
+    "present": [
+     "2654",
+     "2654a",
+     "2654b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "2654a",
+     "2654b"
+    ]
+   },
+   {
+    "base": "2680",
+    "present": [
+     "2680a",
+     "2680b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2680a",
+     "2680b"
+    ]
+   },
+   {
+    "base": "2714",
+    "present": [
+     "2714a",
+     "2714b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2714a",
+     "2714b"
+    ]
+   },
+   {
+    "base": "2850",
+    "present": [
+     "2850a",
+     "2850b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2850a",
+     "2850b"
+    ]
+   },
+   {
+    "base": "2853",
+    "present": [
+     "2853a",
+     "2853b",
+     "2853c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2853a",
+     "2853b",
+     "2853c"
+    ]
+   },
+   {
+    "base": "2871",
+    "present": [
+     "2871a",
+     "2871b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2871a",
+     "2871b"
+    ]
+   },
+   {
+    "base": "29117",
+    "present": [
+     "29117a",
+     "29117b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "29117a",
+     "29117b"
+    ]
+   },
+   {
+    "base": "2922",
+    "present": [
+     "2922a",
+     "2922b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "2922a",
+     "2922b"
+    ]
+   },
+   {
+    "base": "3001",
+    "present": [
+     "3001",
+     "3001b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "3001b"
+    ]
+   },
+   {
+    "base": "30027",
+    "present": [
+     "30027a",
+     "30027b",
+     "30027c",
+     "30027d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30027a",
+     "30027b",
+     "30027c",
+     "30027d"
+    ]
+   },
+   {
+    "base": "30151",
+    "present": [
+     "30151a",
+     "30151b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30151a",
+     "30151b"
+    ]
+   },
+   {
+    "base": "30157",
+    "present": [
+     "30157a",
+     "30157b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30157a",
+     "30157b"
+    ]
+   },
+   {
+    "base": "3023",
+    "present": [
+     "3023",
+     "3023a",
+     "3023b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "3023a",
+     "3023b"
+    ]
+   },
+   {
+    "base": "30292",
+    "present": [
+     "30292a",
+     "30292b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30292a",
+     "30292b"
+    ]
+   },
+   {
+    "base": "30350",
+    "present": [
+     "30350a",
+     "30350b",
+     "30350c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30350a",
+     "30350b",
+     "30350c"
+    ]
+   },
+   {
+    "base": "30359",
+    "present": [
+     "30359a",
+     "30359b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30359a",
+     "30359b"
+    ]
+   },
+   {
+    "base": "30361",
+    "present": [
+     "30361a",
+     "30361d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30361a",
+     "30361d"
+    ]
+   },
+   {
+    "base": "30367",
+    "present": [
+     "30367a",
+     "30367b",
+     "30367c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30367a",
+     "30367b",
+     "30367c"
+    ]
+   },
+   {
+    "base": "30389",
+    "present": [
+     "30389a",
+     "30389b",
+     "30389c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30389a",
+     "30389b",
+     "30389c"
+    ]
+   },
+   {
+    "base": "3040",
+    "present": [
+     "3040a",
+     "3040b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3040a",
+     "3040b"
+    ]
+   },
+   {
+    "base": "3044",
+    "present": [
+     "3044a",
+     "3044b",
+     "3044c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3044a",
+     "3044b",
+     "3044c"
+    ]
+   },
+   {
+    "base": "3048",
+    "present": [
+     "3048a",
+     "3048b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3048a",
+     "3048b"
+    ]
+   },
+   {
+    "base": "3049",
+    "present": [
+     "3049a",
+     "3049b",
+     "3049c",
+     "3049d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3049a",
+     "3049b",
+     "3049c",
+     "3049d"
+    ]
+   },
+   {
+    "base": "30554",
+    "present": [
+     "30554a",
+     "30554b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30554a",
+     "30554b"
+    ]
+   },
+   {
+    "base": "30584",
+    "present": [
+     "30584a",
+     "30584b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30584a",
+     "30584b"
+    ]
+   },
+   {
+    "base": "30585",
+    "present": [
+     "30585a",
+     "30585b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "30585a",
+     "30585b"
+    ]
+   },
+   {
+    "base": "3058",
+    "present": [
+     "3058a",
+     "3058b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3058a",
+     "3058b"
+    ]
+   },
+   {
+    "base": "3062",
+    "present": [
+     "3062a",
+     "3062b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3062a",
+     "3062b"
+    ]
+   },
+   {
+    "base": "3063",
+    "present": [
+     "3063a",
+     "3063b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3063a",
+     "3063b"
+    ]
+   },
+   {
+    "base": "3067",
+    "present": [
+     "3067a",
+     "3067b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3067a",
+     "3067b"
+    ]
+   },
+   {
+    "base": "3068",
+    "present": [
+     "3068a",
+     "3068b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3068a",
+     "3068b"
+    ]
+   },
+   {
+    "base": "3069",
+    "present": [
+     "3069a",
+     "3069b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3069a",
+     "3069b"
+    ]
+   },
+   {
+    "base": "3070",
+    "present": [
+     "3070a",
+     "3070b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3070a",
+     "3070b"
+    ]
+   },
+   {
+    "base": "3127",
+    "present": [
+     "3127a",
+     "3127b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3127a",
+     "3127b"
+    ]
+   },
+   {
+    "base": "3149",
+    "present": [
+     "3149d",
+     "3149e"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3149d",
+     "3149e"
+    ]
+   },
+   {
+    "base": "3183",
+    "present": [
+     "3183a",
+     "3183b",
+     "3183c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3183a",
+     "3183b",
+     "3183c"
+    ]
+   },
+   {
+    "base": "32004",
+    "present": [
+     "32004a",
+     "32004b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32004a",
+     "32004b"
+    ]
+   },
+   {
+    "base": "32064",
+    "present": [
+     "32064a",
+     "32064b",
+     "32064c",
+     "32064d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32064a",
+     "32064b",
+     "32064c",
+     "32064d"
+    ]
+   },
+   {
+    "base": "32123",
+    "present": [
+     "32123a",
+     "32123b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32123a",
+     "32123b"
+    ]
+   },
+   {
+    "base": "32195",
+    "present": [
+     "32195a",
+     "32195b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32195a",
+     "32195b"
+    ]
+   },
+   {
+    "base": "32198",
+    "present": [
+     "32198a",
+     "32198b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32198a",
+     "32198b"
+    ]
+   },
+   {
+    "base": "32289",
+    "present": [
+     "32289a",
+     "32289b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32289a",
+     "32289b"
+    ]
+   },
+   {
+    "base": "3228",
+    "present": [
+     "3228a",
+     "3228b",
+     "3228c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3228a",
+     "3228b",
+     "3228c"
+    ]
+   },
+   {
+    "base": "3229",
+    "present": [
+     "3229a",
+     "3229b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3229a",
+     "3229b"
+    ]
+   },
+   {
+    "base": "3230",
+    "present": [
+     "3230a",
+     "3230b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3230a",
+     "3230b"
+    ]
+   },
+   {
+    "base": "3231",
+    "present": [
+     "3231a",
+     "3231b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3231a",
+     "3231b"
+    ]
+   },
+   {
+    "base": "3240",
+    "present": [
+     "3240a",
+     "3240b",
+     "3240c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3240a",
+     "3240b",
+     "3240c"
+    ]
+   },
+   {
+    "base": "3241",
+    "present": [
+     "3241a",
+     "3241b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3241a",
+     "3241b"
+    ]
+   },
+   {
+    "base": "3245",
+    "present": [
+     "3245a",
+     "3245b",
+     "3245c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3245a",
+     "3245b",
+     "3245c"
+    ]
+   },
+   {
+    "base": "32531",
+    "present": [
+     "32531a",
+     "32531b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32531a",
+     "32531b"
+    ]
+   },
+   {
+    "base": "32532",
+    "present": [
+     "32532a",
+     "32532b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32532a",
+     "32532b"
+    ]
+   },
+   {
+    "base": "32556",
+    "present": [
+     "32556a",
+     "32556b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "32556a",
+     "32556b"
+    ]
+   },
+   {
+    "base": "3324",
+    "present": [
+     "3324d",
+     "3324e"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3324d",
+     "3324e"
+    ]
+   },
+   {
+    "base": "3326",
+    "present": [
+     "3326a",
+     "3326b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3326a",
+     "3326b"
+    ]
+   },
+   {
+    "base": "33299",
+    "present": [
+     "33299a",
+     "33299b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "33299a",
+     "33299b"
+    ]
+   },
+   {
+    "base": "3351",
+    "present": [
+     "3351a",
+     "3351b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3351a",
+     "3351b"
+    ]
+   },
+   {
+    "base": "3475",
+    "present": [
+     "3475a",
+     "3475b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3475a",
+     "3475b"
+    ]
+   },
+   {
+    "base": "3648",
+    "present": [
+     "3648a",
+     "3648b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3648a",
+     "3648b"
+    ]
+   },
+   {
+    "base": "3650",
+    "present": [
+     "3650a",
+     "3650b",
+     "3650c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3650a",
+     "3650b",
+     "3650c"
+    ]
+   },
+   {
+    "base": "3660",
+    "present": [
+     "3660",
+     "3660b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "3660b"
+    ]
+   },
+   {
+    "base": "3665",
+    "present": [
+     "3665",
+     "3665a",
+     "3665b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "3665a",
+     "3665b"
+    ]
+   },
+   {
+    "base": "3678",
+    "present": [
+     "3678a",
+     "3678b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3678a",
+     "3678b"
+    ]
+   },
+   {
+    "base": "3684",
+    "present": [
+     "3684a",
+     "3684c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3684a",
+     "3684c"
+    ]
+   },
+   {
+    "base": "3709",
+    "present": [
+     "3709a",
+     "3709b",
+     "3709c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3709a",
+     "3709b",
+     "3709c"
+    ]
+   },
+   {
+    "base": "3747",
+    "present": [
+     "3747a",
+     "3747b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3747a",
+     "3747b"
+    ]
+   },
+   {
+    "base": "3755",
+    "present": [
+     "3755a",
+     "3755b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3755a",
+     "3755b"
+    ]
+   },
+   {
+    "base": "37720",
+    "present": [
+     "37720a",
+     "37720b",
+     "37720e"
+    ],
+    "hasBare": false,
+    "variants": [
+     "37720a",
+     "37720b",
+     "37720e"
+    ]
+   },
+   {
+    "base": "3794",
+    "present": [
+     "3794a",
+     "3794b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3794a",
+     "3794b"
+    ]
+   },
+   {
+    "base": "3839",
+    "present": [
+     "3839a",
+     "3839b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3839a",
+     "3839b"
+    ]
+   },
+   {
+    "base": "3855",
+    "present": [
+     "3855a",
+     "3855b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3855a",
+     "3855b"
+    ]
+   },
+   {
+    "base": "3861",
+    "present": [
+     "3861a",
+     "3861b",
+     "3861c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3861a",
+     "3861b",
+     "3861c"
+    ]
+   },
+   {
+    "base": "3940",
+    "present": [
+     "3940a",
+     "3940b",
+     "3940c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3940a",
+     "3940b",
+     "3940c"
+    ]
+   },
+   {
+    "base": "3942",
+    "present": [
+     "3942a",
+     "3942b",
+     "3942c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3942a",
+     "3942b",
+     "3942c"
+    ]
+   },
+   {
+    "base": "3943",
+    "present": [
+     "3943a",
+     "3943b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3943a",
+     "3943b"
+    ]
+   },
+   {
+    "base": "3957",
+    "present": [
+     "3957a",
+     "3957b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3957a",
+     "3957b"
+    ]
+   },
+   {
+    "base": "3998",
+    "present": [
+     "3998a",
+     "3998b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "3998a",
+     "3998b"
+    ]
+   },
+   {
+    "base": "4032",
+    "present": [
+     "4032",
+     "4032a",
+     "4032b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "4032a",
+     "4032b"
+    ]
+   },
+   {
+    "base": "4081",
+    "present": [
+     "4081a",
+     "4081b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4081a",
+     "4081b"
+    ]
+   },
+   {
+    "base": "4085",
+    "present": [
+     "4085a",
+     "4085b",
+     "4085c",
+     "4085d"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4085a",
+     "4085b",
+     "4085c",
+     "4085d"
+    ]
+   },
+   {
+    "base": "4088",
+    "present": [
+     "4088a",
+     "4088b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4088a",
+     "4088b"
+    ]
+   },
+   {
+    "base": "4092",
+    "present": [
+     "4092a",
+     "4092b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4092a",
+     "4092b"
+    ]
+   },
+   {
+    "base": "4093",
+    "present": [
+     "4093a",
+     "4093b",
+     "4093c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4093a",
+     "4093b",
+     "4093c"
+    ]
+   },
+   {
+    "base": "4151",
+    "present": [
+     "4151a",
+     "4151b",
+     "4151c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4151a",
+     "4151b",
+     "4151c"
+    ]
+   },
+   {
+    "base": "4166",
+    "present": [
+     "4166a",
+     "4166b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4166a",
+     "4166b"
+    ]
+   },
+   {
+    "base": "41769",
+    "present": [
+     "41769",
+     "41769a",
+     "41769b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "41769a",
+     "41769b"
+    ]
+   },
+   {
+    "base": "41770",
+    "present": [
+     "41770",
+     "41770a",
+     "41770b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "41770a",
+     "41770b"
+    ]
+   },
+   {
+    "base": "4185",
+    "present": [
+     "4185a",
+     "4185b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4185a",
+     "4185b"
+    ]
+   },
+   {
+    "base": "4207",
+    "present": [
+     "4207a",
+     "4207b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4207a",
+     "4207b"
+    ]
+   },
+   {
+    "base": "4209",
+    "present": [
+     "4209a",
+     "4209b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4209a",
+     "4209b"
+    ]
+   },
+   {
+    "base": "4212",
+    "present": [
+     "4212a",
+     "4212b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4212a",
+     "4212b"
+    ]
+   },
+   {
+    "base": "4215",
+    "present": [
+     "4215a",
+     "4215b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4215a",
+     "4215b"
+    ]
+   },
+   {
+    "base": "4220",
+    "present": [
+     "4220a",
+     "4220b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4220a",
+     "4220b"
+    ]
+   },
+   {
+    "base": "4273",
+    "present": [
+     "4273a",
+     "4273b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4273a",
+     "4273b"
+    ]
+   },
+   {
+    "base": "4275",
+    "present": [
+     "4275a",
+     "4275b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4275a",
+     "4275b"
+    ]
+   },
+   {
+    "base": "4276",
+    "present": [
+     "4276a",
+     "4276b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4276a",
+     "4276b"
+    ]
+   },
+   {
+    "base": "4285",
+    "present": [
+     "4285a",
+     "4285b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4285a",
+     "4285b"
+    ]
+   },
+   {
+    "base": "4287",
+    "present": [
+     "4287a",
+     "4287b",
+     "4287c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4287a",
+     "4287b",
+     "4287c"
+    ]
+   },
+   {
+    "base": "4345",
+    "present": [
+     "4345a",
+     "4345b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4345a",
+     "4345b"
+    ]
+   },
+   {
+    "base": "43722",
+    "present": [
+     "43722",
+     "43722a",
+     "43722b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "43722a",
+     "43722b"
+    ]
+   },
+   {
+    "base": "43723",
+    "present": [
+     "43723",
+     "43723a",
+     "43723b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "43723a",
+     "43723b"
+    ]
+   },
+   {
+    "base": "44301",
+    "present": [
+     "44301",
+     "44301a",
+     "44301b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "44301a",
+     "44301b"
+    ]
+   },
+   {
+    "base": "44302",
+    "present": [
+     "44302",
+     "44302a",
+     "44302b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "44302a",
+     "44302b"
+    ]
+   },
+   {
+    "base": "44375",
+    "present": [
+     "44375a",
+     "44375b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "44375a",
+     "44375b"
+    ]
+   },
+   {
+    "base": "44567",
+    "present": [
+     "44567a",
+     "44567b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "44567a",
+     "44567b"
+    ]
+   },
+   {
+    "base": "4460",
+    "present": [
+     "4460a",
+     "4460b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4460a",
+     "4460b"
+    ]
+   },
+   {
+    "base": "44676",
+    "present": [
+     "44676a",
+     "44676b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "44676a",
+     "44676b"
+    ]
+   },
+   {
+    "base": "4489",
+    "present": [
+     "4489a",
+     "4489b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4489a",
+     "4489b"
+    ]
+   },
+   {
+    "base": "4491",
+    "present": [
+     "4491a",
+     "4491b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4491a",
+     "4491b"
+    ]
+   },
+   {
+    "base": "4495",
+    "present": [
+     "4495a",
+     "4495b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4495a",
+     "4495b"
+    ]
+   },
+   {
+    "base": "4518",
+    "present": [
+     "4518a",
+     "4518b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4518a",
+     "4518b"
+    ]
+   },
+   {
+    "base": "4599",
+    "present": [
+     "4599a",
+     "4599b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4599a",
+     "4599b"
+    ]
+   },
+   {
+    "base": "4616",
+    "present": [
+     "4616a",
+     "4616b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4616a",
+     "4616b"
+    ]
+   },
+   {
+    "base": "4617",
+    "present": [
+     "4617a",
+     "4617b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4617a",
+     "4617b"
+    ]
+   },
+   {
+    "base": "4697",
+    "present": [
+     "4697a",
+     "4697b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4697a",
+     "4697b"
+    ]
+   },
+   {
+    "base": "4738",
+    "present": [
+     "4738a",
+     "4738b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4738a",
+     "4738b"
+    ]
+   },
+   {
+    "base": "4739",
+    "present": [
+     "4739a",
+     "4739b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4739a",
+     "4739b"
+    ]
+   },
+   {
+    "base": "4751",
+    "present": [
+     "4751a",
+     "4751b",
+     "4751c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4751a",
+     "4751b",
+     "4751c"
+    ]
+   },
+   {
+    "base": "48002",
+    "present": [
+     "48002a",
+     "48002b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "48002a",
+     "48002b"
+    ]
+   },
+   {
+    "base": "4844",
+    "present": [
+     "4844a",
+     "4844b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4844a",
+     "4844b"
+    ]
+   },
+   {
+    "base": "4864",
+    "present": [
+     "4864a",
+     "4864b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4864a",
+     "4864b"
+    ]
+   },
+   {
+    "base": "4865",
+    "present": [
+     "4865a",
+     "4865b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4865a",
+     "4865b"
+    ]
+   },
+   {
+    "base": "4868",
+    "present": [
+     "4868a",
+     "4868b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "4868a",
+     "4868b"
+    ]
+   },
+   {
+    "base": "48729",
+    "present": [
+     "48729a",
+     "48729b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "48729a",
+     "48729b"
+    ]
+   },
+   {
+    "base": "49595",
+    "present": [
+     "49595a",
+     "49595b",
+     "49595c",
+     "49595d",
+     "49595e",
+     "49595f",
+     "49595g"
+    ],
+    "hasBare": false,
+    "variants": [
+     "49595a",
+     "49595b",
+     "49595c",
+     "49595d",
+     "49595e",
+     "49595f",
+     "49595g"
+    ]
+   },
+   {
+    "base": "50859",
+    "present": [
+     "50859a",
+     "50859b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "50859a",
+     "50859b"
+    ]
+   },
+   {
+    "base": "50990",
+    "present": [
+     "50990a",
+     "50990b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "50990a",
+     "50990b"
+    ]
+   },
+   {
+    "base": "6014",
+    "present": [
+     "6014a",
+     "6014b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6014a",
+     "6014b"
+    ]
+   },
+   {
+    "base": "60470",
+    "present": [
+     "60470",
+     "60470a",
+     "60470b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "60470a",
+     "60470b"
+    ]
+   },
+   {
+    "base": "60475",
+    "present": [
+     "60475a",
+     "60475b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "60475a",
+     "60475b"
+    ]
+   },
+   {
+    "base": "60481",
+    "present": [
+     "60481",
+     "60481a",
+     "60481b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "60481a",
+     "60481b"
+    ]
+   },
+   {
+    "base": "60583",
+    "present": [
+     "60583a",
+     "60583b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "60583a",
+     "60583b"
+    ]
+   },
+   {
+    "base": "60616",
+    "present": [
+     "60616a",
+     "60616b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "60616a",
+     "60616b"
+    ]
+   },
+   {
+    "base": "6061",
+    "present": [
+     "6061a",
+     "6061b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6061a",
+     "6061b"
+    ]
+   },
+   {
+    "base": "60800",
+    "present": [
+     "60800a",
+     "60800b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "60800a",
+     "60800b"
+    ]
+   },
+   {
+    "base": "6135",
+    "present": [
+     "6135a",
+     "6135b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6135a",
+     "6135b"
+    ]
+   },
+   {
+    "base": "6152",
+    "present": [
+     "6152a",
+     "6152b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6152a",
+     "6152b"
+    ]
+   },
+   {
+    "base": "6153",
+    "present": [
+     "6153a",
+     "6153b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6153a",
+     "6153b"
+    ]
+   },
+   {
+    "base": "6192",
+    "present": [
+     "6192a",
+     "6192b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6192a",
+     "6192b"
+    ]
+   },
+   {
+    "base": "6216",
+    "present": [
+     "6216",
+     "6216b",
+     "6216c",
+     "6216d",
+     "6216e"
+    ],
+    "hasBare": true,
+    "variants": [
+     "6216b",
+     "6216c",
+     "6216d",
+     "6216e"
+    ]
+   },
+   {
+    "base": "6238",
+    "present": [
+     "6238a",
+     "6238b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6238a",
+     "6238b"
+    ]
+   },
+   {
+    "base": "6538",
+    "present": [
+     "6538a",
+     "6538b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6538a",
+     "6538b"
+    ]
+   },
+   {
+    "base": "6540",
+    "present": [
+     "6540a",
+     "6540b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6540a",
+     "6540b"
+    ]
+   },
+   {
+    "base": "6542",
+    "present": [
+     "6542a",
+     "6542b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6542a",
+     "6542b"
+    ]
+   },
+   {
+    "base": "6575",
+    "present": [
+     "6575a",
+     "6575b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6575a",
+     "6575b"
+    ]
+   },
+   {
+    "base": "6580",
+    "present": [
+     "6580a",
+     "6580b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6580a",
+     "6580b"
+    ]
+   },
+   {
+    "base": "6640",
+    "present": [
+     "6640a",
+     "6640b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6640a",
+     "6640b"
+    ]
+   },
+   {
+    "base": "6881",
+    "present": [
+     "6881a",
+     "6881b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "6881a",
+     "6881b"
+    ]
+   },
+   {
+    "base": "700",
+    "present": [
+     "700a",
+     "700b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "700a",
+     "700b"
+    ]
+   },
+   {
+    "base": "7049",
+    "present": [
+     "7049a",
+     "7049b",
+     "7049c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "7049a",
+     "7049b",
+     "7049c"
+    ]
+   },
+   {
+    "base": "712",
+    "present": [
+     "712a",
+     "712b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "712a",
+     "712b"
+    ]
+   },
+   {
+    "base": "713",
+    "present": [
+     "713a",
+     "713b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "713a",
+     "713b"
+    ]
+   },
+   {
+    "base": "716",
+    "present": [
+     "716a",
+     "716b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "716a",
+     "716b"
+    ]
+   },
+   {
+    "base": "72210",
+    "present": [
+     "72210a",
+     "72210b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "72210a",
+     "72210b"
+    ]
+   },
+   {
+    "base": "73090",
+    "present": [
+     "73090a",
+     "73090b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "73090a",
+     "73090b"
+    ]
+   },
+   {
+    "base": "73590",
+    "present": [
+     "73590a",
+     "73590b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "73590a",
+     "73590b"
+    ]
+   },
+   {
+    "base": "76098",
+    "present": [
+     "76098a",
+     "76098b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "76098a",
+     "76098b"
+    ]
+   },
+   {
+    "base": "76543",
+    "present": [
+     "76543a",
+     "76543b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "76543a",
+     "76543b"
+    ]
+   },
+   {
+    "base": "821",
+    "present": [
+     "821a",
+     "821b",
+     "821c"
+    ],
+    "hasBare": false,
+    "variants": [
+     "821a",
+     "821b",
+     "821c"
+    ]
+   },
+   {
+    "base": "851",
+    "present": [
+     "851a",
+     "851b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "851a",
+     "851b"
+    ]
+   },
+   {
+    "base": "85489",
+    "present": [
+     "85489a",
+     "85489b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "85489a",
+     "85489b"
+    ]
+   },
+   {
+    "base": "925",
+    "present": [
+     "925",
+     "925a"
+    ],
+    "hasBare": true,
+    "variants": [
+     "925a"
+    ]
+   },
+   {
+    "base": "947",
+    "present": [
+     "947a",
+     "947b"
+    ],
+    "hasBare": false,
+    "variants": [
+     "947a",
+     "947b"
+    ]
+   },
+   {
+    "base": "4589",
+    "present": [
+     "4589",
+     "4589b"
+    ],
+    "hasBare": true,
+    "variants": [
+     "4589b"
+    ]
+   }
+  ]
+ },
+ "coverage": {
+  "bySource": {
+   "extracted": 4438,
+   "curated": 167
+  },
+  "mesh": {
+   "trackedDat": 186,
+   "fullDatOnly": 4419,
+   "noDatAnywhere": 0
+  },
+  "connectors": {
+   "byOrigin": {
+    "synthesized": 2521,
+    "measured": 1431,
+    "none": 653
+   },
+   "bothSides": 2268,
+   "receptorOnly": 1491,
+   "studOnlyNoReceptor": 193,
+   "noConnectors": 0
+  },
+  "collision": {
+   "single-box-inferred": 1807,
+   "unsupported": 2168,
+   "multi-box-inferred": 610,
+   "empty-by-declaration": 20
+  },
+  "geometryCheck": {
+   "pass": 4557,
+   "FAIL": 48
+  },
+  "geometryFailures": [
+   {
+    "id": "8",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "422",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "509",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "842",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "2415",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "2518",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "2579",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "2638",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "2655",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "3137",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "3172",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4587",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4595",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4613",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4870",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "6682",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "7264",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "10039",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "10247",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "21445",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "30029",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "30041",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "43746",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "47474",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "47675",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "47844",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "49577",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "65700",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "71427",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "74572",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "76798",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "80835",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "88289",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "92709",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "30157a",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "30159b",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4212b",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4739a",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "4739b",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "76098a",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "76098b",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "t1009k01",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "t1022k01",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "t1026k01",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "t1037k01",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "u9308",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "u9346c01",
+    "status": "FAIL:height-error"
+   },
+   {
+    "id": "u9565",
+    "status": "FAIL:height-error"
+   }
+  ]
+ },
+ "tasks": {
+  "models": {
+   "60239.brick.json": {
+    "parts": 47,
+    "ids": [
+     "28324",
+     "4740",
+     "59900",
+     "73200",
+     "76382",
+     "3626b",
+     "11303",
+     "3710",
+     "3021",
+     "3023b",
+     "52107",
+     "73081",
+     "2432",
+     "3002",
+     "30414",
+     "22889",
+     "18892",
+     "15207",
+     "3010",
+     "3666",
+     "50745",
+     "2412a",
+     "87609",
+     "93606",
+     "54200",
+     "85984",
+     "35480",
+     "2431",
+     "32059",
+     "34103",
+     "43723a",
+     "43722a",
+     "47456",
+     "3069b",
+     "60477",
+     "4162",
+     "57783",
+     "3020",
+     "98138",
+     "93273",
+     "98281",
+     "2420",
+     "27263",
+     "29119",
+     "29120",
+     "11208",
+     "11209"
+    ],
+    "missing": []
+   },
+   "60239.fixed.brick.json": {
+    "parts": 47,
+    "ids": [
+     "28324",
+     "50745",
+     "11208",
+     "11209",
+     "73200",
+     "76382",
+     "3626b",
+     "11303",
+     "4740",
+     "59900",
+     "3710",
+     "3021",
+     "3023b",
+     "52107",
+     "73081",
+     "2432",
+     "30414",
+     "3002",
+     "3666",
+     "4162",
+     "15207",
+     "3010",
+     "22889",
+     "32059",
+     "57783",
+     "98281",
+     "93606",
+     "27263",
+     "54200",
+     "35480",
+     "3020",
+     "98138",
+     "2412a",
+     "93273",
+     "60477",
+     "2431",
+     "85984",
+     "87609",
+     "29119",
+     "29120",
+     "43722a",
+     "43723a",
+     "2420",
+     "34103",
+     "47456",
+     "3069b",
+     "18892"
+    ],
+    "missing": []
+   },
+   "60239.sub-front-bumper.brick.json": {
+    "parts": 7,
+    "ids": [
+     "3023b",
+     "3710",
+     "54200",
+     "3020",
+     "98138",
+     "85984",
+     "93273"
+    ],
+    "missing": []
+   },
+   "cottage.brick.json": {
+    "parts": 17,
+    "ids": [
+     "41539",
+     "3068b",
+     "3023",
+     "3024",
+     "3003",
+     "3022",
+     "3005",
+     "3004",
+     "3010",
+     "60596",
+     "3622",
+     "3065",
+     "60623",
+     "3036",
+     "3037",
+     "3001",
+     "3041"
+    ],
+    "missing": []
+   },
+   "demo-ext-part.brick.json": {
+    "parts": 1,
+    "ids": [
+     "3386"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.brick.json": {
+    "parts": 7,
+    "ids": [
+     "3023",
+     "3795",
+     "3022",
+     "3069b",
+     "4073",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.symmetric.brick.json": {
+    "parts": 5,
+    "ids": [
+     "3958",
+     "3023",
+     "3062b",
+     "3941",
+     "3021"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v3.brick.json": {
+    "parts": 6,
+    "ids": [
+     "3023",
+     "3795",
+     "3022",
+     "4073",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v4.brick.json": {
+    "parts": 7,
+    "ids": [
+     "3958",
+     "3022",
+     "3023",
+     "3062b",
+     "4073",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v5.brick.json": {
+    "parts": 7,
+    "ids": [
+     "3958",
+     "3022",
+     "3023",
+     "3062b",
+     "4073",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v6.brick.json": {
+    "parts": 6,
+    "ids": [
+     "3958",
+     "3022",
+     "3023",
+     "3062b",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v7.brick.json": {
+    "parts": 6,
+    "ids": [
+     "3958",
+     "3022",
+     "3023",
+     "3062b",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v8.brick.json": {
+    "parts": 6,
+    "ids": [
+     "3958",
+     "3022",
+     "3023",
+     "3062b",
+     "3941",
+     "3020"
+    ],
+    "missing": []
+   },
+   "lantern.reconstructed.v9.brick.json": {
+    "parts": 5,
+    "ids": [
+     "3958",
+     "3023",
+     "3062b",
+     "3941",
+     "3021"
+    ],
+    "missing": []
+   },
+   "mecha.brick.json": {
+    "parts": 23,
+    "ids": [
+     "3020",
+     "3010",
+     "30414",
+     "3068b",
+     "3004",
+     "48336",
+     "60470",
+     "22885",
+     "3022",
+     "3795",
+     "3024",
+     "15573",
+     "4070",
+     "3062b",
+     "4073",
+     "3710",
+     "63868",
+     "41769",
+     "41770",
+     "99206",
+     "3039",
+     "3069b",
+     "3941"
+    ],
+    "missing": []
+   },
+   "trex.reconstructed.brick.json": {
+    "parts": 12,
+    "ids": [
+     "3020",
+     "3023",
+     "27261",
+     "3003",
+     "3022",
+     "41539",
+     "2456",
+     "3001",
+     "11477",
+     "4589b",
+     "4073",
+     "98138"
+    ],
+    "missing": []
+   }
+  },
+  "bomGaps": {
+   "60239.bom.json": {
+    "total": 52,
+    "unresolved": []
+   },
+   "trex.bom.json": {
+    "total": 67,
+    "unresolved": [
+     {
+      "status": "omit",
+      "ldraw": null,
+      "qty": 6,
+      "color": "白",
+      "name": "双趾爪（销底）",
+      "note": "目录无此模具；脚爪由 27261 白色爪板风格化替代",
+      "inCatalog": false,
+      "datAvailable": false
+     },
+     {
+      "status": "substitute",
+      "ldraw": "13564",
+      "qty": 3,
+      "color": "白",
+      "name": "弯角棘刺",
+      "note": "Animal Cow Horn 2.25L 近似替代獠牙/眉角",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "13564",
+      "qty": 3,
+      "color": "白",
+      "name": "大弯獠牙",
+      "note": "牛角替代",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "6541",
+      "qty": 4,
+      "color": "深棕褐",
+      "name": "1×1砖侧2孔",
+      "note": "单孔近似（官方为双孔 28192 未收录）",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "4085d",
+      "qty": 4,
+      "color": "深棕褐",
+      "name": "1×1侧夹",
+      "note": "竖直夹近似",
+      "inCatalog": true,
+      "datAvailable": false
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3039",
+      "qty": 1,
+      "color": "棕褐",
+      "name": "斜面2×2带孔(存疑)",
+      "note": "形状存疑，按普通斜面处理",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "4589b",
+      "qty": 6,
+      "color": "黑",
+      "name": "弯角棘刺（背棘）",
+      "note": "圆锥 1×1 风格化替代背棘",
+      "inCatalog": true,
+      "datAvailable": false
+     },
+     {
+      "status": "substitute",
+      "ldraw": "553b",
+      "qty": 2,
+      "color": "黑",
+      "name": "球顶圆顶(存疑)",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": false
+     },
+     {
+      "status": "omit",
+      "ldraw": null,
+      "qty": 4,
+      "color": "黑",
+      "name": "滚轮关节",
+      "note": "目录无；踝关节在本模型中为刚性简化",
+      "inCatalog": false,
+      "datAvailable": false
+     },
+     {
+      "status": "substitute",
+      "ldraw": "60470",
+      "qty": 2,
+      "color": "深灰",
+      "name": "2×2板前双爪扣",
+      "note": "双水平夹板近似",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "4274",
+      "qty": 1,
+      "color": "深灰",
+      "name": "板端带销",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "omit",
+      "ldraw": null,
+      "qty": 1,
+      "color": "黑",
+      "name": "轴杆",
+      "note": "内部轴，刚性简化不建",
+      "inCatalog": false,
+      "datAvailable": false
+     },
+     {
+      "status": "substitute",
+      "ldraw": "43723",
+      "qty": 3,
+      "color": "亮绿",
+      "name": "楔形板侧4孔",
+      "note": "侧孔楔形件未收录，普通楔形板替代（左）",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "43722",
+      "qty": 3,
+      "color": "亮绿",
+      "name": "楔形板侧4凸点",
+      "note": "（右）",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3039",
+      "qty": 2,
+      "color": "亮绿",
+      "name": "2×2圆角斜件(存疑)",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3021",
+      "qty": 4,
+      "color": "亮绿",
+      "name": "2×3圆角板",
+      "note": "普通板替代",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "47457",
+      "qty": 1,
+      "color": "亮绿",
+      "name": "大曲面4×2带侧凸点",
+      "note": "弧面斜砖2×2×1带2凸点近似",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "43723",
+      "qty": 1,
+      "color": "深绿",
+      "name": "楔形板（左）",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "43722",
+      "qty": 1,
+      "color": "深绿",
+      "name": "楔形板（右）",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "4032",
+      "qty": 1,
+      "color": "深绿",
+      "name": "圆板2×2带缺口",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3623",
+      "qty": 3,
+      "color": "深绿",
+      "name": "1×3圆头板",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3298",
+      "qty": 2,
+      "color": "亮绿",
+      "name": "33°斜面3×2(存疑)",
+      "note": "斜面型号存疑",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3022",
+      "qty": 4,
+      "color": "深绿",
+      "name": "2×2板圆头",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3020",
+      "qty": 1,
+      "color": "深绿",
+      "name": "6×4大弧面背板",
+      "note": "大弧面件未收录，板替代",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3069b",
+      "qty": 2,
+      "color": "暗红",
+      "name": "1×2光面板(存疑)",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "63868",
+      "qty": 3,
+      "color": "浅灰",
+      "name": "板端夹",
+      "note": "端头夹板近似",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "omit",
+      "ldraw": null,
+      "qty": 2,
+      "color": "深灰",
+      "name": "转盘+杆关节",
+      "note": "目录无对应关节件",
+      "inCatalog": false,
+      "datAvailable": false
+     },
+     {
+      "status": "substitute",
+      "ldraw": "22890",
+      "qty": 5,
+      "color": "深灰",
+      "name": "板端球头",
+      "note": "Plate 1x2 with Ball Joint-8 on End",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "60478",
+      "qty": 2,
+      "color": "深灰",
+      "name": "1×3板端横杆",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "60470",
+      "qty": 2,
+      "color": "深灰",
+      "name": "2×2双夹座",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "85861",
+      "qty": 2,
+      "color": "橙",
+      "name": "1×1圆环（眼圈）",
+      "note": "空心圆板近似眼圈",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "88695",
+      "qty": 4,
+      "color": "黑",
+      "name": "小爪",
+      "note": "棱面小棘刺替代前臂小爪",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "15712",
+      "qty": 2,
+      "color": "深灰",
+      "name": "板带立式带孔扣",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3023",
+      "qty": 2,
+      "color": "深灰",
+      "name": "板带拱筒(存疑)",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "11476",
+      "qty": 2,
+      "color": "浅灰",
+      "name": "板端/侧夹",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "26047",
+      "qty": 2,
+      "color": "深灰",
+      "name": "板端弯爪",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     },
+     {
+      "status": "substitute",
+      "ldraw": "3003",
+      "qty": 1,
+      "color": "浅灰",
+      "name": "2×2砖侧4孔",
+      "note": "",
+      "inCatalog": true,
+      "datAvailable": true
+     }
+    ]
+   }
+  },
+  "reconstructionNeeds": [
+   {
+    "feature": "四根带纵槽与环纹的柱状件",
+    "evidence": [
+     "ref_1792833393279",
+     "ref_1792840635011"
+    ],
+    "identification": "unresolved",
+    "rejectedSubstitute": "3062b",
+    "next": "核实两端接口、侧向承接方式和全长；不再为圆砖虚构水平托板"
+   },
+   {
+    "feature": "核心单面四凸点高砖",
+    "evidence": [
+     "ref_1792840635011",
+     "ref_1792834080134"
+    ],
+    "candidate": "22885",
+    "identification": "candidate",
+    "verifiedCatalog": "size=[2,1], h=5, sideFaces=['+z'], sideRows=[1.25,3.75]",
+    "source": "https://library.ldraw.org/parts/2003"
+   },
+   {
+    "feature": "翼根双夹板",
+    "evidence": [
+     "ref_1792840635011"
+    ],
+    "candidate": "60470b",
+    "identification": "candidate",
+    "source": "https://library.ldraw.org/library/official/parts/60470b.dat",
+    "next": "核对模具变体；实现真实夹口轴、夹口位置及独立翼片姿态，不能把两个夹子当作两个侧凸点"
+   },
+   {
+    "feature": "双足彩色夹杆及四块黑色挂板",
+    "evidence": [
+     "ref_1792834080053",
+     "ref_1792840634955"
+    ],
+    "identification": "unresolved",
+    "next": "逐件区分单夹、双夹、把柄、黑色挂板与横杆；确认装配朝向与连接链"
+   },
+   {
+    "feature": "两侧把柄板候选",
+    "evidence": [
+     "ref_1792840634955",
+     "ref_1792834079990"
+    ],
+    "candidate": "3839b",
+    "identification": "candidate",
+    "source": "https://library.ldraw.org/library/official/parts/3839b.dat",
+    "next": "核对把柄是双侧还是端部结构；5c1c2b9已加入3839b，但尺寸轴和把柄坐标仍需与原始DAT核对，不得仅凭目录存在确认识别"
+   },
+   {
+    "feature": "顶部圆件底部与中心连接",
+    "evidence": [
+     "ref_1792840635011",
+     "ref_1792833393176"
+    ],
+    "identification": "unresolved",
+    "next": "核对底部圆筒、槽口及是否另有销轴；不能只凭顶面四凸点认定3941"
+   },
+   {
+    "feature": "内部薄板填充、边缘色条及支撑",
+    "evidence": [
+     "ref_1792834080100",
+     "ref_1792840635011",
+     "ref_1792833393126"
+    ],
+    "identification": "unresolved",
+    "next": "建立逐层清单，区分外观饰条与承重/连接件；不可见处标inferred或uncertain"
+   }
+  ]
+ }
+}

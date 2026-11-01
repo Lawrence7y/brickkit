@@ -1,0 +1,16 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "dsh-bridge",
+  "version": "0.1.2",
+  "description": "通过本机 DSH 已登录 HTTP RPC 创建会话、选择模型、发送任务和读取结果。",
+  "author": {"name": "Local"},
+  "extensions": {"com.openai": {"interface": {
+    "displayName": "DSH Bridge",
+    "shortDescription": "与本机 DSH 通信并核验模型",
+    "longDescription": "复用本机登录态，提供连接、模型目录、独立会话、发送防重和历史读取。",
+    "developerName": "Local",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "检查 DSH 通信并向指定模型派发任务。"
+  }}}
+}

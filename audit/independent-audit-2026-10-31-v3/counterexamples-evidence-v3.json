@@ -1,0 +1,555 @@
+{
+  "version": "2026-10-31-v3",
+  "generatedAt": "2026-10-31T13:30:55.452Z",
+  "unitsDefinition": {
+    "studToLdu": 20,
+    "plateToLdu": 8,
+    "studToPlates": 2.5,
+    "plateToStuds": 0.4,
+    "lduToStuds": 0.05,
+    "lduToPlates": 0.125
+  },
+  "cases": {
+    "bracket_99781": {
+      "partId": "99781",
+      "name": "Bracket 1 x 2 - 1 x 2 (Down)",
+      "officialDat": "99781.dat",
+      "category": "bracket",
+      "physicalMeasurement": {
+        "bboxLdu": [
+          -20,
+          -4,
+          -18,
+          20,
+          20,
+          10
+        ],
+        "topPlateTopLdu": 0,
+        "topPlateBottomLdu": 8,
+        "hangingWallBottomLdu": 20,
+        "realHangDepthLdu": 12,
+        "realHangDepthPlates": 1.5,
+        "realHangDepthStuds": 0.6
+      },
+      "engineRepresentation": {
+        "catalog_vH": 3,
+        "generatedBoxes": [
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 5,
+            "y1": 6,
+            "z0": 0,
+            "z1": 1
+          },
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 3,
+            "y1": 6,
+            "z0": 1,
+            "z1": 1.2
+          }
+        ],
+        "bracketVerticalBoxY": [
+          3,
+          6
+        ],
+        "engineHangDepthPlates": 2,
+        "engineHangDepthLdu": 16,
+        "engineHangDepthStuds": 0.8,
+        "overextensionLdu": 4,
+        "overextensionPlates": 0.5,
+        "overextensionStuds": 0.2
+      },
+      "testSetup": {
+        "bracketPose": {
+          "id": "pBracket_99781",
+          "part": "99781",
+          "color": 0,
+          "at": [
+            0,
+            5,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 1
+        },
+        "adjacentOccupantInPhysicalClearance": {
+          "x0": 0,
+          "x1": 2,
+          "y0": 3,
+          "y1": 3.4,
+          "z0": 1,
+          "z1": 1.2
+        }
+      },
+      "testExecution": {
+        "expectedPhysicalCollision": false,
+        "actualEngineCollisionHit": [
+          1,
+          3,
+          1
+        ],
+        "collisionDetected": true
+      },
+      "assertion": {
+        "condition": "collisionDetected === true && expectedPhysicalCollision === false",
+        "passed": true
+      },
+      "verdict": "CONFIRMED"
+    },
+    "bracket_36841": {
+      "partId": "36841",
+      "name": "Bracket 1 x 1 - 1 x 1 (Down)",
+      "officialDat": "36841.dat",
+      "category": "bracket",
+      "physicalMeasurement": {
+        "bboxLdu": [
+          -10,
+          -4,
+          -18,
+          10,
+          20,
+          10
+        ],
+        "topPlateTopLdu": 0,
+        "topPlateBottomLdu": 8,
+        "hangingWallBottomLdu": 20,
+        "realHangDepthLdu": 12,
+        "realHangDepthPlates": 1.5,
+        "realHangDepthStuds": 0.6
+      },
+      "engineRepresentation": {
+        "catalog_vH": 3,
+        "generatedBoxes": [
+          {
+            "x0": 0,
+            "x1": 1,
+            "y0": 5,
+            "y1": 6,
+            "z0": 0,
+            "z1": 1
+          },
+          {
+            "x0": 0,
+            "x1": 1,
+            "y0": 3,
+            "y1": 6,
+            "z0": 1,
+            "z1": 1.2
+          }
+        ],
+        "bracketVerticalBoxY": [
+          3,
+          6
+        ],
+        "engineHangDepthPlates": 2,
+        "engineHangDepthLdu": 16,
+        "engineHangDepthStuds": 0.8,
+        "overextensionLdu": 4,
+        "overextensionPlates": 0.5,
+        "overextensionStuds": 0.2
+      },
+      "testSetup": {
+        "bracketPose": {
+          "id": "pBracket_36841",
+          "part": "36841",
+          "color": 0,
+          "at": [
+            0,
+            5,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 1
+        },
+        "adjacentOccupantInPhysicalClearance": {
+          "x0": 0,
+          "x1": 1,
+          "y0": 3,
+          "y1": 3.4,
+          "z0": 1,
+          "z1": 1.2
+        }
+      },
+      "testExecution": {
+        "expectedPhysicalCollision": false,
+        "actualEngineCollisionHit": [
+          0,
+          3,
+          1
+        ],
+        "collisionDetected": true
+      },
+      "assertion": {
+        "condition": "collisionDetected === true && expectedPhysicalCollision === false",
+        "passed": true
+      },
+      "verdict": "CONFIRMED"
+    },
+    "bracket_44728": {
+      "partId": "44728",
+      "name": "Bracket 1 x 2 - 2 x 2 (Down)",
+      "officialDat": "44728.dat",
+      "category": "bracket",
+      "physicalMeasurement": {
+        "bboxLdu": [
+          -20,
+          -4,
+          -18,
+          20,
+          40,
+          10
+        ],
+        "topPlateTopLdu": 0,
+        "topPlateBottomLdu": 8,
+        "hangingWallBottomLdu": 40,
+        "realHangDepthLdu": 32,
+        "realHangDepthPlates": 4,
+        "realHangDepthStuds": 1.6
+      },
+      "engineRepresentation": {
+        "catalog_vH": 5,
+        "generatedBoxes": [
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 5,
+            "y1": 6,
+            "z0": 0,
+            "z1": 1
+          },
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 1,
+            "y1": 6,
+            "z0": 1,
+            "z1": 1.2
+          }
+        ],
+        "bracketVerticalBoxY": [
+          1,
+          6
+        ],
+        "engineHangDepthPlates": 4,
+        "engineHangDepthLdu": 32,
+        "engineHangDepthStuds": 1.6,
+        "overextensionLdu": 0,
+        "overextensionPlates": 0,
+        "overextensionStuds": 0
+      },
+      "testSetup": {
+        "bracketPose": {
+          "id": "pBracket_44728",
+          "part": "44728",
+          "color": 0,
+          "at": [
+            0,
+            5,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 1
+        },
+        "occupantBelowPhysicalBottom": {
+          "x0": 0,
+          "x1": 2,
+          "y0": 0.5,
+          "y1": 0.9,
+          "z0": 1,
+          "z1": 1.2
+        }
+      },
+      "testExecution": {
+        "expectedPhysicalCollision": false,
+        "actualEngineCollisionHit": null,
+        "collisionDetected": false
+      },
+      "assertion": {
+        "hypothesis": "44728 has downward 0.5 plate overextension like 99781",
+        "condition": "hasDownwardOverextension === false && overextensionLdu === 0",
+        "passed": true
+      },
+      "verdict": "REFUTED",
+      "findingsNote": "44728 physical hanging depth is 32 LDU (4.0 plates), exactly matching catalog (vH-1)*8 LDU. The downward overextension defect reported in Round 2 for 44728 is REFUTED; 44728 was erroneously conflated with 99781/36841."
+    },
+    "bottomBoss_18677": {
+      "partId": "18677",
+      "name": "Plate 1 x 2 with Pin Hole Underneath",
+      "officialDat": "18677.dat",
+      "category": "technic",
+      "physicalMeasurement": {
+        "bboxLdu": [
+          -20,
+          -4,
+          -10,
+          20,
+          19,
+          10
+        ],
+        "plateTopLdu": 0,
+        "plateBottomLdu": 8,
+        "bossBottomLdu": 19,
+        "realBossDepthLdu": 11,
+        "realBossDepthPlates": 1.375,
+        "realBossDepthStuds": 0.55
+      },
+      "engineRepresentation": {
+        "catalog_kind": "plate",
+        "generatedBoxesCount": 1,
+        "boxesYRange": [
+          1,
+          2
+        ],
+        "omittedDepthLdu": 11,
+        "omittedDepthPlates": 1.375,
+        "omittedDepthStuds": 0.55
+      },
+      "testSetup": {
+        "basePart": {
+          "id": "pBase_3020",
+          "part": "3020",
+          "color": 0,
+          "at": [
+            0,
+            0,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 1
+        },
+        "testedPartStackedDirectlyOnBase": {
+          "id": "pBoss_18677",
+          "part": "18677",
+          "color": 4,
+          "at": [
+            0,
+            1,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 2
+        }
+      },
+      "testExecution": {
+        "expectedPhysicalCollision": true,
+        "actualEngineCollisionDetected": false,
+        "actualEngineConnectionDetected": true
+      },
+      "assertion": {
+        "condition": "actualEngineCollisionDetected === false && actualEngineConnectionDetected === true",
+        "passed": true
+      },
+      "verdict": "CONFIRMED"
+    },
+    "bottomBoss_2444": {
+      "partId": "2444",
+      "name": "Plate 2 x 2 with Pin Hole",
+      "officialDat": "2444.dat",
+      "category": "technic",
+      "physicalMeasurement": {
+        "bboxLdu": [
+          -20,
+          -4,
+          -20,
+          20,
+          19,
+          20
+        ],
+        "plateTopLdu": 0,
+        "plateBottomLdu": 8,
+        "bossBottomLdu": 19,
+        "realBossDepthLdu": 11,
+        "realBossDepthPlates": 1.375,
+        "realBossDepthStuds": 0.55
+      },
+      "engineRepresentation": {
+        "catalog_kind": "pinplate",
+        "generatedBoxesCount": 3,
+        "boxesYRanges": [
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "omittedDepthLdu": 11,
+        "omittedDepthPlates": 1.375,
+        "omittedDepthStuds": 0.55
+      },
+      "testSetup": {
+        "basePart": {
+          "id": "pBase_3020",
+          "part": "3020",
+          "color": 0,
+          "at": [
+            0,
+            0,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 1
+        },
+        "testedPartStackedDirectlyOnBase": {
+          "id": "pBoss_2444",
+          "part": "2444",
+          "color": 4,
+          "at": [
+            0,
+            1,
+            0
+          ],
+          "rot": 0,
+          "up": "+y",
+          "snot": 0,
+          "step": 2
+        }
+      },
+      "testExecution": {
+        "expectedPhysicalCollision": true,
+        "actualEngineCollisionDetected": false,
+        "actualEngineConnectionDetected": true
+      },
+      "assertion": {
+        "condition": "actualEngineCollisionDetected === false && actualEngineConnectionDetected === true",
+        "passed": true
+      },
+      "verdict": "CONFIRMED"
+    },
+    "ballJoint_14417_14418": {
+      "parts": [
+        "14417",
+        "14418"
+      ],
+      "names": [
+        "Plate 1 x 2 with Towball on Side",
+        "Plate 1 x 2 with Towball Socket"
+      ],
+      "officialPrimitives": {
+        "ball14417": {
+          "primitive": "joint8ball.dat",
+          "posLdu": [
+            0,
+            4,
+            -20
+          ],
+          "posStuds": [
+            0,
+            0.2,
+            -1
+          ],
+          "facingAxis": "-z"
+        },
+        "socket14418": {
+          "primitive": "joint8socket1.dat",
+          "posLdu": [
+            30,
+            4,
+            0
+          ],
+          "posStuds": [
+            1.5,
+            0.2,
+            0
+          ],
+          "matrix": [
+            0,
+            0,
+            -1,
+            0,
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "facingAxis": "+x"
+        }
+      },
+      "independentLegalPoseDerivation": {
+        "explanation": "To engage the ball joint physically, the socket interface center of 14418 must coincide in 3D world space with the ball center of 14417, with opposed approach vectors. Since 14418 has its socket on the +x end (30 LDU from center) while 14417 has its ball on the -z side (20 LDU from center), engaging them requires a 90-degree orthogonal relative orientation.",
+        "catalogDefectNote": "Catalog erroneously modeled 14417 as a barplate (creating two phantom bars at x=0.5, 1.5) and 14418 as a single clip (at x=1.0). When aligned face-to-face centered, the synthetic clip sits midway between the two synthetic bars and reports disconnected (false negative). Shifting by 0.5 studs docks the clip onto a non-existent bar (false positive)."
+      },
+      "syntheticConnectorsGenerated": {
+        "ball14417_bars": [
+          {
+            "index": 2,
+            "pos": [
+              0.5,
+              0.5,
+              1.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-0"
+          },
+          {
+            "index": 3,
+            "pos": [
+              1.5,
+              0.5,
+              1.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-1"
+          }
+        ],
+        "socket14418_centered_clips": [
+          {
+            "index": 2,
+            "pos": [
+              1,
+              0.5,
+              1.22
+            ],
+            "dir": "-z",
+            "axis": "x"
+          }
+        ],
+        "socket14418_shifted_clips": [
+          {
+            "index": 2,
+            "pos": [
+              0.5,
+              0.5,
+              1.22
+            ],
+            "dir": "-z",
+            "axis": "x"
+          }
+        ]
+      },
+      "testExecution": {
+        "centeredConnected_expected_TRUE_actual": false,
+        "shiftedConnected_expected_FALSE_actual": true
+      },
+      "assertion": {
+        "condition": "centeredConnected === false && shiftedConnected === true",
+        "passed": true
+      },
+      "verdict": "CONFIRMED"
+    }
+  }
+}

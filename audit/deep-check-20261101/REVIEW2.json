@@ -1,0 +1,173 @@
+{
+ "startedAt": "2026-11-01T03:40:51.377Z",
+ "root": "D:\\Project\\brickkit",
+ "head": "c0fd7b86",
+ "results": [
+  {
+   "id": "C1-whitelist",
+   "title": "白名单兜底不丢连接：EN-05 两套目录各 95/95",
+   "ok": true,
+   "ms": 70,
+   "data": {
+    "catalogs": {
+     "A-entry-overwrite(EN-05)": {
+      "required": 95,
+      "whitelistConnected": 95,
+      "blacklistConnected": 95,
+      "lost": []
+     },
+     "B-field-merge(CLI)": {
+      "required": 95,
+      "whitelistConnected": 95,
+      "blacklistConnected": 95,
+      "lost": []
+     }
+    },
+    "blacklistSameCount": null
+   }
+  },
+  {
+   "id": "C1-census",
+   "title": "95 条连接的凸点类型普查：无白名单之外的合法普通凸点",
+   "ok": true,
+   "ms": 12,
+   "data": {
+    "pairs": 95,
+    "byKind": {
+     "top→antistud": 84,
+     "rim↔tyre(tyreRim 专用分支)": 8,
+     "minifig→minifig": 2,
+     "top→minifig": 1
+    }
+   }
+  },
+  {
+   "id": "F1-original",
+   "title": "复用 evidence.json 原始反例位姿：匹配/连通/snap/validate 全部拒绝",
+   "ok": true,
+   "ms": 5,
+   "data": {
+    "pose": {
+     "ball": [
+      1,
+      1.25,
+      -0.5
+     ],
+     "childAt": [
+      0.5,
+      0,
+      -0.5
+     ],
+     "childUp": "-z"
+    },
+    "matched": false,
+    "connected": false,
+    "snapThrows": true,
+    "validate": {
+     "ok": false,
+     "errors": [
+      "mount-disconnected"
+     ]
+    }
+   }
+  },
+  {
+   "id": "F1-witness",
+   "title": "同一反例在历史黑名单写法下仍为 true：修复点确实在白名单",
+   "ok": true,
+   "ms": 10,
+   "data": {
+    "blacklistConnected": true
+   }
+  },
+  {
+   "id": "C2-loader",
+   "title": ".dat 递归展开：四件 missing/cycles/tooDeep 全 0，支架网格最低 3.5 片",
+   "ok": true,
+   "ms": 55,
+   "data": {
+    "parts": [
+     {
+      "id": "99781",
+      "files": 53,
+      "triangles": 434,
+      "minLocalYStuds": -0.6,
+      "zSpan": [
+       -0.5,
+       0.9
+      ]
+     },
+     {
+      "id": "36841",
+      "files": 32,
+      "triangles": 220,
+      "minLocalYStuds": -0.6,
+      "zSpan": [
+       -0.5,
+       0.9
+      ]
+     },
+     {
+      "id": "11208",
+      "files": 166,
+      "triangles": 2288,
+      "minLocalYStuds": 0.002,
+      "zSpan": [
+       -0.625,
+       0.625
+      ]
+     },
+     {
+      "id": "11209",
+      "files": 75,
+      "triangles": 4800,
+      "minLocalYStuds": -0.001,
+      "zSpan": [
+       -0.625,
+       0.625
+      ]
+     }
+    ],
+    "bracket": {
+     "at": 5,
+     "boxMinY": 3,
+     "boxMaxY": 6,
+     "meshMinYPlates": 3.5,
+     "lowerBoundFormula": 3,
+     "h": 1,
+     "H": 1,
+     "upperBoundEqualsH": true
+    }
+   }
+  },
+  {
+   "id": "C3-probe",
+   "title": "probe-p1.mjs 用原反例 + 断言，可直接判成败",
+   "ok": true,
+   "ms": 178,
+   "data": {
+    "importsAssert": true,
+    "callsMatcher": true,
+    "assertCount": 9,
+    "usesEvidencePose": true,
+    "hasExitOnFail": true,
+    "stdout": [
+     "F1 回归通过；普通顶凸点↔底孔仍成立（找到真实重合对）"
+    ]
+   }
+  },
+  {
+   "id": "suite",
+   "title": "完整套件当前计数",
+   "ok": true,
+   "ms": 13348,
+   "data": {
+    "tests": 308,
+    "pass": 301,
+    "fail": 0,
+    "skipped": 7
+   }
+  }
+ ],
+ "failed": 0
+}

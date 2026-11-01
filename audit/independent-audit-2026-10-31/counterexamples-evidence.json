@@ -1,0 +1,246 @@
+{
+  "timestamp": "2026-10-31T12:44:43.894Z",
+  "cases": {
+    "ballJointFalseConnect": {
+      "title": "球铰伪连接与中心对齐断开 (Ball Joint False Connect & True Disconnect)",
+      "parts": [
+        "14417",
+        "14418"
+      ],
+      "problemDescription": "14417(球头)被赋予kind=\"barplate\"，生成两根偏心虚拟bar(x=0.5, 1.5)；14418(球窝)被赋予kind=\"clip\"，生成单侧虚拟clip(x=1.0)。导致真实正对扣合被拒，错位0.5格反常连接。",
+      "minimalModel": {
+        "centeredPair": [
+          {
+            "id": "pBall",
+            "part": "14417",
+            "color": 0,
+            "at": [
+              0,
+              0,
+              0
+            ],
+            "rot": 0,
+            "up": "+y",
+            "snot": 0,
+            "step": 1
+          },
+          {
+            "id": "pSocketCentered",
+            "part": "14418",
+            "color": 1,
+            "at": [
+              0,
+              0,
+              1.44
+            ],
+            "rot": 180,
+            "up": "+y",
+            "snot": 0,
+            "step": 2
+          }
+        ],
+        "shiftedPair": [
+          {
+            "id": "pBall",
+            "part": "14417",
+            "color": 0,
+            "at": [
+              0,
+              0,
+              0
+            ],
+            "rot": 0,
+            "up": "+y",
+            "snot": 0,
+            "step": 1
+          },
+          {
+            "id": "pSocketShifted",
+            "part": "14418",
+            "color": 1,
+            "at": [
+              -0.5,
+              0,
+              1.44
+            ],
+            "rot": 180,
+            "up": "+y",
+            "snot": 0,
+            "step": 2
+          }
+        ]
+      },
+      "generatedConnectors": {
+        "ball14417_bars": [
+          {
+            "index": 2,
+            "pos": [
+              0.5,
+              0.5,
+              1.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-0"
+          },
+          {
+            "index": 3,
+            "pos": [
+              1.5,
+              0.5,
+              1.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-1"
+          }
+        ],
+        "socket14418_centered_clips": [
+          {
+            "index": 2,
+            "pos": [
+              1,
+              0.5,
+              1.22
+            ],
+            "dir": "-z",
+            "axis": "x"
+          }
+        ],
+        "socket14418_shifted_clips": [
+          {
+            "index": 2,
+            "pos": [
+              0.5,
+              0.5,
+              1.22
+            ],
+            "dir": "-z",
+            "axis": "x"
+          }
+        ]
+      },
+      "rawOutput": {
+        "centeredConnected_expected_TRUE_actual": false,
+        "shiftedConnected_expected_FALSE_actual": true
+      },
+      "verdict": "CONFIRMED"
+    },
+    "bracketCollisionOverApprox": {
+      "title": "下挂支架包围盒向下虚增0.5片误报穿模 (Downward Bracket Collision Over-approximation)",
+      "parts": [
+        "99781",
+        "36841"
+      ],
+      "problemDescription": "99781官方.dat下挂深度为12 LDU(1.5片)，目录vH=3导致partBoxes竖板向下延伸2片(-16 LDU)，虚增4 LDU(0.5片)包围盒，侵占下方合法装配空间。",
+      "physicalMeasurement": {
+        "officialDat": "99781.dat",
+        "bboxLdu": [
+          -20,
+          -4,
+          -18,
+          20,
+          20,
+          10
+        ],
+        "topFlangeBottomLdu": 8,
+        "hangingWallBottomLdu": 20,
+        "realHangDepthLdu": 12,
+        "realHangPlates": 1.5
+      },
+      "engineOutput": {
+        "catalog_vH": 3,
+        "generatedBoxes": [
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 2,
+            "y1": 3,
+            "z0": 0,
+            "z1": 1
+          },
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 0,
+            "y1": 3,
+            "z0": 1,
+            "z1": 1.2
+          }
+        ],
+        "bracketBox1_yRangePlates": [
+          0,
+          3
+        ],
+        "overextensionLdu": 4,
+        "overextensionPlates": 0.5
+      },
+      "reproducibleFalsePositive": {
+        "adjacentPartBoxInRealClearance": {
+          "x0": 0,
+          "x1": 2,
+          "y0": 0,
+          "y1": 0.4,
+          "z0": 0.8,
+          "z1": 1.2
+        },
+        "collisionDetected": true,
+        "rawCollisionHit": [
+          1,
+          0,
+          1
+        ]
+      },
+      "verdict": "CONFIRMED"
+    },
+    "bottomBossUnderApprox": {
+      "title": "底面销孔凸台完全漏检穿模 (Plate with Bottom Boss Collision Omission)",
+      "parts": [
+        "18677",
+        "2444"
+      ],
+      "problemDescription": "18677官方.dat底面带11 LDU(1.375片)深的外凸销孔圆柱台，但目录按普通plate配置且无boxes，引擎仅生成1片高单盒，完全漏报下方穿模。平贴叠在普通实心板上时漏报穿模且判为合法连接。",
+      "physicalMeasurement": {
+        "officialDat": "18677.dat",
+        "bboxLdu": [
+          -20,
+          -4,
+          -10,
+          20,
+          19,
+          10
+        ],
+        "plateBottomLdu": 8,
+        "bossBottomLdu": 19,
+        "realBossDepthLdu": 11,
+        "realBossDepthPlates": 1.375
+      },
+      "engineOutput": {
+        "pBaseBoxes": [
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 0,
+            "y1": 1,
+            "z0": 0,
+            "z1": 2
+          }
+        ],
+        "pBossBoxes": [
+          {
+            "x0": 0,
+            "x1": 2,
+            "y0": 1,
+            "y1": 2,
+            "z0": 0,
+            "z1": 1
+          }
+        ],
+        "collisionDetected_expected_TRUE_actual": false,
+        "rawCollisionHit": null,
+        "connectionDetected_expected_FALSE_actual": true
+      },
+      "verdict": "CONFIRMED"
+    }
+  }
+}

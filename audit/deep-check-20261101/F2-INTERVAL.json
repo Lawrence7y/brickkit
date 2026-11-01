@@ -1,0 +1,172 @@
+{
+ "startedAt": "2026-11-01T03:46:39.948Z",
+ "model": "examples/60239.fixed.brick.json",
+ "measurement": {
+  "rim": {
+   "id": "11208",
+   "role": "rim",
+   "outer": 0.91,
+   "bore": 0.2,
+   "cy": 0.912,
+   "bbox": {
+    "z0": -0.625,
+    "z1": 0.625
+   },
+   "inner": {
+    "z0": -0.625,
+    "z1": 0.625
+   },
+   "flange": {
+    "z0": -0.625,
+    "z1": 0.625
+   },
+   "tris": 2288
+  },
+  "tyre": {
+   "id": "11209",
+   "role": "tyre",
+   "outer": 1.32,
+   "bore": 0.86,
+   "cy": 1.312,
+   "bbox": {
+    "z0": -0.625,
+    "z1": 0.625
+   },
+   "inner": {
+    "z0": -0.625,
+    "z1": 0.625
+   },
+   "flange": {
+    "z0": -0.5,
+    "z1": 0.5
+   },
+   "tris": 4800
+  },
+  "installInterval": 0.08,
+  "slack": 0,
+  "tol": 0.08,
+  "interference": 0.05
+ },
+ "grid": [
+  {
+   "dz": 0,
+   "currentCore": true,
+   "withIntervalRule": true
+  },
+  {
+   "dz": 0.05,
+   "currentCore": true,
+   "withIntervalRule": true
+  },
+  {
+   "dz": 0.1,
+   "currentCore": true,
+   "withIntervalRule": false
+  },
+  {
+   "dz": 0.25,
+   "currentCore": true,
+   "withIntervalRule": false
+  },
+  {
+   "dz": 0.5,
+   "currentCore": true,
+   "withIntervalRule": false
+  },
+  {
+   "dz": 1,
+   "currentCore": true,
+   "withIntervalRule": false
+  },
+  {
+   "dz": 2,
+   "currentCore": true,
+   "withIntervalRule": false
+  },
+  {
+   "dz": 5,
+   "currentCore": true,
+   "withIntervalRule": false
+  },
+  {
+   "dz": 100,
+   "currentCore": true,
+   "withIntervalRule": false
+  }
+ ],
+ "pairs": {
+  "required": 95,
+  "before": 95,
+  "after": 91,
+  "dropped": [
+   {
+    "pair": "p006|p009",
+    "parts": "11208/11209",
+    "dAxial": 5,
+    "note": "rim 的 at.z=0 与 tyre 的 at.z=5 不是同一个轮位"
+   },
+   {
+    "pair": "p007|p008",
+    "parts": "11209/11208",
+    "dAxial": 5,
+    "note": "rim 的 at.z=0 与 tyre 的 at.z=5 不是同一个轮位"
+   },
+   {
+    "pair": "p010|p013",
+    "parts": "11208/11209",
+    "dAxial": 5,
+    "note": "rim 的 at.z=0 与 tyre 的 at.z=5 不是同一个轮位"
+   },
+   {
+    "pair": "p011|p012",
+    "parts": "11209/11208",
+    "dAxial": 5,
+    "note": "rim 的 at.z=0 与 tyre 的 at.z=5 不是同一个轮位"
+   }
+  ],
+  "legalWheels": 4
+ },
+ "bboxVsBand": [
+  {
+   "id": "11209",
+   "role": "tyre",
+   "bboxWidth": 1.25,
+   "innerWidth": 1.25
+  },
+  {
+   "id": "50861",
+   "role": "tyre",
+   "bboxWidth": 0.75,
+   "innerWidth": 0.75
+  },
+  {
+   "id": "6579",
+   "role": "tyre",
+   "bboxWidth": 3.3,
+   "innerWidth": 3.3
+  },
+  {
+   "id": "55976",
+   "role": "tyre",
+   "bboxWidth": 3.2,
+   "innerWidth": 3.2
+  },
+  {
+   "id": "18977",
+   "role": "tyre",
+   "bboxWidth": 1.4,
+   "innerWidth": 0.266
+  },
+  {
+   "id": "3483",
+   "role": "tyre",
+   "bboxWidth": 0.9,
+   "innerWidth": 0.9
+  }
+ ],
+ "schemaProposal": {
+  "wheel.axialBand": "[z0, z1] 相对轮心连接器的轴向区间（格），由官方网格实测",
+  "wheel.axialRole": "'bore-band'（轮胎内壁带）| 'flange-band'（轮辋外缘带）",
+  "rule": "rim↔tyre 成立 ⟺ 同心 + 径向匹配 + |Δ轴向| ≤ max(0, halfWidth(tyre.bore-band) − halfWidth(rim.flange-band)) + 0.08"
+ }
+}

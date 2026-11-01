@@ -1,0 +1,11 @@
+{
+  "name": "dsh-bridge", "version": "0.1.2",
+  "description": "与本机 DSH 通信并核验模型，复用现有登录态。",
+  "author": {"name": "Local"}, "skills": "./skills/", "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DSH Bridge", "shortDescription": "与本机 DSH 通信并核验模型",
+    "longDescription": "连接、模型目录、独立会话、发送防重和历史读取。",
+    "developerName": "Local", "category": "Productivity", "capabilities": [],
+    "defaultPrompt": "检查 DSH 通信并向指定模型派发任务。"
+  }
+}

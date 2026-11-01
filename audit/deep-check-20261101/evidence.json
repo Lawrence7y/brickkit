@@ -1,0 +1,1721 @@
+{
+  "root": "D:\\Project\\brickkit",
+  "startedAt": "2026-11-01T03:00:48.977Z",
+  "before": {
+    "src/core/core.js": "260fde35fb4f213dc1654909dd333daff8ce87267c8ef6dd48a7caca38f7c24b",
+    "catalog/parts.json": "121993ea74ffc13c246b2f0db137e21f0dfcc62f1980ee15d9eb85beb162c4d7",
+    "catalog/parts-ldraw.json": "1841b7081e03ec86be75cb687a9cda6f7727858de3ccd07de78a6bdbe60fea27",
+    "src/core/assets-v1/index.js": "50149f7a2f46340fc9ffff0a519dfd3aabc1d506dd0cc7d249c69cf5f02463f6",
+    "src/core/assets-v1/ids.js": "707705f644c46b7193feb844ba73d06730b05e88495d0e90b37d129c924110c2",
+    "src/core/actions-v1/state.js": "cb4131c33a54a43d5eab9594652ac1e3ac4ebcc6e4c104281b8d4ca3930b9465",
+    "dist/viewer.html": "d2c658f2c9f97fc394f304abb6728c1f255343472fe49d15a8cf35c65747c263"
+  },
+  "cases": {
+    "ball-14417": {
+      "connectors": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              1.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-1,0",
+            "ly": 1
+          },
+          {
+            "index": 2,
+            "kind": "ball",
+            "pos": [
+              1,
+              1.25,
+              -0.5
+            ],
+            "dir": "-z",
+            "axis": "y"
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              1.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 1,
+            "k": 0,
+            "ly": 0
+          }
+        ]
+      },
+      "assetTypes": [
+        "antistud",
+        "stud"
+      ],
+      "assetWarnings": [
+        "连接器 ball#2 无法归类为契约类型（kind=ball）"
+      ]
+    },
+    "ball-14418": {
+      "connectors": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              1.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-1,0",
+            "ly": 1
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              1.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 1,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 2,
+            "kind": "socket",
+            "pos": [
+              2.5,
+              1.25,
+              0.5
+            ],
+            "dir": "+x"
+          }
+        ]
+      },
+      "assetTypes": [
+        "antistud",
+        "stud"
+      ],
+      "assetWarnings": [
+        "连接器 socket#2 无法归类为契约类型（kind=socket）"
+      ]
+    },
+    "ballToAntistud": {
+      "ball": {
+        "index": 2,
+        "kind": "ball",
+        "pos": [
+          1,
+          1.25,
+          -0.5
+        ],
+        "dir": "-z",
+        "axis": "y"
+      },
+      "plateConn": {
+        "index": 0,
+        "kind": "antistud",
+        "pos": [
+          1,
+          1.25,
+          -0.5
+        ],
+        "dir": "-z",
+        "i": 0,
+        "k": 0,
+        "ly": 0
+      },
+      "snap": {
+        "id": "plate",
+        "part": "3024",
+        "color": 0,
+        "at": [
+          0.5,
+          0,
+          -0.5
+        ],
+        "rot": 0,
+        "up": "-z",
+        "step": 1,
+        "snot": 0
+      },
+      "matched": true,
+      "connected": true,
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "info": [],
+        "stats": {
+          "parts": 2,
+          "steps": 1,
+          "modules": 0,
+          "subassemblies": 0,
+          "mechanisms": 0,
+          "confirmed": 2,
+          "inferred": 0,
+          "uncertain": 0,
+          "connectedComponents": 1,
+          "largestComponentRatio": 1
+        }
+      }
+    },
+    "ballState": {
+      "socketPart": {
+        "id": "socket",
+        "part": "14418",
+        "color": 0,
+        "at": [
+          -1.5,
+          0,
+          -1
+        ],
+        "rot": 0,
+        "up": "+y",
+        "step": 1,
+        "snot": 0
+      },
+      "connected": true,
+      "state": {
+        "nodes": [
+          {
+            "nodePath": "ball",
+            "partId": "14417",
+            "color": 0,
+            "at": [
+              0,
+              0,
+              0
+            ],
+            "rot": 0,
+            "up": "+y",
+            "snot": 0,
+            "componentPath": null,
+            "stepOrder": 1
+          },
+          {
+            "nodePath": "socket",
+            "partId": "14418",
+            "color": 0,
+            "at": [
+              -1.5,
+              0,
+              -1
+            ],
+            "rot": 0,
+            "up": "+y",
+            "snot": 0,
+            "componentPath": null,
+            "stepOrder": 1
+          }
+        ],
+        "connections": [
+          {
+            "aNodeId": "ball",
+            "aConnectorId": null,
+            "bNodeId": "socket",
+            "bConnectorId": null,
+            "mateProfile": null,
+            "connectorPairsUnknown": true
+          }
+        ],
+        "occupancy": [],
+        "inventory": [],
+        "reachability": null,
+        "steps": []
+      }
+    },
+    "ballCandidates": {
+      "3024": {
+        "ok": false,
+        "items": [],
+        "count": 0,
+        "enumerationComplete": true,
+        "truncated": false,
+        "maxResults": 100,
+        "noSolutionReason": "unsupported-connector",
+        "noSolutionDetail": "存在无法归类的连接类型：ball/antistud",
+        "capabilityGaps": [
+          {
+            "kind": "unsupported-connector",
+            "detail": "存在无法归类的连接类型：ball/antistud",
+            "blocksTask": true
+          }
+        ],
+        "diagnostics": [],
+        "request": {
+          "childPartId": "3024",
+          "isAssembly": false,
+          "parentNodeId": "ball",
+          "parentConnectorIds": [
+            "cball#2"
+          ],
+          "orientationIds": null,
+          "maxResults": 100
+        }
+      },
+      "14418": {
+        "ok": false,
+        "items": [],
+        "count": 0,
+        "enumerationComplete": true,
+        "truncated": false,
+        "maxResults": 100,
+        "noSolutionReason": "unsupported-connector",
+        "noSolutionDetail": "存在无法归类的连接类型：ball/antistud, ball/socket",
+        "capabilityGaps": [
+          {
+            "kind": "unsupported-connector",
+            "detail": "存在无法归类的连接类型：ball/antistud, ball/socket",
+            "blocksTask": true
+          }
+        ],
+        "diagnostics": [],
+        "request": {
+          "childPartId": "14418",
+          "isAssembly": false,
+          "parentNodeId": "ball",
+          "parentConnectorIds": [
+            "cball#2"
+          ],
+          "orientationIds": null,
+          "maxResults": 100
+        }
+      }
+    },
+    "bracket-99781": {
+      "boxes": [
+        {
+          "x0": 0,
+          "x1": 2,
+          "y0": 5,
+          "y1": 6,
+          "z0": 0,
+          "z1": 1
+        },
+        {
+          "x0": 0,
+          "x1": 2,
+          "y0": 3,
+          "y1": 6,
+          "z0": 1,
+          "z1": 1.2
+        }
+      ],
+      "clearanceCollision": [
+        0,
+        3,
+        1
+      ],
+      "meshLocalBoundsStuds": {
+        "min": [
+          -1,
+          -0.6,
+          -0.5
+        ],
+        "max": [
+          1,
+          0.6,
+          0.9
+        ]
+      },
+      "meshBottomWorldPlates": 3.5,
+      "meshStats": {
+        "triangles": 52,
+        "quads": 191,
+        "lineSegments": 306,
+        "type5": 122,
+        "malformed": 0,
+        "files": 53,
+        "missingFiles": 0,
+        "cycles": 0,
+        "tooDeep": 0
+      },
+      "meshNotes": []
+    },
+    "bracket-36841": {
+      "boxes": [
+        {
+          "x0": 0,
+          "x1": 1,
+          "y0": 5,
+          "y1": 6,
+          "z0": 0,
+          "z1": 1
+        },
+        {
+          "x0": 0,
+          "x1": 1,
+          "y0": 3,
+          "y1": 6,
+          "z0": 1,
+          "z1": 1.2
+        }
+      ],
+      "clearanceCollision": [
+        0,
+        3,
+        1
+      ],
+      "meshLocalBoundsStuds": {
+        "min": [
+          -0.5,
+          -0.6,
+          -0.5
+        ],
+        "max": [
+          0.5,
+          0.6,
+          0.9
+        ]
+      },
+      "meshBottomWorldPlates": 3.5,
+      "meshStats": {
+        "triangles": 20,
+        "quads": 100,
+        "lineSegments": 151,
+        "type5": 58,
+        "malformed": 0,
+        "files": 32,
+        "missingFiles": 0,
+        "cycles": 0,
+        "tooDeep": 0
+      },
+      "meshNotes": []
+    },
+    "catalog-48336": {
+      "cli": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              1.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-1,0",
+            "ly": 1
+          },
+          {
+            "index": 2,
+            "kind": "bar",
+            "pos": [
+              0.15,
+              1,
+              1.5
+            ],
+            "dir": "+x",
+            "axis": "x",
+            "label": "extbar@-0.85,0.4,1"
+          },
+          {
+            "index": 3,
+            "kind": "bar",
+            "pos": [
+              1.85,
+              1,
+              1.5
+            ],
+            "dir": "+x",
+            "axis": "x",
+            "label": "extbar@0.85,0.4,1"
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              1.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 1,
+            "k": 0,
+            "ly": 0
+          }
+        ]
+      },
+      "assetInput": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              1.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-1,0",
+            "ly": 1
+          },
+          {
+            "index": 2,
+            "kind": "bar",
+            "pos": [
+              0.5,
+              0.5,
+              1.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-0"
+          },
+          {
+            "index": 3,
+            "kind": "bar",
+            "pos": [
+              1.5,
+              0.5,
+              1.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-1"
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              1.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 1,
+            "k": 0,
+            "ly": 0
+          }
+        ]
+      },
+      "same": false
+    },
+    "catalog-63868": {
+      "cli": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              1.5
+            ],
+            "dir": "+y",
+            "label": "top-0,1",
+            "ly": 1
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              1.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 1,
+            "ly": 0
+          },
+          {
+            "index": 2,
+            "kind": "clip",
+            "pos": [
+              0.5,
+              1,
+              2.5
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "i": 0,
+            "k": 0
+          }
+        ]
+      },
+      "assetInput": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              1.5
+            ],
+            "dir": "+y",
+            "label": "top-0,1",
+            "ly": 1
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              1.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 1,
+            "ly": 0
+          },
+          {
+            "index": 2,
+            "kind": "clip",
+            "pos": [
+              0.5,
+              0.5,
+              2.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "i": 0,
+            "k": 0
+          }
+        ]
+      },
+      "same": false
+    },
+    "catalog-60478": {
+      "cli": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              1.5
+            ],
+            "dir": "+y",
+            "label": "top-0,1",
+            "ly": 1
+          },
+          {
+            "index": 2,
+            "kind": "bar",
+            "pos": [
+              0.15,
+              1,
+              2.5
+            ],
+            "dir": "+x",
+            "axis": "x",
+            "label": "extbar@-0.35,0.4,1.5"
+          },
+          {
+            "index": 3,
+            "kind": "bar",
+            "pos": [
+              0.85,
+              1,
+              2.5
+            ],
+            "dir": "+x",
+            "axis": "x",
+            "label": "extbar@0.35,0.4,1.5"
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              1.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 1,
+            "ly": 0
+          }
+        ]
+      },
+      "assetInput": {
+        "studs": [
+          {
+            "index": 0,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              0.5
+            ],
+            "dir": "+y",
+            "label": "top-0,0",
+            "ly": 1
+          },
+          {
+            "index": 1,
+            "kind": "top",
+            "pos": [
+              0.5,
+              1,
+              1.5
+            ],
+            "dir": "+y",
+            "label": "top-0,1",
+            "ly": 1
+          },
+          {
+            "index": 2,
+            "kind": "bar",
+            "pos": [
+              0.5,
+              0.5,
+              2.22
+            ],
+            "dir": "+z",
+            "axis": "x",
+            "label": "bar-0"
+          }
+        ],
+        "receptors": [
+          {
+            "index": 0,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              0.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 0,
+            "ly": 0
+          },
+          {
+            "index": 1,
+            "kind": "antistud",
+            "pos": [
+              0.5,
+              0,
+              1.5
+            ],
+            "dir": "+y",
+            "i": 0,
+            "k": 1,
+            "ly": 0
+          }
+        ]
+      },
+      "same": false
+    },
+    "remoteTyre": {
+      "rim": {
+        "id": "p006",
+        "part": "11208",
+        "color": 71,
+        "at": [
+          1,
+          1,
+          0
+        ],
+        "rootAt": [
+          1,
+          1,
+          0
+        ],
+        "snot": 0,
+        "step": 45,
+        "note": "轮辋"
+      },
+      "tyre": {
+        "id": "p007",
+        "part": "11209",
+        "color": 0,
+        "up": "+y",
+        "rot": 0,
+        "snot": 0,
+        "at": [
+          0.5,
+          0,
+          100
+        ],
+        "snap": {
+          "on": "p006",
+          "stud": 0,
+          "receptor": 0,
+          "up": "+y"
+        },
+        "mount": "p006",
+        "step": 45,
+        "note": "轮胎"
+      },
+      "axis": "z",
+      "connected": true,
+      "state": {
+        "nodes": [
+          {
+            "nodePath": "p006",
+            "partId": "11208",
+            "color": 71,
+            "at": [
+              1,
+              1,
+              0
+            ],
+            "rot": 0,
+            "up": "+y",
+            "snot": 0,
+            "componentPath": null,
+            "stepOrder": 45
+          },
+          {
+            "nodePath": "p007",
+            "partId": "11209",
+            "color": 0,
+            "at": [
+              0.5,
+              0,
+              100
+            ],
+            "rot": 0,
+            "up": "+y",
+            "snot": 0,
+            "componentPath": null,
+            "stepOrder": 45
+          }
+        ],
+        "connections": [
+          {
+            "aNodeId": "p006",
+            "aConnectorId": "crim#0",
+            "bNodeId": "p007",
+            "bConnectorId": "ctyre#0",
+            "mateProfile": "tyre-rim-v1"
+          }
+        ],
+        "occupancy": [
+          {
+            "nodeId": "p006",
+            "connectorId": "crim#0",
+            "occupiedBy": "p007"
+          },
+          {
+            "nodeId": "p007",
+            "connectorId": "ctyre#0",
+            "occupiedBy": "p006"
+          }
+        ],
+        "inventory": [],
+        "reachability": null,
+        "steps": []
+      },
+      "validation": {
+        "ok": true,
+        "errors": [],
+        "warnings": [],
+        "info": [],
+        "stats": {
+          "parts": 2,
+          "steps": 1,
+          "modules": 0,
+          "subassemblies": 0,
+          "mechanisms": 0,
+          "confirmed": 2,
+          "inferred": 0,
+          "uncertain": 0,
+          "connectedComponents": 1,
+          "largestComponentRatio": 1
+        }
+      }
+    },
+    "model-cottage": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "stats": {
+        "parts": 75,
+        "steps": 15,
+        "modules": 6,
+        "subassemblies": 1,
+        "mechanisms": 2,
+        "confirmed": 70,
+        "inferred": 2,
+        "uncertain": 3,
+        "connectedComponents": 1,
+        "largestComponentRatio": 1
+      }
+    },
+    "model-mecha": {
+      "ok": false,
+      "errors": [
+        {
+          "code": "mount-disconnected",
+          "msg": "p10：与 mount 指定的父零件 p09 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）",
+          "parts": [
+            "p10",
+            "p09"
+          ]
+        },
+        {
+          "code": "mount-disconnected",
+          "msg": "p12：与 mount 指定的父零件 p11 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）",
+          "parts": [
+            "p12",
+            "p11"
+          ]
+        },
+        {
+          "code": "mount-disconnected",
+          "msg": "p56：与 mount 指定的父零件 p30 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）",
+          "parts": [
+            "p56",
+            "p30"
+          ]
+        },
+        {
+          "code": "mount-disconnected",
+          "msg": "p58：与 mount 指定的父零件 p31 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）",
+          "parts": [
+            "p58",
+            "p31"
+          ]
+        },
+        {
+          "code": "mount-disconnected",
+          "msg": "p60：与 mount 指定的父零件 p32 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）",
+          "parts": [
+            "p60",
+            "p32"
+          ]
+        },
+        {
+          "code": "mount-disconnected",
+          "msg": "p62：与 mount 指定的父零件 p33 之间没有真实物理连接（凸点未对准底孔或夹口未对准把柄）",
+          "parts": [
+            "p62",
+            "p33"
+          ]
+        },
+        {
+          "code": "floating",
+          "msg": "10 个零件没有连到底座（悬空）：p10, p12, p56, p57, p58, p59, p60, p61, p62, p63",
+          "parts": [
+            "p10",
+            "p12",
+            "p56",
+            "p57",
+            "p58",
+            "p59",
+            "p60",
+            "p61",
+            "p62",
+            "p63"
+          ]
+        },
+        {
+          "code": "mech-axis",
+          "msg": "wings_front：转轴没有落在真实铰接上——这些零件之间没有任何真实铰接连接器（bar↔clip / pin↔hole / pin↔axle）",
+          "parts": [
+            "p56",
+            "p57",
+            "p58",
+            "p59"
+          ]
+        },
+        {
+          "code": "mech-clearance",
+          "msg": "wings_front：可用行程内发生碰撞——p56×p76（6 个角度，含 10°、15°、20°）；p56×p48（6 个角度，含 10°、15°、20°）；p58×p79（6 个角度，含 10°、15°、20°）；p58×p52（6 个角度，含 10°、15°、20°） 等 12 对",
+          "parts": [
+            "p56",
+            "p57",
+            "p58",
+            "p59"
+          ]
+        },
+        {
+          "code": "mech-axis",
+          "msg": "wings_back：转轴没有落在真实铰接上——这些零件之间没有任何真实铰接连接器（bar↔clip / pin↔hole / pin↔axle）",
+          "parts": [
+            "p60",
+            "p61",
+            "p62",
+            "p63"
+          ]
+        },
+        {
+          "code": "mech-clearance",
+          "msg": "wings_back：可用行程内发生碰撞——p60×p32（4 个角度，含 -35°、-30°、-25°）；p60×p76（2 个角度，含 -35°、-30°）；p60×p77（6 个角度，含 -35°、-30°、-25°）；p60×p48（6 个角度，含 -35°、-30°、-25°） 等 12 对",
+          "parts": [
+            "p60",
+            "p61",
+            "p62",
+            "p63"
+          ]
+        }
+      ],
+      "warnings": [
+        {
+          "code": "mech-rigid",
+          "msg": "wings_front：运动零件不是一个整体——p58, p59 与主体不连通，却会被同一转轴一起带着转",
+          "parts": [
+            "p56",
+            "p57",
+            "p58",
+            "p59"
+          ]
+        },
+        {
+          "code": "mech-rigid",
+          "msg": "wings_back：运动零件不是一个整体——p62, p63 与主体不连通，却会被同一转轴一起带着转",
+          "parts": [
+            "p60",
+            "p61",
+            "p62",
+            "p63"
+          ]
+        }
+      ],
+      "stats": {
+        "parts": 83,
+        "steps": 12,
+        "modules": 8,
+        "subassemblies": 1,
+        "mechanisms": 4,
+        "confirmed": 82,
+        "inferred": 1,
+        "uncertain": 0,
+        "connectedComponents": 7,
+        "largestComponentRatio": 0.879518
+      }
+    },
+    "model-lantern.reconstructed.v9": {
+      "ok": true,
+      "errors": [],
+      "warnings": [],
+      "stats": {
+        "parts": 67,
+        "steps": 5,
+        "modules": 4,
+        "subassemblies": 0,
+        "mechanisms": 0,
+        "confirmed": 64,
+        "inferred": 0,
+        "uncertain": 3,
+        "connectedComponents": 1,
+        "largestComponentRatio": 1
+      }
+    },
+    "door": {
+      "definition": {
+        "name": "Door 1 x 4 x 6 with 4 Panes and Stud Handle",
+        "zh": "门 1×4×6（四格窗）",
+        "kind": "door",
+        "size": [
+          4,
+          1
+        ],
+        "h": 18,
+        "occupies": false,
+        "ldrawOrigin": [
+          -1.6,
+          18,
+          -0.25
+        ],
+        "hinge": {
+          "pivot": [
+            -1.6,
+            0,
+            -0.25
+          ],
+          "axis": [
+            0,
+            1,
+            0
+          ]
+        },
+        "note": "与门框使用相同的 at/rot；门轴在门框背面左侧",
+        "category": "building",
+        "checked": true,
+        "studs": 0,
+        "subGrid": true,
+        "antistudSource": "assumed",
+        "sideStuds": [
+          [
+            1.33,
+            3.45,
+            0.15,
+            "+z"
+          ],
+          [
+            1.33,
+            3.45,
+            -0.15,
+            "-z"
+          ]
+        ],
+        "sideStudsFrame": "same"
+      },
+      "boxes": []
+    },
+    "build": {
+      "inMemory": true,
+      "matchesDist": false,
+      "builtHash": "4959a15ff85c3728706c2b9cd18809c880d1c20b9a39b7d82ffd195d975a6814"
+    },
+    "workbench": {
+      "coreHash": "290f516e101b7c2ffc5dc10841a2b386699d6d6b5a9bf1b1a5a232ae1728d45d",
+      "parts": {
+        "14417": {
+          "def": {
+            "name": "Plate 1 x 2 with Towball on Side",
+            "zh": "带侧球头板 1×2",
+            "kind": "barplate",
+            "size": [
+              2,
+              1
+            ],
+            "h": 1,
+            "category": "hinge",
+            "ldrawOrigin": [
+              0,
+              1,
+              0
+            ],
+            "checked": true,
+            "studs": 2
+          },
+          "boxes": [
+            {
+              "x0": 0,
+              "x1": 2,
+              "y0": 5,
+              "y1": 6,
+              "z0": 0,
+              "z1": 1
+            }
+          ],
+          "connectors": {
+            "studs": [
+              {
+                "index": 0,
+                "kind": "top",
+                "pos": [
+                  0.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-0,0",
+                "ly": 1
+              },
+              {
+                "index": 1,
+                "kind": "top",
+                "pos": [
+                  1.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-1,0",
+                "ly": 1
+              },
+              {
+                "index": 2,
+                "kind": "bar",
+                "pos": [
+                  0.5,
+                  0.5,
+                  1.22
+                ],
+                "dir": "+z",
+                "axis": "x",
+                "label": "bar-0"
+              },
+              {
+                "index": 3,
+                "kind": "bar",
+                "pos": [
+                  1.5,
+                  0.5,
+                  1.22
+                ],
+                "dir": "+z",
+                "axis": "x",
+                "label": "bar-1"
+              }
+            ],
+            "receptors": [
+              {
+                "index": 0,
+                "kind": "antistud",
+                "pos": [
+                  0.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 0,
+                "k": 0,
+                "ly": 0
+              },
+              {
+                "index": 1,
+                "kind": "antistud",
+                "pos": [
+                  1.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 1,
+                "k": 0,
+                "ly": 0
+              }
+            ]
+          }
+        },
+        "14418": {
+          "def": {
+            "name": "Plate 1 x 2 with Towball Socket",
+            "zh": "带球窝夹板 1×2",
+            "kind": "clip",
+            "size": [
+              2,
+              1
+            ],
+            "h": 1,
+            "singleClip": true,
+            "category": "hinge",
+            "ldrawOrigin": [
+              0,
+              1,
+              0
+            ],
+            "checked": true,
+            "studs": 2
+          },
+          "boxes": [
+            {
+              "x0": 0,
+              "x1": 2,
+              "y0": 5,
+              "y1": 6,
+              "z0": 0,
+              "z1": 1
+            }
+          ],
+          "connectors": {
+            "studs": [
+              {
+                "index": 0,
+                "kind": "top",
+                "pos": [
+                  0.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-0,0",
+                "ly": 1
+              },
+              {
+                "index": 1,
+                "kind": "top",
+                "pos": [
+                  1.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-1,0",
+                "ly": 1
+              }
+            ],
+            "receptors": [
+              {
+                "index": 0,
+                "kind": "antistud",
+                "pos": [
+                  0.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 0,
+                "k": 0,
+                "ly": 0
+              },
+              {
+                "index": 1,
+                "kind": "antistud",
+                "pos": [
+                  1.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 1,
+                "k": 0,
+                "ly": 0
+              },
+              {
+                "index": 2,
+                "kind": "clip",
+                "pos": [
+                  1,
+                  0.5,
+                  1.22
+                ],
+                "dir": "+z",
+                "axis": "x",
+                "i": 0,
+                "k": 0
+              }
+            ]
+          }
+        },
+        "36841": {
+          "def": {
+            "name": "Bracket 1 x 1 - 1 x 1 (Down)",
+            "zh": "单格正支架 1×1-1×1（向下垂）",
+            "kind": "bracket",
+            "size": [
+              1,
+              1
+            ],
+            "h": 1,
+            "dir": "down",
+            "vRows": 1,
+            "vH": 3,
+            "sideFaces": [
+              "+z"
+            ],
+            "sideRows": [
+              -0.25
+            ],
+            "category": "bracket",
+            "ldrawOrigin": [
+              0,
+              1,
+              0
+            ],
+            "checked": true,
+            "studs": 1,
+            "sideStuds": [
+              [
+                0,
+                -0.1,
+                0.7,
+                "+z"
+              ]
+            ],
+            "sideStudsFrame": "same"
+          },
+          "boxes": [
+            {
+              "x0": 0,
+              "x1": 1,
+              "y0": 5,
+              "y1": 6,
+              "z0": 0,
+              "z1": 1
+            },
+            {
+              "x0": 0,
+              "x1": 1,
+              "y0": 3,
+              "y1": 6,
+              "z0": 1,
+              "z1": 1.2
+            }
+          ],
+          "connectors": {
+            "studs": [
+              {
+                "index": 0,
+                "kind": "top",
+                "pos": [
+                  0.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-0,0",
+                "ly": 1
+              },
+              {
+                "index": 1,
+                "kind": "side",
+                "pos": [
+                  0.5,
+                  -0.25,
+                  1.2
+                ],
+                "dir": "+z",
+                "label": "extside@0,-0.1,0.7"
+              }
+            ],
+            "receptors": [
+              {
+                "index": 0,
+                "kind": "antistud",
+                "pos": [
+                  0.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 0,
+                "k": 0,
+                "ly": 0
+              }
+            ]
+          }
+        },
+        "99781": {
+          "def": {
+            "name": "Bracket 1 x 2 - 1 x 2 (Down)",
+            "zh": "正支架 1×2-1×2（向下垂，深3片）",
+            "kind": "bracket",
+            "size": [
+              2,
+              1
+            ],
+            "h": 1,
+            "dir": "down",
+            "vRows": 1,
+            "vH": 3,
+            "sideFaces": [
+              "+z"
+            ],
+            "sideRows": [
+              -0.25
+            ],
+            "category": "bracket",
+            "ldrawOrigin": [
+              0,
+              1,
+              0
+            ],
+            "checked": true,
+            "studs": 2,
+            "sideStuds": [
+              [
+                0.5,
+                -0.1,
+                0.7,
+                "+z"
+              ],
+              [
+                -0.5,
+                -0.1,
+                0.7,
+                "+z"
+              ]
+            ],
+            "sideStudsFrame": "same"
+          },
+          "boxes": [
+            {
+              "x0": 0,
+              "x1": 2,
+              "y0": 5,
+              "y1": 6,
+              "z0": 0,
+              "z1": 1
+            },
+            {
+              "x0": 0,
+              "x1": 2,
+              "y0": 3,
+              "y1": 6,
+              "z0": 1,
+              "z1": 1.2
+            }
+          ],
+          "connectors": {
+            "studs": [
+              {
+                "index": 0,
+                "kind": "top",
+                "pos": [
+                  0.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-0,0",
+                "ly": 1
+              },
+              {
+                "index": 1,
+                "kind": "top",
+                "pos": [
+                  1.5,
+                  1,
+                  0.5
+                ],
+                "dir": "+y",
+                "label": "top-1,0",
+                "ly": 1
+              },
+              {
+                "index": 2,
+                "kind": "side",
+                "pos": [
+                  1.5,
+                  -0.25,
+                  1.2
+                ],
+                "dir": "+z",
+                "label": "extside@0.5,-0.1,0.7"
+              },
+              {
+                "index": 3,
+                "kind": "side",
+                "pos": [
+                  0.5,
+                  -0.25,
+                  1.2
+                ],
+                "dir": "+z",
+                "label": "extside@-0.5,-0.1,0.7"
+              }
+            ],
+            "receptors": [
+              {
+                "index": 0,
+                "kind": "antistud",
+                "pos": [
+                  0.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 0,
+                "k": 0,
+                "ly": 0
+              },
+              {
+                "index": 1,
+                "kind": "antistud",
+                "pos": [
+                  1.5,
+                  0,
+                  0.5
+                ],
+                "dir": "+y",
+                "i": 1,
+                "k": 0,
+                "ly": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "after": {
+    "src/core/core.js": "260fde35fb4f213dc1654909dd333daff8ce87267c8ef6dd48a7caca38f7c24b",
+    "catalog/parts.json": "121993ea74ffc13c246b2f0db137e21f0dfcc62f1980ee15d9eb85beb162c4d7",
+    "catalog/parts-ldraw.json": "1841b7081e03ec86be75cb687a9cda6f7727858de3ccd07de78a6bdbe60fea27",
+    "src/core/assets-v1/index.js": "50149f7a2f46340fc9ffff0a519dfd3aabc1d506dd0cc7d249c69cf5f02463f6",
+    "src/core/assets-v1/ids.js": "707705f644c46b7193feb844ba73d06730b05e88495d0e90b37d129c924110c2",
+    "src/core/actions-v1/state.js": "cb4131c33a54a43d5eab9594652ac1e3ac4ebcc6e4c104281b8d4ca3930b9465",
+    "dist/viewer.html": "d2c658f2c9f97fc394f304abb6728c1f255343472fe49d15a8cf35c65747c263"
+  },
+  "inputsStable": true
+}
