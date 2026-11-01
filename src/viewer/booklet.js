@@ -25,7 +25,7 @@ export class Booklet {
     const key = new THREE.DirectionalLight(0xffffff, 1.0); key.position.set(-4, 10, 7); sc.add(key);
     this.cam = new THREE.OrthographicCamera(-1, 1, 1, -1, 1, 2000);
     this.mats = new Map(); this.lineMats = []; this.lineGeo = new Map();
-    this.glass = new THREE.MeshStandardMaterial({ color: 0xbcd3e0, roughness: 0.1, transparent: true, opacity: 0.75 });
+    this.glass = new THREE.MeshStandardMaterial({ color: 0xbcd3e0, roughness: 0.1, transparent: true, opacity: 0.75, side: THREE.DoubleSide });
   }
   mat(code, faded) {
     const k = `${code}${faded ? '~' : ''}`;
@@ -33,7 +33,7 @@ export class Booklet {
     const c = colorOf(code), alpha = c.alpha ?? 1, col = new THREE.Color(c.hex), white = new THREE.Color(0xffffff);
     const body = faded ? col.clone().lerp(white, 0.62) : col;
     const solid = new THREE.MeshStandardMaterial({ color: body, roughness: 0.55, metalness: 0, transparent: alpha < 1, opacity: alpha, depthWrite: alpha >= 1,
-      polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+      polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, side: THREE.DoubleSide });
     const lc = luminance(col) < 0.04 ? new THREE.Color(0x707075) : col.clone().multiplyScalar(0.3);
     if (faded) lc.lerp(white, 0.55);
     const line = new LineMaterial({ color: lc, linewidth: 2.2 });

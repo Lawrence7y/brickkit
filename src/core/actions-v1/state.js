@@ -6,7 +6,7 @@
 import crypto from 'node:crypto';
 import {
   partConnectors, partsConnected, partBoxes, partsCollide, bom as coreBom,
-  nearPairCandidates, partAabbWithMargin,
+  nearPairCandidates, partAabbWithMargin, rimTyreMatches, barClipMatches, doorHingeMatches,
 } from '../core.js';
 
 const stableStringify = (v) => {
@@ -59,8 +59,9 @@ export function inspectFromModel(model, cat, opts = {}) {
       if (!partsConnected(a, cat.parts[a.part], b, cat.parts[b.part], ca, cb)) continue;
       // 一对零件之间可能同时有多个接口扣合（2×4 叠 2×4 是 8 对凸点/底孔）。
       // 只记第一对会让 occupancy 少标 7 个接口，候选枚举与标号渲染都会把已被占用的凸点当成空闲。
-      const pairs = findAllConnectorPairs(ca, cb);
+      const pairs = findAllConnectorPairs(ca, cb, cat.parts[a.part], cat.parts[b.part]);
       if (!pairs.length) {
+        if (doorHingeMatches(a, cat.parts[a.part], b, cat.parts[b.part])) continue; // 门扇↔门框由下方 doorLinks 统一写入 door-hinge-v1
         // 连通但无法定位到具体接口（例如轮胎套轮毂的同心判定）→ 保留零件对级连接，接口占用记为未知
         connections.push({ aNodeId: a.id, aConnectorId: null, bNodeId: b.id, bConnectorId: null, mateProfile: null, connectorPairsUnknown: true });
         continue;
@@ -73,6 +74,26 @@ export function inspectFromModel(model, cat, opts = {}) {
         });
       }
     }
+  }
+
+  // 门 ↔ 门框：门的铰链在官方 .dat 里没有销孔图元（是造型暗示，不是可连接接口），
+  // 所以物理判据无从判定——validate 一直用「kind==='door' 且 mount 指向门框」这条**模型级声明**放行。
+  // 状态层原先不认这条规则，于是同一扇门在 validate 里连着、在状态图里断开（cottage 1 vs 2 分量）。
+  // 这里补上同一条规则，并显式标记来源，两条判据对「门」的结论从此一致。
+  const doorLinks = new Set(connections.map((c) => [c.aNodeId, c.bNodeId].sort().join('|')));
+  const byIdAll = new Map(parts.map((p) => [p.id, p]));
+  for (const p of parts) {
+    if (cat.parts[p.part]?.kind !== 'door' || !p.mount) continue;
+    const parent = byIdAll.get(p.mount);
+    if (!parent || cat.parts[parent.part]?.kind !== 'doorframe') continue;
+    const key = [p.id, parent.id].sort().join('|');
+    if (doorLinks.has(key)) continue;
+    doorLinks.add(key);
+    connections.push({
+      aNodeId: p.id, aConnectorId: null,
+      bNodeId: parent.id, bConnectorId: null,
+      mateProfile: 'door-hinge-v1', connectorPairsUnknown: true,
+    });
   }
 
   // 接口占用：每个被真实连接用到的连接器记为 occupied
@@ -138,30 +159,21 @@ function reachability(adj, root) {
  * 规则必须与 core.partsConnected 一致；不一致时返回空数组让上层标 unsupported，不猜。
  * 注意这里返回**全部**匹配对：两块 2×4 叠起来是 8 对，不是 1 对。
  */
-function findAllConnectorPairs(ca, cb) {
+function findAllConnectorPairs(ca, cb, defA, defB) {
   const close = (p, q) => Math.abs(p[0] - q[0]) <= 0.08 && Math.abs(p[1] - q[1]) <= 0.20 && Math.abs(p[2] - q[2]) <= 0.08;
   const sameAxis = (s, r) => !s.axis || !r.axis || s.axis === r.axis;
-  const AXIS_COMPONENT = { x: 0, y: 1, z: 2 };
-  const coaxial = (a, b) => {
-    const axis = a.axis || b.axis;
-    const i = AXIS_COMPONENT[axis];
-    if (i === undefined) return false;
-    for (const j of [0, 1, 2]) if (j !== i && Math.abs(a.pos[j] - b.pos[j]) > 0.08) return false;
-    return true;
-  };
   const tryPair = (s, r) => {
-    if (s.kind === 'bar' && r.kind === 'clip') return sameAxis(s, r) && close(s.pos, r.pos) ? 'bar-clip-v1' : null;
+    // 球头↔球窝：三自由度关节，只判球心与窝心重合（与 core.connectorPairMatches 一致）
+    if (s.kind === 'ball' && r.kind === 'socket') return close(s.pos, r.pos) ? 'ball-socket-v1' : null;
+    // 把柄↔夹口：与 core.connectorPairMatches 共用同一实现（杆段跨度语义）
+    if (s.kind === 'bar' && r.kind === 'clip') return barClipMatches(s, r) ? 'bar-clip-v1' : null;
     if (s.kind === 'pin' && r.kind === 'hole') return sameAxis(s, r) && close(s.pos, r.pos) ? 'pin-hole-v1' : null;
     if (s.kind === 'pin' && r.kind === 'axle') return sameAxis(s, r) && close(s.pos, r.pos) ? 'pin-axle-v1' : null;
     if (s.kind === 'minifig' && r.kind === 'minifig') return s.role === 'peg' && r.role === 'socket' && close(s.pos, r.pos) ? 'minifig-peg-socket-v1' : null;
     if (s.kind === 'top' && r.kind === 'minifig') return r.role === 'socket' && s.dir === r.dir && close(s.pos, r.pos) ? 'minifig-peg-socket-v1' : null;
-    if (s.kind === 'rim' && r.kind === 'tyre') {
-      if (!sameAxis(s, r) || !coaxial(s, r)) return null;
-      const bore = typeof r.bore === 'number' ? r.bore : null, outer = typeof s.outer === 'number' ? s.outer : null;
-      if (bore === null || outer === null) return null;
-      return bore <= outer + 0.12 && outer <= (typeof r.outer === 'number' ? r.outer : Infinity) + 0.12 ? 'tyre-rim-v1' : null;
-    }
-    if (s.kind !== 'bar' && s.kind !== 'pin' && s.kind !== 'minifig' && r.kind === 'antistud') {
+    // 轮胎↔轮毂：判据与 core.partsConnected 共用同一实现（含轴向搭接），不再各写一套
+    if (s.kind === 'rim' && r.kind === 'tyre') return rimTyreMatches(s, defB, r, defA) ? 'tyre-rim-v1' : null;
+    if ((s.kind === 'top' || s.kind === 'side') && r.kind === 'antistud') {
       return s.dir === r.dir && close(s.pos, r.pos) ? 'stud-antistud-v1' : null;
     }
     return null;

@@ -14,7 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { partConnectors, partBoxes, FORMAT as LEGACY_FORMAT } from '../core.js';
+import { partConnectors, partBoxes, mergeCatalogParts, FORMAT as LEGACY_FORMAT } from '../core.js';
 import {
   gridToLdu, makeConnectorId, makeLegacyIndex, connectorTypeOf,
   MATE_PROFILE_OF, dirToOrientationId, LDU_PER_STUD, LDU_PER_PLATE,
@@ -86,12 +86,17 @@ export function readRawCatalog(root, opts = {}) {
   // 与 Linux（LF）下字节不同但语义相同，用原始字节做校验会让别的机器一检出就报过期。
   const normSha = (buf) => sha256(Buffer.from(buf.toString('utf8').split('\r\n').join('\n'), 'utf8'));
 
+  // 必须走唯一合并实现 mergeCatalogParts（字段级继承实测连接器），禁止条目级整条覆盖——
+  // 否则精选件（如 48336/63868/60478）在资产定义里会丢掉官方 .dat 实测接口、退回合成位置，
+  // 造成 CLI/core 与资产层接口数量与坐标不一致。
+  const mergedDefs = mergeCatalogParts(extDoc.parts || {}, curated.parts || {});
   const merged = {};
-  for (const [id, def] of Object.entries(extDoc.parts || {})) {
-    merged[id] = { def, sourceType: 'extracted' };
-  }
-  for (const [id, def] of Object.entries(curated.parts || {})) {
-    merged[id] = { def, sourceType: 'curated', overridesExtracted: Boolean(extDoc.parts?.[id]) };
+  for (const [id, def] of Object.entries(mergedDefs)) {
+    const inCurated = Object.hasOwn(curated.parts || {}, id);
+    const inExt = Object.hasOwn(extDoc.parts || {}, id);
+    merged[id] = inCurated
+      ? { def, sourceType: 'curated', overridesExtracted: inExt }
+      : { def, sourceType: 'extracted' };
   }
   return {
     merged,

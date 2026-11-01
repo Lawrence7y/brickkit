@@ -193,14 +193,17 @@ function studLabelId(stud) {
 /** 单件候选：用 core.snapPart 的等价算术求位姿，再对全部相关零件（含父件）查碰撞 */
 function buildPartCandidate({ state, parentNode, pDef, stud, childPartId, childDef, childConn, receptor, spin, cat, opts, occupied }) {
   // 先校验连接类型可匹配
-  const typeOk = matchesStudAntistud(stud, receptor);
-  if (!typeOk) return { kind: 'unsupported', type: `${stud.kind}/${receptor.kind}` };
+  const mateProfile = matchesStudAntistud(stud, receptor);
+  if (!mateProfile) return { kind: 'unsupported', type: `${stud.kind}/${receptor.kind}` };
 
   const parentConnId = studLabelId(stud);
   if (occupied.has(`${parentNode.nodePath}|${parentConnId}`)) return { kind: 'occupied' };
 
   // 位姿：父件接口姿态 ∘ 自旋 ∘ 子件接口逆姿态
-  const parentOrient = orientationIdOf(stud.dir || '+y', 0);
+  // 球头↔球窝在中性共轴位姿下，球窝外伸方向（receptor.dir）与球头外伸方向（stud.dir）相反对合
+  const flipDir = (d) => (d ? (d.startsWith('+') ? `-${d.slice(1)}` : `+${d.slice(1)}`) : '+y');
+  const targetDir = stud.kind === 'ball' ? flipDir(stud.dir || '+y') : (stud.dir || '+y');
+  const parentOrient = orientationIdOf(targetDir, 0);
   const childOrient = orientationIdOf(receptor.dir || '+y', 0);
   if (parentOrient === null || childOrient === null) return { kind: 'unsupported', type: 'orientation-not-in-table' };
 
@@ -282,7 +285,7 @@ function buildPartCandidate({ state, parentNode, pDef, stud, childPartId, childD
     childPartId,
     childConnectorId: `c${receptor.kind}#${receptor.index}`,
     childConnectorType: receptor.kind,
-    mateProfile: 'stud-antistud-v1',
+    mateProfile,
     orientationId: oid,
     spinDeg: spin,
     // translationLdu 是基准 at（apply 会再叠加 snot 得到绝对位置）
@@ -396,9 +399,10 @@ function safeBoxes(p, def) {
 }
 
 function matchesStudAntistud(s, r) {
-  if (s.kind === 'top' && r.kind === 'antistud') return true;
-  if (s.kind === 'side' && r.kind === 'antistud') return true;
-  return false;
+  if (s.kind === 'top' && r.kind === 'antistud') return 'stud-antistud-v1';
+  if (s.kind === 'side' && r.kind === 'antistud') return 'stud-antistud-v1';
+  if (s.kind === 'ball' && r.kind === 'socket') return 'ball-socket-v1';
+  return null;
 }
 
 /**

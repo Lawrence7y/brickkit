@@ -71,18 +71,20 @@ const KIND_TO_TYPE = {
   side: 'stud',
   bar: 'bar',
   pin: 'pin',
+  ball: 'ball',
   antistud: 'antistud',
   clip: 'clip',
   hole: 'hole',
   axle: 'axle',
+  socket: 'socket',
   rim: 'rim',
   tyre: 'tyre',
   minifig: null,          // 由 role 决定 peg / socket
 };
 
 const KIND_TO_ROLE = {
-  top: 'male', side: 'male', bar: 'male', pin: 'male', rim: 'male',
-  antistud: 'female', clip: 'female', hole: 'female', axle: 'female', tyre: 'female',
+  top: 'male', side: 'male', bar: 'male', pin: 'male', ball: 'male', rim: 'male',
+  antistud: 'female', clip: 'female', hole: 'female', axle: 'female', socket: 'female', tyre: 'female',
 };
 
 /** 由 core 连接器条目推导契约 type / role；无法归类时返回 null（调用方须显式声明缺口，不得猜） */
@@ -106,6 +108,8 @@ export const MATE_PROFILE_OF = {
   pin: 'pin-hole-v1',
   hole: 'pin-hole-v1',
   axle: 'pin-axle-v1',
+  ball: 'ball-socket-v1',
+  socket: 'ball-socket-v1',
   rim: 'tyre-rim-v1',
   tyre: 'tyre-rim-v1',
   'minifig-peg': 'minifig-peg-socket-v1',

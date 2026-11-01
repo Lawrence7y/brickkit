@@ -5,10 +5,11 @@ import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js
 import partsJson from '../../catalog/parts.json' with { type: 'json' };
 import partsLdrawJson from '../../catalog/parts-ldraw.json' with { type: 'json' };
 import colorsJson from '../../catalog/colors.json' with { type: 'json' };
-import { localCells, partCenter, PLATE } from '../core/core.js';
+import { localCells, partCenter, PLATE, mergeCatalogParts } from '../core/core.js';
 
-// 精选目录优先，LDraw 自动提取目录兜底（auto 条目为官方几何实测的网格语义）
-export const cat = { parts: { ...partsLdrawJson.parts, ...partsJson.parts }, colors: colorsJson.colors };
+// 精选目录优先决定零件身份，实测连接器继承自 LDraw 自动提取目录（见 mergeCatalogParts 注释）。
+// 两处必须用同一个合并函数：查看器与校验器对「这个件怎么扣」的分歧会直接表现为「看图能装、实装不上」。
+export const cat = { parts: mergeCatalogParts(partsLdrawJson.parts, partsJson.parts), colors: colorsJson.colors };
 export const colorOf = (code) => cat.colors[String(code)] || { hex: '#C8C8C8', zh: `颜色 ${code}` };
 export const luminance = (c) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
 
@@ -49,6 +50,262 @@ const flatPoly = (pts, h) => {
   return clean(g);
 };
 
+/**
+ * 带有底部空腔与抗凸点管/销的真实砖体/板体结构。
+ * 顶部 ceiling + 4 周壁 + (底面 y=0 完全镂空) + (2x2以上管腔 / 1xN中心销)。
+ */
+function hollowBrickBody(d, sx, sz, H, hx, hz) {
+  const parts = [];
+  const t_top = Math.min(0.08, H * 0.25);
+  const w = 0.08;
+  const yTop = H - 0.004;
+  const yCeil = yTop - t_top;
+
+  // 1. 顶面顶板
+  parts.push(box(-hx + G, hx - G, yCeil, yTop, -hz + G, hz - G));
+
+  // 2. 四周物理外壁（底面 y=0 开放形成空腔）
+  parts.push(box(-hx + G, hx - G, 0, yCeil, hz - G - w, hz - G));
+  parts.push(box(-hx + G, hx - G, 0, yCeil, -hz + G, -hz + G + w));
+  parts.push(box(-hx + G, -hx + G + w, 0, yCeil, -hz + G + w, hz - G - w));
+  parts.push(box(hx - G - w, hx - G, 0, yCeil, -hz + G + w, hz - G - w));
+
+  // 3. 空腔内部抗凸点管或中心插销
+  const h_inner = yCeil;
+  if (h_inner > 0.05) {
+    if (sx >= 2 && sz >= 2) {
+      const rOut = 0.3255;
+      const rIn = 0.24;
+      for (let i = 0; i <= sx - 2; i++) {
+        for (let k = 0; k <= sz - 2; k++) {
+          const cx = i - hx + 1.0;
+          const cz = k - hz + 1.0;
+          const outerC = new THREE.CylinderGeometry(rOut, rOut, h_inner, 16, 1, true);
+          outerC.translate(cx, h_inner / 2, cz);
+          const innerC = new THREE.CylinderGeometry(rIn, rIn, h_inner, 16, 1, true);
+          innerC.translate(cx, h_inner / 2, cz);
+          const ring = new THREE.RingGeometry(rIn, rOut, 16);
+          ring.rotateX(Math.PI / 2);
+          ring.translate(cx, 0, cz);
+          parts.push(clean(outerC), clean(innerC), clean(ring));
+        }
+      }
+    } else if (sx === 1 && sz >= 2) {
+      for (let k = 0; k <= sz - 2; k++) {
+        const cz = k - hz + 1.0;
+        const pin = new THREE.CylinderGeometry(0.15, 0.15, h_inner, 12);
+        pin.translate(0, h_inner / 2, cz);
+        parts.push(clean(pin));
+      }
+    } else if (sz === 1 && sx >= 2) {
+      for (let i = 0; i <= sx - 2; i++) {
+        const cx = i - hx + 1.0;
+        const pin = new THREE.CylinderGeometry(0.15, 0.15, h_inner, 12);
+        pin.translate(cx, h_inner / 2, 0);
+        parts.push(clean(pin));
+      }
+    }
+  }
+  return parts;
+}
+
+/**
+ * 带有底部空腔与抗凸点管/加强肋的真实斜坡/弧面斜面体结构。
+ * 左右侧壁 + 前后侧壁 + 倾斜/弯曲顶盖 + (底面 y=0 完全镂空) + (2x2以上管腔 / 1xN中心肋销)。
+ */
+function hollowSlopeBody(d, sx, sz, H, hx, hz, pts, lip) {
+  const parts = [];
+  const w = 0.08;
+  const gLeft = new THREE.ExtrudeGeometry(new THREE.Shape(pts.map(([z, y]) => new THREE.Vector2(z, y))), { depth: w, bevelEnabled: false });
+  gLeft.rotateY(-Math.PI / 2);
+  gLeft.translate(-hx + G + w, 0, 0);
+  parts.push(clean(gLeft));
+
+  const gRight = new THREE.ExtrudeGeometry(new THREE.Shape(pts.map(([z, y]) => new THREE.Vector2(z, y))), { depth: w, bevelEnabled: false });
+  gRight.rotateY(-Math.PI / 2);
+  gRight.translate(hx - G, 0, 0);
+  parts.push(clean(gRight));
+
+  const x0 = -hx + G + w, x1 = hx - G - w;
+  if (x1 > x0) {
+    const depthX = x1 - x0;
+    const backLip = d.kind === 'ridge' ? lip : H - 0.004;
+    const gBack = box(x0, x1, 0, backLip, -hz + G, -hz + G + w);
+    parts.push(gBack);
+
+    const gFront = box(x0, x1, 0, lip, hz - G - w, hz - G);
+    parts.push(gFront);
+
+    const upperPts = pts.slice(2);
+    const innerPts = upperPts.map(([z, y]) => [z, Math.max(lip - w, y - w)]).reverse();
+    const roofPts = [...upperPts, ...innerPts];
+    const gRoof = new THREE.ExtrudeGeometry(new THREE.Shape(roofPts.map(([z, y]) => new THREE.Vector2(z, y))), { depth: depthX, bevelEnabled: false });
+    gRoof.rotateY(-Math.PI / 2);
+    gRoof.translate(x1, 0, 0);
+    parts.push(clean(gRoof));
+  }
+
+  if (sx >= 2 && sz >= 2) {
+    const rOut = 0.3255, rIn = 0.24;
+    for (let i = 0; i <= sx - 2; i++) {
+      for (let k = 0; k <= sz - 2; k++) {
+        const cx = i - hx + 1.0;
+        const cz = k - hz + 1.0;
+        const frac = Math.max(0.2, 1 - (cz + hz) / (2 * hz));
+        const h_inner = Math.max(0.15, (H - 0.004 - w) * frac);
+        const outerC = new THREE.CylinderGeometry(rOut, rOut, h_inner, 16, 1, true);
+        outerC.translate(cx, h_inner / 2, cz);
+        const innerC = new THREE.CylinderGeometry(rIn, rIn, h_inner, 16, 1, true);
+        innerC.translate(cx, h_inner / 2, cz);
+        const ring = new THREE.RingGeometry(rIn, rOut, 16);
+        ring.rotateX(Math.PI / 2);
+        ring.translate(cx, 0, cz);
+        parts.push(clean(outerC), clean(innerC), clean(ring));
+      }
+    }
+  } else if (sx === 1 && sz >= 2) {
+    for (let k = 0; k <= sz - 2; k++) {
+      const cz = k - hz + 1.0;
+      const frac = Math.max(0.2, 1 - (cz + hz) / (2 * hz));
+      const h_inner = Math.max(0.15, (H - 0.004 - w) * frac);
+      const pin = new THREE.CylinderGeometry(0.15, 0.15, h_inner, 12);
+      pin.translate(0, h_inner / 2, cz);
+      parts.push(clean(pin));
+    }
+  } else if (sz === 1 && sx >= 2) {
+    for (let i = 0; i <= sx - 2; i++) {
+      const cx = i - hx + 1.0;
+      const h_inner = Math.max(0.15, (H - 0.004 - w) * 0.5);
+      const pin = new THREE.CylinderGeometry(0.15, 0.15, h_inner, 12);
+      pin.translate(cx, h_inner / 2, 0);
+      parts.push(clean(pin));
+    }
+  }
+  return parts;
+}
+
+/**
+ * 科技插销孔通孔套管与两端倒角环。
+ */
+function technicHolePieces(d, sx, sz, H, hx, hz) {
+  const parts = [];
+  const holePositions = [];
+  if (Array.isArray(d.holes)) {
+    for (const h of d.holes) {
+      if (Array.isArray(h) && h.length >= 3) {
+        // h[1] 由 toLocal 计算，单位已是格（与 sx/sz/H 同为格坐标系，1 格 = 20 LDU = 2.5 片）
+        holePositions.push({ x: h[0], y: h[1], z: h[2], axis: h[3] || 'z' });
+      }
+    }
+  } else if (typeof d.holes === 'number' && d.holes > 0) {
+    const n = d.holes;
+    const y = Math.min(H * 0.5, 1.45 * PLATE);
+    if (sz === 1) {
+      if (sx === 1) holePositions.push({ x: 0, y, z: 0, axis: 'z' });
+      else if (sx === 2 && n === 1) holePositions.push({ x: 0, y, z: 0, axis: 'z' });
+      else if (sx === 2 && n === 2) { holePositions.push({ x: -0.5, y, z: 0, axis: 'z' }, { x: 0.5, y, z: 0, axis: 'z' }); }
+      else {
+        const span = sx - 1;
+        const step = span / (n - 1 || 1);
+        for (let i = 0; i < n; i++) holePositions.push({ x: -span / 2 + i * step, y, z: 0, axis: 'z' });
+      }
+    }
+  }
+  for (const hp of holePositions) {
+    const rIn = 0.24, rOut = 0.32;
+    const len = (hp.axis === 'x' ? sx : sz) - 2 * G + 0.002;
+    const sleeve = new THREE.CylinderGeometry(rIn, rIn, len, 16, 1, true);
+    if (hp.axis === 'z') sleeve.rotateX(Math.PI / 2);
+    else if (hp.axis === 'x') sleeve.rotateZ(Math.PI / 2);
+    sleeve.translate(hp.x, hp.y, hp.z);
+    parts.push(clean(sleeve));
+    for (const sgn of [1, -1]) {
+      const ring = new THREE.RingGeometry(rIn, rOut, 16);
+      if (hp.axis === 'z') {
+        ring.translate(hp.x, hp.y, hp.z + sgn * (sz / 2 - G));
+      } else if (hp.axis === 'x') {
+        ring.rotateY(Math.PI / 2);
+        ring.translate(hp.x + sgn * (sx / 2 - G), hp.y, hp.z);
+      } else {
+        ring.rotateX(Math.PI / 2);
+        ring.translate(hp.x, hp.y + sgn * (H / 2 - G), hp.z);
+      }
+      parts.push(clean(ring));
+    }
+  }
+  return parts;
+}
+
+/**
+ * 任意子盒 [x0, x1, y0, y1, z0, z1]（格坐标，y 已乘 PLATE）的底部镂空壳体。
+ * 用于多盒分解件（d.boxes）、拱门支腿、车灯砖主体等局部带下腔的块体。
+ */
+function hollowBoxPiece(x0, x1, y0, y1, z0, z1) {
+  const sx = x1 - x0, sz = z1 - z0, bH = y1 - y0;
+  const yTop = y1 - 0.004;
+  if (bH <= 0.1 || sx <= 0.22 || sz <= 0.22) {
+    return [box(x0 + G, x1 - G, y0, Math.max(y0 + 0.02, yTop), z0 + G, z1 - G)];
+  }
+  const parts = [];
+  const t_top = Math.min(0.08, bH * 0.25);
+  const w = 0.08;
+  const yCeil = yTop - t_top;
+  parts.push(box(x0 + G, x1 - G, yCeil, yTop, z0 + G, z1 - G));
+  parts.push(box(x0 + G, x1 - G, y0, yCeil, z1 - G - w, z1 - G));
+  parts.push(box(x0 + G, x1 - G, y0, yCeil, z0 + G, z0 + G + w));
+  parts.push(box(x0 + G, x0 + G + w, y0, yCeil, z0 + G + w, z1 - G - w));
+  parts.push(box(x1 - G - w, x1 - G, y0, yCeil, z0 + G + w, z1 - G - w));
+  const h_inner = yCeil - y0;
+  if (y0 <= 0.01 && h_inner > 0.05) {
+    const isx = Math.round(sx), isz = Math.round(sz);
+    if (isx >= 2 && isz >= 2) {
+      const rOut = 0.3255, rIn = 0.24;
+      for (let i = 0; i <= isx - 2; i++) {
+        for (let k = 0; k <= isz - 2; k++) {
+          const cx = x0 + i + 1.0, cz = z0 + k + 1.0;
+          const outerC = new THREE.CylinderGeometry(rOut, rOut, h_inner, 16, 1, true);
+          outerC.translate(cx, y0 + h_inner / 2, cz);
+          const innerC = new THREE.CylinderGeometry(rIn, rIn, h_inner, 16, 1, true);
+          innerC.translate(cx, y0 + h_inner / 2, cz);
+          const ring = new THREE.RingGeometry(rIn, rOut, 16);
+          ring.rotateX(Math.PI / 2);
+          ring.translate(cx, y0, cz);
+          parts.push(clean(outerC), clean(innerC), clean(ring));
+        }
+      }
+    } else if (isx === 1 && isz >= 2) {
+      const cx = (x0 + x1) / 2;
+      for (let k = 0; k <= isz - 2; k++) {
+        const cz = z0 + k + 1.0;
+        const pin = new THREE.CylinderGeometry(0.15, 0.15, h_inner, 12);
+        pin.translate(cx, y0 + h_inner / 2, cz);
+        parts.push(clean(pin));
+      }
+    } else if (isz === 1 && isx >= 2) {
+      const cz = (z0 + z1) / 2;
+      for (let i = 0; i <= isx - 2; i++) {
+        const cx = x0 + i + 1.0;
+        const pin = new THREE.CylinderGeometry(0.15, 0.15, h_inner, 12);
+        pin.translate(cx, y0 + h_inner / 2, cz);
+        parts.push(clean(pin));
+      }
+    }
+  }
+  return parts;
+}
+
+function hollowMultiBoxes(d, sx, sz, H, hx, hz) {
+  const posBoxes = Array.isArray(d.boxes) ? d.boxes.filter((b) => Array.isArray(b) && b.length === 6 && b[3] > 0 && b[2] >= 0) : [];
+  if (posBoxes.length > 0 && (posBoxes.length > 1 || posBoxes.some((b) => b[2] > 0 || b[3] < d.h))) {
+    const out = [];
+    for (const [bx0, bx1, by0, by1, bz0, bz1] of posBoxes) {
+      out.push(...hollowBoxPiece(bx0, bx1, by0 * PLATE, by1 * PLATE, bz0, bz1));
+    }
+    return out;
+  }
+  return hollowBrickBody(d, sx, sz, H, hx, hz);
+}
+
 const cache = new Map();
 /** { main, glass, edges }，本地坐标：占地中心在原点，底面 y=0 */
 export function partGeometry(id) {
@@ -63,14 +320,23 @@ export function partGeometry(id) {
     for (const c of localCells(d)) if (c.stud) list.push(stud(c.lx, c.lz, y));
   };
 
-  if (d.kind === 'brick' || d.kind === 'plate' || d.kind === 'tile' || d.kind === 'jumper' || d.kind === 'technic') {
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+  if (id === '4274') {
+    // 科技蓝销 1/2 销轴 + 中央圆环凸台 + 侧凸点（真实销体造型，禁止生成空心方块方砖体）
+    const collar = new THREE.CylinderGeometry(0.2, 0.2, 0.08, 24);
+    collar.rotateZ(Math.PI / 2);
+    collar.translate(0, 0.2, 0);
+    list.push(clean(collar));
+  } else if (d.kind === 'brick' || d.kind === 'plate' || d.kind === 'tile' || d.kind === 'jumper' || d.kind === 'technic') {
+    list.push(...hollowMultiBoxes(d, sx, sz, H, hx, hz));
     if (d.grille) {
       for (let i = -3; i <= 3; i++) list.push(box(i * (sx / 8) - 0.04, i * (sx / 8) + 0.04, H - 0.04, H + 0.01, -hz + 0.06, hz - 0.06));
     }
     studsOnTop(H - 0.004);
+    if (d.kind === 'technic' || d.holes) {
+      list.push(...technicHolePieces(d, sx, sz, H, hx, hz));
+    }
   } else if (d.kind === 'pinplate') {
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+    list.push(...hollowBrickBody(d, sx, sz, H, hx, hz));
     studsOnTop(H - 0.004);
     for (const sgn of [1, -1]) {
       const ear = new THREE.CylinderGeometry(0.48, 0.48, H - 0.004, 24);
@@ -81,15 +347,79 @@ export function partGeometry(id) {
       list.push(clean(rim));
     }
   } else if (d.kind === 'corner') {
+    const t_top = Math.min(0.08, H * 0.25), w = 0.08, yTop = H - 0.004, yCeil = yTop - t_top;
+    // L 型顶盖
     list.push(
-      box(-hx + G, hx - G, 0, H - 0.004, -hz + G, 0),
-      box(-hx + G, 0, 0, H - 0.004, 0, hz - G)
+      box(-hx + G, hx - G, yCeil, yTop, -hz + G, 0),
+      box(-hx + G, -G, yCeil, yTop, 0, hz - G)
     );
+    // L 型 6 段外沿周壁（底面 y=0 开放形成 L 型底腔）
+    list.push(
+      box(-hx + G, hx - G, 0, yCeil, -hz + G, -hz + G + w),
+      box(-hx + G, -hx + G + w, 0, yCeil, -hz + G + w, hz - G - w),
+      box(hx - G - w, hx - G, 0, yCeil, -hz + G + w, -G - w),
+      box(-hx + G + w, -G - w, 0, yCeil, hz - G - w, hz - G),
+      box(-G - w, hx - G, 0, yCeil, -G - w, -G),
+      box(-G - w, -G, 0, yCeil, -G, hz - G)
+    );
+    if (yCeil > 0.05) {
+      for (const [px, pz] of [[-hx + 1, -hz + 0.5], [-hx + 0.5, -hz + 1]]) {
+        const pin = new THREE.CylinderGeometry(0.15, 0.15, yCeil, 12);
+        pin.translate(px, yCeil / 2, pz);
+        list.push(clean(pin));
+      }
+    }
     studsOnTop(H - 0.004);
   } else if (d.kind === 'round') {
-    const r = hx - G, cyl = new THREE.CylinderGeometry(r, r, H - 0.004, 28);
-    cyl.translate(0, (H - 0.004) / 2, 0);
-    list.push(clean(cyl));
+    const r = hx - G;
+    const yTop = H - 0.004;
+    const t_top = Math.min(0.08, H * 0.25);
+    const yCeil = yTop - t_top;
+    const hasUnderside = !(Array.isArray(d.antistudCells) && d.antistudCells.length === 0);
+    if (hasUnderside && yCeil > 0.05) {
+      if (sx >= 2 && sz >= 2) {
+        // 2x2及以上圆件：外壁中空 + 中心抗凸点管（四边容纳凸点）
+        const rWallIn = r - 0.08;
+        const outerC = new THREE.CylinderGeometry(r, r, yTop, 28, 1, true);
+        outerC.translate(0, yTop / 2, 0);
+        const innerWallC = new THREE.CylinderGeometry(rWallIn, rWallIn, yCeil, 28, 1, true);
+        innerWallC.translate(0, yCeil / 2, 0);
+        const topCap = new THREE.CircleGeometry(r, 28);
+        topCap.rotateX(-Math.PI / 2);
+        topCap.translate(0, yTop, 0);
+        const botRing = new THREE.RingGeometry(rWallIn, r, 28);
+        botRing.rotateX(Math.PI / 2);
+        botRing.translate(0, 0, 0);
+        // 中心抗凸点内管
+        const rOut = 0.3255, rIn = 0.24;
+        const tubeOut = new THREE.CylinderGeometry(rOut, rOut, yCeil, 16, 1, true);
+        tubeOut.translate(0, yCeil / 2, 0);
+        const tubeIn = new THREE.CylinderGeometry(rIn, rIn, yCeil, 16, 1, true);
+        tubeIn.translate(0, yCeil / 2, 0);
+        const tubeRing = new THREE.RingGeometry(rIn, rOut, 16);
+        tubeRing.rotateX(Math.PI / 2);
+        tubeRing.translate(0, 0, 0);
+        list.push(clean(outerC), clean(innerWallC), clean(topCap), clean(botRing), clean(tubeOut), clean(tubeIn), clean(tubeRing));
+      } else {
+        // 1x1 圆件：壁厚 0.08，内腔半径 r - 0.08（约 0.408），可扣合半径 0.3 的标准凸点
+        const rIn = Math.max(0.31, r - 0.08);
+        const outerC = new THREE.CylinderGeometry(r, r, yTop, 28, 1, true);
+        outerC.translate(0, yTop / 2, 0);
+        const innerC = new THREE.CylinderGeometry(rIn, rIn, yCeil, 20, 1, true);
+        innerC.translate(0, yCeil / 2, 0);
+        const topCap = new THREE.CircleGeometry(r, 28);
+        topCap.rotateX(-Math.PI / 2);
+        topCap.translate(0, yTop, 0);
+        const botRing = new THREE.RingGeometry(rIn, r, 28);
+        botRing.rotateX(Math.PI / 2);
+        botRing.translate(0, 0, 0);
+        list.push(clean(outerC), clean(innerC), clean(topCap), clean(botRing));
+      }
+    } else {
+      const cyl = new THREE.CylinderGeometry(r, r, yTop, 28);
+      cyl.translate(0, yTop / 2, 0);
+      list.push(clean(cyl));
+    }
     if (d.fluted) {
       for (let i = 0; i < 8; i++) {
         const a = (i * Math.PI) / 4, rib = new THREE.BoxGeometry(0.05, H - 0.08, 0.05);
@@ -100,25 +430,110 @@ export function partGeometry(id) {
     }
     studsOnTop(H - 0.004);
   } else if (d.kind === 'cone') {
-    const rBot = hx - G, rTop = 0.34, cyl = new THREE.CylinderGeometry(rTop, rBot, H - 0.004, 28);
-    cyl.translate(0, (H - 0.004) / 2, 0);
-    list.push(clean(cyl));
+    const rBot = hx - G, yTop = H - 0.004;
+    const isBig = sx >= 2 && sz >= 2;
+    const rTop = isBig ? 0.5 - G : 0.34;
+    const outerC = new THREE.CylinderGeometry(rTop, rBot, yTop, 28, 1, true);
+    outerC.translate(0, yTop / 2, 0);
+    const topCap = new THREE.CircleGeometry(rTop, 28);
+    topCap.rotateX(-Math.PI / 2);
+    topCap.translate(0, yTop, 0);
+    list.push(clean(outerC), clean(topCap));
+
+    if (isBig) {
+      // 2x2及以上圆锥（如 3942c）：中空底腔，壁厚 0.08，中心抗凸点管可容纳 4 凸点
+      const rWallIn = rBot - 0.08;
+      const yCeil = Math.min(yTop - 0.08, 1.2);
+      const innerC = new THREE.CylinderGeometry(rWallIn, rWallIn, yCeil, 28, 1, true);
+      innerC.translate(0, yCeil / 2, 0);
+      const innerCeil = new THREE.CircleGeometry(rWallIn, 28);
+      innerCeil.rotateX(Math.PI / 2);
+      innerCeil.translate(0, yCeil, 0);
+      const botRing = new THREE.RingGeometry(rWallIn, rBot, 28);
+      botRing.rotateX(Math.PI / 2);
+      botRing.translate(0, 0, 0);
+      const rOut = 0.3255, rIn = 0.24;
+      const tubeOut = new THREE.CylinderGeometry(rOut, rOut, yCeil, 16, 1, true);
+      tubeOut.translate(0, yCeil / 2, 0);
+      const tubeIn = new THREE.CylinderGeometry(rIn, rIn, yCeil, 16, 1, true);
+      tubeIn.translate(0, yCeil / 2, 0);
+      const tubeRing = new THREE.RingGeometry(rIn, rOut, 16);
+      tubeRing.rotateX(Math.PI / 2);
+      tubeRing.translate(0, 0, 0);
+      list.push(clean(innerC), clean(innerCeil), clean(botRing), clean(tubeOut), clean(tubeIn), clean(tubeRing));
+    } else {
+      // 1x1 圆锥（如 4589b）：内腔半径 0.31，容纳单凸点
+      const rIn = 0.31;
+      const yCeil = Math.min(yTop - 0.08, 0.7);
+      const innerC = new THREE.CylinderGeometry(rIn, rIn, yCeil, 20, 1, true);
+      innerC.translate(0, yCeil / 2, 0);
+      const innerCeil = new THREE.CircleGeometry(rIn, 20);
+      innerCeil.rotateX(Math.PI / 2);
+      innerCeil.translate(0, yCeil, 0);
+      const botRing = new THREE.RingGeometry(rIn, rBot, 28);
+      botRing.rotateX(Math.PI / 2);
+      botRing.translate(0, 0, 0);
+      list.push(clean(innerC), clean(innerCeil), clean(botRing));
+    }
     if (!d.tile && !d.noTopStuds && d.studs !== 0) {
-      if (Array.isArray(d.studCells)) studsOnTop(H - 0.004);
-      else list.push(stud(0, 0, H - 0.004));
+      if (Array.isArray(d.studCells)) studsOnTop(yTop);
+      else list.push(stud(0, 0, yTop));
     }
   } else if (d.kind === 'dome') {
-    const r = hx - G, cyl = new THREE.CylinderGeometry(r, r, H * 0.4, 28);
-    cyl.translate(0, H * 0.2, 0);
-    list.push(clean(cyl));
+    const r = hx - G, yTop = H - 0.004, yCyl = H * 0.4;
+    const rWallIn = r - 0.08, yCeil = Math.min(yTop - 0.08, yCyl + 0.2);
+    const outerC = new THREE.CylinderGeometry(r, r, yCyl, 28, 1, true);
+    outerC.translate(0, yCyl / 2, 0);
     const sph = new THREE.SphereGeometry(r, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2);
     sph.scale(1, (H * 0.6) / r, 1);
-    sph.translate(0, H * 0.4, 0);
-    list.push(clean(sph));
+    sph.translate(0, yCyl, 0);
+    const innerC = new THREE.CylinderGeometry(rWallIn, rWallIn, yCeil, 28, 1, true);
+    innerC.translate(0, yCeil / 2, 0);
+    const innerCeil = new THREE.CircleGeometry(rWallIn, 28);
+    innerCeil.rotateX(Math.PI / 2);
+    innerCeil.translate(0, yCeil, 0);
+    const botRing = new THREE.RingGeometry(rWallIn, r, 28);
+    botRing.rotateX(Math.PI / 2);
+    botRing.translate(0, 0, 0);
+    list.push(clean(outerC), clean(sph), clean(innerC), clean(innerCeil), clean(botRing));
+    if (sx >= 2 && sz >= 2) {
+      const rOut = 0.3255, rIn = 0.24;
+      const tubeOut = new THREE.CylinderGeometry(rOut, rOut, yCeil, 16, 1, true);
+      tubeOut.translate(0, yCeil / 2, 0);
+      const tubeIn = new THREE.CylinderGeometry(rIn, rIn, yCeil, 16, 1, true);
+      tubeIn.translate(0, yCeil / 2, 0);
+      const tubeRing = new THREE.RingGeometry(rIn, rOut, 16);
+      tubeRing.rotateX(Math.PI / 2);
+      tubeRing.translate(0, 0, 0);
+      list.push(clean(tubeOut), clean(tubeIn), clean(tubeRing));
+    }
   } else if (d.kind === 'dish') {
-    const r = hx - G, cone = new THREE.CylinderGeometry(0.4, r, H - 0.004, 28);
-    cone.translate(0, (H - 0.004) / 2, 0);
-    list.push(clean(cone));
+    const r = hx - G, rTop = 0.4, yTop = H - 0.004, w = 0.08;
+    const rInnerBot = Math.max(rTop + 0.04, r - w);
+    const rInnerTop = Math.max(0.33, rTop - w * 0.5);
+    const yCeil = Math.max(0.08, yTop - w);
+    const outerC = new THREE.CylinderGeometry(rTop, r, yTop, 28, 1, true);
+    outerC.translate(0, yTop / 2, 0);
+    const topCap = new THREE.CircleGeometry(rTop, 28);
+    topCap.rotateX(-Math.PI / 2);
+    topCap.translate(0, yTop, 0);
+    const botRing = new THREE.RingGeometry(rInnerBot, r, 28);
+    botRing.rotateX(Math.PI / 2);
+    botRing.translate(0, 0, 0);
+    const innerC = new THREE.CylinderGeometry(rInnerTop, rInnerBot, yCeil, 28, 1, true);
+    innerC.translate(0, yCeil / 2, 0);
+    const innerCeil = new THREE.CircleGeometry(rInnerTop, 28);
+    innerCeil.rotateX(Math.PI / 2);
+    innerCeil.translate(0, yCeil, 0);
+    const rOut = 0.3255, rIn = 0.24;
+    const tubeOut = new THREE.CylinderGeometry(rOut, rOut, yCeil, 16, 1, true);
+    tubeOut.translate(0, yCeil / 2, 0);
+    const tubeIn = new THREE.CylinderGeometry(rIn, rIn, yCeil, 16, 1, true);
+    tubeIn.translate(0, yCeil / 2, 0);
+    const tubeRing = new THREE.RingGeometry(rIn, rOut, 16);
+    tubeRing.rotateX(Math.PI / 2);
+    tubeRing.translate(0, 0, 0);
+    list.push(clean(outerC), clean(topCap), clean(botRing), clean(innerC), clean(innerCeil), clean(tubeOut), clean(tubeIn), clean(tubeRing));
     if (!d.tile && !d.noTopStuds && d.studs !== 0) {
       if (Array.isArray(d.studCells)) studsOnTop(H - 0.004);
       else list.push(stud(0, 0, H - 0.004));
@@ -131,25 +546,60 @@ export function partGeometry(id) {
       pts.push([z, y]);
     }
     pts.push([-hz + G, H - 0.004]);
-    list.push(prism(pts, sx));
+    list.push(...hollowSlopeBody(d, sx, sz, H, hx, hz, pts, lip));
     if (hasTopStuds) studsOnTop(H - 0.004);
   } else if (d.kind === 'arch') {
+    // 两端支腿采用 hollowBoxPiece 镂空底孔腔；跨中采用弧形拱顶下表面凹陷结构
     list.push(
-      box(-hx + G, -hx + 1, 0, H - 0.004, -hz + G, hz - G),
-      box(hx - 1, hx - G, 0, H - 0.004, -hz + G, hz - G),
-      box(-hx + 1, hx - 1, H - PLATE, H - 0.004, -hz + G, hz - G)
+      ...hollowBoxPiece(-hx, -hx + 1, 0, H, -hz, hz),
+      ...hollowBoxPiece(hx - 1, hx, 0, H, -hz, hz)
     );
+    const halfSpan = hx - 1;
+    if (halfSpan > 0.05) {
+      const yTop = H - 0.004, w = 0.08;
+      const yCrown = Math.max(PLATE, H - PLATE);
+      const ySpring = Math.min(PLATE, yCrown * 0.45);
+      const segs = 12;
+      const archPts = [];
+      for (let s = 0; s <= segs; s++) {
+        const t = (s / segs) * Math.PI;
+        const ax = -halfSpan * Math.cos(t);
+        const ay = ySpring + (yCrown - ySpring) * Math.sin(t);
+        archPts.push([ax, ay]);
+      }
+      const spandrelPts = [...archPts, [halfSpan, yTop], [-halfSpan, yTop]];
+      const shape = new THREE.Shape(spandrelPts.map(([x, y]) => new THREE.Vector2(x, y)));
+      const gFront = new THREE.ExtrudeGeometry(shape, { depth: w, bevelEnabled: false });
+      gFront.translate(0, 0, hz - G - w);
+      const gBack = new THREE.ExtrudeGeometry(shape, { depth: w, bevelEnabled: false });
+      gBack.translate(0, 0, -hz + G);
+      list.push(clean(gFront), clean(gBack));
+      // 拱顶顶板与弧形下表面内拱壁
+      list.push(box(-halfSpan, halfSpan, yTop - w, yTop, -hz + G + w, hz - G - w));
+      const innerDepth = Math.max(0.02, 2 * (hz - G - w));
+      const ribPts = [
+        ...archPts,
+        ...archPts.slice().reverse().map(([ax, ay]) => [ax, Math.min(yTop, ay + w)]),
+      ];
+      const gVault = new THREE.ExtrudeGeometry(new THREE.Shape(ribPts.map(([x, y]) => new THREE.Vector2(x, y))), { depth: innerDepth, bevelEnabled: false });
+      gVault.translate(0, 0, -hz + G + w);
+      list.push(clean(gVault));
+    }
     studsOnTop(H - 0.004);
   } else if (d.kind === 'snot') {
-    const zMax = d.recessed ? hz - 0.2 : hz - G;
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, zMax));
-    if (d.recessed) list.push(box(-hx + G, hx - G, 0, PLATE, zMax, hz - G));
+    if (d.recessed) {
+      const zMax = hz - 0.2;
+      list.push(...hollowBoxPiece(-hx, hx, 0, H, -hz, zMax + G));
+      list.push(box(-hx + G, hx - G, 0, PLATE, zMax, hz - G));
+    } else {
+      list.push(...hollowBrickBody(d, sx, sz, H, hx, hz));
+    }
     studsOnTop(H - 0.004);
     const rows = (d.sideRows || (d.h >= 5 ? [1.25, 3.75] : [1.75])).map((r) => r * PLATE);
     const faces = d.sideFaces || ['+z'];
     for (const face of faces) {
       if (face === '+z' || face === '-z') {
-        const fz = face === '+z' ? zMax : -hz + G;
+        const fz = face === '+z' ? (d.recessed ? hz - 0.2 : hz - G) : -hz + G;
         for (let i = 0; i < sx; i++) for (const sy of rows) list.push(sideStud(i - hx + 0.5, sy, fz, face));
       } else {
         const fx = face === '+x' ? hx - G : -hx + G;
@@ -163,9 +613,9 @@ export function partGeometry(id) {
       throw new Error(`零件 ${id}（bracket）目录条目缺 vH/dir：渲染需要支架臂高与朝向（ext 支架由生成器从官方 .dat 实测补齐；缺字段条目已标 needsManual），拒绝渲染`);
     }
     const t = 0.2;
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz));
+    list.push(...hollowBrickBody(d, sx, sz, H, hx, hz));
     studsOnTop(H - 0.004);
-    const y0 = d.dir === 'down' ? (1 - d.vH) * PLATE : 0;
+    const y0 = d.dir === 'down' ? (1.5 - d.vH) * PLATE : 0;
     const y1 = d.dir === 'down' ? PLATE - 0.004 : d.vH * PLATE - 0.004;
     list.push(box(-hx + G, hx - G, y0, y1, hz, hz + t - G));
     if (!Array.isArray(d.sideStuds)) {
@@ -176,7 +626,7 @@ export function partGeometry(id) {
       }
     }
   } else if (d.kind === 'barplate') {
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+    list.push(...hollowBrickBody(d, sx, sz, H, hx, hz));
     studsOnTop(H - 0.004);
     const addHandle = (sgn) => {
       const z0 = sgn > 0 ? hz - G : -hz - 0.24;
@@ -193,14 +643,23 @@ export function partGeometry(id) {
     addHandle(1);
     if (d.bothEnds) addHandle(-1);
   } else if (d.kind === 'clip') {
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+    list.push(...hollowBrickBody(d, sx, sz, H, hx, hz));
     studsOnTop(H - 0.004);
-    for (const cx of !d.singleClip && sx >= 2 ? [-0.5, 0.5] : [0]) {
+    if (d.clips?.[0]?.[3] === '+y') {
+      const cy = H - 0.004;
       list.push(
-        box(cx - 0.18, cx + 0.18, 0.02, H - 0.02, hz - G, hz + 0.14),
-        box(cx - 0.18, cx + 0.18, H - 0.11, H - 0.01, hz + 0.14, hz + 0.34),
-        box(cx - 0.18, cx + 0.18, 0.01, 0.11, hz + 0.14, hz + 0.34)
+        box(-0.18, 0.18, cy, cy + 0.14, -0.22, 0.22),
+        box(-0.18, 0.18, cy + 0.14, cy + 0.34, 0.11, 0.22),
+        box(-0.18, 0.18, cy + 0.14, cy + 0.34, -0.22, -0.11)
       );
+    } else {
+      for (const cx of !d.singleClip && sx >= 2 ? [-0.5, 0.5] : [0]) {
+        list.push(
+          box(cx - 0.18, cx + 0.18, 0.02, H - 0.02, hz - G, hz + 0.14),
+          box(cx - 0.18, cx + 0.18, H - 0.11, H - 0.01, hz + 0.14, hz + 0.34),
+          box(cx - 0.18, cx + 0.18, 0.01, 0.11, hz + 0.14, hz + 0.34)
+        );
+      }
     }
   } else if (d.kind === 'bar') {
     const cyl = new THREE.CylinderGeometry(0.16, 0.16, H - 0.004, 18);
@@ -210,22 +669,81 @@ export function partGeometry(id) {
     const pts = d.side === 'L'
       ? [[-hx + G, -hz + G], [hx - G, -hz + G], [hx - G, -hz + 1], [0, hz - G], [-hx + G, hz - G]]
       : [[-hx + G, -hz + G], [0, -hz + G], [hx - G, hz - 1], [hx - G, hz - G], [-hx + G, hz - G]];
-    list.push(flatPoly(pts, H - 0.004));
+    const w = 0.08, t_top = Math.min(0.08, H * 0.25), yTop = H - 0.004, yCeil = yTop - t_top;
+    // 楔形顶面薄板
+    const topPlate = flatPoly(pts, t_top);
+    topPlate.translate(0, yCeil, 0);
+    list.push(clean(topPlate));
+    // 沿多边形外沿生成底部镂空周壁（0..yCeil）
+    for (let m = 0; m < pts.length; m++) {
+      const [xA, zA] = pts[m], [xB, zB] = pts[(m + 1) % pts.length];
+      const dx = xB - xA, dz = zB - zA, len = Math.hypot(dx, dz);
+      if (len < 1e-4) continue;
+      let nx = -dz / len, nz = dx / len;
+      const mx = (xA + xB) / 2, mz = (zA + zB) / 2;
+      if (nx * (-mx) + nz * (-mz) < 0) { nx = -nx; nz = -nz; }
+      const wall = new THREE.BoxGeometry(len, yCeil, w);
+      wall.rotateY(-Math.atan2(dz, dx));
+      wall.translate(mx + nx * (w / 2), yCeil / 2, mz + nz * (w / 2));
+      list.push(clean(wall));
+    }
+    // 空腔内抗凸点环/销（仅在有效底孔格生成）
+    if (yCeil > 0.05) {
+      const validAnti = Array.isArray(d.antistudCells)
+        ? new Set(d.antistudCells.map(([i, k]) => `${i},${k}`))
+        : null;
+      const rOut = 0.24, rIn = 0.16;
+      for (const c of localCells(d)) {
+        if (validAnti && !validAnti.has(`${c.i},${c.k}`)) continue;
+        const outerC = new THREE.CylinderGeometry(rOut, rOut, yCeil, 14, 1, true);
+        outerC.translate(c.lx, yCeil / 2, c.lz);
+        const innerC = new THREE.CylinderGeometry(rIn, rIn, yCeil, 14, 1, true);
+        innerC.translate(c.lx, yCeil / 2, c.lz);
+        const ring = new THREE.RingGeometry(rIn, rOut, 14);
+        ring.rotateX(Math.PI / 2);
+        ring.translate(c.lx, 0, c.lz);
+        list.push(clean(outerC), clean(innerC), clean(ring));
+      }
+    }
     studsOnTop(H - 0.004);
   } else if (d.kind === 'cheese') {
-    const lip = 0.14;
-    list.push(prism([[-hz + G, 0], [hz - G, 0], [hz - G, lip], [-hz + G, H - 0.004]], sx));
+    const lip = 0.14, pts = [[-hz + G, 0], [hz - G, 0], [hz - G, lip], [-hz + G, H - 0.004]];
+    list.push(...hollowSlopeBody(d, sx, sz, H, hx, hz, pts, lip));
   } else if (d.kind === 'slope') {
-    const lip = 0.2;
-    list.push(prism([[-hz + G, 0], [hz - G, 0], [hz - G, lip], [-hz + 1, H - 0.004], [-hz + G, H - 0.004]], sx));
+    const lip = 0.2, pts = [[-hz + G, 0], [hz - G, 0], [hz - G, lip], [-hz + 1, H - 0.004], [-hz + G, H - 0.004]];
+    list.push(...hollowSlopeBody(d, sx, sz, H, hx, hz, pts, lip));
     studsOnTop(H - 0.004);
   } else if (d.kind === 'islope') {
-    const lip = 0.2;
-    list.push(prism([[-hz + G, 0], [0, 0], [hz - G, H - lip], [hz - G, H - 0.004], [-hz + G, H - 0.004]], sx));
+    const lip = 0.2, w = 0.08;
+    const pts = [[-hz + G, 0], [0, 0], [hz - G, H - lip], [hz - G, H - 0.004], [-hz + G, H - 0.004]];
+    const gLeft = new THREE.ExtrudeGeometry(new THREE.Shape(pts.map(([z, y]) => new THREE.Vector2(z, y))), { depth: w, bevelEnabled: false });
+    gLeft.rotateY(-Math.PI / 2);
+    gLeft.translate(-hx + G + w, 0, 0);
+    const gRight = new THREE.ExtrudeGeometry(new THREE.Shape(pts.map(([z, y]) => new THREE.Vector2(z, y))), { depth: w, bevelEnabled: false });
+    gRight.rotateY(-Math.PI / 2);
+    gRight.translate(hx - G, 0, 0);
+    list.push(clean(gLeft), clean(gRight));
+    const x0 = -hx + G + w, x1 = hx - G - w;
+    if (x1 > x0) {
+      const depthX = x1 - x0;
+      list.push(box(x0, x1, 0, H - 0.004, -hz + G, -hz + G + w));
+      list.push(box(x0, x1, H - 0.004 - w, H - 0.004, -hz + G + w, hz - G));
+      list.push(box(x0, x1, H - lip, H - 0.004 - w, hz - G - w, hz - G));
+      const slopePts = [[0, 0], [hz - G, H - lip], [hz - G - w, H - lip], [-w * 0.7, 0]];
+      const gSlope = new THREE.ExtrudeGeometry(new THREE.Shape(slopePts.map(([z, y]) => new THREE.Vector2(z, y))), { depth: depthX, bevelEnabled: false });
+      gSlope.rotateY(-Math.PI / 2);
+      gSlope.translate(x1, 0, 0);
+      list.push(clean(gSlope));
+      if (sx >= 2) {
+        const pin = new THREE.CylinderGeometry(0.15, 0.15, H - w - 0.05, 12);
+        pin.translate(0, (H - w - 0.05) / 2, -hz + 0.5);
+        list.push(clean(pin));
+      }
+    }
     studsOnTop(H - 0.004);
   } else if (d.kind === 'ridge') {
-    const lip = 0.2;
-    list.push(prism([[-hz + G, 0], [hz - G, 0], [hz - G, lip], [0.06, H - 0.004], [-0.06, H - 0.004], [-hz + G, lip]], sx));
+    const lip = 0.2, pts = [[-hz + G, 0], [hz - G, 0], [hz - G, lip], [0.06, H - 0.004], [-0.06, H - 0.004], [-hz + G, lip]];
+    list.push(...hollowSlopeBody(d, sx, sz, H, hx, hz, pts, lip));
   } else if (d.kind === 'panel') {
     list.push(
       box(-hx + G, hx - G, 0, PLATE, -hz + G, hz - G),
@@ -247,8 +765,18 @@ export function partGeometry(id) {
     list.push(clean(h));
     for (const [x0, x1] of [[-1.45, -0.08], [0.08, 1.45]]) for (const [y0, y1] of [[4.0, 5.3], [5.5, 6.8]]) glass.push(box(x0, x1, y0, y1, -0.43, -0.07));
   } else {
-    list.push(box(-hx + G, hx - G, 0, H - 0.004, -hz + G, hz - G));
+    list.push(...hollowMultiBoxes(d, sx, sz, H, hx, hz));
     studsOnTop(H - 0.004);
+  }
+
+  // 零件底面外挑凸台（例如 18677 / 2444 底面的销孔凸台，y0 < 0）
+  if (Array.isArray(d.boxes)) {
+    for (const b of d.boxes) {
+      if (b[2] < 0) {
+        const bx0 = b[0], bx1 = b[1], by0 = b[2] * PLATE, by1 = b[3] * PLATE, bz0 = b[4], bz1 = b[5];
+        list.push(box(bx0 + G, bx1 - G, by0, by1, bz0 + G, bz1 - G));
+      }
+    }
   }
 
   // ext/auto 条目：官方 .dat 实测连接器的参数化示意（P1）——侧凸点 / 把手杆 / 外凸销

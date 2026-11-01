@@ -14,9 +14,10 @@ export const LDRAW_LICENSE_URL = 'https://library.ldraw.org/license';
 // 模具变体存疑项：4085d 官方存在 4085b（薄 U 夹）/4085c（厚 U 夹）两种，此处先映射 4085b，待实物核对；
 // 553b 官方迁移编号为 30367a（带 Blocked Stud 穹顶），553/30367 均为 ~Moved to 重定向。
 export const OFFICIAL_ALIASES = {
+  '3040': '3040b',
   '553b': '30367a',
-  '4085d': '4085b',
-  '4589b': '4589',
+  '4085d': '60897',
+  '4589b': '59900',
 };
 
 // —— 引用路径解析 ————————————————————————————————————————————————
@@ -150,6 +151,13 @@ export const PIN_HOLE_PRIMITIVES = new Set([
 export const AXLE_HOLE_PRIMITIVES = new Set([
   'axlehole.dat', 'axlehol0.dat', 'axlehol2.dat', 'axlehol3.dat', 'axlehol4.dat',
   'axlehol5.dat', 'axlehol6.dat', 'axlehol7.dat', 'axlehol9.dat',
+  // Semi-Reduced 轴孔族（axl3hol*）。**与 axlehol* 族编号不同义**，只能按官方描述判：
+  //   axlehol8 = Technic Axle Perimeter（轴杆本体，不收）
+  //   axl3hol8 = Technic Axle Hole Semi-Reduced Perimeter（孔壁，应收）
+  //   axl3ho10 = 第 10 号图元（LDraw 8.3 文件名截断，不是 axl3hol10）
+  // 证据：audit/assets-round2-2026-10-31/c1a-axlehole-whitelist.patch.md
+  'axl3hole.dat', 'axl3hol2.dat', 'axl3hol3.dat', 'axl3hol6.dat',
+  'axl3hol8.dat', 'axl3hol9.dat', 'axl3ho10.dat',
 ]);
 export const PIN_PRIMITIVES = new Set([
   'connect.dat', 'connect2.dat', 'connect3.dat', 'connect4.dat', 'connect5.dat',
@@ -368,6 +376,47 @@ export function heightMapColumns(text, resolve, opts = {}) {
         Math.max(t[0][0], t[1][0], t[2][0]), Math.max(t[0][1], t[1][1], t[2][1]), Math.max(t[0][2], t[1][2], t[2][2])],
     });
   }
+  // 统计每格最低材料高度 cellFloorLy 时，保留底孔反凸点图元（stud3/stud4/stug3*/stug4*），
+  // 以免 1×4/2×4 标准砖底面反凸点腔或跨格底框在内部格被误判为下表面悬空。
+  const floorSkip = opts.skipPrim
+    ? (base, M, pos) => (ANTISTUD_PRIMITIVES.has(base) || /^stug[34]/i.test(base)) ? false : opts.skipPrim(base, M, pos)
+    : undefined;
+  const floorTris = [];
+  for (const p of trianglesFromText(text, resolve, { ...opts, skipPrim: floorSkip })) for (const t of triangulatePoly(p)) {
+    floorTris.push({
+      v: t,
+      b: [Math.min(t[0][0], t[1][0], t[2][0]), Math.min(t[0][1], t[1][1], t[2][1]), Math.min(t[0][2], t[1][2], t[2][2]),
+        Math.max(t[0][0], t[1][0], t[2][0]), Math.max(t[0][1], t[1][1], t[2][1]), Math.max(t[0][2], t[1][2], t[2][2])],
+    });
+  }
+  const clipPlane = (poly, idx, val, keepGreater) => {
+    const out = [];
+    for (let m = 0; m < poly.length; m++) {
+      const a = poly[m], b = poly[(m + 1) % poly.length];
+      const da = a[idx] - val, db = b[idx] - val;
+      const inA = keepGreater ? da >= -1e-6 : da <= 1e-6;
+      const inB = keepGreater ? db >= -1e-6 : db <= 1e-6;
+      if (inA) out.push(a);
+      if (inA !== inB && Math.abs(da - db) > 1e-9) {
+        const t = da / (da - db);
+        out.push([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), a[2] + t * (b[2] - a[2])]);
+      }
+    }
+    return out;
+  };
+  const maxLdrawYInBox = (t, bx0, bx1, bz0, bz1) => {
+    let poly = clipPlane(t, 0, bx0, true);
+    if (!poly.length) return null;
+    poly = clipPlane(poly, 0, bx1, false);
+    if (!poly.length) return null;
+    poly = clipPlane(poly, 2, bz0, true);
+    if (!poly.length) return null;
+    poly = clipPlane(poly, 2, bz1, false);
+    if (!poly.length) return null;
+    let maxY = -Infinity;
+    for (const p of poly) if (p[1] > maxY) maxY = p[1];
+    return maxY;
+  };
   const x0 = min[0], zMax = max[2];
   const toLy = (y) => (bodyBottomY - y) / 8;
   // 竖直射线：dy = +1（从上方按 LDraw +y 向下走）或 -1（从下方往上走），返回最近命中 y（LDraw 坐标）或 null
@@ -392,7 +441,8 @@ export function heightMapColumns(text, resolve, opts = {}) {
     }
     return Number.isFinite(best) ? startY + dy * best : null;
   };
-  const top = new Map(), bottom = new Map();
+  const top = new Map(), bottom = new Map(), floor = new Map();
+  const margin = 1.5;
   for (let i = 0; i < sx; i++) for (let k = 0; k < sz; k++) {
     const baseX = x0 + i * 20, baseZ = zMax - (k + 1) * 20;
     let tBest = null, bBest = null;
@@ -403,10 +453,20 @@ export function heightMapColumns(text, resolve, opts = {}) {
       if (yTop !== null && (tBest === null || yTop < tBest)) tBest = yTop;   // 顶面取最高（LDraw y 最小）
       if (yBot !== null && (bBest === null || yBot > bBest)) bBest = yBot;   // 底面取最低（LDraw y 最大）
     }
-    top.set(`${i},${k}`, tBest === null ? null : r4(toLy(tBest)));
-    bottom.set(`${i},${k}`, bBest === null ? null : r4(toLy(bBest)));
+    const bx0 = baseX + margin, bx1 = baseX + 20 - margin;
+    const bz0 = baseZ + margin, bz1 = baseZ + 20 - margin;
+    let maxY = -Infinity;
+    for (const { v, b } of floorTris) {
+      if (b[3] < bx0 || b[0] > bx1 || b[5] < bz0 || b[2] > bz1) continue;
+      const my = maxLdrawYInBox(v, bx0, bx1, bz0, bz1);
+      if (my !== null && my > maxY) maxY = my;
+    }
+    const key = `${i},${k}`;
+    top.set(key, tBest === null ? null : r4(toLy(tBest)));
+    bottom.set(key, bBest === null ? null : r4(toLy(bBest)));
+    floor.set(key, maxY === -Infinity ? null : Math.max(0, r4(toLy(maxY))));
   }
-  return { top, bottom, tris: tris.length };
+  return { top, bottom, floor, tris: tris.length };
 }
 
 /** 双向高度图 → 分解包围盒（本地坐标 [x0,x1,y0,y1,z0,z1]，x/z 为格、y 为片）。
@@ -447,12 +507,14 @@ function decomposeHeightMapCore(hm, size, h) {
   const [sx, sz] = size;
   const eps = 1e-6;
   const q4 = (v, dir) => (dir > 0 ? Math.ceil(v * 4 - eps) : Math.floor(v * 4 + eps)) / 4;
-  // 底面基准：官方 .dat 里砖类底下是封闭空腔，「从下方首撞面」撞到的是腔内顶壁（3001 约 2.5 片），
-  // 不是零件底面。因此只有当「没有任何一格从下方触及零件底」时（整体悬空的拱/壳，如 50745 轮拱）
-  // 才采用逐格底面；否则所有格一律从 0 起算（保守：绝不缩小实体占位）。
+  // 底面基准：官方 .dat 里标准砖底下是封闭反凸点空腔，「从下方子格中心射线」会撞到腔内顶壁（3001 约 2.5 片），
+  // 但标准砖每格四周外壁或反凸点管落到 y=0（hm.floor 的 cellFloorLy === 0）；
+  // 对真正下表面悬空凹陷的格子（如拱门 6182/3307 跨中、轮拱、阶梯底面件），整格内无任何几何落底（cellFloorLy >= 0.75），
+  // 即使其它支腿格落地（minBottom === 0），该悬空格的 y0 也取真实下表面高度。
   let minBottom = Infinity;
   for (let i = 0; i < sx; i++) for (let k = 0; k < sz; k++) {
-    const b = hm.bottom.get(`${i},${k}`);
+    const key = `${i},${k}`;
+    const b = hm.floor ? hm.floor.get(key) : hm.bottom.get(key);
     if (b !== null && b !== undefined) minBottom = Math.min(minBottom, b);
   }
   const shellMode = Number.isFinite(minBottom) && minBottom > 1.0;
@@ -464,11 +526,13 @@ function decomposeHeightMapCore(hm, size, h) {
     const t = hm.top.get(key);
     if (t === null || t === undefined) { cells.set(key, null); continue; }
     const b = hm.bottom.get(key);
-    const y0 = shellMode && b !== null && b !== undefined ? Math.min(b, t) : 0;
+    const fl = hm.floor ? hm.floor.get(key) : undefined;
+    const cellBot = fl !== undefined ? fl : (shellMode && b !== null && b !== undefined ? b : 0);
+    const y0 = cellBot !== null && cellBot >= 0.75 ? Math.min(cellBot, t) : 0;
     if (t - y0 <= eps) { cells.set(key, null); continue; }
     hTop = Math.max(hTop, t);
-    if (t < h - 0.4) recessed++;
     const q0 = Math.max(0, q4(y0, -1)), q1 = Math.min(h, q4(t, 1));
+    if (t < h - 0.4 || q0 >= 0.75) recessed++;
     cells.set(key, q1 - q0 <= eps ? null : [q0, q1]);
   }
   if (!recessed) return { boxes: [], mode: null, recessedCells: 0, hTop };

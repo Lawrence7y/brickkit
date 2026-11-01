@@ -29,12 +29,12 @@ function mats(code) {
   if (matCache.has(code)) return matCache.get(code);
   const c = colorOf(code), alpha = c.alpha ?? 1, col = new THREE.Color(c.hex), l = luminance(col);
   const solid = new THREE.MeshPhysicalMaterial({ color: col, roughness: alpha < 1 ? 0.06 : 0.36, metalness: 0, clearcoat: alpha < 1 ? 0 : 0.3, clearcoatRoughness: 0.35,
-    transparent: alpha < 1, opacity: alpha, depthWrite: alpha >= 1, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
-  const faded = new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, transparent: true, opacity: 0.14, depthWrite: false });
+    transparent: alpha < 1, opacity: alpha, depthWrite: alpha >= 1, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1, side: THREE.DoubleSide });
+  const faded = new THREE.MeshStandardMaterial({ color: col, roughness: 0.5, transparent: true, opacity: 0.14, depthWrite: false, side: THREE.DoubleSide });
   const edge = new THREE.LineBasicMaterial({ color: l < 0.03 ? 0x9a9aa0 : col.clone().multiplyScalar(0.45), transparent: true, opacity: l < 0.03 ? 0.5 : 0.42 });
   const m = { solid, faded, edge }; matCache.set(code, m); return m;
 }
-const glassMat = new THREE.MeshPhysicalMaterial({ color: 0xbfd4e0, roughness: 0.05, transparent: true, opacity: 0.7 });
+const glassMat = new THREE.MeshPhysicalMaterial({ color: 0xbfd4e0, roughness: 0.05, transparent: true, opacity: 0.7, side: THREE.DoubleSide });
 const edgeMats = {
   accent: new THREE.LineBasicMaterial({ color: 0x0071e3 }),
   inferred: new THREE.LineBasicMaterial({ color: 0xd5803b }),
@@ -58,7 +58,7 @@ let camera = new THREE.PerspectiveCamera(30, 1, 0.1, 2000);   // SHOT+ortho цибх
 const controls = new OrbitControls(camera, canvas);
 controls.addEventListener('start', () => { S.userMoved = true; camAnim.t = 1; });
 controls.addEventListener('change', () => { S.dirty = true; });
-controls.enableDamping = true; controls.dampingFactor = 0.08; controls.maxPolarAngle = Math.PI * 0.495;
+controls.enableDamping = true; controls.dampingFactor = 0.08; controls.maxPolarAngle = Math.PI;
 const root = new THREE.Group(); scene.add(root);
 const selBox = new THREE.Box3Helper(new THREE.Box3(), 0x0071e3); selBox.visible = false; scene.add(selBox);
 
