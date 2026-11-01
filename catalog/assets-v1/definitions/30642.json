@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -72,8 +72,88 @@
     "boxes": [
       [
         0,
+        40,
+        0,
+        24,
+        0,
+        20
+      ],
+      [
+        80,
+        120,
+        0,
+        24,
+        0,
+        20
+      ],
+      [
+        140,
+        220,
+        0,
+        24,
+        0,
+        20
+      ],
+      [
+        240,
         280,
         0,
+        24,
+        0,
+        20
+      ],
+      [
+        0,
+        20,
+        0,
+        24,
+        20,
+        80
+      ],
+      [
+        260,
+        280,
+        0,
+        24,
+        20,
+        80
+      ],
+      [
+        20,
+        40,
+        0,
+        24,
+        60,
+        80
+      ],
+      [
+        80,
+        120,
+        0,
+        24,
+        60,
+        80
+      ],
+      [
+        140,
+        220,
+        0,
+        24,
+        60,
+        80
+      ],
+      [
+        240,
+        260,
+        0,
+        24,
+        60,
+        80
+      ],
+      [
+        0,
+        280,
+        24,
         32,
         0,
         80
@@ -115,11 +195,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 131,
+  "connectorCount": 130,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -520,13 +600,6 @@
           70,
           1,
           55
-        ],
-        [
-          140,
-          0,
-          40,
-          1,
-          56
         ]
       ]
     },
@@ -543,24 +616,31 @@
           14,
           40,
           1,
-          57
+          56
         ],
         [
           0,
           14,
           40,
           1,
-          58
+          57
         ],
         [
           280,
           14,
           20,
           1,
-          65
+          64
         ],
         [
           280,
+          14,
+          60,
+          1,
+          65
+        ],
+        [
+          0,
           14,
           60,
           1,
@@ -569,16 +649,9 @@
         [
           0,
           14,
-          60,
-          1,
-          67
-        ],
-        [
-          0,
-          14,
           20,
           1,
-          68
+          67
         ]
       ],
       "x": "x"
@@ -596,42 +669,42 @@
           14,
           0,
           1,
-          59
+          58
         ],
         [
           180,
+          14,
+          0,
+          1,
+          59
+        ],
+        [
+          200,
           14,
           0,
           1,
           60
         ],
         [
-          200,
-          14,
-          0,
-          1,
-          61
-        ],
-        [
           160,
           14,
           80,
           1,
-          62
+          61
         ],
         [
           180,
           14,
           80,
           1,
-          63
+          62
         ],
         [
           200,
           14,
           80,
           1,
-          64
+          63
         ]
       ],
       "x": "z"
@@ -1100,7 +1173,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 5,
+      "boxCount": 15,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -1118,9 +1191,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "fd9862632f1130dac20851cb87af6f75de48edc472b8b186a571d15b7263c306"
+  "contentHash": "7633de80bd22da897e343cf26447fabe84a66fc5130b8da625f931b4658dc0a7"
 }

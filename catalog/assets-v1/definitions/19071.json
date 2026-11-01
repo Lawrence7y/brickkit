@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -81,7 +81,7 @@
       [
         0,
         20,
-        0,
+        24,
         48,
         40,
         120
@@ -89,7 +89,7 @@
       [
         100,
         120,
-        0,
+        24,
         48,
         40,
         120
@@ -107,11 +107,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 89,
+  "connectorCount": 88,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -456,13 +456,6 @@
           150,
           1,
           47
-        ],
-        [
-          60,
-          0,
-          80,
-          1,
-          48
         ]
       ]
     },
@@ -479,84 +472,84 @@
           38,
           60,
           1,
-          49
+          48
         ],
         [
           100,
           38,
           60,
           1,
-          50
+          49
         ],
         [
           120,
+          38,
+          100,
+          1,
+          50
+        ],
+        [
+          100,
           38,
           100,
           1,
           51
         ],
         [
-          100,
+          120,
           38,
-          100,
+          80,
           1,
           52
         ],
         [
-          120,
+          100,
           38,
           80,
           1,
           53
         ],
         [
-          100,
+          0,
           38,
-          80,
+          60,
           1,
           54
         ],
         [
-          0,
+          20,
           38,
           60,
           1,
           55
         ],
         [
-          20,
+          0,
           38,
-          60,
+          100,
           1,
           56
         ],
         [
-          0,
+          20,
           38,
           100,
           1,
           57
         ],
         [
-          20,
-          38,
-          100,
-          1,
-          58
-        ],
-        [
           0,
           38,
           80,
           1,
-          59
+          58
         ],
         [
           20,
           38,
           80,
           1,
-          60
+          59
         ]
       ],
       "x": "x"
@@ -793,9 +786,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "2a67d4fccd9fa1f46ddfa6403edc1cb1414431b95f2dcf7db2badd7bfbf66aac"
+  "contentHash": "43290c8ac3afd7bdf8d0d19b78eb27cee31e37b0bba1be721a5190987c512b50"
 }

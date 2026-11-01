@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -82,7 +82,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -137,7 +137,7 @@
     "collide": {
       "state": "unsupported",
       "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.26（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.68（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
     },
     "assemble": {
       "state": "measured",
@@ -151,9 +151,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "c308f2ea605fb03e528c873a27a876bb04fe4b3dd07536c4dd182cb5509ffc0a"
+  "contentHash": "aed9df7c89743488896719f04aff0512a01c91c22f181b78a50696ccd7b7ca48"
 }

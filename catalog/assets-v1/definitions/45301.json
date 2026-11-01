@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -68,25 +68,194 @@
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
         0,
+        20,
+        0,
+        6,
+        0,
+        260
+      ],
+      [
+        60,
         80,
         0,
+        6,
+        0,
+        260
+      ],
+      [
+        20,
+        60,
+        0,
+        8,
+        240,
+        320
+      ],
+      [
+        0,
+        20,
+        6,
+        8,
+        0,
+        240
+      ],
+      [
+        60,
+        80,
+        6,
+        8,
+        0,
+        240
+      ],
+      [
+        0,
+        20,
+        8,
+        10,
+        0,
+        220
+      ],
+      [
+        60,
+        80,
+        8,
+        10,
+        0,
+        220
+      ],
+      [
+        20,
+        60,
+        8,
+        10,
+        120,
+        300
+      ],
+      [
+        0,
+        20,
+        10,
+        12,
+        0,
+        200
+      ],
+      [
+        60,
+        80,
+        10,
+        12,
+        0,
+        200
+      ],
+      [
+        20,
+        60,
+        10,
+        12,
+        120,
+        280
+      ],
+      [
+        0,
+        20,
+        12,
+        14,
+        0,
+        180
+      ],
+      [
+        60,
+        80,
+        12,
+        14,
+        0,
+        180
+      ],
+      [
+        20,
+        60,
+        12,
+        16,
+        120,
+        260
+      ],
+      [
+        0,
+        20,
+        14,
+        16,
+        0,
+        160
+      ],
+      [
+        60,
+        80,
+        14,
+        16,
+        0,
+        160
+      ],
+      [
+        0,
+        80,
+        16,
+        18,
+        0,
+        140
+      ],
+      [
+        20,
+        60,
+        16,
+        18,
+        140,
+        220
+      ],
+      [
+        0,
+        80,
+        18,
+        20,
+        0,
+        80
+      ],
+      [
+        20,
+        60,
+        18,
+        20,
+        80,
+        200
+      ],
+      [
+        20,
+        60,
+        20,
+        22,
+        0,
+        180
+      ],
+      [
+        20,
+        60,
+        22,
         24,
         0,
-        320
+        140
       ]
     ],
+    "coverage": 0.97,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 75,
+  "connectorCount": 74,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -543,13 +712,6 @@
           310,
           1,
           63
-        ],
-        [
-          40,
-          0,
-          160,
-          1,
-          64
         ]
       ]
     },
@@ -641,9 +803,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.58（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 22,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -658,9 +820,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "2042c4979c1d02e806bcd3b5ef7b91778aba7bbb1870b82f695eb8e2e40a625c"
+  "contentHash": "c9ad601e0c802466bdb67a43f3713e7d3aec4ac8eb9e290d3de7449744a23cfe"
 }

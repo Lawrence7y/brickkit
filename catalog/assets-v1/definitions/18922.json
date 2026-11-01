@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -79,14 +79,6 @@
         160
       ],
       [
-        120,
-        200,
-        0,
-        8,
-        160,
-        180
-      ],
-      [
         0,
         120,
         8,
@@ -143,15 +135,15 @@
         160
       ]
     ],
-    "coverage": 0.98,
+    "coverage": 1,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 241,
+  "connectorCount": 240,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -1168,13 +1160,6 @@
           170,
           1,
           143
-        ],
-        [
-          160,
-          0,
-          90,
-          1,
-          144
         ]
       ]
     },
@@ -1869,7 +1854,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 9,
+      "boxCount": 8,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -1885,9 +1870,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "e39b90dbeab8cf412b7b1d300052ad2fb92c56ce1cb28017d9f727367a4a82b3"
+  "contentHash": "18bfec5f0367b62193ef2bc51b8aab18c9eaa040d7b71b3fbda0f4ce28d42aea"
 }

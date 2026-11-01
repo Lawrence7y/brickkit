@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -72,8 +72,40 @@
     "boxes": [
       [
         0,
+        20,
+        0,
+        16,
+        0,
+        60
+      ],
+      [
+        100,
         120,
         0,
+        16,
+        0,
+        60
+      ],
+      [
+        20,
+        40,
+        0,
+        16,
+        20,
+        40
+      ],
+      [
+        80,
+        100,
+        0,
+        16,
+        20,
+        40
+      ],
+      [
+        0,
+        120,
+        16,
         24,
         0,
         60
@@ -147,11 +179,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 31,
+  "connectorCount": 30,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -286,13 +318,6 @@
           50,
           1,
           17
-        ],
-        [
-          60,
-          0,
-          30,
-          1,
-          18
         ]
       ]
     },
@@ -399,7 +424,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 9,
+      "boxCount": 13,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -415,9 +440,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "22da61af38ca5e16497edf51f679962d6c5a8cb7b585e7fed405f81aabb5758e"
+  "contentHash": "e1826ca93da2651b07696e793438e60530cd631d73149b81638a945bc3d1a47d"
 }

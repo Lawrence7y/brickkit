@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -91,15 +91,15 @@
         60,
         0,
         8,
-        20,
+        60,
         120
       ],
       [
         20,
         60,
         8,
-        16,
-        20,
+        14,
+        60,
         100
       ],
       [
@@ -121,9 +121,17 @@
       [
         20,
         60,
+        14,
         16,
-        26,
+        40,
+        100
+      ],
+      [
         20,
+        60,
+        16,
+        24,
+        40,
         80
       ],
       [
@@ -141,6 +149,14 @@
         30,
         0,
         40
+      ],
+      [
+        20,
+        60,
+        24,
+        26,
+        20,
+        80
       ],
       [
         20,
@@ -167,11 +183,11 @@
         20
       ]
     ],
-    "coverage": 0.8,
+    "coverage": 1,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -224,7 +240,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 12,
+      "boxCount": 14,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -239,9 +255,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "d930d94206e19ba005c1d3d97bf799511d72a51ee578a6e3e3ddb354a9179da3"
+  "contentHash": "ea01741db42332c94ddd8482c155bbe3f516308f6c41bc69c4b8b0232cf62712"
 }

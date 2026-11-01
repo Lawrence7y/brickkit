@@ -63,6 +63,9 @@ add('14719', 'Tile 2 x 2 Corner', 'L型转角光面板 2×2', 'corner', [2, 2], 
 add('98138', 'Tile Round 1 x 1', '圆形光面板 1×1', 'round', [1, 1], 1, { tile: true, category: 'tile' });
 add('4150', 'Tile Round 2 x 2', '圆形光面板 2×2', 'round', [2, 2], 1, { tile: true, category: 'tile' });
 add('22385', 'Tile 2 x 3 Pentagonal Shield', '五边形护盾光面板 2×3', 'tile', [2, 3], 1, { category: 'tile' });
+add('14769', 'Tile Round 2 x 2 with Round Underside Stud', '圆形光面板 2×2（中心底孔）', 'round', [2, 2], 1, { tile: true, antistudCenter: true, antistudCells: [], category: 'tile' });
+add('24246', 'Tile 1 x 1 Half Circle', '半圆形光面板 1×1', 'tile', [1, 1], 1, { tile: true, antistudCells: [[0, 0]], category: 'tile' });
+add('25269', 'Tile 1 x 1 Quarter Circle', '圆角光面板 1×1（1/4圆）', 'tile', [1, 1], 1, { tile: true, antistudCells: [[0, 0]], category: 'tile' });
 
 // ================================================================
 // 4. SNOT 侧凸点砖 (Side-Stud Bricks)
@@ -84,17 +87,20 @@ add('4733', 'Brick 1 x 1 with Studs on 4 Sides (Travis Brick)', '四面侧凸点
 add('4070', 'Brick 1 x 1 with Headlight', '车灯砖 1×1（内缩侧凸点）', 'snot', [1, 1], 3, {
   sideFaces: ['+z'], sideRows: [1.75], recessed: true, category: 'snot',
 });
-add('99206', 'Plate 2 x 2 x 2/3 with 2 Studs on Side', '侧面双凸点增高板 2×2×2/3（高2片，5:2 黄金凑高神件）', 'snot', [2, 2], 2, {
-  sideFaces: ['+z', '-z'], sideRows: [1.25], category: 'snot',
+add('99206', 'Plate 2 x 2 x 2/3 with Two Studs On Side and Two Raised with Closed Understud', '侧面双凸点增高板 2×2×2/3（高2片，单面）', 'snot', [2, 2], 2, {
+  sideFaces: ['+z'], sideRows: [1.25], category: 'snot',
 });
-add('11211', 'Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side', '单面四凸点砖 1×2（高5片=2格）', 'snot', [2, 1], 5, {
+add('11211', 'Brick 1 x 2 with Two Studs on One Side', '单面二凸点砖 1×2（高3片）', 'snot', [2, 1], 3, {
+  sideFaces: ['+z'], sideRows: [1.75], category: 'snot',
+});
+add('22885', 'Brick 1 x 2 x 1 2/3 with 4 Studs on 1 Side', '单面四凸点砖 1×2（高5片=2格）', 'snot', [2, 1], 5, {
   sideFaces: ['+z'], sideRows: [1.25, 3.75], category: 'snot',
-});
-add('22885', 'Brick 1 x 2 x 1 2/3 with 8 Studs on 2 Opposite Sides', '对向八凸点砖 1×2（高5片=2格）', 'snot', [2, 1], 5, {
-  sideFaces: ['+z', '-z'], sideRows: [1.25, 3.75], category: 'snot',
 });
 add('30414', 'Brick 1 x 4 with 4 Studs on 1 Side', '单面四凸点砖 1×4', 'snot', [4, 1], 3, {
   sideFaces: ['+z'], sideRows: [1.75], category: 'snot',
+});
+add('32952', 'Brick 1 x 1 x 1 2/3 with 2 Studs on 1 Side', '单面双侧凸点高砖 1×1×1 2/3（高5片）', 'snot', [1, 1], 5, {
+  sideFaces: ['+z'], sideRows: [1.25, 3.75], category: 'snot',
 });
 
 // ================================================================
@@ -106,19 +112,25 @@ add('99780', 'Bracket 1 x 2 - 1 x 2 Inverted (Up)', '倒支架 1×2-1×2（向�
   dir: 'up', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [1.25], category: 'bracket',
 });
 add('99781', 'Bracket 1 x 2 - 1 x 2 (Down)', '正支架 1×2-1×2（向下垂，深3片）', 'bracket', [2, 1], 1, {
-  dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [-1.25], category: 'bracket',
+  dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [-0.25], category: 'bracket',
 });
 add('99207', 'Bracket 1 x 2 - 2 x 2 Inverted (Up)', '倒支架 1×2-2×2（向上翻4凸点，高5片）', 'bracket', [2, 1], 1, {
   dir: 'up', vRows: 2, vH: 5, sideFaces: ['+z'], sideRows: [1.25, 3.75], category: 'bracket',
 });
 add('44728', 'Bracket 1 x 2 - 2 x 2 (Down)', '正支架 1×2-2×2（向下垂4凸点，深5片）', 'bracket', [2, 1], 1, {
-  dir: 'down', vRows: 2, vH: 5, sideFaces: ['+z'], sideRows: [-1.25, -3.75], category: 'bracket',
+  dir: 'down', vRows: 2, vH: 5, sideFaces: ['+z'], sideRows: [-2.75, -0.25], category: 'bracket',
 });
 add('36840', 'Bracket 1 x 1 - 1 x 1 Inverted (Up)', '单格倒支架 1×1-1×1（向上翻）', 'bracket', [1, 1], 1, {
-  dir: 'up', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [1.75], category: 'bracket',
+  dir: 'up', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [1.25], category: 'bracket',
 });
 add('36841', 'Bracket 1 x 1 - 1 x 1 (Down)', '单格正支架 1×1-1×1（向下垂）', 'bracket', [1, 1], 1, {
-  dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [-1.25], category: 'bracket',
+  dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideRows: [-0.25], category: 'bracket',
+});
+add('2436', 'Bracket 1 x 2 - 1 x 4 (Down)', '下挂支架 1×2 - 1×4（深3片）', 'bracket', [2, 1], 1, {
+  dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideStuds: [[1.5, -0.1, 0.7, '+z'], [0.5, -0.1, 0.7, '+z'], [-0.5, -0.1, 0.7, '+z'], [-1.5, -0.1, 0.7, '+z']], category: 'bracket',
+});
+add('28802', 'Bracket 1 x 2 - 1 x 4 with Rounded Corners', '圆角下挂支架 1×2 - 1×4（深3片）', 'bracket', [2, 1], 1, {
+  dir: 'down', vRows: 1, vH: 3, sideFaces: ['+z'], sideStuds: [[1.5, -0.1, 0.7, '+z'], [0.5, -0.1, 0.7, '+z'], [-0.5, -0.1, 0.7, '+z'], [-1.5, -0.1, 0.7, '+z']], category: 'bracket',
 });
 
 // ================================================================
@@ -146,15 +158,19 @@ add('3660', 'Slope Brick 45 2 x 2 Inverted', '倒斜面砖 45° 2×2（底面仅
 // ================================================================
 // 7. 弧面斜砖与拱门 (Curved Slopes & Arches)
 // ================================================================
-add('11477', 'Slope Curved 2 x 1 No Studs', '弧面斜坡 1×2（高2片，无凸点）', 'cslope', [1, 2], 2, { category: 'cslope' });
-add('15068', 'Slope Curved 2 x 2 No Studs', '弧面斜坡 2×2（高2片，无凸点）', 'cslope', [2, 2], 2, { category: 'cslope' });
-add('47457', 'Slope Curved 2 x 2 x 1 with 2 Studs', '弧面斜砖 2×2×1（高3片）', 'cslope', [2, 2], 3, { backStuds: true, category: 'cslope' });
-add('93273', 'Slope Curved 4 x 1 Double No Studs', '双头弧面斜坡 1×4（高2片）', 'cslope', [1, 4], 2, { category: 'cslope' });
-add('61678', 'Slope Curved 4 x 1 No Studs', '长弧面斜坡 1×4（高2片）', 'cslope', [1, 4], 2, { category: 'cslope' });
+add('11477', 'Slope Curved 2 x 1 No Studs', '弧面斜坡 1×2（高2片，无凸点）', 'cslope', [1, 2], 2, { category: 'cslope', antistudCells: [[0, 0]] });
+add('15068', 'Slope Curved 2 x 2 No Studs', '弧面斜坡 2×2（高2片，无凸点）', 'cslope', [2, 2], 2, { category: 'cslope', antistudCells: [[0, 0], [1, 0]] });
+add('47457', 'Slope Brick Curved 2 x 2 x 2/3 Triple with Two Top Studs', '弧面斜砖 2×2×2/3（高2片）', 'cslope', [2, 2], 2, { backStuds: true, category: 'cslope' });
+add('93273', 'Slope Curved 4 x 1 Double No Studs', '双头弧面斜坡 1×4（高2片）', 'cslope', [1, 4], 2, { category: 'cslope', antistudCells: [[0, 1], [0, 2]] });
+add('61678', 'Slope Brick Curved 4 x 1', '长弧面斜坡 1×4（高3片=1砖）', 'cslope', [1, 4], 3, { category: 'cslope', antistudCells: [[0, 0], [0, 1], [0, 2]] });
 add('6091', 'Brick Curved Top 1 x 2 x 1 1/3', '弧顶砖 1×2（高4片，后排单凸点）', 'cslope', [1, 2], 4, { backStuds: true, category: 'cslope' });
-add('3659', 'Brick Arch 1 x 4', '拱门砖 1×4（高3片）', 'arch', [4, 1], 3, { category: 'cslope' });
-add('6182', 'Brick Arch 1 x 4 x 2', '高拱门砖 1×4×2（高6片）', 'arch', [4, 1], 6, { category: 'cslope' });
-add('3307', 'Brick Arch 1 x 6', '长拱门砖 1×6（高3片）', 'arch', [6, 1], 3, { category: 'cslope' });
+add('3659', 'Brick Arch 1 x 4', '拱门砖 1×4（高3片）', 'arch', [4, 1], 3, { category: 'cslope', antistudCells: [[0, 0], [3, 0]] });
+add('6182', 'Brick Arch 1 x 4 x 2', '高拱门砖 1×4×2（高6片）', 'arch', [4, 1], 6, { category: 'cslope', antistudCells: [[0, 0], [3, 0]] });
+add('3307', 'Arch 1 x 6 x 2 with Thick Top and Reinforced Underside', '长拱门砖 1×6×2（高6片=2格）', 'arch', [6, 1], 6, { category: 'cslope', antistudCells: [[0, 0], [5, 0]] });
+add('29119', 'Slope Curved 2 x 1 Cutout Right', '右切角弧面斜坡 1×2（高2片）', 'cslope', [1, 2], 2, { category: 'slope', antistudCells: [[0, 0]] });
+add('29120', 'Slope Curved 2 x 1 Cutout Left', '左切角弧面斜坡 1×2（高2片）', 'cslope', [1, 2], 2, { category: 'slope', antistudCells: [[0, 0]] });
+add('24309', 'Slope Curved 3 x 2', '弧面斜面砖 2×3（高3片）', 'cslope', [2, 3], 3, { category: 'slope', antistudCells: [[0, 0], [1, 0], [0, 1], [1, 1]] });
+add('37352', 'Curved Brick 1 x 2 x 1', '弧顶砖 1×2×1（高3片）', 'cslope', [2, 1], 3, { category: 'slope', antistudCells: [[0, 0], [1, 0]] });
 
 // ================================================================
 // 8. 楔形翼板 (Wedge Plates, h = 1 片)
@@ -163,10 +179,29 @@ add('24299', 'Wedge Plate 2 x 2 Left', '左楔形翼板 2×2', 'wedge', [2, 2], 
 add('24307', 'Wedge Plate 2 x 2 Right', '右楔形翼板 2×2', 'wedge', [2, 2], 1, { side: 'R', category: 'wedge' });
 add('43723', 'Wedge Plate 3 x 2 Left', '左楔形翼板 2×3', 'wedge', [2, 3], 1, { side: 'L', category: 'wedge' });
 add('43722', 'Wedge Plate 3 x 2 Right', '右楔形翼板 2×3', 'wedge', [2, 3], 1, { side: 'R', category: 'wedge' });
-add('41770', 'Wedge Plate 4 x 2 Left', '左楔形翼板 2×4', 'wedge', [2, 4], 1, { side: 'L', category: 'wedge' });
-add('41769', 'Wedge Plate 4 x 2 Right', '右楔形翼板 2×4', 'wedge', [2, 4], 1, { side: 'R', category: 'wedge' });
-add('54384', 'Wedge Plate 6 x 3 Left', '左大楔形机翼 3×6', 'wedge', [3, 6], 1, { side: 'L', category: 'wedge' });
-add('54383', 'Wedge Plate 6 x 3 Right', '右大楔形机翼 3×6', 'wedge', [3, 6], 1, { side: 'R', category: 'wedge' });
+add('41770', 'Wedge Plate 4 x 2 Left', '左楔形翼板 2×4', 'wedge', [2, 4], 1, { side: 'L', category: 'wedge', antistudCells: [[0, 0], [0, 1], [0, 2], [0, 3], [1, 0]] });
+add('41769', 'Wedge Plate 4 x 2 Right', '右楔形翼板 2×4', 'wedge', [2, 4], 1, { side: 'R', category: 'wedge', antistudCells: [[0, 0], [0, 1], [0, 2], [0, 3], [1, 3]] });
+add('54384', 'Wedge Plate 6 x 3 Left', '左大楔形机翼 3×6', 'wedge', [3, 6], 1, {
+  side: 'L', studs: 9,
+  studCells: [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 0], [1, 1], [1, 2]],
+  antistudCells: [[0, 0], [0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [1, 0], [1, 1], [1, 2]],
+  category: 'wedge',
+});
+add('54383', 'Wedge Plate 6 x 3 Right', '右大楔形机翼 3×6', 'wedge', [3, 6], 1, {
+  side: 'R', studs: 9,
+  studCells: [[1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2], [2, 3], [2, 4], [2, 5]],
+  antistudCells: [[1, 0], [1, 1], [1, 2], [2, 0], [2, 1], [2, 2], [2, 3], [2, 4], [2, 5]],
+  category: 'wedge',
+});
+add('43719', 'Wing 4 x 4 with 2 x 2 Cutout', '缺角机翼板 4×4', 'wedge', [4, 4], 1, {
+  category: 'wedge', studs: 4, studCells: [[2, 3], [2, 2], [1, 3], [1, 2]], antistudCells: [[2, 3], [2, 2], [1, 3], [1, 2]],
+});
+add('43720', 'Wedge 4 x 2 Sloped Right', '右斜坡楔形砖 2×4（高3片）', 'wedge', [2, 4], 3, {
+  category: 'wedge', side: 'R', studs: 4, studCells: [[1, 0], [1, 1], [1, 2], [1, 3]], antistudCells: [[1, 0], [1, 1], [1, 2], [1, 3]],
+});
+add('43721', 'Wedge 4 x 2 Sloped Left', '左斜坡楔形砖 2×4（高3片）', 'wedge', [2, 4], 3, {
+  category: 'wedge', side: 'L', studs: 4, studCells: [[0, 0], [0, 1], [0, 2], [0, 3]], antistudCells: [[0, 0], [0, 1], [0, 2], [0, 3]],
+});
 
 // ================================================================
 // 9. 圆柱、圆锥、穹顶与雷达碟 (Rounds, Cones, Domes & Dishes)
@@ -175,15 +210,15 @@ add('4073', 'Plate Round 1 x 1', '圆板 1×1', 'round', [1, 1], 1, { category: 
 add('85861', 'Plate Round 1 x 1 with Open Stud', '空心圆板 1×1', 'round', [1, 1], 1, { category: 'round' });
 add('4032', 'Plate Round 2 x 2', '圆板 2×2', 'round', [2, 2], 1, { category: 'round' });
 add('18674', 'Plate Round 2 x 2 with 1 Center Stud', '中心单凸点圆跳线板 2×2', 'round', [2, 2], 1, { centerStuds: [[0, 0]], category: 'round' });
-add('2654', 'Plate Round 2 x 2 with Rounded Bottom', '弧底滑移圆板 2×2', 'round', [2, 2], 1, { tile: true, category: 'round' });
+add('2654', 'Plate Round 2 x 2 with Rounded Bottom', '弧底滑移圆板 2×2', 'round', [2, 2], 1, { category: 'round', antistudCells: [] });
 add('3062b', 'Brick Round 1 x 1 Open Stud', '圆砖 1×1（竖纹柱）', 'round', [1, 1], 3, { fluted: true, category: 'round' });
 add('3941', 'Brick Round 2 x 2', '圆砖 2×2', 'round', [2, 2], 3, { category: 'round' });
 add('87081', 'Brick Round 4 x 4', '大圆砖 4×4', 'round', [4, 4], 3, { category: 'round' });
 add('4589b', 'Cone 1 x 1', '圆锥 1×1（高3片）', 'cone', [1, 1], 3, { category: 'round' });
 add('3942c', 'Cone 2 x 2 x 2', '大圆锥 2×2×2（高6片）', 'cone', [2, 2], 6, { category: 'round' });
 add('553b', 'Brick Round 2 x 2 Dome Top', '半球穹顶 2×2（高3片，无凸点）', 'dome', [2, 2], 3, { category: 'round' });
-add('4740', 'Dish 2 x 2 Inverted (Radar)', '雷达圆碟 2×2', 'dish', [2, 2], 2, { category: 'round' });
-add('3960', 'Dish 4 x 4 Inverted (Radar)', '大雷达圆碟 4×4', 'dish', [4, 4], 2, { category: 'round' });
+add('4740', 'Dish 2 x 2 Inverted', '雷达圆碟 2×2（倒扣，高1片）', 'dish', [2, 2], 1, { category: 'round', antistudCells: [], antistudCenter: true });
+add('3960', 'Dish 4 x 4 Inverted (Radar)', '大雷达圆碟 4×4', 'dish', [4, 4], 2, { category: 'round', antistudCells: [], antistudCenter: true });
 
 // ================================================================
 // 10. 把柄、夹子、合页与球头关节 (Bars, Clips, Hinges & Ball Joints)
@@ -191,33 +226,46 @@ add('3960', 'Dish 4 x 4 Inverted (Radar)', '大雷达圆碟 4×4', 'dish', [4, 4
 add('48336', 'Plate 1 x 2 with Handle on Side', '带侧把柄板 1×2（封闭端）', 'barplate', [2, 1], 1, { category: 'hinge' });
 add('2540', 'Plate 1 x 2 with Handle on Side (Free Ends)', '开放式侧把柄板 1×2', 'barplate', [2, 1], 1, { category: 'hinge' });
 add('60478', 'Plate 1 x 2 with Handle on End', '端头把柄板 1×2', 'barplate', [1, 2], 1, { category: 'hinge' });
-add('3839b', 'Plate 1 x 2 with Handles on Ends', '双端把柄板 1×2', 'barplate', [1, 2], 1, { bothEnds: true, category: 'hinge' });
+add('3839b', 'Plate 1 x 2 with Handles on Ends', '双端把柄板 1×2', 'barplate', [1, 2], 1, { bothEnds: true, bars: [[0, 0.4, 1.5, 'x', 0.45], [0, 0.4, -1.5, 'x', 0.45]], category: 'hinge' });
 add('26047', 'Plate Round 1 x 1 with Handle', '带单把柄圆板 1×1', 'barplate', [1, 1], 1, { category: 'hinge' });
-add('60470', 'Plate 1 x 2 with Horizontal Clips', '侧边双水平夹板 1×2', 'clip', [2, 1], 1, { category: 'hinge' });
+add('60470', 'Plate 1 x 2 with Horizontal Clips', '侧边双水平夹板 1×2', 'clip', [2, 1], 1, {
+  category: 'hinge', ldrawOrigin: [0, 1, 0],
+  clips: [[-0.5, 0.4, 1, '+z'], [0.5, 0.4, 1, '+z']],
+  clipsSource: 'ldraw-clip3（官方 60470a.dat：两个 clip3.dat 位于 (±10, 0, -20) LDU）',
+});
 add('11476', 'Plate 1 x 2 with Horizontal Clip on Side', '侧边单水平夹板 1×2', 'clip', [2, 1], 1, { singleClip: true, category: 'hinge' });
 add('63868', 'Plate 1 x 2 with Clip on End', '端头单水平夹板 1×2（机翼底孔反扣高频件）', 'clip', [1, 2], 1, { endClip: true, category: 'hinge' });
-add('44301', 'Hinge Plate 1 x 2 Locking with 1 Finger on End', '棘轮合页板 1×2（单指端）', 'clip', [1, 2], 1, { category: 'hinge' });
-add('44302', 'Hinge Plate 1 x 2 Locking with 2 Fingers on End', '棘轮合页板 1×2（双指端）', 'barplate', [1, 2], 1, { category: 'hinge' });
+add('44301', 'Hinge Plate 1 x 2 Locking with 1 Finger on End', '棘轮合页板 1×2（单指端）', 'clip', [1, 2], 1, { clips: [[0, 0.4, 1.5, '+z']], category: 'hinge' });
+add('44302', 'Hinge Plate 1 x 2 Locking with 2 Fingers on End', '棘轮合页板 1×2（双指端）', 'barplate', [1, 2], 1, { bars: [[0, 0.4, 1.5, 'x', 0.45]], category: 'hinge' });
 add('2429c01', 'Hinge Plate 1 x 4 Swivel Complete', '水平旋转合页板 1×4', 'plate', [4, 1], 1, { category: 'hinge' });
-add('4085d', 'Plate 1 x 1 with Vertical Clip', '带竖直夹板 1×1', 'clip', [1, 1], 1, { category: 'hinge' });
-add('4081b', 'Plate 1 x 1 with Light Ring', '带圆环扣板 1×1', 'clip', [1, 1], 1, { category: 'hinge' });
-add('15712', 'Plate 1 x 1 with Top Clip', '顶面带夹板 1×1', 'clip', [1, 1], 1, { category: 'hinge' });
-add('30237', 'Brick 1 x 2 with Vertical Clip', '带侧竖夹砖 1×2', 'clip', [2, 1], 3, { singleClip: true, category: 'hinge' });
-add('14417', 'Plate 1 x 2 with Towball on Side', '带侧球头板 1×2', 'barplate', [2, 1], 1, { category: 'hinge' });
-add('14418', 'Plate 1 x 2 with Towball Socket', '带球窝夹板 1×2', 'clip', [2, 1], 1, { singleClip: true, category: 'hinge' });
-add('87994', 'Bar 3L', '3格长光剑杆/连接杆（高9片）', 'bar', [1, 1], 9, { category: 'hinge' });
-add('30374', 'Bar 4L (Lightsaber Blade)', '4格长光剑杆（高12片）', 'bar', [1, 1], 12, { category: 'hinge' });
+add('4085d', 'Plate 1 x 1 with Vertical Clip', '带竖直夹板 1×1', 'clip', [1, 1], 1, { verticalClip: true, clips: [[0, 0.2, 1, '+z', 'y']], category: 'hinge' });
+add('4081b', 'Plate 1 x 1 with Light Ring', '带圆环扣板 1×1', 'clip', [1, 1], 1, { clips: [[0, 0.4, 1, '+z']], category: 'hinge' });
+add('15712', 'Plate 1 x 1 with Top Clip', '顶面带夹板 1×1', 'clip', [1, 1], 1, { noTopStuds: true, studs: 0, clips: [[0, 0.7, 0, '+y']], category: 'hinge' });
+add('30237', 'Brick 1 x 2 with Vertical Clip', '带侧竖夹砖 1×2', 'clip', [2, 1], 3, { singleClip: true, verticalClip: true, clips: [[0, 0.6, 1, '+z', 'y']], category: 'hinge' });
+add('14417', 'Plate 1 x 2 with Towball on Side', '带侧球头板 1×2', 'plate', [2, 1], 1, {
+  category: 'hinge', ldrawOrigin: [0, 1, 0], checked: true, balls: [[0, 0.5, -1, '-z']],
+});
+add('14418', 'Plate 1 x 2 with Towball Socket', '带球窝夹板 1×2', 'plate', [2, 1], 1, {
+  singleClip: true, category: 'hinge', ldrawOrigin: [0, 1, 0], checked: true, sockets: [[1.5, 0.5, 0, '+x']],
+});
+add('87994', 'Bar 3L', '3格长光剑杆/连接杆（高7.5片）', 'bar', [1, 1], 7.5, { noTopStuds: true, studs: 0, antistudCells: [], category: 'hinge', ldrawOrigin: [0, 7.5, 0] });
+add('30374', 'Bar 4L (Lightsaber Blade)', '4格长光剑杆（高10片）', 'bar', [1, 1], 10, { noTopStuds: true, studs: 0, antistudCells: [], category: 'hinge' });
+add('60897', 'Plate 1 x 1 with Vertical Clip (Thick)', '竖直厚夹口板 1×1', 'clip', [1, 1], 1, { verticalClip: true, clips: [[0, 0.2, 1, '+z', 'y']], category: 'hinge' });
+add('44567', 'Hinge Plate 1 x 2 Side Finger Vertical', '侧向垂直合页板 1×2', 'clip', [2, 1], 1, { clips: [[0, 0.5, 1, '+z']], category: 'hinge' });
+add('14704', 'Plate 1 x 2 with Socket Center', '中心球窝板 1×2', 'plate', [2, 1], 1, { sockets: [[0, 0.5, 1, '+z']], category: 'hinge' });
+add('22890', 'Plate 1 x 2 with Ball Joint End', '端头球头板 1×2', 'plate', [1, 2], 1, { balls: [[0, 0.5, 1.5, '+z']], category: 'hinge' });
 
 // ================================================================
 // 11. 门窗、挡板与围栏 (Doors, Windows, Panels & Fences)
 // ================================================================
-add('60596', 'Door 1 x 4 x 6 Frame', '门框 1×4×6', 'doorframe', [4, 1], 18, { category: 'building' });
+add('60596', 'Door 1 x 4 x 6 Frame', '门框 1×4×6', 'doorframe', [4, 1], 18, { studs: 4, studCells: [[0, 0], [1, 0], [2, 0], [3, 0]], category: 'building' });
 add('60623', 'Door 1 x 4 x 6 with 4 Panes and Stud Handle', '门 1×4×6（四格窗）', 'door', [4, 1], 18, {
-  occupies: false, ldrawOrigin: [-1.6, 18, -0.25], hinge: { pivot: [-1.6, 0, -0.25], axis: [0, 1, 0] },
+  occupies: false, antistudCells: [], ldrawOrigin: [-1.6, 18, -0.25], hinge: { pivot: [-1.6, 0, -0.25], axis: [0, 1, 0] },
+  sideStuds: [[1.33, 3.45, 0.15, '+z'], [1.33, 3.45, -0.15, '-z']],
   note: '与门框使用相同的 at/rot；门轴在门框背面左侧', category: 'building',
 });
 add('60592', 'Window 1 x 2 x 2 Frame', '窗框 1×2×2（高6片）', 'doorframe', [2, 1], 6, { category: 'building' });
-add('60594', 'Window 1 x 4 x 3 Frame', '窗框 1×4×3（高9片）', 'doorframe', [4, 1], 9, { category: 'building' });
+add('60594', 'Window 1 x 4 x 3 Frame', '窗框 1×4×3（高9片）', 'doorframe', [4, 1], 9, { studs: 4, studCells: [[0, 0], [1, 0], [2, 0], [3, 0]], category: 'building' });
 add('4865b', 'Panel 1 x 2 x 1', 'U型挡板 1×2×1（高3片）', 'panel', [2, 1], 3, { category: 'building' });
 add('4864b', 'Panel 1 x 2 x 2', '高挡板 1×2×2（高6片）', 'panel', [2, 1], 6, { category: 'building' });
 add('3633', 'Fence 1 x 4 x 1', '围栏 1×4×1（高3片）', 'panel', [4, 1], 3, { category: 'building' });
@@ -230,10 +278,44 @@ add('3700', 'Technic Brick 1 x 2 with Hole', '科技单孔砖 1×2', 'technic', 
 add('32000', 'Technic Brick 1 x 2 with 2 Holes', '科技双孔砖 1×2', 'technic', [2, 1], 3, { holes: 2, category: 'technic' });
 add('3701', 'Technic Brick 1 x 4 with 3 Holes', '科技三孔砖 1×4', 'technic', [4, 1], 3, { holes: 3, category: 'technic' });
 add('3894', 'Technic Brick 1 x 6 with 5 Holes', '科技五孔砖 1×6', 'technic', [6, 1], 3, { holes: 5, category: 'technic' });
-add('3176', 'Plate 3 x 2 with Hole', '带圆孔半圆耳板 2×3（前/后伸出圆孔耳）', 'pinplate', [2, 2], 1, { category: 'technic' });
-add('2444', 'Plate 2 x 2 with Pin Hole', '带销孔连接板 2×2', 'pinplate', [2, 2], 1, { category: 'technic' });
-add('18677', 'Plate 1 x 2 with Pin Hole Underneath', '底面带销孔板 1×2', 'plate', [2, 1], 1, { category: 'technic' });
-add('4274', 'Technic Pin 1/2 with Stud', '带凸点半长蓝销 1×1', 'round', [1, 1], 1, { category: 'technic' });
+add('3702', 'Technic Brick 1 x 8 with Holes', '科技孔砖 1×8', 'technic', [8, 1], 3, { holes: 7, category: 'technic' });
+add('32064', 'Technic Brick 1 x 2 with Axle Hole', '科技十字轴孔砖 1×2', 'technic', [2, 1], 3, { axleHoles: [[0, 0.6, 0, 'z']], category: 'technic' });
+add('3176', 'Plate 3 x 2 with Hole', '带圆孔半圆耳板 2×3（前/后伸出圆孔耳）', 'pinplate', [2, 2], 1, { holes: [[0, 0.2, 1.5, 'y']], category: 'technic' });
+add('2444', 'Plate 2 x 2 with Pin Hole', '带销孔连接板 2×2', 'plate', [2, 2], 1, {
+  category: 'technic', holes: [[1, -0.1, 0, 'x']], boxes: [[-1, 1, 0, 1, -1, 1], [0, 1, -1.375, 0, -0.5, 0.5]],
+});
+add('18677', 'Plate 1 x 2 with Pin Hole Underneath', '底面带销孔板 1×2', 'plate', [2, 1], 1, {
+  category: 'technic', holes: [[0.5, -0.1, 0.5, 'z'], [0.5, -0.1, -0.5, 'z'], [0.5, -0.1, 0, 'z']], boxes: [[-1, 1, 0, 1, -0.5, 0.5], [0, 1, -1.375, 0, -0.5, 0.5]],
+});
+add('18654', 'Technic Beam 1 (Pin Tube 1L)', '科技插销管 1L', 'technic', [1, 1], 3, { noTopStuds: true, studs: 0, antistudCells: [], holes: [[0, 0.6, 0, 'y']], category: 'technic' });
+add('4274', 'Technic Pin 1/2 with Stud', '带凸点半长蓝销 1×1', 'technic', [1, 1], 1, {
+  category: 'technic', noTopStuds: true, studs: 0, antistudCells: [], pins: [[0, 0.2, 0, 'x']], sideStuds: [[0, 0.2, 0, '+x']], boxes: [[0.02, 0.5, 0.1, 0.9, -0.4, 0.4]],
+});
+add('6558', 'Technic Pin 3L Friction', '科技长插销 3L（带摩擦纹）', 'technic', [3, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[-0.5, 0.4, 0, 'x'], [0.5, 0.4, 0, 'x']], category: 'technic' });
+add('32054', 'Technic Pin 3L with Stop Bush', '带止动环科技长插销 3L', 'technic', [3, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[0.5, 0.4, 0, 'x']], axleHoles: [[-0.5, 0.4, 0, 'x']], category: 'technic' });
+add('3705', 'Technic Axle 4L', '科技十字轴 4L', 'technic', [4, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[0, 0.4, 0, 'x']], category: 'technic' });
+add('3706', 'Technic Axle 6L', '科技十字轴 6L', 'technic', [6, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[0, 0.4, 0, 'x']], category: 'technic' });
+add('3749', 'Technic Axle Pin', '科技轴销连接件 2L', 'technic', [2, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[0.5, 0.4, 0, 'x']], axleHoles: [[-0.5, 0.4, 0, 'x']], category: 'technic' });
+add('43093', 'Technic Axle Pin with Friction', '科技轴销连接件 2L（摩擦纹）', 'technic', [2, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[0.5, 0.4, 0, 'x']], axleHoles: [[-0.5, 0.4, 0, 'x']], category: 'technic' });
+add('2780', 'Technic Pin with Friction and Slots', '科技短插销 2L（标准黑销）', 'technic', [2, 1], 2, { noTopStuds: true, studs: 0, antistudCells: [], pins: [[-0.5, 0.4, 0, 'x'], [0.5, 0.4, 0, 'x']], category: 'technic' });
+add('6014', 'Wheel Rim 11 x 8', '小轮毂 11×8', 'technic', [1, 1], 3, { noTopStuds: true, studs: 0, antistudCells: [], axleHoles: [[0, 0.6, 0, 'x']], wheel: { role: 'rim', axis: 'x', outer: 0.96, bore: 0.22, cy: 0.6 }, offGrid: true, category: 'wheel' });
+add('87697', 'Tyre 21 x 12', '宽轮胎 21×12', 'technic', [3, 1], 6, { noTopStuds: true, studs: 0, antistudCells: [], wheel: { role: 'tyre', axis: 'z', outer: 1.25, bore: 0.6, cy: 1.2 }, offGrid: true, category: 'wheel' });
+add('11208', 'Wheel Rim 14 x 9.9', '六幅螺栓轮辋 14×9.9', 'technic', [2, 1], 5, { noTopStuds: true, studs: 0, antistudCells: [], axleHoles: [[0, 1.0, 0, 'z']], wheel: { role: 'rim', axis: 'z', outer: 0.91, bore: 0.2, cy: 1.0 }, offGrid: true, category: 'wheel' });
+add('11209', 'Tyre 14 x 4', '低断面赛车轮胎 14×4', 'technic', [3, 1], 7, { noTopStuds: true, studs: 0, antistudCells: [], wheel: { role: 'tyre', axis: 'z', outer: 1.32, bore: 0.86, cy: 2.0 }, offGrid: true, category: 'wheel' });
+P['50745'] = {
+  name: 'Car Mudguard  4 x  2.5 x  2', zh: '', kind: 'other', category: 'other', size: [4, 2], h: 6, studs: 4, grid: false,
+  studCells: [[2, 1, 5], [2, 0, 5], [1, 1, 5], [1, 0, 5]], ldrawOrigin: [0, 5, 0], antistudCells: [],
+  auto: true, source: 'LDraw 官方几何自动提取（catalog/ldraw-full）',
+  boxes: [[-2, 2, 4, 5, -1, 1], [-2, -1.5, 2, 4, -1, -0.5], [1.5, 2, 2, 4, -1, -0.5]],
+  boxesSource: 'curated-hollow', checked: true,
+};
+P['60477'] = {
+  name: 'Slope Brick 18  4 x  1', zh: '', kind: 'slope', category: 'slope', size: [1, 4], h: 3, studs: 1, grid: false,
+  studCells: [[0, 0]], ldrawOrigin: [0, 3, 0],
+  auto: true, source: 'LDraw 官方几何自动提取（catalog/ldraw-full）',
+  boxes: [[-0.5, 0.5, 0, 1, -2, 2], [-0.5, 0.5, 1, 2, -2, 1], [-0.5, 0.5, 2, 3, -2, 0]],
+  boxesSource: 'curated-stepped', checked: true,
+};
 
 for (const v of Object.values(P)) {
   if (!v.ldrawOrigin) v.ldrawOrigin = [0, v.h, 0];
@@ -252,5 +334,5 @@ const out = {
   parts: P,
 };
 
-fs.writeFileSync(new URL('./parts.json', import.meta.url), JSON.stringify(out, null, 1));
+fs.writeFileSync(new URL('./parts.json', import.meta.url), (JSON.stringify(out, null, 2) + '\n').replace(/\n/g, '\r\n'));
 console.log(Object.keys(P).length, 'parts generated');

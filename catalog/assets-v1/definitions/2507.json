@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -68,25 +68,234 @@
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
         0,
-        80,
+        20,
         0,
-        56,
+        6,
         0,
         200
+      ],
+      [
+        60,
+        80,
+        0,
+        6,
+        0,
+        200
+      ],
+      [
+        20,
+        60,
+        0,
+        10,
+        180,
+        200
+      ],
+      [
+        0,
+        20,
+        6,
+        14,
+        0,
+        180
+      ],
+      [
+        60,
+        80,
+        6,
+        14,
+        0,
+        180
+      ],
+      [
+        20,
+        60,
+        10,
+        12,
+        160,
+        200
+      ],
+      [
+        20,
+        60,
+        12,
+        18,
+        160,
+        180
+      ],
+      [
+        0,
+        20,
+        14,
+        22,
+        0,
+        160
+      ],
+      [
+        60,
+        80,
+        14,
+        22,
+        0,
+        160
+      ],
+      [
+        20,
+        60,
+        18,
+        20,
+        140,
+        180
+      ],
+      [
+        20,
+        60,
+        20,
+        26,
+        140,
+        160
+      ],
+      [
+        0,
+        20,
+        22,
+        32,
+        0,
+        140
+      ],
+      [
+        60,
+        80,
+        22,
+        32,
+        0,
+        140
+      ],
+      [
+        20,
+        60,
+        26,
+        28,
+        120,
+        160
+      ],
+      [
+        20,
+        60,
+        28,
+        36,
+        120,
+        140
+      ],
+      [
+        0,
+        20,
+        32,
+        40,
+        0,
+        120
+      ],
+      [
+        60,
+        80,
+        32,
+        40,
+        0,
+        120
+      ],
+      [
+        20,
+        60,
+        36,
+        38,
+        100,
+        140
+      ],
+      [
+        20,
+        60,
+        38,
+        44,
+        100,
+        120
+      ],
+      [
+        0,
+        20,
+        40,
+        48,
+        0,
+        100
+      ],
+      [
+        60,
+        80,
+        40,
+        48,
+        0,
+        100
+      ],
+      [
+        20,
+        60,
+        44,
+        46,
+        80,
+        120
+      ],
+      [
+        20,
+        60,
+        46,
+        54,
+        80,
+        100
+      ],
+      [
+        0,
+        80,
+        48,
+        52,
+        0,
+        20
+      ],
+      [
+        0,
+        20,
+        48,
+        52,
+        20,
+        80
+      ],
+      [
+        60,
+        80,
+        48,
+        52,
+        20,
+        80
+      ],
+      [
+        0,
+        80,
+        52,
+        56,
+        0,
+        80
       ]
     ],
+    "coverage": 1,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 41,
+  "connectorCount": 40,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -375,13 +584,6 @@
           190,
           1,
           39
-        ],
-        [
-          40,
-          0,
-          100,
-          1,
-          40
         ]
       ]
     }
@@ -393,9 +595,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.57（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 27,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -409,9 +611,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "0f4b9aceea9eeaac058a299c9cefe860df1485dc40cac0aa3144e8af5b543a23"
+  "contentHash": "9521ff180bfaba5ceb3e28ece6d23ca6a31ddb44dcc438b04873661dcc97af77"
 }

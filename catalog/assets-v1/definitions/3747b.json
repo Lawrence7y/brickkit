@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -76,17 +76,25 @@
         0,
         24,
         0,
+        20
+      ],
+      [
+        0,
+        40,
+        8,
+        24,
+        20,
         60
       ]
     ],
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 9,
+  "connectorCount": 10,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -104,18 +112,25 @@
           0
         ],
         [
-          30,
-          0,
           10,
+          0,
+          30,
           1,
           1
         ],
         [
-          20,
+          30,
+          0,
+          10,
+          1,
+          2
+        ],
+        [
+          30,
           0,
           30,
           1,
-          2
+          3
         ]
       ]
     },
@@ -181,7 +196,7 @@
     "collide": {
       "state": "unsupported",
       "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.63（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.5（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
     },
     "assemble": {
       "state": "measured",
@@ -196,9 +211,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "719a735835545daa521e85e3cce14ecbe25db2ab9dbc2860d842b0ea739e9847"
+  "contentHash": "e6ccd7cab41820ec396979935866cc5a7c961d96f4d63333ab3e277ce504c5b2"
 }

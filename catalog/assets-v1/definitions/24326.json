@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -72,11 +72,27 @@
     "boxes": [
       [
         0,
+        20,
+        0,
+        8,
+        0,
+        80
+      ],
+      [
+        40,
         60,
         0,
         8,
         0,
         80
+      ],
+      [
+        20,
+        40,
+        0,
+        8,
+        20,
+        60
       ],
       [
         0,
@@ -103,15 +119,15 @@
         80
       ]
     ],
-    "coverage": 0.86,
+    "coverage": 0.83,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 25,
+  "connectorCount": 24,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -204,13 +220,6 @@
           70,
           1,
           11
-        ],
-        [
-          30,
-          0,
-          40,
-          1,
-          12
         ]
       ]
     },
@@ -328,7 +337,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 4,
+      "boxCount": 6,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -345,9 +354,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "aeb95222047eba2d28b44be9e8f4232339475b2420b30a03b7f6850707b930f7"
+  "contentHash": "9c47729f152c48cc25255661819b56e8363613a5ab9b32b9629b7e6dc0bc1529"
 }

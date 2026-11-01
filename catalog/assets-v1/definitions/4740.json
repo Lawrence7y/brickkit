@@ -9,7 +9,7 @@
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "9ca23e2debb0ecbce17651905d1e643ddf023511586587c38368c209a5afc4da",
+    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -87,11 +87,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 6,
+  "connectorCount": 2,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -102,39 +102,11 @@
       "mp": "stud-antistud-v1",
       "items": [
         [
-          10,
+          20,
           0,
-          10,
+          20,
           1,
           0
-        ],
-        [
-          10,
-          0,
-          30,
-          1,
-          1
-        ],
-        [
-          30,
-          0,
-          10,
-          1,
-          2
-        ],
-        [
-          30,
-          0,
-          30,
-          1,
-          3
-        ],
-        [
-          20,
-          0,
-          20,
-          1,
-          4
         ]
       ]
     },
@@ -182,9 +154,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/4740.dat"
     ],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "37d8a2c91bf3ff496ce5ca8feea702b75a8cdb58b7a74e0195181e4e61939d28"
+  "contentHash": "9a5de47dcaa2423f7116960ea05b0b4472b26be124ae809b5d9ed8fae69bb98d"
 }

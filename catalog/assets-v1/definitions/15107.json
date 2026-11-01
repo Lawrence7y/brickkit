@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -68,21 +68,94 @@
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
         0,
         20,
         0,
-        192,
+        20,
         0,
+        20
+      ],
+      [
+        0,
+        20,
+        20,
+        118,
+        0,
+        40
+      ],
+      [
+        0,
+        20,
+        118,
+        126,
+        20,
+        40
+      ],
+      [
+        0,
+        20,
+        126,
+        150,
+        20,
+        60
+      ],
+      [
+        0,
+        20,
+        150,
+        158,
+        40,
+        60
+      ],
+      [
+        0,
+        20,
+        158,
+        172,
+        40,
+        80
+      ],
+      [
+        0,
+        20,
+        172,
+        174,
+        60,
+        80
+      ],
+      [
+        0,
+        20,
+        174,
+        182,
+        60,
+        100
+      ],
+      [
+        0,
+        20,
+        182,
+        186,
+        60,
+        120
+      ],
+      [
+        0,
+        20,
+        186,
+        192,
+        80,
         140
       ]
     ],
+    "coverage": 0.89,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -114,9 +187,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.09（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 10,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -130,9 +203,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "011ec6bf278ae31532a315e086c323e0a2ad268748bd8bcf1d095adf5c09dfff"
+  "contentHash": "433eb80eeafc8f457aec6bee3238a4d011d877565c2d2bc91d973618a4a136a6"
 }

@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -74,6 +74,38 @@
         0,
         60,
         0,
+        8,
+        0,
+        20
+      ],
+      [
+        0,
+        20,
+        0,
+        8,
+        20,
+        60
+      ],
+      [
+        40,
+        60,
+        0,
+        8,
+        20,
+        60
+      ],
+      [
+        20,
+        40,
+        0,
+        8,
+        40,
+        60
+      ],
+      [
+        0,
+        60,
+        8,
         12,
         0,
         60
@@ -111,15 +143,15 @@
         40
       ]
     ],
-    "coverage": 1,
+    "coverage": 0.92,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 11,
+  "connectorCount": 10,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -159,7 +191,7 @@
         ],
         [
           30,
-          0,
+          8,
           30,
           1,
           4
@@ -191,13 +223,6 @@
           50,
           1,
           8
-        ],
-        [
-          30,
-          0,
-          30,
-          1,
-          9
         ]
       ]
     },
@@ -227,7 +252,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 5,
+      "boxCount": 9,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -243,9 +268,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "f7638f22b091cd024bcb3b96f040506381c33a9a6021f549d69bb97d0dfd4c28"
+  "contentHash": "5c2881e3ce41d0b8a5ab9f851e33a32810e71bdb442c24cc0b33d428a96df7cd"
 }

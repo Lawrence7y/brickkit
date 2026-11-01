@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -71,8 +71,16 @@
     "state": "inferred",
     "boxes": [
       [
+        20,
+        40,
         0,
-        160,
+        24,
+        0,
+        60
+      ],
+      [
+        120,
+        140,
         0,
         24,
         0,
@@ -80,6 +88,54 @@
       ],
       [
         0,
+        20,
+        0,
+        24,
+        40,
+        60
+      ],
+      [
+        40,
+        120,
+        0,
+        20,
+        40,
+        60
+      ],
+      [
+        140,
+        160,
+        0,
+        24,
+        40,
+        60
+      ],
+      [
+        40,
+        100,
+        20,
+        24,
+        20,
+        60
+      ],
+      [
+        100,
+        120,
+        20,
+        24,
+        40,
+        60
+      ],
+      [
+        0,
+        40,
+        24,
+        48,
+        0,
+        40
+      ],
+      [
+        120,
         160,
         24,
         48,
@@ -87,10 +143,18 @@
         40
       ],
       [
+        40,
+        100,
+        24,
+        68,
+        20,
+        40
+      ],
+      [
         20,
         60,
         24,
-        72,
+        48,
         40,
         60
       ],
@@ -98,25 +162,65 @@
         80,
         140,
         24,
-        72,
+        48,
         40,
         60
       ],
       [
         20,
+        40,
+        48,
+        72,
+        0,
+        60
+      ],
+      [
+        120,
         140,
         48,
-        96,
+        72,
         0,
-        40
+        60
       ],
       [
         40,
         60,
-        72,
+        48,
         96,
         40,
         60
+      ],
+      [
+        80,
+        120,
+        48,
+        72,
+        40,
+        60
+      ],
+      [
+        40,
+        120,
+        68,
+        92,
+        20,
+        40
+      ],
+      [
+        20,
+        40,
+        72,
+        92,
+        0,
+        40
+      ],
+      [
+        120,
+        140,
+        72,
+        92,
+        0,
+        40
       ],
       [
         100,
@@ -127,9 +231,49 @@
         60
       ],
       [
+        20,
+        60,
+        92,
+        96,
+        0,
+        40
+      ],
+      [
+        100,
+        140,
+        92,
+        96,
+        0,
+        40
+      ],
+      [
+        60,
+        100,
+        92,
+        116,
+        20,
+        40
+      ],
+      [
         40,
+        60,
+        96,
+        116,
+        0,
+        40
+      ],
+      [
+        100,
         120,
         96,
+        116,
+        0,
+        40
+      ],
+      [
+        40,
+        120,
+        116,
         120,
         0,
         40
@@ -159,15 +303,15 @@
         20
       ]
     ],
-    "coverage": 0.79,
+    "coverage": 1,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 49,
+  "connectorCount": 48,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -344,13 +488,6 @@
           50,
           1,
           23
-        ],
-        [
-          80,
-          0,
-          30,
-          1,
-          24
         ]
       ]
     },
@@ -541,7 +678,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 11,
+      "boxCount": 29,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -557,9 +694,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "7afd788a19f12b867eaeec6673fbf2691dbaa865984a20b1bd89a50fbecab8ba"
+  "contentHash": "4094ef2f0352b85f1e311eab200d8799250a2088985970b9cd20663523f0cc7e"
 }

@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -90,9 +90,9 @@
         40,
         200,
         0,
-        24,
         20,
-        220
+        20,
+        40
       ],
       [
         20,
@@ -111,12 +111,28 @@
         240
       ],
       [
+        80,
+        160,
+        0,
+        20,
+        80,
+        160
+      ],
+      [
         0,
         20,
         0,
         24,
         200,
         240
+      ],
+      [
+        40,
+        200,
+        0,
+        20,
+        200,
+        220
       ],
       [
         220,
@@ -125,13 +141,21 @@
         24,
         200,
         240
+      ],
+      [
+        40,
+        200,
+        20,
+        24,
+        20,
+        220
       ]
     ],
     "coverage": 0.8,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -1101,7 +1125,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 7,
+      "boxCount": 10,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -1118,9 +1142,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "86cbaa65deacc04bc154cb594d2ea23f7e9a4abc314f472c505e5410b5aaed96"
+  "contentHash": "03e9405758c9750721691fc16f1287d9f65a56d3fb0da17ec1b8dd45b6cb61b4"
 }

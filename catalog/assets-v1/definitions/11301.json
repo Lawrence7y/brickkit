@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -71,8 +71,8 @@
     "state": "inferred",
     "boxes": [
       [
-        0,
-        160,
+        20,
+        140,
         0,
         16,
         0,
@@ -103,15 +103,15 @@
         40
       ]
     ],
-    "coverage": 1,
+    "coverage": 0.82,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 31,
+  "connectorCount": 30,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -176,13 +176,6 @@
           10,
           1,
           7
-        ],
-        [
-          80,
-          0,
-          20,
-          1,
-          8
         ]
       ]
     },
@@ -199,10 +192,17 @@
           14,
           0,
           1,
-          9
+          8
         ],
         [
           80,
+          14,
+          0,
+          1,
+          9
+        ],
+        [
+          100,
           14,
           0,
           1,
@@ -211,30 +211,23 @@
         [
           100,
           14,
-          0,
-          1,
-          11
-        ],
-        [
-          100,
-          14,
           40,
           1,
-          12
+          11
         ],
         [
           80,
           14,
           40,
           1,
-          13
+          12
         ],
         [
           60,
           14,
           40,
           1,
-          14
+          13
         ]
       ],
       "x": "z"
@@ -387,9 +380,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "bafa1abfbfec31888b7166078d53b0f9f1263939da7f6bdd11cb50a477264d7d"
+  "contentHash": "73f99d8f4c2049e512ed4ca926606a570b7ce348942c3af12b1b37269e4f4d75"
 }

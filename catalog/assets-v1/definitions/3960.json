@@ -9,7 +9,7 @@
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "9ca23e2debb0ecbce17651905d1e643ddf023511586587c38368c209a5afc4da",
+    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -87,11 +87,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 18,
+  "connectorCount": 4,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -102,125 +102,38 @@
       "mp": "stud-antistud-v1",
       "items": [
         [
-          10,
+          40,
           0,
-          10,
+          40,
           1,
           0
-        ],
+        ]
+      ]
+    },
+    {
+      "t": "axle",
+      "r": "female",
+      "o": 0,
+      "k": "axle",
+      "d": "+y",
+      "mp": "pin-axle-v1",
+      "items": [
         [
-          10,
-          0,
-          30,
+          40,
+          12,
+          40,
           1,
           1
         ],
         [
-          10,
-          0,
-          50,
+          40,
+          4,
+          40,
           1,
           2
-        ],
-        [
-          10,
-          0,
-          70,
-          1,
-          3
-        ],
-        [
-          30,
-          0,
-          10,
-          1,
-          4
-        ],
-        [
-          30,
-          0,
-          30,
-          1,
-          5
-        ],
-        [
-          30,
-          0,
-          50,
-          1,
-          6
-        ],
-        [
-          30,
-          0,
-          70,
-          1,
-          7
-        ],
-        [
-          50,
-          0,
-          10,
-          1,
-          8
-        ],
-        [
-          50,
-          0,
-          30,
-          1,
-          9
-        ],
-        [
-          50,
-          0,
-          50,
-          1,
-          10
-        ],
-        [
-          50,
-          0,
-          70,
-          1,
-          11
-        ],
-        [
-          70,
-          0,
-          10,
-          1,
-          12
-        ],
-        [
-          70,
-          0,
-          30,
-          1,
-          13
-        ],
-        [
-          70,
-          0,
-          50,
-          1,
-          14
-        ],
-        [
-          70,
-          0,
-          70,
-          1,
-          15
-        ],
-        [
-          40,
-          0,
-          40,
-          1,
-          16
         ]
-      ]
+      ],
+      "x": "y"
     },
     {
       "t": "stud",
@@ -255,7 +168,8 @@
       "state": "measured",
       "verifiedConnectorTypes": [
         "stud",
-        "antistud"
+        "antistud",
+        "axle"
       ],
       "note": "连接器由 .dat/目录实测生成，尚未跑配对夹具，除已列入 fixture 的类型外不得宣称 verified"
     }
@@ -266,9 +180,9 @@
     "evidenceRefs": [
       "catalog/ldraw/parts/3960.dat"
     ],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "cd96e6fc6c37545267c5484683691e8a2f05dc997115380e3562040801d21e0f"
+  "contentHash": "f09b26245df826d5e5a7de33c3764d19aa4ed8a768c9d6d2c8917721c343a684"
 }

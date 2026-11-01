@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -56,16 +56,50 @@
       2,
       3
     ],
-    "heightPlate": 6
+    "heightPlate": 6,
+    "bboxLdu": [
+      0,
+      40,
+      0,
+      48,
+      0,
+      60
+    ]
   },
   "collision": {
-    "shape": "none",
+    "shape": "boxes",
     "state": "unsupported",
-    "boxes": [],
+    "boxes": [
+      [
+        0,
+        40,
+        0,
+        8,
+        0,
+        60
+      ],
+      [
+        0,
+        40,
+        8,
+        24,
+        0,
+        40
+      ],
+      [
+        0,
+        40,
+        24,
+        48,
+        0,
+        20
+      ]
+    ],
+    "coverage": 0.91,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -202,7 +236,7 @@
     "collide": {
       "state": "unsupported",
       "boxCount": 0,
-      "note": "partBoxes 抛错：零件 4598（bracket）目录条目缺 vH/dir（支架臂高与朝向须由官方 .dat 实测补齐），拒绝生成包围盒"
+      "note": "bracket 缺 vH/dir，partBoxes 会拒绝生成包围盒"
     },
     "assemble": {
       "state": "measured",
@@ -217,9 +251,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "f075e90650cef52e29d7fa1a2ffeed42bc34a792d1d073f8ad7c9dce37ccfbbc"
+  "contentHash": "3e4ee05a2f4d179f60c4880e1a006550b94180f55d0743f93b66ccff1286d580"
 }

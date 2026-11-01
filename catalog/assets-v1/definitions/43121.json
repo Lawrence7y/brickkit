@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -74,6 +74,38 @@
         0,
         80,
         0,
+        12,
+        20,
+        100
+      ],
+      [
+        20,
+        60,
+        12,
+        22,
+        0,
+        100
+      ],
+      [
+        0,
+        20,
+        12,
+        22,
+        20,
+        100
+      ],
+      [
+        60,
+        80,
+        12,
+        22,
+        20,
+        100
+      ],
+      [
+        0,
+        80,
+        22,
         46,
         0,
         100
@@ -135,15 +167,15 @@
         80
       ]
     ],
-    "coverage": 0.82,
+    "coverage": 0.97,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 33,
+  "connectorCount": 28,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -156,149 +188,114 @@
         [
           10,
           0,
-          10,
+          30,
           1,
           0
         ],
         [
           10,
           0,
-          30,
+          50,
           1,
           1
         ],
         [
           10,
           0,
-          50,
+          70,
           1,
           2
         ],
         [
           10,
           0,
-          70,
+          90,
           1,
           3
         ],
         [
-          10,
+          30,
           0,
-          90,
+          30,
           1,
           4
         ],
         [
           30,
           0,
-          10,
+          50,
           1,
           5
         ],
         [
           30,
           0,
-          30,
+          70,
           1,
           6
         ],
         [
           30,
           0,
-          50,
+          90,
           1,
           7
         ],
         [
-          30,
+          50,
           0,
-          70,
+          30,
           1,
           8
         ],
         [
-          30,
+          50,
           0,
-          90,
+          50,
           1,
           9
         ],
         [
           50,
           0,
-          10,
+          70,
           1,
           10
         ],
         [
           50,
           0,
-          30,
+          90,
           1,
           11
         ],
         [
-          50,
+          70,
           0,
-          50,
+          30,
           1,
           12
         ],
         [
-          50,
-          0,
           70,
+          0,
+          50,
           1,
           13
         ],
         [
-          50,
+          70,
           0,
-          90,
+          70,
           1,
           14
         ],
         [
           70,
           0,
-          10,
-          1,
-          15
-        ],
-        [
-          70,
-          0,
-          30,
-          1,
-          16
-        ],
-        [
-          70,
-          0,
-          50,
-          1,
-          17
-        ],
-        [
-          70,
-          0,
-          70,
-          1,
-          18
-        ],
-        [
-          70,
-          0,
           90,
           1,
-          19
-        ],
-        [
-          40,
-          0,
-          50,
-          1,
-          20
+          15
         ]
       ]
     },
@@ -315,28 +312,28 @@
           38,
           80,
           1,
-          21
+          16
         ],
         [
           80,
           38,
           40,
           1,
-          22
+          17
         ],
         [
           0,
           38,
           80,
           1,
-          23
+          18
         ],
         [
           0,
           38,
           40,
           1,
-          24
+          19
         ]
       ],
       "x": "x"
@@ -416,7 +413,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 8,
+      "boxCount": 12,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -433,9 +430,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "78b097489074b962c5a37f664a41b369e3df92fa5c60d051633dfb0bcc4a89a0"
+  "contentHash": "108e17741f27082e3fba434ac0ac5cd63270926703505236ac4789bd49acd6de"
 }

@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -61,28 +61,69 @@
       0,
       80,
       0,
-      64,
+      60,
       0,
       160
     ]
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
         0,
         80,
         0,
-        64,
+        56,
         0,
+        40
+      ],
+      [
+        0,
+        40,
+        0,
+        56,
+        40,
+        160
+      ],
+      [
+        0,
+        80,
+        56,
+        60,
+        0,
+        20
+      ],
+      [
+        0,
+        60,
+        56,
+        60,
+        20,
+        40
+      ],
+      [
+        0,
+        40,
+        56,
+        60,
+        40,
+        140
+      ],
+      [
+        0,
+        20,
+        56,
+        60,
+        140,
         160
       ]
     ],
+    "coverage": 0.98,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -177,9 +218,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.12（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 6,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -193,9 +234,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "af55f1ed71f615aba31c2c00ee102825602794c59f4ba66bf1b61427946b883a"
+  "contentHash": "01964c1ff393e354a409e5914dbfe95a9fb278986edf14c332084f5dadc37b08"
 }

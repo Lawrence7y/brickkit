@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -76,17 +76,25 @@
         0,
         48,
         0,
+        20
+      ],
+      [
+        0,
+        120,
+        8,
+        48,
+        20,
         120
       ]
     ],
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 40,
+  "connectorCount": 39,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -137,13 +145,6 @@
           10,
           1,
           5
-        ],
-        [
-          60,
-          0,
-          60,
-          1,
-          6
         ]
       ]
     },
@@ -160,35 +161,35 @@
           24,
           40,
           1,
-          7
+          6
         ],
         [
           40,
           24,
           60,
           1,
-          8
+          7
         ],
         [
           60,
+          24,
+          60,
+          1,
+          8
+        ],
+        [
+          80,
           24,
           60,
           1,
           9
         ],
         [
-          80,
-          24,
           60,
+          24,
+          80,
           1,
           10
-        ],
-        [
-          60,
-          24,
-          80,
-          1,
-          11
         ]
       ],
       "x": "y"
@@ -409,7 +410,7 @@
     "collide": {
       "state": "unsupported",
       "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.02（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.66（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
     },
     "assemble": {
       "state": "measured",
@@ -425,9 +426,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "5535b6ca82a0fb237252607f846cc0df363340b995641142e3ff6a381adcfa06"
+  "contentHash": "5977fd359d5f3511b6b36ba484efecbea74ad1a7715254538b0cdeabd9ae41a4"
 }

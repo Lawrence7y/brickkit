@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T07:10:33.915Z",
+  "generatedAt": "2026-11-01T07:03:47.952Z",
   "governedBy": {
     "curatedParts": 167,
     "strictAuto": false
@@ -12,9 +12,9 @@
     "byStatus": {
       "stud-offset": 1133,
       "protrudes": 514,
-      "height-error": 2038,
+      "height-error": 2036,
       "match": 424,
-      "smaller": 494,
+      "smaller": 496,
       "side-faces-missing": 2
     },
     "featureExplained": [
@@ -262,7 +262,6 @@
       "30198",
       "30223",
       "30263",
-      "30374",
       "30383",
       "30552",
       "30553",
@@ -649,7 +648,6 @@
       "87601",
       "87745",
       "87761",
-      "87994",
       "88323",
       "88695",
       "89679",
@@ -37075,19 +37073,17 @@
     },
     {
       "id": "30374",
-      "zh": "4格长光剑杆（高12片）",
+      "zh": "4格长光剑杆（高10片）",
       "officialDesc": "Bar  4L Lightsaber Blade",
-      "status": "height-error",
+      "status": "smaller",
       "flags": [
-        "height-error",
         "smaller",
         "smaller"
       ],
       "handWritten": true,
-      "featureExplained": true,
       "expected": {
         "x": 20,
-        "y": 96,
+        "y": 80,
         "z": 20
       },
       "measured": {
@@ -68413,19 +68409,17 @@
     },
     {
       "id": "87994",
-      "zh": "3格长光剑杆/连接杆（高9片）",
+      "zh": "3格长光剑杆/连接杆（高7.5片）",
       "officialDesc": "Bar  3L",
-      "status": "height-error",
+      "status": "smaller",
       "flags": [
-        "height-error",
         "smaller",
         "smaller"
       ],
       "handWritten": true,
-      "featureExplained": true,
       "expected": {
         "x": 20,
-        "y": 72,
+        "y": 60,
         "z": 20
       },
       "measured": {

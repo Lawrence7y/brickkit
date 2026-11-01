@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -72,18 +72,10 @@
     "boxes": [
       [
         0,
-        60,
-        0,
-        24,
-        0,
-        20
-      ],
-      [
-        0,
         20,
         0,
         10,
-        20,
+        40,
         80
       ],
       [
@@ -91,7 +83,7 @@
         60,
         0,
         10,
-        20,
+        40,
         80
       ],
       [
@@ -106,6 +98,22 @@
         0,
         20,
         10,
+        14,
+        40,
+        60
+      ],
+      [
+        40,
+        60,
+        10,
+        14,
+        40,
+        60
+      ],
+      [
+        0,
+        20,
+        14,
         22,
         20,
         60
@@ -113,10 +121,18 @@
       [
         40,
         60,
-        10,
+        14,
         22,
         20,
         60
+      ],
+      [
+        0,
+        60,
+        16,
+        24,
+        0,
+        20
       ],
       [
         0,
@@ -151,11 +167,11 @@
         40
       ]
     ],
-    "coverage": 0.93,
+    "coverage": 0.89,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -225,7 +241,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 10,
+      "boxCount": 12,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -241,9 +257,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "635f42abde83b965d72795137e3186054732e227c99561f0f2e2ec7d7a312acc"
+  "contentHash": "20eb1f58b2c21b06b53635c0d8bee7eded4537fde9b7c3f7e873fa30da3931f5"
 }

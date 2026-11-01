@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -61,28 +61,85 @@
       0,
       80,
       0,
-      144,
+      138,
       0,
       80
     ]
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
         0,
         80,
         0,
-        144,
+        24,
         0,
+        40
+      ],
+      [
+        0,
+        40,
+        0,
+        24,
+        40,
+        80
+      ],
+      [
+        0,
+        80,
+        24,
+        118,
+        0,
+        60
+      ],
+      [
+        0,
+        60,
+        24,
+        118,
+        60,
+        80
+      ],
+      [
+        0,
+        80,
+        118,
+        136,
+        0,
+        40
+      ],
+      [
+        0,
+        40,
+        118,
+        136,
+        40,
+        80
+      ],
+      [
+        20,
+        80,
+        136,
+        138,
+        20,
+        40
+      ],
+      [
+        20,
+        40,
+        136,
+        138,
+        40,
         80
       ]
     ],
+    "coverage": 0.98,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -214,9 +271,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.19（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 8,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -231,9 +288,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "b12637c10bcda94c11ecf50afcb1cd7789ec26f046014007c7516cfc3bbe65ac"
+  "contentHash": "99e8a3d34eff62fdd35087105b9b85b68dfa0d94b56c53a415b476beb7263b60"
 }

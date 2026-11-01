@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -83,11 +83,11 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 585,
+  "connectorCount": 584,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -2112,13 +2112,6 @@
           230,
           1,
           287
-        ],
-        [
-          240,
-          0,
-          120,
-          1,
-          288
         ]
       ]
     },
@@ -2135,56 +2128,56 @@
           21,
           20,
           1,
-          289
+          288
         ],
         [
           460,
           4,
           20,
+          1,
+          289
+        ],
+        [
+          460,
+          21,
+          220,
           1,
           290
         ],
         [
           460,
-          21,
+          4,
           220,
           1,
           291
         ],
         [
-          460,
-          4,
-          220,
+          20,
+          21,
+          20,
           1,
           292
         ],
         [
           20,
-          21,
+          4,
           20,
           1,
           293
         ],
         [
           20,
-          4,
-          20,
+          21,
+          220,
           1,
           294
         ],
         [
           20,
-          21,
-          220,
-          1,
-          295
-        ],
-        [
-          20,
           4,
           220,
           1,
-          296
+          295
         ]
       ],
       "x": "y"
@@ -4241,9 +4234,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "347e3409099a6831b04a96f80ccf4ff3747fc681fa07e41d1ef14a36ae879cfb"
+  "contentHash": "e6fc5f7771d254767f7ad5e3a89b11fd1dec286c157a4b71b07f2a98f949748c"
 }

@@ -1,19 +1,19 @@
 {
   "schemaVersion": "1.0.0",
   "partId": "25269",
-  "revision": "r1-extracted",
+  "revision": "r1-curated",
   "aliases": [],
-  "name": "Tile  1 x  1 Corner Round",
-  "nameZh": "",
+  "name": "Tile 1 x 1 Quarter Circle",
+  "nameZh": "圆角光面板 1×1（1/4圆）",
   "category": "tile",
   "source": {
-    "kind": "ldraw-dat",
-    "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "kind": "catalog-entry",
+    "ref": "catalog/parts.json",
+    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
-    "note": "LDraw 官方几何自动提取（catalog/ldraw-full）"
+    "note": ""
   },
   "canonicalFrame": {
     "units": "LDU",
@@ -82,7 +82,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -126,12 +126,12 @@
     }
   },
   "provenance": {
-    "grade": "inferred",
-    "method": "LDraw 官方 .dat 自动提取",
+    "grade": "measured",
+    "method": "精选目录（人工核对 + 官方 .dat 验证）",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "c816972d2dabce570f04bfef07406625e522f821d3a02be5de2d7669592e31a6"
+  "contentHash": "fe76f344393b5356645ea2908897f68d6cdcf2b6591fa1bd64ea4d0d412d4f20"
 }

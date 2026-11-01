@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -61,105 +61,40 @@
       0,
       160,
       0,
-      44,
+      48,
       0,
       160
     ]
   },
   "collision": {
     "shape": "boxes",
-    "state": "inferred",
+    "state": "unsupported",
     "boxes": [
       [
         0,
         160,
         0,
-        8,
-        0,
-        160
-      ],
-      [
-        0,
-        160,
-        8,
-        24,
+        48,
         0,
         20
       ],
       [
         0,
-        40,
-        8,
-        16,
-        20,
-        160
-      ],
-      [
-        120,
         160,
         8,
-        16,
+        48,
         20,
-        160
-      ],
-      [
-        40,
-        120,
-        8,
-        16,
-        140,
-        160
-      ],
-      [
-        0,
-        20,
-        16,
-        24,
-        20,
-        160
-      ],
-      [
-        140,
-        160,
-        16,
-        24,
-        20,
-        160
-      ],
-      [
-        20,
-        140,
-        16,
-        24,
-        140,
-        160
-      ],
-      [
-        0,
-        20,
-        24,
-        44,
-        0,
-        160
-      ],
-      [
-        140,
-        160,
-        24,
-        44,
-        0,
         160
       ]
     ],
-    "coverage": 0.88,
     "evidence": {
       "grade": "inferred",
-      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "按 kind/size/h 单盒推导",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 67,
+  "connectorCount": 66,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -224,13 +159,6 @@
           10,
           1,
           7
-        ],
-        [
-          80,
-          0,
-          80,
-          1,
-          8
         ]
       ]
     },
@@ -247,10 +175,17 @@
           14,
           0,
           1,
-          9
+          8
         ],
         [
           80,
+          14,
+          0,
+          1,
+          9
+        ],
+        [
+          100,
           14,
           0,
           1,
@@ -259,30 +194,23 @@
         [
           100,
           14,
-          0,
-          1,
-          11
-        ],
-        [
-          100,
-          14,
           160,
           1,
-          12
+          11
         ],
         [
           80,
           14,
           160,
           1,
-          13
+          12
         ],
         [
           60,
           14,
           160,
           1,
-          14
+          13
         ]
       ],
       "x": "z"
@@ -669,9 +597,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "inferred",
-      "boxCount": 10,
-      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
+      "state": "unsupported",
+      "boxCount": 0,
+      "note": "需手工多盒分解：分解盒覆盖率仅 0.67（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
     },
     "assemble": {
       "state": "measured",
@@ -687,9 +615,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "a9e7ae21f6fef4e81e1f2a83c8e25008fba3c8af7283dc244f0cc7102b7d3377"
+  "contentHash": "6a73271d3a2406c5be4a854551b58f272759e5fcdc2f001518a1e1b1b2e6bb25"
 }

@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -74,6 +74,14 @@
         0,
         20,
         0,
+        6,
+        0,
+        120
+      ],
+      [
+        0,
+        20,
+        6,
         16,
         0,
         160
@@ -87,15 +95,15 @@
         40
       ]
     ],
-    "coverage": 0.92,
+    "coverage": 1,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 12,
+  "connectorCount": 10,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -146,20 +154,6 @@
           110,
           1,
           5
-        ],
-        [
-          10,
-          0,
-          130,
-          1,
-          6
-        ],
-        [
-          10,
-          0,
-          150,
-          1,
-          7
         ]
       ]
     },
@@ -176,14 +170,14 @@
           14,
           20,
           1,
-          8
+          6
         ],
         [
           0,
           14,
           20,
           1,
-          9
+          7
         ]
       ],
       "x": "x"
@@ -221,7 +215,7 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 2,
+      "boxCount": 3,
       "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
@@ -238,9 +232,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "a1eb5b3cda056e1092e3d26758d0f5d1dc830418a825c9fc270ffeeec8fe6e9d"
+  "contentHash": "49ceedb4a3116fdca299a6c10c3b1b1ccc8217809cb78162386938c2f84afd68"
 }

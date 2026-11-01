@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -74,15 +74,32 @@
         0,
         20,
         0,
-        56,
+        38,
+        0,
+        20
+      ],
+      [
+        0,
+        20,
+        38,
+        54,
         0,
         40
+      ],
+      [
+        0,
+        20,
+        54,
+        56,
+        0,
+        20
       ]
     ],
+    "coverage": 0.95,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -133,8 +150,8 @@
     },
     "collide": {
       "state": "inferred",
-      "boxCount": 1,
-      "note": "按 kind/size/h 生成的单实心盒；凹形件会高估体积（保守，不产生假阴性穿模，但可能误报）"
+      "boxCount": 3,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -149,9 +166,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "a6a85d9970d57dda223c8925f792f7d6725b2f25b5cb1d5814a5c9684f3556c6"
+  "contentHash": "4bd51c4bca8b5584a7921cef8504e8698843793de122db2f3ae56f2a77616a9b"
 }

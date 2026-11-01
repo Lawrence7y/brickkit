@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -119,15 +119,15 @@
         20
       ]
     ],
-    "coverage": 0.82,
+    "coverage": 0.99,
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（ldraw-heightmap）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 45,
+  "connectorCount": 44,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -178,13 +178,6 @@
           10,
           1,
           5
-        ],
-        [
-          60,
-          0,
-          80,
-          1,
-          6
         ]
       ]
     },
@@ -201,42 +194,42 @@
           14,
           0,
           1,
-          7
+          6
         ],
         [
           40,
+          14,
+          0,
+          1,
+          7
+        ],
+        [
+          80,
           14,
           0,
           1,
           8
         ],
         [
-          80,
+          60,
           14,
-          0,
+          160,
           1,
           9
         ],
         [
-          60,
+          80,
           14,
           160,
           1,
           10
         ],
         [
-          80,
-          14,
-          160,
-          1,
-          11
-        ],
-        [
           40,
           14,
           160,
           1,
-          12
+          11
         ]
       ],
       "x": "z"
@@ -501,9 +494,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "b926b4b907451446f458a7c7519be030abfeda20a2ea669a05e85f228a61dfcb"
+  "contentHash": "a262f8a78bd398d5eb4a21f7f5b5e3419e2ba7d19f1ae0cfb26fa7562ae65bf9"
 }

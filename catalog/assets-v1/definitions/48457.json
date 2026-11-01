@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -58,12 +58,12 @@
     ],
     "heightPlate": 6,
     "bboxLdu": [
-      0,
-      20,
+      6,
+      14,
       0,
       48,
-      0,
-      20
+      6,
+      14
     ]
   },
   "collision": {
@@ -71,18 +71,18 @@
     "state": "unsupported",
     "boxes": [
       [
-        0,
-        20,
+        6,
+        14,
         0,
         48,
-        0,
-        20
+        6,
+        14
       ]
     ],
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -183,9 +183,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "ac23e742fbab3a823c1e78d7f982afd2a22ce04752e2e4e3e4827f60ff259cd2"
+  "contentHash": "cdb2d1597a68777813a1c139cbcf462e2854d49daa182181c293ffe50ddd584b"
 }

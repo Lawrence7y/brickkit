@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -61,28 +61,189 @@
       0,
       220,
       0,
-      24,
+      20,
       0,
       220
     ]
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
-        0,
+        120,
         220,
         0,
-        24,
+        10,
         0,
+        40
+      ],
+      [
+        80,
+        120,
+        0,
+        20,
+        20,
+        60
+      ],
+      [
+        60,
+        80,
+        0,
+        10,
+        40,
+        100
+      ],
+      [
+        120,
+        160,
+        0,
+        10,
+        40,
+        60
+      ],
+      [
+        40,
+        60,
+        0,
+        10,
+        60,
+        160
+      ],
+      [
+        80,
+        100,
+        0,
+        10,
+        60,
+        100
+      ],
+      [
+        20,
+        40,
+        0,
+        12,
+        80,
+        220
+      ],
+      [
+        0,
+        20,
+        0,
+        10,
+        120,
+        220
+      ],
+      [
+        120,
+        140,
+        10,
+        20,
+        0,
+        60
+      ],
+      [
+        160,
+        200,
+        10,
+        12,
+        0,
+        40
+      ],
+      [
+        140,
+        160,
+        10,
+        12,
+        20,
+        60
+      ],
+      [
+        200,
+        220,
+        10,
+        20,
+        20,
+        40
+      ],
+      [
+        40,
+        100,
+        10,
+        20,
+        60,
+        100
+      ],
+      [
+        40,
+        60,
+        10,
+        20,
+        100,
+        160
+      ],
+      [
+        0,
+        20,
+        10,
+        20,
+        120,
+        140
+      ],
+      [
+        0,
+        20,
+        10,
+        20,
+        160,
+        200
+      ],
+      [
+        160,
+        200,
+        12,
+        20,
+        0,
+        20
+      ],
+      [
+        140,
+        180,
+        12,
+        20,
+        20,
+        40
+      ],
+      [
+        140,
+        160,
+        12,
+        20,
+        40,
+        60
+      ],
+      [
+        20,
+        40,
+        12,
+        20,
+        80,
+        180
+      ],
+      [
+        20,
+        40,
+        12,
+        20,
+        200,
         220
       ]
     ],
+    "coverage": 0.93,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -195,9 +356,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 21,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -212,9 +373,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "fcaba42e963a37f9df0de95bb01eb720142757ffb781fa7d2eab24d5ea1b8774"
+  "contentHash": "749dcf56e0d05f8e197fb47860f271a971c3c947fbd28f0cf6d22cf3b66265af"
 }

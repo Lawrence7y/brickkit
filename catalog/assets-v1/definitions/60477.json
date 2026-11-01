@@ -9,7 +9,7 @@
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "9ca23e2debb0ecbce17651905d1e643ddf023511586587c38368c209a5afc4da",
+    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -98,7 +98,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（curated-stepped）",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -184,9 +184,9 @@
     "grade": "measured",
     "method": "精选目录（人工核对 + 官方 .dat 验证）",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "9e7d6ff9da5c14f0bdb2a41d1469188857c8fe1a7e7dd5fcd9fd4110841e9ec0"
+  "contentHash": "7f25ea9941e94ebf6f56aba828797ed1edde891860e6ee6f0c62a24a514bf11a"
 }

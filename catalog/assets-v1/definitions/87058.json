@@ -9,7 +9,7 @@
   "source": {
     "kind": "ldraw-dat",
     "ref": "catalog/parts-ldraw.json",
-    "sha256": "a136a78e128689de8632b90d76f779c3cec93517e6036e8f4b19ec391664b873",
+    "sha256": "6f8e5e9932ee5057231bcbb55112e9caa49d4c6182afd9557af13d06659d5ef5",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -68,25 +68,242 @@
   },
   "collision": {
     "shape": "boxes",
-    "state": "unsupported",
+    "state": "inferred",
     "boxes": [
       [
+        140,
+        160,
         0,
+        8,
+        0,
+        120
+      ],
+      [
+        520,
+        540,
+        0,
+        8,
+        0,
+        120
+      ],
+      [
+        160,
+        520,
+        0,
+        8,
+        20,
+        100
+      ],
+      [
+        140,
+        540,
+        8,
+        16,
+        0,
+        120
+      ],
+      [
+        140,
+        160,
+        16,
+        46,
+        0,
+        120
+      ],
+      [
+        520,
+        540,
+        16,
+        46,
+        0,
+        120
+      ],
+      [
+        160,
+        180,
+        16,
+        46,
+        20,
+        40
+      ],
+      [
+        500,
+        520,
+        16,
+        46,
+        20,
+        40
+      ],
+      [
+        160,
+        180,
+        16,
+        54,
+        80,
+        100
+      ],
+      [
+        500,
+        520,
+        16,
+        54,
+        80,
+        100
+      ],
+      [
+        120,
+        160,
+        46,
+        48,
+        0,
+        20
+      ],
+      [
+        520,
+        560,
+        46,
+        48,
+        0,
+        20
+      ],
+      [
+        140,
+        180,
+        46,
+        54,
+        20,
+        40
+      ],
+      [
+        500,
+        540,
+        46,
+        54,
+        20,
+        40
+      ],
+      [
+        140,
+        160,
+        46,
+        54,
+        40,
+        120
+      ],
+      [
+        520,
+        540,
+        46,
+        54,
+        40,
+        120
+      ],
+      [
+        120,
+        140,
+        46,
+        48,
+        100,
+        120
+      ],
+      [
+        540,
+        560,
+        46,
+        48,
+        100,
+        120
+      ],
+      [
+        0,
+        160,
+        48,
+        56,
+        0,
+        20
+      ],
+      [
+        520,
         680,
+        48,
+        56,
         0,
+        20
+      ],
+      [
+        0,
+        20,
+        48,
+        56,
+        20,
+        120
+      ],
+      [
+        660,
+        680,
+        48,
+        56,
+        20,
+        120
+      ],
+      [
+        20,
+        140,
+        48,
+        56,
+        100,
+        120
+      ],
+      [
+        540,
+        660,
+        48,
+        56,
+        100,
+        120
+      ],
+      [
+        140,
+        160,
+        54,
+        56,
+        20,
+        120
+      ],
+      [
+        520,
+        540,
+        54,
+        56,
+        20,
+        120
+      ],
+      [
+        0,
+        160,
+        56,
+        64,
+        0,
+        120
+      ],
+      [
+        520,
+        680,
+        56,
         64,
         0,
         120
       ]
     ],
+    "coverage": 1,
     "evidence": {
       "grade": "inferred",
-      "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-10-27T06:01:03.952Z",
+      "method": "目录 boxes 多盒分解（ldraw-heightmap）",
+      "recordedAt": "2026-11-01T10:22:25.243Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
-  "connectorCount": 401,
+  "connectorCount": 400,
   "connectorGroups": [
     {
       "t": "antistud",
@@ -1523,13 +1740,6 @@
           110,
           1,
           203
-        ],
-        [
-          340,
-          0,
-          60,
-          1,
-          204
         ]
       ]
     },
@@ -2923,9 +3133,9 @@
       "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
     },
     "collide": {
-      "state": "unsupported",
-      "boxCount": 0,
-      "note": "需手工多盒分解：分解盒覆盖率仅 0.12（< 0.7）：射线采样采空弯曲壳体，退回单实心盒"
+      "state": "inferred",
+      "boxCount": 28,
+      "note": "多盒分解（boxesSource=ldraw-heightmap）；空腔留空由 validate 的 3D 盒检查负责"
     },
     "assemble": {
       "state": "measured",
@@ -2940,9 +3150,9 @@
     "grade": "inferred",
     "method": "LDraw 官方 .dat 自动提取",
     "evidenceRefs": [],
-    "recordedAt": "2026-10-27T06:01:03.952Z",
+    "recordedAt": "2026-11-01T10:22:25.243Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "f0942362a9a67a57cfa1ff78f6ab58371349677a25d9cb3c99e08df7b24f8fec"
+  "contentHash": "d8c6b29b0c78a3abd458d54460a39e0234ef9675b8907e6f182f9432287fbf78"
 }
