@@ -4,7 +4,7 @@ import fs from 'fs';
 import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { validate, toLDraw, ldrawExt, checkPhotos, bom, stepPlan, PHOTO_SLOTS, partBoxes, partConnectors, snapPart, findMounts, recompute } from '../src/core/core.js';
+import { validate, toLDraw, ldrawExt, checkPhotos, bom, stepPlan, PHOTO_SLOTS, partBoxes, partConnectors, snapPart, findMounts, recompute, mergeCatalogParts, catalogInterfaceConflicts } from '../src/core/core.js';
 import { runDiff, calibratePhoto } from '../src/core/diff.js';
 import { checkObservations } from '../src/core/observations.js';
 import { extractPlan, checkPlan } from '../tools/extract-plan.mjs';
@@ -29,7 +29,7 @@ const readJSON = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const extFile = path.join(ROOT, 'catalog/parts-ldraw.json');
 const ext = fs.existsSync(extFile) ? readJSON(extFile).parts : {};
 const curated = readJSON(path.join(ROOT, 'catalog/parts.json')).parts;
-const cat = { parts: { ...ext, ...curated }, colors: readJSON(path.join(ROOT, 'catalog/colors.json')).colors, curated, ext };
+const cat = { parts: mergeCatalogParts(ext, curated), colors: readJSON(path.join(ROOT, 'catalog/colors.json')).colors, curated, ext };
 const args = process.argv.slice(2), cmd = args.shift();
 const flag = (name, def) => { let i = args.indexOf(`--${name}`); if (i < 0 && name.length === 1) i = args.indexOf(`-${name}`); if (i < 0) return def; const v = args[i + 1]; args.splice(i, v && !v.startsWith('--') ? 2 : 1); return v && !v.startsWith('--') ? v : true; };
 const pretty = flag('pretty', false);
@@ -252,10 +252,21 @@ async function main() {
       // catalog/ldraw 优先；catalog/ldraw-full（--full 整库镜像）作为二级解析源
       const fullDir = path.resolve(ROOT, 'catalog/ldraw-full');
       const roots = [dir, ...(fs.existsSync(fullDir) ? [fullDir] : [])];
+      const cache = new Map();
       const readLib = (raw) => {
+        const key = String(raw).toLowerCase().replace(/\\/g, '/');
+        if (cache.has(key)) return cache.get(key);
         for (const lp of refCandidates(raw)) {
-          for (const root of roots) { const f = safeJoin(root, lp); if (f && fs.existsSync(f)) return fs.readFileSync(f, 'utf8'); }
+          for (const root of roots) {
+            const f = safeJoin(root, lp);
+            if (f && fs.existsSync(f)) {
+              const t = fs.readFileSync(f, 'utf8');
+              cache.set(key, t);
+              return t;
+            }
+          }
         }
+        cache.set(key, null);
         return null;
       };
       const manifest = fs.existsSync(path.join(dir, 'manifest.json')) ? JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8')) : null;
@@ -353,15 +364,19 @@ async function main() {
           log: (m) => process.stderr.write(m + '\n'),
         });
         const { summary, results } = report;
+        // 目录接口冲突：精选目录与扩展目录对同一个件的同名连接器字段给出不同答案时列出。
+        // 过去这类覆盖是静默的（`{...ext, ...curated}`），「已知硬冲突」因此长期没被发现。
+        const interfaceConflicts = catalogInterfaceConflicts(ext, curated);
         fs.mkdirSync(path.dirname(outFile), { recursive: true });
         fs.writeFileSync(outFile, JSON.stringify({
           generatedAt: new Date().toISOString(),
           command: `brickkit catalog-audit --out ${path.relative(ROOT, outFile)}`,
-          note: '四条机查 + 渲染冒烟的口径见 src/core/catalog-audit.mjs 文件头。checks.geometry=null 表示官方库缺 .dat（计入 checks.geometry.missing，不算失败）；checks.render 仅抽样件有值。',
-          summary, results,
+          note: '四条机查 + 渲染冒烟的口径见 src/core/catalog-audit.mjs 文件头。checks.geometry=null 表示官方库缺 .dat（计入 checks.geometry.missing，不算失败）；checks.render 仅抽样件有值。interfaceConflicts 列出自精选/扩展两套目录同名连接器字段的冲突（不阻断审计，是报告数据）。',
+          summary: { ...summary, interfaceConflicts: interfaceConflicts.length },
+          interfaceConflicts, results,
         }, null, 1));
-        process.stdout.write(JSON.stringify(summary) + '\n');   // 顶部一行汇总 JSON，供下游解析
-        out({ ok: summary.ok, ...summary, file: outFile, reportFile: outFile });
+        process.stdout.write(JSON.stringify({ ...summary, interfaceConflicts: interfaceConflicts.length }) + '\n');   // 顶部一行汇总 JSON，供下游解析
+        out({ ok: summary.ok, ...summary, interfaceConflicts: interfaceConflicts.length, file: outFile, reportFile: outFile });
         if (auditRenderContext) await auditRenderContext.close();
         // 审计成功完成即退出 0：逐件 pass/fail 是报告数据（汇总 ok 字段可见），不是命令失败；
         // 命令自身出错走 fail()（退出 2）。检查口径不变，不因失败件降级退出码语义。
