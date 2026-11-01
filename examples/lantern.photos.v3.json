@@ -1,0 +1,71 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.3",
+ "note": "v3（r6 轮）。只用于 diff 数值对账：引用的是【派生裁剪图】（out/lantern-repair/2026-10-27-r6/main/photocrops/），不是原图。裁剪目的：把桌面黄色图案与键盘切到画面边缘之外，让 diff 的边界泛洪掩膜不再把它们误判为前景（r5 的 diff 分数 0.263 失效的直接原因）。原图未做任何修改；每张裁剪记录源文件与裁剪框。两张端面特写（base/top detail）不是整机视图，不进 diff 清单，观察用途见 lantern.photos.v2.json。",
+ "derivation": {
+  "method": "sharp extract，按原图像素裁剪，不缩放、不旋转、不改色",
+  "cropTable": [
+   { "id": "lantern_a045",     "source": "1792845158470.jpg", "left": 704, "top": 128, "width": 2432, "height": 2720, "why": "收进模型本体；键盘在右上被上/右边缘切开" },
+   { "id": "lantern_a090_e05", "source": "1792845158528.jpg", "left": 640, "top": 352, "width": 2656, "height": 2304, "why": "收进模型本体；顶部键盘与两侧桌纹被边缘切开" },
+   { "id": "lantern_a135_e10", "source": "1792845158599.jpg", "left": 928, "top": 320, "width": 2432, "height": 2208, "why": "收进模型本体；左/下桌纹被边缘切开" },
+   { "id": "lantern_a090_e00", "source": "1792845158626.jpg", "left": 544, "top": 544, "width": 2688, "height": 1728, "why": "收进模型本体；四角桌纹贴边缘被切开" }
+  ],
+  "sha256OfSources": {
+   "1792845158470.jpg": "bd16dbfb56382c8e11e219525080c0b1ea7ea47e523c2508b6609d3bd14952de",
+   "1792845158528.jpg": "68c1fc29b5a2ff9e268c3e640a2f0a64f292659818807dfd1285c155172a8959",
+   "1792845158599.jpg": "3b4997e83b8bb9fdc30ed61c5f8e38e3fd7eb744b6036046a9b178cd9e2d4b2a",
+   "1792845158626.jpg": "7ab6f8d38a187d132d50823ba3691f0bd7d0c32da88aa64cc0aed373c206cacd"
+  }
+ },
+ "capture": {
+  "device": "Smartphone Camera",
+  "reference": "桌面纹理为参照；零件均为标准砖/板尺寸",
+  "frontMarker": "+z 正面为棚顶（淡紫 2×4 板 + 粉色 1×2 砖十字）一端；-z 为底座一端",
+  "lighting": "室内暖光多角度拍摄",
+  "poseNote": "六张里有四张是模型躺倒摆放。diff 引擎每张照片会搜 0/90/180/270 四向滚转（src/core/diff.js calibratePhoto），躺倒姿态由滚转吸收，不需要改清单机位。"
+ },
+ "photos": [
+  {
+   "id": "lantern_a045",
+   "file": "lantern_a045.png",
+   "kind": "exterior",
+   "azimuth": 45,
+   "elevation": 8,
+   "note": "直立 3/4 全景（派生裁剪）"
+  },
+  {
+   "id": "lantern_a090_e05",
+   "file": "lantern_a090_e05.png",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 5,
+   "note": "躺倒 3/4（派生裁剪；躺倒由 diff 的滚转搜索吸收）"
+  },
+  {
+   "id": "lantern_a135_e10",
+   "file": "lantern_a135_e10.png",
+   "kind": "exterior",
+   "azimuth": 135,
+   "elevation": 10,
+   "note": "躺倒另一侧（派生裁剪）"
+  },
+  {
+   "id": "lantern_a090_e00",
+   "file": "lantern_a090_e00.png",
+   "kind": "exterior",
+   "azimuth": 90,
+   "elevation": 0,
+   "note": "躺倒平视，最适合量尺寸的一张（派生裁剪）"
+  }
+ ],
+ "missing": [
+  { "slot": "ortho-0", "reason": "没有 0° 水平正视机位" },
+  { "slot": "ortho-90", "reason": "没有直立 90° 机位（躺倒照不等于直立 90°）" },
+  { "slot": "ortho-180", "reason": "没有背视平视机位" },
+  { "slot": "ortho-270", "reason": "没有左视平视机位" },
+  { "slot": "flat-base", "reason": "底座端面只有斜俯视特写" },
+  { "slot": "flat-top", "reason": "棚顶端面只有斜俯视特写" },
+  { "slot": "column-detail", "reason": "柱的节数无法从现有照片确定" },
+  { "slot": "core-detail", "reason": "芯柱颗数与颜色分段无法确定" }
+ ]
+}

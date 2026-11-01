@@ -1,0 +1,24 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.3",
+ "note": "本清单仅用于 diff 数值对账：只收『直立姿态 + 全景 exterior』的照片。躺倒照片与直立模型姿态不可比，斜俯视特写不是整机机位，均不进本清单。完整清单见 lantern.photos.v2.json。",
+ "capture": {
+  "device": "Smartphone Camera",
+  "reference": "桌面纹理为参照；零件均为标准砖/板尺寸",
+  "frontMarker": "+z 正面为棚顶（淡紫 2×4 板 + 粉色 1×2 砖十字）一端；-z 为底座（深蓝十字 + 绿色中心）一端",
+  "lighting": "室内暖光多角度拍摄；模型含直立与躺倒两种摆姿",
+  "sourceDir": "D:/bingdown/新建文件夹 (2)",
+  "poseUncertainty": "六张照片均为手持自由拍摄，无三脚架、无标定板。azimuth / elevation 是人工目测标注，误差估计 ±15°（局部特写更大）。躺倒各组照片之间模型被翻动过，不能假设同一朝向。"
+ },
+ "photos": [
+  {
+   "id": "lantern_a045",
+   "file": "1792845158470.jpg",
+   "kind": "exterior",
+   "azimuth": 45,
+   "elevation": 8,
+   "note": "直立 3/4 全景。四角柱 + 中央 2×2 圆砖芯。柱身可见竖纹。端板四边探出柱围方形。棚顶粉框 + 淡紫内区。底座深蓝 + 绿色件 + 粉色外挑。"
+  }
+ ],
+ "missing": []
+}

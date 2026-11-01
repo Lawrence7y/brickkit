@@ -1,0 +1,111 @@
+{
+  "format": "brickbuild-observations",
+  "version": "1.0",
+  "model": "lantern",
+  "reviewedAt": "2026-10-29",
+  "note": "灯笼全量对称模型观察清单（基于 D:\\bingdown\\新建文件夹 (2) 10 张原始高清与 4K 照片）。严格核对 4 阶旋转与轴对称结构，拼缝与分件完整映射，全机 69 件。",
+  "evidenceLevels": {
+    "proven": "实拍照片与拼缝检测直接证实",
+    "geometryIndependent": "LDraw 几何与对称性自洽约束",
+    "uncertain": "表面包封或内部接口无法直视，保留存疑"
+  },
+  "inventory": [
+    {
+      "part": "3958",
+      "name": "Plate 6 x 6",
+      "color": 272,
+      "colorName": "Dark Blue",
+      "min": 2,
+      "max": 2,
+      "note": "底座与棚顶端板（保留 uncertain 存疑）"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 6,
+      "max": 6,
+      "note": "底面 6 块绿板，中心 2 块形成贯通拼缝，4 臂对称外展"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 20,
+      "max": 20,
+      "note": "底座 4 支脚 + 底座 2 侧嵌件 + 棚顶 10 外圈粉框 + 棚顶 4 凸台"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 26,
+      "colorName": "Magenta",
+      "min": 4,
+      "max": 4,
+      "note": "品红侧边嵌件（底座 2 件 + 棚顶 2 件）"
+    },
+    {
+      "part": "3021",
+      "name": "Plate 2 x 3",
+      "color": 31,
+      "colorName": "Lavender",
+      "min": 2,
+      "max": 2,
+      "note": "棚顶 2 块 2×3 淡紫板并排充满 4×3 格"
+    },
+    {
+      "part": "3062b",
+      "name": "Brick, Round 1 x 1 Open Stud",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 28,
+      "max": 28,
+      "note": "四根对称角柱，每根 7 节（4 × 7 = 28）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 1,
+      "max": 1,
+      "note": "芯柱首砖（底座侧，内部接口存疑）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 4,
+      "colorName": "Red",
+      "min": 4,
+      "max": 4,
+      "note": "芯柱红砖（第 2、3、5、7 颗）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 2,
+      "max": 2,
+      "note": "芯柱粉砖（第 4、6 颗）"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1-symmetry",
+      "topic": "完全对称性",
+      "status": "proven",
+      "resolution": "整体模型具备 4 阶旋转与轴对称（D4 群）；四角柱与芯柱齐平，底座与顶盖四向对称",
+      "evidence": ["photo_side1_flat_4k", "photo_side2_flat_4k", "photo_base_ortho_4k", "photo_top_ortho_4k"]
+    },
+    {
+      "id": "D2-seam-decomposition",
+      "topic": "零件拼缝与接口分解",
+      "status": "proven",
+      "resolution": "根据 4K 正交图像细致检测拼缝：底面绿色构件由 6 块 3023 拼接，顶盖内区由 2 块 3021 并排拼接",
+      "evidence": ["photo_base_ortho_4k", "photo_top_ortho_4k"]
+    }
+  ]
+}

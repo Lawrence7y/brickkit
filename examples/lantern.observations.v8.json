@@ -1,0 +1,125 @@
+{
+  "format": "brickbuild-observations",
+  "version": "0.8",
+  "model": "lantern",
+  "reviewedAt": "2026-10-28",
+  "basedOn": "lantern.observations.v7.json",
+  "note": "v8 权威定案观察清单（基于用户 4 张正交平拍新实照）。彻底裁决所有历史遗留分叉：立柱与芯柱节数 N 严格为 7；底座端面为实心 6×6 深蓝底板 + 实体绿十字（3022心+4×3023臂）+ 4外挑粉支脚，彻底排除中空通孔候选 A；芯柱色段自底至顶严格为 绿-红-红-粉-红-粉-红；棚顶为 2 块淡紫 2×4 板并排。全机 62 件全部 confirmed。",
+  "evidenceLevels": {
+    "proven": "新实拍正交/平视照片直接证实",
+    "geometryIndependent": "LDraw 权威尺寸与 5:2 模数定律自洽"
+  },
+  "inventory": [
+    {
+      "part": "3958",
+      "name": "Plate 6 x 6",
+      "color": 272,
+      "colorName": "Dark Blue",
+      "min": 2,
+      "max": 2,
+      "note": "底座端板 1 块 + 棚顶端板 1 块"
+    },
+    {
+      "part": "3022",
+      "name": "Plate 2 x 2",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 1,
+      "max": 1,
+      "note": "底座中心实心 2×2 板（正交底视实拍确认完全封闭，无中空通孔）"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 4,
+      "max": 4,
+      "note": "底座绿十字四向臂"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 18,
+      "max": 18,
+      "note": "底座外挑支脚 4 块 + 棚顶外圈粉框 10 块 + 棚顶十字高台第二层 4 块"
+    },
+    {
+      "part": "3020",
+      "name": "Plate 2 x 4",
+      "color": 31,
+      "colorName": "Lavender",
+      "min": 2,
+      "max": 2,
+      "note": "棚顶内区 2 块 2×4 淡紫板并排充满 4×4 格"
+    },
+    {
+      "part": "3062b",
+      "name": "Brick, Round 1 x 1 Open Stud",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 28,
+      "max": 28,
+      "note": "四根角柱，每根严格 7 颗圆砖（4 × 7 = 28）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 1,
+      "max": 1,
+      "note": "芯柱首砖（底座侧）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 4,
+      "colorName": "Red",
+      "min": 4,
+      "max": 4,
+      "note": "芯柱红砖（第 2、3、5、7 颗）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 2,
+      "max": 2,
+      "note": "芯柱粉砖（第 4、6 颗）"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1-N-value",
+      "topic": "角柱与芯柱节数",
+      "status": "proven",
+      "resolution": "N = 7（四角柱各 7 颗 3062b，芯柱 7 颗 3941，两端完全齐平顶满端板）",
+      "basis": "侧平视实拍照片 lantern_gt_side_flat_1 与 lantern_gt_side_flat_2，等距竹节环纹清晰数出 7 节"
+    },
+    {
+      "id": "D2-base-structure",
+      "topic": "底座端面结构",
+      "status": "proven",
+      "resolution": "彻底裁决为实心深蓝 6×6 底板 + 绿色 3022 实体心板 + 4 块 3023 绿色臂 + 4 块 3023 粉色支脚；彻底排除候选 A（中空框/通孔）",
+      "basis": "正对底端面纯平俯拍 lantern_gt_base_ortho 证实中心全封闭实心绿面"
+    },
+    {
+      "id": "D3-core-colors",
+      "topic": "芯柱色号序列",
+      "status": "proven",
+      "resolution": "绿(10) → 红(4) → 红(4) → 亮粉(29) → 红(4) → 亮粉(29) → 红(4)",
+      "basis": "侧平视实拍照片直接确认鲜明冷暖色块划分"
+    },
+    {
+      "id": "D4-canopy-structure",
+      "topic": "棚顶端面结构",
+      "status": "proven",
+      "resolution": "6×6 深蓝端板 + 2 块 2×4 淡紫板并排 + 双层粉框",
+      "basis": "正对棚顶端面纯平俯拍 lantern_gt_top_ortho 直接确认"
+    }
+  ]
+}

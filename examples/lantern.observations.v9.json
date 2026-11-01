@@ -1,0 +1,133 @@
+{
+  "format": "brickbuild-observations",
+  "version": "0.9",
+  "model": "lantern",
+  "reviewedAt": "2026-10-28",
+  "basedOn": "lantern.observations.v8.json",
+  "note": "v9 权威真值定案修复观察清单（基于 4 张原始高精度正交与平视真值实照逐件核对）。彻底纠正 v8 偏差：顶盖淡紫板由 3020 修正为 2 块 3021 (2x3)；底面绿色十字由 3022心+4臂 修正为 6 块 3023 (1x2) 拼接（中心贯通拼缝，彻底摒弃 3022 假设）；补齐侧面检出的品红 (Magenta 26) 边缘嵌件 4 块；底板、顶板及芯柱首件严格保留 uncertain 存疑状态；全机 67 件。",
+  "evidenceLevels": {
+    "proven": "新实拍正交/平视照片直接证实",
+    "geometryIndependent": "LDraw 权威尺寸与 5:2 模数定律自洽",
+    "uncertain": "表面包封或内部接口无法直视，保留结构存疑"
+  },
+  "inventory": [
+    {
+      "part": "3958",
+      "name": "Plate 6 x 6",
+      "color": 272,
+      "colorName": "Dark Blue",
+      "min": 2,
+      "max": 2,
+      "note": "底座端板 1 块 + 棚顶端板 1 块（内部接口不可见，保留 uncertain）"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 6,
+      "max": 6,
+      "note": "底面 6 块 1×2 绿板拼接，中心 2 块形成贯通接缝，外展 4 臂呈风车对称"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 18,
+      "max": 18,
+      "note": "底座外挑支脚 4 块 + 棚顶外圈粉框 10 块 + 棚顶十字高台第二层 4 块"
+    },
+    {
+      "part": "3023",
+      "name": "Plate 1 x 2",
+      "color": 26,
+      "colorName": "Magenta",
+      "min": 4,
+      "max": 4,
+      "note": "品红边缘嵌件（底座侧边 2 块 + 棚顶侧边 2 块，照片 4 明确测出）"
+    },
+    {
+      "part": "3021",
+      "name": "Plate 2 x 3",
+      "color": 31,
+      "colorName": "Lavender",
+      "min": 2,
+      "max": 2,
+      "note": "棚顶内区 2 块 2×3 淡紫板并排充满 4×3 格（照片 3 测定）"
+    },
+    {
+      "part": "3062b",
+      "name": "Brick, Round 1 x 1 Open Stud",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 28,
+      "max": 28,
+      "note": "四根角柱，每根严格 7 颗圆砖（4 × 7 = 28）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 10,
+      "colorName": "Bright Green",
+      "min": 1,
+      "max": 1,
+      "note": "芯柱首砖（底座侧，内部咬合不可见，保留 uncertain）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 4,
+      "colorName": "Red",
+      "min": 4,
+      "max": 4,
+      "note": "芯柱红砖（第 2、3、5、7 颗）"
+    },
+    {
+      "part": "3941",
+      "name": "Brick, Round 2 x 2 with Axle Hole",
+      "color": 29,
+      "colorName": "Bright Pink",
+      "min": 2,
+      "max": 2,
+      "note": "芯柱粉砖（第 4、6 颗）"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1-N-value",
+      "topic": "角柱与芯柱节数",
+      "status": "proven",
+      "resolution": "N = 7（四角柱各 7 颗 3062b，芯柱 7 颗 3941，两端完全齐平顶满端板）",
+      "evidence": ["lantern_gt_side_flat_1", "lantern_gt_side_flat_2"]
+    },
+    {
+      "id": "D2-base-face",
+      "topic": "底面构件拼接与中缝",
+      "status": "proven",
+      "resolution": "中心由 2 块 3023 并排拼接形成贯通中缝，4 臂由 4 块 3023 外展组成，完全摒弃 3022 假设",
+      "evidence": ["lantern_gt_base_ortho"]
+    },
+    {
+      "id": "D3-canopy-lavender",
+      "topic": "棚顶淡紫板规格",
+      "status": "proven",
+      "resolution": "两块 3021 (Plate 2 x 3, color 31)，凸点阵列实测 2×3，并排充满 4×3 区域",
+      "evidence": ["lantern_gt_top_ortho"]
+    },
+    {
+      "id": "D4-magenta-inserts",
+      "topic": "品红边缘嵌件",
+      "status": "proven",
+      "resolution": "底座与顶盖各 2 件 3023 品红 (color 26) 嵌件，解决照片 4 的品红测量闭环",
+      "evidence": ["lantern_gt_side_flat_2"]
+    },
+    {
+      "id": "D5-internal-uncertainty",
+      "topic": "内部结构存疑保留",
+      "status": "uncertain",
+      "resolution": "底板 p001、顶板 p049 及芯柱首节 p042 内部结构未直接可视化，严格保留 uncertain",
+      "evidence": ["lantern_gt_base_ortho", "lantern_gt_side_flat_1"]
+    }
+  ]
+}

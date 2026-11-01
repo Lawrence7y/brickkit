@@ -1,0 +1,50 @@
+{
+  "format": "brickbuild-photos",
+  "version": "1.1",
+  "note": "灯笼实物权威真值照片集（Ground Truth）。包含用户实拍的底座正平视、棚顶正平视与两组侧平视远摄，彻底定案所有几何、颜色与拓扑结构。",
+  "capture": {
+    "device": "Smartphone Camera",
+    "reference": "麦当劳餐垫与纯净背景；零件均为标准乐高砖/板尺寸",
+    "frontMarker": "+z 正面为棚顶一端；-z 为底座一端",
+    "lighting": "均匀室内光照，正对拍摄无广角畸变"
+  },
+  "photos": [
+    {
+      "id": "lantern_gt_base_ortho",
+      "file": "lantern_gt_base_ortho.jpg",
+      "sha256": "d29906d10b1bef5f5cde4130980259e43155dc0764967fc5fa49970ecacf9048",
+      "kind": "exterior",
+      "azimuth": 0,
+      "elevation": -90,
+      "note": "底座端面正对纯平俯拍。显示实心深蓝 6×6 底板、外扣绿色十字（6 块 3023 板拼接接缝）与 4 向外挑粉色支脚。彻底排除中空通孔候选 A 与 3022 假设。"
+    },
+    {
+      "id": "lantern_gt_side_flat_1",
+      "file": "lantern_gt_side_flat_1.jpg",
+      "sha256": "5a44dc34ba76fab0ad921cadbab60098ed40506f6d8d107c4ed31a10d3c8425a",
+      "kind": "exterior",
+      "azimuth": 90,
+      "elevation": 0,
+      "note": "侧面正平视远摄 1。清晰展示 4 根立柱严格为 7 节粉色 3062b 圆砖；中央芯柱为 7 节 3941 圆砖（1绿 + 2红 + 1粉 + 1红 + 1粉 + 1红），柱芯两端完全齐平顶满。"
+    },
+    {
+      "id": "lantern_gt_top_ortho",
+      "file": "lantern_gt_top_ortho.jpg",
+      "sha256": "4fc17d6a650d20440ba554f3497ad13e341970a470291e6206928f64ec2503d2",
+      "kind": "exterior",
+      "azimuth": 180,
+      "elevation": 90,
+      "note": "棚顶端面正对纯平俯拍。显示两块淡紫 2×3 板 (3021) 并排充满 4×3 内区，外围粉框与第二层高台十字。"
+    },
+    {
+      "id": "lantern_gt_side_flat_2",
+      "file": "lantern_gt_side_flat_2.jpg",
+      "sha256": "3169dd2788fc4efcf2b1ecf5899c1cc220997e881721f09a594752308b1feb4b",
+      "kind": "exterior",
+      "azimuth": 0,
+      "elevation": 0,
+      "note": "侧面正平视远摄 2（旋转 90° 视角）。测得底座与顶盖两端的品红 (Magenta 26) 边缘嵌件。"
+    }
+  ],
+  "missing": []
+}

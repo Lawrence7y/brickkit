@@ -1,0 +1,1866 @@
+{
+  "format": "brickbuild",
+  "version": "0.2",
+  "meta": {
+    "name": "粉紫灯笼（实物对称权威重构）",
+    "createdAt": "2026-10-28",
+    "front": "+z",
+    "photoSet": "lantern.photos.symmetric.json",
+    "observations": "lantern.observations.symmetric.json",
+    "buildScript": "examples/gen-lantern-symmetric.mjs",
+    "verificationPriority": "结构正确（几何对称/零件/拼缝/接口）> 尺寸比例 > 颜色",
+    "description": "基于 D:\\bingdown\\新建文件夹 (2) 原始 4K 超高清照片严格重构的完全对称实物模型。几何具有严格 4 阶轴对称（D4 空间群）；四角柱与芯柱均为 N=7 节（21 片高）；底座绿十字与 4 支脚完全居中对称，拼缝精准分件；棚顶为居中 4x4 内区（2 块 3021 淡紫板并排 + 收口板）及对称外圈粉框与四向第二层凸台；保留底板、顶板及芯柱首件 uncertain 存疑状态；多端同源导出。"
+  },
+  "parts": [
+    {
+      "id": "p001",
+      "part": "3958",
+      "color": 272,
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "rootAt": [
+        0,
+        0,
+        0
+      ],
+      "snot": 0,
+      "step": 1,
+      "module": "base",
+      "note": "底座承载端板 6×6（正交底视与平视可见边缘，内部结构存疑）",
+      "status": "uncertain",
+      "evidence": [
+        "lantern_gt_base_ortho",
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p002",
+      "part": "3023",
+      "color": 10,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        -1,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 14,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底面中心绿板 1 (3023)，覆盖 x:2..4, z:2..3",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho"
+      ]
+    },
+    {
+      "id": "p003",
+      "part": "3023",
+      "color": 10,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        -1,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 15,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底面中心绿板 2 (3023)，覆盖 x:2..4, z:3..4，与板 1 形成贯通拼缝",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho"
+      ]
+    },
+    {
+      "id": "p004",
+      "part": "3023",
+      "color": 10,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        -1,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 2,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座绿十字 -x 臂 (3023，居中对称延伸)",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho"
+      ]
+    },
+    {
+      "id": "p005",
+      "part": "3023",
+      "color": 10,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        -1,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 27,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座绿十字 +x 臂 (3023，居中对称延伸)",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho"
+      ]
+    },
+    {
+      "id": "p006",
+      "part": "3023",
+      "color": 10,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        -1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 19,
+        "receptor": 0,
+        "under": true,
+        "rot": 90
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座绿十字 -z 臂 (3023，居中对称延伸)",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho"
+      ]
+    },
+    {
+      "id": "p007",
+      "part": "3023",
+      "color": 10,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        -1,
+        4
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 17,
+        "receptor": 0,
+        "under": true,
+        "rot": 90
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座绿十字 +z 臂 (3023，居中对称延伸)",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho"
+      ]
+    },
+    {
+      "id": "p008",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        -1,
+        -1,
+        3
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 3,
+        "receptor": 1,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座对称支脚 -x（外沿扣合并外挑 1 格）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho",
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p009",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        -1,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 32,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座对称支脚 +x（外沿扣合并外挑 1 格）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho",
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p010",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        -1,
+        -1
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 12,
+        "receptor": 0,
+        "under": true,
+        "rot": 90
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座对称支脚 -z（外沿扣合并外挑 1 格）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho",
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p011",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        -1,
+        5
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 23,
+        "receptor": 1,
+        "under": true,
+        "rot": 90
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座对称支脚 +z（外沿扣合并外挑 1 格）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_base_ortho",
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p012",
+      "part": "3023",
+      "color": 26,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        -1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 0,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座侧边嵌件 1（品红 26）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p013",
+      "part": "3023",
+      "color": 26,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        -1,
+        5
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 29,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座侧边嵌件 2（品红 26）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p014",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        4,
+        -1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 24,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座侧边嵌件 3（亮粉 29）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p015",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        -1,
+        5
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 5,
+        "receptor": 0,
+        "under": true,
+        "rot": 0
+      },
+      "step": 1,
+      "module": "base",
+      "note": "底座侧边嵌件 4（亮粉 29）",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p016",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 1/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p017",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        4,
+        0
+      ],
+      "snap": {
+        "on": "p016",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 2/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p018",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        7,
+        0
+      ],
+      "snap": {
+        "on": "p017",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 3/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p019",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        10,
+        0
+      ],
+      "snap": {
+        "on": "p018",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 4/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p020",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        13,
+        0
+      ],
+      "snap": {
+        "on": "p019",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 5/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p021",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        16,
+        0
+      ],
+      "snap": {
+        "on": "p020",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 6/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p022",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        19,
+        0
+      ],
+      "snap": {
+        "on": "p021",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 1 第 7/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p023",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        1,
+        0
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 30,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 1/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p024",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        4,
+        0
+      ],
+      "snap": {
+        "on": "p023",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 2/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p025",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        7,
+        0
+      ],
+      "snap": {
+        "on": "p024",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 3/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p026",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        10,
+        0
+      ],
+      "snap": {
+        "on": "p025",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 4/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p027",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        13,
+        0
+      ],
+      "snap": {
+        "on": "p026",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 5/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p028",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        16,
+        0
+      ],
+      "snap": {
+        "on": "p027",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 6/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p029",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        19,
+        0
+      ],
+      "snap": {
+        "on": "p028",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 2 第 7/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p030",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        1,
+        5
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 5,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 1/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p031",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        4,
+        5
+      ],
+      "snap": {
+        "on": "p030",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 2/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p032",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        7,
+        5
+      ],
+      "snap": {
+        "on": "p031",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 3/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p033",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        10,
+        5
+      ],
+      "snap": {
+        "on": "p032",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 4/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p034",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        13,
+        5
+      ],
+      "snap": {
+        "on": "p033",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 5/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p035",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        16,
+        5
+      ],
+      "snap": {
+        "on": "p034",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 6/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p036",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        19,
+        5
+      ],
+      "snap": {
+        "on": "p035",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 3 第 7/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p037",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        1,
+        5
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 35,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 1/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p038",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        4,
+        5
+      ],
+      "snap": {
+        "on": "p037",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 2/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p039",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        7,
+        5
+      ],
+      "snap": {
+        "on": "p038",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 3/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p040",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        10,
+        5
+      ],
+      "snap": {
+        "on": "p039",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 4/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p041",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        13,
+        5
+      ],
+      "snap": {
+        "on": "p040",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 5/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p042",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        16,
+        5
+      ],
+      "snap": {
+        "on": "p041",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 6/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p043",
+      "part": "3062b",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        5,
+        19,
+        5
+      ],
+      "snap": {
+        "on": "p042",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 2,
+      "module": "columns",
+      "note": "角柱 4 第 7/7 颗·3062b",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p044",
+      "part": "3941",
+      "color": 10,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        1,
+        2
+      ],
+      "snap": {
+        "on": "p001",
+        "stud": 14,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 1/7：3941 绿（首节内部咬合不可视，保留存疑）",
+      "status": "uncertain",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p045",
+      "part": "3941",
+      "color": 4,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        4,
+        2
+      ],
+      "snap": {
+        "on": "p044",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 2/7：3941 红",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p046",
+      "part": "3941",
+      "color": 4,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        7,
+        2
+      ],
+      "snap": {
+        "on": "p045",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 3/7：3941 红",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p047",
+      "part": "3941",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        10,
+        2
+      ],
+      "snap": {
+        "on": "p046",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 4/7：3941 亮粉",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p048",
+      "part": "3941",
+      "color": 4,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        13,
+        2
+      ],
+      "snap": {
+        "on": "p047",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 5/7：3941 红",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p049",
+      "part": "3941",
+      "color": 29,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        16,
+        2
+      ],
+      "snap": {
+        "on": "p048",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 6/7：3941 亮粉",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p050",
+      "part": "3941",
+      "color": 4,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        2,
+        19,
+        2
+      ],
+      "snap": {
+        "on": "p049",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 3,
+      "module": "core",
+      "note": "芯柱 7/7：3941 红",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_side_flat_1",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p051",
+      "part": "3958",
+      "color": 272,
+      "up": "+y",
+      "rot": 0,
+      "snot": 0,
+      "at": [
+        0,
+        22,
+        0
+      ],
+      "snap": {
+        "on": "p022",
+        "stud": 0,
+        "receptor": 0
+      },
+      "step": 4,
+      "module": "canopy",
+      "note": "棚顶承载端板 6×6（四角柱顶与芯柱顶共同承托，内部结构存疑）",
+      "status": "uncertain",
+      "evidence": [
+        "lantern_gt_top_ortho",
+        "lantern_gt_side_flat_1"
+      ]
+    },
+    {
+      "id": "p052",
+      "part": "3021",
+      "color": 31,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        23,
+        1
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 9,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "淡紫板 1 (3021 2×3，实拍正交顶视清晰测定 2×3 凸点阵)",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p053",
+      "part": "3021",
+      "color": 31,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        23,
+        1
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 21,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "淡紫板 2 (3021 2×3，并排充满内区 4×3 格)",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p054",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        23,
+        0
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框角件",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p055",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        23,
+        2
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 3,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框侧边",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p056",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        23,
+        4
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 5,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框角件",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p057",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        23,
+        0
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 31,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框角件",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p058",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        23,
+        2
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 33,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框侧边",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p059",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        23,
+        4
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 35,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框角件",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p060",
+      "part": "3023",
+      "color": 26,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        23,
+        0
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 6,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶品红嵌件 1",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p061",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        23,
+        0
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 18,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框端头",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p062",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        23,
+        4
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 10,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶收口粉板 1",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p063",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        23,
+        4
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 22,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶收口粉板 2",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p064",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        1,
+        23,
+        5
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 11,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶粉框端头",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p065",
+      "part": "3023",
+      "color": 26,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        3,
+        23,
+        5
+      ],
+      "snap": {
+        "on": "p051",
+        "stud": 23,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶品红嵌件 2",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho",
+        "lantern_gt_side_flat_2"
+      ]
+    },
+    {
+      "id": "p066",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        0,
+        24,
+        2
+      ],
+      "snap": {
+        "on": "p055",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶高台第 2 层 -x",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p067",
+      "part": "3023",
+      "color": 29,
+      "rot": 90,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        5,
+        24,
+        2
+      ],
+      "snap": {
+        "on": "p058",
+        "stud": 0,
+        "receptor": 0,
+        "rot": 90
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶高台第 2 层 +x",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p068",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        24,
+        0
+      ],
+      "snap": {
+        "on": "p060",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶高台第 2 层 -z",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    },
+    {
+      "id": "p069",
+      "part": "3023",
+      "color": 29,
+      "rot": 0,
+      "up": "+y",
+      "snot": 0,
+      "at": [
+        2,
+        24,
+        5
+      ],
+      "snap": {
+        "on": "p064",
+        "stud": 1,
+        "receptor": 0,
+        "rot": 0
+      },
+      "step": 5,
+      "module": "canopy",
+      "note": "棚顶高台第 2 层 +z",
+      "status": "confirmed",
+      "evidence": [
+        "lantern_gt_top_ortho"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "base",
+      "label": "底座（端板 + 6绿板接缝十字 + 4粉支脚 + 4侧嵌件）",
+      "explode": [
+        0,
+        -16,
+        0
+      ]
+    },
+    {
+      "id": "columns",
+      "label": "四角柱（4 根 × 7 颗 3062b）",
+      "explode": [
+        -16,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "core",
+      "label": "中央芯柱（7 颗 3941，两端顶满齐平）",
+      "explode": [
+        16,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "canopy",
+      "label": "棚顶（端板 + 2淡紫3021板 + 粉框嵌件 + 双层高台）",
+      "explode": [
+        0,
+        18,
+        0
+      ]
+    }
+  ]
+}

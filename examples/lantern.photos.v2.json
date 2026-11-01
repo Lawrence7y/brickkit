@@ -1,0 +1,136 @@
+{
+ "format": "brickbuild-photos",
+ "version": "0.3",
+ "note": "v2（2026-10-27 第五轮）。旧版 examples/lantern.photos.json 保留不动。本版只改两件事：① 删除不成立的 skip 理由；② 给每张照片补 sha256 与真实机位不确定度。模型、目录、原图均未改动。",
+ "capture": {
+  "device": "Smartphone Camera",
+  "reference": "桌面纹理为参照；零件均为标准砖/板尺寸",
+  "frontMarker": "+z 正面为棚顶（淡紫 2×4 板 + 粉色 1×2 砖十字）一端；-z 为底座（深蓝十字 + 绿色中心）一端",
+  "lighting": "室内暖光多角度拍摄；模型含直立与躺倒两种摆姿",
+  "sourceDir": "D:/bingdown/新建文件夹 (2)",
+  "poseUncertainty": "六张照片均为手持自由拍摄，无三脚架、无标定板。azimuth / elevation 是人工目测标注，误差估计 ±15°（局部特写更大）。躺倒各组照片之间模型被翻动过，不能假设同一朝向。"
+ },
+ "removedSkips": [
+  {
+   "old": "orbit-0 / orbit-90 / orbit-180 / orbit-270 等槽位以「旋转对称灯笼结构」为由判为已覆盖",
+   "why": "该理由不成立：模型是方形截面（四角柱 + 方形端板），90° 与 0° 看到的柱是不同两根，135° 与 45° 同理。而且六张里没有一张是真正的 0°/180° 平视正交机位。已删除这些 skip 条目，改为在 missing 中如实列出。"
+  },
+  {
+   "old": "flat-0 / flat-180 以「端面正视为方形端板」为由判为覆盖",
+   "why": "lantern_base_detail 与 lantern_top_detail 都是斜俯视特写（elevation 15°/20°），不是正视 flat 机位。"
+  }
+ ],
+ "photos": [
+  {
+   "id": "lantern_a045",
+   "file": "1792845158470.jpg",
+   "sha256": "bd16dbfb56382c8e11e219525080c0b1ea7ea47e523c2508b6609d3bd14952de",
+   "kind": "exterior",
+   "pose": "upright",
+   "azimuth": 45,
+   "elevation": 8,
+   "azimuthUncertainty": 15,
+   "elevationUncertainty": 8,
+   "note": "直立 3/4 全景。四角柱 + 中央 2×2 圆砖芯。柱身可见竖纹。端板四边探出柱围方形。棚顶粉框 + 淡紫内区。底座深蓝 + 绿色件 + 粉色外挑。"
+  },
+  {
+   "id": "lantern_base_detail",
+   "file": "1792845158492.jpg",
+   "sha256": "76f890612edf0e3ff29b634221c7f50d78599f46334f5e91923d4a0b03dc88d3",
+   "kind": "detail",
+   "pose": "lying",
+   "azimuth": 0,
+   "elevation": 15,
+   "azimuthUncertainty": 25,
+   "elevationUncertainty": 10,
+   "note": "底座端面特写。绿色件与深蓝件在同一端面相邻（绿色呈外缘/十字轮廓，蓝色填充内圈）。粉色 1×2 外挑成支脚。局部特写，透视强，不能用来量整机比例。"
+  },
+  {
+   "id": "lantern_a090_e05",
+   "file": "1792845158528.jpg",
+   "sha256": "68c1fc29b5a2ff9e268c3e640a2f0a64f292659818807dfd1285c155172a8959",
+   "kind": "exterior",
+   "pose": "lying",
+   "azimuth": 90,
+   "elevation": 5,
+   "azimuthUncertainty": 15,
+   "elevationUncertainty": 8,
+   "note": "躺倒 3/4 侧视。可见柱与芯的间隙关系、芯柱颜色分段。背景白纸。"
+  },
+  {
+   "id": "lantern_top_detail",
+   "file": "1792845158564.jpg",
+   "sha256": "38d55a04a0074da7557c3cc666fa1ad5d7b89011eac445c23c6f46cda661c3c8",
+   "kind": "detail",
+   "pose": "upright",
+   "azimuth": 180,
+   "elevation": 20,
+   "azimuthUncertainty": 25,
+   "elevationUncertainty": 10,
+   "note": "棚顶端面特写。淡紫内区有贯通拼接缝（平行并排，非 V 形）、板面带成排凸点。粉框四边中段叠高。四角在特写里偏深蓝（粉框是否覆盖四角待定）。"
+  },
+  {
+   "id": "lantern_a135_e10",
+   "file": "1792845158599.jpg",
+   "sha256": "3b4997e83b8bb9fdc30ed61c5f8e38e3fd7eb744b6036046a9b178cd9e2d4b2a",
+   "kind": "exterior",
+   "pose": "lying",
+   "azimuth": 135,
+   "elevation": 10,
+   "azimuthUncertainty": 15,
+   "elevationUncertainty": 8,
+   "note": "躺倒另一侧 3/4。可对照柱与芯的轴向长度关系。"
+  },
+  {
+   "id": "lantern_a090_e00",
+   "file": "1792845158626.jpg",
+   "sha256": "7ab6f8d38a187d132d50823ba3691f0bd7d0c32da88aa64cc0aed373c206cacd",
+   "kind": "exterior",
+   "pose": "lying",
+   "azimuth": 90,
+   "elevation": 0,
+   "azimuthUncertainty": 10,
+   "elevationUncertainty": 5,
+   "note": "躺倒平视，六张里最适合量尺寸的一张（背景纯白纸、轴线水平）。本轮所有纵向比值测量都用这张。注意：仍有透视，跨物体比尺寸不可靠，只能在同一个物体内比。"
+  }
+ ],
+ "missing": [
+  {
+   "slot": "ortho-0",
+   "reason": "没有 0° 水平正视机位。最近的是 lantern_a090_e00（躺倒平视），轴线水平但轴向与端板不在同一深度，透视使柱径与端板宽不能直接比较。",
+   "need": "模型直立，相机正对柱围方形一个面，水平拍摄，机位距离 ≥1.5m 减少透视，含完整模型与一角标定物。"
+  },
+  {
+   "slot": "ortho-90",
+   "reason": "同上，90° 与 0° 在方形截面上看到的是不同两根柱，不能互相替代。"
+  },
+  {
+   "slot": "ortho-180",
+   "reason": "没有背视平视机位。"
+  },
+  {
+   "slot": "ortho-270",
+   "reason": "没有左视平视机位。"
+  },
+  {
+   "slot": "flat-base",
+   "reason": "底座端面只有斜俯视特写（elevation 15°），无法数清绿件的分件与层数。",
+   "need": "模型直立，相机水平正对底座端面，距离足够近以分辨单颗凸点，同时保留整个端板边界。"
+  },
+  {
+   "slot": "flat-top",
+   "reason": "棚顶端面只有斜俯视特写（elevation 20°），无法确定内区格数与粉框是否覆盖四角。",
+   "need": "正上方俯拍（elevation 90°），端板四边都完整入画。"
+  },
+  {
+   "slot": "column-detail",
+   "reason": "柱的节数在六张里都无法确定：柱身有竖纹、接缝与凸点环混在一起，且轴向被透视压缩。",
+   "need": "贴近平拍单根柱（柱占画面高度 80% 以上），垂直柱轴、机位在柱所在深度，直射光减少阴影。最好再拍一根去掉端板的裸柱。"
+  },
+  {
+   "slot": "core-detail",
+   "reason": "芯柱颗数、颜色分段、顶端与棚顶端板的相对位置都无法确定。",
+   "need": "拆掉棚顶端板后俯拍芯柱顶面，并平拍整根芯柱；记录芯柱颜色顺序。"
+  }
+ ]
+}

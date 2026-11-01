@@ -1,0 +1,104 @@
+{
+  "format": "brickbuild-photos",
+  "version": "1.2",
+  "note": "灯笼全量 10 张原始实拍照片集（来源：D:\\bingdown\\新建文件夹 (2)），包含 6 张多角度探索照片与 4 张 4K 超高清正交/平视定案真值照片。",
+  "capture": {
+    "device": "Smartphone Camera",
+    "reference": "麦当劳餐垫与纯净背景；零件均为标准乐高砖/板尺寸",
+    "frontMarker": "+z 正面为棚顶一端；-z 为底座一端",
+    "lighting": "均匀室内光照"
+  },
+  "photos": [
+    {
+      "id": "photo_base_ortho_4k",
+      "file": "1793197983018.jpg",
+      "sha256": "0de2cb421d271eec88f7b955f6660a1ac461d603c632769a795403881c1d3936",
+      "kind": "exterior",
+      "azimuth": 0,
+      "elevation": -90,
+      "note": "底座端面 4K 正交俯视。清晰显示 6 块绿板（3023）中心接缝十字骨架与四向外挑粉支脚。"
+    },
+    {
+      "id": "photo_top_ortho_4k",
+      "file": "1793197982983.jpg",
+      "sha256": "c06b5bfd150b1ff706fc390f863c711c30a4cc52d9dbbde330c4893623f32da9",
+      "kind": "exterior",
+      "azimuth": 180,
+      "elevation": 90,
+      "note": "棚顶端面 4K 正交俯视。清晰显示两块淡紫 3021 (2×3) 板充满 4×3 内区，外围粉框与二层凸台。"
+    },
+    {
+      "id": "photo_side1_flat_4k",
+      "file": "1793197982836.jpg",
+      "sha256": "af387cd5225094a8fb0c59f79e3f131f584c4e478ed6cc6fd9ea6152accbfe09",
+      "kind": "exterior",
+      "azimuth": 0,
+      "elevation": 0,
+      "note": "侧视 4K 平视 1。展示 7 节粉色圆砖角柱与 7 节双色芯柱，两端顶满齐平。"
+    },
+    {
+      "id": "photo_side2_flat_4k",
+      "file": "1793197982886.jpg",
+      "sha256": "613866513dd29cfa1b6b7431b1ada7e24adc9a82fac9a550ad0f9db84e9f7f70",
+      "kind": "exterior",
+      "azimuth": 90,
+      "elevation": 0,
+      "note": "侧视 4K 平视 2（正交 90°）。展示四立柱空间对称与两端对称构件。"
+    },
+    {
+      "id": "photo_orig_a045",
+      "file": "1792845158470.jpg",
+      "sha256": "bd16dbfb56382c8e11e219525080c0b1ea7ea47e523c2508b6609d3bd14952de",
+      "kind": "exterior",
+      "azimuth": 45,
+      "elevation": 15,
+      "note": "原版斜 45° 视角照片。"
+    },
+    {
+      "id": "photo_orig_base_detail",
+      "file": "1792845158492.jpg",
+      "sha256": "76f890612edf0e3ff29b634221c7f50d78599f46334f5e91923d4a0b03dc88d3",
+      "kind": "detail",
+      "azimuth": 0,
+      "elevation": -75,
+      "note": "底座局部特写。"
+    },
+    {
+      "id": "photo_orig_side_a090",
+      "file": "1792845158528.jpg",
+      "sha256": "68c1fc29b5a2ff9e268c3e640a2f0a64f292659818807dfd1285c155172a8959",
+      "kind": "exterior",
+      "azimuth": 90,
+      "elevation": 5,
+      "note": "原版侧视平视照片。"
+    },
+    {
+      "id": "photo_orig_top_detail",
+      "file": "1792845158564.jpg",
+      "sha256": "38d55a04a0074da7557c3cc666fa1ad5d7b89011eac445c23c6f46cda661c3c8",
+      "kind": "detail",
+      "azimuth": 180,
+      "elevation": 75,
+      "note": "棚顶局部特写。"
+    },
+    {
+      "id": "photo_orig_a135",
+      "file": "1792845158599.jpg",
+      "sha256": "3b4997e83b8bb9fdc30ed61c5f8e38e3fd7eb744b6036046a9b178cd9e2d4b2a",
+      "kind": "exterior",
+      "azimuth": 135,
+      "elevation": 10,
+      "note": "原版斜 135° 视角照片。"
+    },
+    {
+      "id": "photo_orig_side_flat",
+      "file": "1792845158626.jpg",
+      "sha256": "7ab6f8d38a187d132d50823ba3691f0bd7d0c32da88aa64cc0aed373c206cacd",
+      "kind": "exterior",
+      "azimuth": 90,
+      "elevation": 0,
+      "note": "原版侧平视。"
+    }
+  ],
+  "missing": []
+}
