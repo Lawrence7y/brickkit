@@ -20,3 +20,6 @@ assets/instructions-lego/
 training/brickvlm/.venv/
 __pycache__/
 *.pyc
+# 代理团队协作目录与本地临时批处理脚本（仅本地工作台状态，不入库）
+.agents/
+.tmpwork/
