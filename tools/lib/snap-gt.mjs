@@ -20,15 +20,22 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { computeOpenStuds } from './open-studs.mjs';
+import { mergeCatalogParts } from '../../src/core/core.js';
 
-/** 读合并目录：{ parts: {...ext, ...curated}, colors, curated, ext }（口径同 cli/brickkit.mjs 顶部） */
+/**
+ * 读合并目录：{ parts: mergeCatalogParts(ext, curated), colors, curated, ext }
+ *
+ * 必须走 `mergeCatalogParts`（唯一实现，同 cli/brickkit.mjs 顶部）：过去这里是
+ * `{...ext, ...curated}` 条目级替换，会让 GT 抽取拿到与 CLI/查看器不同的接口定义——
+ * 合成数据的「正确扣合」就成了另一套物理。训练数据与校验口径必须同源。
+ */
 export function loadCatalog(root) {
   const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
   const extFile = path.join(root, 'catalog/parts-ldraw.json');
   const ext = fs.existsSync(extFile) ? readJSON(extFile).parts : {};
   const curated = readJSON(path.join(root, 'catalog/parts.json')).parts;
   const colors = readJSON(path.join(root, 'catalog/colors.json')).colors;
-  return { parts: { ...ext, ...curated }, colors, curated, ext };
+  return { parts: mergeCatalogParts(ext, curated), colors, curated, ext };
 }
 
 /** 按 parts[].step 分组 → Map<number, part[]>（保持 parts 数组原顺序，便于稳定复现） */

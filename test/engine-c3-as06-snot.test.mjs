@@ -17,7 +17,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  snapPart, partConnectors, partCenter, partBoxes, partsConnected, validate, ldrawLine,
+  snapPart, partConnectors, partCenter, partBoxes, partsConnected, validate, ldrawLine, mergeCatalogParts,
 } from '../src/core/core.js';
 import { inspectFromModel } from '../src/core/actions-v1/state.js';
 import { enumerateCandidates } from '../src/core/actions-v1/candidates.js';
@@ -26,10 +26,10 @@ import { measureSnotChains } from '../src/core/assembly-v1/compile.js';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engine');
 const cat = {
-  parts: {
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
-  },
+  parts: mergeCatalogParts(
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
+  ),
   colors: JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/colors.json'), 'utf8')).colors,
 };
 const d3001 = cat.parts['3001'], d4733 = cat.parts['4733'], d3024 = cat.parts['3024'];

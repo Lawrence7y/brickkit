@@ -12,7 +12,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { validate } from '../src/core/core.js';
+import { validate, mergeCatalogParts } from '../src/core/core.js';
 import { inspectFromModel } from '../src/core/actions-v1/state.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -20,10 +20,10 @@ const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engi
 // 验收标准与构建计划是固定契约产物，放 examples/60239/ 随仓库分发
 const DIR = path.join(ROOT, 'examples/60239');
 const cat = {
-  parts: {
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
-  },
+  parts: mergeCatalogParts(
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
+  ),
   colors: JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/colors.json'), 'utf8')).colors,
 };
 const acceptance = JSON.parse(fs.readFileSync(path.join(DIR, '60239.acceptance.json'), 'utf8'));

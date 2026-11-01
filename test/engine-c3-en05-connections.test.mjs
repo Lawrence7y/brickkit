@@ -2,7 +2,12 @@
 // 「60239 全必需连接的正/错位/方向/碰撞负例未逐对跑」）。
 //
 // 必需连接集合 = 60239.fixed.brick.json 的引擎实测物理连接对（inspectFromModel，pair 级去重）：
-//   83 条 builder snap 记录 + 12 条无 snap 记录的真实物理对（4 轮对 + 8 板/销对）= 95 条。
+//   83 条 builder snap 记录 + 8 条无 snap 记录的真实物理对（4 组轮胎↔轮毂同侧装配 + 4 板/销对）= 91 条。
+//
+// 2026-11 基线修正（95 → 91）：旧基线把 4 条**幽灵同轴连接**（同一侧轮辋 ↔ 另一侧轮胎，沿轮轴相距 5 格）
+// 固化成「必需连接」，于是任何给 coaxial 补轴向搭接约束的修复都会被判成回归。实测那 4 对
+// （p006|p009、p007|p008、p010|p013、p011|p012）跨整车宽度，物理上不可能扣合——它们只是旧判据的产物。
+// partsConnected / state.js 现已共用一个带轴向搭接的实现（core.rimTyreMatches），该 4 对不再成立。
 // 每条必需连接 4 个夹具：
 //   正例    按模型位姿 2 件组装：partsConnected = true，且 validate 无该对 overlap；
 //           snap 记录对还要求 snapPart(记录参数) 逐位复现模型的 at/rot/up；
@@ -16,17 +21,17 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { snapPart, partsConnected, partCenter, partBoxes, validate } from '../src/core/core.js';
+import { snapPart, partsConnected, partCenter, partBoxes, validate, mergeCatalogParts } from '../src/core/core.js';
 import { inspectFromModel } from '../src/core/actions-v1/state.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engine');
 const FIXED_PATH = path.join(ROOT, 'examples/60239.fixed.brick.json');
 const cat = {
-  parts: {
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
-  },
+  parts: mergeCatalogParts(
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
+  ),
   colors: JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/colors.json'), 'utf8')).colors,
 };
 const model = JSON.parse(fs.readFileSync(FIXED_PATH, 'utf8'));
@@ -77,10 +82,10 @@ function writeSummary() {
     extraPhysical: PAIRS.filter((p) => !p.snap).length,
     fixturesPerConnection: 4, totalFixtures: PAIRS.length * 4,
     results: {
-      positive: '95/95 partsConnected=true 且无 overlap；snap 记录由 snapPart 逐位复现 at/rot/up',
-      shifted: '95/95 拒绝：半格错位后 partsConnected=false（整数格件另被 validate 以 at 码拒绝，见 en05-shifted-detail.json）',
-      direction: '95/95 拒绝：up 旋转 90° 换轴后，snap 记录对由 snapPart 抛「方向不匹配/连接类型不匹配」，其余对 partsConnected=false（见 en05-direction-detail.json）',
-      colliding: '95/95 validate 报 overlap 并点名两件（贴合轴顶入 1 格；轮件沿垂直轮轴，见 en05-colliding-detail.json）',
+      positive: '91/91 partsConnected=true 且无 overlap；snap 记录由 snapPart 逐位复现 at/rot/up',
+      shifted: '91/91 拒绝：半格错位后 partsConnected=false（整数格件另被 validate 以 at 码拒绝，见 en05-shifted-detail.json）',
+      direction: '91/91 拒绝：up 旋转 90° 换轴后，snap 记录对由 snapPart 抛「方向不匹配/连接类型不匹配」，其余对 partsConnected=false（见 en05-direction-detail.json）',
+      colliding: '91/91 validate 报 overlap 并点名两件（贴合轴顶入 1 格；轮件沿垂直轮轴，见 en05-colliding-detail.json）',
     },
     notes: [
       '沿已铺凸点表面整格滑动仍合法扣合（引擎行为正确），故错位负例取半格',
@@ -90,8 +95,8 @@ function writeSummary() {
   }, null, 2) + '\n');
 }
 
-test('EN-05 ⑴ 正例：95 条必需连接在模型位姿下全部真实扣合，snap 记录逐位可复现', () => {
-  assert.equal(PAIRS.length, 95, `必需连接应为 95 条（83 snap + 12 物理），实际 ${PAIRS.length}`);
+test('EN-05 ⑴ 正例：91 条必需连接在模型位姿下全部真实扣合，snap 记录逐位可复现', () => {
+  assert.equal(PAIRS.length, 91, `必需连接应为 91 条（83 snap + 8 物理：4 轮对 + 4 板/销对），实际 ${PAIRS.length}`);
   const failures = [];
   for (const pr of PAIRS) {
     const pDef = cat.parts[pr.parent.part], cDef = cat.parts[pr.child.part];
@@ -118,7 +123,7 @@ test('EN-05 ⑴ 正例：95 条必需连接在模型位姿下全部真实扣合�
   assert.deepEqual(failures, [], `${failures.length} 条正例失败：${failures.slice(0, 5).join('；')}`);
 });
 
-test('EN-05 ⑵ 错位负例：子件错位半格后 95/95 被引擎拒绝（partsConnected=false，整数格件另报 at 错误）', () => {
+test('EN-05 ⑵ 错位负例：子件错位半格后 91/91 被引擎拒绝（partsConnected=false，整数格件另报 at 错误）', () => {
   const detail = [];
   for (const pr of PAIRS) {
     const cDef = cat.parts[pr.child.part], pDef = cat.parts[pr.parent.part];
@@ -140,7 +145,7 @@ test('EN-05 ⑵ 错位负例：子件错位半格后 95/95 被引擎拒绝（par
   fs.writeFileSync(path.join(ENGINE_OUT, 'en05-shifted-detail.json'), JSON.stringify({ gate: 'EN-05', negative: 'shifted', total: detail.length, partsConnectedFalse: detail.length, additionallyValidateRejected: withValidateCode, detail }, null, 2) + '\n');
 });
 
-test('EN-05 ⑶ 方向负例：up 旋转 90°（改变对接轴）后 95/95 被拒——snap 记录对必须抛「方向/类型不匹配」', () => {
+test('EN-05 ⑶ 方向负例：up 旋转 90°（改变对接轴）后 91/91 被拒——snap 记录对必须抛「方向/类型不匹配」', () => {
   // 注：取「相反 up」对轮件无效（镜像后轮轴不变，coaxial 仍成立——引擎行为正确），
   // 因此方向负例统一用 90° 循环换轴，真正翻转对接方向。
   const CYCLE = { '+y': '+z', '+z': '+x', '+x': '-y', '-y': '-z', '-z': '-x', '-x': '+y' };
@@ -194,7 +199,7 @@ test('EN-05 ⑶ 方向负例：up 旋转 90°（改变对接轴）后 95/95 被�
   fs.writeFileSync(path.join(ENGINE_OUT, 'en05-direction-detail.json'), JSON.stringify({ gate: 'EN-05', negative: 'direction', total: detail.length, detail }, null, 2) + '\n');
 });
 
-test('EN-05 ⑷ 碰撞负例：确定性平移候选序列中必存在被 validate 判 overlap（点名两件）的碰撞位姿，95/95 覆盖', () => {
+test('EN-05 ⑷ 碰撞负例：确定性平移候选序列中必存在被 validate 判 overlap（点名两件）的碰撞位姿，91/91 覆盖', () => {
   const unionBox = (p, def) => {
     const bs = partBoxesCache(p, def);
     const u = { min: [Infinity, Infinity, Infinity], max: [-Infinity, -Infinity, -Infinity] };

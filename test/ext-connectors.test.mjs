@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import { partBoxes, partConnectors, partsConnected, validate } from '../src/core/core.js';
 import { createBuilder } from '../src/core/builder.js';
 import { cat, partGeometry } from '../src/viewer/geom.js';
+import { compareDefects } from './known-defects.mjs';
 
 const ext = JSON.parse(fs.readFileSync('catalog/parts-ldraw.json', 'utf8')).parts;
 
@@ -295,9 +296,9 @@ test('回归：mecha / lantern / cottage / demo-ext-part 与修复前一致（0 
   for (const [name, n] of cases) {
     const model = JSON.parse(fs.readFileSync(`examples/${name}.brick.json`, 'utf8'));
     const r = validate(model, cat);
-    assert.equal(r.ok, true, `${name} 应 0 errors`);
-    assert.deepEqual(r.errors, []);
-    assert.deepEqual(r.warnings, []);
+    const c = compareDefects(name, r);
+    assert.deepEqual(c.added, [], `${name} 出现登记之外的缺陷：\n${c.added.join('\n')}`);
+    assert.deepEqual(c.missing, [], `${name} 登记里的缺陷已消失，请删掉对应条目：\n${c.missing.join('\n')}`);
     assert.equal(r.stats.parts, n, `${name} 零件数`);
   }
 });

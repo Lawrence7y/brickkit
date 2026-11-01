@@ -99,11 +99,12 @@ export function countingResolver(root) {
 }
 
 export async function runSt04() {
+  const { mergeCatalogParts } = await import(pathToFileURL(path.join(ROOT, 'src/core/core.js')).href);
   const cat = {
-    parts: {
-      ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
-      ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
-    },
+    parts: mergeCatalogParts(
+      JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
+      JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
+    ),
     colors: JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/colors.json'), 'utf8')).colors,
   };
   const model = JSON.parse(fs.readFileSync(MODEL_PATH, 'utf8'));

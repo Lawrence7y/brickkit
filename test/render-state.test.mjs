@@ -13,11 +13,11 @@ import {
   toConnectorMap, resolveTag, CAMERA_CONTRACT, RENDER_STATE_VERSION,
 } from '../src/core/actions-v1/render-state.js';
 import { inspectFromModel } from '../src/core/actions-v1/state.js';
-import { partCenter } from '../src/core/core.js';
+import { partCenter, mergeCatalogParts } from '../src/core/core.js';
 
 const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const readJSON = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
-const cat = { parts: { ...readJSON('catalog/parts-ldraw.json').parts, ...readJSON('catalog/parts.json').parts }, colors: readJSON('catalog/colors.json').colors };
+const cat = { parts: mergeCatalogParts(readJSON('catalog/parts-ldraw.json').parts, readJSON('catalog/parts.json').parts), colors: readJSON('catalog/colors.json').colors };
 
 const baseModel = () => ({
   format: 'brickbuild', version: '0.2',

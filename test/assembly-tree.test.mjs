@@ -4,12 +4,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createBuilder } from '../src/core/builder.js';
-import { validate, recompute, findMounts, partsConnected } from '../src/core/core.js';
+import { validate, recompute, findMounts, partsConnected, mergeCatalogParts } from '../src/core/core.js';
 
 const curated = JSON.parse(fs.readFileSync('catalog/parts.json', 'utf8'));
 const ext = JSON.parse(fs.readFileSync('catalog/parts-ldraw.json', 'utf8'));
 const cat = {
-  parts: { ...ext.parts, ...curated.parts },
+  parts: mergeCatalogParts(ext.parts, curated.parts),
   colors: JSON.parse(fs.readFileSync('catalog/colors.json', 'utf8')).colors,
 };
 

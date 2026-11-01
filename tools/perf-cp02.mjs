@@ -31,11 +31,13 @@ const stateMod = await load('actions-v1/state.js');
 const candMod = await load('actions-v1/candidates.js');
 const renderMod = await load('actions-v1/render-state.js');
 
+import { mergeCatalogParts } from '../src/core/core.js';
+
 const sha256 = (buf) => crypto.createHash('sha256').update(buf).digest('hex');
 const readJSON = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 
 const cat = {
-  parts: { ...readJSON('catalog/parts-ldraw.json').parts, ...readJSON('catalog/parts.json').parts },
+  parts: mergeCatalogParts(readJSON('catalog/parts-ldraw.json').parts, readJSON('catalog/parts.json').parts),
   colors: readJSON('catalog/colors.json').colors,
 };
 

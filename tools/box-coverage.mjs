@@ -12,14 +12,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildPart, createResolver } from '../src/ldraw/loader.mjs';
-import { partBoxes, PLATE } from '../src/core/core.js';
+import { partBoxes, PLATE, mergeCatalogParts } from '../src/core/core.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const extFile = path.join(ROOT, 'catalog/parts-ldraw.json');
 const ext = fs.existsSync(extFile) ? readJSON(extFile).parts : {};
 const curated = readJSON(path.join(ROOT, 'catalog/parts.json')).parts;
-const parts = { ...ext, ...curated };
+// 唯一合并实现：口径必须与 cli / viewer / 校验器一致（见 src/core/core.js mergeCatalogParts）
+const parts = mergeCatalogParts(ext, curated);
 
 const argv = process.argv.slice(2);
 let min = 0.98;

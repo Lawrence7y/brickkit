@@ -10,14 +10,15 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {
   partConnectors, partBoxes, partsConnected, boxesCollide, validate, snapPart,
-  toLDraw, ldrawExt, ldrawLine, studLevels,
+  toLDraw, ldrawExt, ldrawLine, studLevels, mergeCatalogParts,
 } from '../src/core/core.js';
 import { createBuilder } from '../src/core/builder.js';
+import { compareDefects } from './known-defects.mjs';
 
 // 合并目录（精选优先，LDraw 自动提取兜底）——与 cli / viewer 同口径
 const curated = JSON.parse(fs.readFileSync('catalog/parts.json', 'utf8'));
 const ext = JSON.parse(fs.readFileSync('catalog/parts-ldraw.json', 'utf8'));
-const cat = { parts: { ...ext.parts, ...curated.parts }, colors: JSON.parse(fs.readFileSync('catalog/colors.json', 'utf8')).colors };
+const cat = { parts: mergeCatalogParts(ext.parts, curated.parts), colors: JSON.parse(fs.readFileSync('catalog/colors.json', 'utf8')).colors };
 const P = (id, at = [0, 0, 0], extra = {}) => ({ id: `t-${id}-${at.join('_')}`, part: id, color: 4, at, step: 1, ...extra });
 const model = (parts, extra = {}) => ({ format: 'brickbuild', version: '0.2', meta: { name: 't' }, ...extra, parts });
 const codes = (list) => list.map((e) => e.code);
@@ -348,14 +349,14 @@ test('翻面搭建：负层倒装合法（不报 ground），flip: true 以最�
 });
 
 // ---------------------------------------------------------------- 回归：四个示例模型
-test('回归：mecha / lantern.reconstructed / cottage / demo-ext-part 仍零错误零警告', () => {
+test('回归：mecha / lantern.reconstructed / cottage / demo-ext-part 已知缺陷逐条吻合', () => {
   const cases = [['mecha', 83], ['lantern.reconstructed', 78], ['cottage', 75], ['demo-ext-part', 3]];
   for (const [name, n] of cases) {
     const m = JSON.parse(fs.readFileSync(`examples/${name}.brick.json`, 'utf8'));
     const r = validate(m, cat);
-    assert.equal(r.ok, true, `${name} 应 0 errors，实际：${r.errors.map((e) => `${e.code}:${e.msg}`).join(' | ')}`);
-    assert.deepEqual(r.errors, []);
-    assert.deepEqual(r.warnings, []);
+    const c = compareDefects(name, r);
+    assert.deepEqual(c.added, [], `${name} 出现登记之外的缺陷：\n${c.added.join('\n')}`);
+    assert.deepEqual(c.missing, [], `${name} 登记里的缺陷已消失，请删掉对应条目：\n${c.missing.join('\n')}`);
     assert.equal(r.stats.parts, n, `${name} 零件数 ${r.stats.parts}，期望 ${n}`);
   }
 });

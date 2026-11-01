@@ -7,11 +7,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createBuilder } from '../src/core/builder.js';
+import { mergeCatalogParts } from '../src/core/core.js';
 
 const ext = JSON.parse(fs.readFileSync('catalog/parts-ldraw.json', 'utf8')).parts;
 const curated = JSON.parse(fs.readFileSync('catalog/parts.json', 'utf8')).parts;
 const colors = JSON.parse(fs.readFileSync('catalog/colors.json', 'utf8')).colors;
-const merged = { ...ext, ...curated };
+const merged = mergeCatalogParts(ext, curated);
 const bom = JSON.parse(fs.readFileSync('examples/60239.bom.json', 'utf8'));
 
 // ---------------------------------------------------------------- ① 4 个 BOM 缺口件号

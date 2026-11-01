@@ -12,12 +12,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildPart, createResolver } from '../src/ldraw/loader.mjs';
+import { mergeCatalogParts } from '../src/core/core.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = (f) => JSON.parse(fs.readFileSync(f, 'utf8'));
 const ext = readJSON(path.join(ROOT, 'catalog/parts-ldraw.json')).parts;
 const curated = readJSON(path.join(ROOT, 'catalog/parts.json')).parts;
-const parts = { ...ext, ...curated };
+// 唯一合并实现：口径必须与 cli / viewer / 校验器一致，否则几何对账与扣合判定会各说各话
+const parts = mergeCatalogParts(ext, curated);
 
 const argv = process.argv.slice(2);
 let limit = 40;

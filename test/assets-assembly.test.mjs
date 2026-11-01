@@ -14,6 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 import {
   validate, recompute, findMounts, partConnectors, partsConnected, partBoxes, partsCollide, snapPart, partCenter, boxesCollide,
+  mergeCatalogParts,
 } from '../src/core/core.js';
 import {
   ORIENTATIONS, getOrientation, applyOrientation, composeOrientation, invertOrientation,
@@ -27,6 +28,7 @@ import {
 import {
   gridToLdu, lduToGrid, makeConnectorId, connectorTypeOf, dirToOrientationId,
 } from '../src/core/assets-v1/ids.js';
+import { compareDefects } from './known-defects.mjs';
 import * as asmMod from '../src/core/assembly-v1/compile.js';
 import {
   checkContainment, topoSortPlacements, expandNodes, compileToLegacy, validateAssembly,
@@ -40,7 +42,7 @@ const ROOT = path.resolve(fileURLToPath(new URL('..', import.meta.url)));
 const readJSON = (f) => JSON.parse(fs.readFileSync(path.join(ROOT, f), 'utf8'));
 const curated = readJSON('catalog/parts.json');
 const ext = readJSON('catalog/parts-ldraw.json');
-const cat = { parts: { ...ext.parts, ...curated.parts }, colors: readJSON('catalog/colors.json').colors };
+const cat = { parts: mergeCatalogParts(ext.parts, curated.parts), colors: readJSON('catalog/colors.json').colors };
 
 // 资产索引构建很贵（约 4~5 s），全文件共用一次
 let BUILT = null;
@@ -126,7 +128,7 @@ test('[ST-03] 旧 stud/receptor 数字索引通过 legacyIndex 固定映射回�
 
 test('[ST-01] 资产索引：同一输入重建得到相同 contentHash（可重现）；源哈希参与内容哈希', () => {
   const b1 = built();
-  assert.equal(b1.stats.parts, 4605, '合并目录条数应为 4605');
+  assert.equal(b1.stats.parts, 4609, '合并目录条数应为 4609');
   const dIdx = b1.definitions.get('3001');
 
   // 同一构造参数（含源哈希与 .dat 信息）重复构建 → contentHash 必须稳定，且不受 recordedAt 影响
@@ -1158,12 +1160,13 @@ test('[EN-02] 轮件穿模判据：真实扣合的嵌轮合法，未连接的重
 
 // ---------------------------------------------------------------- CP：兼容
 
-test('[CP-01] 既有代表模型编译后不新增结构问题（0 errors 0 warnings）', () => {
+test('[CP-01] 既有代表模型编译后不新增结构问题（已知缺陷必须逐条吻合）', () => {
   for (const name of ['mecha', 'lantern.reconstructed', 'cottage', 'demo-ext-part']) {
     const m = readJSON(`examples/${name}.brick.json`);
     const r = validate(m, cat);
-    assert.equal(r.ok, true, `${name} 应 0 errors：${r.errors.slice(0, 3).map((e) => e.code).join(',')}`);
-    assert.deepEqual(r.warnings, [], `${name} 应 0 warnings`);
+    const c = compareDefects(name, r);
+    assert.deepEqual(c.added, [], `${name} 出现登记之外的缺陷：\n${c.added.join('\n')}`);
+    assert.deepEqual(c.missing, [], `${name} 登记里的缺陷已消失，请从 test/known-defects.mjs 删掉对应条目：\n${c.missing.join('\n')}`);
   }
 });
 

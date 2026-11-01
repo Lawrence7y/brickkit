@@ -133,7 +133,9 @@ const r2 = (v) => Math.round(v * 100) / 100 || 0;
 const files = fs.readdirSync(path.join(DIR, 'parts')).filter((f) => f.endsWith('.dat') && !f.startsWith('~') && fs.statSync(path.join(DIR, 'parts', f)).isFile());
 console.error(`扫描 ${files.length} 个主零件 …`);
 
+const prevParts = fs.existsSync(OUT) ? (JSON.parse(fs.readFileSync(OUT, 'utf8')).parts || {}) : {};
 const parts = {};
+const pendingMoves = [];
 const skip = { moved: 0, sticker: 0, obsolete: 0, nonSystem: 0, patterned: 0, minifig: 0, flatSheet: 0, huge: 0, empty: 0 };
 const keptByMode = { withTopStuds: 0, noTopStuds: 0, partialStuds: 0, centerStuds: 0, subGridClamped: 0, needsManual: 0, antiMeasured: 0, antiAssumed: 0 };
 let done = 0;
@@ -144,7 +146,19 @@ for (const f of files) {
   const text = fs.readFileSync(path.join(DIR, 'parts', f), 'utf8');
   const head = text.slice(0, 800);
   const desc = (text.split(/\r?\n/).find((l) => /^0\s/.test(l)) || '').replace(/^0\s+/, '').trim();
-  if (/^~Moved to /i.test(desc)) { skip.moved++; continue; }
+  if (/^~Moved to /i.test(desc)) {
+    const target = desc.replace(/^~Moved to\s+/i, '').trim().replace(/\.dat$/i, '').toLowerCase();
+    skip.moved++;
+    if (target && fs.existsSync(path.join(DIR, 'parts', `${target}.dat`))) {
+      const tText = fs.readFileSync(path.join(DIR, 'parts', `${target}.dat`), 'utf8');
+      const tHead = tText.slice(0, 800);
+      const tDesc = (tText.split(/\r?\n/).find((l) => /^0\s/.test(l)) || '').replace(/^0\s+/, '').trim();
+      if (!/^~Moved to /i.test(tDesc)) {
+        pendingMoves.push({ id, target, text: tText, head: tHead, desc: tDesc });
+      }
+    }
+    continue;
+  }
   if (/^0\s+!STICKER/i.test(head) || /^0\s+!CATEGORY\s+Sticker/im.test(head) || /^=?Sticker\b/i.test(desc)) { skip.sticker++; continue; }
   if (!BOM_NEED_WHITELIST.has(id) && /obsolete/i.test(head.split('!HISTORY')[0])) { skip.obsolete++; continue; }
   const catLine = (head.match(/^0\s+!CATEGORY\s+(.+)$/m) || [])[1];
@@ -489,17 +503,66 @@ for (const f of files) {
         skipPrim: (base) => PROTRUSION_PRIMITIVES.has(base)
           || STUD_PRIMITIVES.has(base) || ANTISTUD_PRIMITIVES.has(base) || base.startsWith('stug'),
       });
+      // 对带顶凸点且存在真实下表面悬空凹陷格（如拱门、倒斜坡、下凹车顶/挡风玻璃）的零件，
+      // 剔除下表面悬空格的虚假 ly=0 底孔，仅保留真实落底支腿格与实测抬高底孔 [i, k, ly]。
+      if (hasTopSemantics && interiorStuds === 0 && Math.abs(bodyBottomY - h * 8) <= 4) {
+        const isCellSuspended = (i, k) => {
+          const key = `${i},${k}`;
+          const fl = hm.floor.get(key);
+          const b = hm.bottom.get(key);
+          if (fl === null || fl === undefined) return true;
+          if (fl >= 0.75) return true;
+          if ((category === 'cslope' || category === 'slope') && b !== null && b >= 0.75 && fl > 0.25) return true;
+          return false;
+        };
+        let hasSuspendedUnderside = false;
+        for (let i = 0; i < sx; i++) for (let k = 0; k < sz; k++) {
+          if (hm.top.get(`${i},${k}`) !== null && isCellSuspended(i, k)) { hasSuspendedUnderside = true; break; }
+        }
+        if (hasSuspendedUnderside) {
+          const cellSet = new Map();
+          for (let i = 0; i < sx; i++) for (let k = 0; k < sz; k++) {
+            const key = `${i},${k}`;
+            if (hm.top.get(key) !== null && !isCellSuspended(i, k)) cellSet.set(key, [i, k]);
+          }
+          for (const c of antistuds) {
+            const wb = instanceWorldBox(c.prim, c.M, c.pos, readLib);
+            const botY = wb ? wb.max[1] : c.pos[1];
+            if (botY < bodyBox.min[1] - 4 || botY > bodyBottomY + 4) continue;
+            const ly = r2((bodyBottomY - botY) / 8);
+            if (ly < -0.25 || ly >= h - 0.25) continue;
+            const fi = (c.pos[0] - shell.min[0]) / 20 - 0.5, fk = (shell.max[2] - c.pos[2]) / 20 - 0.5;
+            const nearI = Math.round(fi), nearK = Math.round(fk);
+            const iCells = Math.abs(fi - nearI) <= 0.35 ? [nearI] : [Math.floor(fi), Math.floor(fi) + 1];
+            const kCells = Math.abs(fk - nearK) <= 0.35 ? [nearK] : [Math.floor(fk), Math.floor(fk) + 1];
+            for (const i of iCells) for (const k of kCells) if (i >= 0 && i < sx && k >= 0 && k < sz) {
+              const key = `${i},${k}`;
+              if (ly <= 0.25 && !isCellSuspended(i, k)) cellSet.set(key, [i, k]);
+              else if (ly > 0.25 && !cellSet.has(key)) cellSet.set(key, [i, k, ly]);
+            }
+          }
+          connExtra.antistudCells = [...cellSet.values()];
+          connExtra.antistudSource = 'measured';
+          keptByMode.antiMeasured++;
+        }
+      }
       const dec = decomposeHeightMap(hm, [sx, sz], h, kindForBoxes);
       if (dec.boxes.length) {
         // 覆盖率自检：双向射线只在子格中心采样，弯曲/倾斜壳体（轮拱 50745、斜挡泥板）
         // 会整格采空 → boxes 只剩被采到的少量格，其余材料在碰撞判定里消失（实测 50745 覆盖率 0.03）。
         // 覆盖率不足时宁可退回单实心盒（保守：可能把内腔封死，但绝不漏保护真实材料）。
         const pts = [];
+        const hasUndersideRecess = dec.boxes.some((b) => b[2] >= 0.75);
+        const shellOx = (shell.min[0] + shell.max[0]) / 2, shellOz = (shell.min[2] + shell.max[2]) / 2;
         const tris = trianglesFromText(text, readLib, {
           skipPrim: (base) => PROTRUSION_PRIMITIVES.has(base) || STUD_PRIMITIVES.has(base)
             || ANTISTUD_PRIMITIVES.has(base) || base.startsWith('stug'),
         });
-        for (const t of tris) for (const v of t) pts.push([v[0] / 20, v[1] / 20, v[2] / 20]);
+        for (const t of tris) for (const v of t) {
+          pts.push(hasUndersideRecess
+            ? [(v[0] - shellOx) / 20, (bodyBottomY - v[1]) / 8, (shellOz - v[2]) / 20]
+            : [v[0] / 20, v[1] / 20, v[2] / 20]);
+        }
         const check = decomposeHeightMapChecked(hm, [sx, sz], h, pts);
         if (check.coverage === null || check.coverage >= BOX_COVERAGE_MIN) {
           connExtra.boxes = dec.boxes;
@@ -622,6 +685,37 @@ for (const f of files) {
     auto: true, source: 'LDraw 官方几何自动提取（catalog/ldraw-full）',
   };
 }
+
+// 保留 fix-ldraw-origin 校准过的 ldrawOrigin 与既有手工核对的实测杆段/合页/座舱盒修正
+for (const mv of pendingMoves) {
+  if (parts[mv.id]) continue;
+  if (!parts[mv.target]) continue;
+  parts[mv.id] = {
+    ...parts[mv.target],
+    name: mv.desc || parts[mv.target].name,
+    movedTo: mv.target,
+    source: `LDraw 官方几何自动提取（经 ~Moved to ${mv.target} 重定向）`,
+  };
+}
+for (const [id, p] of Object.entries(parts)) {
+  if (prevParts[id] && Array.isArray(prevParts[id].ldrawOrigin)) {
+    p.ldrawOrigin = prevParts[id].ldrawOrigin;
+  }
+}
+if (parts['22889'] && prevParts['22889']?.boxes) {
+  parts['22889'].boxes = prevParts['22889'].boxes;
+  parts['22889'].boxesCoverage = prevParts['22889'].boxesCoverage;
+}
+if (parts['48336']) {
+  parts['48336'].bars = [[0, 0.4, 1, 'x', 0.7]];
+  parts['48336'].barsSource = 'ldraw-4-4cylo（轴 x，跨度 ±14 LDU = ±0.7 格）';
+}
+if (parts['60478']) parts['60478'].bars = [[1.5, 0.4, 0, 'z', 0.45]];
+if (parts['2540']) parts['2540'].bars = [[0, 0.4, 1, 'x', 0.95]];
+if (parts['26047']) parts['26047'].bars = [[0, 0.4, 1, 'x', 0.45]];
+if (parts['30237']) parts['30237'].clips = [[0, 0.6, 1, '+z', 'y']];
+if (parts['60594']) { parts['60594'].studs = 4; parts['60594'].studCells = [[0, 0], [1, 0], [2, 0], [3, 0]]; }
+if (parts['60596']) { parts['60596'].studs = 4; parts['60596'].studCells = [[0, 0], [1, 0], [2, 0], [3, 0]]; }
 
 const out = {
   format: 'brickkit-parts-ldraw',

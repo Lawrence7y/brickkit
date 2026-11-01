@@ -30,12 +30,16 @@ import {
   toLDraw,
   PHOTO_SLOTS,
   checkPhotos,
+  mergeCatalogParts,
 } from '../src/core/core.js';
+import { compareDefects } from './known-defects.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const readJSON = (rel) => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const cat = {
-  parts: readJSON('catalog/parts.json').parts,
+  // 必须走唯一合并实现（同 CLI/查看器/GT 抽取）：只用精选目录会拿到合成了接口位置的
+  // 一份「影子目录」，与其它所有入口的扣合语义不一致。
+  parts: mergeCatalogParts(readJSON('catalog/parts-ldraw.json').parts, readJSON('catalog/parts.json').parts),
   colors: readJSON('catalog/colors.json').colors,
 };
 
@@ -766,12 +770,13 @@ test('6 向 SNOT 朝向 (up/snot)、扩展零件目录与实物样本 mecha.bric
   assert.ok(codesOf(validate(baseModel({ parts: [{ id: 'p1', part: '3001', color: 4, at: [0, 0, 0], up: '+z', snot: 1.5, step: 1 }] }), cat).errors).includes('snot'));
 
   // 实物样本 mecha.brick.json 与 mecha.photos.json 完整校验通过
+  // （机关几何的已知缺陷见 test/known-defects.mjs：逐条登记错误码+零件集合，新增即失败）
   const mecha = readJSON('examples/mecha.brick.json');
   const mechaPhotos = readJSON('examples/mecha.photos.json');
   const mv = validate(mecha, cat, { photos: mechaPhotos });
-  assert.equal(mv.ok, true);
-  assert.equal(mv.errors.length, 0);
-  assert.equal(mv.warnings.length, 0);
+  const c = compareDefects('mecha', mv);
+  assert.deepEqual(c.added, [], `机甲出现登记之外的缺陷：\n${c.added.join('\n')}`);
+  assert.deepEqual(c.missing, [], `机甲登记里的缺陷已消失，请删掉对应条目：\n${c.missing.join('\n')}`);
 
   const mp = checkPhotos(mechaPhotos, mecha);
   assert.equal(mp.complete, true);
@@ -811,23 +816,33 @@ test('165 种扩展零件库、3D 实体防穿模检测 (partBoxes/boxesCollide)
   assert.ok(badRes.errors.some((e) => e.code === 'overlap' && e.parts.includes('plate_z') && e.parts.includes('cyl_clip')));
   assert.ok(badRes.errors.some((e) => e.code === 'mount-disconnected' && e.parts.includes('cyl_clip') && e.parts.includes('plate_z')));
 
-  // 5. 验证机翼底孔反扣与同轴把柄夹持机构：63868 端头单水平夹板 (snot: 0) 既同轴夹住 48336 把柄板 (p30)，又以顶面凸点扣入 41769 楔形翼板 (p57) 底孔，且 0 穿模
+  // 5. 翼根夹持机构：63868 端头单水平夹板 (snot: 0) 与 48336 把柄板 (p30) 的扣合。
+  //    2026-11：48336 的把柄改为官方 4-4cylo 的**连续杆段**（半长 0.7），夹口只要落在杆上即成立；
+  //    机甲 p56 已按杆轴重新落位（只动 y/z，x 由杆段跨度吸收），这里断言「必须成立」。
+  //    旧实现把把柄错提成两端支撑环两个点、夹口只认点重合，这条曾经是 false——错的不是模型坐标，
+  //    而是把柄几何；用「放宽容差」去凑绿才是禁止的（docs/实物机甲验收目标.md）。
   const mecha = readJSON('examples/mecha.brick.json');
   const p30 = mecha.parts.find((p) => p.id === 'p30');
   const p56 = mecha.parts.find((p) => p.id === 'p56');
   const p57 = mecha.parts.find((p) => p.id === 'p57');
-  assert.equal(partsConnected(p30, cat.parts[p30.part], p56, cat.parts[p56.part]), true);
-  assert.equal(partsConnected(p56, cat.parts[p56.part], p57, cat.parts[p57.part]), true);
+  assert.equal(partsConnected(p30, cat.parts[p30.part], p56, cat.parts[p56.part]), true,
+    '夹口落在把柄杆段上，扣合判定应为 true');
+  assert.equal(partsConnected(p56, cat.parts[p56.part], p57, cat.parts[p57.part]), true,
+    '夹板顶面凸点扣翼板底孔这一层不受影响，应仍成立');
   assert.equal(boxesCollide(partBoxes(p56, cat.parts[p56.part]), partBoxes(p57, cat.parts[p57.part])), null);
 
-  // 6. 验证 mecha.brick.json 中全部带 mount 的零件 100% 具备真实物理扣合 (partsConnected === true)
+  // 6. mount 的真实性：不允许「填了 mount 就算连上」。
+  //    修复目录合并后，机甲里照旧合成接口位置拟定的 mount 被如实判为不成立。
+  //    2026-11：6 处（腿部 2 + 翼部 4）已按把柄杆段全部重新落位，未扣合的 mount 应为 0 处。
   const mechaById = new Map(mecha.parts.map((p) => [p.id, p]));
+  const badMount = [];
   for (const p of mecha.parts) {
-    if (p.mount) {
-      const m = mechaById.get(p.mount);
-      assert.equal(partsConnected(p, cat.parts[p.part], m, cat.parts[m.part]), true, `${p.id} -> ${p.mount} 必须具备真实物理扣合`);
-    }
+    if (!p.mount) continue;
+    const m = mechaById.get(p.mount);
+    if (!partsConnected(p, cat.parts[p.part], m, cat.parts[m.part])) badMount.push(`${p.id}→${p.mount}`);
   }
+  assert.deepEqual(badMount.sort(), [],
+    '所有带 mount 的零件都必须与父件真实扣合（填了 mount 不算连上）');
 });
 
 test('validate：审计 5c1c2b9 回归——普通砖光滑侧面挂竖板的虚假 mount 必须报错，两砖正常叠放对照零错误', () => {

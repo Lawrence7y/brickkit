@@ -9,7 +9,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { recompute, validate } from '../src/core/core.js';
+import { recompute, validate, mergeCatalogParts } from '../src/core/core.js';
 import { inspectFromModel } from '../src/core/actions-v1/state.js';
 import { compileToLegacy } from '../src/core/assembly-v1/compile.js';
 
@@ -17,10 +17,10 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ENGINE_OUT = path.join(ROOT, 'out', 'prd-v2', 'run-20261026-c', 'C', 'engine');
 
 const cat = {
-  parts: {
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
-    ...JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
-  },
+  parts: mergeCatalogParts(
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts-ldraw.json'), 'utf8')).parts,
+    JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/parts.json'), 'utf8')).parts,
+  ),
   colors: JSON.parse(fs.readFileSync(path.join(ROOT, 'catalog/colors.json'), 'utf8')).colors,
 };
 const FIXED_PATH = path.join(ROOT, 'examples/60239.fixed.brick.json');
