@@ -9,7 +9,7 @@
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
+    "sha256": "0170b1bc4f0bfb6d63c278f84bf15a81eb57f483f94f2a65b004d9cdfc9393a0",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -58,9 +58,9 @@
     ],
     "heightPlate": 1,
     "assetRef": {
-      "datFile": "catalog/ldraw/parts/4085b.dat",
-      "sha256": "3525f737941fa1598e895ac8989921f5a95200b2a2496ff40437945762bbceee",
-      "bytes": 1119
+      "datFile": "catalog/ldraw/parts/60897.dat",
+      "sha256": "5a55863184489f1ece294b75a5d51ccee2e2c8ebade1f269968ee1e768c41ebb",
+      "bytes": 965
     },
     "bboxLdu": [
       0,
@@ -87,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-11-01T10:22:25.243Z",
+      "recordedAt": "2026-11-01T11:20:33.427Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -171,11 +171,11 @@
     "grade": "measured",
     "method": "精选目录（人工核对 + 官方 .dat 验证）",
     "evidenceRefs": [
-      "catalog/ldraw/parts/4085b.dat"
+      "catalog/ldraw/parts/60897.dat"
     ],
-    "recordedAt": "2026-11-01T10:22:25.243Z",
+    "recordedAt": "2026-11-01T11:20:33.427Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "7cf33ee3c9e09c7e59682636d09119eb6c3e1c99ee5cc3a57f80ab8d5b42f608"
+  "contentHash": "7aef2654f04b71f2eeb9b36d7ee338e2b9113281d648d923d6bc8aab54b95f8a"
 }

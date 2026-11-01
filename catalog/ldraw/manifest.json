@@ -2,8 +2,8 @@
   "source": "https://library.ldraw.org/library/official",
   "license": "CC BY 2.0",
   "licenseUrl": "https://library.ldraw.org/license",
-  "fetchedAt": "2026-10-24T12:22:26.263Z",
-  "mirror": "D:\\Git\\ldraw-mirror\\ldraw",
+  "fetchedAt": "2026-11-01T10:43:00.010Z",
+  "mirror": "D:\\Project\\brickkit\\catalog\\ldraw-full",
   "note": "官方零件库本地镜像（主零件 + 子零件 + 几何基元闭包）。别名仅是文件名映射，不代表零件识别确认。",
   "parts": {
     "2357": {
@@ -28,6 +28,14 @@
       "sha256": "8e5999a1352d8204101b2311ca435f88c7d7af20fb8214fa588e9bacd3942315",
       "bytes": 347,
       "desc": "Tile  1 x  4 with Groove",
+      "name": ""
+    },
+    "2436": {
+      "officialId": "2436",
+      "file": "parts/2436.dat",
+      "sha256": "592574a9e56cbd3289ab8edfa31a7ccfce2ca0379656e63adf48d2ad31dac216",
+      "bytes": 300,
+      "desc": "~Moved to 2436a",
       "name": ""
     },
     "2444": {
@@ -84,6 +92,14 @@
       "sha256": "65e6a2e1fe8dbd94fe4252a1c14344dcdbdbb7925a4daeb52938ec4992d238d5",
       "bytes": 298,
       "desc": "~Moved to 2654a",
+      "name": ""
+    },
+    "2780": {
+      "officialId": "2780",
+      "file": "parts/2780.dat",
+      "sha256": "2628d30bcfa42b3a616da38b8020cbc2b1edb98b055329cfac56425cdc9a8277",
+      "bytes": 451,
+      "desc": "Technic Pin with Friction and Slots",
       "name": ""
     },
     "2877": {
@@ -438,12 +454,44 @@
       "desc": "Technic Brick  1 x  4 with Holes",
       "name": ""
     },
+    "3702": {
+      "officialId": "3702",
+      "file": "parts/3702.dat",
+      "sha256": "178d615c51c97ad00bdb25b8ed56bb7dc9ecff79cec77a102df053ca57cbb03d",
+      "bytes": 7470,
+      "desc": "Technic Brick  1 x  8 with Holes",
+      "name": ""
+    },
+    "3705": {
+      "officialId": "3705",
+      "file": "parts/3705.dat",
+      "sha256": "ed90738971675e2dbd05b5a0aecaccf2da32e62b4e9085b886f084de890a853a",
+      "bytes": 653,
+      "desc": "Technic Axle  4",
+      "name": ""
+    },
+    "3706": {
+      "officialId": "3706",
+      "file": "parts/3706.dat",
+      "sha256": "a45710ed426e853ec856c7a13339ff0e1821d67ffc792b2d931ff57dafb01443",
+      "bytes": 654,
+      "desc": "Technic Axle  6",
+      "name": ""
+    },
     "3710": {
       "officialId": "3710",
       "file": "parts/3710.dat",
       "sha256": "1a2d17e3e35750ccf02a54c7aee0cf7485c1c8596492746fc798d341399a3a6e",
       "bytes": 622,
       "desc": "Plate  1 x  4",
+      "name": ""
+    },
+    "3749": {
+      "officialId": "3749",
+      "file": "parts/3749.dat",
+      "sha256": "45cc85e7a28f7d0f9cd8be2aaeba090d91e7aa54649344f19c8fa5dc81684985",
+      "bytes": 890,
+      "desc": "Technic Axle Pin",
       "name": ""
     },
     "3795": {
@@ -574,6 +622,14 @@
       "desc": "Dish  2 x  2 Inverted",
       "name": ""
     },
+    "6014": {
+      "officialId": "6014",
+      "file": "parts/6014.dat",
+      "sha256": "b79d76d6495e8ea5f916b6aec557a216e46fbbfe003bd625995743272b0a774d",
+      "bytes": 299,
+      "desc": "~Moved to 6014a",
+      "name": ""
+    },
     "6091": {
       "officialId": "6091",
       "file": "parts/6091.dat",
@@ -614,12 +670,36 @@
       "desc": "Technic Brick  1 x  1 with Hole",
       "name": ""
     },
+    "6558": {
+      "officialId": "6558",
+      "file": "parts/6558.dat",
+      "sha256": "28d5dfb1009599f84edfae076be13eb648bbfae32cdba57b12b7d7829465057c",
+      "bytes": 597,
+      "desc": "Technic Pin Long with Friction and Slot",
+      "name": ""
+    },
     "6636": {
       "officialId": "6636",
       "file": "parts/6636.dat",
       "sha256": "e4bd77135a542e0953fd9d6e08e050911ce920582f0e1020f02bedcd9cbee84d",
       "bytes": 729,
       "desc": "Tile  1 x  6",
+      "name": ""
+    },
+    "11208": {
+      "officialId": "11208",
+      "file": "parts/11208.dat",
+      "sha256": "4c7fc8e391825afc3c8695bd5e1c1127f502a102b384877ff4b0d3cbc6fcb82f",
+      "bytes": 2141,
+      "desc": "Wheel Rim 10 x 14 with Fake Bolts and  6 Spokes",
+      "name": ""
+    },
+    "11209": {
+      "officialId": "11209",
+      "file": "parts/11209.dat",
+      "sha256": "d6d526167fce71a93bd6e95cd09c0e9670442a543e86840c43d6f587e3463962",
+      "bytes": 2388,
+      "desc": "Tyre 10/ 32 x 14",
       "name": ""
     },
     "11211": {
@@ -662,6 +742,14 @@
       "desc": "Plate  1 x  2 with Socket Joint-8 with Friction",
       "name": ""
     },
+    "14704": {
+      "officialId": "14704",
+      "file": "parts/14704.dat",
+      "sha256": "c71ef813d0e8a77913c364903e1d38a4382ed34a8e9100768e571fd583f2aaa1",
+      "bytes": 1792,
+      "desc": "Plate  1 x  2 with Socket Joint-8 with Friction Centre",
+      "name": ""
+    },
     "14716": {
       "officialId": "14716",
       "file": "parts/14716.dat",
@@ -676,6 +764,14 @@
       "sha256": "83318a6398f6c313a39fe6c18e3c9341c1f6ee948572f5626bbd11a4a83c250e",
       "bytes": 385,
       "desc": "Tile  2 x  2 Corner",
+      "name": ""
+    },
+    "14769": {
+      "officialId": "14769",
+      "file": "parts/14769.dat",
+      "sha256": "9f16f101db994b3c5a738c32740f7f17982378a74a0db4e2235efa296217ca08",
+      "bytes": 370,
+      "desc": "Tile  2 x  2 Round with Round Underside Stud",
       "name": ""
     },
     "15068": {
@@ -700,6 +796,14 @@
       "sha256": "d038b496c5c172e56967e26266d82734447417b21c951ce116f20c77b3640007",
       "bytes": 2017,
       "desc": "Tile  1 x  1 with Clip (Thick C-Clip)",
+      "name": ""
+    },
+    "18654": {
+      "officialId": "18654",
+      "file": "parts/18654.dat",
+      "sha256": "80a0c04eb2ac78eed9f0fa740cb332ce8d08f2c89c9839cbd9492e8b54d4474a",
+      "bytes": 335,
+      "desc": "Technic Beam  1",
       "name": ""
     },
     "18674": {
@@ -734,6 +838,22 @@
       "desc": "Brick  1 x  2 x  1.667 with Studs on 1 Side",
       "name": ""
     },
+    "22890": {
+      "officialId": "22890",
+      "file": "parts/22890.dat",
+      "sha256": "2b3f8ea2ff400429d7aaefc800aa7983ebdb826ef6c051649784dc6ffb93b051",
+      "bytes": 822,
+      "desc": "Plate  1 x  2 with Ball Joint-8 on End",
+      "name": ""
+    },
+    "24246": {
+      "officialId": "24246",
+      "file": "parts/24246.dat",
+      "sha256": "2ca90b1f66e26e82debfac6ff1cbce2b8696902cce622d13b4a65941e9cafcd7",
+      "bytes": 393,
+      "desc": "Tile  1 x  1 with Rounded End",
+      "name": ""
+    },
     "24299": {
       "officialId": "24299",
       "file": "parts/24299.dat",
@@ -748,6 +868,22 @@
       "sha256": "959e20f1f282dbdff12aaadcd6b06903ac7272592c8dec38fcb6055e4d5156d5",
       "bytes": 527,
       "desc": "Wing  2 x  2 Right",
+      "name": ""
+    },
+    "24309": {
+      "officialId": "24309",
+      "file": "parts/24309.dat",
+      "sha256": "3bfecce446b454d471443e343e12da6abde9d275ed1ab38b6bccd3c17805aa46",
+      "bytes": 484,
+      "desc": "Slope Brick Curved  3 x  2",
+      "name": ""
+    },
+    "25269": {
+      "officialId": "25269",
+      "file": "parts/25269.dat",
+      "sha256": "27d965f14caa2c9ebb13c07190f5683da8aca2471671e469e923b623e7978e6c",
+      "bytes": 352,
+      "desc": "Tile  1 x  1 Corner Round",
       "name": ""
     },
     "26047": {
@@ -772,6 +908,30 @@
       "sha256": "a62afda5f29f4940e628316700c140f8f820ce89cdb1283a56b6acd7bc2a70d6",
       "bytes": 2075,
       "desc": "Brick  1 x  1 with Studs on Two Adjacent Sides",
+      "name": ""
+    },
+    "28802": {
+      "officialId": "28802",
+      "file": "parts/28802.dat",
+      "sha256": "aaa44c27ae9885a6b463aa477fcd1b2b153fa540aba626823bc3bb0844b0780c",
+      "bytes": 1634,
+      "desc": "Bracket  1 x  2 -  1 x  4 with Rounded Bottom Corners",
+      "name": ""
+    },
+    "29119": {
+      "officialId": "29119",
+      "file": "parts/29119.dat",
+      "sha256": "54dcca07fc5f5842b88a70eb027a5afe0e9fcf2cf4ffb2fa929020554b6a87f4",
+      "bytes": 319,
+      "desc": "Slope Brick Curved  2 x  1 with Cutout Right",
+      "name": ""
+    },
+    "29120": {
+      "officialId": "29120",
+      "file": "parts/29120.dat",
+      "sha256": "ba0fccf62cf9d143a4945cc183b8233e57da640754c17bbb3d35645378d6d173",
+      "bytes": 5128,
+      "desc": "Slope Brick Curved  2 x  1 with Cutout Left",
       "name": ""
     },
     "30136": {
@@ -822,6 +982,30 @@
       "desc": "Technic Brick  1 x  2 with Holes",
       "name": ""
     },
+    "32054": {
+      "officialId": "32054",
+      "file": "parts/32054.dat",
+      "sha256": "cea14c4d68550bd24f59318dfea219edba853a1fa2a3c8ebb98848a6d95b3ac1",
+      "bytes": 1826,
+      "desc": "Technic Pin Long with Stop Bush",
+      "name": ""
+    },
+    "32064": {
+      "officialId": "32064",
+      "file": "parts/32064.dat",
+      "sha256": "b6240d5798083701834cec8f566d7fca05cbc51123fad8500d3125fa68b4c465",
+      "bytes": 322,
+      "desc": "~Moved to 32064a",
+      "name": ""
+    },
+    "32952": {
+      "officialId": "32952",
+      "file": "parts/32952.dat",
+      "sha256": "75845fb18bc640a880033b8933f94da7a71c426cce7011a47ed80cd43663cde5",
+      "bytes": 645,
+      "desc": "Brick  1 x  1 x  1.667 with Studs on 1 Side",
+      "name": ""
+    },
     "34103": {
       "officialId": "34103",
       "file": "parts/34103.dat",
@@ -846,6 +1030,14 @@
       "desc": "Bracket  1 x  1 -  1 x  1 Down",
       "name": ""
     },
+    "37352": {
+      "officialId": "37352",
+      "file": "parts/37352.dat",
+      "sha256": "ac079482cadd761e9bfd83b19495be202d7579260a393d33a84ce83b1db11cae",
+      "bytes": 519,
+      "desc": "Brick  1 x  2 with Curved Top",
+      "name": ""
+    },
     "41539": {
       "officialId": "41539",
       "file": "parts/41539.dat",
@@ -868,6 +1060,38 @@
       "sha256": "8bd7294d3c547f23ac5233e834fd3a14225b6389c8e5b61e6685ba939f28c0cb",
       "bytes": 308,
       "desc": "~Moved to 41770a",
+      "name": ""
+    },
+    "43093": {
+      "officialId": "43093",
+      "file": "parts/43093.dat",
+      "sha256": "6ff7c720e1492cf27e8a10a79ffb2eda93608ffea43dc3f40670f399141311b2",
+      "bytes": 658,
+      "desc": "Technic Axle Pin with Friction",
+      "name": ""
+    },
+    "43719": {
+      "officialId": "43719",
+      "file": "parts/43719.dat",
+      "sha256": "2d9967759dca4aa660d802f5c022ecd980a5859b296f19b4e3a40fc6251ba7d3",
+      "bytes": 8803,
+      "desc": "Wing  4 x  4 with  2 x  2 Cutout",
+      "name": ""
+    },
+    "43720": {
+      "officialId": "43720",
+      "file": "parts/43720.dat",
+      "sha256": "52eed6876ff08d6466ba0da42e72879bb8f9b06a4048499c2c8c07458e3b5162",
+      "bytes": 1238,
+      "desc": "Wedge  4 x  2 Sloped Right",
+      "name": ""
+    },
+    "43721": {
+      "officialId": "43721",
+      "file": "parts/43721.dat",
+      "sha256": "15ee471b6360b94ac639f721826ca06916e39114d5f75837c1227932a2987795",
+      "bytes": 1220,
+      "desc": "Wedge  4 x  2 Sloped Left",
       "name": ""
     },
     "43722": {
@@ -902,6 +1126,14 @@
       "desc": "~Moved to 44302a",
       "name": ""
     },
+    "44567": {
+      "officialId": "44567",
+      "file": "parts/44567.dat",
+      "sha256": "52141ead8c13c954f60d570c71fedc9837c0be227c1c5d4b054a5619df950a25",
+      "bytes": 343,
+      "desc": "~Moved to 44567a",
+      "name": ""
+    },
     "44728": {
       "officialId": "44728",
       "file": "parts/44728.dat",
@@ -934,6 +1166,14 @@
       "desc": "Plate  1 x  2 with Handle Type 2",
       "name": ""
     },
+    "50745": {
+      "officialId": "50745",
+      "file": "parts/50745.dat",
+      "sha256": "8afc0727f775ae556b10077c71c86293148ae19a246901fa3a9ce53dc951fcc3",
+      "bytes": 25198,
+      "desc": "Car Mudguard  4 x  2.5 x  2",
+      "name": ""
+    },
     "54200": {
       "officialId": "54200",
       "file": "parts/54200.dat",
@@ -964,6 +1204,14 @@
       "sha256": "972f403327358d9e30e87e8e799f4bc50335f4a29ff7e8faf2f4d60ce43eb595",
       "bytes": 275,
       "desc": "~Moved to 60470a",
+      "name": ""
+    },
+    "60477": {
+      "officialId": "60477",
+      "file": "parts/60477.dat",
+      "sha256": "838a96304d5ab177a8c7bd2805eacdfdbfeab71fb86802b81b3523484f4df58b",
+      "bytes": 345,
+      "desc": "Slope Brick 18  4 x  1",
       "name": ""
     },
     "60478": {
@@ -1020,6 +1268,14 @@
       "sha256": "3eec68f5894ab1fa49f9b5d3a596ccf63d1e064c70a2675eaec4ee60e9cd7f8e",
       "bytes": 4956,
       "desc": "Door  1 x  4 x  6 with 4 Panes and Stud Handle",
+      "name": ""
+    },
+    "60897": {
+      "officialId": "60897",
+      "file": "parts/60897.dat",
+      "sha256": "5a55863184489f1ece294b75a5d51ccee2e2c8ebade1f269968ee1e768c41ebb",
+      "bytes": 965,
+      "desc": "Plate  1 x  1 with Clip Vertical (Thick C-Clip)",
       "name": ""
     },
     "61678": {
@@ -1110,6 +1366,14 @@
       "desc": "Plate  2 x  2 with Groove with 1 Centre Stud",
       "name": ""
     },
+    "87697": {
+      "officialId": "87697",
+      "file": "parts/87697.dat",
+      "sha256": "1efa04fdee6d6cac04cdafd3749ca6cd398c94c20c6fe2a3af1f69d265242ad8",
+      "bytes": 3777,
+      "desc": "Tyre 12/ 40 x 11 Wide with Centre Band",
+      "name": ""
+    },
     "87994": {
       "officialId": "87994",
       "file": "parts/87994.dat",
@@ -1180,6 +1444,14 @@
       "sha256": "0fc22c8ef47c4e3c7d19a8d34921acea5559d7ffd2cf508fca2a212bbd0e27c6",
       "bytes": 1887,
       "desc": "Bracket  1 x  2 -  1 x  2 Down",
+      "name": ""
+    },
+    "4085d": {
+      "officialId": "60897",
+      "file": "parts/60897.dat",
+      "sha256": "5a55863184489f1ece294b75a5d51ccee2e2c8ebade1f269968ee1e768c41ebb",
+      "bytes": 965,
+      "desc": "Plate  1 x  1 with Clip Vertical (Thick C-Clip)",
       "name": ""
     },
     "3794b": {
@@ -1255,11 +1527,11 @@
       "name": ""
     },
     "4589b": {
-      "officialId": "4589",
-      "file": "parts/4589.dat",
-      "sha256": "bce02358484d09c47c3d8f5d512425ca2bc7b1ad1be39b8bc743ce12b38f0c9e",
-      "bytes": 1670,
-      "desc": "Cone  1 x  1",
+      "officialId": "59900",
+      "file": "parts/59900.dat",
+      "sha256": "8416701912ed13937743df8dd877a2a1254925efd4adebb77950f48c3d9d5156",
+      "bytes": 1663,
+      "desc": "Cone  1 x  1 with Stop",
       "name": ""
     },
     "3942c": {
@@ -1292,14 +1564,6 @@
       "sha256": "0696b65aacda98a16e43411ec81fbdc722b1e31726704a8bf0b61dd93a6d913d",
       "bytes": 321,
       "desc": "~Moved to 73983",
-      "name": ""
-    },
-    "4085d": {
-      "officialId": "4085b",
-      "file": "parts/4085b.dat",
-      "sha256": "3525f737941fa1598e895ac8989921f5a95200b2a2496ff40437945762bbceee",
-      "bytes": 1119,
-      "desc": "Plate  1 x  1 with Clip Vertical (Thin U-Clip)",
       "name": ""
     },
     "4081b": {
@@ -1343,6 +1607,11 @@
       "bytes": 347,
       "url": "https://library.ldraw.org/library/official/parts/2431.dat"
     },
+    "parts/2436.dat": {
+      "sha256": "592574a9e56cbd3289ab8edfa31a7ccfce2ca0379656e63adf48d2ad31dac216",
+      "bytes": 300,
+      "url": "https://library.ldraw.org/library/official/parts/2436.dat"
+    },
     "parts/2444.dat": {
       "sha256": "4245011f04191f8215758939bdbb81c199b04cd80156746a0465e460a52ed98d",
       "bytes": 2929,
@@ -1377,6 +1646,11 @@
       "sha256": "65e6a2e1fe8dbd94fe4252a1c14344dcdbdbb7925a4daeb52938ec4992d238d5",
       "bytes": 298,
       "url": "https://library.ldraw.org/library/official/parts/2654.dat"
+    },
+    "parts/2780.dat": {
+      "sha256": "2628d30bcfa42b3a616da38b8020cbc2b1edb98b055329cfac56425cdc9a8277",
+      "bytes": 451,
+      "url": "https://library.ldraw.org/library/official/parts/2780.dat"
     },
     "parts/2877.dat": {
       "sha256": "46c3a0dc6329d3f0be9b3b4485b5e2e41295bad750a0f4c4b6a2e6631c0c0029",
@@ -1598,10 +1872,30 @@
       "bytes": 4164,
       "url": "https://library.ldraw.org/library/official/parts/3701.dat"
     },
+    "parts/3702.dat": {
+      "sha256": "178d615c51c97ad00bdb25b8ed56bb7dc9ecff79cec77a102df053ca57cbb03d",
+      "bytes": 7470,
+      "url": "https://library.ldraw.org/library/official/parts/3702.dat"
+    },
+    "parts/3705.dat": {
+      "sha256": "ed90738971675e2dbd05b5a0aecaccf2da32e62b4e9085b886f084de890a853a",
+      "bytes": 653,
+      "url": "https://library.ldraw.org/library/official/parts/3705.dat"
+    },
+    "parts/3706.dat": {
+      "sha256": "a45710ed426e853ec856c7a13339ff0e1821d67ffc792b2d931ff57dafb01443",
+      "bytes": 654,
+      "url": "https://library.ldraw.org/library/official/parts/3706.dat"
+    },
     "parts/3710.dat": {
       "sha256": "1a2d17e3e35750ccf02a54c7aee0cf7485c1c8596492746fc798d341399a3a6e",
       "bytes": 622,
       "url": "https://library.ldraw.org/library/official/parts/3710.dat"
+    },
+    "parts/3749.dat": {
+      "sha256": "45cc85e7a28f7d0f9cd8be2aaeba090d91e7aa54649344f19c8fa5dc81684985",
+      "bytes": 890,
+      "url": "https://library.ldraw.org/library/official/parts/3749.dat"
     },
     "parts/3795.dat": {
       "sha256": "3a18cdb8f18fe9dba6fae79b525aee17be8bee71ea75fce3a794724d2a9b672f",
@@ -1683,6 +1977,11 @@
       "bytes": 3378,
       "url": "https://library.ldraw.org/library/official/parts/4740.dat"
     },
+    "parts/6014.dat": {
+      "sha256": "b79d76d6495e8ea5f916b6aec557a216e46fbbfe003bd625995743272b0a774d",
+      "bytes": 299,
+      "url": "https://library.ldraw.org/library/official/parts/6014.dat"
+    },
     "parts/6091.dat": {
       "sha256": "5853e6f0ca1d4453802972ddc92cb1c289e11ae762aef87f36eeb11c58dda312",
       "bytes": 2464,
@@ -1708,10 +2007,25 @@
       "bytes": 1778,
       "url": "https://library.ldraw.org/library/official/parts/6541.dat"
     },
+    "parts/6558.dat": {
+      "sha256": "28d5dfb1009599f84edfae076be13eb648bbfae32cdba57b12b7d7829465057c",
+      "bytes": 597,
+      "url": "https://library.ldraw.org/library/official/parts/6558.dat"
+    },
     "parts/6636.dat": {
       "sha256": "e4bd77135a542e0953fd9d6e08e050911ce920582f0e1020f02bedcd9cbee84d",
       "bytes": 729,
       "url": "https://library.ldraw.org/library/official/parts/6636.dat"
+    },
+    "parts/11208.dat": {
+      "sha256": "4c7fc8e391825afc3c8695bd5e1c1127f502a102b384877ff4b0d3cbc6fcb82f",
+      "bytes": 2141,
+      "url": "https://library.ldraw.org/library/official/parts/11208.dat"
+    },
+    "parts/11209.dat": {
+      "sha256": "d6d526167fce71a93bd6e95cd09c0e9670442a543e86840c43d6f587e3463962",
+      "bytes": 2388,
+      "url": "https://library.ldraw.org/library/official/parts/11209.dat"
     },
     "parts/11211.dat": {
       "sha256": "a88c76a8936395abe5554aa2273c92271cc3c595e800a6ecfb479d2a9670f532",
@@ -1738,6 +2052,11 @@
       "bytes": 491,
       "url": "https://library.ldraw.org/library/official/parts/14418.dat"
     },
+    "parts/14704.dat": {
+      "sha256": "c71ef813d0e8a77913c364903e1d38a4382ed34a8e9100768e571fd583f2aaa1",
+      "bytes": 1792,
+      "url": "https://library.ldraw.org/library/official/parts/14704.dat"
+    },
     "parts/14716.dat": {
       "sha256": "6a65d7df417ff6a3eb91334cc6db5a6e51dc5a916281d9d732b253eb334fa668",
       "bytes": 561,
@@ -1747,6 +2066,11 @@
       "sha256": "83318a6398f6c313a39fe6c18e3c9341c1f6ee948572f5626bbd11a4a83c250e",
       "bytes": 385,
       "url": "https://library.ldraw.org/library/official/parts/14719.dat"
+    },
+    "parts/14769.dat": {
+      "sha256": "9f16f101db994b3c5a738c32740f7f17982378a74a0db4e2235efa296217ca08",
+      "bytes": 370,
+      "url": "https://library.ldraw.org/library/official/parts/14769.dat"
     },
     "parts/15068.dat": {
       "sha256": "511c620c73d116a9564248a4adb0f564b90f12f1428a4a9276b4bae4f9bd7e4c",
@@ -1762,6 +2086,11 @@
       "sha256": "d038b496c5c172e56967e26266d82734447417b21c951ce116f20c77b3640007",
       "bytes": 2017,
       "url": "https://library.ldraw.org/library/official/parts/15712.dat"
+    },
+    "parts/18654.dat": {
+      "sha256": "80a0c04eb2ac78eed9f0fa740cb332ce8d08f2c89c9839cbd9492e8b54d4474a",
+      "bytes": 335,
+      "url": "https://library.ldraw.org/library/official/parts/18654.dat"
     },
     "parts/18674.dat": {
       "sha256": "1a6a54b886d17bf5b5556c1e5db9ee3c6a30cfe5228cc53eabfced3d37bb499e",
@@ -1783,6 +2112,16 @@
       "bytes": 2187,
       "url": "https://library.ldraw.org/library/official/parts/22885.dat"
     },
+    "parts/22890.dat": {
+      "sha256": "2b3f8ea2ff400429d7aaefc800aa7983ebdb826ef6c051649784dc6ffb93b051",
+      "bytes": 822,
+      "url": "https://library.ldraw.org/library/official/parts/22890.dat"
+    },
+    "parts/24246.dat": {
+      "sha256": "2ca90b1f66e26e82debfac6ff1cbce2b8696902cce622d13b4a65941e9cafcd7",
+      "bytes": 393,
+      "url": "https://library.ldraw.org/library/official/parts/24246.dat"
+    },
     "parts/24299.dat": {
       "sha256": "9abd757286fd53c498ac45e6b1d1e610710ad796fe9134529a5ad0e444c44ce8",
       "bytes": 526,
@@ -1792,6 +2131,16 @@
       "sha256": "959e20f1f282dbdff12aaadcd6b06903ac7272592c8dec38fcb6055e4d5156d5",
       "bytes": 527,
       "url": "https://library.ldraw.org/library/official/parts/24307.dat"
+    },
+    "parts/24309.dat": {
+      "sha256": "3bfecce446b454d471443e343e12da6abde9d275ed1ab38b6bccd3c17805aa46",
+      "bytes": 484,
+      "url": "https://library.ldraw.org/library/official/parts/24309.dat"
+    },
+    "parts/25269.dat": {
+      "sha256": "27d965f14caa2c9ebb13c07190f5683da8aca2471671e469e923b623e7978e6c",
+      "bytes": 352,
+      "url": "https://library.ldraw.org/library/official/parts/25269.dat"
     },
     "parts/26047.dat": {
       "sha256": "2df22b606bf562fb460f67944dcb19ab583d1a09362256f75d329727b8dda6cd",
@@ -1807,6 +2156,21 @@
       "sha256": "a62afda5f29f4940e628316700c140f8f820ce89cdb1283a56b6acd7bc2a70d6",
       "bytes": 2075,
       "url": "https://library.ldraw.org/library/official/parts/26604.dat"
+    },
+    "parts/28802.dat": {
+      "sha256": "aaa44c27ae9885a6b463aa477fcd1b2b153fa540aba626823bc3bb0844b0780c",
+      "bytes": 1634,
+      "url": "https://library.ldraw.org/library/official/parts/28802.dat"
+    },
+    "parts/29119.dat": {
+      "sha256": "54dcca07fc5f5842b88a70eb027a5afe0e9fcf2cf4ffb2fa929020554b6a87f4",
+      "bytes": 319,
+      "url": "https://library.ldraw.org/library/official/parts/29119.dat"
+    },
+    "parts/29120.dat": {
+      "sha256": "ba0fccf62cf9d143a4945cc183b8233e57da640754c17bbb3d35645378d6d173",
+      "bytes": 5128,
+      "url": "https://library.ldraw.org/library/official/parts/29120.dat"
     },
     "parts/30136.dat": {
       "sha256": "6962505eaa5bdba252dc42d6c5990a9f8e6a653b2b6650469bcff488f304a242",
@@ -1838,6 +2202,21 @@
       "bytes": 4285,
       "url": "https://library.ldraw.org/library/official/parts/32000.dat"
     },
+    "parts/32054.dat": {
+      "sha256": "cea14c4d68550bd24f59318dfea219edba853a1fa2a3c8ebb98848a6d95b3ac1",
+      "bytes": 1826,
+      "url": "https://library.ldraw.org/library/official/parts/32054.dat"
+    },
+    "parts/32064.dat": {
+      "sha256": "b6240d5798083701834cec8f566d7fca05cbc51123fad8500d3125fa68b4c465",
+      "bytes": 322,
+      "url": "https://library.ldraw.org/library/official/parts/32064.dat"
+    },
+    "parts/32952.dat": {
+      "sha256": "75845fb18bc640a880033b8933f94da7a71c426cce7011a47ed80cd43663cde5",
+      "bytes": 645,
+      "url": "https://library.ldraw.org/library/official/parts/32952.dat"
+    },
     "parts/34103.dat": {
       "sha256": "81e985e6dce3d56bec5fe2226b16139e38474f2fd1ff63ab4fa6fbdaf8b7b2f4",
       "bytes": 522,
@@ -1853,6 +2232,11 @@
       "bytes": 1483,
       "url": "https://library.ldraw.org/library/official/parts/36841.dat"
     },
+    "parts/37352.dat": {
+      "sha256": "ac079482cadd761e9bfd83b19495be202d7579260a393d33a84ce83b1db11cae",
+      "bytes": 519,
+      "url": "https://library.ldraw.org/library/official/parts/37352.dat"
+    },
     "parts/41539.dat": {
       "sha256": "8b07f1bb13a223f20d2587560540a584d99fdab788c234168e57c18ad796d084",
       "bytes": 5591,
@@ -1867,6 +2251,26 @@
       "sha256": "8bd7294d3c547f23ac5233e834fd3a14225b6389c8e5b61e6685ba939f28c0cb",
       "bytes": 308,
       "url": "https://library.ldraw.org/library/official/parts/41770.dat"
+    },
+    "parts/43093.dat": {
+      "sha256": "6ff7c720e1492cf27e8a10a79ffb2eda93608ffea43dc3f40670f399141311b2",
+      "bytes": 658,
+      "url": "https://library.ldraw.org/library/official/parts/43093.dat"
+    },
+    "parts/43719.dat": {
+      "sha256": "2d9967759dca4aa660d802f5c022ecd980a5859b296f19b4e3a40fc6251ba7d3",
+      "bytes": 8803,
+      "url": "https://library.ldraw.org/library/official/parts/43719.dat"
+    },
+    "parts/43720.dat": {
+      "sha256": "52eed6876ff08d6466ba0da42e72879bb8f9b06a4048499c2c8c07458e3b5162",
+      "bytes": 1238,
+      "url": "https://library.ldraw.org/library/official/parts/43720.dat"
+    },
+    "parts/43721.dat": {
+      "sha256": "15ee471b6360b94ac639f721826ca06916e39114d5f75837c1227932a2987795",
+      "bytes": 1220,
+      "url": "https://library.ldraw.org/library/official/parts/43721.dat"
     },
     "parts/43722.dat": {
       "sha256": "d39335216438d981aa02687a90f4848fd0495eab386b8ab02ac0cc67edf44dcf",
@@ -1888,6 +2292,11 @@
       "bytes": 368,
       "url": "https://library.ldraw.org/library/official/parts/44302.dat"
     },
+    "parts/44567.dat": {
+      "sha256": "52141ead8c13c954f60d570c71fedc9837c0be227c1c5d4b054a5619df950a25",
+      "bytes": 343,
+      "url": "https://library.ldraw.org/library/official/parts/44567.dat"
+    },
     "parts/44728.dat": {
       "sha256": "725b98aa6be8e10bff785d6d29308401d05bee8dbd48d54eda11ece2d79a2dda",
       "bytes": 2413,
@@ -1908,6 +2317,11 @@
       "bytes": 1096,
       "url": "https://library.ldraw.org/library/official/parts/48336.dat"
     },
+    "parts/50745.dat": {
+      "sha256": "8afc0727f775ae556b10077c71c86293148ae19a246901fa3a9ce53dc951fcc3",
+      "bytes": 25198,
+      "url": "https://library.ldraw.org/library/official/parts/50745.dat"
+    },
     "parts/54200.dat": {
       "sha256": "3f0c25da3dac0600209a032c53c040b8668e617374997546d5449528eb7099c9",
       "bytes": 1196,
@@ -1927,6 +2341,11 @@
       "sha256": "972f403327358d9e30e87e8e799f4bc50335f4a29ff7e8faf2f4d60ce43eb595",
       "bytes": 275,
       "url": "https://library.ldraw.org/library/official/parts/60470.dat"
+    },
+    "parts/60477.dat": {
+      "sha256": "838a96304d5ab177a8c7bd2805eacdfdbfeab71fb86802b81b3523484f4df58b",
+      "bytes": 345,
+      "url": "https://library.ldraw.org/library/official/parts/60477.dat"
     },
     "parts/60478.dat": {
       "sha256": "39e307038b6a5b2f0124891de47949dc5ffb36233b5f4fa7cdf43f2d159b86bc",
@@ -1962,6 +2381,11 @@
       "sha256": "3eec68f5894ab1fa49f9b5d3a596ccf63d1e064c70a2675eaec4ee60e9cd7f8e",
       "bytes": 4956,
       "url": "https://library.ldraw.org/library/official/parts/60623.dat"
+    },
+    "parts/60897.dat": {
+      "sha256": "5a55863184489f1ece294b75a5d51ccee2e2c8ebade1f269968ee1e768c41ebb",
+      "bytes": 965,
+      "url": "https://library.ldraw.org/library/official/parts/60897.dat"
     },
     "parts/61678.dat": {
       "sha256": "e06daaca0499570e65d18b3e969be2e7be66896e0735b829c579bfcb6caa1eb8",
@@ -2017,6 +2441,11 @@
       "sha256": "9f1fee81902d00778bb6e91d6239d83ac6e3fca788954f30bbaab149abff6d54",
       "bytes": 665,
       "url": "https://library.ldraw.org/library/official/parts/87580.dat"
+    },
+    "parts/87697.dat": {
+      "sha256": "1efa04fdee6d6cac04cdafd3749ca6cd398c94c20c6fe2a3af1f69d265242ad8",
+      "bytes": 3777,
+      "url": "https://library.ldraw.org/library/official/parts/87697.dat"
     },
     "parts/87994.dat": {
       "sha256": "1a6c0cb9de6da1175fbdf0bd4b7218c1a39e6dc1ff5e53b5d6080267267ee2e8",
@@ -2108,10 +2537,10 @@
       "bytes": 920,
       "url": "https://library.ldraw.org/library/official/parts/3062b.dat"
     },
-    "parts/4589.dat": {
-      "sha256": "bce02358484d09c47c3d8f5d512425ca2bc7b1ad1be39b8bc743ce12b38f0c9e",
-      "bytes": 1670,
-      "url": "https://library.ldraw.org/library/official/parts/4589.dat"
+    "parts/59900.dat": {
+      "sha256": "8416701912ed13937743df8dd877a2a1254925efd4adebb77950f48c3d9d5156",
+      "bytes": 1663,
+      "url": "https://library.ldraw.org/library/official/parts/59900.dat"
     },
     "parts/3942c.dat": {
       "sha256": "02e03df4bbb3bd27f7ad2d86ce0a2764fe366109ab5791d42f8740b0a32ecf23",
@@ -2132,11 +2561,6 @@
       "sha256": "0696b65aacda98a16e43411ec81fbdc722b1e31726704a8bf0b61dd93a6d913d",
       "bytes": 321,
       "url": "https://library.ldraw.org/library/official/parts/2429c01.dat"
-    },
-    "parts/4085b.dat": {
-      "sha256": "3525f737941fa1598e895ac8989921f5a95200b2a2496ff40437945762bbceee",
-      "bytes": 1119,
-      "url": "https://library.ldraw.org/library/official/parts/4085b.dat"
     },
     "parts/4081b.dat": {
       "sha256": "a4bf62ed93aaa3a6395e275b6a2fe93a9eb6644ee410ce54b85f9a9aca3ec917",
@@ -2177,6 +2601,11 @@
       "sha256": "8fe749b2dc7e732a9cf954472d48be1b095f2b0faef1244035ff4513905e8c17",
       "bytes": 865,
       "url": "https://library.ldraw.org/library/official/parts/s/2431s01.dat"
+    },
+    "parts/2436a.dat": {
+      "sha256": "769301ce44eb996c89b5035fbf09e6eef18d2fa912273d30973b9ee4499e1daa",
+      "bytes": 1907,
+      "url": "https://library.ldraw.org/library/official/parts/2436a.dat"
     },
     "p/box4-1.dat": {
       "sha256": "2ed58df5da841827dfc5f9ac11c0bd7ffd8a455e46f166638e635f61a014b44d",
@@ -2292,6 +2721,11 @@
       "sha256": "bfc1e914300019b7bf1d8721c82d37315725e0edded205717dc797bae6d859d8",
       "bytes": 4059,
       "url": "https://library.ldraw.org/library/official/parts/2654a.dat"
+    },
+    "p/confric5.dat": {
+      "sha256": "171ab5f7673337292eaf1477798e7fea5163cf409c379dce04f22c755380dafd",
+      "bytes": 16967,
+      "url": "https://library.ldraw.org/library/official/p/confric5.dat"
     },
     "parts/s/3001s01.dat": {
       "sha256": "bee662925490666aa5956d301b7abc46df88b3cc35737326765441585c720047",
@@ -2523,10 +2957,35 @@
       "bytes": 752,
       "url": "https://library.ldraw.org/library/official/p/box5-4a.dat"
     },
+    "p/axleend2.dat": {
+      "sha256": "cedcec0918b69285f612c94d1f6532f7352a08f18b2749dde6f6a5235c1a0c73",
+      "bytes": 8085,
+      "url": "https://library.ldraw.org/library/official/p/axleend2.dat"
+    },
+    "p/axlehol8.dat": {
+      "sha256": "e3cf8856c972ecaf486a344c171cb4ab601efcb08956bd7b6cfafa39b0439493",
+      "bytes": 1706,
+      "url": "https://library.ldraw.org/library/official/p/axlehol8.dat"
+    },
     "parts/s/3710s01.dat": {
       "sha256": "57df307f7e3843f4c702311b82e93988bab6d688cbb8ab82bb4338184696780e",
       "bytes": 618,
       "url": "https://library.ldraw.org/library/official/parts/s/3710s01.dat"
+    },
+    "p/connect8.dat": {
+      "sha256": "0bc309d24dbf2b1bda1a0dde6a065d230e81c7d1f012c622ac0fafecf7f98529",
+      "bytes": 6202,
+      "url": "https://library.ldraw.org/library/official/p/connect8.dat"
+    },
+    "p/4-4disc.dat": {
+      "sha256": "a00b5547776f61a7389d303616987c76b3c4de86ad8ec32f22857e1bd5e5e40f",
+      "bytes": 1137,
+      "url": "https://library.ldraw.org/library/official/p/4-4disc.dat"
+    },
+    "p/axleend20.dat": {
+      "sha256": "ab1e77729fa281549ece68f4ba918b7a673ab4b4678df930969ef1cd016f86c8",
+      "bytes": 550,
+      "url": "https://library.ldraw.org/library/official/p/axleend20.dat"
     },
     "parts/s/3941s01.dat": {
       "sha256": "0285481f2422f6e098a36f26cb5337338a26048c348a266a2220e154e6f3a7a2",
@@ -2573,11 +3032,6 @@
       "bytes": 1266,
       "url": "https://library.ldraw.org/library/official/parts/s/4150s01.dat"
     },
-    "p/4-4disc.dat": {
-      "sha256": "a00b5547776f61a7389d303616987c76b3c4de86ad8ec32f22857e1bd5e5e40f",
-      "bytes": 1137,
-      "url": "https://library.ldraw.org/library/official/p/4-4disc.dat"
-    },
     "parts/s/4162s01.dat": {
       "sha256": "77bdbb1641274befff6beb95ff94f32b1625ccdc0c9f0556c7e4a79aaeee2b3b",
       "bytes": 769,
@@ -2623,6 +3077,11 @@
       "bytes": 2722,
       "url": "https://library.ldraw.org/library/official/p/4-4con4.dat"
     },
+    "parts/6014a.dat": {
+      "sha256": "04fffcda780b709aeb4482912189e6216c910e748e17fc0bbe05530cd0671956",
+      "bytes": 1092,
+      "url": "https://library.ldraw.org/library/official/parts/6014a.dat"
+    },
     "p/box5-1.dat": {
       "sha256": "c23e2cb13761c0af92c930af610075d82370a7f2ea89194fa808f0c4cf877bf2",
       "bytes": 655,
@@ -2643,10 +3102,60 @@
       "bytes": 743,
       "url": "https://library.ldraw.org/library/official/p/1-4chrd.dat"
     },
+    "p/confric6.dat": {
+      "sha256": "ec2ac19e84bb3ed75318b3b55438ad5d3d6d2347bdeb0e3ff4f626282bf58c3f",
+      "bytes": 18689,
+      "url": "https://library.ldraw.org/library/official/p/confric6.dat"
+    },
+    "p/confric8.dat": {
+      "sha256": "0ec45444958bf90c29477cc62e646ddc521a2eb98fc4783df86c93c9e7520d1c",
+      "bytes": 17049,
+      "url": "https://library.ldraw.org/library/official/p/confric8.dat"
+    },
     "parts/s/6636s01.dat": {
       "sha256": "ab03bda811375ed2edb0c165d7c0bb0936c7febdbd10428a707f9cc413cbb1c2",
       "bytes": 932,
       "url": "https://library.ldraw.org/library/official/parts/s/6636s01.dat"
+    },
+    "parts/s/11208s01.dat": {
+      "sha256": "9d52a299bdebbfb4c425c8f3c1c326ab9419ab2bec2d8c3748a54d8aefbc063f",
+      "bytes": 12536,
+      "url": "https://library.ldraw.org/library/official/parts/s/11208s01.dat"
+    },
+    "parts/s/11208s02.dat": {
+      "sha256": "027a6224c67468a37fe553f54f7b91b12f8240178ce942e8e6f51a1d9da8788e",
+      "bytes": 33640,
+      "url": "https://library.ldraw.org/library/official/parts/s/11208s02.dat"
+    },
+    "p/48/4-4cylo.dat": {
+      "sha256": "ce018b080f8d657ed514164b995e119e9ea104a03cd84e6a6f736b40f58252a6",
+      "bytes": 405,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4cylo.dat"
+    },
+    "p/48/4-4ring6.dat": {
+      "sha256": "58a64c659a70b3c371b5b8e8b3716fdf954139e97ce2fa09518b950e59559e34",
+      "bytes": 3654,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4ring6.dat"
+    },
+    "p/48/4-4con7.dat": {
+      "sha256": "23dbae863bf8813622ccda06549b131e81f8f5e29f70dec89a9f0afcbafbb457",
+      "bytes": 6909,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4con7.dat"
+    },
+    "p/48/4-4edge.dat": {
+      "sha256": "db8fd751c8c6b1f72211903adbff3aa90be6808cc4fcff391f1c320adced5da7",
+      "bytes": 712,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4edge.dat"
+    },
+    "p/48/4-4ring17.dat": {
+      "sha256": "7710b22eb917ca14083f0acdf8de4a3d3c380d9ab1adad4a869ca70778738fb7",
+      "bytes": 3895,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4ring17.dat"
+    },
+    "parts/s/11209s01.dat": {
+      "sha256": "f207171cf71438da81ac9ced94603fc4470e9ea2fff5882dd70f71b7e550dcba",
+      "bytes": 24442,
+      "url": "https://library.ldraw.org/library/official/parts/s/11209s01.dat"
     },
     "p/box4t.dat": {
       "sha256": "9e85c281fff9c33ce26931d772310c8faeeaba4dca1036acf1e6ac578dc50c00",
@@ -2693,10 +3202,25 @@
       "bytes": 5733,
       "url": "https://library.ldraw.org/library/official/p/joint8socket1.dat"
     },
+    "p/1-4ndis.dat": {
+      "sha256": "ff6685838636e7ab6152356d8f09e4f00a38af0d878b0881423f5c45fb868f0c",
+      "bytes": 692,
+      "url": "https://library.ldraw.org/library/official/p/1-4ndis.dat"
+    },
+    "p/2-4chrd.dat": {
+      "sha256": "3b0dfcf2cb881fae0acfe1e53b703104768878636477e540d0c893fc3fd87f8f",
+      "bytes": 490,
+      "url": "https://library.ldraw.org/library/official/p/2-4chrd.dat"
+    },
     "parts/s/14719s01.dat": {
       "sha256": "cb177629961e1ed8f941ee8984a8e0068b9bce3c4638c70db58fe4752e3e2657",
       "bytes": 1425,
       "url": "https://library.ldraw.org/library/official/parts/s/14719s01.dat"
+    },
+    "parts/s/14769s01.dat": {
+      "sha256": "95b7a9a3bbc2d5b160022325b86fa022bd8299cd04cb2aade260bcdf70417471",
+      "bytes": 577,
+      "url": "https://library.ldraw.org/library/official/parts/s/14769s01.dat"
     },
     "parts/s/15068s01.dat": {
       "sha256": "41456734d1b26b9b448eb2fde7f0d4df463c1e2085b79ca9731a0a35554b3c58",
@@ -2718,11 +3242,6 @@
       "bytes": 340,
       "url": "https://library.ldraw.org/library/official/p/recte4.dat"
     },
-    "p/1-4ndis.dat": {
-      "sha256": "ff6685838636e7ab6152356d8f09e4f00a38af0d878b0881423f5c45fb868f0c",
-      "bytes": 692,
-      "url": "https://library.ldraw.org/library/official/p/1-4ndis.dat"
-    },
     "p/1-16ndis.dat": {
       "sha256": "80fe13f5d5458143a68a5fa9e4cf4eba0d22b3df7cf3c255630276d1687c53a5",
       "bytes": 297,
@@ -2732,6 +3251,11 @@
       "sha256": "1b6b84c6316986d887e62da30a38d63d7e789dbf0e77e5ee53655dd78c218a12",
       "bytes": 381,
       "url": "https://library.ldraw.org/library/official/p/5-8cylo.dat"
+    },
+    "p/connhole.dat": {
+      "sha256": "577a734213f632d44646c02d5f9b0f7581df1572aff2f213791bc6172d623af4",
+      "bytes": 693,
+      "url": "https://library.ldraw.org/library/official/p/connhole.dat"
     },
     "parts/s/15535s02.dat": {
       "sha256": "4df4b43c8a74657711da3890d0a242eca23298bd153312b2de8793f3203d33d0",
@@ -2753,11 +3277,6 @@
       "bytes": 1640,
       "url": "https://library.ldraw.org/library/official/p/4-4ring4.dat"
     },
-    "p/connhole.dat": {
-      "sha256": "577a734213f632d44646c02d5f9b0f7581df1572aff2f213791bc6172d623af4",
-      "bytes": 693,
-      "url": "https://library.ldraw.org/library/official/p/connhole.dat"
-    },
     "p/box2-7.dat": {
       "sha256": "e0474c5ad7fb9ff77b67883a5b1e327d028e3eb4e59921a626b4215632dd9f00",
       "bytes": 577,
@@ -2768,15 +3287,30 @@
       "bytes": 4531,
       "url": "https://library.ldraw.org/library/official/parts/s/22385s01.dat"
     },
+    "parts/s/24246s01.dat": {
+      "sha256": "f0e945a2950ce1689d73db589540ff8e0b711a02105a42aa75a67a4122eb2aea",
+      "bytes": 666,
+      "url": "https://library.ldraw.org/library/official/parts/s/24246s01.dat"
+    },
     "parts/s/24299s01.dat": {
       "sha256": "2f7a25e1a7af7d49e2256639971955cccb2f4e364211d182c849f10725a70139",
       "bytes": 794,
       "url": "https://library.ldraw.org/library/official/parts/s/24299s01.dat"
     },
-    "p/2-4chrd.dat": {
-      "sha256": "3b0dfcf2cb881fae0acfe1e53b703104768878636477e540d0c893fc3fd87f8f",
-      "bytes": 490,
-      "url": "https://library.ldraw.org/library/official/p/2-4chrd.dat"
+    "parts/s/24309s01.dat": {
+      "sha256": "a82454b6fbf20d4838edaefa82ac4da0bb34a669449277c879acc141a760d73f",
+      "bytes": 5274,
+      "url": "https://library.ldraw.org/library/official/parts/s/24309s01.dat"
+    },
+    "parts/s/25269s01.dat": {
+      "sha256": "104059a3b2702cce52f7626190f0876ae91972c9d9751c0bed4a0f686d6378fe",
+      "bytes": 3581,
+      "url": "https://library.ldraw.org/library/official/parts/s/25269s01.dat"
+    },
+    "p/1-4disc.dat": {
+      "sha256": "3b8faa77185c576085c38f37b13c6a04e2e889eea6a7dc8c4db2d1699a33bcda",
+      "bytes": 584,
+      "url": "https://library.ldraw.org/library/official/p/1-4disc.dat"
     },
     "p/2-4ring3.dat": {
       "sha256": "045613f5bb90e0c283211b1fa261cc66f8ee8ab968dc9763222e7e592cbf83fc",
@@ -2803,6 +3337,26 @@
       "bytes": 709,
       "url": "https://library.ldraw.org/library/official/p/box3-3.dat"
     },
+    "p/box3u5p.dat": {
+      "sha256": "0f52d5c372a303f508113ace2c7cba6d52b46171052e76a88266679a74f17ea5",
+      "bytes": 658,
+      "url": "https://library.ldraw.org/library/official/p/box3u5p.dat"
+    },
+    "p/stug2-4x1.dat": {
+      "sha256": "179d252971d76f12196c7c2c3b6f89bb6c7eab21d9df9625f44a8064e49e4996",
+      "bytes": 424,
+      "url": "https://library.ldraw.org/library/official/p/stug2-4x1.dat"
+    },
+    "p/1-4cyls2.dat": {
+      "sha256": "77a3bf3859fa972a5d047721ef18603694f1a6f83543f955240990be9c9ee9bd",
+      "bytes": 1189,
+      "url": "https://library.ldraw.org/library/official/p/1-4cyls2.dat"
+    },
+    "p/box2-9.dat": {
+      "sha256": "4ebaa1a0a59a2e219b61d376e86cad06dbd36845a3c15bcde3e3d44cd3be473d",
+      "bytes": 398,
+      "url": "https://library.ldraw.org/library/official/p/box2-9.dat"
+    },
     "p/tri3a1.dat": {
       "sha256": "f4c045989b96a7ba22ba7f7f9414f2bdfad8d89aa280778f49f1d789ef6acbe4",
       "bytes": 520,
@@ -2823,6 +3377,36 @@
       "bytes": 5202,
       "url": "https://library.ldraw.org/library/official/p/clip14.dat"
     },
+    "p/confric9.dat": {
+      "sha256": "11d2edb32d396150695400ec9bcc7af65acd76740eea5ed4924ea3880ce09902",
+      "bytes": 15861,
+      "url": "https://library.ldraw.org/library/official/p/confric9.dat"
+    },
+    "p/bush0.dat": {
+      "sha256": "e624dab4cba4934f674647672537c284597a2467bac06ae3e9dbab8e3857782b",
+      "bytes": 800,
+      "url": "https://library.ldraw.org/library/official/p/bush0.dat"
+    },
+    "p/4-4ring8.dat": {
+      "sha256": "4d7ae146c56385df78fb08391c29f72a106355ffe4b7be472461899ebff840ca",
+      "bytes": 1499,
+      "url": "https://library.ldraw.org/library/official/p/4-4ring8.dat"
+    },
+    "p/4-4con8.dat": {
+      "sha256": "9c5ccecc4d79097dc58c4c67d095bcddd0c307a40239dac29e8bf780f46709df",
+      "bytes": 2626,
+      "url": "https://library.ldraw.org/library/official/p/4-4con8.dat"
+    },
+    "p/4-4con7.dat": {
+      "sha256": "a1041c95280f6b9551e6171d8090cb4e0f0dbec7a9a85fa5bb71d0a613827696",
+      "bytes": 2426,
+      "url": "https://library.ldraw.org/library/official/p/4-4con7.dat"
+    },
+    "parts/32064a.dat": {
+      "sha256": "b35a848b805493527b83b3a087d0a7f139084834c1f3325045905aa09ded26d2",
+      "bytes": 6122,
+      "url": "https://library.ldraw.org/library/official/parts/32064a.dat"
+    },
     "parts/s/34103s01.dat": {
       "sha256": "6356fdae493a0e9bed79cef55e145f62a83826998279befb311fd8467a102233",
       "bytes": 2077,
@@ -2833,6 +3417,16 @@
       "bytes": 756,
       "url": "https://library.ldraw.org/library/official/p/box4-2p.dat"
     },
+    "parts/s/37352s01.dat": {
+      "sha256": "f6d9cf5b10f788d3ee8667e7a66015392cc00e4977755bbf989ce1a492f97a89",
+      "bytes": 3345,
+      "url": "https://library.ldraw.org/library/official/parts/s/37352s01.dat"
+    },
+    "p/1-4cyli.dat": {
+      "sha256": "5a7168952a5a3570327873b9a5802fa7b3be40967ab78c03b6a2bfd4419a1f10",
+      "bytes": 1044,
+      "url": "https://library.ldraw.org/library/official/p/1-4cyli.dat"
+    },
     "parts/41769a.dat": {
       "sha256": "0b069ab042f2cc8297a52e76b49a06e504cd4e9a51f02d6aea8c63f686c28ff8",
       "bytes": 1006,
@@ -2842,6 +3436,21 @@
       "sha256": "59648c2ca07a51d82fdc9aabf4edb65f4942760dc9df3b64946d13fd82b0303d",
       "bytes": 1055,
       "url": "https://library.ldraw.org/library/official/parts/41770a.dat"
+    },
+    "p/confric4.dat": {
+      "sha256": "038addd6f853b704739ee4c9d9432a9557b02e2e6ab8ba874abb35bd9c90a56a",
+      "bytes": 907,
+      "url": "https://library.ldraw.org/library/official/p/confric4.dat"
+    },
+    "p/stug2.dat": {
+      "sha256": "e1dfe5f5e0c433cd406467d366d278518cde9d7e83cc5d4229c451adf52fcc71",
+      "bytes": 307,
+      "url": "https://library.ldraw.org/library/official/p/stug2.dat"
+    },
+    "parts/s/43720s01.dat": {
+      "sha256": "b1afc930b01bebc09378b9e626950bc0e726cc0a7260d75116758ece8076f9fa",
+      "bytes": 9445,
+      "url": "https://library.ldraw.org/library/official/parts/s/43720s01.dat"
     },
     "parts/43722a.dat": {
       "sha256": "cb9c4cfc5c9254fab8191a085ed77d170e16d6f90647bac2c36ce666c1764f59",
@@ -2863,20 +3472,15 @@
       "bytes": 2241,
       "url": "https://library.ldraw.org/library/official/parts/44302a.dat"
     },
+    "parts/44567a.dat": {
+      "sha256": "0c7c4383b22e5f93bbd4ef4d8cde9c60c1b444c46e77379247e67bc202ab79c2",
+      "bytes": 1552,
+      "url": "https://library.ldraw.org/library/official/parts/44567a.dat"
+    },
     "p/1-4edge.dat": {
       "sha256": "9ce2de7e67bbac575d52cfdc771b9d00856efc9b88002d97db8e665e50f4d467",
       "bytes": 545,
       "url": "https://library.ldraw.org/library/official/p/1-4edge.dat"
-    },
-    "p/1-4cyli.dat": {
-      "sha256": "5a7168952a5a3570327873b9a5802fa7b3be40967ab78c03b6a2bfd4419a1f10",
-      "bytes": 1044,
-      "url": "https://library.ldraw.org/library/official/p/1-4cyli.dat"
-    },
-    "p/1-4disc.dat": {
-      "sha256": "3b8faa77185c576085c38f37b13c6a04e2e889eea6a7dc8c4db2d1699a33bcda",
-      "bytes": 584,
-      "url": "https://library.ldraw.org/library/official/p/1-4disc.dat"
     },
     "p/box.dat": {
       "sha256": "a1dd11c88627c1a6bfe28119c235dcdad25471c5f8aa948ead850397b939a7c3",
@@ -2888,10 +3492,20 @@
       "bytes": 803,
       "url": "https://library.ldraw.org/library/official/p/2-4disc.dat"
     },
-    "p/1-4cyls2.dat": {
-      "sha256": "77a3bf3859fa972a5d047721ef18603694f1a6f83543f955240990be9c9ee9bd",
-      "bytes": 1189,
-      "url": "https://library.ldraw.org/library/official/p/1-4cyls2.dat"
+    "p/48/1-4cyli.dat": {
+      "sha256": "e2ed297feaf608b7319c2e54cd81dcb653fbb3d87b5a8e48ab2f54b32953fc6b",
+      "bytes": 2413,
+      "url": "https://library.ldraw.org/library/official/p/48/1-4cyli.dat"
+    },
+    "p/48/2-4edge.dat": {
+      "sha256": "e059b74394567300989a6189e8db33f885334455c20137f27b4739bf424042f5",
+      "bytes": 619,
+      "url": "https://library.ldraw.org/library/official/p/48/2-4edge.dat"
+    },
+    "p/48/1-4ring7.dat": {
+      "sha256": "0fccf076c91aabe748e654e753c3ecea7825ef9303e753440bfab7c9e1d60897",
+      "bytes": 1256,
+      "url": "https://library.ldraw.org/library/official/p/48/1-4ring7.dat"
     },
     "parts/s/54200s01.dat": {
       "sha256": "cf96613781f9e09ef1e12bf1be127a99b1a8f18a5e8ee9af434ef4e757696cc7",
@@ -2912,6 +3526,11 @@
       "sha256": "a9c72acb1d22458c68845fdcedb2bedb171d8fca586de8fc9328aa4b10523012",
       "bytes": 1228,
       "url": "https://library.ldraw.org/library/official/parts/60470a.dat"
+    },
+    "parts/s/60477s01.dat": {
+      "sha256": "98b912f2b4564702bb52631f13b4b505b66d666ea9ccb8d588bbb79081a8352a",
+      "bytes": 1991,
+      "url": "https://library.ldraw.org/library/official/parts/s/60477s01.dat"
     },
     "parts/60481a.dat": {
       "sha256": "89421a04fef0f383025a58a4b014fd006cc9ae0c5c73b14108bc4d3b9be53f89",
@@ -2988,6 +3607,11 @@
       "bytes": 749,
       "url": "https://library.ldraw.org/library/official/p/box4o8a.dat"
     },
+    "p/clip5.dat": {
+      "sha256": "6e332cc47c0ba00dccf63f2afd42c6a27ca2ac11e81f432981ded3689f646145",
+      "bytes": 2241,
+      "url": "https://library.ldraw.org/library/official/p/clip5.dat"
+    },
     "parts/s/61678s01.dat": {
       "sha256": "2445d156ebfd9aa072bbb84ef79421d6f9638fca4dc431e8fce0fb3fa059a6c5",
       "bytes": 5379,
@@ -3043,15 +3667,25 @@
       "bytes": 31053,
       "url": "https://library.ldraw.org/library/official/p/stud18a.dat"
     },
+    "p/4-4con12.dat": {
+      "sha256": "d3f7bf504ebed748c6c161bb2f7b128a5a95c33dec54ed7c506ee02ea0097b05",
+      "bytes": 2941,
+      "url": "https://library.ldraw.org/library/official/p/4-4con12.dat"
+    },
+    "parts/s/6015s02.dat": {
+      "sha256": "e804c8f96a2dac3f25c26664366520e5e6e2df89f05e4c9617123bebab8e1f74",
+      "bytes": 799,
+      "url": "https://library.ldraw.org/library/official/parts/s/6015s02.dat"
+    },
+    "parts/s/87697s01.dat": {
+      "sha256": "81ed23eedfb71ff8cef709ade12dd4c8f3e8b0a632f95558c97df088aec32355",
+      "bytes": 1207,
+      "url": "https://library.ldraw.org/library/official/parts/s/87697s01.dat"
+    },
     "parts/s/93273s01.dat": {
       "sha256": "95d97ee75937fa8baa4b0fca339143ed3a5d1b812e4b2e76ef20d2a4c4622489",
       "bytes": 5473,
       "url": "https://library.ldraw.org/library/official/parts/s/93273s01.dat"
-    },
-    "p/48/1-4cyli.dat": {
-      "sha256": "e2ed297feaf608b7319c2e54cd81dcb653fbb3d87b5a8e48ab2f54b32953fc6b",
-      "bytes": 2413,
-      "url": "https://library.ldraw.org/library/official/p/48/1-4cyli.dat"
     },
     "parts/s/98138s01.dat": {
       "sha256": "dff4bf55eb5b4d6a8f3889fc208b5946a8f7b139e297a1edb67e2f976fc165b9",
@@ -3108,20 +3742,40 @@
       "bytes": 846,
       "url": "https://library.ldraw.org/library/official/parts/s/3062bs01.dat"
     },
-    "p/axlehole.dat": {
-      "sha256": "8dfcdd5058a66fba2ea4f59ddc7fd4510118baca9f745e5dfe341ccf0e24b49e",
-      "bytes": 1974,
-      "url": "https://library.ldraw.org/library/official/p/axlehole.dat"
+    "p/axl3hol3.dat": {
+      "sha256": "05fd46a65cb2342d3e88e3789a610b4f17f9fc8fd614f90bf8c2b3f44e13a171",
+      "bytes": 743,
+      "url": "https://library.ldraw.org/library/official/p/axl3hol3.dat"
     },
-    "p/axlehol2.dat": {
-      "sha256": "9d3e161068b049c3a21fbb8c0970d8264215c08bfcefd3508b8bbff47974a319",
-      "bytes": 762,
-      "url": "https://library.ldraw.org/library/official/p/axlehol2.dat"
+    "p/axl3ho10.dat": {
+      "sha256": "7799ee39b85781d7283d952136cba415605b819a87b9ec92cbfe3f348c8c1f5e",
+      "bytes": 743,
+      "url": "https://library.ldraw.org/library/official/p/axl3ho10.dat"
     },
-    "p/axlehol3.dat": {
-      "sha256": "81caa1e48cb356fd74575f2a37a4422d75cafb930fae19182783f48381e48d2f",
-      "bytes": 1117,
-      "url": "https://library.ldraw.org/library/official/p/axlehol3.dat"
+    "p/axl3hol9.dat": {
+      "sha256": "a99c7a963b46b735e36743f216efdd4916f982b4b984469de5b7e6bddb18e8c7",
+      "bytes": 617,
+      "url": "https://library.ldraw.org/library/official/p/axl3hol9.dat"
+    },
+    "p/axl3hol8.dat": {
+      "sha256": "2349b82c7dd4559a45913986e07e185035fdb48928ac13e5fd774f4c30a65e96",
+      "bytes": 2605,
+      "url": "https://library.ldraw.org/library/official/p/axl3hol8.dat"
+    },
+    "p/axl3hol2.dat": {
+      "sha256": "5d35ee8c2a5ecf50222d9e7a5a489730f4296b47e781157a7f01263b162c6901",
+      "bytes": 656,
+      "url": "https://library.ldraw.org/library/official/p/axl3hol2.dat"
+    },
+    "p/4-4ring12.dat": {
+      "sha256": "3308fbae0dbb0ac056ed5322a416e37ef39ae9200201cc71cbe6e81ec504a1b4",
+      "bytes": 1629,
+      "url": "https://library.ldraw.org/library/official/p/4-4ring12.dat"
+    },
+    "p/4-4con13.dat": {
+      "sha256": "340b30ba8205ef76e4457aaba4620b9a1a2ad13e14bbcacac63dae1dd224812d",
+      "bytes": 2435,
+      "url": "https://library.ldraw.org/library/official/p/4-4con13.dat"
     },
     "p/1-8chrd.dat": {
       "sha256": "7694157b725563188a6efd69b3f558b00533b375b8a4e82f469497a03e471e74",
@@ -3147,11 +3801,6 @@
       "sha256": "662b7910b88e16ac7ad2a1f7d2cef3435cbf28b7a0b11bd35830a0959f0dee2f",
       "bytes": 617,
       "url": "https://library.ldraw.org/library/official/parts/73983.dat"
-    },
-    "p/clip10.dat": {
-      "sha256": "bf020a3d7919ce4b5f81f9151bf8001ae6c13a881e9f8c1c89621c92ad255744",
-      "bytes": 2388,
-      "url": "https://library.ldraw.org/library/official/p/clip10.dat"
     },
     "p/3-16ring3.dat": {
       "sha256": "3e0d8f9325ef96db0fa0a471240f810181a235736554c040a303f20d03294136",
@@ -3203,15 +3852,15 @@
       "bytes": 3365,
       "url": "https://library.ldraw.org/library/official/p/bump5000.dat"
     },
-    "p/4-4con12.dat": {
-      "sha256": "d3f7bf504ebed748c6c161bb2f7b128a5a95c33dec54ed7c506ee02ea0097b05",
-      "bytes": 2941,
-      "url": "https://library.ldraw.org/library/official/p/4-4con12.dat"
-    },
     "parts/s/2654as01.dat": {
       "sha256": "c53f59c9d4cd99dea87b5e11f096ed195045cf38492499cb8dabcbe7afbcd0c3",
       "bytes": 5782,
       "url": "https://library.ldraw.org/library/official/parts/s/2654as01.dat"
+    },
+    "p/1-8ring3.dat": {
+      "sha256": "641f3ae7395e7d38e57ab918928ac19209ed72e8474fd1646e2d70f223c4a0ce",
+      "bytes": 610,
+      "url": "https://library.ldraw.org/library/official/p/1-8ring3.dat"
     },
     "parts/s/3003s02.dat": {
       "sha256": "ceb77e4263964fc1658630d9533118d8feeddf2aeb7d0a1116c6e5bc2318a92f",
@@ -3232,11 +3881,6 @@
       "sha256": "ceb4a5fd46fbff7d2e396afbc308379b914b99556b30a136cfb578a3dc360877",
       "bytes": 1236,
       "url": "https://library.ldraw.org/library/official/p/boxjcyl4.dat"
-    },
-    "p/box3u5p.dat": {
-      "sha256": "0f52d5c372a303f508113ace2c7cba6d52b46171052e76a88266679a74f17ea5",
-      "bytes": 658,
-      "url": "https://library.ldraw.org/library/official/p/box3u5p.dat"
     },
     "p/stug3-1x7.dat": {
       "sha256": "381169c4592a6ed096c0011e06e6000c65200492fe6126b3aa9e6a51ae2ba244",
@@ -3268,11 +3912,6 @@
       "bytes": 1064,
       "url": "https://library.ldraw.org/library/official/p/stud4s.dat"
     },
-    "p/48/2-4edge.dat": {
-      "sha256": "e059b74394567300989a6189e8db33f885334455c20137f27b4739bf424042f5",
-      "bytes": 619,
-      "url": "https://library.ldraw.org/library/official/p/48/2-4edge.dat"
-    },
     "p/48/2-4cyli.dat": {
       "sha256": "685652b02ba31d357cb53ab845f0256a3d1580f530d28e57e9a34fe00e82111b",
       "bytes": 3676,
@@ -3297,6 +3936,31 @@
       "sha256": "85d37bfc3cbb90f12a55dfe2543f507c1763f0336962c712cbec327d688b5624",
       "bytes": 470,
       "url": "https://library.ldraw.org/library/official/p/stug3-1x5.dat"
+    },
+    "p/box2-9p.dat": {
+      "sha256": "6c68301a34e42d105e716e5ae5edf02e3d58978db24619f0364887c339edd331",
+      "bytes": 539,
+      "url": "https://library.ldraw.org/library/official/p/box2-9p.dat"
+    },
+    "p/axlehol2.dat": {
+      "sha256": "9d3e161068b049c3a21fbb8c0970d8264215c08bfcefd3508b8bbff47974a319",
+      "bytes": 762,
+      "url": "https://library.ldraw.org/library/official/p/axlehol2.dat"
+    },
+    "p/axlehol9.dat": {
+      "sha256": "ac0d0c6e94427fc30f64e90f1efcbf6b46b36762510245dda7450b0c3ca8ebd1",
+      "bytes": 960,
+      "url": "https://library.ldraw.org/library/official/p/axlehol9.dat"
+    },
+    "p/axlehol3.dat": {
+      "sha256": "81caa1e48cb356fd74575f2a37a4422d75cafb930fae19182783f48381e48d2f",
+      "bytes": 1117,
+      "url": "https://library.ldraw.org/library/official/p/axlehol3.dat"
+    },
+    "p/axlehole.dat": {
+      "sha256": "8dfcdd5058a66fba2ea4f59ddc7fd4510118baca9f745e5dfe341ccf0e24b49e",
+      "bytes": 1974,
+      "url": "https://library.ldraw.org/library/official/p/axlehole.dat"
     },
     "p/1-8cyli.dat": {
       "sha256": "46def63dc8293ad9a2dd1d1a5cb720b9ba883850e65d3280d2093c664a6140c4",
@@ -3332,11 +3996,6 @@
       "sha256": "7afbba4b66e5993938f452531c213e9bfd06744f7967460992cb31b4c5ac4191",
       "bytes": 469,
       "url": "https://library.ldraw.org/library/official/p/stug4-1x5.dat"
-    },
-    "p/48/4-4edge.dat": {
-      "sha256": "db8fd751c8c6b1f72211903adbff3aa90be6808cc4fcff391f1c320adced5da7",
-      "bytes": 712,
-      "url": "https://library.ldraw.org/library/official/p/48/4-4edge.dat"
     },
     "parts/s/3960s02.dat": {
       "sha256": "ba0fc9b3d096e0e44c35777d46dc0b10b0941d0ea96491451c869a7bcfe7a86c",
@@ -3403,6 +4062,26 @@
       "bytes": 638,
       "url": "https://library.ldraw.org/library/official/p/4-4cylse.dat"
     },
+    "parts/s/6014s01.dat": {
+      "sha256": "9a67da2196e5fbb62fd2c218886a9e102b0b8f7b08d0898c35103a0d3cff0178",
+      "bytes": 13172,
+      "url": "https://library.ldraw.org/library/official/parts/s/6014s01.dat"
+    },
+    "p/48/1-12chrd.dat": {
+      "sha256": "fe2a0252d971dc65126755c4fdb7db900e229dfdce712b42ce9510c7b0390e26",
+      "bytes": 539,
+      "url": "https://library.ldraw.org/library/official/p/48/1-12chrd.dat"
+    },
+    "p/48/4-4cyli.dat": {
+      "sha256": "6c466cd94f69ecdb3a5a83faee52ad2e5ecd9d1560975feaf854c3433de6e6a2",
+      "bytes": 683,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4cyli.dat"
+    },
+    "p/48/1-4edge.dat": {
+      "sha256": "e4ebabd21711f16411b3c8b8b278995a56c5f25919cd424976357da5b19943c6",
+      "bytes": 1196,
+      "url": "https://library.ldraw.org/library/official/p/48/1-4edge.dat"
+    },
     "p/3-16chrd.dat": {
       "sha256": "2bb493e8b5b56a5d63bfa7356a0ed5d6403a68e5e9a983e13a57541783ad19c1",
       "bytes": 317,
@@ -3412,11 +4091,6 @@
       "sha256": "91679da1ed677f4273989f784e212d4a3f332cb4bee317617682b216f6aaf284",
       "bytes": 1742,
       "url": "https://library.ldraw.org/library/official/p/5-8cyli.dat"
-    },
-    "p/box2-9.dat": {
-      "sha256": "4ebaa1a0a59a2e219b61d376e86cad06dbd36845a3c15bcde3e3d44cd3be473d",
-      "bytes": 398,
-      "url": "https://library.ldraw.org/library/official/p/box2-9.dat"
     },
     "p/48/1-8edge.dat": {
       "sha256": "eec30153f06bac336ca71ae16b31c5d0c7ae432acb5e91befe37fdb7b6bb1c8e",
@@ -3468,25 +4142,45 @@
       "bytes": 706,
       "url": "https://library.ldraw.org/library/official/p/1-8ring19.dat"
     },
-    "p/4-4ring8.dat": {
-      "sha256": "4d7ae146c56385df78fb08391c29f72a106355ffe4b7be472461899ebff840ca",
-      "bytes": 1499,
-      "url": "https://library.ldraw.org/library/official/p/4-4ring8.dat"
-    },
     "p/stug4-1x2.dat": {
       "sha256": "93d8fc1608ff1e899368c604ea42e18e60fb33a68a2e2ae31f2259fbc39deb99",
       "bytes": 346,
       "url": "https://library.ldraw.org/library/official/p/stug4-1x2.dat"
+    },
+    "parts/s/24246s02.dat": {
+      "sha256": "8f9ec4b434d7497a5479a73ba4db05a245323120620a4d189471a2593c0049a2",
+      "bytes": 940,
+      "url": "https://library.ldraw.org/library/official/parts/s/24246s02.dat"
+    },
+    "p/2-4ring19.dat": {
+      "sha256": "81ae24be860bc3ba287f89bbdc720fc921f76d1f96a893190223a42200db99ac",
+      "bytes": 942,
+      "url": "https://library.ldraw.org/library/official/p/2-4ring19.dat"
     },
     "parts/s/51739s01.dat": {
       "sha256": "2fa153c39f869c9c9fd4b4289022395d8bf8e748cffbdc2ef98e6d24858b2da1",
       "bytes": 2293,
       "url": "https://library.ldraw.org/library/official/parts/s/51739s01.dat"
     },
-    "p/stug2.dat": {
-      "sha256": "e1dfe5f5e0c433cd406467d366d278518cde9d7e83cc5d4229c451adf52fcc71",
-      "bytes": 307,
-      "url": "https://library.ldraw.org/library/official/p/stug2.dat"
+    "p/box3u7a.dat": {
+      "sha256": "3a5af83a6ab07628ca04494fee90617f459c9b88add044b1bbb96b7f386aeb0c",
+      "bytes": 482,
+      "url": "https://library.ldraw.org/library/official/p/box3u7a.dat"
+    },
+    "p/1-16edge.dat": {
+      "sha256": "42fc4d69af1281b71cb2eb9546e99e8bca2fc231d05a0379e71d4e1c9a60c95c",
+      "bytes": 506,
+      "url": "https://library.ldraw.org/library/official/p/1-16edge.dat"
+    },
+    "p/1-16cyli.dat": {
+      "sha256": "b60f031d9dfd0995c1741992a5695ee3789419886e8189dead961d05f75f7bfc",
+      "bytes": 693,
+      "url": "https://library.ldraw.org/library/official/p/1-16cyli.dat"
+    },
+    "p/1-16chrd.dat": {
+      "sha256": "e429dd760eb6f0cf460a74e6ebf52c023bedbdea82de7801efa1694b5a1a82e8",
+      "bytes": 701,
+      "url": "https://library.ldraw.org/library/official/p/1-16chrd.dat"
     },
     "p/8/2-4ndis.dat": {
       "sha256": "4f646d4ca8dd67205faf9b0e233c4921b85d3b30a9283090b0482397aad1a487",
@@ -3498,10 +4192,50 @@
       "bytes": 394,
       "url": "https://library.ldraw.org/library/official/p/8/2-4cylo.dat"
     },
+    "p/bush0a.dat": {
+      "sha256": "30213424b26a50531b8656dd973beaf6fa6f7ab4cc4419522d710851c2edbf02",
+      "bytes": 4603,
+      "url": "https://library.ldraw.org/library/official/p/bush0a.dat"
+    },
+    "parts/s/32064s01.dat": {
+      "sha256": "e89d5e33547325f5a84aa9b0c374f3cd997eae841057dc2697e76f5dc1cfd502",
+      "bytes": 1455,
+      "url": "https://library.ldraw.org/library/official/parts/s/32064s01.dat"
+    },
+    "p/axlehol5.dat": {
+      "sha256": "5977860888c76d8170d9ec33c93f6c431133bfdc79435e7eac9c32bb15c0a83d",
+      "bytes": 3125,
+      "url": "https://library.ldraw.org/library/official/p/axlehol5.dat"
+    },
+    "p/box3u4p.dat": {
+      "sha256": "1d63ff287fe62f8636cf59cfdfce5118e1017f66559aeb32abc642bacbacd361",
+      "bytes": 685,
+      "url": "https://library.ldraw.org/library/official/p/box3u4p.dat"
+    },
     "parts/s/41770as01.dat": {
       "sha256": "8d88de31c2ec2050977671b63f6115ae47b72f2c01d9f863bd34ecc00760165d",
       "bytes": 6907,
       "url": "https://library.ldraw.org/library/official/parts/s/41770as01.dat"
+    },
+    "p/fric.dat": {
+      "sha256": "7d8e50de2144286e6028ea5c97d03b9c5ef50f8c3353527fc2f5d8d36ba4b85b",
+      "bytes": 795,
+      "url": "https://library.ldraw.org/library/official/p/fric.dat"
+    },
+    "p/ring3.dat": {
+      "sha256": "6192ce723d47b83751ec356af7defcd9da02cbf4964cb7af8b3165b8905fba12",
+      "bytes": 305,
+      "url": "https://library.ldraw.org/library/official/p/ring3.dat"
+    },
+    "p/3-16cyli.dat": {
+      "sha256": "f50d12a37a22ae4a5f37a017b8e39d1e729577b0a4aa376ca685b210806b49c8",
+      "bytes": 942,
+      "url": "https://library.ldraw.org/library/official/p/3-16cyli.dat"
+    },
+    "p/1-8cyls2.dat": {
+      "sha256": "f7081b23e7976155fee32fc28278882d05b16e0a01c89d56aea7855564a158a4",
+      "bytes": 926,
+      "url": "https://library.ldraw.org/library/official/p/1-8cyls2.dat"
     },
     "parts/s/43722as01.dat": {
       "sha256": "e2dddcddb4bf0c30f9ba2f5880d9bca822bde31d07a3bfb094b8b2c4b8711d68",
@@ -3517,6 +4251,11 @@
       "sha256": "0b800aa58842f38ae94a8344b85b5a4c783396fcaf37bcf10f3b4cc3815c6e9d",
       "bytes": 1957,
       "url": "https://library.ldraw.org/library/official/p/clh4.dat"
+    },
+    "p/clh6.dat": {
+      "sha256": "d4b66d6adfec456775ca0c193d7a57f65a25a9c9a7342de0f819451ff2ee779e",
+      "bytes": 1877,
+      "url": "https://library.ldraw.org/library/official/p/clh6.dat"
     },
     "p/stug4-1x3.dat": {
       "sha256": "29afffc8e5e9f4cd96a8e4d3031b9bea98416c344214e2969b22a0edc01f7980",
@@ -3543,11 +4282,6 @@
       "bytes": 394,
       "url": "https://library.ldraw.org/library/official/p/1-16cylo.dat"
     },
-    "p/1-16chrd.dat": {
-      "sha256": "e429dd760eb6f0cf460a74e6ebf52c023bedbdea82de7801efa1694b5a1a82e8",
-      "bytes": 701,
-      "url": "https://library.ldraw.org/library/official/p/1-16chrd.dat"
-    },
     "p/3-4cylo.dat": {
       "sha256": "b7ff6f92e06cea3815be42f757f17cd28350f2a4ff18dd1a11de0db3626ec44b",
       "bytes": 384,
@@ -3557,6 +4291,11 @@
       "sha256": "bd84ea6387fa8003c4a42239d3f4382dc218a65adffbedb08c52d444d170c1ba",
       "bytes": 2285,
       "url": "https://library.ldraw.org/library/official/p/clip3.dat"
+    },
+    "p/4-4cyls.dat": {
+      "sha256": "eb26a554261899f82fda150ee70827a010b7d29206b5b577b2ee5831851d8f29",
+      "bytes": 2643,
+      "url": "https://library.ldraw.org/library/official/p/4-4cyls.dat"
     },
     "parts/s/60481as01.dat": {
       "sha256": "2eebdc50ac5700cc2b525abbff5471a4cf2708f01428dd3a80da9473fb9c14af",
@@ -3572,16 +4311,6 @@
       "sha256": "c1320fa098058f1bb4bb73a4bd02a9533bdcc4f22ac4a0f0a1dcd5cdf85deaed",
       "bytes": 584,
       "url": "https://library.ldraw.org/library/official/p/48/1-12edge.dat"
-    },
-    "p/48/1-12chrd.dat": {
-      "sha256": "fe2a0252d971dc65126755c4fdb7db900e229dfdce712b42ce9510c7b0390e26",
-      "bytes": 539,
-      "url": "https://library.ldraw.org/library/official/p/48/1-12chrd.dat"
-    },
-    "p/4-4cyls.dat": {
-      "sha256": "eb26a554261899f82fda150ee70827a010b7d29206b5b577b2ee5831851d8f29",
-      "bytes": 2643,
-      "url": "https://library.ldraw.org/library/official/p/4-4cyls.dat"
     },
     "p/1-8ring1.dat": {
       "sha256": "5bdd939ba22dc7d9237657fb345a358a8993ed4f61531433371e0241371b9ced",
@@ -3653,11 +4382,6 @@
       "bytes": 537,
       "url": "https://library.ldraw.org/library/official/p/2-8sphe.dat"
     },
-    "p/48/1-4edge.dat": {
-      "sha256": "e4ebabd21711f16411b3c8b8b278995a56c5f25919cd424976357da5b19943c6",
-      "bytes": 1196,
-      "url": "https://library.ldraw.org/library/official/p/48/1-4edge.dat"
-    },
     "parts/s/98138s02.dat": {
       "sha256": "5bda194e7fcb4eaac3211f712ec73a18988f4312fc94aade40722b1e9da00548",
       "bytes": 517,
@@ -3667,11 +4391,6 @@
       "sha256": "f1b98f891616369b58e4ff5d25ba9598ff7ef71b63e72cf3c500e72540390efb",
       "bytes": 1533,
       "url": "https://library.ldraw.org/library/official/p/4-4ring9.dat"
-    },
-    "p/3-16cyli.dat": {
-      "sha256": "f50d12a37a22ae4a5f37a017b8e39d1e729577b0a4aa376ca685b210806b49c8",
-      "bytes": 942,
-      "url": "https://library.ldraw.org/library/official/p/3-16cyli.dat"
     },
     "p/5-16edge.dat": {
       "sha256": "17a9ae47e68e98286d27fc7be4a48e1110d1cae0d3abff658f3378a552857fc3",
@@ -3723,11 +4442,6 @@
       "bytes": 419,
       "url": "https://library.ldraw.org/library/official/p/1-8ring13.dat"
     },
-    "p/1-16edge.dat": {
-      "sha256": "42fc4d69af1281b71cb2eb9546e99e8bca2fc231d05a0379e71d4e1c9a60c95c",
-      "bytes": 506,
-      "url": "https://library.ldraw.org/library/official/p/1-16edge.dat"
-    },
     "p/stud2s.dat": {
       "sha256": "d58ac90a6b6e5cfa137c3236c73d49bef1957929edb96f229341bab84ec6fef7",
       "bytes": 738,
@@ -3748,30 +4462,65 @@
       "bytes": 2733,
       "url": "https://library.ldraw.org/library/official/p/48/4-4disc.dat"
     },
-    "p/48/4-4cyli.dat": {
-      "sha256": "6c466cd94f69ecdb3a5a83faee52ad2e5ecd9d1560975feaf854c3433de6e6a2",
-      "bytes": 683,
-      "url": "https://library.ldraw.org/library/official/p/48/4-4cyli.dat"
-    },
     "p/48/4-4ring9.dat": {
       "sha256": "d8de1753705319aa11a189b579323b778c9b6cf4869360e698c64a8a0cdbf3d2",
       "bytes": 689,
       "url": "https://library.ldraw.org/library/official/p/48/4-4ring9.dat"
     },
-    "p/48/4-4cylo.dat": {
-      "sha256": "ce018b080f8d657ed514164b995e119e9ea104a03cd84e6a6f736b40f58252a6",
-      "bytes": 405,
-      "url": "https://library.ldraw.org/library/official/p/48/4-4cylo.dat"
+    "p/4-4con10.dat": {
+      "sha256": "2969069d935f59bfb22dfcd16d4391b315f4cbe5bcdac4fabdefca654e101ba3",
+      "bytes": 2348,
+      "url": "https://library.ldraw.org/library/official/p/4-4con10.dat"
+    },
+    "p/1-4ring4.dat": {
+      "sha256": "6fed0ef17eaca407c7b17efc82bb7dc8860324b79817da345ebf32f7911dbbba",
+      "bytes": 966,
+      "url": "https://library.ldraw.org/library/official/p/1-4ring4.dat"
+    },
+    "p/4-4con5.dat": {
+      "sha256": "b2d6eb9f4a94b4440d5bbe4793a9f8f1b06a9d5e3bd0df8ea04260e808ae8798",
+      "bytes": 2424,
+      "url": "https://library.ldraw.org/library/official/p/4-4con5.dat"
+    },
+    "p/1-4con5.dat": {
+      "sha256": "3d0c897cdaf1bfd1c361a5782a64201712f5d83910c4ab954fc9a645120e5c26",
+      "bytes": 977,
+      "url": "https://library.ldraw.org/library/official/p/1-4con5.dat"
+    },
+    "p/3-8con12.dat": {
+      "sha256": "dfb2d7be6cb918bd659f35459938629d9155c5b8decde4ff0eb2f363553e3651",
+      "bytes": 1145,
+      "url": "https://library.ldraw.org/library/official/p/3-8con12.dat"
+    },
+    "p/4-4ring11.dat": {
+      "sha256": "325dd90eb9b86d9e94ea2fb9bdd766dad0275b10a1fe22f014f2c8ad2a3ac7cd",
+      "bytes": 1630,
+      "url": "https://library.ldraw.org/library/official/p/4-4ring11.dat"
+    },
+    "p/4-4ring10.dat": {
+      "sha256": "878ba35f655e8a90bf05283e9f7ee0840c19c559cf02b1d113d83dd6e793789f",
+      "bytes": 1662,
+      "url": "https://library.ldraw.org/library/official/p/4-4ring10.dat"
     },
     "p/1-8sphc.dat": {
       "sha256": "7de34335dafbbb745901dcfced234f81b4ffaa629c6796837c99dbd375f768c2",
       "bytes": 2451,
       "url": "https://library.ldraw.org/library/official/p/1-8sphc.dat"
     },
+    "p/2-4ring9.dat": {
+      "sha256": "66c4444b0d30e8b1cb0b1a3aa0e472e28750462cb55d2c43fadcd2e14b852f36",
+      "bytes": 907,
+      "url": "https://library.ldraw.org/library/official/p/2-4ring9.dat"
+    },
     "p/3-16tndis.dat": {
       "sha256": "013e74f7eb727ad92396676544e09a80994a05200ba3a2c3ec1e6597b90bf892",
       "bytes": 392,
       "url": "https://library.ldraw.org/library/official/p/3-16tndis.dat"
+    },
+    "p/empty.dat": {
+      "sha256": "192c9b9ee2e425cfbc9e9b12ff61ee0f05ae1cb0c12dc37d5590adb6abb65128",
+      "bytes": 825,
+      "url": "https://library.ldraw.org/library/official/p/empty.dat"
     },
     "p/8/2-4edge.dat": {
       "sha256": "3154ed3f142d644552b2533457c13c56ef326b0f7d31ea425585d6cdde2a3129",
@@ -3782,6 +4531,16 @@
       "sha256": "9e5869a3bf444fcda1cc9908ef96ce782b53fc68f94eaf6903a0dbca6c582215",
       "bytes": 763,
       "url": "https://library.ldraw.org/library/official/p/8/2-4cyli.dat"
+    },
+    "p/8/1-4cylo.dat": {
+      "sha256": "d0b0c3568d1ec7160378aec8e90a9ac101c6bd4398ea9d70c15feeb6f2574211",
+      "bytes": 402,
+      "url": "https://library.ldraw.org/library/official/p/8/1-4cylo.dat"
+    },
+    "p/8/1-4ndis.dat": {
+      "sha256": "c47a4b0165bfffb084112a6703f4dc1641fdea7c3c68337a4b745223cf400ce2",
+      "bytes": 375,
+      "url": "https://library.ldraw.org/library/official/p/8/1-4ndis.dat"
     },
     "p/1-16tndis.dat": {
       "sha256": "98bf2c3ef480d10f1fb8aac9af0240a0a0704b395b9fb61373c719648ae782d2",
@@ -3818,11 +4577,6 @@
       "bytes": 809,
       "url": "https://library.ldraw.org/library/official/p/7-16ring3.dat"
     },
-    "p/clh6.dat": {
-      "sha256": "d4b66d6adfec456775ca0c193d7a57f65a25a9c9a7342de0f819451ff2ee779e",
-      "bytes": 1877,
-      "url": "https://library.ldraw.org/library/official/p/clh6.dat"
-    },
     "p/clh-base.dat": {
       "sha256": "58c3f98f8a13a46370197fa2ccc5364fe75747ff3f36ab8f2552e6bcd5759a4d",
       "bytes": 2428,
@@ -3833,15 +4587,15 @@
       "bytes": 2545,
       "url": "https://library.ldraw.org/library/official/p/clh-finger.dat"
     },
-    "p/1-16cyli.dat": {
-      "sha256": "b60f031d9dfd0995c1741992a5695ee3789419886e8189dead961d05f75f7bfc",
-      "bytes": 693,
-      "url": "https://library.ldraw.org/library/official/p/1-16cyli.dat"
+    "p/clh6c.dat": {
+      "sha256": "3cb91ca4b98cf1d0d639617e0eff946ee518835b98424c61ecdb1ac042be10a0",
+      "bytes": 5695,
+      "url": "https://library.ldraw.org/library/official/p/clh6c.dat"
     },
-    "p/empty.dat": {
-      "sha256": "192c9b9ee2e425cfbc9e9b12ff61ee0f05ae1cb0c12dc37d5590adb6abb65128",
-      "bytes": 825,
-      "url": "https://library.ldraw.org/library/official/p/empty.dat"
+    "p/8/1-4cyli.dat": {
+      "sha256": "a9e8266ebf4bdb75f8ac643596e29e3069cc88697a379e4b116fa59b1c138bbf",
+      "bytes": 550,
+      "url": "https://library.ldraw.org/library/official/p/8/1-4cyli.dat"
     },
     "p/2-4ring1.dat": {
       "sha256": "a04bfc7ffeeb56f92a83aaa60429939e896facb5a407f93a50f24fd1b2b1706d",
@@ -3888,20 +4642,10 @@
       "bytes": 1374,
       "url": "https://library.ldraw.org/library/official/p/48/1-4ring9.dat"
     },
-    "p/1-8ring3.dat": {
-      "sha256": "641f3ae7395e7d38e57ab918928ac19209ed72e8474fd1646e2d70f223c4a0ce",
-      "bytes": 610,
-      "url": "https://library.ldraw.org/library/official/p/1-8ring3.dat"
-    },
-    "p/clh6c.dat": {
-      "sha256": "3cb91ca4b98cf1d0d639617e0eff946ee518835b98424c61ecdb1ac042be10a0",
-      "bytes": 5695,
-      "url": "https://library.ldraw.org/library/official/p/clh6c.dat"
-    },
-    "p/8/1-4cyli.dat": {
-      "sha256": "a9e8266ebf4bdb75f8ac643596e29e3069cc88697a379e4b116fa59b1c138bbf",
-      "bytes": 550,
-      "url": "https://library.ldraw.org/library/official/p/8/1-4cyli.dat"
+    "p/8/1-4edge.dat": {
+      "sha256": "841b1c8c1e48553b010ba25fde8e9ef1ea959c1ac83c7c7b6dae7277fbee4a35",
+      "bytes": 348,
+      "url": "https://library.ldraw.org/library/official/p/8/1-4edge.dat"
     },
     "p/8/2-4chrd.dat": {
       "sha256": "2caebc5de687f190e7ef2f25724665284bf0139e4db42844d0e2691128b9c0ea",
@@ -3923,20 +4667,110 @@
       "bytes": 333,
       "url": "https://library.ldraw.org/library/official/p/8/1-4chrd.dat"
     },
-    "p/8/1-4edge.dat": {
-      "sha256": "841b1c8c1e48553b010ba25fde8e9ef1ea959c1ac83c7c7b6dae7277fbee4a35",
-      "bytes": 348,
-      "url": "https://library.ldraw.org/library/official/p/8/1-4edge.dat"
-    },
     "p/8/1-4cyls.dat": {
       "sha256": "c4cb59937f09c2c106bafd2c971302d8319247180e1dd0e9a010e1b34cfc4ada",
       "bytes": 469,
       "url": "https://library.ldraw.org/library/official/p/8/1-4cyls.dat"
     },
-    "p/8/1-4cylo.dat": {
-      "sha256": "d0b0c3568d1ec7160378aec8e90a9ac101c6bd4398ea9d70c15feeb6f2574211",
-      "bytes": 402,
-      "url": "https://library.ldraw.org/library/official/p/8/1-4cylo.dat"
+    "p/48/4-4con19.dat": {
+      "sha256": "daa8b75230a36b655fce95bcecfbe423dc5117a9f16a259b82c7fdc1fd636867",
+      "bytes": 7018,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4con19.dat"
+    },
+    "p/48/4-4con21.dat": {
+      "sha256": "b8b04269affd03cd38be706461c23c3faa610f7482e6a8a6cc4062571bb69db7",
+      "bytes": 7454,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4con21.dat"
+    },
+    "p/48/4-4con41.dat": {
+      "sha256": "3f04c6c111f3f6647c8be934491f19cdfd911a579307e84b172baa1bf94109fa",
+      "bytes": 7582,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4con41.dat"
+    },
+    "p/48/4-4con52.dat": {
+      "sha256": "aaed32b8bd07eefeb598563dcc2b3af23db3befff3a0b8e01c5472251b488e9e",
+      "bytes": 7428,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4con52.dat"
+    },
+    "p/48/4-4ring1.dat": {
+      "sha256": "7ae5108032a90bdb2a0da2445abc3934a2b22c7e36c9859590e1160ee22506ba",
+      "bytes": 3716,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4ring1.dat"
+    },
+    "p/48/4-4ring10.dat": {
+      "sha256": "180b6a4e892347f36562b20f70e96d6d57737c9911651f3be7c7623998ce407b",
+      "bytes": 3575,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4ring10.dat"
+    },
+    "p/48/4-4ring11.dat": {
+      "sha256": "1a0d0bc5ab42950da1f255d61e1fe2d3f08cb7c76dcc59e927a53beb5e6f2fe9",
+      "bytes": 3952,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4ring11.dat"
+    },
+    "p/48/4-4ring12.dat": {
+      "sha256": "1039eb4b2b4fc4fcef26a199f71540c8629d4521720fbadb244f14c4ee06c2b5",
+      "bytes": 3984,
+      "url": "https://library.ldraw.org/library/official/p/48/4-4ring12.dat"
+    },
+    "p/axl3hol6.dat": {
+      "sha256": "29d56f068d269370bb57d08eea5413e536a1a7b7a31d4c0108cadeeba9330ab5",
+      "bytes": 3184,
+      "url": "https://library.ldraw.org/library/official/p/axl3hol6.dat"
+    },
+    "p/axl3hole.dat": {
+      "sha256": "eb2369c61af0f2e3c2bf85f0f23ca92d5d313719941f0f8ff4eabde4b131ba7e",
+      "bytes": 4789,
+      "url": "https://library.ldraw.org/library/official/p/axl3hole.dat"
+    },
+    "p/axlehol6.dat": {
+      "sha256": "e7d0115c0eaab5acfb54d9b4d034bbf938d8d44d3be830aae73b091e1d1ce774",
+      "bytes": 1776,
+      "url": "https://library.ldraw.org/library/official/p/axlehol6.dat"
+    },
+    "p/axlehol7.dat": {
+      "sha256": "223ae7987d206cf7e26328332d193d61b8141c6df8a260c413d76c1930022c8e",
+      "bytes": 1333,
+      "url": "https://library.ldraw.org/library/official/p/axlehol7.dat"
+    },
+    "p/clip10.dat": {
+      "sha256": "bf020a3d7919ce4b5f81f9151bf8001ae6c13a881e9f8c1c89621c92ad255744",
+      "bytes": 2388,
+      "url": "https://library.ldraw.org/library/official/p/clip10.dat"
+    },
+    "parts/35.dat": {
+      "sha256": "e91fc37d91f15d3cac27449501fd82a2c9f905bc3632206b98274ea8040a2cf2",
+      "bytes": 706,
+      "url": "https://library.ldraw.org/library/official/parts/35.dat"
+    },
+    "parts/35b.dat": {
+      "sha256": "9e62df8c275c0711940e43f5aafca5c97b1d2df196d46610963aa99441fc69f7",
+      "bytes": 1292,
+      "url": "https://library.ldraw.org/library/official/parts/35b.dat"
+    },
+    "parts/36.dat": {
+      "sha256": "d941665d3a7282ac37d1d54c135139c3c6723d945e8232fd7b3975bb1ad13b79",
+      "bytes": 1746,
+      "url": "https://library.ldraw.org/library/official/parts/36.dat"
+    },
+    "parts/4085b.dat": {
+      "sha256": "3525f737941fa1598e895ac8989921f5a95200b2a2496ff40437945762bbceee",
+      "bytes": 1119,
+      "url": "https://library.ldraw.org/library/official/parts/4085b.dat"
+    },
+    "parts/4589.dat": {
+      "sha256": "bce02358484d09c47c3d8f5d512425ca2bc7b1ad1be39b8bc743ce12b38f0c9e",
+      "bytes": 1670,
+      "url": "https://library.ldraw.org/library/official/parts/4589.dat"
+    },
+    "parts/584.dat": {
+      "sha256": "16e1b72c776e839dd250bc3687c10382dfddb65c04cb9ca4e768ce074de8ea82",
+      "bytes": 6772,
+      "url": "https://library.ldraw.org/library/official/parts/584.dat"
+    },
+    "parts/u9049.dat": {
+      "sha256": "5d4ec5972ff387fcceecf547976c288efaeccc7f5c79ed63a646dd974d88966a",
+      "bytes": 3247,
+      "url": "https://library.ldraw.org/library/official/parts/u9049.dat"
     }
   },
   "missing": {},

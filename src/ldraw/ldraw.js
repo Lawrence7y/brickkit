@@ -756,9 +756,12 @@ export async function fetchLDrawLibrary({ outDir, ids, aliases = OFFICIAL_ALIASE
   };
   const queue = []; const seen = new Set();
   const enqueue = (raw, meta) => { const key = String(raw).toLowerCase(); if (!seen.has(key)) { seen.add(key); queue.push({ raw, ...meta }); } };
+  const mainIdsByOfficial = new Map();
   for (const id of ids) {
     const official = aliases[id] || id;
-    enqueue(`${official}.dat`, { id, official, main: true });
+    if (!mainIdsByOfficial.has(official)) mainIdsByOfficial.set(official, []);
+    mainIdsByOfficial.get(official).push(id);
+    enqueue(`${official}.dat`, { official, main: true });
   }
   let done = 0;
   // 全局节流：请求间隔不小于 throttleMs，避免触发官方库限流（Cloudflare 429）
@@ -791,7 +794,10 @@ export async function fetchLDrawLibrary({ outDir, ids, aliases = OFFICIAL_ALIASE
     const text = buf.toString('utf8');
     if (item.main) {
       const { desc, name } = headerName(text);
-      manifest.parts[item.id] = { officialId: item.official, file: resolved, sha256: digest, bytes: buf.length, desc, name };
+      const mappedIds = mainIdsByOfficial.get(item.official) || [item.official];
+      for (const id of mappedIds) {
+        manifest.parts[id] = { officialId: item.official, file: resolved, sha256: digest, bytes: buf.length, desc, name };
+      }
     }
     for (const ref of partRefs(text)) enqueue(ref, {});
   };

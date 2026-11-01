@@ -233,7 +233,7 @@ async function main() {
       const mirror = flag('mirror');
       const r = full
         ? await installFullLDrawLibrary({ outDir: dir, mirror, log: (m) => process.stderr.write(m + '\n') })
-        : await fetchLDrawLibrary({ outDir: dir, ids: Object.keys(cat.parts), force, mirror, log: (m) => process.stderr.write(m + '\n') });
+        : await fetchLDrawLibrary({ outDir: dir, ids: Object.keys(cat.curated || cat.parts), force, mirror, log: (m) => process.stderr.write(m + '\n') });
       fs.writeFileSync(path.join(dir, 'manifest.json'), JSON.stringify(r, null, 2));
       if (full) {
         out({ ok: true, mode: 'full', license: r.license, base: r.source, mirror: r.mirror,

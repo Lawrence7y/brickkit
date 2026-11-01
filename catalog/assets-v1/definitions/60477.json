@@ -4,12 +4,12 @@
   "revision": "r1-curated",
   "aliases": [],
   "name": "Slope Brick 18  4 x  1",
-  "nameZh": "",
+  "nameZh": "斜面砖 18° 4×1",
   "category": "slope",
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
+    "sha256": "0170b1bc4f0bfb6d63c278f84bf15a81eb57f483f94f2a65b004d9cdfc9393a0",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -51,12 +51,17 @@
     }
   },
   "geometry": {
-    "kind": "parametric",
+    "kind": "ldraw-mesh",
     "sizeStud": [
       1,
       4
     ],
     "heightPlate": 3,
+    "assetRef": {
+      "datFile": "catalog/ldraw/parts/60477.dat",
+      "sha256": "838a96304d5ab177a8c7bd2805eacdfdbfeab71fb86802b81b3523484f4df58b",
+      "bytes": 345
+    },
     "bboxLdu": [
       0,
       20,
@@ -98,7 +103,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "目录 boxes 多盒分解（curated-stepped）",
-      "recordedAt": "2026-11-01T10:22:25.243Z",
+      "recordedAt": "2026-11-01T11:20:33.427Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -162,9 +167,9 @@
   ],
   "capabilities": {
     "render": {
-      "state": "inferred",
-      "geometryKind": "parametric",
-      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+      "state": "measured",
+      "geometryKind": "ldraw-mesh",
+      "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
     },
     "collide": {
       "state": "inferred",
@@ -183,10 +188,12 @@
   "provenance": {
     "grade": "measured",
     "method": "精选目录（人工核对 + 官方 .dat 验证）",
-    "evidenceRefs": [],
-    "recordedAt": "2026-11-01T10:22:25.243Z",
+    "evidenceRefs": [
+      "catalog/ldraw/parts/60477.dat"
+    ],
+    "recordedAt": "2026-11-01T11:20:33.427Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "7f25ea9941e94ebf6f56aba828797ed1edde891860e6ee6f0c62a24a514bf11a"
+  "contentHash": "4b33c73ddbbde2a7faa6a77e475cb211297f0941802d99edebb5bf3b724cd94d"
 }

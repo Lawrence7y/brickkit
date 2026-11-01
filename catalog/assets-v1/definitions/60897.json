@@ -9,7 +9,7 @@
   "source": {
     "kind": "catalog-entry",
     "ref": "catalog/parts.json",
-    "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
+    "sha256": "0170b1bc4f0bfb6d63c278f84bf15a81eb57f483f94f2a65b004d9cdfc9393a0",
     "license": "CC BY 2.0",
     "licenseUrl": "https://library.ldraw.org/license",
     "extractor": "assets-v1/build-definition@1",
@@ -51,12 +51,17 @@
     }
   },
   "geometry": {
-    "kind": "parametric",
+    "kind": "ldraw-mesh",
     "sizeStud": [
       1,
       1
     ],
     "heightPlate": 1,
+    "assetRef": {
+      "datFile": "catalog/ldraw/parts/60897.dat",
+      "sha256": "5a55863184489f1ece294b75a5d51ccee2e2c8ebade1f269968ee1e768c41ebb",
+      "bytes": 965
+    },
     "bboxLdu": [
       0,
       20,
@@ -82,7 +87,7 @@
     "evidence": {
       "grade": "inferred",
       "method": "按 kind/size/h 单盒推导",
-      "recordedAt": "2026-11-01T10:22:25.243Z",
+      "recordedAt": "2026-11-01T11:20:33.427Z",
       "recordedBy": "assets-v1/build-definition"
     }
   },
@@ -143,9 +148,9 @@
   ],
   "capabilities": {
     "render": {
-      "state": "inferred",
-      "geometryKind": "parametric",
-      "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+      "state": "measured",
+      "geometryKind": "ldraw-mesh",
+      "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
     },
     "collide": {
       "state": "inferred",
@@ -165,10 +170,12 @@
   "provenance": {
     "grade": "measured",
     "method": "精选目录（人工核对 + 官方 .dat 验证）",
-    "evidenceRefs": [],
-    "recordedAt": "2026-11-01T10:22:25.243Z",
+    "evidenceRefs": [
+      "catalog/ldraw/parts/60897.dat"
+    ],
+    "recordedAt": "2026-11-01T11:20:33.427Z",
     "recordedBy": "assets-v1/build-definition"
   },
   "_buildWarnings": [],
-  "contentHash": "5ff2b7d834d7fa3ac7db2a07f23220492c65b1876873f43856e12bd1739d61c4"
+  "contentHash": "ce991994b3c6bf1a9da8ad32fa95b2f9b8ca58c1678c4654ef18aac97d7a279c"
 }

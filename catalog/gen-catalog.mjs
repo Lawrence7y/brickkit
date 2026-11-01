@@ -303,14 +303,14 @@ add('87697', 'Tyre 21 x 12', '宽轮胎 21×12', 'technic', [3, 1], 6, { noTopSt
 add('11208', 'Wheel Rim 14 x 9.9', '六幅螺栓轮辋 14×9.9', 'technic', [2, 1], 5, { noTopStuds: true, studs: 0, antistudCells: [], axleHoles: [[0, 1.0, 0, 'z']], wheel: { role: 'rim', axis: 'z', outer: 0.91, bore: 0.2, cy: 1.0 }, offGrid: true, category: 'wheel' });
 add('11209', 'Tyre 14 x 4', '低断面赛车轮胎 14×4', 'technic', [3, 1], 7, { noTopStuds: true, studs: 0, antistudCells: [], wheel: { role: 'tyre', axis: 'z', outer: 1.32, bore: 0.86, cy: 2.0 }, offGrid: true, category: 'wheel' });
 P['50745'] = {
-  name: 'Car Mudguard  4 x  2.5 x  2', zh: '', kind: 'other', category: 'other', size: [4, 2], h: 6, studs: 4, grid: false,
+  name: 'Car Mudguard  4 x  2.5 x  2', zh: '汽车轮拱 4×2.5×2', kind: 'other', category: 'other', size: [4, 2], h: 6, studs: 4, grid: false,
   studCells: [[2, 1, 5], [2, 0, 5], [1, 1, 5], [1, 0, 5]], ldrawOrigin: [0, 5, 0], antistudCells: [],
   auto: true, source: 'LDraw 官方几何自动提取（catalog/ldraw-full）',
   boxes: [[-2, 2, 4, 5, -1, 1], [-2, -1.5, 2, 4, -1, -0.5], [1.5, 2, 2, 4, -1, -0.5]],
   boxesSource: 'curated-hollow', checked: true,
 };
 P['60477'] = {
-  name: 'Slope Brick 18  4 x  1', zh: '', kind: 'slope', category: 'slope', size: [1, 4], h: 3, studs: 1, grid: false,
+  name: 'Slope Brick 18  4 x  1', zh: '斜面砖 18° 4×1', kind: 'slope', category: 'slope', size: [1, 4], h: 3, studs: 1, grid: false,
   studCells: [[0, 0]], ldrawOrigin: [0, 3, 0],
   auto: true, source: 'LDraw 官方几何自动提取（catalog/ldraw-full）',
   boxes: [[-0.5, 0.5, 0, 1, -2, 2], [-0.5, 0.5, 1, 2, -2, 1], [-0.5, 0.5, 2, 3, -2, 0]],

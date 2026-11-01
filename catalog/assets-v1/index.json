@@ -2,13 +2,13 @@
   "format": "brickkit-asset-index",
   "version": "1.0.0",
   "generatedBy": "src/core/assets-v1/index.js#buildIndex",
-  "generatedAt": "2026-11-01T10:22:25.243Z",
+  "generatedAt": "2026-11-01T11:20:33.427Z",
   "profileId": "default-2026-10-26",
   "sourceHashes": {
     "curated": {
       "file": "catalog/parts.json",
-      "sha256": "84ec1acf851c0b51fd881f8b006a0a4a6bd4e3ae3b1a88b5e57f5ca9dcd09180",
-      "bytes": 82565
+      "sha256": "0170b1bc4f0bfb6d63c278f84bf15a81eb57f483f94f2a65b004d9cdfc9393a0",
+      "bytes": 82606
     },
     "extracted": {
       "file": "catalog/parts-ldraw.json",
@@ -1373,14 +1373,14 @@
     {
       "partId": "11208",
       "revision": "r1-curated",
-      "contentHash": "941c764e2b1b73469b88e1230e6256a0524b1ebd31d01917b1c4c4b1b2677465",
+      "contentHash": "e6885f6f60761ef509266db2cd19e3ab4be4ad7182228d10795c622ae976aa4d",
       "definitionFile": "definitions/11208.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -1402,14 +1402,14 @@
     {
       "partId": "11209",
       "revision": "r1-curated",
-      "contentHash": "fdc88ead39273d83e87f4cbe8117e9add8a1a719ff9d888a723163667991d7ab",
+      "contentHash": "babffca9ab65340d7562b78d62a84f13a2dae478acc68a47a881081b9c7a2877",
       "definitionFile": "definitions/11209.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -1430,7 +1430,7 @@
     {
       "partId": "11211",
       "revision": "r1-curated",
-      "contentHash": "1bb9791a966cddae0ecdfad8a0ac9a4c9d2c5c61518782b94c61e56cb9509563",
+      "contentHash": "cffb404ba9367a35d4d3de50fd17010bedf93a1375f51d0e69cf93d98d6f2dff",
       "definitionFile": "definitions/11211.json",
       "aliases": [],
       "capabilities": {
@@ -2120,7 +2120,7 @@
     {
       "partId": "11476",
       "revision": "r1-curated",
-      "contentHash": "a52754c999e36e7f380a33a3d86a9c0cc0714671181a6e3713fe0fef15c0154e",
+      "contentHash": "7c4add677ebbe0861282258590c6c96d01ca93514d5c7c57f002211eb80e4510",
       "definitionFile": "definitions/11476.json",
       "aliases": [],
       "capabilities": {
@@ -2150,7 +2150,7 @@
     {
       "partId": "11477",
       "revision": "r1-curated",
-      "contentHash": "cbec90e875bb72a19e3f0b82194dc060d7e2317191fd7a06da5ef360e9d707f3",
+      "contentHash": "c20cc77447ba57a566de7b7a7abd2fb7f3be8981196cab409419dffb32cb3cc1",
       "definitionFile": "definitions/11477.json",
       "aliases": [],
       "capabilities": {
@@ -3662,7 +3662,7 @@
     {
       "partId": "14417",
       "revision": "r1-curated",
-      "contentHash": "7f7a76417bd3747e4eec9637f3724e253516511d9e405e474a2d048296408313",
+      "contentHash": "ecf3ef84781edafd9135ef346fbc117199754064f930e84aaaacf69813775c7e",
       "definitionFile": "definitions/14417.json",
       "aliases": [],
       "capabilities": {
@@ -3691,7 +3691,7 @@
     {
       "partId": "14418",
       "revision": "r1-curated",
-      "contentHash": "adf539ff73cc7d86492128005716d9f14f771f0858606ddeef43746e37202195",
+      "contentHash": "a8a0718d91dc81edbf639a7779b468eee5a47ad7908a70cc8f1c7751fc851a26",
       "definitionFile": "definitions/14418.json",
       "aliases": [],
       "capabilities": {
@@ -3986,14 +3986,14 @@
     {
       "partId": "14704",
       "revision": "r1-curated",
-      "contentHash": "340af1d2b597b2d101f901c7645794e21a1c364a11096f675579c2bc168447a8",
+      "contentHash": "a84c491dab361d3f258ec56e29b79af70fd2b6eaae90e30d1816d09eea9f4580",
       "definitionFile": "definitions/14704.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -4044,7 +4044,7 @@
     {
       "partId": "14716",
       "revision": "r1-curated",
-      "contentHash": "3b653f6248f71abd22a373963b83bd59bc7e6199232670248e5aac5cefbeb8d3",
+      "contentHash": "1fd234416de84ca434142066aa0bd76f941d6637f15671d3e171310a729eec4f",
       "definitionFile": "definitions/14716.json",
       "aliases": [],
       "capabilities": {
@@ -4102,7 +4102,7 @@
     {
       "partId": "14719",
       "revision": "r1-curated",
-      "contentHash": "d9bdca2f0a11dcb9c451dbbf5800fd3eb81b8369b2426f5716548ac39f799b54",
+      "contentHash": "3c98a49fad2269786803a267d2bd738823fae611785fec82def5a875edb039a7",
       "definitionFile": "definitions/14719.json",
       "aliases": [],
       "capabilities": {
@@ -4236,14 +4236,14 @@
     {
       "partId": "14769",
       "revision": "r1-curated",
-      "contentHash": "e35249017cf254d64b40b70dbf73a753c6ccf2de613acda46fbe4af009016535",
+      "contentHash": "70da165b5b596a3c3405faafba6d2120eb29cba11eeacedf75f1c6eb826d3a47",
       "definitionFile": "definitions/14769.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -4320,7 +4320,7 @@
     {
       "partId": "15068",
       "revision": "r1-curated",
-      "contentHash": "db21d14b726bf2526c5a0c7e8ac6098e528709eb8a334972ac2f7ac342579cfe",
+      "contentHash": "4df59f42218a1b2a15754ee700a8e4328833278717899c96bfa5a32c4553f53e",
       "definitionFile": "definitions/15068.json",
       "aliases": [],
       "capabilities": {
@@ -5573,7 +5573,7 @@
     {
       "partId": "15573",
       "revision": "r1-curated",
-      "contentHash": "4639523844b1aa152f8b8cd1226044653183252abdf822bd14efe030cd378945",
+      "contentHash": "b612b8320b846e32d9d7c4e49ffe47d8fe12c98fc06f2c229e4858bc78e3f32d",
       "definitionFile": "definitions/15573.json",
       "aliases": [],
       "capabilities": {
@@ -5943,7 +5943,7 @@
     {
       "partId": "15712",
       "revision": "r1-curated",
-      "contentHash": "0caa96d4064bc5733e48d1c9955a1be8b8cf1e0f31424aadc14b19d4c318967a",
+      "contentHash": "ead0fe6d37cc1a6b4119e5a2de59490da3a3fd43841b01a29dde83ce97345a4e",
       "definitionFile": "definitions/15712.json",
       "aliases": [],
       "capabilities": {
@@ -7159,14 +7159,14 @@
     {
       "partId": "18654",
       "revision": "r1-curated",
-      "contentHash": "0eed6f32113b12e2a58c588e314da7488daa48c9f3bcd273c0be79bda2150ef1",
+      "contentHash": "45e8bdd7ed2c2420aaac56689b94f8cda3ee6c9fe126be4bd3835b0b8fcd5bd1",
       "definitionFile": "definitions/18654.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -7216,7 +7216,7 @@
     {
       "partId": "18674",
       "revision": "r1-curated",
-      "contentHash": "ca79755266c2d0a0922e56cc3288acdaa277e795b65ceca0a89a0deabeae7843",
+      "contentHash": "8814642f723a6c57def5a98543574d8f862c3a167465c55b7e8f4c1165c05df0",
       "definitionFile": "definitions/18674.json",
       "aliases": [],
       "capabilities": {
@@ -7271,7 +7271,7 @@
     {
       "partId": "18677",
       "revision": "r1-curated",
-      "contentHash": "494c0d02c070cd287052c7aa71596ca1f3708398242c3c70ec2dd8782e63e5f4",
+      "contentHash": "6c7d29bb3a63fd206a27b76c30388c7a1aeaae3582809db8d1805c1d636fe5a6",
       "definitionFile": "definitions/18677.json",
       "aliases": [],
       "capabilities": {
@@ -11299,7 +11299,7 @@
     {
       "partId": "22385",
       "revision": "r1-curated",
-      "contentHash": "5381140e37a5a26d1679a0039cb02fbfa71b558eee82e9526785a8fd15b997b3",
+      "contentHash": "472a4b71036481deb46329890e3a05199ed47aed3135f1251a2432d138b7e132",
       "definitionFile": "definitions/22385.json",
       "aliases": [],
       "capabilities": {
@@ -11661,7 +11661,7 @@
     {
       "partId": "22885",
       "revision": "r1-curated",
-      "contentHash": "7b8a8aac30c6d70150101a6fef1f85d3841d51861ad8e323926fd93735f94327",
+      "contentHash": "ccf2674823d6e8bdb8691875b75adaccda094542976b822dfaf436455cb52e2a",
       "definitionFile": "definitions/22885.json",
       "aliases": [],
       "capabilities": {
@@ -11777,14 +11777,14 @@
     {
       "partId": "22890",
       "revision": "r1-curated",
-      "contentHash": "b848f20d4241b018f6f67a31c160c90330f0ac5f51eebebfd1ac282744312a3d",
+      "contentHash": "76e7e7ab49b25ac42a278279711c0b4430fdf04bb5b7756bb2c6384f7f2f8540",
       "definitionFile": "definitions/22890.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -12720,7 +12720,7 @@
     {
       "partId": "2357",
       "revision": "r1-curated",
-      "contentHash": "1a29073ee843e019adbc53b35ccfe0c63fdc9090e245e57b024a3263a7b60938",
+      "contentHash": "74554226ba26d237351a174ef7506a4da8e0841cfa8dedb3ec9c6cc7f188c779",
       "definitionFile": "definitions/2357.json",
       "aliases": [],
       "capabilities": {
@@ -14166,7 +14166,7 @@
     {
       "partId": "2412b",
       "revision": "r1-curated",
-      "contentHash": "71d6c2a8fdf132301fec7fb2778ed641b69851058c2d4df95174fea4de8e40c5",
+      "contentHash": "5d1b2051c8266ab38665ae52c77dd9914f45644c2f4f3e4191c3635717183e33",
       "definitionFile": "definitions/2412b.json",
       "aliases": [],
       "capabilities": {
@@ -14539,7 +14539,7 @@
     {
       "partId": "2420",
       "revision": "r1-curated",
-      "contentHash": "e17ec7fffd59ad0e9aff9cecc3fdb9c3e5f1b7e7f988945d9babfed5f3afda09",
+      "contentHash": "3e5ec46addd7135684e3efcd4ff0c990383c3b74df33e083a71869048b657814",
       "definitionFile": "definitions/2420.json",
       "aliases": [],
       "capabilities": {
@@ -14740,14 +14740,14 @@
     {
       "partId": "24246",
       "revision": "r1-curated",
-      "contentHash": "946896b474807c860c7c65a5bbaf64c233400cfbe880fce035d18a777b43d3d1",
+      "contentHash": "4e7e9912ca5c6b49fe937c51061d17766c1e9b05a8ea9893d0e995236ab89970",
       "definitionFile": "definitions/24246.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -14854,7 +14854,7 @@
     {
       "partId": "24299",
       "revision": "r1-curated",
-      "contentHash": "5a615d56c56d18ad26c89a0caf6a60dc6658488b562b735c28aeae5bee563187",
+      "contentHash": "5db4246d72d1fd5be4e4197f467d8a2a4bf95875e0d1d047bf270a0c01080641",
       "definitionFile": "definitions/24299.json",
       "aliases": [],
       "capabilities": {
@@ -14883,7 +14883,7 @@
     {
       "partId": "2429c01",
       "revision": "r1-curated",
-      "contentHash": "4ea033ba2dd4fed7afcb7a86f1f7e520c6b6c28ce75e4aa5d848474a001fc643",
+      "contentHash": "c875fb352e208d02ffc29a1cb7f73cc66f98a8857146bb64b8bc1867a6f650d8",
       "definitionFile": "definitions/2429c01.json",
       "aliases": [],
       "capabilities": {
@@ -14942,7 +14942,7 @@
     {
       "partId": "24307",
       "revision": "r1-curated",
-      "contentHash": "ca59c8292829b3ed3b8302447a9648d2eddd9457126d3ac8e056f85373a32f01",
+      "contentHash": "a7e6fd4be299a335a3bba545748238878807d6cf271ca56705b5c9863841348c",
       "definitionFile": "definitions/24307.json",
       "aliases": [],
       "capabilities": {
@@ -15029,14 +15029,14 @@
     {
       "partId": "24309",
       "revision": "r1-curated",
-      "contentHash": "cddcd0a1c7a5d83b4a86df5afad685802b4e0c44ea49ee00c3a138f91a097189",
+      "contentHash": "88188c17b43e39763b173c6cac1fdb6998ab023ed09416222a734d8664d48b6f",
       "definitionFile": "definitions/24309.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -15057,7 +15057,7 @@
     {
       "partId": "2431",
       "revision": "r1-curated",
-      "contentHash": "21bf94011401e58f3445977973f87cf56840e9b301d855064c9657c99dfc3598",
+      "contentHash": "8cded4b48ee23c9c9f75dad1dbf870ff7c2669e7e5fb65e93e48aac4b54961a4",
       "definitionFile": "definitions/2431.json",
       "aliases": [],
       "capabilities": {
@@ -15257,14 +15257,14 @@
     {
       "partId": "2436",
       "revision": "r1-curated",
-      "contentHash": "82255e4751f04937ff94c541cbfd45c90f4c1c7d95e56194782edfcf83a1b292",
+      "contentHash": "79bf437a72456e61d85c1af8d031f5ff228c9dec26f5420d88920a09ab9edd08",
       "definitionFile": "definitions/2436.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -15572,7 +15572,7 @@
     {
       "partId": "2444",
       "revision": "r1-curated",
-      "contentHash": "770081de887a64e548c4fc803303dac079c0cd3287849414f68b573c7c3af183",
+      "contentHash": "704d191324717035fb1bdd341f60e9e9a93ce8cb36135b7c16114e33fcd10753",
       "definitionFile": "definitions/2444.json",
       "aliases": [],
       "capabilities": {
@@ -15630,7 +15630,7 @@
     {
       "partId": "2445",
       "revision": "r1-curated",
-      "contentHash": "a745324d40d0e3b00d2b9974fcfa064304850cfeb10ad1f7f8debbba5d8f7a25",
+      "contentHash": "f6ac022791cce8b0ba102cee4848ce8d84e50b56734fe0309c16318e68ad22a5",
       "definitionFile": "definitions/2445.json",
       "aliases": [],
       "capabilities": {
@@ -15803,7 +15803,7 @@
     {
       "partId": "2453",
       "revision": "r1-curated",
-      "contentHash": "6fedb8f03dce32849d28c40201920b49919f0410aedb3ed4293747248f7d26eb",
+      "contentHash": "0529ecfb2b05c9372dd6a2f95308a10429cb4b67b0837111924d6ff90eb57ae8",
       "definitionFile": "definitions/2453.json",
       "aliases": [],
       "capabilities": {
@@ -15890,7 +15890,7 @@
     {
       "partId": "2454",
       "revision": "r1-curated",
-      "contentHash": "011876947aa88dbcbf557e5707cc9c047ce2e075ac46eb3473e62bb739784eb1",
+      "contentHash": "bdceb334366cc19bef10afcb45abd4bedfb53498eb022ac3e67b058a5478035f",
       "definitionFile": "definitions/2454.json",
       "aliases": [],
       "capabilities": {
@@ -15977,7 +15977,7 @@
     {
       "partId": "2456",
       "revision": "r1-curated",
-      "contentHash": "265110b062a0ea52b9d819dde21ec6235914365a746ca2475b13bbca0ea89175",
+      "contentHash": "ed1bac055968f1fece746666cedec2be309069f1819f7f6687c42a3970a19b6a",
       "definitionFile": "definitions/2456.json",
       "aliases": [],
       "capabilities": {
@@ -17531,14 +17531,14 @@
     {
       "partId": "25269",
       "revision": "r1-curated",
-      "contentHash": "fe76f344393b5356645ea2908897f68d6cdcf2b6591fa1bd64ea4d0d412d4f20",
+      "contentHash": "6e9a1833305f384a14f005cf25f226378ada804d355346ae0923c073926fe99f",
       "definitionFile": "definitions/25269.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -17785,7 +17785,7 @@
     {
       "partId": "2540",
       "revision": "r1-curated",
-      "contentHash": "7ab6ea4fe8eb03c7d4563988f4c2b95c2cff9ce0fc232486fb2a84d20bd9001d",
+      "contentHash": "1dd168983b334ea4670dd0e0799d6b097981e6ae8aa85337f449ded19da2dcd0",
       "definitionFile": "definitions/2540.json",
       "aliases": [],
       "capabilities": {
@@ -18751,7 +18751,7 @@
     {
       "partId": "26047",
       "revision": "r1-curated",
-      "contentHash": "ac149bc0a8948ec32b671ba7283a4526af53b63b4ed46f12ed750a3bc4e1c8bc",
+      "contentHash": "e72cf8596c38312003fd9cbee8c10b9833c2d6e7856a47fa1165258452de1da5",
       "definitionFile": "definitions/26047.json",
       "aliases": [],
       "capabilities": {
@@ -20060,7 +20060,7 @@
     {
       "partId": "2654",
       "revision": "r1-curated",
-      "contentHash": "31db034ab903cbd841aff140eb0b53efedfb1157d69a57629dcaae09f327a8a4",
+      "contentHash": "f3d171105af38c50466f4d3edd974fabfdfaeb2aaaf3db2c92b1e5b4c7cc4b09",
       "definitionFile": "definitions/2654.json",
       "aliases": [],
       "capabilities": {
@@ -20408,7 +20408,7 @@
     {
       "partId": "26603",
       "revision": "r1-curated",
-      "contentHash": "a34c65c8c7c4754dc05e279e35692587ce6e2be7a13a71c364e2055e89b2a4a1",
+      "contentHash": "b803bbc6e5298aca712b0aa06ef899594116b24fb3a1231fdc4c962934dfd3fd",
       "definitionFile": "definitions/26603.json",
       "aliases": [],
       "capabilities": {
@@ -20436,7 +20436,7 @@
     {
       "partId": "26604",
       "revision": "r1-curated",
-      "contentHash": "c6c882afd26017234e62ab7424079756d87a6b221015cfe9f289c2382937bae6",
+      "contentHash": "db9c097550e552f8fb8f0a44ec8a1437849b0359ca67998a87200cea268f3848",
       "definitionFile": "definitions/26604.json",
       "aliases": [],
       "capabilities": {
@@ -22205,14 +22205,14 @@
     {
       "partId": "2780",
       "revision": "r1-curated",
-      "contentHash": "d8a30fd27b7b2a01463d3ef968aa68f1fd8760625e65f3db3519bc244ff54570",
+      "contentHash": "99101de9d782f2d1d383da80483d1f1a22431865a88298c883c25b9228eb6d74",
       "definitionFile": "definitions/2780.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -24001,7 +24001,7 @@
     {
       "partId": "2877",
       "revision": "r1-curated",
-      "contentHash": "795ea0863167f930a43eb1d17e750cd884555176848c35c55cd3b023ab3e0a52",
+      "contentHash": "4e81ce00e33655c9b02d44e05afcb3e747768672f7d3c77ddc1f57302b0b2344",
       "definitionFile": "definitions/2877.json",
       "aliases": [],
       "capabilities": {
@@ -24088,14 +24088,14 @@
     {
       "partId": "28802",
       "revision": "r1-curated",
-      "contentHash": "78c636b6fa5fdd313743f2ed00d9f0e65b06f1dff2ce8480ad5dc355c4e99a06",
+      "contentHash": "bdce603670f5fb3bf6e52bac02c7881f9f9a68818b2d4c8db19c6d63ccdd6798",
       "definitionFile": "definitions/28802.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -24870,14 +24870,14 @@
     {
       "partId": "29119",
       "revision": "r1-curated",
-      "contentHash": "d5c896a1e8dfbb6763bf29a1007af9b4e2a49065c124d4360a8cb020d33e97f6",
+      "contentHash": "bf9b9893f5ac1fca9f5f4801aead5d05fda5b2f25e2df7a52adc44c162d1a5c9",
       "definitionFile": "definitions/29119.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -24898,14 +24898,14 @@
     {
       "partId": "29120",
       "revision": "r1-curated",
-      "contentHash": "30e897c241a8743a088c1e2b7401f1a67de9220d0692fd2fadcf9855a9beaa18",
+      "contentHash": "8ffa2d62e00054b44ea31be586cb1ec409137779db4e018e957910a405c70c39",
       "definitionFile": "definitions/29120.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -25942,7 +25942,7 @@
     {
       "partId": "3001",
       "revision": "r1-curated",
-      "contentHash": "1691f752911b927f8f8b1f6f8eaf94d8b5e852ee009e5c3b8acb9a17a5d10b8e",
+      "contentHash": "8cd2763b1027d6154c48bdff2ffdee62bc654f95386a7d3bb51674517e5bb298",
       "definitionFile": "definitions/3001.json",
       "aliases": [],
       "capabilities": {
@@ -26058,7 +26058,7 @@
     {
       "partId": "3002",
       "revision": "r1-curated",
-      "contentHash": "a689360baf79af28c0030f13d36a72e7410b6ae78accab572ea079ff18fb6db4",
+      "contentHash": "8663f1f96b78227c403cefbdb79f99c7ec4ce9ced4e1c2e01f724ef7dcfe32fd",
       "definitionFile": "definitions/3002.json",
       "aliases": [],
       "capabilities": {
@@ -26289,7 +26289,7 @@
     {
       "partId": "3003",
       "revision": "r1-curated",
-      "contentHash": "4ae9407823d2b9c4fb9dacec5cf05fb10bd87b83585b331648a1dc8b016ca7fa",
+      "contentHash": "79981fb4b7a60406865eb7ccfb78e7ecde95d1a07a5869c555dd253f9f8ef8f6",
       "definitionFile": "definitions/3003.json",
       "aliases": [],
       "capabilities": {
@@ -26464,7 +26464,7 @@
     {
       "partId": "3004",
       "revision": "r1-curated",
-      "contentHash": "09f6a9f339801bfb68a2215572379bca80a87f4dedb0f07cfa3b528d481abb51",
+      "contentHash": "c5632a4c22c99887a8be316cc956d0035d4b958aeaec62ba9ad5411d7ecb327a",
       "definitionFile": "definitions/3004.json",
       "aliases": [],
       "capabilities": {
@@ -26694,7 +26694,7 @@
     {
       "partId": "3005",
       "revision": "r1-curated",
-      "contentHash": "ad98cce7b78a386c632915adeed6d533ee4d13085cd885f95d20241d7b2147b7",
+      "contentHash": "a1767d6429b04abae0a97101abeb1665ef1ea5535f5f8507ed83813cb3e3e519",
       "definitionFile": "definitions/3005.json",
       "aliases": [],
       "capabilities": {
@@ -26781,7 +26781,7 @@
     {
       "partId": "3006",
       "revision": "r1-curated",
-      "contentHash": "470c90c2421a5185ad4ddfe1b51f22a15ce9b964945fbc8f5bea53a770cb855f",
+      "contentHash": "ffe2082c95782f3358bc0e7966abcc2eb1b0150a15cda91a43d9a5a81c488a5b",
       "definitionFile": "definitions/3006.json",
       "aliases": [],
       "capabilities": {
@@ -26839,7 +26839,7 @@
     {
       "partId": "3007",
       "revision": "r1-curated",
-      "contentHash": "24ff5ebb69749507bdd1cf7092d3f58a733b995225d3bc933ee8caaa78abd1a6",
+      "contentHash": "5725bb3ccc3a38b726a2e3197196248e1aa9990f64aff58f75620f195185410e",
       "definitionFile": "definitions/3007.json",
       "aliases": [],
       "capabilities": {
@@ -27102,7 +27102,7 @@
     {
       "partId": "3008",
       "revision": "r1-curated",
-      "contentHash": "8ccadc7736f88d3bbfc4e1cde9d0bfc30c17646ff145190c7797dc60cb1b480f",
+      "contentHash": "fa906836fb71e62fa6678cb8fb1bb2e59508ac0a0243224412c3b44f1b22668f",
       "definitionFile": "definitions/3008.json",
       "aliases": [],
       "capabilities": {
@@ -27241,7 +27241,7 @@
     {
       "partId": "3009",
       "revision": "r1-curated",
-      "contentHash": "18d70f6f8dbe6a20eace0122da471aeb6f53605cdd3a7f3d295e840174c60f73",
+      "contentHash": "1691642d64cd49d0273e32a2e50ab1e1e0b6936bfba1819016335dac90b49175",
       "definitionFile": "definitions/3009.json",
       "aliases": [],
       "capabilities": {
@@ -27385,7 +27385,7 @@
     {
       "partId": "3010",
       "revision": "r1-curated",
-      "contentHash": "3f294bb91ada5a9e6f26731dbebc26df1c0876419246c104b712e285c8d78df9",
+      "contentHash": "235e973ec37838f378434290a96b9e13734b4055ee3748cae497c92b720a520d",
       "definitionFile": "definitions/3010.json",
       "aliases": [],
       "capabilities": {
@@ -27841,7 +27841,7 @@
     {
       "partId": "30136",
       "revision": "r1-curated",
-      "contentHash": "7f655e11130542b0226de8ece584c2425f2992bd405666f3e3248bc3aca7ee50",
+      "contentHash": "b4ca2a5f1f644c7c3f5e53da6c3f26aa57c69172420cd929da9ceed79c8daee4",
       "definitionFile": "definitions/30136.json",
       "aliases": [],
       "capabilities": {
@@ -27985,7 +27985,7 @@
     {
       "partId": "30145",
       "revision": "r1-curated",
-      "contentHash": "6c367f12bf7f9e63de9c3d8aa663255673d6f40738d9dae1b1fb5be043dbeaf6",
+      "contentHash": "8b9bf0e3fb9d1ac371ddd0a172af04971728b9d04d594e130b9e9e712e429a27",
       "definitionFile": "definitions/30145.json",
       "aliases": [],
       "capabilities": {
@@ -28958,7 +28958,7 @@
     {
       "partId": "3020",
       "revision": "r1-curated",
-      "contentHash": "70e64a24c3e79082cc44cdd8f7b2195e9e1ed490b303d2ac1e9fb6a16bc76f70",
+      "contentHash": "ac99279ef7e31b707d60c6b9a9dad11f4fd29eefb032d50bb5ab967483d6a3ae",
       "definitionFile": "definitions/3020.json",
       "aliases": [],
       "capabilities": {
@@ -29101,7 +29101,7 @@
     {
       "partId": "3021",
       "revision": "r1-curated",
-      "contentHash": "6bb63fbfbf9be62f96b828db50191e7040a6b13b9bfb067a8f99986308339c80",
+      "contentHash": "5995d867fea4a8e9c76645cabc6bef0bebf530f65ae541ceb7aeb77c54db382b",
       "definitionFile": "definitions/3021.json",
       "aliases": [],
       "capabilities": {
@@ -29387,7 +29387,7 @@
     {
       "partId": "3022",
       "revision": "r1-curated",
-      "contentHash": "7c11d08af837023667f7e01fea62f7f009c7d968808055f7d3472884c7fe8905",
+      "contentHash": "df25a94bd749da31995d205d6b2a920c51caea77c0aedc250f29c86f820eba3e",
       "definitionFile": "definitions/3022.json",
       "aliases": [],
       "capabilities": {
@@ -29502,7 +29502,7 @@
     {
       "partId": "3023",
       "revision": "r1-curated",
-      "contentHash": "8ce5424cd10631ae9e00a97a4cfc84d251e8116a3768ef540abf8bde28d3b936",
+      "contentHash": "9786c2f1d191f95d8968e175facda37dd88cc6eac43504963c9ba5bb282b92f5",
       "definitionFile": "definitions/3023.json",
       "aliases": [],
       "capabilities": {
@@ -29647,7 +29647,7 @@
     {
       "partId": "30237",
       "revision": "r1-curated",
-      "contentHash": "6aabf1eaf7fb39cc62e960f6bce6a2be5095c2077c98bc5c49bc10d6fbaa2f51",
+      "contentHash": "6eed0c4c0c6f5c4d7091402416886e04a0583d7602a679a3faefa8a2ed288a17",
       "definitionFile": "definitions/30237.json",
       "aliases": [],
       "capabilities": {
@@ -29792,7 +29792,7 @@
     {
       "partId": "3024",
       "revision": "r1-curated",
-      "contentHash": "5b9167bda72f7d536e320a5eeda25b89b0cefe61a0651165c95cca0e99c020bf",
+      "contentHash": "4600927daf0bb8b6be49a73e30a9224dfcc74d12559d577f95b7c7dfb84c2259",
       "definitionFile": "definitions/3024.json",
       "aliases": [],
       "capabilities": {
@@ -30430,7 +30430,7 @@
     {
       "partId": "3028",
       "revision": "r1-curated",
-      "contentHash": "84eb683dcbe68d5a08b5e891eedbfa794b3818eaf8e7da0cd9309fd0b35b5af6",
+      "contentHash": "30a6978dd4ff1d85e7c05078a4d3d00308a0805d4551424b0ce6dfe80b7acf28",
       "definitionFile": "definitions/3028.json",
       "aliases": [],
       "capabilities": {
@@ -30803,7 +30803,7 @@
     {
       "partId": "3030",
       "revision": "r1-curated",
-      "contentHash": "f2576fdf4e56e0ce4d367ad866c5405c53b826cc7392a16c163978edb9c480bb",
+      "contentHash": "884ddb2ca90e71d5c2dc0ce224f2d6a0bfff24d0cbf247f58373e2d39fc3fba2",
       "definitionFile": "definitions/3030.json",
       "aliases": [],
       "capabilities": {
@@ -30890,7 +30890,7 @@
     {
       "partId": "3031",
       "revision": "r1-curated",
-      "contentHash": "5eda43db3541efefc452dcc43c9c78ff8933ff42483e5f720c069b6eeb8babf3",
+      "contentHash": "1938be85d348883c14b0f4e1db036d4b32b0ce80fe66dd93731a2f01fa18b748",
       "definitionFile": "definitions/3031.json",
       "aliases": [],
       "capabilities": {
@@ -30919,7 +30919,7 @@
     {
       "partId": "3032",
       "revision": "r1-curated",
-      "contentHash": "d50c20537d2352f7385e12afdd56a02792d493eae284d830787e984ebd38e5fb",
+      "contentHash": "acd96a8a151b745959ef8a4594198425593fbe864142e1e77ed15e1796e1242a",
       "definitionFile": "definitions/3032.json",
       "aliases": [],
       "capabilities": {
@@ -31032,7 +31032,7 @@
     {
       "partId": "3033",
       "revision": "r1-curated",
-      "contentHash": "117988dff4e98dac14b7d0a9d8898ae92d823b2944d954f47b75336df85bf95d",
+      "contentHash": "854a0dd5f9d2f61e4387e30f01c26271d163323cd0560596beb0306a53940221",
       "definitionFile": "definitions/3033.json",
       "aliases": [],
       "capabilities": {
@@ -31142,7 +31142,7 @@
     {
       "partId": "3034",
       "revision": "r1-curated",
-      "contentHash": "77f185757b64a9b581e1334f1ac3ac4eb059df8c79a0ceafa6540f1ff836ea65",
+      "contentHash": "98282183edde248e1622e10372bf756e18a646a564822476c64c8928a5cd8be2",
       "definitionFile": "definitions/3034.json",
       "aliases": [],
       "capabilities": {
@@ -31200,7 +31200,7 @@
     {
       "partId": "3035",
       "revision": "r1-curated",
-      "contentHash": "ea3e93bcc554d6970f9205b6aea0f361325ed45ea391029924980db1ad44709b",
+      "contentHash": "6efc9254bec70d199d2caf1a9f95480c92c2163a9c5d8067d8ca04afacb78c6f",
       "definitionFile": "definitions/3035.json",
       "aliases": [],
       "capabilities": {
@@ -31489,7 +31489,7 @@
     {
       "partId": "3036",
       "revision": "r1-curated",
-      "contentHash": "31a471b1df434463e5b2efc1471a9f25e449f17a27562f9bb4216723be49a657",
+      "contentHash": "7df4074048ff36eafd4c214543491ebb632df5cc5de108b43adb56d5bb723337",
       "definitionFile": "definitions/3036.json",
       "aliases": [],
       "capabilities": {
@@ -31808,7 +31808,7 @@
     {
       "partId": "3037",
       "revision": "r1-curated",
-      "contentHash": "7336bf32678e282057b4ccdfd59166e731ff9146e5394e223e44cdff5e40f1a6",
+      "contentHash": "3c5a6349e3ff1113014b06bcacb57ac9658ca08c48529c6dc4e00323052effae",
       "definitionFile": "definitions/3037.json",
       "aliases": [],
       "capabilities": {
@@ -31895,7 +31895,7 @@
     {
       "partId": "30374",
       "revision": "r1-curated",
-      "contentHash": "64374bb3c45b86e45782087bc8cf5aca5ec184c935e3350b3e23ff481dc10194",
+      "contentHash": "2b9210fef6432be4a08b0ad30c343237794bd80ebc6f3a2df9a4f56cd9d45664",
       "definitionFile": "definitions/30374.json",
       "aliases": [],
       "capabilities": {
@@ -31923,7 +31923,7 @@
     {
       "partId": "3038",
       "revision": "r1-curated",
-      "contentHash": "8303792bad00ff45e070cb7589a850a8ab2f9477ae89c23931ccf1593161f57f",
+      "contentHash": "dbe0c6b23602cf27128487ddfda15a822b88d051d1184636d7a1f473c8cfde3d",
       "definitionFile": "definitions/3038.json",
       "aliases": [],
       "capabilities": {
@@ -32239,7 +32239,7 @@
     {
       "partId": "3039",
       "revision": "r1-curated",
-      "contentHash": "edcff1f4ec0ffe88d6e09bca039ee1a27671a7724f3bf280b7d478e0abb086e8",
+      "contentHash": "4e45ad3bf33934fe5e59b503c8864b3a9c84b4ad10e290c92e2b38a93f9a7883",
       "definitionFile": "definitions/3039.json",
       "aliases": [],
       "capabilities": {
@@ -32638,7 +32638,7 @@
     {
       "partId": "3040b",
       "revision": "r1-curated",
-      "contentHash": "2895811629426a75652d9c2d124e77c215c12a8f57af020f03fd55785eed64da",
+      "contentHash": "4a7adfcbde2d480cb394055d52fafb815cc4d3d02c32ee9fa307f9740ed7d19f",
       "definitionFile": "definitions/3040b.json",
       "aliases": [],
       "capabilities": {
@@ -32667,7 +32667,7 @@
     {
       "partId": "3041",
       "revision": "r1-curated",
-      "contentHash": "d03bcdc626112c719c29079c4ee7878e8114a70f8046d85f7271b9578b1367d3",
+      "contentHash": "ec530f793767086c55ee6cd0d6098cce2264874182051ff44f80dae224167667",
       "definitionFile": "definitions/3041.json",
       "aliases": [],
       "capabilities": {
@@ -32723,7 +32723,7 @@
     {
       "partId": "30414",
       "revision": "r1-curated",
-      "contentHash": "a7d2ed7da3f2a1deabe9607385569c68be79bbd9808ebc344e524504c17e012d",
+      "contentHash": "2aea5a93518bcb3b579dd1bcacc2ca7d676e6c818e9aa8e97226b650da73ef71",
       "definitionFile": "definitions/30414.json",
       "aliases": [],
       "capabilities": {
@@ -32780,7 +32780,7 @@
     {
       "partId": "3043",
       "revision": "r1-curated",
-      "contentHash": "b6ee28466701412f8cb24b247d5964febda231684f1415d2eb518b22e250f4d5",
+      "contentHash": "fa473d8ad22bb13f0d84e71e9c51a27b07ae106d376d158f41ec53ae26b641ca",
       "definitionFile": "definitions/3043.json",
       "aliases": [],
       "capabilities": {
@@ -34561,7 +34561,7 @@
     {
       "partId": "3062b",
       "revision": "r1-curated",
-      "contentHash": "25100db1a2b00e6e294a0e4c5b0ddd8f2bcc9902a8d619e43cb054ba030e1f73",
+      "contentHash": "428d7aba594cdac78c267fbfac6151309da05126b8a2cb7dfe72ae4e188bea0c",
       "definitionFile": "definitions/3062b.json",
       "aliases": [],
       "capabilities": {
@@ -35050,7 +35050,7 @@
     {
       "partId": "3065",
       "revision": "r1-curated",
-      "contentHash": "df0a156cbb58410412ec4d00bb67e3aa9070919f42bf0b70cf7e93db52473f78",
+      "contentHash": "ed58ad8412ef28fbd98dfcd0a16bd0f614a9da0df3227ca529fbf41e2e8e003d",
       "definitionFile": "definitions/3065.json",
       "aliases": [],
       "capabilities": {
@@ -35277,7 +35277,7 @@
     {
       "partId": "3068b",
       "revision": "r1-curated",
-      "contentHash": "95f3bbbcbd9ab103468b356ef8f9bcf81eddd986d933eedfe8dc9b31a3392ebb",
+      "contentHash": "4c1a63ac192eab153f849280893ac40cb761280ea768623d9b54f29a21db7815",
       "definitionFile": "definitions/3068b.json",
       "aliases": [],
       "capabilities": {
@@ -35361,7 +35361,7 @@
     {
       "partId": "3069b",
       "revision": "r1-curated",
-      "contentHash": "1d0da6868e0835165d90f6aed0d3d5c9536f91b7e0083e831a64725267d2eaaf",
+      "contentHash": "846681a9c1cd87ebd74dd0437d2d76d1580f2a273deec26c16b30f8ac70b6de4",
       "definitionFile": "definitions/3069b.json",
       "aliases": [],
       "capabilities": {
@@ -35417,7 +35417,7 @@
     {
       "partId": "3070b",
       "revision": "r1-curated",
-      "contentHash": "75909525620c49888dabd7f00ac4e0b089f67fff724f461e4ac6a2dbc1f24bff",
+      "contentHash": "942b94ab3e50fe5c36c2637d6238e67f736a0fcd1e6ed0812dbabc788d4258e2",
       "definitionFile": "definitions/3070b.json",
       "aliases": [],
       "capabilities": {
@@ -36277,7 +36277,7 @@
     {
       "partId": "3176",
       "revision": "r1-curated",
-      "contentHash": "ab781df7eefdbb91417203122e2706c671a0e0fec609134b5f81c048858ac7f8",
+      "contentHash": "3e045b6759af0ad82ed8815e26c5af1bed7fc2f32576d988d811f0a7e853331f",
       "definitionFile": "definitions/3176.json",
       "aliases": [],
       "capabilities": {
@@ -36768,7 +36768,7 @@
     {
       "partId": "32000",
       "revision": "r1-curated",
-      "contentHash": "7b0a969e45af1950bb553435c146d3909c026623a521aed6ee76b05de7d65c1c",
+      "contentHash": "a5cac9ed620c51842c5003b99201a977f8028eec3378e5e7b79a7826307d3d1e",
       "definitionFile": "definitions/32000.json",
       "aliases": [],
       "capabilities": {
@@ -37447,14 +37447,14 @@
     {
       "partId": "32054",
       "revision": "r1-curated",
-      "contentHash": "3047d01bb09a112f2802a1ac3b7553af4f87213c97438e91171b4337e1e58b53",
+      "contentHash": "c64370fd3c02320a74290798ee2bccd3cae047ecd2b9864dc097c82ab5e6f536",
       "definitionFile": "definitions/32054.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -37645,14 +37645,14 @@
     {
       "partId": "32064",
       "revision": "r1-curated",
-      "contentHash": "f400f9385a1c022f6f47453a50d3623576601b6505a2dc6111090862b0525380",
+      "contentHash": "ce9c488adf76aadf1bcc7dcb438da139431c5c46a5dddf13d58fa6b996215f5d",
       "definitionFile": "definitions/32064.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -42063,14 +42063,14 @@
     {
       "partId": "32952",
       "revision": "r1-curated",
-      "contentHash": "d8bbc4c8ca73c29f137710b7dcba9a84f230309e9ad2b156e577736e9f3148f4",
+      "contentHash": "bace75936cb6e14009a5f7ba6444169e94124ef67cb9f2df67bc8b4c23c98c6c",
       "definitionFile": "definitions/32952.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -42092,7 +42092,7 @@
     {
       "partId": "3297",
       "revision": "r1-curated",
-      "contentHash": "8102395f62ec19eeffe16884b9398a53f38ac0e8cb7a71d02c728edcdfa8f5ee",
+      "contentHash": "ab0706e632b805df124f4c8a1b88596c801b9fd98caf3dcbf684bf0120103480",
       "definitionFile": "definitions/3297.json",
       "aliases": [],
       "capabilities": {
@@ -42121,7 +42121,7 @@
     {
       "partId": "3298",
       "revision": "r1-curated",
-      "contentHash": "ffe5aecff964fd03e210fc9b3d0a2c683ba3546d55610566194cc48fbb268a91",
+      "contentHash": "bbfa53e310e056d97e6b80a6968c05500161ec2f556ec6315906d50e00283b75",
       "definitionFile": "definitions/3298.json",
       "aliases": [],
       "capabilities": {
@@ -42234,7 +42234,7 @@
     {
       "partId": "3307",
       "revision": "r1-curated",
-      "contentHash": "212ab92c404dbeccd95af3d61aa3c08f412695697e73c245b3809568e6756a59",
+      "contentHash": "5eda865ebd7d41530c75ce07f277d614e35675e603b6e863fe2008becae883b8",
       "definitionFile": "definitions/3307.json",
       "aliases": [],
       "capabilities": {
@@ -43619,7 +43619,7 @@
     {
       "partId": "34103",
       "revision": "r1-curated",
-      "contentHash": "b60428b1679a42567eb897a0498a278b4abc740a1760f1d5387d5ba058751628",
+      "contentHash": "149b0e5b92ea26f0bca3e2ec52c9dd5f03b11b3cceb20cac552e62ada84d26ad",
       "definitionFile": "definitions/34103.json",
       "aliases": [],
       "capabilities": {
@@ -43872,7 +43872,7 @@
     {
       "partId": "3460",
       "revision": "r1-curated",
-      "contentHash": "749fcd3849402dbd997c97ada0d7d8185d8a42f112bfe79532a1fcd11bafdf7a",
+      "contentHash": "3c90c98c3623d6d46e0a36df600c788c89a24a411217f4a317b7d3e753d58941",
       "definitionFile": "definitions/3460.json",
       "aliases": [],
       "capabilities": {
@@ -46780,7 +46780,7 @@
     {
       "partId": "3622",
       "revision": "r1-curated",
-      "contentHash": "2073cf8173bc547423de4488e3715cae593eb24109953918c803fd3c6cecf6b5",
+      "contentHash": "160fd27a810ab9407da067c1d8ee94bd72ab82c9d12046af799a984672a490d8",
       "definitionFile": "definitions/3622.json",
       "aliases": [],
       "capabilities": {
@@ -46809,7 +46809,7 @@
     {
       "partId": "3623",
       "revision": "r1-curated",
-      "contentHash": "0960a54d6f8107e72c3332fdf3985573c03dee951c2299d3a827751a0ee13e25",
+      "contentHash": "16c6a00381d88c71892d23a9aae9d9f09b9e7656b8dcd2fc02f386da23fc4762",
       "definitionFile": "definitions/3623.json",
       "aliases": [],
       "capabilities": {
@@ -46897,7 +46897,7 @@
     {
       "partId": "3633",
       "revision": "r1-curated",
-      "contentHash": "0772588a5b71d2c017d65f1e8ef6fd3cdc0a26541c00b803bbbf7ebf70fdaada",
+      "contentHash": "e95c408413a6e8df38e50d8e48b627e91afa517b49dbe1754422d305494a29ca",
       "definitionFile": "definitions/3633.json",
       "aliases": [],
       "capabilities": {
@@ -47374,7 +47374,7 @@
     {
       "partId": "3659",
       "revision": "r1-curated",
-      "contentHash": "e39828768d9ca03ef2c271e6c8929a03ae0d5eb99c2daf50eacc3a66d74db8ea",
+      "contentHash": "d1ac0aeb186cbd11ec2b2915dcb6d87df843faad8d95a0252a6e208414d8bbcd",
       "definitionFile": "definitions/3659.json",
       "aliases": [],
       "capabilities": {
@@ -47403,7 +47403,7 @@
     {
       "partId": "3660",
       "revision": "r1-curated",
-      "contentHash": "b381fd5fedf405cc6e79a3ac94a23ca34d9006b7eda289b4bf303630aaecbc42",
+      "contentHash": "f7335edbcae90100ab2a57d3c74fa2b96ded64870ce7a70abaede8aa07238360",
       "definitionFile": "definitions/3660.json",
       "aliases": [],
       "capabilities": {
@@ -47490,7 +47490,7 @@
     {
       "partId": "3665",
       "revision": "r1-curated",
-      "contentHash": "83ab41bf67784dd3313f126d26e94a57ccd95056e28656c8933804099ae3ffcd",
+      "contentHash": "61e9d56afecf8fd249bab8c8a7ffa7e41cdf4bf50bde4dde35950924b17a024f",
       "definitionFile": "definitions/3665.json",
       "aliases": [],
       "capabilities": {
@@ -47577,7 +47577,7 @@
     {
       "partId": "3666",
       "revision": "r1-curated",
-      "contentHash": "16b5b947d529582834223ee1a6bb9a1d60e12a4f2f8610379050877bd2c152e3",
+      "contentHash": "7a9939c9ee7968b51d309dc904429e239e69a137a12f6633c723a96cc6140fec",
       "definitionFile": "definitions/3666.json",
       "aliases": [],
       "capabilities": {
@@ -47806,7 +47806,7 @@
     {
       "partId": "3678b",
       "revision": "r1-curated",
-      "contentHash": "aa73980c4b7246dbe593ebc160170c0326e1708ba1c90cbef31daeefb90a42e1",
+      "contentHash": "5ccc748d06e87805239ff183cbffc4cda9da8f0cf69fd375bb28fec6c0e632d9",
       "definitionFile": "definitions/3678b.json",
       "aliases": [],
       "capabilities": {
@@ -47892,7 +47892,7 @@
     {
       "partId": "36840",
       "revision": "r1-curated",
-      "contentHash": "0e026aa6a40926d0f021bab7627a49f33a1ce1a59ce8c93c4395198123c6a64d",
+      "contentHash": "7e8a124ae0ad5ee9296154dda721552c40d2f824df484249d2fb1a38fbda7346",
       "definitionFile": "definitions/36840.json",
       "aliases": [],
       "capabilities": {
@@ -47921,7 +47921,7 @@
     {
       "partId": "36841",
       "revision": "r1-curated",
-      "contentHash": "b77ff42a8cc47031ac1567621d760312d9fd3b46ce1d451a898ec089605384e3",
+      "contentHash": "a8d60653dfdbd1be3381987c4ea7f74e402d9f40a34d47bd1aab6f4505f7b774",
       "definitionFile": "definitions/36841.json",
       "aliases": [],
       "capabilities": {
@@ -47979,7 +47979,7 @@
     {
       "partId": "3684c",
       "revision": "r1-curated",
-      "contentHash": "26db4dc370ee114fd29dd1eb0b28d19af5f432112a5a11f3d076a7a928c92ac9",
+      "contentHash": "34bdf085c61db78b91ee8e9f1e5b8dbeaa22630af3f91a30a3415afe57672f6c",
       "definitionFile": "definitions/3684c.json",
       "aliases": [],
       "capabilities": {
@@ -48096,7 +48096,7 @@
     {
       "partId": "3700",
       "revision": "r1-curated",
-      "contentHash": "a9b70ea31f34271ec9bda1442461af9a8d2b19507b72d8b79a40f288530e14e9",
+      "contentHash": "e68bf1fe7220457d1754c4871a6ef7643b0772a390b4d8a4c0a0cbc0b21d829d",
       "definitionFile": "definitions/3700.json",
       "aliases": [],
       "capabilities": {
@@ -48126,7 +48126,7 @@
     {
       "partId": "3701",
       "revision": "r1-curated",
-      "contentHash": "261f021416543c38c0100c36f71c5b5006fa2e21afe633a8032689f7ab854657",
+      "contentHash": "6ec37193e9dd9b78677c8bbf9a95af4276ec4b8448a8e0b8ff356ca81c5889ca",
       "definitionFile": "definitions/3701.json",
       "aliases": [],
       "capabilities": {
@@ -48156,14 +48156,14 @@
     {
       "partId": "3702",
       "revision": "r1-curated",
-      "contentHash": "23bd4d8b34931c2f54a87ebbd42ae1bdc0bb7e6bdd328280db5dad7a168596f6",
+      "contentHash": "24d6f05d95470c77723215daca5de48e0d95941384ba7995db4cf6eb3cc74769",
       "definitionFile": "definitions/3702.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -48242,14 +48242,14 @@
     {
       "partId": "3705",
       "revision": "r1-curated",
-      "contentHash": "b8357b80f49378d4ebdbd5ad134513e83da74f5c2ed8b5e14c348034977e3dfb",
+      "contentHash": "b0b4257358df0a73438381ea6ecdb7ca7cb41474a56ec163ddc9bcf35e86d342",
       "definitionFile": "definitions/3705.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -48270,14 +48270,14 @@
     {
       "partId": "3706",
       "revision": "r1-curated",
-      "contentHash": "c111709a6bc6b3d032fe1ea473cb6d7ff18f52231fa30f0f20ba8b9181374d20",
+      "contentHash": "a5c8530d0c946f7ae3a8b618b158dfb39f9027ea4cd2b3b43a53c93ed713eaf5",
       "definitionFile": "definitions/3706.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -48437,7 +48437,7 @@
     {
       "partId": "3710",
       "revision": "r1-curated",
-      "contentHash": "23255fd22eb10bae970325429b1a687e6c68e98b98ba9fdc40f2ec640d758900",
+      "contentHash": "595a2f28189402b6e4be218c55a8169a500eafb8da01925e7446a50e335d02a1",
       "definitionFile": "definitions/3710.json",
       "aliases": [],
       "capabilities": {
@@ -48748,14 +48748,14 @@
     {
       "partId": "37352",
       "revision": "r1-curated",
-      "contentHash": "3612af3535ef8e06f40043c24d2f7263ae06fd5feae9b683de0a10690d1916bc",
+      "contentHash": "ac008e995446c06bc7976db2a59dce06c539b4b94c8ae485cfdcc8da524995ea",
       "definitionFile": "definitions/37352.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -49250,14 +49250,14 @@
     {
       "partId": "3749",
       "revision": "r1-curated",
-      "contentHash": "3b3ce0817a11c6388711df38e77a4415f859854c548e087ae2d74fe44f45b584",
+      "contentHash": "a0d2d85a3aa6596bf0794a8ce9f10ce5df492a4e51b434fb1006b30566758459",
       "definitionFile": "definitions/3749.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -49876,7 +49876,7 @@
     {
       "partId": "3794b",
       "revision": "r1-curated",
-      "contentHash": "26d57e843a2a7e311197b9064836d8c9d9bad3709749d69c0c8560f3aeddfbe2",
+      "contentHash": "8a9c32b720d178c9042c93c3268c6347c01cb58b7dd8ddc59587f63b05ed703a",
       "definitionFile": "definitions/3794b.json",
       "aliases": [],
       "capabilities": {
@@ -49905,7 +49905,7 @@
     {
       "partId": "3795",
       "revision": "r1-curated",
-      "contentHash": "ee0b5399a6c489875c34fd95709e4ce40ef492d3552a540ffdfdf600c77e5126",
+      "contentHash": "7949bd4ea9c7f38213648c199838d56bff461c855e6eb039b7297cebdd3054d7",
       "definitionFile": "definitions/3795.json",
       "aliases": [],
       "capabilities": {
@@ -50195,7 +50195,7 @@
     {
       "partId": "3832",
       "revision": "r1-curated",
-      "contentHash": "126e986d9422845174c10301ff4334bc476d4364f35bb0583db81ffa4dfbb944",
+      "contentHash": "a58f35e25063b29f6d4830c2378bb2a5ae000c63f09a2dc76df20da06c0b52d2",
       "definitionFile": "definitions/3832.json",
       "aliases": [],
       "capabilities": {
@@ -50336,7 +50336,7 @@
     {
       "partId": "3839b",
       "revision": "r1-curated",
-      "contentHash": "f902a092e6f542976b47521a87a976231a2c94d5bf02d4217ac84a2add6c292d",
+      "contentHash": "c13c44afd02f14aabcd0707fd0f3b6a0008f9fbd7cd21c80f90906e7624f0496",
       "definitionFile": "definitions/3839b.json",
       "aliases": [],
       "capabilities": {
@@ -50933,7 +50933,7 @@
     {
       "partId": "3894",
       "revision": "r1-curated",
-      "contentHash": "eb9b92f26db9e8c67aa1557cf84a050138fcb583ea6fdf93d0cdaad869eed22a",
+      "contentHash": "250088c69f982337aeba1b77065065f5947472c70180cdf893e24b3cd1670b73",
       "definitionFile": "definitions/3894.json",
       "aliases": [],
       "capabilities": {
@@ -51508,7 +51508,7 @@
     {
       "partId": "3941",
       "revision": "r1-curated",
-      "contentHash": "0372d57b44e658125735943953d98bb73473723bd2d8174ab03364249646e588",
+      "contentHash": "da9a2cb613195bfc9b79915b503c34b8c7fea3fd22a280a03c16a52e5ac3bfe9",
       "definitionFile": "definitions/3941.json",
       "aliases": [],
       "capabilities": {
@@ -51598,7 +51598,7 @@
     {
       "partId": "3942c",
       "revision": "r1-curated",
-      "contentHash": "66220aa436c5ef3917cb70f58d477696d96fadf6c9b601f4a17999a3308657d4",
+      "contentHash": "0d453bf9c81c15070a36b5ae3e0c19deb9c9404a26075e97d36cc58988728395",
       "definitionFile": "definitions/3942c.json",
       "aliases": [],
       "capabilities": {
@@ -51802,7 +51802,7 @@
     {
       "partId": "3958",
       "revision": "r1-curated",
-      "contentHash": "5fdc51738376fd2defa73d3f840919b38e6fdb003c770402e6debc57a33556eb",
+      "contentHash": "ed2e4e6d434ac02637167c815de1090f2df8a145cf1147aa9e3f16cbdc4f24ce",
       "definitionFile": "definitions/3958.json",
       "aliases": [],
       "capabilities": {
@@ -51831,7 +51831,7 @@
     {
       "partId": "3960",
       "revision": "r1-curated",
-      "contentHash": "f09b26245df826d5e5a7de33c3764d19aa4ed8a768c9d6d2c8917721c343a684",
+      "contentHash": "1e2038caf9b9477bf1c32fc844fd028fbd6f68b9240131506e8c07fe1d2b266d",
       "definitionFile": "definitions/3960.json",
       "aliases": [],
       "capabilities": {
@@ -52815,7 +52815,7 @@
     {
       "partId": "4032",
       "revision": "r1-curated",
-      "contentHash": "782871d554b08418b555aa4d0d2e27648f428358946f441b15ddd8bca96a6182",
+      "contentHash": "029c71a584003887ed5b28ff06e887a832f40d9ecea12359c25cf0634d90982e",
       "definitionFile": "definitions/4032.json",
       "aliases": [],
       "capabilities": {
@@ -53497,7 +53497,7 @@
     {
       "partId": "4070",
       "revision": "r1-curated",
-      "contentHash": "debc05d031394b4b11a2a179a5d146a1bf444aff7245c9bd46193d2e365ff7f1",
+      "contentHash": "a6534ca8a3ddd05cc01b39697e7cab101a2101e9967e75f8077d7252078170df",
       "definitionFile": "definitions/4070.json",
       "aliases": [],
       "capabilities": {
@@ -53583,7 +53583,7 @@
     {
       "partId": "4073",
       "revision": "r1-curated",
-      "contentHash": "58d94060b44173a67d957292b0144184c185bb031308f7c57f0b08a990ab285b",
+      "contentHash": "a778815e583f4ee3d4f05ce49208b1e0bf29b11d89c63b84b411d33c764c500c",
       "definitionFile": "definitions/4073.json",
       "aliases": [],
       "capabilities": {
@@ -53670,7 +53670,7 @@
     {
       "partId": "4081b",
       "revision": "r1-curated",
-      "contentHash": "bd604e396b466c4e1417223715537cf69b437808d2ed4bd191b4b457624283f2",
+      "contentHash": "31c8accd0e75d872592c5039900101b9a551b077bf84c09cb2ee01e542611d2f",
       "definitionFile": "definitions/4081b.json",
       "aliases": [],
       "capabilities": {
@@ -53875,7 +53875,7 @@
     {
       "partId": "4085d",
       "revision": "r1-curated",
-      "contentHash": "7cf33ee3c9e09c7e59682636d09119eb6c3e1c99ee5cc3a57f80ab8d5b42f608",
+      "contentHash": "7aef2654f04b71f2eeb9b36d7ee338e2b9113281d648d923d6bc8aab54b95f8a",
       "definitionFile": "definitions/4085d.json",
       "aliases": [],
       "capabilities": {
@@ -54669,7 +54669,7 @@
     {
       "partId": "4150",
       "revision": "r1-curated",
-      "contentHash": "62c075283996c9e1d93d3231ee633772743085660da0d5b0a6335c9f9a6869b7",
+      "contentHash": "98e70ef0ad51a03f7041906504704418fa5fbc73680202a177023ddf9c8e9355",
       "definitionFile": "definitions/4150.json",
       "aliases": [],
       "capabilities": {
@@ -54954,7 +54954,7 @@
     {
       "partId": "41539",
       "revision": "r1-curated",
-      "contentHash": "4d4527758b4e4545e7d99a2fe8cbc9a5fd01079ac62f4aadfa12aa960b89055b",
+      "contentHash": "501b88a459faedbf8ab9a1f5ee284449f1a01137f3ded442e512fcc7a471bc9f",
       "definitionFile": "definitions/41539.json",
       "aliases": [],
       "capabilities": {
@@ -55067,7 +55067,7 @@
     {
       "partId": "4162",
       "revision": "r1-curated",
-      "contentHash": "f2edf4ec81aae66f5857c17dc0c7c910e9b35cb0451f27f02b33a95d9e46330e",
+      "contentHash": "d15b1dc2b10d13d5ab39f9a8d1b8f92904f221302a7c1b04607307cec991ca8d",
       "definitionFile": "definitions/4162.json",
       "aliases": [],
       "capabilities": {
@@ -56126,7 +56126,7 @@
     {
       "partId": "41769",
       "revision": "r1-curated",
-      "contentHash": "4593b334334c1bff1813ba88e17e2fb55929be28b85adabe9727713a47cb0b36",
+      "contentHash": "4ecf3b4566a27e5684bb45506bc7cbb81012e8ef1b30639afb9c8bf0c3c917c1",
       "definitionFile": "definitions/41769.json",
       "aliases": [],
       "capabilities": {
@@ -56213,7 +56213,7 @@
     {
       "partId": "41770",
       "revision": "r1-curated",
-      "contentHash": "2c3ee06cd64d4f88f58882ea3ae7b9ccf72ba37801caa9edc3945fb1cbe8b4b1",
+      "contentHash": "0a454311c7693c873c0c680c82af91d3791ac1e3bf8c8b57d1618cecbb4ba96b",
       "definitionFile": "definitions/41770.json",
       "aliases": [],
       "capabilities": {
@@ -59183,7 +59183,7 @@
     {
       "partId": "4274",
       "revision": "r1-curated",
-      "contentHash": "6d3f4ceb86f1a08e743fb37d904177aef847af4a9dcd3db90ead5e235dbadbe4",
+      "contentHash": "44907fc4d84d57483f1479250c8d48588c11424a7b79edae890359a1756326d7",
       "definitionFile": "definitions/4274.json",
       "aliases": [],
       "capabilities": {
@@ -59503,7 +59503,7 @@
     {
       "partId": "4286",
       "revision": "r1-curated",
-      "contentHash": "f8e00e835f1706943d1f581f8a27c2f369efcf3b8d99ee15ec5e371593cc0cd5",
+      "contentHash": "ddaac1bebcbcc16a0690906ccb9445ab80a4eec11f7e2d863a845ddbe8c103ca",
       "definitionFile": "definitions/4286.json",
       "aliases": [],
       "capabilities": {
@@ -60117,14 +60117,14 @@
     {
       "partId": "43093",
       "revision": "r1-curated",
-      "contentHash": "07186db9391c6dda5e0332149bed5726e2891db4055994f55557666bddab88cc",
+      "contentHash": "d5d13c705c6de38d21f04403bc7a1070d891c9579d28462e181bec94d6688541",
       "definitionFile": "definitions/43093.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -60801,14 +60801,14 @@
     {
       "partId": "43719",
       "revision": "r1-curated",
-      "contentHash": "96ff9a9cd0728aa29bd9b1b299748089428ba44a9c01e0f4021c3068e16dbd8e",
+      "contentHash": "7f18950b3f55bb2c1d509804ac58adb1bd5e27380d0f2565d0ec47666482cbeb",
       "definitionFile": "definitions/43719.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -60830,14 +60830,14 @@
     {
       "partId": "43720",
       "revision": "r1-curated",
-      "contentHash": "68d8f4fe809616a56e54ba67ed0a4bb5dd6af1424ab3b663cb603686ae9a6364",
+      "contentHash": "62d31e7c3063c6ad1597fd6e7e9ba8fd965b42025c1838d264a4830ebdcd4a33",
       "definitionFile": "definitions/43720.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -60859,14 +60859,14 @@
     {
       "partId": "43721",
       "revision": "r1-curated",
-      "contentHash": "c4d1ea1aa9bc923077b26baf3737a5bfdd0e164bd6ec0774a62247bbab5b45b3",
+      "contentHash": "5d73d564cb32a6e3be20dcf526f8e52a7c79f7989e4231512c9866ca6a224ca1",
       "definitionFile": "definitions/43721.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -60888,7 +60888,7 @@
     {
       "partId": "43722",
       "revision": "r1-curated",
-      "contentHash": "2bd7dfbf886a4aa245debd4c364d76fed74693f2e7994cedfa276f1be10d7833",
+      "contentHash": "661f4ed9028b116f37364fc5f9a580fd23a5646a504b20a0addf83b072e94bff",
       "definitionFile": "definitions/43722.json",
       "aliases": [],
       "capabilities": {
@@ -60975,7 +60975,7 @@
     {
       "partId": "43723",
       "revision": "r1-curated",
-      "contentHash": "6c8ce6464f47c7a366002072a0bf143ca42a6ca57264eb1ba2236c282433d617",
+      "contentHash": "cd4aea7c25dd9f773a395ad45c53475463633fdc35f95533b452f79a4e755a20",
       "definitionFile": "definitions/43723.json",
       "aliases": [],
       "capabilities": {
@@ -61959,7 +61959,7 @@
     {
       "partId": "44301",
       "revision": "r1-curated",
-      "contentHash": "133d38959b113cea2046e47374ad99dd1bd080357f902ee1559cfea419c58ede",
+      "contentHash": "0397fbb11a380c4691867d4e5bb6fb37b9ef5ef2a9368fa1a946dc984b81bdbb",
       "definitionFile": "definitions/44301.json",
       "aliases": [],
       "capabilities": {
@@ -62047,7 +62047,7 @@
     {
       "partId": "44302",
       "revision": "r1-curated",
-      "contentHash": "20bee6609c6d529ab72aa3fdd1c2947d49d55c32cf14990777bfc94d21e5a5ff",
+      "contentHash": "1a387b3c9689d427a4e616b2021ae433094344b52f0f3d0dc022dbedb63295c1",
       "definitionFile": "definitions/44302.json",
       "aliases": [],
       "capabilities": {
@@ -62844,14 +62844,14 @@
     {
       "partId": "44567",
       "revision": "r1-curated",
-      "contentHash": "300ee5984550e394d58cf4d6f31a3b969e156f0f9ed8e32366f525171b50af61",
+      "contentHash": "aa07cce6a5732dd99fb7a45e17ac4c12255dac0aabd229c3a73511b5059c4754",
       "definitionFile": "definitions/44567.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -63471,7 +63471,7 @@
     {
       "partId": "44728",
       "revision": "r1-curated",
-      "contentHash": "41c74e8bd81d0a2e09cc3035e6ce3db7c4ac3d097d35c878c8f3db952b2683f5",
+      "contentHash": "eacf3e93ba303ed0c1e8728e90b8698751e5bd7f674917f4c776ca0d3383e181",
       "definitionFile": "definitions/44728.json",
       "aliases": [],
       "capabilities": {
@@ -63586,7 +63586,7 @@
     {
       "partId": "4477",
       "revision": "r1-curated",
-      "contentHash": "2b755b39bd818117f622c1750c36d6488c7b9a749455635b99ff53ce3711588f",
+      "contentHash": "4e55633936b5cc22e096661824fbdc53506b39cfcab2767d579bf3a9d39fbaf3",
       "definitionFile": "definitions/4477.json",
       "aliases": [],
       "capabilities": {
@@ -65879,7 +65879,7 @@
     {
       "partId": "4589b",
       "revision": "r1-curated",
-      "contentHash": "5fd51fc7a813d8bb232207128cba520cab31f2aa70f65d32fb886f50861b7810",
+      "contentHash": "e112edee826c537a859ec9ece2e4b65fde1e2bc344176eb992050d21dacd87d6",
       "definitionFile": "definitions/4589b.json",
       "aliases": [],
       "capabilities": {
@@ -68002,7 +68002,7 @@
     {
       "partId": "4733",
       "revision": "r1-curated",
-      "contentHash": "7d6810e45d5729d5c6e30db8d5104e1480a0577d537eb16f0f51aaddbb01c21e",
+      "contentHash": "8dcbde7e13c9e1303df79d30905cdefa4c5f37ba7aceb49eec2c2c4cf801f3e0",
       "definitionFile": "definitions/4733.json",
       "aliases": [],
       "capabilities": {
@@ -68432,7 +68432,7 @@
     {
       "partId": "4740",
       "revision": "r1-curated",
-      "contentHash": "9a5de47dcaa2423f7116960ea05b0b4472b26be124ae809b5d9ed8fae69bb98d",
+      "contentHash": "204a15857baf36b6b7777016a89e8aeaab09503473a2d88ef3e60695a0e8ed02",
       "definitionFile": "definitions/4740.json",
       "aliases": [],
       "capabilities": {
@@ -68894,7 +68894,7 @@
     {
       "partId": "47457",
       "revision": "r1-curated",
-      "contentHash": "b1f54f87d7b068ed96a2eb947637b207a51840f9581f1e9463e89743fec32810",
+      "contentHash": "4b5429d84b7f80ef426cdadce4a36cf0ee3a2bb21cdc96b05761f55d1a72b7a8",
       "definitionFile": "definitions/47457.json",
       "aliases": [],
       "capabilities": {
@@ -70047,7 +70047,7 @@
     {
       "partId": "47905",
       "revision": "r1-curated",
-      "contentHash": "a4da85aec0b31d79e2c7cd5159dfcb1c475b3712f026ec23f3cefcba596589a5",
+      "contentHash": "c6ec8bc1e260ca0cdab8d3d07850a79672336e385941e13e518f768f152591fe",
       "definitionFile": "definitions/47905.json",
       "aliases": [],
       "capabilities": {
@@ -71053,7 +71053,7 @@
     {
       "partId": "48336",
       "revision": "r1-curated",
-      "contentHash": "11ee87748515e8eafe188289e2c5ffd2b812de945f616c8992e0bf7c6c131cfe",
+      "contentHash": "9e5b4edf8ebe5d2235b63964a19f79e2203a3bacb07f68ebfb9fae92bf95315f",
       "definitionFile": "definitions/48336.json",
       "aliases": [],
       "capabilities": {
@@ -71597,7 +71597,7 @@
     {
       "partId": "4864b",
       "revision": "r1-curated",
-      "contentHash": "7bf5d9bd9e1965348cdeb2b9f25ae7528d5e00d17403781d3e95a94b18b3972c",
+      "contentHash": "c7e29661d33d142f9d899ac9faa4e4a730b48ee4270fde0c909744176f4d52cf",
       "definitionFile": "definitions/4864b.json",
       "aliases": [],
       "capabilities": {
@@ -71653,7 +71653,7 @@
     {
       "partId": "4865b",
       "revision": "r1-curated",
-      "contentHash": "69bc6b4fa2e89891876242d75e9781abb4e6eaa2f7b2f76fd9533d8753d76fb0",
+      "contentHash": "d98d13004d4c199e7ea7ef53742229221c8575e4da8f4ad03cf95cd5b03f777a",
       "definitionFile": "definitions/4865b.json",
       "aliases": [],
       "capabilities": {
@@ -73695,14 +73695,14 @@
     {
       "partId": "50745",
       "revision": "r1-curated",
-      "contentHash": "c2004cdb4ff8652d7b801f1b397af425814358541c328c414de584c0157688ed",
+      "contentHash": "1b4b017092042222d97a8810010738f3543e5afd088d91e9f1af0977aca1eb81",
       "definitionFile": "definitions/50745.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -77683,7 +77683,7 @@
     {
       "partId": "54200",
       "revision": "r1-curated",
-      "contentHash": "3d899c89f215b2807019b6ef6efce69b5c6229e1d992d29e1b52528091c5baae",
+      "contentHash": "8d3923c6a33fc9d189b7517107dcf013f977de05eaadc2094374fcd46d26dd8e",
       "definitionFile": "definitions/54200.json",
       "aliases": [],
       "capabilities": {
@@ -77854,7 +77854,7 @@
     {
       "partId": "54383",
       "revision": "r1-curated",
-      "contentHash": "b551d08be39c3091de57c3af835694dc2c7c76c9df7aaf36ab6ad72e0efbb693",
+      "contentHash": "3ff94733ff10db64fbfc03fd505020b355f3a4e5cf53e7a964fcf0a61dcef6bc",
       "definitionFile": "definitions/54383.json",
       "aliases": [],
       "capabilities": {
@@ -77883,7 +77883,7 @@
     {
       "partId": "54384",
       "revision": "r1-curated",
-      "contentHash": "fc9dd0fb13c2d6905f7d049cbddbe5018190598e2e3d9447bd32709ee6c2d679",
+      "contentHash": "a7bf3864c78d71a273c8bd58eb3251f9ac12d69a6480f23ed8bccd6a1084c3c5",
       "definitionFile": "definitions/54384.json",
       "aliases": [],
       "capabilities": {
@@ -78394,7 +78394,7 @@
     {
       "partId": "553b",
       "revision": "r1-curated",
-      "contentHash": "f76b93cbe8ddbcab8cfe17cb22d00a9d8c0d2722485874d8a7286b41b491874b",
+      "contentHash": "e474955e51224480b4a0282ee742c15c564131ef5448e9800faac886ca210163",
       "definitionFile": "definitions/553b.json",
       "aliases": [],
       "capabilities": {
@@ -81775,14 +81775,14 @@
     {
       "partId": "6014",
       "revision": "r1-curated",
-      "contentHash": "a65ee4fee703c7a6058d79cd5d89f04ff95cd7e9c507dba591121387f0e9b1cf",
+      "contentHash": "a49e945163a6b71d95ec78ab4b47f297af28def833c2400b82906493a7caf9c1",
       "definitionFile": "definitions/6014.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -82692,7 +82692,7 @@
     {
       "partId": "60470",
       "revision": "r1-curated",
-      "contentHash": "cdbbcc280abe180c72bab4bc5671528944476496d4b77ffc11e809c6c3aa5232",
+      "contentHash": "5042c6699ad08d4f69bf86fa2fd5b25f0a8784c88d085381cce48a16d89cfb93",
       "definitionFile": "definitions/60470.json",
       "aliases": [],
       "capabilities": {
@@ -82930,14 +82930,14 @@
     {
       "partId": "60477",
       "revision": "r1-curated",
-      "contentHash": "7f25ea9941e94ebf6f56aba828797ed1edde891860e6ee6f0c62a24a514bf11a",
+      "contentHash": "4b33c73ddbbde2a7faa6a77e475cb211297f0941802d99edebb5bf3b724cd94d",
       "definitionFile": "definitions/60477.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -82959,7 +82959,7 @@
     {
       "partId": "60478",
       "revision": "r1-curated",
-      "contentHash": "9cbe6fd72d7119d2a92452079388aabda8e7fbc6918d7031a6d11dd11131fe0b",
+      "contentHash": "7c43f0f03f44623b390905afb002c13c3cbdd371229c4416c54574325063e4c1",
       "definitionFile": "definitions/60478.json",
       "aliases": [],
       "capabilities": {
@@ -82989,7 +82989,7 @@
     {
       "partId": "60479",
       "revision": "r1-curated",
-      "contentHash": "52782a2f6680399546eef8a68a22dc326f584e4d9799ce23ba056c3727f68bf9",
+      "contentHash": "45a704bb817e1d61588a8d62bab4805bcea234eb32953867ca539db226394446",
       "definitionFile": "definitions/60479.json",
       "aliases": [],
       "capabilities": {
@@ -83047,7 +83047,7 @@
     {
       "partId": "60481",
       "revision": "r1-curated",
-      "contentHash": "33540f8844f519425d3c6027f9fb630c24eef7306f1f1ea1814b6fdda857cc6c",
+      "contentHash": "1244e5142c4ff27f7b11feae66e3a37b62d9104b15178937d5542aaf73caf51e",
       "definitionFile": "definitions/60481.json",
       "aliases": [],
       "capabilities": {
@@ -83479,7 +83479,7 @@
     {
       "partId": "60592",
       "revision": "r1-curated",
-      "contentHash": "4c6a1621e1a42020f12ab94b806a35415c49482250d5316dcc2450a486e5ce49",
+      "contentHash": "fe7552cd693325c924b87105f2164bf55f5d1113cd4bf3ab551c2ae07ada9f05",
       "definitionFile": "definitions/60592.json",
       "aliases": [],
       "capabilities": {
@@ -83537,7 +83537,7 @@
     {
       "partId": "60594",
       "revision": "r1-curated",
-      "contentHash": "5ce99d40d5cdb21b53a2bceaa6f3d26ebec7929bb5a30a04a65302404f3968de",
+      "contentHash": "4a139a48b2e2e20ae0d50892d192e5a87046dcb5b472851535035b9f5ae5cda0",
       "definitionFile": "definitions/60594.json",
       "aliases": [],
       "capabilities": {
@@ -83566,7 +83566,7 @@
     {
       "partId": "60596",
       "revision": "r1-curated",
-      "contentHash": "93d7528e0d2e8ddcbbf3c7c6c93e6cfc0516c7271240f1a76bbaa7338ac0a975",
+      "contentHash": "47807147d0b9ce2cf9fb0e0ef817cab02e1303908d0ce4e825632866b88e4aff",
       "definitionFile": "definitions/60596.json",
       "aliases": [],
       "capabilities": {
@@ -83998,7 +83998,7 @@
     {
       "partId": "60623",
       "revision": "r1-curated",
-      "contentHash": "2efe6aa3fe24fe33fe947da40372624cf2c0a10d8da700a58fbcf220ac8853c3",
+      "contentHash": "310c6d8be34bde4ad90322a8b1f5eb21ce796ac5b1204177abc91df5f934ebb5",
       "definitionFile": "definitions/60623.json",
       "aliases": [],
       "capabilities": {
@@ -84829,14 +84829,14 @@
     {
       "partId": "60897",
       "revision": "r1-curated",
-      "contentHash": "5ff2b7d834d7fa3ac7db2a07f23220492c65b1876873f43856e12bd1739d61c4",
+      "contentHash": "ce991994b3c6bf1a9da8ad32fa95b2f9b8ca58c1678c4654ef18aac97d7a279c",
       "definitionFile": "definitions/60897.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -84888,7 +84888,7 @@
     {
       "partId": "6091",
       "revision": "r1-curated",
-      "contentHash": "d13b088ef0e5ee27b6b3c28c948999bf22ec046cffcb30bc5d8604f354d57de8",
+      "contentHash": "34e7315b219d21846e6e489554f47881ebafbe7bedf4e3fcd1ec7c01fa0e83bf",
       "definitionFile": "definitions/6091.json",
       "aliases": [],
       "capabilities": {
@@ -85491,7 +85491,7 @@
     {
       "partId": "6111",
       "revision": "r1-curated",
-      "contentHash": "2d5906e23265e91f1ffa1d2ca69b7c7339a82dbefff5d6fbf7a5c0588c182c9a",
+      "contentHash": "070a3a68069c98c7016fd7f71105ba6a0162a20db53c6c522768bd40959c83e0",
       "definitionFile": "definitions/6111.json",
       "aliases": [],
       "capabilities": {
@@ -85520,7 +85520,7 @@
     {
       "partId": "6112",
       "revision": "r1-curated",
-      "contentHash": "1b885545d2552d9e6510c327182c73d0f426df8528bccba5098cab97d8e8dd1e",
+      "contentHash": "83d35d5fefb050474313ed53837e164f9b7873a7cdc17ec3164e45487ea9ae88",
       "definitionFile": "definitions/6112.json",
       "aliases": [],
       "capabilities": {
@@ -86831,7 +86831,7 @@
     {
       "partId": "61678",
       "revision": "r1-curated",
-      "contentHash": "b285eb052b16d2944f6ef7ecdf2347d29744d094a37dabed2c08874a7cc0ccd4",
+      "contentHash": "25f979afb22f6cf65f1bf595087a298993f1d10e0346281152a39baa9aef3e75",
       "definitionFile": "definitions/61678.json",
       "aliases": [],
       "capabilities": {
@@ -87087,7 +87087,7 @@
     {
       "partId": "6182",
       "revision": "r1-curated",
-      "contentHash": "1e95cf03084708f3c126bada764cc632f79b470ea5ba4288d9d5dd6153bd25d6",
+      "contentHash": "005a6c3028be2e9ea32567371d0ddfd45534c18d1990fd15572b6779b83fda62",
       "definitionFile": "definitions/6182.json",
       "aliases": [],
       "capabilities": {
@@ -89665,7 +89665,7 @@
     {
       "partId": "63864",
       "revision": "r1-curated",
-      "contentHash": "42b9d32520883f1050fd17999e3e9ff6681d4c138889a6571686753ccbdc720d",
+      "contentHash": "88c5e26dda1c7c0d4c854127556aa7ea730e4d8f51ff3801a911f391e12ad9de",
       "definitionFile": "definitions/63864.json",
       "aliases": [],
       "capabilities": {
@@ -89693,7 +89693,7 @@
     {
       "partId": "63868",
       "revision": "r1-curated",
-      "contentHash": "6686477610aa60f1c931aea4240e935c18a23380cf657c4b3bcddfd1e85c56f1",
+      "contentHash": "0d505461e7f3e871e1dce23cde01e8eaf10e0d53de8c19f25a3eb0e78aec0ae0",
       "definitionFile": "definitions/63868.json",
       "aliases": [],
       "capabilities": {
@@ -92068,7 +92068,7 @@
     {
       "partId": "6541",
       "revision": "r1-curated",
-      "contentHash": "a9bc9dd96c98ccc918e789493f14b235f4f14ffe4a7619b69808725143509ee2",
+      "contentHash": "e7cac9a0e40d3f63b6f71219f9a42cda0cee5f1bc3da677cc84b9a05a3c358ea",
       "definitionFile": "definitions/6541.json",
       "aliases": [],
       "capabilities": {
@@ -92918,14 +92918,14 @@
     {
       "partId": "6558",
       "revision": "r1-curated",
-      "contentHash": "318ec242955a78919dbbad88b00c2225ebd0053c948a685a0d18d148a769be65",
+      "contentHash": "5bf1368f3f4b103f5757edb1937a459ae5ea5798d5ead6eb34b3ed87af01aa89",
       "definitionFile": "definitions/6558.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -94715,7 +94715,7 @@
     {
       "partId": "6636",
       "revision": "r1-curated",
-      "contentHash": "32212031be75b1ea99d44c920b10d90d0d7739d9a80ecd0f479c320e73b228d0",
+      "contentHash": "fc21fb7b9b56cc34b90347e4570f220fc2c5cd2e6e0c8429e39e04448f8bae1b",
       "definitionFile": "definitions/6636.json",
       "aliases": [],
       "capabilities": {
@@ -97430,7 +97430,7 @@
     {
       "partId": "69729",
       "revision": "r1-curated",
-      "contentHash": "92c4ed90a0c905de1b7d2df0624ea8a70dbba641e3103164ec486007f5afbade",
+      "contentHash": "6bfe6cb072ddb4bf9b5f5101fdfe6a84fa04ecae42788ecf6d1247442b1e9fdc",
       "definitionFile": "definitions/69729.json",
       "aliases": [],
       "capabilities": {
@@ -107356,7 +107356,7 @@
     {
       "partId": "78329",
       "revision": "r1-curated",
-      "contentHash": "0d00216d61899a19594abc343c80fed98855c9b75cb76cc8e54c347cb8054755",
+      "contentHash": "33774b08c44e51adc57a524c23b36437da8a518a56fb596f3571166006af7f05",
       "definitionFile": "definitions/78329.json",
       "aliases": [],
       "capabilities": {
@@ -112276,7 +112276,7 @@
     {
       "partId": "85861",
       "revision": "r1-curated",
-      "contentHash": "7739bf6d52364c696539f90b5855d50cf1c87f06ef5d729f2db3ce13afc50538",
+      "contentHash": "fa1bb2d23065c7d6705766805f77b7186617f6894b07022f8ccd561377a0252b",
       "definitionFile": "definitions/85861.json",
       "aliases": [],
       "capabilities": {
@@ -112508,7 +112508,7 @@
     {
       "partId": "85984",
       "revision": "r1-curated",
-      "contentHash": "e43d08cf9ff4339f95b13f0e7977ab848237a267c4cffaaa4069fcff634c84d6",
+      "contentHash": "b80f53068f12ca844703ce12edca072a68580ae7259eb64a54eaafe078e381ff",
       "definitionFile": "definitions/85984.json",
       "aliases": [],
       "capabilities": {
@@ -112901,7 +112901,7 @@
     {
       "partId": "87079",
       "revision": "r1-curated",
-      "contentHash": "8bcbfdb6964551d2a96e87149feb64b51a20269d1300a0b8556c26acdc41f834",
+      "contentHash": "3c65a3f209ce0f370e61b8955fc0d7a282d623a5d45604daa59dba9522cc2f59",
       "definitionFile": "definitions/87079.json",
       "aliases": [],
       "capabilities": {
@@ -112957,7 +112957,7 @@
     {
       "partId": "87081",
       "revision": "r1-curated",
-      "contentHash": "ba2166e97228616b98b5881bb289b539797216ca7c143c5f1fdf81318e7e0827",
+      "contentHash": "3290f209e937a6e4fddf1b9662f7efbd02270c6532e204214f8ffbe47d52e064",
       "definitionFile": "definitions/87081.json",
       "aliases": [],
       "capabilities": {
@@ -113071,7 +113071,7 @@
     {
       "partId": "87087",
       "revision": "r1-curated",
-      "contentHash": "b5a13fa4e59caf0bd456d28c5ad3782741f2c79f7a1e2c336b586315a7502970",
+      "contentHash": "b9cf8db56975efbc4e54822ec72330c944cb35fbe2c7783a8bc69dd91b5262be",
       "definitionFile": "definitions/87087.json",
       "aliases": [],
       "capabilities": {
@@ -113586,7 +113586,7 @@
     {
       "partId": "87580",
       "revision": "r1-curated",
-      "contentHash": "c01cace94bfed34e5c1946d92fe999c53ff7b10ad668cf937f2cc398dfaa5764",
+      "contentHash": "67cc6d882eb01f70313235da6106a794be91fb0ed6e7114047bf39926d8cdbf6",
       "definitionFile": "definitions/87580.json",
       "aliases": [],
       "capabilities": {
@@ -114042,14 +114042,14 @@
     {
       "partId": "87697",
       "revision": "r1-curated",
-      "contentHash": "3096394545a303cf979ae200a69bb7a897c6f198c20476ad068e562dcb47f9c3",
+      "contentHash": "bce807925e5d59dd94b73b4bcef5b197260e1cf8c6e460b8167aaf3dd0c46eeb",
       "definitionFile": "definitions/87697.json",
       "aliases": [],
       "capabilities": {
         "render": {
-          "state": "inferred",
-          "geometryKind": "parametric",
-          "note": "无 .dat 镜像；只能按 kind/size/h 参数化近似，与真实外形有差异"
+          "state": "measured",
+          "geometryKind": "ldraw-mesh",
+          "note": "catalog/ldraw 中存在对应 .dat，渲染可走官方几何"
         },
         "collide": {
           "state": "inferred",
@@ -114455,7 +114455,7 @@
     {
       "partId": "87994",
       "revision": "r1-curated",
-      "contentHash": "a1a1431ed49910136a54def07c2b57f23db16cad40ec7bd913ff34a1dd5169be",
+      "contentHash": "d8c7e5fa875d1b936886b86b74d902be64243d2d8dafaf9cdfbbfab8581b89b1",
       "definitionFile": "definitions/87994.json",
       "aliases": [],
       "capabilities": {
@@ -118303,7 +118303,7 @@
     {
       "partId": "92946",
       "revision": "r1-curated",
-      "contentHash": "9c7ad21340142e0ca875ffc65c2deb41f0ab8dc2d434708887542cf2bff3d960",
+      "contentHash": "ecde1ca3278c36969bf113d0b63787bb0bf35f5c826dd91e5132502589e892ad",
       "definitionFile": "definitions/92946.json",
       "aliases": [],
       "capabilities": {
@@ -118691,7 +118691,7 @@
     {
       "partId": "93273",
       "revision": "r1-curated",
-      "contentHash": "002cb6e80bb7ac182b3e863b011f87233c4823ae669879394a28a6077ce3067a",
+      "contentHash": "ddf13e15f1aaf65bc732492cc1379984bbfd1d6536512ed1a00a3dff7abcb7e7",
       "definitionFile": "definitions/93273.json",
       "aliases": [],
       "capabilities": {
@@ -120635,7 +120635,7 @@
     {
       "partId": "98138",
       "revision": "r1-curated",
-      "contentHash": "bbdb36375723c7ff360b9850dd1e139d5569b180ce62fd8535f780ace46911ab",
+      "contentHash": "bee2444221d6f3981288decc3d18b7466a576ca6f87f2f7b29dbc027c94f5e1a",
       "definitionFile": "definitions/98138.json",
       "aliases": [],
       "capabilities": {
@@ -120807,7 +120807,7 @@
     {
       "partId": "98283",
       "revision": "r1-curated",
-      "contentHash": "80a811d7007b0c5b6e120fb7433c66d1ccb0ab1ed4f8f05b2bfd41017ea29b0b",
+      "contentHash": "d18ec810096147b7b58136f8caecde56e13bc743b38d4828da95bea2edb1a1ac",
       "definitionFile": "definitions/98283.json",
       "aliases": [],
       "capabilities": {
@@ -121922,7 +121922,7 @@
     {
       "partId": "99206",
       "revision": "r1-curated",
-      "contentHash": "4e48b1366f5b076c0688e84c983ffda0729143d8b7841e7003ec772856fb473f",
+      "contentHash": "bdc00b69fe6da70c387f7332442e87ee3e7b4635f826f82518a9e9a25baed1b3",
       "definitionFile": "definitions/99206.json",
       "aliases": [],
       "capabilities": {
@@ -121951,7 +121951,7 @@
     {
       "partId": "99207",
       "revision": "r1-curated",
-      "contentHash": "e8beb9656cf84ed0612b6377788cf55712991f8d26674ba92a07c955da1fe872",
+      "contentHash": "6b8a15b4b1807d0500ba8755f4b525adc24285c14d574613078317df14380d90",
       "definitionFile": "definitions/99207.json",
       "aliases": [],
       "capabilities": {
@@ -122208,7 +122208,7 @@
     {
       "partId": "99780",
       "revision": "r1-curated",
-      "contentHash": "a262c0be0036154324d7a9b97fdac04285aac67d5a03b42daa3a903f3b9b7afe",
+      "contentHash": "f8ca69ceddc84615a9c82b5b49109bebdf9eeb627f1345e9b0123afe35754b86",
       "definitionFile": "definitions/99780.json",
       "aliases": [],
       "capabilities": {
@@ -122237,7 +122237,7 @@
     {
       "partId": "99781",
       "revision": "r1-curated",
-      "contentHash": "5d462210e47606b6433024e2edd79e617bb0ecd37bd817dc9d80d7bd527b943b",
+      "contentHash": "cc2af5080da3c7cb58c7b33bb7f690a7fbcd36915aa9aef3c2e30772348f2b55",
       "definitionFile": "definitions/99781.json",
       "aliases": [],
       "capabilities": {

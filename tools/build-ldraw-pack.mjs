@@ -127,7 +127,7 @@ for (const id of extras) {
   if (!probe) { extrasMissing.push({ id, why: 'LDraw 镜像里没有 .dat' }); continue; }
   extrasFound.push(id);
 }
-const included = [...new Set([...curated, ...extrasFound])].filter((id) => cat.parts[id]).sort();
+const included = [...new Set([...curated, ...Object.keys(_curatedParts), ...extrasFound])].filter((id) => cat.parts[id]).sort();
 
 // 依赖闭包
 const files = new Map();
